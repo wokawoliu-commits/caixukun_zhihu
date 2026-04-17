@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instagram 品牌社媒感知调研</title>
+  <style>
+:root {
+  --bg: #f4efe7;
+  --paper: #fbf8f2;
+  --paper-strong: #fffdf9;
+  --ink: #221d18;
+  --muted: #6c6259;
+  --line: rgba(66, 54, 43, 0.16);
+  --line-strong: rgba(66, 54, 43, 0.28);
+  --accent: #7a3040;
+  --accent-soft: #efe2e6;
+  --accent-deep: #4c1722;
+  --table-head: #efe5db;
+  --code-bg: #f7eee5;
+  --shadow: 0 24px 60px rgba(58, 41, 28, 0.10);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --sans: "Avenir Next", "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Source Han Serif SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  background:
+    radial-gradient(circle at top left, rgba(122, 48, 64, 0.14), transparent 34%),
+    radial-gradient(circle at 100% 20%, rgba(188, 146, 112, 0.12), transparent 28%),
+    linear-gradient(180deg, #f7f2ea 0%, var(--bg) 42%, #f1ece4 100%);
+  line-height: 1.75;
+}
+
+a {
+  color: var(--accent-deep);
+  text-decoration-color: rgba(76, 23, 34, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: rgba(76, 23, 34, 0.7);
+}
+
+.page {
+  width: min(1420px, calc(100vw - 40px));
+  margin: 22px auto 60px;
+  display: grid;
+  grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+  gap: 28px;
+}
+
+.hero {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 34px 38px 30px;
+  background:
+    linear-gradient(135deg, rgba(122, 48, 64, 0.92) 0%, rgba(107, 44, 58, 0.88) 28%, rgba(246, 239, 229, 0.98) 28%, rgba(255, 252, 247, 0.98) 100%);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(98, 59, 44, 0.14);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(122, 48, 64, 0.16) 0%, rgba(122, 48, 64, 0.02) 62%, transparent 72%);
+}
+
+.hero::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(83, 47, 57, 0.3), transparent);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 420px);
+  gap: 26px;
+  align-items: end;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: rgba(255, 248, 244, 0.84);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 12ch;
+  color: #fff9f5;
+  font-family: var(--serif);
+  font-size: clamp(2.45rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.hero-note {
+  margin: 16px 0 0;
+  max-width: 44ch;
+  color: rgba(255, 248, 244, 0.82);
+  font-size: 0.98rem;
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 1;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255, 252, 248, 0.76);
+  border: 1px solid rgba(99, 65, 51, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.meta-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta-list {
+  display: grid;
+  gap: 10px;
+}
+
+.meta-item {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(99, 65, 51, 0.10);
+}
+
+.meta-item strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.meta-item span {
+  display: block;
+  color: var(--ink);
+  font-size: 0.98rem;
+  word-break: break-word;
+}
+
+.sidebar {
+  position: sticky;
+  top: 22px;
+  align-self: start;
+}
+
+.sidebar-shell {
+  border-radius: 24px;
+  background: rgba(251, 248, 242, 0.84);
+  border: 1px solid rgba(88, 61, 47, 0.12);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 20px;
+  backdrop-filter: blur(16px);
+}
+
+.sidebar-label {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc {
+  font-size: 0.95rem;
+}
+
+.toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc ul ul {
+  margin-top: 6px;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(88, 61, 47, 0.12);
+}
+
+.toc li + li {
+  margin-top: 6px;
+}
+
+.toc a {
+  display: inline-block;
+  padding: 2px 0;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.toc a:hover,
+.toc a.active {
+  color: var(--accent-deep);
+}
+
+.report {
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.94), rgba(251, 248, 242, 0.98));
+  border: 1px solid rgba(88, 61, 47, 0.12);
+  box-shadow: var(--shadow);
+  padding: 34px clamp(18px, 2vw, 34px) 46px;
+}
+
+.report h2,
+.report h3,
+.report h4 {
+  scroll-margin-top: 26px;
+}
+
+.report h2 {
+  margin: 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.5vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.report > h2:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.report h3 {
+  margin: 34px 0 10px;
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: 0.01em;
+}
+
+.report h4 {
+  margin: 26px 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.report p,
+.report ul,
+.report ol {
+  margin: 14px 0;
+  font-size: 1rem;
+}
+
+.report ul,
+.report ol {
+  padding-left: 1.3rem;
+}
+
+.report li + li {
+  margin-top: 6px;
+}
+
+.report hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 28px 0;
+}
+
+.report code {
+  padding: 0.18em 0.42em;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--accent-deep);
+  font-size: 0.92em;
+}
+
+.report pre {
+  overflow-x: auto;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #1f1b19;
+  color: #f6efe8;
+}
+
+.report pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.report strong {
+  color: var(--ink);
+}
+
+.report blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-left: 3px solid rgba(122, 48, 64, 0.42);
+  background: rgba(122, 48, 64, 0.05);
+  border-radius: 0 14px 14px 0;
+}
+
+.table-wrap {
+  margin: 18px 0 24px;
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(88, 61, 47, 0.13);
+  background: var(--paper-strong);
+}
+
+.report table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+
+.report thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--table-head);
+  color: var(--ink);
+}
+
+.report th,
+.report td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(88, 61, 47, 0.10);
+}
+
+.report tbody tr:nth-child(even) td {
+  background: rgba(247, 241, 233, 0.38);
+}
+
+.report tbody tr:hover td {
+  background: rgba(122, 48, 64, 0.055);
+}
+
+.report .headerlink {
+  margin-left: 0.45rem;
+  color: rgba(76, 23, 34, 0.32);
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity 160ms ease, color 160ms ease;
+  text-decoration: none;
+}
+
+.report h2:hover .headerlink,
+.report h3:hover .headerlink,
+.report h4:hover .headerlink {
+  opacity: 1;
+}
+
+.report .headerlink:hover {
+  color: var(--accent-deep);
+}
+
+.inline-url code {
+  white-space: nowrap;
+}
+
+.footer-note {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.fade-in {
+  animation: rise 540ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.fade-in-delayed {
+  animation: rise 700ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1120px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    width: min(100vw - 20px, 100%);
+    margin: 10px auto 34px;
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(2.1rem, 12vw, 3.1rem);
+  }
+
+  .sidebar-shell,
+  .report {
+    border-radius: 20px;
+  }
+
+  .report {
+    padding: 22px 16px 28px;
+  }
+
+  .report table {
+    min-width: 680px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero fade-in">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Instagram Research File</p>
+          <h1>Instagram 品牌社媒感知调研</h1>
+          <p class="hero-note">将账号确认、用户感知、标准性元素、横向比较与代表性证据整理为一份可直接分享的长报告。</p>
+        </div>
+        <div class="hero-panel fade-in-delayed">
+          <p class="meta-label">Report Scope</p>
+          <div class="meta-list">
+            <div class="meta-item"><strong>更新时间</strong><span>2026-04-17</span></div>
+<div class="meta-item"><strong>研究对象</strong><span>Off hour、Snappy Cuddle、Sleeper、bedclozzzes、morpheus.bed、an action a day</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar fade-in-delayed">
+      <div class="sidebar-shell">
+        <p class="sidebar-label">目录</p>
+        <div class="toc">
+<ul>
+<li><a href="#_1">方法与限制</a></li>
+<li><a href="#0">0. 账号确认、常见写法与关键词</a></li>
+<li><a href="#1">1. 总表</a></li>
+<li><a href="#2">2. 逐品牌分析</a></li>
+<li><a href="#off-hour">Off hour</a><ul>
+<li><a href="#a">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b">B. 社媒人群特征</a></li>
+<li><a href="#c">C. 标准性元素</a></li>
+<li><a href="#d">D. 风险与争议点</a></li>
+<li><a href="#e">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#snappy-cuddle">Snappy Cuddle</a><ul>
+<li><a href="#a_1">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b_1">B. 社媒人群特征</a></li>
+<li><a href="#c_1">C. 标准性元素</a></li>
+<li><a href="#d_1">D. 风险与争议点</a></li>
+<li><a href="#e_1">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#sleeper">Sleeper</a><ul>
+<li><a href="#a_2">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b_2">B. 社媒人群特征</a></li>
+<li><a href="#c_2">C. 标准性元素</a></li>
+<li><a href="#d_2">D. 风险与争议点</a></li>
+<li><a href="#e_2">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#bedclozzzes">bedclozzzes</a><ul>
+<li><a href="#a_3">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b_3">B. 社媒人群特征</a></li>
+<li><a href="#c_3">C. 标准性元素</a></li>
+<li><a href="#d_3">D. 风险与争议点</a></li>
+<li><a href="#e_3">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#morpheusbed">morpheus.bed</a><ul>
+<li><a href="#a_4">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b_4">B. 社媒人群特征</a></li>
+<li><a href="#c_4">C. 标准性元素</a></li>
+<li><a href="#d_4">D. 风险与争议点</a></li>
+<li><a href="#e_4">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#an-action-a-day">an action a day</a><ul>
+<li><a href="#a_5">A. 被真实记忆且讨论度高的内容</a></li>
+<li><a href="#b_5">B. 社媒人群特征</a></li>
+<li><a href="#c_5">C. 标准性元素</a></li>
+<li><a href="#d_5">D. 风险与争议点</a></li>
+<li><a href="#e_5">E. 一句话总结</a></li>
+</ul>
+</li>
+<li><a href="#3">3. 横向比较</a><ul>
+<li><a href="#_2">谁的记忆点最强，为什么？</a></li>
+<li><a href="#_3">谁的标准性元素最稳定？</a></li>
+<li><a href="#_4">谁更像产品品牌，谁更像身份品牌，谁更像生活方式品牌？</a></li>
+<li><a href="#sleeper_1">哪些品牌最像 Sleeper，哪些只是表面相似？</a></li>
+<li><a href="#an-action-a-day_1">an action a day 与海外品牌相比，有什么明显不同？</a></li>
+</ul>
+</li>
+<li><a href="#4">4. 代表性证据</a><ul>
+<li><a href="#off-hour_1">Off hour</a></li>
+<li><a href="#snappy-cuddle_1">Snappy Cuddle</a></li>
+<li><a href="#sleeper_2">Sleeper</a></li>
+<li><a href="#bedclozzzes_1">bedclozzzes</a></li>
+<li><a href="#morpheusbed_1">morpheus.bed</a></li>
+<li><a href="#an-action-a-day_2">an action a day</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+      </div>
+    </aside>
+
+    <main class="report fade-in-delayed">
+      <h2 id="_1">方法与限制<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<ul>
+<li>本次以已登录 Instagram 的只读浏览为主，只做搜索、浏览、整理，不做点赞、评论、关注、发帖、私信或设置修改。</li>
+<li>因账号较新，且一次只读接口测试触发了 <code>429</code>，后续立即退让，只保留保守浏览方案：主账号确认 + <code>tagged</code> 页首屏样本。</li>
+<li>每个品牌当前主要依据其官方账号 <code>tagged</code> 页首屏可见的约 12 条用户/媒体/博主内容做聚类；<code>Sleeper</code> 另补充了 <code>sleeper_kyiv</code> 门店页用于确认主账号与使用场景。</li>
+<li>因未对每条内容逐一进入详情页，部分证据条目的精确发布时间未显示；表中会标注为“页面未显示”。</li>
+<li>因此，这是一份“保守采样版”用户感知报告：</li>
+<li><code>高频共识</code>：同一品牌在多条独立 tagged 内容中重复出现。</li>
+<li><code>中频印象</code>：出现 2-3 次，但还未充分饱和。</li>
+<li><code>个别观点</code>：单条样本出现，不作为共识下结论。</li>
+</ul>
+<h2 id="0">0. 账号确认、常见写法与关键词<a class="headerlink" href="#0" title="Permanent link">#</a></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>品牌</th>
+<th>官方账号判断</th>
+<th>常见写法</th>
+<th>建议 hashtag / 搜索词</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Off hour</td>
+<td><code>@offhour_official</code></td>
+<td>Off hour / OFF HOUR / 오프아워 / offhour</td>
+<td><code>#offhour</code> <code>#오프아워</code> <code>#오프아워잠옷</code> <code>off hour sleepwear</code> <code>off hour styling</code> <code>off hour review</code></td>
+<td><code>tagged</code> 页页头、账号名和高亮均匹配主品牌</td>
+</tr>
+<tr>
+<td>Snappy Cuddle</td>
+<td><code>@snappycuddle</code></td>
+<td>Snappy Cuddle / 스내피커들 / snappycuddle</td>
+<td><code>#snappycuddle</code> <code>#스내피커들</code> <code>snappy cuddle pajama</code> <code>snappy cuddle review</code> <code>snappy cuddle eye mask</code></td>
+<td>搜索结果中 <code>snappycuddle_jp</code> 为区域账号，主账号仍是 <code>snappycuddle</code></td>
+</tr>
+<tr>
+<td>Sleeper</td>
+<td><code>@daily_sleeper</code></td>
+<td>Sleeper / Daily Sleeper / SLEEPER</td>
+<td><code>#dailysleeper</code> <code>#sleeper</code> <code>sleeper pajamas</code> <code>sleeper bridal</code> <code>sleeper outside</code> <code>sleeper worth it</code></td>
+<td><code>@sleeper_kyiv</code> 为 Kyiv 门店/旗舰空间账号，不是全球主账号</td>
+</tr>
+<tr>
+<td>bedclozzzes</td>
+<td><code>@bedclozzzes</code></td>
+<td>bedclozzzes / bed clozzzes</td>
+<td><code>#bedclozzzes</code> <code>bedclozzzes bedding</code> <code>bedclozzzes review</code> <code>bedclozzzes wedding morning</code></td>
+<td>搜索结果中还出现合作号与变体号，但主账号清晰</td>
+</tr>
+<tr>
+<td>morpheus.bed</td>
+<td><code>@morpheus.bed</code></td>
+<td>morpheus.bed / MORФEUS / morpheus bed</td>
+<td><code>#morpheusbed</code> <code>morpheus bedding</code> <code>morpheus bed review</code> <code>morpheus bed pillowcases</code></td>
+<td>品牌名中带点号，搜索时要同时测带点与不带点写法</td>
+</tr>
+<tr>
+<td>an action a day</td>
+<td><code>@anactionaday_official</code></td>
+<td>an action a day / anactionaday / AAAD</td>
+<td><code>#anactionaday</code> <code>#aaad</code> <code>an action a day comfy fits</code> <code>an action a day travel</code> <code>an action a day review</code></td>
+<td>搜索结果中有 <code>an_action_a_day</code> 与 <code>anactionaday</code>，但官方主号为 <code>anactionaday_official</code></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="1">1. 总表<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>品牌</th>
+<th>地区</th>
+<th>Instagram 上讨论热度</th>
+<th>最强记忆点</th>
+<th>核心社媒人群</th>
+<th>高频标准性元素</th>
+<th>品牌定位/价值主张判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Off hour</td>
+<td>韩国</td>
+<td>中等：<code>1.9万粉丝 / 286 tagged</code></td>
+<td>“舒服但要拍得好看”的韩系家居/睡衣</td>
+<td>韩系 20-30 岁女性、情侣、轻家庭用户</td>
+<td>棉质/桃皮/signature pajamas、情侣家居、pop-up、review、one-mile pants、scrunchie</td>
+<td>更像“舒适生活方式品牌”，不是单纯睡衣卖货号</td>
+</tr>
+<tr>
+<td>Snappy Cuddle</td>
+<td>韩国</td>
+<td>中高：<code>6.5万粉丝 / 280 tagged</code></td>
+<td>情绪型睡衣，带一点怪趣、明星和配件话题</td>
+<td>20-30 岁女性、K-fashion 追随者、粉丝号、造型博主</td>
+<td>Pajama sets、eye mask、celebrity wear、travel room shots、couple mood、named sets</td>
+<td>兼具“产品品牌 + 风格品牌”，核心是把睡衣做成可传播的情绪物件</td>
+</tr>
+<tr>
+<td>Sleeper</td>
+<td>乌克兰 / 国际</td>
+<td>很高：<code>45.9万粉丝 / 5476 tagged</code></td>
+<td>羽毛/浪漫/婚礼前后场景，把睡衣穿成 occasionwear</td>
+<td>25-40 岁高消费女性、准新娘、时装从业者、浪漫主义审美用户</td>
+<td>Feather cues、bridal moments、whimsical romance、dreamy styling、outside/home dual-use</td>
+<td>很明显是“身份品牌 + 生活方式品牌”，不只是产品品牌</td>
+</tr>
+<tr>
+<td>bedclozzzes</td>
+<td>乌克兰</td>
+<td>高：<code>12万粉丝 / 1860 tagged</code></td>
+<td>ruffles、云朵感、酒店感面料，把卧室布置成情绪空间</td>
+<td>24-35 岁女性、年轻家庭、准新娘、家居美学用户</td>
+<td>Ruffles、washed cotton、satin、flannel、table styling、wedding morning、Pinterest bedroom</td>
+<td>更像“家居生活方式品牌”，从睡眠延伸到整个家的氛围</td>
+</tr>
+<tr>
+<td>morpheus.bed</td>
+<td>俄罗斯</td>
+<td>中高：<code>10.8万粉丝 / 1531 tagged</code></td>
+<td>多巴胺家居、慢早晨、公寓氛围感</td>
+<td>25-40 岁公寓生活用户、审美型家居消费者、创作者</td>
+<td>Pillowcases、candles/light/shadows、textiles、apartment setup、slow morning、dopamine home finds</td>
+<td>更像“情绪家居品牌”，用户把它当氛围细节，不是强 hero-product 品牌</td>
+</tr>
+<tr>
+<td>an action a day</td>
+<td>中国大陆</td>
+<td>中等：<code>4.3万粉丝 / 401 tagged</code></td>
+<td>comfy fits + 旅行/户外/城市穿搭，但记忆点分散</td>
+<td>18-30 岁 global outfit creator、旅行/户外/城市生活内容用户</td>
+<td>Cardigans、comfy fits、hiking/travel, Paris/Shanghai/Coachella、discount code、AAAD</td>
+<td>更像“穿搭内容品牌 / creator seeding brand”，身份符号还不够稳定</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="2">2. 逐品牌分析<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<h2 id="off-hour">Off hour<a class="headerlink" href="#off-hour" title="Permanent link">#</a></h2>
+<h3 id="a">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：舒服、自然、适合“在家也要穿得好看”的韩系睡衣/家居服。</li>
+<li><code>高频共识</code>：情侣/家庭场景明显，用户会直接说“커플룩으로 딱”。</li>
+<li><code>中频印象</code>：不仅是睡觉穿，也可以是 home look、one-mile look。</li>
+<li><code>中频印象</code>：品牌被放进 popup、review、kids、signature pajamas 这些可被复用的内容模块里。</li>
+<li><code>个别观点</code>：儿童线和更偏 editorial 的模特合作也在被 tag，但暂时还不是压倒性共识。</li>
+</ul>
+<h3 id="b">B. 社媒人群特征<a class="headerlink" href="#b" title="Permanent link">#</a></h3>
+<ul>
+<li>女性倾向明显，主力像韩系 20-30 岁用户。</li>
+<li>情侣、轻家庭、日常审美型用户较多，不是纯时装受众。</li>
+<li>消费能力偏中等到中上，愿意为“舒服 + 看起来有生活方式感”买单。</li>
+<li>用户使用品牌的方式，是把它当“好看的家居状态”而不是强仪式感的 occasionwear。</li>
+</ul>
+<h3 id="c">C. 标准性元素<a class="headerlink" href="#c" title="Permanent link">#</a></h3>
+<ul>
+<li><code>舒适睡衣套装</code>：这是最直接的入口，用户会把品牌直接等同于“잠옷”。</li>
+<li><code>情侣/家庭家居照</code>：说明品牌的社媒扩散不是孤立单品，而是关系场景。</li>
+<li><code>signature / cotton / peach pajamas</code>：高亮分类本身已经稳定成心智结构，说明用户也按材质和系列记品牌。</li>
+<li><code>one-mile pants</code>：品牌把居家和外出边界做模糊，用户也沿着这个方向理解它。</li>
+<li><code>review / popup</code>：很韩系消费品牌，靠线下体验与真实晒单巩固信任。</li>
+<li><code>scrunchie / package</code>：不是主角，但强化“送礼感、完整体验感”。</li>
+</ul>
+<h3 id="d">D. 风险与争议点<a class="headerlink" href="#d" title="Permanent link">#</a></h3>
+<ul>
+<li>tagged 页里有不少广告/合作内容，真实自发用户比例不是最高。</li>
+<li>记忆点更多集中在“舒服、家居、情侣”，品牌辨识符号还不如 Sleeper 那样尖锐。</li>
+<li>如果持续扩到 kids / popup / accessory，主线可能会变宽，核心符号容易被稀释。</li>
+</ul>
+<h3 id="e">E. 一句话总结<a class="headerlink" href="#e" title="Permanent link">#</a></h3>
+<p>Off hour 在 Instagram 用户心里更像“韩系舒适家居状态”的品牌，而不是一个有强冲击 hero item 的时装品牌。</p>
+<h2 id="snappy-cuddle">Snappy Cuddle<a class="headerlink" href="#snappy-cuddle" title="Permanent link">#</a></h2>
+<h3 id="a_1">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a_1" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：pajama 是核心，但不是“普通睡衣”，而是会改变心情的睡衣。</li>
+<li><code>高频共识</code>：eye mask 已经成了被媒体号、穿搭号反复点名的配件型记忆点。</li>
+<li><code>高频共识</code>：明星/爱豆/剧集同款内容很多，用户经常通过“谁穿了”认识它。</li>
+<li><code>中频印象</code>：旅行、酒店、couple archive、春装 layering 都会出现这个品牌。</li>
+<li><code>中频印象</code>：用户会记具体系列名，比如 <code>Psycho Punk Pajama Set</code>、<code>Cloud Atelier</code>。</li>
+</ul>
+<h3 id="b_1">B. 社媒人群特征<a class="headerlink" href="#b_1" title="Permanent link">#</a></h3>
+<ul>
+<li>主力是 20-30 岁女性、K-fashion 内容消费者、粉丝文化用户。</li>
+<li>比 Off hour 更偏“穿出来给人看”的社媒型消费。</li>
+<li>消费能力中等偏上，能接受设计感睡衣和配件。</li>
+<li>用户在 Instagram 上把它定义成“有个性、有名字、有 mood 的睡衣品牌”，而不只是舒适品类。</li>
+</ul>
+<h3 id="c_1">C. 标准性元素<a class="headerlink" href="#c_1" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Named pajama sets</code>：用户记产品名，说明 SKU 记忆比普通睡衣品牌更强。</li>
+<li><code>Eye mask</code>：已经从功能配件变成了品牌识别物。</li>
+<li><code>Celebrity wear</code>：高度影响认知扩散，品牌被“谁穿了”反复传播。</li>
+<li><code>Travel / hotel room</code>：适合在酒店和旅行内容里出镜，带轻度度假感。</li>
+<li><code>Couple / archive mood</code>：品牌不只卖单人舒适，还卖关系和氛围。</li>
+<li><code>Cute + quirky</code>：甜和怪同时存在，这是它区别于普通少女睡衣的地方。</li>
+</ul>
+<h3 id="d_1">D. 风险与争议点<a class="headerlink" href="#d_1" title="Permanent link">#</a></h3>
+<ul>
+<li>明星、媒体号、粉丝号权重偏高，容易让品牌看起来更像“被种草的同款”。</li>
+<li>配件热度太高时，主服装本体可能被遮住。</li>
+<li>样本里已有对价格的敏感反应，说明“可爱但不便宜”可能是隐性门槛。</li>
+</ul>
+<h3 id="e_1">E. 一句话总结<a class="headerlink" href="#e_1" title="Permanent link">#</a></h3>
+<p>Snappy Cuddle 在 Instagram 上不是“基础睡衣”，而是带明星流量和配件记忆点的情绪化睡衣品牌。</p>
+<h2 id="sleeper">Sleeper<a class="headerlink" href="#sleeper" title="Permanent link">#</a></h2>
+<h3 id="a_2">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：婚礼前后场景极强，包括 bridal brunch、engagement looks、wedding preview。</li>
+<li><code>高频共识</code>：品牌被当成“家里和外面都能穿”的浪漫 occasionwear。</li>
+<li><code>高频共识</code>：用户语汇明显偏 <code>dreamy / whimsical / romance / girly vibe</code>。</li>
+<li><code>中频印象</code>：羽毛、轻飘、浪漫主义视觉仍然是强记忆点。</li>
+<li><code>中频印象</code>：也有 <code>bump friendly</code>、城市日常穿法，说明品牌被定义成“特别但仍可穿”的衣服。</li>
+</ul>
+<h3 id="b_2">B. 社媒人群特征<a class="headerlink" href="#b_2" title="Permanent link">#</a></h3>
+<ul>
+<li>明显女性倾向，年龄感偏 25-40。</li>
+<li>高消费、审美明确、重场合表达，很多是准新娘、创意行业、时装从业者。</li>
+<li>用户不是把它当“睡衣”，而是当“可以代表我是谁”的浪漫装束。</li>
+<li>在 Instagram 上它更像一个身份标签，而不是一个功能型产品选择。</li>
+</ul>
+<h3 id="c_2">C. 标准性元素<a class="headerlink" href="#c_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Bridal / engagement moments</code>：高频到足以主导外界认知。</li>
+<li><code>Feather cues</code>：即便不是每条都写明，🪶 和“party pajama”联想仍是强标准元素。</li>
+<li><code>Whimsical romance</code>：这是用户自发语言，不是单纯官方文案。</li>
+<li><code>Home or city dual-use</code>：用户反复把它理解成“在家/出门都成立”的衣服。</li>
+<li><code>Muses / dreamy styling</code>：品牌不是靠实用信息传播，而靠“成为哪类女人”传播。</li>
+<li><code>Occasionwear</code>：官方自定义与用户实际使用高度一致，是少见的强一致品牌。</li>
+</ul>
+<h3 id="d_2">D. 风险与争议点<a class="headerlink" href="#d_2" title="Permanent link">#</a></h3>
+<ul>
+<li>高价格和强风格会自然过滤掉更广泛用户。</li>
+<li>对一些人来说它更像“特定场景衣服”，日常穿着门槛仍高。</li>
+<li>但这不是弱点，反而构成它的稀缺性和身份属性。</li>
+</ul>
+<h3 id="e_2">E. 一句话总结<a class="headerlink" href="#e_2" title="Permanent link">#</a></h3>
+<p>Sleeper 在 Instagram 用户心里是“浪漫身份与场合表达”的代名词，不再是睡衣品牌的常规定义。</p>
+<h2 id="bedclozzzes">bedclozzzes<a class="headerlink" href="#bedclozzzes" title="Permanent link">#</a></h2>
+<h3 id="a_3">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a_3" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：rюшки / ruffles 极强，几乎已经是品牌标准语言。</li>
+<li><code>高频共识</code>：用户会用“云朵感”“酒店感”来形容它的床品触感和卧室效果。</li>
+<li><code>高频共识</code>：品牌常出现在卧室改造、租房改造、居家 routine 内容里。</li>
+<li><code>中频印象</code>：婚礼晨间、更衣、早餐桌这些“特殊早晨”场景明显。</li>
+<li><code>中频印象</code>：不只卖床品，也卖桌布、cover、儿童线等“家整体氛围”。</li>
+</ul>
+<h3 id="b_3">B. 社媒人群特征<a class="headerlink" href="#b_3" title="Permanent link">#</a></h3>
+<ul>
+<li>主力是 24-35 岁女性、年轻家庭、婚礼/新家阶段用户。</li>
+<li>消费动机不是“换一套床品”，而是“把家变得更柔软、更像 Pinterest”。</li>
+<li>审美偏浪漫、甜感、轻复古、质感家居。</li>
+<li>用户会把它用在卧室、餐桌、节日早餐等完整 domestic scene 中。</li>
+</ul>
+<h3 id="c_3">C. 标准性元素<a class="headerlink" href="#c_3" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Ruffles</code>：这是最强识别符号。</li>
+<li><code>Natural fabrics / custom sewing</code>：强化“不是快消家居”，而是更讲究的定制感。</li>
+<li><code>Washed cotton / satin / flannel / check</code>：材质与花型分类就是品牌语言的一部分。</li>
+<li><code>Cloud softness</code>：用户对触感的描述高度一致。</li>
+<li><code>Wedding morning</code>：说明品牌可承接更情绪化、纪念型的场景。</li>
+<li><code>Table styling</code>：让品牌从 bedroom 扩到 whole-home styling。</li>
+</ul>
+<h3 id="d_3">D. 风险与争议点<a class="headerlink" href="#d_3" title="Permanent link">#</a></h3>
+<ul>
+<li>容易被固化在“甜美、ruffle、Pinterest”美学中。</li>
+<li>时装外溢性弱，更多还是 home/aesthetic 圈层传播。</li>
+<li>目前没有明显负面争议，但品牌边界较清楚，扩张时要防止视觉疲劳。</li>
+</ul>
+<h3 id="e_3">E. 一句话总结<a class="headerlink" href="#e_3" title="Permanent link">#</a></h3>
+<p>bedclozzzes 在 Instagram 用户心里不是卖床品，而是卖“柔软又讲究的家”的完成度。</p>
+<h2 id="morpheusbed">morpheus.bed<a class="headerlink" href="#morpheusbed" title="Permanent link">#</a></h2>
+<h3 id="a_4">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a_4" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：用户更常把它放进“温暖灯光、蜡烛、影子、慢早晨”的空间叙事里。</li>
+<li><code>高频共识</code>：枕套、床品替换、家居小物是更高频的使用方式。</li>
+<li><code>中频印象</code>：与“多巴胺家居”“公寓布置”“慢生活”关系很强。</li>
+<li><code>中频印象</code>：产品是空间 mood 的一部分，而不是单独被夸“哪款最火”。</li>
+<li><code>个别观点</code>：品牌自身可能更想强调 hedonism，但用户层面更偏 cozy aesthetics。</li>
+</ul>
+<h3 id="b_4">B. 社媒人群特征<a class="headerlink" href="#b_4" title="Permanent link">#</a></h3>
+<ul>
+<li>25-40 岁城市居住用户较多，偏公寓生活、美学生活方式内容。</li>
+<li>女性和情侣/小家庭内容都能接住，但核心还是“空间审美用户”。</li>
+<li>消费能力中上，愿意为 home mood 的细节付费。</li>
+<li>用户定义它的方式是“让房间更有感觉的东西”，而不是“我需要一套新床单”。</li>
+</ul>
+<h3 id="c_4">C. 标准性元素<a class="headerlink" href="#c_4" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Pillowcases / bedding swaps</code>：是用户内容里最具体的进入点。</li>
+<li><code>Warm light / candles / shadows</code>：说明品牌真正被绑定的是氛围，而不是面料参数。</li>
+<li><code>Slow morning</code>：与慢生活、生活节奏管理绑定。</li>
+<li><code>Dopamine home finds</code>：品牌进入用户的购物话语，不是功能搜索词。</li>
+<li><code>Apartment styling</code>：与“住得好看”绑定。</li>
+<li><code>Textile as mood object</code>：这是它最像 lifestyle brand 的地方。</li>
+</ul>
+<h3 id="d_4">D. 风险与争议点<a class="headerlink" href="#d_4" title="Permanent link">#</a></h3>
+<ul>
+<li>用户记住的是 mood，不是 hero item；这对品牌增长有好处，也会削弱具体产品记忆。</li>
+<li>用户层感知偏 cozy，而品牌如果过度强调 hedonism，可能出现表达错位。</li>
+<li>目前缺少像 Sleeper 那样一眼即知的单品级社媒符号。</li>
+</ul>
+<h3 id="e_4">E. 一句话总结<a class="headerlink" href="#e_4" title="Permanent link">#</a></h3>
+<p>morpheus.bed 在 Instagram 用户心里是“让家变得更有情绪”的纺织品品牌，而不是强单品品牌。</p>
+<h2 id="an-action-a-day">an action a day<a class="headerlink" href="#an-action-a-day" title="Permanent link">#</a></h2>
+<h3 id="a_5">A. 被真实记忆且讨论度高的内容<a class="headerlink" href="#a_5" title="Permanent link">#</a></h3>
+<ul>
+<li><code>高频共识</code>：comfy fits、travel fits、outdoor fits 出现频率高。</li>
+<li><code>高频共识</code>：用户内容常是 creator 式穿搭发布，伴随折扣码。</li>
+<li><code>中频印象</code>：品牌被放进巴黎、上海、山野徒步、Coachella prep 这类跨场景穿搭里。</li>
+<li><code>中频印象</code>：cardigan / layering 是比“某一个爆款”更稳定的入口。</li>
+<li><code>个别观点</code>：品牌有全球化场景感，但强记忆产品和视觉母题暂时不明显。</li>
+</ul>
+<h3 id="b_5">B. 社媒人群特征<a class="headerlink" href="#b_5" title="Permanent link">#</a></h3>
+<ul>
+<li>18-30 岁、全球内容平台原生的 outfit creator 气质很强。</li>
+<li>用户多是 travel、city walk、hiking、festival、OOTD 创作者。</li>
+<li>消费能力中等，购买理由更接近“穿搭内容好用”而不是“身份象征”。</li>
+<li>品牌在 Instagram 上被定义为“好搭、舒服、适合内容生产”的衣服。</li>
+</ul>
+<h3 id="c_5">C. 标准性元素<a class="headerlink" href="#c_5" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Comfy fits</code>：目前最稳定的语义锚点。</li>
+<li><code>Cardigans / layering pieces</code>：更像被反复调用的搭配部件。</li>
+<li><code>Travel / hiking / city walking</code>：品牌使用场景非常流动。</li>
+<li><code>Paris / Shanghai / Coachella</code>：城市与活动场景丰富，但不够聚焦。</li>
+<li><code>Discount codes / affiliate creators</code>：说明其社媒扩散高度依赖 creator seeding。</li>
+<li><code>#anactionaday / #aaad</code>：品牌缩写在被使用，但还没形成强视觉模板。</li>
+</ul>
+<h3 id="d_5">D. 风险与争议点<a class="headerlink" href="#d_5" title="Permanent link">#</a></h3>
+<ul>
+<li>最大风险不是负面口碑，而是“过于分散”。</li>
+<li>tagged 内容中 creator seeding 和折扣码痕迹明显，真实自发表达的品牌记忆还不够尖锐。</li>
+<li>缺少一个像 Sleeper 羽毛套装、bedclozzzes ruffles 那样的“一眼识别元素”。</li>
+</ul>
+<h3 id="e_5">E. 一句话总结<a class="headerlink" href="#e_5" title="Permanent link">#</a></h3>
+<p>an action a day 在 Instagram 上更像一个可被创作者广泛调用的穿搭品牌，而不是一个已经长出强社媒人格的身份品牌。</p>
+<h2 id="3">3. 横向比较<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<h3 id="_2">谁的记忆点最强，为什么？<a class="headerlink" href="#_2" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Sleeper</code> 最强。</li>
+<li>原因不是讨论量最大，而是“场景 + 视觉 + 语言”三位一体：婚礼前后、羽毛/浪漫、dreamy/whimsical/romance，这些元素会互相强化。</li>
+</ul>
+<h3 id="_3">谁的标准性元素最稳定？<a class="headerlink" href="#_3" title="Permanent link">#</a></h3>
+<ul>
+<li><code>Sleeper</code> 与 <code>bedclozzzes</code> 最稳定。</li>
+<li>Sleeper 的稳定性来自 <code>bridal / romance / feathers / outside-the-home pajama logic</code>。</li>
+<li>bedclozzzes 的稳定性来自 <code>ruffles / cloud-like bedding / styled bedroom / special morning rituals</code>。</li>
+</ul>
+<h3 id="_4">谁更像产品品牌，谁更像身份品牌，谁更像生活方式品牌？<a class="headerlink" href="#_4" title="Permanent link">#</a></h3>
+<ul>
+<li>更像产品品牌：<code>Snappy Cuddle</code>、<code>an action a day</code></li>
+<li>更像身份品牌：<code>Sleeper</code></li>
+<li>更像生活方式品牌：<code>Off hour</code>、<code>bedclozzzes</code>、<code>morpheus.bed</code></li>
+<li>其中 <code>bedclozzzes</code> 是“家的生活方式”，<code>Off hour</code> 是“舒适家居生活方式”，<code>morpheus.bed</code> 是“空间情绪生活方式”。</li>
+</ul>
+<h3 id="sleeper_1">哪些品牌最像 Sleeper，哪些只是表面相似？<a class="headerlink" href="#sleeper_1" title="Permanent link">#</a></h3>
+<ul>
+<li>最像 Sleeper：<code>Snappy Cuddle</code></li>
+<li>但只是“表面相似”而不是同一种品牌：它们都卖睡衣/家居服，也都有风格化传播，但 Snappy 的记忆更依赖明星、配件、系列名，Sleeper 的记忆则依赖身份和场合。</li>
+<li><code>Off hour</code> 也有“睡衣不只在床上穿”的方向，但气质更日常、更居家、更韩国生活方式，不像 Sleeper 那么 ceremonial。</li>
+<li><code>bedclozzzes</code> 和 <code>morpheus.bed</code> 与 Sleeper 的相似度主要在“情绪美学”，不是服装逻辑。</li>
+</ul>
+<h3 id="an-action-a-day_1">an action a day 与海外品牌相比，有什么明显不同？<a class="headerlink" href="#an-action-a-day_1" title="Permanent link">#</a></h3>
+<ul>
+<li>它最明显的不同是：<code>内容场景很多，但品牌核心符号不够集中</code>。</li>
+<li>海外样本里，Sleeper、bedclozzzes、morpheus.bed 都有比较强的“被记住的标准性元素”。</li>
+<li>an action a day 目前更像一个被 creator 使用的穿搭部件库，而不是一个被用户反复讲述的品牌故事。</li>
+<li>它与 Snappy Cuddle 相比少了“单品/系列名记忆”，与 Off hour 相比少了“清晰的居家情绪锚点”，与 Sleeper 相比则少了身份感和 occasion 绑定。</li>
+</ul>
+<h2 id="4">4. 代表性证据<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>说明：以下均为本次保守采样中可见的 Instagram 证据链接。发布时间以页面可见信息为准；若首屏未显示，则标注“页面未显示”。</p>
+<h3 id="off-hour_1">Off hour<a class="headerlink" href="#off-hour_1" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/ttruehouse/p/DXNo5bIk1B-/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/ttruehouse/p/DXNo5bIk1B-/</code></a></td>
+<td>2026-04-16</td>
+<td>普通用户/家居创作者</td>
+<td>家居与餐桌场景中主动 tag 品牌</td>
+<td>Off hour 被用在“家”的整体生活方式叙事里</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/nannaya_bee_/p/DXMmCDVE3xz/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/nannaya_bee_/p/DXMmCDVE3xz/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户/穿搭创作者</td>
+<td>明说“很舒服”“葡萄 home look”“适合情侣”</td>
+<td>舒适与情侣家居是核心记忆点</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/d.life.mag/p/DXLghnzEeOb/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/d.life.mag/p/DXLghnzEeOb/</code></a></td>
+<td>页面未显示</td>
+<td>媒体/生活方式账号</td>
+<td>把品牌归入“喜欢待在家的女孩”的 homewear 推荐</td>
+<td>品牌在外部社媒被定义成居家美学品牌</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/its.wawa.time/p/DXEjN6tiU1d/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/its.wawa.time/p/DXEjN6tiU1d/</code></a></td>
+<td>页面未显示</td>
+<td>博主/创作者</td>
+<td>“家里的我也是一种 style”，强调自然、放松、舒服</td>
+<td>用户把它理解为 home self-styling</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/rollingjay_official/reel/DXOYuqvk1RH/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/rollingjay_official/reel/DXOYuqvk1RH/</code></a></td>
+<td>页面未显示</td>
+<td>品牌/合作机构</td>
+<td><code>OFF HOUR KIDS</code> 与儿童模特内容</td>
+<td>品牌已从女装睡衣往家庭/生活方式扩展</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="snappy-cuddle_1">Snappy Cuddle<a class="headerlink" href="#snappy-cuddle_1" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/theboutique.c/p/DW5xIkjiTgu/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/theboutique.c/p/DW5xIkjiTgu/</code></a></td>
+<td>页面未显示</td>
+<td>媒体/买手账号</td>
+<td>春季 pajama 推荐合集里出现 Snappy Cuddle</td>
+<td>品牌已进入“值得推荐的设计睡衣”清单</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/mylo.magazine/p/DWtRFJQEe4A/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/mylo.magazine/p/DWtRFJQEe4A/</code></a></td>
+<td>页面未显示</td>
+<td>媒体账号</td>
+<td>眼罩 trend 内容中点名品牌</td>
+<td>eye mask 是强标准性元素</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/look.steal.inc/p/DWB-ShhkScw/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/look.steal.inc/p/DWB-ShhkScw/</code></a></td>
+<td>页面未显示</td>
+<td>媒体账号</td>
+<td>K-pop idols eye mask outfit 内容</td>
+<td>明星/偶像穿戴强化品牌传播</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/miladebleu/p/DVqtlVCAY7Z/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/miladebleu/p/DVqtlVCAY7Z/</code></a></td>
+<td>页面未显示</td>
+<td>粉丝/造型账号</td>
+<td>直接写 <code>Pajama: Snappy Cuddle</code></td>
+<td>用户通过“谁穿了”记住品牌</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/trend___reader/p/DVU6u9rE-5l/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/trend___reader/p/DVU6u9rE-5l/</code></a></td>
+<td>页面未显示</td>
+<td>媒体账号</td>
+<td>标明 <code>Psycho Punk Pajama Set</code></td>
+<td>具体系列名能被记住，产品识别强于普通睡衣品牌</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="sleeper_2">Sleeper<a class="headerlink" href="#sleeper_2" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/seeblu_outfits/p/DXM2TNNl-Gt/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/seeblu_outfits/p/DXM2TNNl-Gt/</code></a></td>
+<td>页面未显示</td>
+<td>博主/婚礼穿搭账号</td>
+<td>明确做 bridal brunch / engagement looks 推荐</td>
+<td>Sleeper 与婚礼前后场景强绑定</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/bianca.reynolds_/p/DXK2JiEklHZ/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/bianca.reynolds_/p/DXK2JiEklHZ/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户</td>
+<td>wedding preview 内容中 tag 品牌</td>
+<td>品牌已被真实婚礼用户使用，而非只停留在时尚媒体</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/cazevedor/p/DXKdfkqiFhr/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/cazevedor/p/DXKdfkqiFhr/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户/创作者</td>
+<td><code>bump friendly fits</code></td>
+<td>不只浪漫，也被理解为可穿、舒适、有身体包容性</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/alexandrarosevoznytska/p/DXKFzOZjfgd/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/alexandrarosevoznytska/p/DXKFzOZjfgd/</code></a></td>
+<td>页面未显示</td>
+<td>博主/造型创作者</td>
+<td><code>dreamy dream 🪶</code>、<code>girly vibe</code></td>
+<td>羽毛/梦幻/浪漫的语言是用户自发语汇</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/helen.visual_ai/p/DWGdCasgqBt/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/helen.visual_ai/p/DWGdCasgqBt/</code></a></td>
+<td>页面未显示</td>
+<td>创作者</td>
+<td><code>The Pajama Set in Leopard</code>、<code>Home or city?</code></td>
+<td>品牌被理解成可以跨 home/city 的时装化睡衣</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bedclozzzes_1">bedclozzzes<a class="headerlink" href="#bedclozzzes_1" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/pavlenko_ldml/reel/DXG7Cb8iPIs/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/pavlenko_ldml/reel/DXG7Cb8iPIs/</code></a></td>
+<td>页面未显示</td>
+<td>家居创作者</td>
+<td>租房卧室改造，点名 ruffled bedding</td>
+<td>品牌是卧室氛围改造工具，不只是消耗品</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/leka.np/reel/DXEwPEVDLDA/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/leka.np/reel/DXEwPEVDLDA/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户/创作者</td>
+<td>把床品形容为“云朵感”“酒店感”</td>
+<td>触感与视觉 softness 是核心口碑</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/tania.vasylchuk/reel/DW4K-oujJVV/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/tania.vasylchuk/reel/DW4K-oujJVV/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户/创作者</td>
+<td>直接说“如果是床品，那一定是 bedclozzzes”</td>
+<td>品牌在床品类里已有明确偏好心智</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/stacya_vorozhko/p/DXByZkBgOw-/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/stacya_vorozhko/p/DXByZkBgOw-/</code></a></td>
+<td>页面未显示</td>
+<td>创作者</td>
+<td>复活节早餐桌与家居布置中 tag 品牌</td>
+<td>品牌已从床延伸到整个 domestic styling</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/ilona_demianchuk/p/DW3BS1jDepl/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/ilona_demianchuk/p/DW3BS1jDepl/</code></a></td>
+<td>页面未显示</td>
+<td>婚礼/灵感博主</td>
+<td>新娘晨间穿搭灵感帖里出现品牌</td>
+<td>品牌承接“特殊早晨”场景而不只是卧室日常</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="morpheusbed_1">morpheus.bed<a class="headerlink" href="#morpheusbed_1" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/oksiamirova/p/DXOOxQPjMs-/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/oksiamirova/p/DXOOxQPjMs-/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户/家居创作者</td>
+<td>讲家的温暖来自灯光、蜡烛、记忆、纺织物</td>
+<td>morpheus.bed 被放进完整 home mood 叙事</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/dvoretskaya.u/reel/DXEVhkKDFD3/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/dvoretskaya.u/reel/DXEVhkKDFD3/</code></a></td>
+<td>页面未显示</td>
+<td>创作者</td>
+<td><code>new week, new bedding</code>，具体换上品牌枕套</td>
+<td>用户把品牌作为局部焕新、细节升级的对象</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/bugaevadi/p/DXFk6xUgp5o/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/bugaevadi/p/DXFk6xUgp5o/</code></a></td>
+<td>页面未显示</td>
+<td>创作者</td>
+<td>“多巴胺购买”与慢早晨日常</td>
+<td>品牌与多巴胺家居、情绪消费绑定</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/katherina.savlepova/p/DW_fNrEiPDZ/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/katherina.savlepova/p/DW_fNrEiPDZ/</code></a></td>
+<td>页面未显示</td>
+<td>创作者</td>
+<td>“真庆幸我为家买了这个”+ 公寓布置标签</td>
+<td>品牌更像家中情绪物件，不是单纯功能用品</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/holy.natali/p/DXKqQYrjFVZ/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/holy.natali/p/DXKqQYrjFVZ/</code></a></td>
+<td>页面未显示</td>
+<td>普通用户</td>
+<td><code>dopamine notes</code> 式生活记录</td>
+<td>品牌被吸收进更宽的 soft-life / dopamine aesthetic 语境</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="an-action-a-day_2">an action a day<a class="headerlink" href="#an-action-a-day_2" title="Permanent link">#</a></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>链接</th>
+<th>时间</th>
+<th>账号类型</th>
+<th>内容摘要</th>
+<th>支持的结论</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/outside.oninsta/p/DXHb5t3DMvn/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/outside.oninsta/p/DXHb5t3DMvn/</code></a></td>
+<td>页面未显示</td>
+<td>户外创作者</td>
+<td>山野徒步内容里 tag 品牌</td>
+<td>品牌被用于 outdoor/travel outfit 语境</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/gabyite/reel/DW2NBIDiJ9w/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/gabyite/reel/DW2NBIDiJ9w/</code></a></td>
+<td>页面未显示</td>
+<td>博主/带货创作者</td>
+<td>春季 polka dot mini skirt look，点名 cardigan + discount code</td>
+<td>creator seeding 痕迹明显，品牌更像搭配部件</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/ozmdrn/reel/DW1tIaDjPLn/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/ozmdrn/reel/DW1tIaDjPLn/</code></a></td>
+<td>页面未显示</td>
+<td>博主/创作者</td>
+<td><code>comfy fits over everything</code> + 折扣码 + <code>#aaad</code></td>
+<td>舒适穿搭是当前最稳定的记忆点</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/iamdeliagonzalez/p/DW3Rwa-DOUH/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/iamdeliagonzalez/p/DW3Rwa-DOUH/</code></a></td>
+<td>页面未显示</td>
+<td>创作者/媒体感账号</td>
+<td>上海街区与精品店叙事</td>
+<td>品牌能进入城市设计感生活方式内容，但识别元素不强</td>
+</tr>
+<tr>
+<td><a class="inline-url" href="https://www.instagram.com/kayleepalmaa/reel/DWy4Zm1Chw7/" target="_blank" rel="noopener noreferrer"><code>https://www.instagram.com/kayleepalmaa/reel/DWy4Zm1Chw7/</code></a></td>
+<td>页面未显示</td>
+<td>博主/创作者</td>
+<td>Coachella prep 内容中出现品牌</td>
+<td>使用场景很多，但尚未汇聚成单一强符号</td>
+</tr>
+</tbody>
+</table></div>
+      <p class="footer-note">HTML rendered from <code>instagram_brand_perception_report.md</code>. 内容未删减，仅调整了结构、目录、表格与阅读样式。</p>
+    </main>
+  </div>
+  <script>
+(() => {
+  const links = [...document.querySelectorAll('.toc a[href^="#"]')];
+  const sections = links
+    .map((link) => {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      const node = document.getElementById(id);
+      return node ? { link, node } : null;
+    })
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach((link) => {
+      link.classList.toggle('active', decodeURIComponent(link.getAttribute('href').slice(1)) === id);
+    });
+  };
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length) setActive(visible[0].target.id);
+      },
+      {
+        rootMargin: '-18% 0px -65% 0px',
+        threshold: [0, 0.2, 0.6],
+      }
+    );
+    sections.forEach(({ node }) => observer.observe(node));
+    setActive(sections[0].node.id);
+  }
+})();
+</script>
+</body>
+</html>
