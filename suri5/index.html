@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sleeper Instagram 真实用户反馈研究</title>
+  <style>
+:root {
+  --bg: #f4efe7;
+  --paper: #fbf8f2;
+  --paper-strong: #fffdf9;
+  --ink: #221d18;
+  --muted: #6c6259;
+  --line: rgba(66, 54, 43, 0.16);
+  --line-strong: rgba(66, 54, 43, 0.28);
+  --accent: #7a3040;
+  --accent-soft: #efe2e6;
+  --accent-deep: #4c1722;
+  --table-head: #efe5db;
+  --code-bg: #f7eee5;
+  --shadow: 0 24px 60px rgba(58, 41, 28, 0.10);
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --sans: "Avenir Next", "Segoe UI", "Helvetica Neue", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", "Source Han Serif SC", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--sans);
+  background:
+    radial-gradient(circle at top left, rgba(122, 48, 64, 0.14), transparent 34%),
+    radial-gradient(circle at 100% 20%, rgba(188, 146, 112, 0.12), transparent 28%),
+    linear-gradient(180deg, #f7f2ea 0%, var(--bg) 42%, #f1ece4 100%);
+  line-height: 1.75;
+}
+
+a {
+  color: var(--accent-deep);
+  text-decoration-color: rgba(76, 23, 34, 0.35);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-color: rgba(76, 23, 34, 0.7);
+}
+
+.page {
+  width: min(1420px, calc(100vw - 40px));
+  margin: 22px auto 60px;
+  display: grid;
+  grid-template-columns: minmax(230px, 290px) minmax(0, 1fr);
+  gap: 28px;
+}
+
+.hero {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  padding: 34px 38px 30px;
+  background:
+    linear-gradient(135deg, rgba(122, 48, 64, 0.92) 0%, rgba(107, 44, 58, 0.88) 28%, rgba(246, 239, 229, 0.98) 28%, rgba(255, 252, 247, 0.98) 100%);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(98, 59, 44, 0.14);
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 420px;
+  height: 420px;
+  right: -120px;
+  top: -170px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(122, 48, 64, 0.16) 0%, rgba(122, 48, 64, 0.02) 62%, transparent 72%);
+}
+
+.hero::after {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(83, 47, 57, 0.3), transparent);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 420px);
+  gap: 26px;
+  align-items: end;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  padding: 24px 28px 26px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(76, 23, 34, 0.96) 0%, rgba(122, 48, 64, 0.92) 56%, rgba(122, 48, 64, 0.76) 100%);
+  border: 1px solid rgba(255, 244, 236, 0.14);
+  box-shadow: 0 18px 42px rgba(73, 35, 48, 0.18);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: rgba(255, 244, 239, 0.84);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 12ch;
+  color: #fff9f5;
+  font-family: var(--serif);
+  font-size: clamp(2.45rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 18px rgba(49, 18, 28, 0.22);
+}
+
+.hero-note {
+  margin: 16px 0 0;
+  max-width: 44ch;
+  color: rgba(255, 244, 239, 0.9);
+  font-size: 0.98rem;
+}
+
+.hero-panel {
+  position: relative;
+  z-index: 1;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: rgba(255, 252, 248, 0.76);
+  border: 1px solid rgba(99, 65, 51, 0.14);
+  backdrop-filter: blur(14px);
+}
+
+.meta-label {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.meta-list {
+  display: grid;
+  gap: 10px;
+}
+
+.meta-item {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(99, 65, 51, 0.10);
+}
+
+.meta-item strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+
+.meta-item span {
+  display: block;
+  color: var(--ink);
+  font-size: 0.98rem;
+  word-break: break-word;
+}
+
+.sidebar {
+  position: sticky;
+  top: 22px;
+  align-self: start;
+}
+
+.sidebar-shell {
+  border-radius: 24px;
+  background: rgba(251, 248, 242, 0.84);
+  border: 1px solid rgba(88, 61, 47, 0.12);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 20px;
+  backdrop-filter: blur(16px);
+}
+
+.sidebar-label {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.toc {
+  font-size: 0.95rem;
+}
+
+.toc ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc ul ul {
+  margin-top: 6px;
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid rgba(88, 61, 47, 0.12);
+}
+
+.toc li + li {
+  margin-top: 6px;
+}
+
+.toc a {
+  display: inline-block;
+  padding: 2px 0;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.toc a:hover,
+.toc a.active {
+  color: var(--accent-deep);
+}
+
+.report {
+  min-width: 0;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255, 253, 249, 0.94), rgba(251, 248, 242, 0.98));
+  border: 1px solid rgba(88, 61, 47, 0.12);
+  box-shadow: var(--shadow);
+  padding: 34px clamp(18px, 2vw, 34px) 46px;
+}
+
+.report h2,
+.report h3,
+.report h4 {
+  scroll-margin-top: 26px;
+}
+
+.report h2 {
+  margin: 0;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: clamp(1.7rem, 2.5vw, 2.15rem);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.report > h2:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.report h3 {
+  margin: 34px 0 10px;
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--accent-deep);
+  letter-spacing: 0.01em;
+}
+
+.report h4 {
+  margin: 26px 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.report p,
+.report ul,
+.report ol {
+  margin: 14px 0;
+  font-size: 1rem;
+}
+
+.report ul,
+.report ol {
+  padding-left: 1.3rem;
+}
+
+.report li + li {
+  margin-top: 6px;
+}
+
+.report hr {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 28px 0;
+}
+
+.report code {
+  padding: 0.18em 0.42em;
+  border-radius: 8px;
+  background: var(--code-bg);
+  color: var(--accent-deep);
+  font-size: 0.92em;
+}
+
+.report pre {
+  overflow-x: auto;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: #1f1b19;
+  color: #f6efe8;
+}
+
+.report pre code {
+  padding: 0;
+  background: transparent;
+  color: inherit;
+}
+
+.report strong {
+  color: var(--ink);
+}
+
+.report blockquote {
+  margin: 18px 0;
+  padding: 14px 18px;
+  border-left: 3px solid rgba(122, 48, 64, 0.42);
+  background: rgba(122, 48, 64, 0.05);
+  border-radius: 0 14px 14px 0;
+}
+
+.table-wrap {
+  margin: 18px 0 24px;
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(88, 61, 47, 0.13);
+  background: var(--paper-strong);
+}
+
+.report table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  font-size: 0.94rem;
+}
+
+.report thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--table-head);
+  color: var(--ink);
+}
+
+.report th,
+.report td {
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid rgba(88, 61, 47, 0.10);
+}
+
+.report tbody tr:nth-child(even) td {
+  background: rgba(247, 241, 233, 0.38);
+}
+
+.report tbody tr:hover td {
+  background: rgba(122, 48, 64, 0.055);
+}
+
+.report .headerlink {
+  margin-left: 0.45rem;
+  color: rgba(76, 23, 34, 0.32);
+  font-size: 0.85em;
+  opacity: 0;
+  transition: opacity 160ms ease, color 160ms ease;
+  text-decoration: none;
+}
+
+.report h2:hover .headerlink,
+.report h3:hover .headerlink,
+.report h4:hover .headerlink {
+  opacity: 1;
+}
+
+.report .headerlink:hover {
+  color: var(--accent-deep);
+}
+
+.inline-url code {
+  white-space: nowrap;
+}
+
+.footer-note {
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.fade-in {
+  animation: rise 540ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.fade-in-delayed {
+  animation: rise 700ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1120px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page {
+    width: min(100vw - 20px, 100%);
+    margin: 10px auto 34px;
+    gap: 14px;
+  }
+
+  .hero {
+    padding: 22px 18px 20px;
+    border-radius: 20px;
+  }
+
+  .hero-copy {
+    padding: 18px 18px 20px;
+    border-radius: 22px;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(2.1rem, 12vw, 3.1rem);
+  }
+
+  .sidebar-shell,
+  .report {
+    border-radius: 20px;
+  }
+
+  .report {
+    padding: 22px 16px 28px;
+  }
+
+  .report table {
+    min-width: 680px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero fade-in">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Instagram Research File</p>
+          <h1>Sleeper Instagram 真实用户反馈研究</h1>
+          <p class="hero-note">将账号确认、用户感知、标准性元素、横向比较与代表性证据整理为一份可直接分享的长报告。</p>
+        </div>
+        <div class="hero-panel fade-in-delayed">
+          <p class="meta-label">Report Scope</p>
+          <div class="meta-list">
+            <div class="meta-item"><strong>更新时间</strong><span>2026-04-18</span></div>
+<div class="meta-item"><strong>研究对象</strong><span>Sleeper（Instagram 主账号 `@daily_sleeper`）</span></div>
+<div class="meta-item"><strong>研究范围</strong><span>3 个入口页筛选 + 119 条详情动态深读；覆盖 tagged posts、hashtags、普通用户帖、KOL/creator 帖、官方帖补充评论</span></div>
+<div class="meta-item"><strong>样本构成</strong><span>57 条 tagged、38 条 hashtag、24 条官方主页样本；按帖子类型看为 79 条普通用户帖、14 条 creator/KOL 帖、26 条官方帖</span></div>
+<div class="meta-item"><strong>评论口径</strong><span>累计读取 1001 条可见评论/回复；仅将官方评论区作为补充，不作为主要依据</span></div>
+<div class="meta-item"><strong>采样限制</strong><span>新账号保守浏览，所有 Instagram 操作间隔控制在 30 秒以上；结论以 Instagram 可见样本为准</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <aside class="sidebar fade-in-delayed">
+      <div class="sidebar-shell">
+        <p class="sidebar-label">目录</p>
+        <div class="toc">
+<ul>
+<li><a href="#_1">一、研究概览</a></li>
+<li><a href="#_2">二、用户感受到的亮点</a><ul>
+<li><a href="#1-sleeper-occasionwear">1. 用户最喜欢的是：Sleeper 不是“睡衣”，而是浪漫场合与身份感的 occasionwear</a></li>
+<li><a href="#2">2. 用户很喜欢它“在家和出门之间”的边界感模糊</a></li>
+<li><a href="#3-instagram">3. 用户反复被其“梦幻、浪漫、漂亮到值得发 Instagram”的视觉语言打动</a></li>
+<li><a href="#4">4. 功能层面最被喜欢的是“好穿、好搭、可重复穿”，而不是单一舒适</a></li>
+</ul>
+</li>
+<li><a href="#_3">三、用户吐槽的点</a><ul>
+<li><a href="#1">1. 用户最常吐槽或追问的是价格、库存、何时上新，而不是审美本身</a></li>
+<li><a href="#2_1">2. 尺码、裤长与版型清晰度不够，是少数真正具体的负面体验</a></li>
+<li><a href="#3-creator">3. 用户在做购买决策时，往往更依赖 creator 帖补全信息，而不是官方帖</a></li>
+<li><a href="#4_1">4. 关于质量、耐穿、物流、售后的高频负评：证据仍然不足</a></li>
+</ul>
+</li>
+<li><a href="#_4">四、未被满足的用户需求</a><ul>
+<li><a href="#1_1">1. 更前置、更完整的购买决策信息</a></li>
+<li><a href="#2-petite">2. 更细致的尺码与版型说明，尤其是 petite 用户的裤长/裙长预期</a></li>
+<li><a href="#3">3. 更多“非婚礼、非明星同款”的日常与假日使用案例</a></li>
+<li><a href="#4-easy-carerepeat-wear">4. 更明确地讲 easy-care、repeat wear 和旅行价值</a></li>
+<li><a href="#5">5. 更低门槛的第一次购买路径</a></li>
+</ul>
+</li>
+<li><a href="#instagram">五、Instagram 用户画像</a><ul>
+<li><a href="#1_2">1. 核心用户是谁</a></li>
+<li><a href="#2_2">2. 用户的两大主群体</a></li>
+<li><a href="#3_1">3. 从样本结构看，非官方声音仍然占主导</a></li>
+</ul>
+</li>
+<li><a href="#_5">六、总结：最被记住的优点、最大吐槽点、最值得关注的机会点</a><ul>
+<li><a href="#_6">最被记住的优点</a></li>
+<li><a href="#_7">最大吐槽点</a></li>
+<li><a href="#_8">最值得关注的机会点</a></li>
+</ul>
+</li>
+<li><a href="#_9">附：直接表达与推断的区分原则</a></li>
+</ul>
+</div>
+
+      </div>
+    </aside>
+
+    <main class="report fade-in-delayed">
+      <h2 id="_1">一、研究概览<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>这次是对上一版报告的扩样版。上一版主要基于 10 条详情动态和近 100 条评论；本版扩大到 <strong>119 条详情动态 + 1001 条可见评论/回复</strong>，量级已经进入“百帖、千评”区间，足以支持更稳定的高频归纳。</p>
+<p>本次采样仍然沿用上一版的方法，不改策略，只放大样本：</p>
+<ul>
+<li>入口页先看 <code>@daily_sleeper/tagged</code>、<code>#dailysleeper</code>、<code>@daily_sleeper</code> 官方主页，建立候选池</li>
+<li>深读对象优先覆盖 tagged 用户帖、hashtag 下的普通用户/creator 帖，再补少量官方帖评论区</li>
+<li>官方内容只用于补充“购买摩擦、库存、价格、明星同款扩散”等信号，不作为主要结论来源</li>
+</ul>
+<p>样本分布如下：</p>
+<ul>
+<li><strong>来源结构</strong>：57 条 tagged、38 条 hashtag、24 条官方主页</li>
+<li><strong>帖子类型</strong>：79 条普通用户帖、14 条 creator/KOL 帖、26 条官方帖</li>
+<li><strong>评论密度</strong>：平均每条详情动态读取约 8.4 条可见评论/回复</li>
+</ul>
+<p>从文本层面看，在 caption 与可见评论/回复合并语料中，正向表达词高频出现：<code>love</code> 122 次、<code>beautiful</code> 43 次、<code>cute</code> 42 次、<code>gorgeous</code> 38 次、<code>perfect</code> 18 次、<code>obsessed</code> 10 次。这说明 Instagram 上关于 Sleeper 的讨论显著偏正向，高频负面更多不是“我不喜欢”，而是“我想买，但购买信息不够”。</p>
+<p>需要提前说明两点限制：</p>
+<ul>
+<li>本研究只基于 Instagram 公开可见页面，不涉及私信、深层回复树、站外评价站或电商评论。</li>
+<li>关于耐穿性、洗护表现、物流、售后等问题，本次样本中的直接负评仍然不够集中，因此不应被写成高确定性结论。</li>
+</ul>
+<h2 id="_2">二、用户感受到的亮点<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<h3 id="1-sleeper-occasionwear">1. 用户最喜欢的是：Sleeper 不是“睡衣”，而是浪漫场合与身份感的 occasionwear<a class="headerlink" href="#1-sleeper-occasionwear" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>My obsession with @daily_sleeper runs deep.</code></li>
+<li><code>SO OBSESSED</code></li>
+<li><code>Starting a little series for my brides to be</code></li>
+<li><code>wedding preview</code></li>
+<li><code>Perfect holiday 'fit!</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>getting ready</li>
+<li>bridal brunch</li>
+<li>wedding preview</li>
+<li>节日/庆祝场景</li>
+<li>需要“看起来比平常更特别”的出门时刻</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>Party PJs</li>
+<li>羽毛感视觉</li>
+<li>带礼服气质的成套造型</li>
+<li>玫瑰、花朵、轻盈廓形</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>用户不是在把它当“在家穿的睡衣晒单”，而是在把它放进婚礼前后、假日与重要时刻的视觉叙事里。</li>
+<li>tagged 与 creator 内容里，Sleeper 反复被用于“我想成为怎样的女人”式的时装表达。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>Sleeper 在 Instagram 上最强的资产不是睡衣属性，而是“穿上它就进入某种更浪漫、更重要的状态”。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>品牌的核心增长护城河不是舒适，而是身份感与场景感。</li>
+</ul>
+<h3 id="2">2. 用户很喜欢它“在家和出门之间”的边界感模糊<a class="headerlink" href="#2" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>Perfect holiday 'fit!</code></li>
+<li><code>Simple black perfection</code></li>
+<li><code>Also plays nice with @manoloblahnik</code></li>
+<li><code>Not afraid of rewearing my favourite clothes over and over again</code></li>
+<li><code>never iron pajamas will be on repeat all summer long</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>holiday wardrobe</li>
+<li>summer dressing</li>
+<li>城市出门</li>
+<li>晚间外出</li>
+<li>度假和旅行</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>gingham set</li>
+<li>never iron pajamas</li>
+<li>假日裙装</li>
+<li>能搭配 Manolo、Chanel 等配饰的成套或 dress 单品</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>用户会强调“holiday fit”“summer”“wear over and over”，说明使用场景并不只限于 homewear。</li>
+<li>很多内容把 Sleeper 直接当作假日、城市、晚餐、度假造型的一部分。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>Sleeper 的可穿出门性，已经被用户自然接受，而不是需要品牌强行教育。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>这类品牌最值钱的不是“睡衣外穿”这个说法，而是用户已经默认它值得出现在外部场景。</li>
+</ul>
+<h3 id="3-instagram">3. 用户反复被其“梦幻、浪漫、漂亮到值得发 Instagram”的视觉语言打动<a class="headerlink" href="#3-instagram" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>dreamy dream</code></li>
+<li><code>gorgeous</code></li>
+<li><code>beautiful</code></li>
+<li><code>cute</code></li>
+<li><code>perfect outfit</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>时装内容创作</li>
+<li>girly / romantic aesthetic 内容</li>
+<li>creator 风格展示</li>
+<li>tagged 用户自拍与造型帖</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>羽毛</li>
+<li>粉色、格纹、花朵</li>
+<li>玫瑰装饰</li>
+<li>强轮廓和戏剧感</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>在合并语料中，<code>beautiful / gorgeous / cute / perfect / obsessed</code> 这类词反复出现。</li>
+<li>用户对 Sleeper 的第一反应通常不是参数化描述，而是情绪化、风格化赞美。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>强视觉品牌要继续守住“第一眼识别感”，而不是过度落入普通服装语言。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>Sleeper 的品牌传播效率来自视觉即时识别，而不是复杂功能解释。</li>
+</ul>
+<h3 id="4">4. 功能层面最被喜欢的是“好穿、好搭、可重复穿”，而不是单一舒适<a class="headerlink" href="#4" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>wearing my favourite clothes over and over again</code></li>
+<li><code>never iron pajamas</code></li>
+<li><code>one of my faves for holidays</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>夏季</li>
+<li>假日穿搭</li>
+<li>旅行</li>
+<li>重复穿着同一单品</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>免熨睡衣</li>
+<li>假日 dress</li>
+<li>易搭配的套装和裙装</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>用户会明确提到“repeat wear”“summer”“easy to fling over a bikini”。</li>
+<li>这让 Sleeper 从“只适合拍照的浪漫品牌”变成“真的会被反复穿的浪漫品牌”。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>相比泛泛讲舒适，更值得放大的，是“重复穿、旅行穿、免熨、好搭”的低门槛功能信号。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li><code>浪漫感</code> 负责种草，<code>好穿且能反复穿</code> 负责降低购买心理门槛。</li>
+</ul>
+<h2 id="_3">三、用户吐槽的点<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<h3 id="1">1. 用户最常吐槽或追问的是价格、库存、何时上新，而不是审美本身<a class="headerlink" href="#1" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>Коли буде?</code>（什么时候有）</li>
+<li><code>Яка ціна?</code>（什么价格）</li>
+<li><code>Можно цену , и есть ли в наличии чёрная?</code>（可以说下价格吗，黑色还有货吗）</li>
+<li><code>will this be restocked?</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>官方帖</li>
+<li>明星同款帖</li>
+<li>新品或回补库存帖</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>Party PJs</li>
+<li>特定颜色款</li>
+<li>热门 dress / set</li>
+<li>restock 状态</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>当品牌热度上来后，评论区最明显的摩擦不是“丑”或“不值”，而是“多少钱”“什么时候有”“有没有黑色现货”。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>Instagram 对 Sleeper 的问题不是心智弱，而是交易信息不够前置。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>这类问题之所以高频，恰恰说明用户已经被种草，卡点出现在购买阶段。</li>
+</ul>
+<h3 id="2_1">2. 尺码、裤长与版型清晰度不够，是少数真正具体的负面体验<a class="headerlink" href="#2_1" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>trousers were too long</code></li>
+<li><code>I'm wearing a small</code></li>
+<li>评论里反复出现 <code>size</code>、<code>small</code> 一类补充信息</li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>gingham set</li>
+<li>成套裤装</li>
+<li>creator 穿搭帖</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>裤长</li>
+<li>小个子/偏矮用户适配</li>
+<li>套装上下身比例</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>最典型的一条真实摩擦不是面料或做工，而是裤长让偏矮用户不确定要不要留。</li>
+<li>另一些 creator 内容之所以有帮助，是因为博主主动提供了 <code>I’m wearing a small</code> 这种信息。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>对强设计感品牌来说，版型不确定性会比基础品牌更影响第一单转化。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>这不是海量吐槽，但属于高价值阻碍点，尤其会影响 petite 用户。</li>
+</ul>
+<h3 id="3-creator">3. 用户在做购买决策时，往往更依赖 creator 帖补全信息，而不是官方帖<a class="headerlink" href="#3-creator" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li><code>code: ASHLEY30 30% off</code></li>
+<li><code>I'm wearing a small</code></li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>affiliate/creator 帖</li>
+<li>hashtag 里的穿搭帖</li>
+<li>假日 outfit 内容</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>折扣码</li>
+<li>尺码参考</li>
+<li>实穿视觉</li>
+<li>购买入口</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>用户在 creator 内容里获得的不只是灵感，还有购买所需的最后一公里信息。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>官方负责种草，creator 常常在补“怎么买得放心”。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>Sleeper 的 Instagram 转化很可能相当依赖 creator 体系，而不只是品牌自有内容。</li>
+</ul>
+<h3 id="4_1">4. 关于质量、耐穿、物流、售后的高频负评：证据仍然不足<a class="headerlink" href="#4_1" title="Permanent link">#</a></h3>
+<p><strong>用户直接表达</strong></p>
+<ul>
+<li>本次 1001 条可见评论/回复里，没有出现足够集中、重复的质量类投诉。</li>
+</ul>
+<p><strong>常见场景</strong></p>
+<ul>
+<li>不支持形成高频结论。</li>
+</ul>
+<p><strong>涉及的产品/设计元素</strong></p>
+<ul>
+<li>面料耐久</li>
+<li>洗护表现</li>
+<li>物流体验</li>
+<li>售后体验</li>
+</ul>
+<p><strong>简短用户原话或评论摘要</strong></p>
+<ul>
+<li>可见评论里更高频的是喜爱表达与购买追问，而不是品质控诉。</li>
+</ul>
+<p><strong>对品牌定位/产品策略的启发</strong></p>
+<ul>
+<li>不能把“质量被普遍质疑”写成主结论。</li>
+</ul>
+<p><strong>基于样本的推断</strong></p>
+<ul>
+<li>如果要验证这一层，需要补站外 review 或电商评论，不应强行从 Instagram 推出。</li>
+</ul>
+<h2 id="_4">四、未被满足的用户需求<a class="headerlink" href="#_4" title="Permanent link">#</a></h2>
+<h3 id="1_1">1. 更前置、更完整的购买决策信息<a class="headerlink" href="#1_1" title="Permanent link">#</a></h3>
+<p>这仍然是最清晰的未满足需求。用户会直接问价格、现货、何时回补、特定颜色是否可买。说明对 Instagram 而言，Sleeper 的问题不在“有没有人喜欢”，而在“喜欢之后是否能顺畅做决定”。</p>
+<p><strong>启发</strong></p>
+<ul>
+<li>可以在 caption、置顶评论、story highlight、商品标签里更主动给出价格、库存、颜色、购买路径。</li>
+</ul>
+<h3 id="2-petite">2. 更细致的尺码与版型说明，尤其是 petite 用户的裤长/裙长预期<a class="headerlink" href="#2-petite" title="Permanent link">#</a></h3>
+<p>真实样本中已经出现裤长不确定、尺码说明依赖 creator 的问题。对强设计感品牌来说，这一层比普通服装更关键。</p>
+<p><strong>启发</strong></p>
+<ul>
+<li>更建议补充身高对照、版型说明、短身材参考、不同 size 的实穿图。</li>
+</ul>
+<h3 id="3">3. 更多“非婚礼、非明星同款”的日常与假日使用案例<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
+<p>婚礼与明星同款会持续强化品牌高度，但也容易让普通用户误以为“它只属于特定场合”。大样本里其实已经有足够多的 holiday、summer、repeat-wear 信号，说明用户并不只在重要时刻穿它。</p>
+<p><strong>启发</strong></p>
+<ul>
+<li>品牌可以主动把“日常外穿 / 假日穿 / 旅行穿 / 夏天反复穿”的故事做成第二叙事。</li>
+</ul>
+<h3 id="4-easy-carerepeat-wear">4. 更明确地讲 easy-care、repeat wear 和旅行价值<a class="headerlink" href="#4-easy-carerepeat-wear" title="Permanent link">#</a></h3>
+<p><code>never iron pajamas</code>、<code>wear over and over again</code> 这类表达虽少于 romantic 语言，但非常有效，一旦出现就会明显降低距离感。</p>
+<p><strong>启发</strong></p>
+<ul>
+<li>对更广泛的人群，这比单纯再讲一次浪漫更有转化意义。</li>
+</ul>
+<h3 id="5">5. 更低门槛的第一次购买路径<a class="headerlink" href="#5" title="Permanent link">#</a></h3>
+<p>大量价格追问、折扣码内容和尺码补充说明，都说明用户在第一单阶段需要更强理由。</p>
+<p><strong>启发</strong></p>
+<ul>
+<li>可以考虑更清晰的 entry product、bundle、试错成本更低的热门款讲解，或更直接的“为什么值这个价”叙事。</li>
+</ul>
+<h2 id="instagram">五、Instagram 用户画像<a class="headerlink" href="#instagram" title="Permanent link">#</a></h2>
+<h3 id="1_2">1. 核心用户是谁<a class="headerlink" href="#1_2" title="Permanent link">#</a></h3>
+<p>Instagram 上的 Sleeper 用户核心不是“需要一套睡衣的人”，而是“希望通过衣服表达浪漫、身份感和审美判断的人”。</p>
+<p><strong>大致画像</strong></p>
+<ul>
+<li>女性为主</li>
+<li>年龄感大致在 25-40 岁</li>
+<li>对视觉、风格和场景表达敏感</li>
+<li>愿意为仪式感、浪漫感与品牌识别度付费</li>
+<li>经常活跃在婚礼、假日、旅行、city dressing、creator aesthetic 语境里</li>
+</ul>
+<h3 id="2_2">2. 用户的两大主群体<a class="headerlink" href="#2_2" title="Permanent link">#</a></h3>
+<p><strong>准新娘 / 婚礼相关用户</strong></p>
+<ul>
+<li>使用场景包括 getting ready、bridal brunch、wedding preview、婚礼周边时刻</li>
+<li>对 Sleeper 的理解更偏“浪漫仪式服”</li>
+</ul>
+<p><strong>fashion / lifestyle creator 及其追随者</strong></p>
+<ul>
+<li>使用场景包括 holiday fit、summer dressing、城市出门、日常拍摄</li>
+<li>对 Sleeper 的理解更偏“高辨识时装单品”</li>
+</ul>
+<h3 id="3_1">3. 从样本结构看，非官方声音仍然占主导<a class="headerlink" href="#3_1" title="Permanent link">#</a></h3>
+<p>本次 119 条详情动态中，非官方样本占 93 条，官方样本占 26 条；来源上则是 57 条 tagged、38 条 hashtag、24 条官方主页补充。整体仍符合“以真实用户内容为主，官方评论为辅”的研究原则。</p>
+<h2 id="_5">六、总结：最被记住的优点、最大吐槽点、最值得关注的机会点<a class="headerlink" href="#_5" title="Permanent link">#</a></h2>
+<h3 id="_6">最被记住的优点<a class="headerlink" href="#_6" title="Permanent link">#</a></h3>
+<p>Sleeper 最被记住的不是“睡衣品牌”，而是它把睡衣/套装/裙装做成了能同时成立于婚礼前后、假日和城市出门场景的浪漫 occasionwear。用户不是单纯觉得它舒服，而是觉得它“值得被看到”。</p>
+<h3 id="_7">最大吐槽点<a class="headerlink" href="#_7" title="Permanent link">#</a></h3>
+<p>最明显的高频摩擦仍然是购买环节信息不足，尤其是价格、库存、何时有货、特定颜色是否可买，以及小个子用户对裤长/版型的不确定。</p>
+<h3 id="_8">最值得关注的机会点<a class="headerlink" href="#_8" title="Permanent link">#</a></h3>
+<p>最值得关注的，不是改变品牌调性，而是在不削弱浪漫高度的前提下，把第二层叙事做得更强：</p>
+<ul>
+<li><code>outside / holiday / city</code> 的外穿价值</li>
+<li><code>repeat wear / easy-care / never iron</code> 的功能价值</li>
+<li><code>petite / fit clarity</code> 的版型清晰度</li>
+<li>更前置的价格、库存与购买信息</li>
+</ul>
+<p>如果说当前 Sleeper 已经解决了“让人心动”，那下一阶段更大的机会就是解决“让人更容易放心地下单”。</p>
+<h2 id="_9">附：直接表达与推断的区分原则<a class="headerlink" href="#_9" title="Permanent link">#</a></h2>
+<p>为避免把少量漂亮评论写成绝对事实，本报告继续坚持两类区分：</p>
+<ul>
+<li><strong>用户直接表达</strong>：仅指 caption、评论区、可见回复中的原话或高保真摘要，例如 <code>SO OBSESSED</code>、<code>Perfect holiday 'fit!'</code>、<code>Яка ціна?</code>、<code>Коли буде?</code>、<code>trousers were too long</code></li>
+<li><strong>基于样本的推断</strong>：指在 119 条详情动态与 1001 条可见评论/回复的重复信号上，归纳出的品牌心智、消费动机与机会点</li>
+</ul>
+<p>如果某个结论在这次大样本里仍然缺乏足够重复证据，本报告会明确标注“证据不足”，而不是把它写成高频共识。</p>
+      <p class="footer-note">HTML rendered from <code>sleeper_instagram_user_feedback_report.md</code>. 内容未删减，仅调整了结构、目录、表格与阅读样式。</p>
+    </main>
+  </div>
+  <script>
+(() => {
+  const links = [...document.querySelectorAll('.toc a[href^="#"]')];
+  const sections = links
+    .map((link) => {
+      const id = decodeURIComponent(link.getAttribute('href').slice(1));
+      const node = document.getElementById(id);
+      return node ? { link, node } : null;
+    })
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    links.forEach((link) => {
+      link.classList.toggle('active', decodeURIComponent(link.getAttribute('href').slice(1)) === id);
+    });
+  };
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length) setActive(visible[0].target.id);
+      },
+      {
+        rootMargin: '-18% 0px -65% 0px',
+        threshold: [0, 0.2, 0.6],
+      }
+    );
+    sections.forEach(({ node }) => observer.observe(node));
+    setActive(sections[0].node.id);
+  }
+})();
+</script>
+</body>
+</html>
