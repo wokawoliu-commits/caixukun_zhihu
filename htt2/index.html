@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>黄婷婷和她的猫51 小红书前期调研简报</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f4ef;
+      --ink: #22211f;
+      --muted: #6d6861;
+      --line: #ded7cb;
+      --panel: #fffdf8;
+      --accent: #b64a3b;
+      --accent-2: #2f6f6b;
+      --accent-3: #dba84a;
+      --shadow: 0 18px 45px rgba(67, 54, 42, 0.10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(90deg, rgba(182, 74, 59, 0.08), transparent 34%),
+        linear-gradient(180deg, #fffaf0 0%, var(--paper) 360px, #f3efe7 100%);
+      line-height: 1.68;
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      min-height: 46svh;
+      display: grid;
+      align-items: end;
+      padding: 56px clamp(22px, 5vw, 72px) 44px;
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "51";
+      position: absolute;
+      right: clamp(18px, 8vw, 120px);
+      bottom: -58px;
+      font-size: clamp(150px, 26vw, 320px);
+      font-weight: 900;
+      line-height: 0.8;
+      color: rgba(47, 111, 107, 0.12);
+      letter-spacing: 0;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 980px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent-2);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      font-size: clamp(34px, 6vw, 76px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+
+    .meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .meta-strip span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 6px 12px;
+      border: 1px solid rgba(34, 33, 31, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, 0.76);
+      color: #3c3833;
+      font-size: 13px;
+      font-weight: 750;
+      backdrop-filter: blur(10px);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 56px);
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 38px clamp(18px, 4vw, 54px) 70px;
+    }
+
+    aside {
+      position: sticky;
+      top: 18px;
+      align-self: start;
+      padding: 18px 0;
+    }
+
+    .toc-title {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: grid;
+      gap: 2px;
+      border-left: 2px solid var(--line);
+    }
+
+    nav a {
+      display: block;
+      padding: 8px 0 8px 14px;
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 160ms ease, transform 160ms ease, border-color 160ms ease;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+      transform: translateX(3px);
+    }
+
+    .toc-level-1 { font-weight: 850; color: var(--ink); }
+    .toc-level-2 { padding-left: 14px; }
+    .toc-level-3 { padding-left: 28px; font-size: 13px; }
+
+    main {
+      min-width: 0;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+      margin-bottom: 34px;
+    }
+
+    .metric {
+      min-height: 118px;
+      padding: 20px;
+      background: rgba(255, 253, 248, 0.94);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(27px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .report {
+      padding: clamp(22px, 4vw, 44px);
+      border: 1px solid rgba(34, 33, 31, 0.10);
+      border-radius: 22px;
+      background: rgba(255, 253, 248, 0.86);
+      box-shadow: var(--shadow);
+    }
+
+    .report h1 {
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 54px);
+    }
+
+    .report h2 {
+      margin: 46px 0 14px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .report h1 + p,
+    .report h2 + p {
+      margin-top: 0;
+    }
+
+    .report h3 {
+      margin: 28px 0 10px;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .report p {
+      margin: 12px 0;
+      color: #34302b;
+      font-size: 16px;
+    }
+
+    .report ul,
+    .report ol {
+      margin: 14px 0 18px;
+      padding-left: 1.3rem;
+    }
+
+    .report li {
+      margin: 8px 0;
+      padding-left: 4px;
+    }
+
+    .report ol > li {
+      margin-top: 18px;
+      font-weight: 850;
+    }
+
+    .report ol + p,
+    .report ol ~ p {
+      font-weight: 400;
+    }
+
+    code {
+      padding: 2px 6px;
+      border-radius: 6px;
+      background: rgba(47, 111, 107, 0.10);
+      color: #205450;
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      font-size: 0.92em;
+      word-break: break-word;
+    }
+
+    .report a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .footer-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    @media (max-width: 960px) {
+      .layout {
+        display: block;
+      }
+
+      aside {
+        position: relative;
+        top: auto;
+        margin-bottom: 24px;
+        padding: 0;
+      }
+
+      nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        border-left: 0;
+        border-top: 2px solid var(--line);
+        padding-top: 8px;
+      }
+
+      nav a {
+        padding: 8px 10px 8px 0;
+      }
+
+      .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero {
+        min-height: auto;
+        padding: 34px 20px 34px;
+      }
+
+      .hero::before {
+        right: 8px;
+        bottom: -28px;
+        font-size: 142px;
+      }
+
+      .layout {
+        padding: 24px 14px 44px;
+      }
+
+      nav {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .report {
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .report p,
+      .report li {
+        font-size: 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 0 0 20px;
+      }
+
+      .hero::before,
+      aside,
+      .summary-grid {
+        display: none;
+      }
+
+      .layout {
+        display: block;
+        max-width: none;
+        padding: 0;
+      }
+
+      .report {
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+      }
+
+      .report h2 {
+        break-after: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">小红书调研 · 运营策划前置材料</p>
+      <h1>黄婷婷和她的猫51</h1>
+      <p class="subtitle">完整保留调研简报信息，并把采集概况、粉丝语境、趣事梗点、可落地方向整理为便于扫读和打印的 HTML 报告。</p>
+      <div class="meta-strip" aria-label="报告元信息">
+        <span>采集日期：2026-04-29</span>
+        <span>去重笔记：612 条</span>
+        <span>严格相关：至少 513 条</span>
+        <span>访问间隔：不低于 20 秒</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <p class="toc-title">目录</p>
+      <nav aria-label="页面目录">
+        <a class="toc-level-1" href="#黄婷婷和她的猫51-小红书前期调研简报">黄婷婷和她的猫51 小红书前期调研简报</a>
+<a class="toc-level-2" href="#1-采集概况">1. 采集概况</a>
+<a class="toc-level-2" href="#2-产出文件">2. 产出文件</a>
+<a class="toc-level-2" href="#3-社群称呼和角色关系">3. 社群称呼和角色关系</a>
+<a class="toc-level-2" href="#4-公认有趣事实和梗点">4. 公认有趣事实和梗点</a>
+<a class="toc-level-2" href="#5-可落地内容方向">5. 可落地内容方向</a>
+<a class="toc-level-2" href="#6-风险边界">6. 风险边界</a>
+      </nav>
+    </aside>
+
+    <main>
+      <section class="summary-grid" aria-label="核心数据">
+        <div class="metric"><strong>612</strong><span>原始去重笔记</span></div>
+        <div class="metric"><strong>513+</strong><span>保守严格相关样本</span></div>
+        <div class="metric"><strong>390+</strong><span>猫 / 51 / 五一相关</span></div>
+        <div class="metric"><strong>8</strong><span>重点笔记评论补抓</span></div>
+      </section>
+
+      <article class="report">
+        <h1 id="黄婷婷和她的猫51-小红书前期调研简报">黄婷婷和她的猫51 小红书前期调研简报</h1>
+<p>采集日期：2026-04-29</p>
+<p>平台：小红书</p>
+<p>用途：为「黄婷婷和她的猫51」运营策划案提供粉丝语境、趣事、梗点和内容抓手。</p>
+<h2 id="1-采集概况">1. 采集概况</h2>
+<ul>
+<li>原始去重笔记：612 条，满足“不低于 500 条小红书帖子信息”的要求。</li>
+<li>保守相关口径：509 条来自含「黄婷婷」的搜索词；加上标题/用户明确包含「黄五一/51/踢踢/阿黄/HTT」的结果，至少 513 条可作为严格相关样本。</li>
+<li>高频方向：猫/51/五一相关 390+ 条；冷知识 50 条；萌点 47 条；梗/meme 48 条；直播 42 条；零食/吃饭/开箱/好物相关 120+ 条。</li>
+<li>访问节奏：采集脚本强制两次小红书导航间隔不低于 20 秒，并在连续访问后自动冷却。中途触发过安全验证，已暂停并在用户协助后继续。</li>
+<li>说明：宽关键词如「黄五一」会混入五一假期、黄姓猫、其他宠物内容；最终洞察已剔除明显无关样本，原始文件仍保留以便复核。</li>
+</ul>
+<h2 id="2-产出文件">2. 产出文件</h2>
+<ul>
+<li>主帖子库：<code>outputs/xhs_huangtingting_supplement_20260429_113817_posts.jsonl</code></li>
+<li>主帖子 CSV：<code>outputs/xhs_huangtingting_supplement_20260429_113817_posts.csv</code></li>
+<li>主摘要：<code>outputs/xhs_huangtingting_supplement_20260429_113817_summary.json</code></li>
+<li>查询统计：<code>outputs/xhs_huangtingting_supplement_20260429_113817_query_stats.json</code></li>
+<li>关键详情/评论摘要：<code>outputs/xhs_huangtingting_key_details_20260429_114048_summary.json</code></li>
+<li>关键详情原始 JSONL：<code>outputs/xhs_huangtingting_key_details_20260429_114048.jsonl</code></li>
+</ul>
+<h2 id="3-社群称呼和角色关系">3. 社群称呼和角色关系</h2>
+<ul>
+<li>黄婷婷常见称呼：TT、踢踢、老婷、阿黄、婷婷桑、HTT、titi。</li>
+<li>猫常见称呼：51、五一、黄五一、小五一、咪、五主播、数字小猫。</li>
+<li>粉丝叙事里，51 不是普通宠物，而是黄婷婷生活内容里的固定家庭成员和第二主角。粉丝会自然使用“妈妈/妈咪/宝宝/麻麻”的亲子语境，也会用“五主播&amp;黄主播”把猫拟人化。</li>
+<li>运营启示：如果做联名或账号内容，建议把黄婷婷和 51 作为“双主角”，不要把 51 只当装饰图案。</li>
+</ul>
+<h2 id="4-公认有趣事实和梗点">4. 公认有趣事实和梗点</h2>
+<ol>
+<li>「不要告诉五一」和吃醋人格</li>
+</ol>
+<p>官方笔记「with片场修狗」正文写“不要告诉五一”，评论区自然接出“喂五一吗”“回家直播开门看看能不能闻出来”“妈妈在外面有狗了”等二创。另一条春节/ootd 笔记里，粉丝也会问“抱别的小猫，51不会生气吗”，并补充“被五一冷暴力”的梗。</p>
+<p>可用方向：<code>51吃醋警告</code>、<code>偷吃别告诉51</code>、<code>五一闻出来了吗</code>、<code>妈妈在外面有狗了</code>。</p>
+<ol>
+<li>51 是“人机小猫”</li>
+</ol>
+<p>官方笔记「人机小猫证据确凿」把 51 塑造成“掉线重连”的静止小猫，评论区围绕“不动像玩偶”“不知所措”“五一宝宝”展开。这个梗适合做成表情包、短视频卡点和包装隐藏图。</p>
+<ol>
+<li>猫片是强传播资产</li>
+</ol>
+<p>高互动猫相关笔记「昨天是谁要看猫片的？」有 2.4 万赞、1300+ 评论，评论集中在“交出猫片”“专心夸猫”“我咪”“标准好看可爱”。粉丝对猫图的保存、索要、二创意愿很高。</p>
+<p>可用方向：随机猫片卡、拍立得风小卡、表情包贴纸、隐藏款猫图。</p>
+<ol>
+<li>「求此女所有冷知识和萌点」类帖子能集中产出人设细节</li>
+</ol>
+<p>关键评论里反复出现：做饭想加方便面调料包、写字好看、给粉丝写纸飞机、断眉来自小时候摔伤、会帮队友解围、理科好、宠粉改 B 站粉丝牌后缀等。整体指向是“认真、真诚、会照顾人，但生活细节又有反差萌”。</p>
+<p>可用方向：冷知识九宫格、萌点接龙、评论区征集“我知道的踢踢冷知识”。</p>
+<ol>
+<li>「黄婷婷是我的猫」和梗图文化</li>
+</ol>
+<p>粉丝有专门的“踢踢 meme 梗图”“黄婷婷是我的猫”系列，评论集中在“可爱、好萌、拿来当背景图”。这说明粉丝接受把黄婷婷本人做成“猫塑/萌物”表达，且不只围绕 51。</p>
+<p>可用方向：人猫互塑、TT 款和 51 款双封面、meme 梗图模板。</p>
+<ol>
+<li>饭局和吃饭是高互动生活场景</li>
+</ol>
+<p>官方「有空一起吃饭吧」有 8240 赞、1084 评论；「存一些吃饭的拍照姿势」有 8689 赞、1345 评论。评论里会把“咪也想吃”“姐姐我有空”“好好吃饭”“吃饭拍照姿势”自然接到陪伴感和生活感。</p>
+<p>可用方向：<code>有空一起吃饭吧</code> 作为零食/饭搭子主题，比硬代言更贴近她的小红书内容习惯。</p>
+<ol>
+<li>51 的喂养和零食话题有真实讨论</li>
+</ol>
+<p>「四月vlog」评论里出现鸡胸肉、鸡心、冻干、零食作为引子的喂养建议，也有“五一吃自制猫粮后疑惑看着你”的拟人化吐槽。宠物零食方向有语境，但需要合规单独立项。</p>
+<ol>
+<li>51 被偏爱，粉丝会“羡慕黄五一”</li>
+</ol>
+<p>粉丝笔记「真的没有人羡慕黄五一吗」评论里集中表达羡慕它被踢踢亲亲抱抱、叫宝宝。这个梗点适合转化成“被 TT 偏爱的一口”“黄五一同款被宠感”。</p>
+<ol>
+<li>流浪猫缘分和温柔公益线</li>
+</ol>
+<p>「黄婷婷版猫一直在响」提到早年微博与流浪猫有缘分，评论里有“猫好人也好”的反馈。适合做温柔公益线，但正式商业传播需要授权和真实公益机制。</p>
+<h2 id="5-可落地内容方向">5. 可落地内容方向</h2>
+<p>主线建议：<code>有空一起吃饭吧 - TT x 51 陪伴零食包</code></p>
+<ul>
+<li>产品语气：朋友式、生活感、饭搭子，不要过度高冷或纯明星代言。</li>
+<li>包装机制：TT/51 双主视觉；隐藏款「不要告诉五一」「51吃醋中」「咪也想吃」「人机小猫掉线中」。</li>
+<li>随机物料：猫片卡、meme 贴纸、冷知识卡、饭局拍照姿势卡。</li>
+<li>UGC 话题：<code>#黄五一看到要吃醋啦</code>、<code>#咪也想吃</code>、<code>#有空一起吃饭吧</code>、<code>#踢踢冷知识接龙</code>。</li>
+<li>评论互动：用 51 口吻回复，例如“这包我闻过了”“不要告诉五一已失效”“人机小猫正在重连”。</li>
+<li>节点：五一假期、51 生日、黄婷婷生日、春节/春夏秋冬祝福季、直播/音乐节/开箱节点。</li>
+</ul>
+<h2 id="6-风险边界">6. 风险边界</h2>
+<ul>
+<li>原始采集含部分宽关键词噪声，洞察时已人工剔除明显无关内容；正式汇报可引用清洗后的结论，不直接使用全部原始样本做比例。</li>
+<li>粉丝评论和二创梗仅能作为洞察素材，正式商业使用评论原文、粉丝昵称、图片、视频、梗图时需要授权。</li>
+<li>如果涉及猫可食用产品，必须按宠物食品合规单独推进；人吃零食包装上不要暗示猫可食用。</li>
+</ul>
+      </article>
+      <p class="footer-note">HTML 由 huangtingting_51_xhs_research_brief_20260429.md 渲染生成；正文信息未删减。</p>
+    </main>
+  </div>
+</body>
+</html>
