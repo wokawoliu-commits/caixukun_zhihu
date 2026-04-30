@@ -3,497 +3,1589 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>黄婷婷和她的猫51 小红书前期调研简报</title>
+  <title>黄婷婷小红书记忆资产热度榜</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b3482d'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='30' fill='%23fffaf2' font-family='Arial'%3EX%3C/text%3E%3C/svg%3E">
   <style>
     :root {
-      color-scheme: light;
-      --paper: #f7f4ef;
-      --ink: #22211f;
-      --muted: #6d6861;
-      --line: #ded7cb;
-      --panel: #fffdf8;
-      --accent: #b64a3b;
-      --accent-2: #2f6f6b;
-      --accent-3: #dba84a;
-      --shadow: 0 18px 45px rgba(67, 54, 42, 0.10);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --bg: #f7f4ee;
+      --ink: #191714;
+      --muted: #736c62;
+      --line: #ddd3c6;
+      --accent: #b3482d;
+      --accent-soft: #f0d6ca;
+      --surface: #fffaf2;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      background: var(--bg);
       color: var(--ink);
-      background:
-        linear-gradient(90deg, rgba(182, 74, 59, 0.08), transparent 34%),
-        linear-gradient(180deg, #fffaf0 0%, var(--paper) 360px, #f3efe7 100%);
-      line-height: 1.68;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
     }
-
-    a { color: inherit; }
-
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .hero {
-      position: relative;
-      min-height: 46svh;
+      min-height: 62svh;
+      padding: 56px clamp(18px, 5vw, 72px) 34px;
       display: grid;
       align-items: end;
-      padding: 56px clamp(22px, 5vw, 72px) 44px;
       border-bottom: 1px solid var(--line);
-      overflow: hidden;
+      background:
+        linear-gradient(115deg, rgba(179,72,45,.13), rgba(247,244,238,.2) 40%, rgba(25,23,20,.04)),
+        radial-gradient(circle at 82% 20%, rgba(25,23,20,.10), transparent 28%),
+        var(--bg);
     }
-
-    .hero::before {
-      content: "51";
-      position: absolute;
-      right: clamp(18px, 8vw, 120px);
-      bottom: -58px;
-      font-size: clamp(150px, 26vw, 320px);
-      font-weight: 900;
-      line-height: 0.8;
-      color: rgba(47, 111, 107, 0.12);
-      letter-spacing: 0;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
+    .hero h1 {
       max-width: 980px;
-    }
-
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--accent-2);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    h1 {
       margin: 0;
-      max-width: 880px;
-      font-size: clamp(34px, 6vw, 76px);
-      line-height: 1.04;
-      letter-spacing: 0;
-    }
-
-    .subtitle {
-      max-width: 760px;
-      margin: 22px 0 0;
-      color: var(--muted);
-      font-size: clamp(16px, 2vw, 20px);
-    }
-
-    .meta-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .meta-strip span {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 6px 12px;
-      border: 1px solid rgba(34, 33, 31, 0.14);
-      border-radius: 999px;
-      background: rgba(255, 253, 248, 0.76);
-      color: #3c3833;
-      font-size: 13px;
-      font-weight: 750;
-      backdrop-filter: blur(10px);
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
-      gap: clamp(24px, 4vw, 56px);
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 38px clamp(18px, 4vw, 54px) 70px;
-    }
-
-    aside {
-      position: sticky;
-      top: 18px;
-      align-self: start;
-      padding: 18px 0;
-    }
-
-    .toc-title {
-      margin: 0 0 12px;
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    nav {
-      display: grid;
-      gap: 2px;
-      border-left: 2px solid var(--line);
-    }
-
-    nav a {
-      display: block;
-      padding: 8px 0 8px 14px;
-      color: var(--muted);
-      font-size: 14px;
-      text-decoration: none;
-      transition: color 160ms ease, transform 160ms ease, border-color 160ms ease;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-      transform: translateX(3px);
-    }
-
-    .toc-level-1 { font-weight: 850; color: var(--ink); }
-    .toc-level-2 { padding-left: 14px; }
-    .toc-level-3 { padding-left: 28px; font-size: 13px; }
-
-    main {
-      min-width: 0;
-    }
-
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--line);
-      box-shadow: var(--shadow);
-      margin-bottom: 34px;
-    }
-
-    .metric {
-      min-height: 118px;
-      padding: 20px;
-      background: rgba(255, 253, 248, 0.94);
-    }
-
-    .metric strong {
-      display: block;
-      font-size: clamp(27px, 3vw, 42px);
-      line-height: 1;
-      letter-spacing: 0;
-    }
-
-    .metric span {
-      display: block;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
+      font-size: clamp(42px, 8vw, 104px);
+      line-height: .95;
       font-weight: 760;
     }
-
-    .report {
-      padding: clamp(22px, 4vw, 44px);
-      border: 1px solid rgba(34, 33, 31, 0.10);
-      border-radius: 22px;
-      background: rgba(255, 253, 248, 0.86);
-      box-shadow: var(--shadow);
+    .hero p {
+      max-width: 760px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
     }
-
-    .report h1 {
-      margin-bottom: 14px;
-      font-size: clamp(30px, 4vw, 54px);
+    .stats {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
     }
-
-    .report h2 {
-      margin: 46px 0 14px;
-      padding-top: 28px;
-      border-top: 1px solid var(--line);
-      font-size: clamp(24px, 3vw, 34px);
-      line-height: 1.18;
-      letter-spacing: 0;
+    .stats b {
+      display: block;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.1;
     }
-
-    .report h1 + p,
-    .report h2 + p {
-      margin-top: 0;
+    main { padding: 34px clamp(14px, 4vw, 58px) 80px; }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
     }
-
-    .report h3 {
-      margin: 28px 0 10px;
-      font-size: 20px;
-      line-height: 1.3;
-      letter-spacing: 0;
+    .toolbar a {
+      color: var(--accent);
+      font-weight: 650;
     }
-
-    .report p {
-      margin: 12px 0;
-      color: #34302b;
-      font-size: 16px;
+    .table-wrap {
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgba(255,250,242,.62);
     }
-
-    .report ul,
-    .report ol {
-      margin: 14px 0 18px;
-      padding-left: 1.3rem;
+    table {
+      width: 100%;
+      min-width: 1120px;
+      border-collapse: collapse;
     }
-
-    .report li {
-      margin: 8px 0;
-      padding-left: 4px;
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(247,244,238,.94);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: left;
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
     }
-
-    .report ol > li {
-      margin-top: 18px;
-      font-weight: 850;
+    td {
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
     }
-
-    .report ol + p,
-    .report ol ~ p {
-      font-weight: 400;
+    tr:hover { background: rgba(179,72,45,.055); }
+    .rank { width: 68px; color: var(--accent); font-weight: 760; }
+    .memory-name { font-size: 17px; font-weight: 760; text-decoration: none; }
+    .reading { margin-top: 7px; max-width: 440px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .number { white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 760; }
+    .bar {
+      width: min(340px, 100%);
+      height: 5px;
+      margin-top: 12px;
+      background: #e6dacf;
+      overflow: hidden;
     }
-
-    code {
-      padding: 2px 6px;
-      border-radius: 6px;
-      background: rgba(47, 111, 107, 0.10);
-      color: #205450;
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      font-size: 0.92em;
-      word-break: break-word;
+    .bar span { display: block; height: 100%; background: var(--accent); }
+    .sources { min-width: 220px; }
+    .source-link {
+      display: inline-block;
+      margin: 0 6px 7px 0;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--accent);
     }
-
-    .report a {
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
+    .top-source { max-width: 360px; }
+    .source-kind, .evidence-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 6px;
     }
-
-    .footer-note {
-      margin-top: 22px;
+    .top-source a, .evidence-list a { font-weight: 720; text-decoration: none; }
+    .top-source p, .evidence-list p {
+      margin: 7px 0 0;
       color: var(--muted);
       font-size: 13px;
-      text-align: right;
+      line-height: 1.55;
     }
-
-    @media (max-width: 960px) {
-      .layout {
-        display: block;
-      }
-
-      aside {
-        position: relative;
-        top: auto;
-        margin-bottom: 24px;
-        padding: 0;
-      }
-
-      nav {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        border-left: 0;
-        border-top: 2px solid var(--line);
-        padding-top: 8px;
-      }
-
-      nav a {
-        padding: 8px 10px 8px 0;
-      }
-
-      .summary-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
+    .comment-id {
+      display: inline-block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
     }
-
-    @media (max-width: 620px) {
-      .hero {
-        min-height: auto;
-        padding: 34px 20px 34px;
-      }
-
-      .hero::before {
-        right: 8px;
-        bottom: -28px;
-        font-size: 142px;
-      }
-
-      .layout {
-        padding: 24px 14px 44px;
-      }
-
-      nav {
+    .memory-section {
+      display: grid;
+      grid-template-columns: 74px minmax(240px, 1fr) minmax(260px, 380px);
+      gap: 26px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-index {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 780;
+    }
+    .section-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .section-copy > p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .metric-row span {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metric-row b { color: var(--ink); }
+    .feature-source {
+      align-self: start;
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .feature-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 14px;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .feature-thumb img, .mini-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .thumb-fallback, .mini-thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 760;
+      background: var(--accent-soft);
+    }
+    .evidence-list {
+      grid-column: 2 / 4;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .evidence-list li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 13px;
+      min-width: 0;
+    }
+    .mini-thumb {
+      width: 84px;
+      aspect-ratio: 1;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .muted { color: var(--muted); }
+    .source-note {
+      margin: 26px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 38px; }
+      .memory-section {
         grid-template-columns: 1fr;
+        gap: 14px;
       }
-
-      .summary-grid {
+      .feature-source { border-left: 0; padding-left: 0; }
+      .evidence-list {
+        grid-column: auto;
         grid-template-columns: 1fr;
-      }
-
-      .report {
-        padding: 20px;
-        border-radius: 16px;
-      }
-
-      .report p,
-      .report li {
-        font-size: 15px;
-      }
-    }
-
-    @media print {
-      body {
-        background: #fff;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 0 0 20px;
-      }
-
-      .hero::before,
-      aside,
-      .summary-grid {
-        display: none;
-      }
-
-      .layout {
-        display: block;
-        max-width: none;
-        padding: 0;
-      }
-
-      .report {
-        box-shadow: none;
-        border: 0;
-        padding: 0;
-      }
-
-      .report h2 {
-        break-after: avoid;
       }
     }
   </style>
 </head>
 <body>
   <header class="hero">
-    <div class="hero-inner">
-      <p class="eyebrow">小红书调研 · 运营策划前置材料</p>
-      <h1>黄婷婷和她的猫51</h1>
-      <p class="subtitle">完整保留调研简报信息，并把采集概况、粉丝语境、趣事梗点、可落地方向整理为便于扫读和打印的 HTML 报告。</p>
-      <div class="meta-strip" aria-label="报告元信息">
-        <span>采集日期：2026-04-29</span>
-        <span>去重笔记：612 条</span>
-        <span>严格相关：至少 513 条</span>
-        <span>访问间隔：不低于 20 秒</span>
+    <div>
+      <h1>黄婷婷小红书记忆资产热度榜</h1>
+      <p>基于 1006 条小红书搜索帖子、详情页和评论证据，按“帖子或评论明确指向某个记忆点才计赞”的保守口径归因。</p>
+      <div class="stats">
+        <span><b>11</b>记忆点</span>
+        <span><b>166,709</b>可归因点赞</span>
+        <span><b>1006</b>去重帖子</span>
+        <span><b>1015</b>笔记记录</span>
       </div>
     </div>
   </header>
-
-  <div class="layout">
-    <aside>
-      <p class="toc-title">目录</p>
-      <nav aria-label="页面目录">
-        <a class="toc-level-1" href="#黄婷婷和她的猫51-小红书前期调研简报">黄婷婷和她的猫51 小红书前期调研简报</a>
-<a class="toc-level-2" href="#1-采集概况">1. 采集概况</a>
-<a class="toc-level-2" href="#2-产出文件">2. 产出文件</a>
-<a class="toc-level-2" href="#3-社群称呼和角色关系">3. 社群称呼和角色关系</a>
-<a class="toc-level-2" href="#4-公认有趣事实和梗点">4. 公认有趣事实和梗点</a>
-<a class="toc-level-2" href="#5-可落地内容方向">5. 可落地内容方向</a>
-<a class="toc-level-2" href="#6-风险边界">6. 风险边界</a>
-      </nav>
-    </aside>
-
-    <main>
-      <section class="summary-grid" aria-label="核心数据">
-        <div class="metric"><strong>612</strong><span>原始去重笔记</span></div>
-        <div class="metric"><strong>513+</strong><span>保守严格相关样本</span></div>
-        <div class="metric"><strong>390+</strong><span>猫 / 51 / 五一相关</span></div>
-        <div class="metric"><strong>8</strong><span>重点笔记评论补抓</span></div>
-      </section>
-
-      <article class="report">
-        <h1 id="黄婷婷和她的猫51-小红书前期调研简报">黄婷婷和她的猫51 小红书前期调研简报</h1>
-<p>采集日期：2026-04-29</p>
-<p>平台：小红书</p>
-<p>用途：为「黄婷婷和她的猫51」运营策划案提供粉丝语境、趣事、梗点和内容抓手。</p>
-<h2 id="1-采集概况">1. 采集概况</h2>
-<ul>
-<li>原始去重笔记：612 条，满足“不低于 500 条小红书帖子信息”的要求。</li>
-<li>保守相关口径：509 条来自含「黄婷婷」的搜索词；加上标题/用户明确包含「黄五一/51/踢踢/阿黄/HTT」的结果，至少 513 条可作为严格相关样本。</li>
-<li>高频方向：猫/51/五一相关 390+ 条；冷知识 50 条；萌点 47 条；梗/meme 48 条；直播 42 条；零食/吃饭/开箱/好物相关 120+ 条。</li>
-<li>访问节奏：采集脚本强制两次小红书导航间隔不低于 20 秒，并在连续访问后自动冷却。中途触发过安全验证，已暂停并在用户协助后继续。</li>
-<li>说明：宽关键词如「黄五一」会混入五一假期、黄姓猫、其他宠物内容；最终洞察已剔除明显无关样本，原始文件仍保留以便复核。</li>
-</ul>
-<h2 id="2-产出文件">2. 产出文件</h2>
-<ul>
-<li>主帖子库：<code>outputs/xhs_huangtingting_supplement_20260429_113817_posts.jsonl</code></li>
-<li>主帖子 CSV：<code>outputs/xhs_huangtingting_supplement_20260429_113817_posts.csv</code></li>
-<li>主摘要：<code>outputs/xhs_huangtingting_supplement_20260429_113817_summary.json</code></li>
-<li>查询统计：<code>outputs/xhs_huangtingting_supplement_20260429_113817_query_stats.json</code></li>
-<li>关键详情/评论摘要：<code>outputs/xhs_huangtingting_key_details_20260429_114048_summary.json</code></li>
-<li>关键详情原始 JSONL：<code>outputs/xhs_huangtingting_key_details_20260429_114048.jsonl</code></li>
-</ul>
-<h2 id="3-社群称呼和角色关系">3. 社群称呼和角色关系</h2>
-<ul>
-<li>黄婷婷常见称呼：TT、踢踢、老婷、阿黄、婷婷桑、HTT、titi。</li>
-<li>猫常见称呼：51、五一、黄五一、小五一、咪、五主播、数字小猫。</li>
-<li>粉丝叙事里，51 不是普通宠物，而是黄婷婷生活内容里的固定家庭成员和第二主角。粉丝会自然使用“妈妈/妈咪/宝宝/麻麻”的亲子语境，也会用“五主播&amp;黄主播”把猫拟人化。</li>
-<li>运营启示：如果做联名或账号内容，建议把黄婷婷和 51 作为“双主角”，不要把 51 只当装饰图案。</li>
-</ul>
-<h2 id="4-公认有趣事实和梗点">4. 公认有趣事实和梗点</h2>
-<ol>
-<li>「不要告诉五一」和吃醋人格</li>
-</ol>
-<p>官方笔记「with片场修狗」正文写“不要告诉五一”，评论区自然接出“喂五一吗”“回家直播开门看看能不能闻出来”“妈妈在外面有狗了”等二创。另一条春节/ootd 笔记里，粉丝也会问“抱别的小猫，51不会生气吗”，并补充“被五一冷暴力”的梗。</p>
-<p>可用方向：<code>51吃醋警告</code>、<code>偷吃别告诉51</code>、<code>五一闻出来了吗</code>、<code>妈妈在外面有狗了</code>。</p>
-<ol>
-<li>51 是“人机小猫”</li>
-</ol>
-<p>官方笔记「人机小猫证据确凿」把 51 塑造成“掉线重连”的静止小猫，评论区围绕“不动像玩偶”“不知所措”“五一宝宝”展开。这个梗适合做成表情包、短视频卡点和包装隐藏图。</p>
-<ol>
-<li>猫片是强传播资产</li>
-</ol>
-<p>高互动猫相关笔记「昨天是谁要看猫片的？」有 2.4 万赞、1300+ 评论，评论集中在“交出猫片”“专心夸猫”“我咪”“标准好看可爱”。粉丝对猫图的保存、索要、二创意愿很高。</p>
-<p>可用方向：随机猫片卡、拍立得风小卡、表情包贴纸、隐藏款猫图。</p>
-<ol>
-<li>「求此女所有冷知识和萌点」类帖子能集中产出人设细节</li>
-</ol>
-<p>关键评论里反复出现：做饭想加方便面调料包、写字好看、给粉丝写纸飞机、断眉来自小时候摔伤、会帮队友解围、理科好、宠粉改 B 站粉丝牌后缀等。整体指向是“认真、真诚、会照顾人，但生活细节又有反差萌”。</p>
-<p>可用方向：冷知识九宫格、萌点接龙、评论区征集“我知道的踢踢冷知识”。</p>
-<ol>
-<li>「黄婷婷是我的猫」和梗图文化</li>
-</ol>
-<p>粉丝有专门的“踢踢 meme 梗图”“黄婷婷是我的猫”系列，评论集中在“可爱、好萌、拿来当背景图”。这说明粉丝接受把黄婷婷本人做成“猫塑/萌物”表达，且不只围绕 51。</p>
-<p>可用方向：人猫互塑、TT 款和 51 款双封面、meme 梗图模板。</p>
-<ol>
-<li>饭局和吃饭是高互动生活场景</li>
-</ol>
-<p>官方「有空一起吃饭吧」有 8240 赞、1084 评论；「存一些吃饭的拍照姿势」有 8689 赞、1345 评论。评论里会把“咪也想吃”“姐姐我有空”“好好吃饭”“吃饭拍照姿势”自然接到陪伴感和生活感。</p>
-<p>可用方向：<code>有空一起吃饭吧</code> 作为零食/饭搭子主题，比硬代言更贴近她的小红书内容习惯。</p>
-<ol>
-<li>51 的喂养和零食话题有真实讨论</li>
-</ol>
-<p>「四月vlog」评论里出现鸡胸肉、鸡心、冻干、零食作为引子的喂养建议，也有“五一吃自制猫粮后疑惑看着你”的拟人化吐槽。宠物零食方向有语境，但需要合规单独立项。</p>
-<ol>
-<li>51 被偏爱，粉丝会“羡慕黄五一”</li>
-</ol>
-<p>粉丝笔记「真的没有人羡慕黄五一吗」评论里集中表达羡慕它被踢踢亲亲抱抱、叫宝宝。这个梗点适合转化成“被 TT 偏爱的一口”“黄五一同款被宠感”。</p>
-<ol>
-<li>流浪猫缘分和温柔公益线</li>
-</ol>
-<p>「黄婷婷版猫一直在响」提到早年微博与流浪猫有缘分，评论里有“猫好人也好”的反馈。适合做温柔公益线，但正式商业传播需要授权和真实公益机制。</p>
-<h2 id="5-可落地内容方向">5. 可落地内容方向</h2>
-<p>主线建议：<code>有空一起吃饭吧 - TT x 51 陪伴零食包</code></p>
-<ul>
-<li>产品语气：朋友式、生活感、饭搭子，不要过度高冷或纯明星代言。</li>
-<li>包装机制：TT/51 双主视觉；隐藏款「不要告诉五一」「51吃醋中」「咪也想吃」「人机小猫掉线中」。</li>
-<li>随机物料：猫片卡、meme 贴纸、冷知识卡、饭局拍照姿势卡。</li>
-<li>UGC 话题：<code>#黄五一看到要吃醋啦</code>、<code>#咪也想吃</code>、<code>#有空一起吃饭吧</code>、<code>#踢踢冷知识接龙</code>。</li>
-<li>评论互动：用 51 口吻回复，例如“这包我闻过了”“不要告诉五一已失效”“人机小猫正在重连”。</li>
-<li>节点：五一假期、51 生日、黄婷婷生日、春节/春夏秋冬祝福季、直播/音乐节/开箱节点。</li>
-</ul>
-<h2 id="6-风险边界">6. 风险边界</h2>
-<ul>
-<li>原始采集含部分宽关键词噪声，洞察时已人工剔除明显无关内容；正式汇报可引用清洗后的结论，不直接使用全部原始样本做比例。</li>
-<li>粉丝评论和二创梗仅能作为洞察素材，正式商业使用评论原文、粉丝昵称、图片、视频、梗图时需要授权。</li>
-<li>如果涉及猫可食用产品，必须按宠物食品合规单独推进；人吃零食包装上不要暗示猫可食用。</li>
-</ul>
-      </article>
-      <p class="footer-note">HTML 由 huangtingting_51_xhs_research_brief_20260429.md 渲染生成；正文信息未删减。</p>
-    </main>
-  </div>
+  <main>
+    <div class="toolbar">
+      <div>字段：可归因点赞数 / 来源小红书 URL / 点赞最多来源</div>
+      <a href="huangtingting_memory_assets_20260430_164705.json" target="_blank">查看原始 JSON</a>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>热门记忆点</th>
+            <th>可归因点赞数</th>
+            <th>来源小红书 URL</th>
+            <th>点赞最多来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="rank">#1</td>
+              <td>
+                <a class="memory-name" href="#memory-1">日常生活感：Vlog、胶片、收工、夜跑</a>
+                <div class="reading">粉丝把她的小红书当成稀缺的生活窗口，喜欢低门槛、非舞台化的陪伴感。</div>
+                <div class="bar"><span style="width:100.00%"></span></div>
+              </td>
+              <td class="number">77,121</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 8,695赞 · 69a0103f</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 8,257赞 · 69d4fc4e</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69553d6800000000210331c8?xsec_token=ABYTSyVHMDXjJevSRn3E26FCS78Rm0oJoMtFsS1qIwec8=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69553d6800000000210331c8?xsec_token=ABYTSyVHMDXjJevSRn3E26FCS78Rm0oJoMtFsS1qIwec8=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 6,808赞 · 69553d68</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/67028742000000002a033146?xsec_token=ABJd63cmntBsQkD9LGpYYnq-ENeOa6RYcZRfTLxrUB_wo=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/67028742000000002a033146?xsec_token=ABJd63cmntBsQkD9LGpYYnq-ENeOa6RYcZRfTLxrUB_wo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 5,404赞 · 67028742</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 8,695赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+        <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#2</td>
+              <td>
+                <a class="memory-name" href="#memory-2">早期神图/笑颜一番/白月光审美</a>
+                <div class="reading">这是最大众化的入坑资产：好看、早期杀伤力、笑颜一番和舞台图像共同构成白月光记忆。</div>
+                <div class="bar"><span style="width:34.85%"></span></div>
+              </td>
+              <td class="number">26,878</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69c75356000000002200d8c6" title="https://www.xiaohongshu.com/explore/69c75356000000002200d8c6" target="_blank" rel="noreferrer">帖子1 · 2,837赞 · 69c75356</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 2,503赞 · 69146586</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 2,193赞 · 67ea3f57</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d5139c000000001f001468?xsec_token=AB5NqnhAul02RZfXdpOlmQx0zaecNJaFpjELBl4rO_GKM=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d5139c000000001f001468?xsec_token=AB5NqnhAul02RZfXdpOlmQx0zaecNJaFpjELBl4rO_GKM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 1,551赞 · 69d5139c</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,837赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69c75356000000002200d8c6" target="_blank" rel="noreferrer">不再依賴你算長大嗎 姐姐</a>
+        <p>#黄婷婷[话题]# #kotete[话题]# #安利[话题]# #早期[话题]# #年上[话题]# #向全世界安利黄婷婷[话题]# #黄婷婷折月亮[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#3</td>
+              <td>
+                <a class="memory-name" href="#memory-3">演员重启：年龄不定义、普通演员处境、被看见</a>
+                <div class="reading">新粉和路人讨论更偏职业线，关键词是重新开始、机会、演技和年龄不设限。</div>
+                <div class="bar"><span style="width:27.29%"></span></div>
+              </td>
+              <td class="number">21,044</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69e0b0280000000023021fbc?xsec_token=ABZdplg4oYz71klPCaYBJ7OuQ4bCmWu5V7F6dmaEEU2cc=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69e0b0280000000023021fbc?xsec_token=ABZdplg4oYz71klPCaYBJ7OuQ4bCmWu5V7F6dmaEEU2cc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 2,430赞 · 69e0b028</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 2,193赞 · 67ea3f57</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d671da0000000023011db6?xsec_token=ABncobvgtbRHQ46_vng5soPiOgooGw08TDh3Vq_0OEruc=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d671da0000000023011db6?xsec_token=ABncobvgtbRHQ46_vng5soPiOgooGw08TDh3Vq_0OEruc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 2,124赞 · 69d671da</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d39fe1000000002103b30f?xsec_token=ABPgycjTQ650NMoFzW8UeR_lhxTJM0nlIkC1salKEcy4g=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d39fe1000000002103b30f?xsec_token=ABPgycjTQ650NMoFzW8UeR_lhxTJM0nlIkC1salKEcy4g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 1,492赞 · 69d39fe1</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,430赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69e0b0280000000023021fbc?xsec_token=ABZdplg4oYz71klPCaYBJ7OuQ4bCmWu5V7F6dmaEEU2cc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69e0b0280000000023021fbc</a>
+        <p>要是我我真做不到这么体面#黄婷婷[话题]##无限超越班[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#4</td>
+              <td>
+                <a class="memory-name" href="#memory-4">饭搭子生活场景：有空一起吃饭吧、吃饭拍照姿势</a>
+                <div class="reading">吃饭内容互动高，适合转化为陪伴型主题，而不是硬广式代言。</div>
+                <div class="bar"><span style="width:24.89%"></span></div>
+              </td>
+              <td class="number">19,198</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 8,695赞 · 69a0103f</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 8,257赞 · 69d4fc4e</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/6866752f0000000017037463?xsec_token=ABrCZa4NLVgl-9XuHZ9LRdfycF063DsHJANvReV3QB6dI=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/6866752f0000000017037463?xsec_token=ABrCZa4NLVgl-9XuHZ9LRdfycF063DsHJANvReV3QB6dI=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 1,149赞 · 6866752f</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/6831811c000000000303d6b1?xsec_token=ABfwIqi-x9PMMcoSfTtlrlGcQfmvtJcM-SM1HAyZ8KJrM=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/6831811c000000000303d6b1?xsec_token=ABfwIqi-x9PMMcoSfTtlrlGcQfmvtJcM-SM1HAyZ8KJrM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 1,078赞 · 6831811c</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 8,695赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+        <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#5</td>
+              <td>
+                <a class="memory-name" href="#memory-5">舞台考古：失恋阵线联盟直拍、公演、总选记忆</a>
+                <div class="reading">老粉和新粉都在补舞台考古，直拍是从偶像时代进入当下粉圈的入口。</div>
+                <div class="bar"><span style="width:10.66%"></span></div>
+              </td>
+              <td class="number">8,224</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68bb1630000000001c01217f?xsec_token=ABlPfndCBBfxgle-2_o-J0DfJ5zfQmtxQRLxHWHmyvkdQ=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/68bb1630000000001c01217f?xsec_token=ABlPfndCBBfxgle-2_o-J0DfJ5zfQmtxQRLxHWHmyvkdQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 1,144赞 · 68bb1630</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/687ba9210000000013013ede?xsec_token=AB-Jroc-m7a8owg2556nKdyYy5i4FQLe0PoK6Y_XcFctU=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/687ba9210000000013013ede?xsec_token=AB-Jroc-m7a8owg2556nKdyYy5i4FQLe0PoK6Y_XcFctU=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 1,049赞 · 687ba921</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?xsec_token=ABg3GPFDiVK9lRP9waK0zJ-JvE5Mtv4SV_198MdTQO3-c=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?xsec_token=ABg3GPFDiVK9lRP9waK0zJ-JvE5Mtv4SV_198MdTQO3-c=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 891赞 · 680732c8</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/68c8eb4b000000000e00cee8?xsec_token=ABYsYSRNGhuvySK6yzqC4yZcH5o78cn_VEtNcTrlpy7B0=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/68c8eb4b000000000e00cee8?xsec_token=ABYsYSRNGhuvySK6yzqC4yZcH5o78cn_VEtNcTrlpy7B0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 882赞 · 68c8eb4b</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 1,144赞</div>
+        <a href="https://www.xiaohongshu.com/explore/68bb1630000000001c01217f?xsec_token=ABlPfndCBBfxgle-2_o-J0DfJ5zfQmtxQRLxHWHmyvkdQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">谁懂这个舞台我循环了多少遍</a>
+        <p>谁懂这个视频我循环了多少遍，爱上婷婷桑只需要一个失恋阵线联盟舞台，不得不服……#黄婷婷[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#6</td>
+              <td>
+                <a class="memory-name" href="#memory-6">冷知识/萌点：方便面鸭汤、断眉、数学、纸飞机</a>
+                <div class="reading">粉丝在评论区主动接龙，把反差萌和温柔细节沉淀成可复用素材。</div>
+                <div class="bar"><span style="width:6.05%"></span></div>
+              </td>
+              <td class="number">4,668</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 2,503赞 · 69146586</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/68bf8cf6000000001d01758b?xsec_token=AB0ugkd6F0iTzT-uOzdrdxMpTac_MAvXOhSRLuQjxK8JM=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/68bf8cf6000000001d01758b?xsec_token=AB0ugkd6F0iTzT-uOzdrdxMpTac_MAvXOhSRLuQjxK8JM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 962赞 · 68bf8cf6</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 602赞 · 694bc555</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680768be0000000020012c08&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680768be0000000020012c08&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">评论4 · 398赞 · 680732c8</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,503赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69146586000000000400597d</a>
+        <p>刷视频刷到黄婷婷黑长直视频，就算是仇人看到这张脸气也消了吧……怎么美成这样…… 求此女冷知识和萌点…… 刷视频突然刷到她，美得我一大跳，怎么这么好看啊啊啊 #碎碎念[话题]# #黄婷婷考古[话题]# #黄婷婷[话题]# #黄婷婷早期[话题]# #美神降临[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#7</td>
+              <td>
+                <a class="memory-name" href="#memory-7">51/黄五一：猫片、吃醋、人机小猫、不要告诉五一</a>
+                <div class="reading">51 已经是粉丝共同叙事里的第二主角，能承接宠物、陪伴、吃醋和表情包玩法。</div>
+                <div class="bar"><span style="width:5.09%"></span></div>
+              </td>
+              <td class="number">3,928</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/6697662c000000000d00c589?xsec_token=AB4d1EWQuhTmN9XLFTrvPnsCn7rHp9lYI46Rl0w7NyqAQ=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/6697662c000000000d00c589?xsec_token=AB4d1EWQuhTmN9XLFTrvPnsCn7rHp9lYI46Rl0w7NyqAQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 683赞 · 6697662c</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/667509a8000000001c02960a?xsec_token=ABYHOYasXDdLzySFxBjl4EojbpzJ-tCMpYspUQFv2Pfl8=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/667509a8000000001c02960a?xsec_token=ABYHOYasXDdLzySFxBjl4EojbpzJ-tCMpYspUQFv2Pfl8=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 625赞 · 667509a8</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/68ca1a140000000012017393?xsec_token=ABm9aAleOyHPntg3-s8kijMmtXYItwhlSewJyXrUtM2pU=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/68ca1a140000000012017393?xsec_token=ABm9aAleOyHPntg3-s8kijMmtXYItwhlSewJyXrUtM2pU=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 367赞 · 68ca1a14</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/699b017d000000000a0305e1?xsec_token=ABlp90snw0J5MsxoSmP854UA2Qn6frtKrimbyyHgCmEcA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/699b017d000000000a0305e1?xsec_token=ABlp90snw0J5MsxoSmP854UA2Qn6frtKrimbyyHgCmEcA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 331赞 · 699b017d</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 683赞</div>
+        <a href="https://www.xiaohongshu.com/explore/6697662c000000000d00c589?xsec_token=AB4d1EWQuhTmN9XLFTrvPnsCn7rHp9lYI46Rl0w7NyqAQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">人机小猫证据确凿</a>
+        <p>掉线重连中～</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#8</td>
+              <td>
+                <a class="memory-name" href="#memory-8">i 人反差：局促营业、傲娇、上班被迫营业</a>
+                <div class="reading">她的“不会过度营业”被粉丝转译为真实可爱，适合轻松化表达。</div>
+                <div class="bar"><span style="width:2.83%"></span></div>
+              </td>
+              <td class="number">2,186</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 501赞 · 69a30eb0</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69e1b979000000002200d6d2?xsec_token=ABoWDLSDeQBzoGPooh8xgnWKVjLjYDhuBJQrRpEE3o5p0=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69e1b979000000002200d6d2?xsec_token=ABoWDLSDeQBzoGPooh8xgnWKVjLjYDhuBJQrRpEE3o5p0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 446赞 · 69e1b979</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/684d84dd00000000120078a0?xsec_token=AB_xB6-8--MHUkwV4mdW-vJ8OSel10WHu0O_udz2TdezA=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/684d84dd00000000120078a0?xsec_token=AB_xB6-8--MHUkwV4mdW-vJ8OSel10WHu0O_udz2TdezA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 322赞 · 684d84dd</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69d5f14c000000001b0027ec?xsec_token=AB5NqnhAul02RZfXdpOlmQx5iApRzltidJpshsTQSGMe4=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69d5f14c000000001b0027ec?xsec_token=AB5NqnhAul02RZfXdpOlmQx5iApRzltidJpshsTQSGMe4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 279赞 · 69d5f14c</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 501赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+        <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#9</td>
+              <td>
+                <a class="memory-name" href="#memory-9">猫塑/meme 梗图：黄婷婷是我的猫</a>
+                <div class="reading">粉丝接受把黄婷婷本人做成猫塑、梗图、表情包，适合做轻互动素材。</div>
+                <div class="bar"><span style="width:2.73%"></span></div>
+              </td>
+              <td class="number">2,102</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/6995c87d000000000a03e653?xsec_token=ABnpXcKDIV9GYbQ6KWNcS1M-IOuJVVQAuGDZFet58Nsr0=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/6995c87d000000000a03e653?xsec_token=ABnpXcKDIV9GYbQ6KWNcS1M-IOuJVVQAuGDZFet58Nsr0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 578赞 · 6995c87d</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69bb9400000000001a036dbc?xsec_token=ABw-FliTXPU1rljRM6I8GfI33UezSjhjWz1e3XLGabvuY=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69bb9400000000001a036dbc?xsec_token=ABw-FliTXPU1rljRM6I8GfI33UezSjhjWz1e3XLGabvuY=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 572赞 · 69bb9400</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/6999b2e5000000000a03f789?xsec_token=AB5HCIpiHeNYNqfyM4pNU6YVbJ6Aks40TZoaFpCXHd97w=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/6999b2e5000000000a03f789?xsec_token=AB5HCIpiHeNYNqfyM4pNU6YVbJ6Aks40TZoaFpCXHd97w=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 242赞 · 6999b2e5</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/689f79e5000000001b030061?xsec_token=ABOZMqrHmB2irRdBKSYrgGoNbXPzX8fOfO5g8uysc-9tQ=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/689f79e5000000001b030061?xsec_token=ABOZMqrHmB2irRdBKSYrgGoNbXPzX8fOfO5g8uysc-9tQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 225赞 · 689f79e5</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 578赞</div>
+        <a href="https://www.xiaohongshu.com/explore/6995c87d000000000a03e653?xsec_token=ABnpXcKDIV9GYbQ6KWNcS1M-IOuJVVQAuGDZFet58Nsr0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">建设踢踢meme梗图</a>
+        <p>大量萌图来袭，附赠一张四黄[吐舌头H]#黄婷婷[话题]##meme[话题]# #只能说是一模一样[话题]#</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#10</td>
+              <td>
+                <a class="memory-name" href="#memory-10">宠粉长情：不轻易承诺，但会把回应做出来</a>
+                <div class="reading">这是最能打动核心粉的关系资产，重点不是甜言蜜语，而是被听见、被尊重。</div>
+                <div class="bar"><span style="width:1.15%"></span></div>
+              </td>
+              <td class="number">884</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 501赞 · 69a30eb0</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/697c7454000000000b00b017?xsec_token=AB9dcKRpfBC-Nd3O2KEMxuESTC_qRFClEtq9VHpL4rGTk=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/697c7454000000000b00b017?xsec_token=AB9dcKRpfBC-Nd3O2KEMxuESTC_qRFClEtq9VHpL4rGTk=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 133赞 · 697c7454</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a39142000000000b034e82&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a39142000000000b034e82&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">评论3 · 82赞 · 69a30eb0</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a31283000000001500d068&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a31283000000001500d068&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">评论4 · 41赞 · 69a30eb0</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 501赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+        <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#11</td>
+              <td>
+                <a class="memory-name" href="#memory-11">陪伴线：生日、老粉多年后当面说出口</a>
+                <div class="reading">这是情绪向资产，适合放在粉丝向物料或纪念节点里，不适合硬做大众传播。</div>
+                <div class="bar"><span style="width:0.62%"></span></div>
+              </td>
+              <td class="number">476</td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68bef6f7000000001d012bec" title="https://www.xiaohongshu.com/explore/68bef6f7000000001d012bec" target="_blank" rel="noreferrer">帖子1 · 172赞 · 68bef6f7</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/69c809b7000000002202a8d5?xsec_token=ABQ5RZlqjMOYprJUwZYpJgWfeJOzxJBXNUN5xcxihEiRo=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/69c809b7000000002202a8d5?xsec_token=ABQ5RZlqjMOYprJUwZYpJgWfeJOzxJBXNUN5xcxihEiRo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 167赞 · 69c809b7</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680770fe000000001f01bf8c&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680770fe000000001f01bf8c&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">评论3 · 41赞 · 680732c8</a>
+<a class="source-link" href="https://www.xiaohongshu.com/explore/68c191aa000000001d00c959?xsec_token=ABwcXo8q6ySy6kLZt59GNkx2hoMI_1y8dcP2iqCK_IAQ0=&amp;xsec_source=pc_search" title="https://www.xiaohongshu.com/explore/68c191aa000000001d00c959?xsec_token=ABwcXo8q6ySy6kLZt59GNkx2hoMI_1y8dcP2iqCK_IAQ0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 28赞 · 68c191aa</a></td>
+              <td>
+      <div class="top-source">
+        <div class="source-kind">帖子 · 172赞</div>
+        <a href="https://www.xiaohongshu.com/explore/68bef6f7000000001d012bec" target="_blank" rel="noreferrer">致我小时候的少女偶像</a>
+        <p>2017.09.08在屏幕前第一次对你说生日快乐 2025.09.08第一次当面和你说出生日快乐 我们之间好像总差点运气，小时候做梦都想到上海看你的公演，但是后来我到了上海你却不在这里了 在今天迎来我们八年来的第一次见面 生日快乐！今天的蛋糕特别好吃[吧唧R] 也特别快乐～ @黄婷婷 #黄婷婷[话题]# #黄婷婷090</p>
+        
+      </div>
+    </td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">说明：评论来源 URL 使用 note URL + comment_id 的方式保留评论定位信息；若小红书 Web 端忽略该参数，仍可打开对应笔记并按 comment_id 或评论内容复核。</p>
+    
+            <section class="memory-section" id="memory-1">
+              <div class="section-index">01</div>
+              <div class="section-copy">
+                <h2>日常生活感：Vlog、胶片、收工、夜跑</h2>
+                <p>粉丝把她的小红书当成稀缺的生活窗口，喜欢低门槛、非舞台化的陪伴感。</p>
+                <div class="metric-row">
+                  <span><b>77,121</b> 可归因点赞</span>
+                  <span><b>77,105</b> 帖子赞</span>
+                  <span><b>16</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/590befe511a978558cc5f8f70bc2acf2/notes_pre_post/1040g3k831t204qhh685g5n0rehn1uem3ne5nm88!nc_n_webp_mw_1" alt="存一些吃饭的拍照姿势📸" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 8,695赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+        <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/590befe511a978558cc5f8f70bc2acf2/notes_pre_post/1040g3k831t204qhh685g5n0rehn1uem3ne5nm88!nc_n_webp_mw_1" alt="存一些吃饭的拍照姿势📸" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 8,695赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+                    <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301441/ae03d45e5d8f02b43a7dd0fae976b814/notes_pre_post/1040g3k031ulm0h322g005n0rehn1uem331to5j8!nc_n_webp_mw_1" alt="有空一起吃饭吧" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 8,257赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">有空一起吃饭吧</a>
+                    <p>#吃饭氛围感拍照[话题]# #ootd[话题]# #明星不止AB面[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a99aca51010cd4ac523eb06347d747b0/notes_pre_post/1040g3k031qotsl0d7u6g5n0rehn1uem3c9v76n8!nc_n_webp_mw_1" alt="“老己，和你续写下一个春夏秋冬！”" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 6,808赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69553d6800000000210331c8?xsec_token=ABYTSyVHMDXjJevSRn3E26FCS78Rm0oJoMtFsS1qIwec8=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“老己，和你续写下一个春夏秋冬！”</a>
+                    <p>#好好过年大赏[话题]# #明星不止AB面[话题]# #ootd[话题]# #祝我们好在春夏秋冬[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/b122be0abe1a275f293a2e33b4e4ba45/1040g2sg318k57s2046e05n0rehn1uem30hlngio!nc_n_webp_mw_1" alt="夜跑" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 5,404赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/67028742000000002a033146?xsec_token=ABJd63cmntBsQkD9LGpYYnq-ENeOa6RYcZRfTLxrUB_wo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">夜跑</a>
+                    <p>（假装的） #夜跑[话题]# #跑步打卡[话题]# #ootd[话题]# #新手跑步[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/2fbc8daf1b828a9d56137119366d3fd5/1040g2sg31ve2qn7bjqe05n0rehn1uem3n60rn8g!nc_n_webp_mw_1" alt="去感受每一个瞬间～" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 4,339赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69edf8c9000000003601b623?xsec_token=ABY_EXAoNVR7WGZmKFgLHqVq21VCQKJGJRNwREO1ZuSQ8=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">去感受每一个瞬间～</a>
+                    <p>#ootd[话题]# #在喜欢的状态里生活[话题]# #活在一些瞬间里[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/68ce82c55ec7955e8d096cfb1bd0c520/notes_pre_post/1040g3k031lajrdnhle005n0rehn1uem3g222dro!nc_n_webp_mw_1" alt="我和夏天一样热烈🌞" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 4,057赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68a2bdbc000000001d0199f5?xsec_token=AB-Zvk-yCNKvL19Farzy7_czzJ_KdGfhhcDJ-nB3ys41s=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我和夏天一样热烈🌞</a>
+                    <p>#我和夏天一样热烈[话题]# #ootd[话题]# #肆意地感受夏天[话题]# #夏天的味道[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/78b8fc2ecf967f95aea0c38f9ac8eeaa/notes_pre_post/1040g3k031vffp7j13q0g5n0rehn1uem3ks2jcog!nc_n_webp_mw_1" alt="今日收工！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 3,928赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69ef69ee0000000037035f38?xsec_token=ABFTTxAOqSOlrZ8D4M1m_dijxwZJSSoQy040TvHVMIEcQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">今日收工！</a>
+                    <p>谢谢兄弟姐妹们👬👭的支持！！！#ootd[话题]# #努力营业中[话题]# #明星不止AB面[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301443/e27ac12f7b503513b149bfcc31db8460/1040g00831uqqemgaii005n0rehn1uem3v8oaqv0!nc_n_webp_mw_1" alt="TT&#x27;s好物分享" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 3,887赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69da3fcf00000000220013c3?xsec_token=AB0HHaWMmTNJmRFVs-iy8DVMOca7QFtjnPFmZDt68wGPI=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">TT&#x27;s好物分享</a>
+                    <p>#好物分享[话题]#</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-2">
+              <div class="section-index">02</div>
+              <div class="section-copy">
+                <h2>早期神图/笑颜一番/白月光审美</h2>
+                <p>这是最大众化的入坑资产：好看、早期杀伤力、笑颜一番和舞台图像共同构成白月光记忆。</p>
+                <div class="metric-row">
+                  <span><b>26,878</b> 可归因点赞</span>
+                  <span><b>22,906</b> 帖子赞</span>
+                  <span><b>3,972</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">XHS</div></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,837赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69c75356000000002200d8c6" target="_blank" rel="noreferrer">不再依賴你算長大嗎 姐姐</a>
+        <p>#黄婷婷[话题]# #kotete[话题]# #安利[话题]# #早期[话题]# #年上[话题]# #向全世界安利黄婷婷[话题]# #黄婷婷折月亮[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><div class="mini-thumb-fallback">源</div></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,837赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c75356000000002200d8c6" target="_blank" rel="noreferrer">不再依賴你算長大嗎 姐姐</a>
+                    <p>#黄婷婷[话题]# #kotete[话题]# #安利[话题]# #早期[话题]# #年上[话题]# #向全世界安利黄婷婷[话题]# #黄婷婷折月亮[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a0c1f4d10491ca662da4d0f4894f3eaa/1040g00831opjd5diho005q5ovbh6bp2lu48i9pg!nc_n_webp_mw_1" alt="69146586000000000400597d" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,503赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69146586000000000400597d</a>
+                    <p>刷视频刷到黄婷婷黑长直视频，就算是仇人看到这张脸气也消了吧……怎么美成这样…… 求此女冷知识和萌点…… 刷视频突然刷到她，美得我一大跳，怎么这么好看啊啊啊 #碎碎念[话题]# #黄婷婷考古[话题]# #黄婷婷[话题]# #黄婷婷早期[话题]# #美神降临[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/67c1de08c3e8784c419359f5f458b831/1040g2sg31fmdivpt0c205nm26ig08dll6rigaoo!nc_n_webp_mw_1" alt="妈呀你们河人有点东西 黄婷婷好美啊啊啊啊" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,193赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">妈呀你们河人有点东西 黄婷婷好美啊啊啊啊</a>
+                    <p>#文娱城里人[话题]# #网剧沙尘暴[话题]# #红薯地直拍前线[话题]# #大家的娱乐圈人脉[话题]##黄小蕾[话题]# #黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/af19e2a776dee14e90fae3e5c9e16c88/notes_pre_post/1040g3k031ulonclb2q005omfpjt0ge57tk5a6p8!nc_n_webp_mw_1" alt="早期的黄婷婷真的太好看了" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,551赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d5139c000000001f001468?xsec_token=AB5NqnhAul02RZfXdpOlmQx0zaecNJaFpjELBl4rO_GKM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">早期的黄婷婷真的太好看了</a>
+                    <p>为什么会有这么好看的人，每张都在我审美点上暴击。 虽然经常有乐子人玩梗笑颜一番，但是黄婷婷笑起来真的是太好看了，太好看了，太好看了，太好看了。 怎么会有长的这么好看，数学还130分的人…… #黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301442/51ee288c3f1bf456a800a39a2d9d0da3/1040g00831fme4als020g40vdqao2alcqj01dq2g!nc_n_webp_mw_1" alt="黄小蕾和黄婷婷跳“来财舞”好飒好美" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,293赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/67ea3ebf000000001d01b9d7?xsec_token=ABWe8QRP6VnGMzugPxnGxYXgIdZBluGCQKOa9gL6o6yDw=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄小蕾和黄婷婷跳“来财舞”好飒好美</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/3ff99a4c388b3ec61ff3d4cb7458801e/spectrum/1040g34o31t736rc8la305ogguor40ut6kfieo90!nc_n_webp_mw_1" alt="生写扫图" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,220赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69a5484d000000001d012790?xsec_token=ABhivAFlV5ab6WXagiQD0mxMfj1327tdZevAN-fczOh9U=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">生写扫图</a>
+                    <p>生写扫图，大家可以拿去自印，后续我会再慢慢把收到的生写弄成扫图上传上来。 有个额外的下载链接见评论！ 新增更新： 源动力 #生写[话题]# #黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301447/553525bc9b0f4829f8656b71172f10d5/1040g2sg31r5b928n7g605pju94cgu9vb8h9r81g!nc_n_webp_mw_1" alt="论titi早期的杀伤力..." loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,131赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6961f460000000001a02a29c?xsec_token=ABjVZynLVaLyqtVXoMRTNXO8Pw675shVPtmjwdfgg9zpo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">论titi早期的杀伤力...</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301447/22eb9f3da2c6def027c8718f2cab03cb/notes_pre_post/1040g3k031l3ha4ni346g5o0fr770907ebfqce50!nc_n_webp_mw_1" alt="河妹早期｜黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 976赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/689b7d97000000001d024caa?xsec_token=ABrkDHiMg1A0ydQQ8VexfI4o8lXrOHxZLae-u5dX0y4gA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">河妹早期｜黄婷婷</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-3">
+              <div class="section-index">03</div>
+              <div class="section-copy">
+                <h2>演员重启：年龄不定义、普通演员处境、被看见</h2>
+                <p>新粉和路人讨论更偏职业线，关键词是重新开始、机会、演技和年龄不设限。</p>
+                <div class="metric-row">
+                  <span><b>21,044</b> 可归因点赞</span>
+                  <span><b>20,385</b> 帖子赞</span>
+                  <span><b>659</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/6eb33444bd5d4224b906637a96535715/1040g2sg31v13neq1jmdg5qa59frcikusaacf8qg!nc_n_webp_mw_1" alt="69e0b0280000000023021fbc" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,430赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69e0b0280000000023021fbc?xsec_token=ABZdplg4oYz71klPCaYBJ7OuQ4bCmWu5V7F6dmaEEU2cc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69e0b0280000000023021fbc</a>
+        <p>要是我我真做不到这么体面#黄婷婷[话题]##无限超越班[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/6eb33444bd5d4224b906637a96535715/1040g2sg31v13neq1jmdg5qa59frcikusaacf8qg!nc_n_webp_mw_1" alt="69e0b0280000000023021fbc" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,430赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69e0b0280000000023021fbc?xsec_token=ABZdplg4oYz71klPCaYBJ7OuQ4bCmWu5V7F6dmaEEU2cc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69e0b0280000000023021fbc</a>
+                    <p>要是我我真做不到这么体面#黄婷婷[话题]##无限超越班[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/67c1de08c3e8784c419359f5f458b831/1040g2sg31fmdivpt0c205nm26ig08dll6rigaoo!nc_n_webp_mw_1" alt="妈呀你们河人有点东西 黄婷婷好美啊啊啊啊" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,193赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/67ea3f57000000001c011645?xsec_token=ABWe8QRP6VnGMzugPxnGxYXp2bOYHtW3WRGUZsc4zaH0g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">妈呀你们河人有点东西 黄婷婷好美啊啊啊啊</a>
+                    <p>#文娱城里人[话题]# #网剧沙尘暴[话题]# #红薯地直拍前线[话题]# #大家的娱乐圈人脉[话题]##黄小蕾[话题]# #黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/51bed6e1454b9b794ce00fdbeba673e8/1040g2sg31un3bs091mdg5pfdoc6192976dor2g0!nc_n_webp_mw_1" alt="李诚儒夸开窍？黄婷婷获全票的好演技解析！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,124赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d671da0000000023011db6?xsec_token=ABncobvgtbRHQ46_vng5soPiOgooGw08TDh3Vq_0OEruc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">李诚儒夸开窍？黄婷婷获全票的好演技解析！</a>
+                    <p>黄婷婷这段“绝交闺蜜久别重逢”，到底“开窍”在哪里？句子反复看了6遍，总结出3个字：收、稳、真。 一、收 别人演久别重逢，大概率大哭大闹、撕心裂肺。她偏偏选最难的演法：收着演。试探→回避→被拉回旧关系，情绪一层一层递进。眼神里全是压住的委屈和说不出口的复杂。越收，越让人心疼。 二、稳 “熟悉又隔着距离”是最微妙的状态。</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/2df62c72dc1fd9370be129e8919d3ef1/spectrum/1040g0k031ukbg9ss34005p8mauaghho755fs7eo!nc_n_webp_mw_1" alt="黄婷婷说出在最巅峰时候解约的原因" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,492赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d39fe1000000002103b30f?xsec_token=ABPgycjTQ650NMoFzW8UeR_lhxTJM0nlIkC1salKEcy4g=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷说出在最巅峰时候解约的原因</a>
+                    <p>因为自己已经二十大几岁了,想转型走其他的道路,一直在少女偶像自己也是耗着,挺佩服她的勇气的 #无限超越班[话题]# #演综[话题]# #黄婷婷谈自己解约的原因[话题]# #综艺[话题]# #综艺推荐[话题]# #好看综艺[话题]# #下饭综艺[话题]# #追好剧repo4[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301451/2dc773ebe644ff3d4828eb5fc8331f93/spectrum/1040g34o31vbi1t5jis1049i7i090adhibp951dg!nc_n_webp_mw_1" alt="黄婷婷来录制浙江卫视无限超越班啦" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,170赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69eb642c000000002301fd08?xsec_token=ABZXMKNevldn0UV81N2SA05mR-Gpp6yzriduBXtMXGnAg=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷来录制浙江卫视无限超越班啦</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/9da98de1c665bfe346d46d5911dd492b/1040g2sg31f073pejme5g5oi3n7uk1m3mhis6utg!nc_n_webp_mw_1" alt="黄婷婷-歌手，演员" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,140赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/67d37a1e0000000006039487?xsec_token=ABYxWcEB89p0YyIvYztAvAPANMXOhyPed2w_aC1jgOxdU=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷-歌手，演员</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/c4aefc2972cc01ba13501408f97c2a76/notes_pre_post/1040g3k831kabej9hia705ongurgnqrd85ptp5a8!nc_n_webp_mw_1" alt="黄婷婷现在真的挡不住的姐感…" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,136赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6881b9b1000000001100178a?xsec_token=ABT4QMF_1tqeamo7iwgid1TpUfqDBGcmzT3C32l-CdhvI=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷现在真的挡不住的姐感…</a>
+                    <p>看深情眼看见黄婷婷就去翻了下她近照，每张照片都让我脑海里划过一堆梦女文学啊。。。给我一种经历过很多故事但仍然展露出一种云淡风轻的感觉，我愿称之为最强姐感。是少女时代的我们想要成长为的样子🥺 #黄婷婷[话题]##深情眼[话题]##姐感[话题]##女明星[话题]##江露芝[话题]##黄婷婷江露芝[话题]##内娱[话题]##</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/8353e57682cd415c11aae4735bf5c6d4/notes_pre_post/1040g3k031uqu3sr13q5g5oufkcea30otj6gpbog!nc_n_webp_mw_1" alt="终于有人道出普通演员的处境，奇迹很难出现" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,105赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69da5d8100000000220017be?xsec_token=AB0HHaWMmTNJmRFVs-iy8DVOX6DMC8O4eIgr61qtH3CcA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">终于有人道出普通演员的处境，奇迹很难出现</a>
+                    <p>看到黄婷婷在《无限超越班4》的片段，我眼眶红了。从她身上，我看到了一个演员最真实的处境——你随时都有可能被剧组换掉，机会说没就没。可她还是想要争取一下，所以她选择当面去找导演问个明白，可结果却并没有反转。 奇迹不会出现，但时机却是靠自己创造的。所以她来上了这个节目，“虽然大家可能不会用我，但是以后说不定有机会。” 作为</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-4">
+              <div class="section-index">04</div>
+              <div class="section-copy">
+                <h2>饭搭子生活场景：有空一起吃饭吧、吃饭拍照姿势</h2>
+                <p>吃饭内容互动高，适合转化为陪伴型主题，而不是硬广式代言。</p>
+                <div class="metric-row">
+                  <span><b>19,198</b> 可归因点赞</span>
+                  <span><b>19,179</b> 帖子赞</span>
+                  <span><b>19</b> 评论赞</span>
+                  <span><b>5</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/590befe511a978558cc5f8f70bc2acf2/notes_pre_post/1040g3k831t204qhh685g5n0rehn1uem3ne5nm88!nc_n_webp_mw_1" alt="存一些吃饭的拍照姿势📸" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 8,695赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+        <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/590befe511a978558cc5f8f70bc2acf2/notes_pre_post/1040g3k831t204qhh685g5n0rehn1uem3ne5nm88!nc_n_webp_mw_1" alt="存一些吃饭的拍照姿势📸" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 8,695赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69a0103f000000001503ac4a?xsec_token=ABtJPO7sKmTnFU2pP8NGGAnE-kfzhjKZz8GksB1oHOeJA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">存一些吃饭的拍照姿势📸</a>
+                    <p>#好朋友视角[话题]# #ootd[话题]# #吃饭这样拍[话题]# #吃饭哪有不拍照的[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301441/ae03d45e5d8f02b43a7dd0fae976b814/notes_pre_post/1040g3k031ulm0h322g005n0rehn1uem331to5j8!nc_n_webp_mw_1" alt="有空一起吃饭吧" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 8,257赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d4fc4e000000002103a72d?xsec_token=ABvie8UX6V59KYgeGU9TrShrl__pcbEIJvJQ14lLoO5SA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">有空一起吃饭吧</a>
+                    <p>#吃饭氛围感拍照[话题]# #ootd[话题]# #明星不止AB面[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291122/aa8081f58dad42e93dea3a7dc8606377/1040g2sg31jfnro09io7g5n0rehn1uem34id8pv8!nc_n_webp_mw_1" alt="TT&#x27;s开箱分享" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,149赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6866752f0000000017037463?xsec_token=ABrCZa4NLVgl-9XuHZ9LRdfycF063DsHJANvReV3QB6dI=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">TT&#x27;s开箱分享</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290948/1b8136ea7224dd9681ceaa451e5b6a57/1040g2sg31ius02v5h4f05n0rehn1uem32sss32o!nc_n_webp_mw_1" alt="零食开箱分享来啦！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,078赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6831811c000000000303d6b1?xsec_token=ABfwIqi-x9PMMcoSfTtlrlGcQfmvtJcM-SM1HAyZ8KJrM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">零食开箱分享来啦！</a>
+                    <p>·脆升升 ·比比赞 ·东方补者 ·茶漾元气 ·倍佳盈 ·佰司卓 ·中科德马克 ·marvis ·白惜 ·乐福光能体脂秤 #零食开箱[话题]# #好吃的零食[话题]# #拆箱分享[话题]# #快递开箱[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/bb95ec9d2cf42f69e9688195f5bb6323/notes_pre_post/1040g3k031q2okdppnu0g5n0rehn1uem3rqpvod8!nc_n_webp_mw_1" alt="雪天氛围照就这么拍" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 19赞 <span>comment_id: 693fbe2900000000160256cb</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/693e8b43000000000d03bd30?comment_id=693fbe2900000000160256cb&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">雪天氛围照就这么拍</a>
+                    <p>应该不是，踢踢直播说过五一知道它妈妈要靠脸蛋吃饭，只会攻击她手和脚[偷笑R]</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-5">
+              <div class="section-index">05</div>
+              <div class="section-copy">
+                <h2>舞台考古：失恋阵线联盟直拍、公演、总选记忆</h2>
+                <p>老粉和新粉都在补舞台考古，直拍是从偶像时代进入当下粉圈的入口。</p>
+                <div class="metric-row">
+                  <span><b>8,224</b> 可归因点赞</span>
+                  <span><b>7,962</b> 帖子赞</span>
+                  <span><b>262</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/f85b205205a6a1dd35904e4e1786f7e7/notes_pre_post/1040g3k031m2cmfnc665g5n70mvulqgoikiogt5g!nc_n_webp_mw_1" alt="谁懂这个舞台我循环了多少遍" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 1,144赞</div>
+        <a href="https://www.xiaohongshu.com/explore/68bb1630000000001c01217f?xsec_token=ABlPfndCBBfxgle-2_o-J0DfJ5zfQmtxQRLxHWHmyvkdQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">谁懂这个舞台我循环了多少遍</a>
+        <p>谁懂这个视频我循环了多少遍，爱上婷婷桑只需要一个失恋阵线联盟舞台，不得不服……#黄婷婷[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/f85b205205a6a1dd35904e4e1786f7e7/notes_pre_post/1040g3k031m2cmfnc665g5n70mvulqgoikiogt5g!nc_n_webp_mw_1" alt="谁懂这个舞台我循环了多少遍" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,144赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68bb1630000000001c01217f?xsec_token=ABlPfndCBBfxgle-2_o-J0DfJ5zfQmtxQRLxHWHmyvkdQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">谁懂这个舞台我循环了多少遍</a>
+                    <p>谁懂这个视频我循环了多少遍，爱上婷婷桑只需要一个失恋阵线联盟舞台，不得不服……#黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/f0fc9a97ca4baf84933a9aa033b6ef6a/notes_pre_post/1040g3k831k4eift4iu705os4u587qtv0tlotjt0!nc_n_webp_mw_1" alt="snh48黄婷婷是侄女吗" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 1,049赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/687ba9210000000013013ede?xsec_token=AB-Jroc-m7a8owg2556nKdyYy5i4FQLe0PoK6Y_XcFctU=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">snh48黄婷婷是侄女吗</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a33e84c0d8d27dfad3261a355b14184e/1040g2sg31gin1so83qkg5okojdf6si44s6t3ano!nc_n_webp_mw_1" alt="黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 891赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?xsec_token=ABg3GPFDiVK9lRP9waK0zJ-JvE5Mtv4SV_198MdTQO3-c=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷</a>
+                    <p>最近通过这个路径知道了黄婷婷：浪6》发卡》恨海情天(夜蝶)》黄婷婷 . 完全能理解发卡为什么当时上头黄婷婷这种淡人+笑颜一番。 . 她长得像成绩很好性格温柔又有距离感的学霸学姐，笑容很像日本某个女演员，说实话真的很有杀伤力，我觉得48成就她又埋没了她。。 . 准备去看《沙尘暴》，但是太虐了，希望她有机会拍更多影视剧，上</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301447/99cc117e78146857d9d2d8620172be6a/1040g2sg31mfsrero5ik05pflqv92uctjahh38j0!nc_n_webp_mw_1" alt="黄婷婷就是天选s0 她就是这么钓我却不负责" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 882赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68c8eb4b000000000e00cee8?xsec_token=ABYsYSRNGhuvySK6yzqC4yZcH5o78cn_VEtNcTrlpy7B0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷就是天选s0 她就是这么钓我却不负责</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/b1d93ede03b26772a8e544c4a1b43532/1040g00831pg9grkv2c005p45g0r9em30cmoj44o!nc_n_webp_mw_1" alt="黄婷婷在团期间全公式照" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 794赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/692b0267000000001e00e006?xsec_token=ABdflYI2CkxeI6QC4QvRzwUvY-wpSRKHxGIPNj93VC3uc=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷在团期间全公式照</a>
+                    <p>从稚嫩走向成熟，来时路[亲一个R]#黄婷婷[话题]##kotete[话题]# #snh48黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/5b0464538726634106227e9f44717993/1040g00831i2rmfaunad05pflqv92uctjdj4fnm8!nc_n_webp_mw_1" alt="这段直播怼脸拍应该给摄影师加鸡腿！！！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 579赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/683882620000000021019628?xsec_token=ABNWtSb1ZCZKvQwE9nLKsFscPqX8TOzYgYUEzy1PtJq7Q=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">这段直播怼脸拍应该给摄影师加鸡腿！！！</a>
+                    <p>最近考古黄婷婷的国美小电视直播，被这段怼脸拍狠狠惊艳到好吗，太漂亮了！！！#能扛住怼脸镜头的颜值[话题]# #直播[话题]# #怼脸拍高清镜头[话题]# #眼睛亮晶晶[话题]# #不允许任何人没看过[话题]# #请停止散发魅力[话题]# #一眼沦陷[话题]# #黄婷婷[话题]# #怼脸拍[话题]# #美女[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/0ea873a8db3cf360ec969ed9cdf3e72a/notes_pre_post/1040g3k031i3fnfro78605pflqv92uctjf46k7u0!nc_n_webp_mw_1" alt="私服系列 | 黄婷婷 bking就是现在" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 515赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/683943d800000000210017b0?xsec_token=ABc4BSCo0cgC2cCrSxTvSFbYH71KY9VpGmc0oioM8Z0Ag=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">私服系列 | 黄婷婷 bking就是现在</a>
+                    <p>难得的帅帅私服小踢 压抑不住的bking气息已经凸显 配上一副金丝细框眼镜 真是迷倒一大片迷妹啊 #黄婷婷[话题]# #私服[话题]# #bking[话题]# #迷死人[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/84737d044af4f5a24acb1256e2e336be/1040g2sg31o4suoh36gk05oedi2b417lqmhbv2q8!nc_n_webp_mw_1" alt="黄婷婷的失恋阵线联盟直拍我每天至少看20遍" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 346赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68ff332d000000000402938a?xsec_token=ABxqCBzYJeli-m9eGcrWuoU172816d6aHHMyzsSn-gJIs=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷的失恋阵线联盟直拍我每天至少看20遍</a>
+                    <p>最近刚粉上黄婷婷，请问怎样把婷婷十年前的视频全补了，求指路。#黄婷婷好好看[话题]##黄婷婷早期[话题]# #黄婷婷考古[话题]# #黄婷婷江露芝[话题]# #黄婷婷舞台[话题]#</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-6">
+              <div class="section-index">06</div>
+              <div class="section-copy">
+                <h2>冷知识/萌点：方便面鸭汤、断眉、数学、纸飞机</h2>
+                <p>粉丝在评论区主动接龙，把反差萌和温柔细节沉淀成可复用素材。</p>
+                <div class="metric-row">
+                  <span><b>4,668</b> 可归因点赞</span>
+                  <span><b>4,067</b> 帖子赞</span>
+                  <span><b>601</b> 评论赞</span>
+                  <span><b>6</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a0c1f4d10491ca662da4d0f4894f3eaa/1040g00831opjd5diho005q5ovbh6bp2lu48i9pg!nc_n_webp_mw_1" alt="69146586000000000400597d" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 2,503赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69146586000000000400597d</a>
+        <p>刷视频刷到黄婷婷黑长直视频，就算是仇人看到这张脸气也消了吧……怎么美成这样…… 求此女冷知识和萌点…… 刷视频突然刷到她，美得我一大跳，怎么这么好看啊啊啊 #碎碎念[话题]# #黄婷婷考古[话题]# #黄婷婷[话题]# #黄婷婷早期[话题]# #美神降临[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a0c1f4d10491ca662da4d0f4894f3eaa/1040g00831opjd5diho005q5ovbh6bp2lu48i9pg!nc_n_webp_mw_1" alt="69146586000000000400597d" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 2,503赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69146586000000000400597d?xsec_token=ABPtUueJzlNrMMCs9Mu-4mYZjWD0w8GKsVVcst1aKLx_4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69146586000000000400597d</a>
+                    <p>刷视频刷到黄婷婷黑长直视频，就算是仇人看到这张脸气也消了吧……怎么美成这样…… 求此女冷知识和萌点…… 刷视频突然刷到她，美得我一大跳，怎么这么好看啊啊啊 #碎碎念[话题]# #黄婷婷考古[话题]# #黄婷婷[话题]# #黄婷婷早期[话题]# #美神降临[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291138/aba827d6dbaea31662b1f48542ace4ac/notes_pre_post/1040g3k831m6o2ovr4q6g5olbbt56suf1r53gmtg!nc_n_webp_mw_1" alt="求此女冷知识" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 962赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68bf8cf6000000001d01758b?xsec_token=AB0ugkd6F0iTzT-uOzdrdxMpTac_MAvXOhSRLuQjxK8JM=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">求此女冷知识</a>
+                    <p>今年刚粉上婷婷 想多多了解她#黄婷婷[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291138/697afc2addc742415ac6df6833241c9a/notes_pre_post/1040g3k831qfletkrg0l05ol4fppmt8r8otrp6qg!nc_n_webp_mw_1" alt="求此女所有冷知识和萌点" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 602赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">求此女所有冷知识和萌点</a>
+                    <p>谁能想到退河多年再次爱上黄婷婷，想看此女生活感特别强的照片，以及了解相关冷知识和萌点😻 #黄婷婷[话题]# #姐感[话题]# #神图[话题]# #萌点[话题]# #冷知识[话题]# #日常照[话题]# #美[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a33e84c0d8d27dfad3261a355b14184e/1040g2sg31gin1so83qkg5okojdf6si44s6t3ano!nc_n_webp_mw_1" alt="黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 398赞 <span>comment_id: 680768be0000000020012c08</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680768be0000000020012c08&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷</a>
+                    <p>江苏数学133（葛军出卷），因为历史拿了c按江苏高考规则上不了一本，随便换个省都是稳稳一本</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291138/697afc2addc742415ac6df6833241c9a/notes_pre_post/1040g3k831qfletkrg0l05ol4fppmt8r8otrp6qg!nc_n_webp_mw_1" alt="求此女所有冷知识和萌点" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 127赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319" target="_blank" rel="noreferrer">求此女所有冷知识和萌点</a>
+                    <p>讲一个节目里的趣事，昨天直播也有人提到了。踢踢她觉得做饭加方便面调料包会让汤这一类的东西更浓郁，之前参加节目的时候，她和队友一起做鸭汤，踢踢尝了一口觉得不够浓，然后就想加方便面调料包，队友不让她加，但她还是不甘心，进屋等汤熬好之前，小眼睛瞄了一眼鸭汤，当时那个小表情就知道她想干嘛，果不其然，没过多久就背着队友偷偷溜了出来，拿起方便面调料包往里面撒，因为是背着</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291138/aba827d6dbaea31662b1f48542ace4ac/notes_pre_post/1040g3k831m6o2ovr4q6g5olbbt56suf1r53gmtg!nc_n_webp_mw_1" alt="求此女冷知识" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 76赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68bf8cf6000000001d01758b" target="_blank" rel="noreferrer">求此女冷知识</a>
+                    <p>此女起B站粉丝牌的时候换了几个名字没成功最后叫TiTis，为了配合粉丝牌名把自己的名字后缀从titi改成TiTi了</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-7">
+              <div class="section-index">07</div>
+              <div class="section-copy">
+                <h2>51/黄五一：猫片、吃醋、人机小猫、不要告诉五一</h2>
+                <p>51 已经是粉丝共同叙事里的第二主角，能承接宠物、陪伴、吃醋和表情包玩法。</p>
+                <div class="metric-row">
+                  <span><b>3,928</b> 可归因点赞</span>
+                  <span><b>3,751</b> 帖子赞</span>
+                  <span><b>177</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291121/6bee74a2f8c05915dac89ccf4d5d94a4/1040g008315bheu44h4005n0rehn1uem3ti30u58!nc_n_webp_mw_1" alt="人机小猫证据确凿" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 683赞</div>
+        <a href="https://www.xiaohongshu.com/explore/6697662c000000000d00c589?xsec_token=AB4d1EWQuhTmN9XLFTrvPnsCn7rHp9lYI46Rl0w7NyqAQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">人机小猫证据确凿</a>
+        <p>掉线重连中～</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291121/6bee74a2f8c05915dac89ccf4d5d94a4/1040g008315bheu44h4005n0rehn1uem3ti30u58!nc_n_webp_mw_1" alt="人机小猫证据确凿" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 683赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6697662c000000000d00c589?xsec_token=AB4d1EWQuhTmN9XLFTrvPnsCn7rHp9lYI46Rl0w7NyqAQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">人机小猫证据确凿</a>
+                    <p>掉线重连中～</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290945/3c62fcda1d1d32b6e900363ec4aa71d1/1040g2sg3149vlgo46ke05n0rehn1uem3ci80b40!nc_n_webp_mw_1" alt="with片场修狗" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 625赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/667509a8000000001c02960a?xsec_token=ABYHOYasXDdLzySFxBjl4EojbpzJ-tCMpYspUQFv2Pfl8=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">with片场修狗</a>
+                    <p>🤫不要告诉五一</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290944/f87c574a90ec3ebd109e3a9a4b33f0ed/notes_pre_post/1040g3k031mh1evaikq005om2mh6mt3fair799l8!nc_n_webp_mw_1" alt="黄婷婷版猫一直在响" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 367赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68ca1a140000000012017393?xsec_token=ABm9aAleOyHPntg3-s8kijMmtXYItwhlSewJyXrUtM2pU=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷版猫一直在响</a>
+                    <p>考古到15年微博 这个婷儿这个萌 黄婷婷和流浪猫是有些缘分的</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/23742cdcd356a64799177b3aaf7b69fd/notes_pre_post/1040g3k031st24li756005nhvkmj08rqb0l92hng!nc_n_webp_mw_1" alt="真的没有人羡慕黄五一吗" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 331赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/699b017d000000000a0305e1?xsec_token=ABlp90snw0J5MsxoSmP854UA2Qn6frtKrimbyyHgCmEcA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">真的没有人羡慕黄五一吗</a>
+                    <p>#黄婷婷[话题]# #黄五一[话题]# #温柔大姐姐[话题]# #经典老番[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301446/7084f0bb3bb11874b6076b667e3c8bff/1040g00831rpkam47j20g5n43pqa5k468vfia8vg!nc_n_webp_mw_1" alt="黄五一我承认你长得很有魅力" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 180赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6976bdb6000000001a02a0b6?xsec_token=ABhbvwrf8joQI1u3RtvC2yRBukl79lg8zbvY_UXNxsFdg=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄五一我承认你长得很有魅力</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290943/3139098c06b09599946a5b7bf9e899ec/1040g2sg31saook2i5ke05nisttg09chv5koug6g!nc_n_webp_mw_1" alt="全北京最可爱的小猫黄五一" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 172赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69884631000000001a02e870?xsec_token=ABZSAjSa4fublcfIPGJ__Wg8GdaYtuYgprZx6pK4xblt0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">全北京最可爱的小猫黄五一</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290943/92f486b9faff2a3bbdce131f69b47482/notes_pre_post/1040g3k831u91d8412q005nisttg09chv318s518!nc_n_webp_mw_1" alt="黄五一六岁生日快乐～" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 167赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c809b7000000002202a8d5?xsec_token=ABQ5RZlqjMOYprJUwZYpJgWfeJOzxJBXNUN5xcxihEiRo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄五一六岁生日快乐～</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301443/298ffdf08dd6360f56a6fe8767dfab36/1040g00831u4jjqkuii005n0rehn1uem3grad65o!nc_n_webp_mw_1" alt="TT’s好物分享" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 165赞 <span>comment_id: 69c385bc00000000150049e2</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69c38062000000001a024214?comment_id=69c385bc00000000150049e2&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">TT’s好物分享</a>
+                    <p>给黄五一用吧 都秃成啥了 某东和某音各下了一单支持老公商务[失望R]</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-8">
+              <div class="section-index">08</div>
+              <div class="section-copy">
+                <h2>i 人反差：局促营业、傲娇、上班被迫营业</h2>
+                <p>她的“不会过度营业”被粉丝转译为真实可爱，适合轻松化表达。</p>
+                <div class="metric-row">
+                  <span><b>2,186</b> 可归因点赞</span>
+                  <span><b>1,788</b> 帖子赞</span>
+                  <span><b>398</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 501赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+        <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 501赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301445/1c89beeb150bc1a57bdb3e76acef48d0/notes_pre_post/1040g3k831v23o0oghu005opgfif8vbt671f47u0!nc_n_webp_mw_1" alt="任何人上班都会身不由己，包括黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 446赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69e1b979000000002200d6d2?xsec_token=ABoWDLSDeQBzoGPooh8xgnWKVjLjYDhuBJQrRpEE3o5p0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">任何人上班都会身不由己，包括黄婷婷</a>
+                    <p>每一个被黄婷婷盐过的人，看这个黄婷婷上班都有种大仇得报的爽感吧。 平时傲娇嘴硬盐得不行，“拱啊”“土死了”“有病啊”“你们很奇怪！”… 拍杂志就得乖乖写“老婆的专属小卡”了。拍节目物料也得乖乖撒娇，乖乖念土味情话了。怎么不算是一种强制爱呢。 家踢一边念还得一边攥紧小拳头尴尬，爽死谁了我不说。 上班好，多上班。#黄婷婷无</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/5fc73100b68a113c4af6bb916113d281/1040g00831incl1pe14dg5okojdf6si44o0eclfo!nc_n_webp_mw_1" alt="很喜欢黄婷婷这种i人营业时的不安和局促" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 322赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/684d84dd00000000120078a0?xsec_token=AB_xB6-8--MHUkwV4mdW-vJ8OSel10WHu0O_udz2TdezA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">很喜欢黄婷婷这种i人营业时的不安和局促</a>
+                    <p>谁懂啊，还有略显僵硬的肢体语言，太真实了。 . 我这个心理是不是有点变态了？ . 你们去看视频，动态更明显，婷姐真的e不了一点，营业状态时的i人装e也很明显，经常用微醺的声音掩盖自己的i人特质。 . 我是不是在给婷姐强安人设？会不会不太合适？如果有不合适，单推老师留言给我，我会隐藏的。 . #黄婷婷[话题]# #卡黄[</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/0f383089b02a71b63df06e553e5f74aa/1040g2sg31uminu09hmi05p78fapgacp8k6hh7b8!nc_n_webp_mw_1" alt="黄婷婷全肯定" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 279赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69d5f14c000000001b0027ec?xsec_token=AB5NqnhAul02RZfXdpOlmQx5iApRzltidJpshsTQSGMe4=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷全肯定</a>
+                    <p>本来想看导师锐评的，结果……黄婷婷全肯定！ 对黄婷婷的印象一直还停留在塞纳河少女偶像，看无限超越班才发现她演技居然这么好，人也很坚韧很清醒，因为解约风波导致好几年没有工作太现实了，好在导师全肯定，成为第一个加入无限超越班的演员[皱眉R][皱眉R][皱眉R] 节目制度真的挺好的，表现不好的一组两个都不选，就能多出来机会给</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291120/0b69aa8eac00fc1446b34f15b46adbc7/1040g00831l1odnbs2o005nak13vknn1vmqba8ho!nc_n_webp_mw_1" alt="黄婷婷上班打招呼👋" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 192赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6899b16000000000040007ec?xsec_token=ABgK8dxy_XUaUfr5a30WykCMQdQFJLedxdm0S5-_WfdHk=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷上班打招呼👋</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/5fc73100b68a113c4af6bb916113d281/1040g00831incl1pe14dg5okojdf6si44o0eclfo!nc_n_webp_mw_1" alt="很喜欢黄婷婷这种i人营业时的不安和局促" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 143赞 <span>comment_id: 684da6a4000000001102dd5f</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/684d84dd00000000120078a0?comment_id=684da6a4000000001102dd5f&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">很喜欢黄婷婷这种i人营业时的不安和局促</a>
+                    <p>直播的时候很有趣，线下又很局促。</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 82赞 <span>comment_id: 69a39142000000000b034e82</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a39142000000000b034e82&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>踢踢真的很细心，之前直播好多是在下午，在工作日，然后就有粉丝说在上班赶不上，踢踢现在直播就基本上在周末的晚上播了</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/5fc73100b68a113c4af6bb916113d281/1040g00831incl1pe14dg5okojdf6si44o0eclfo!nc_n_webp_mw_1" alt="很喜欢黄婷婷这种i人营业时的不安和局促" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 63赞 <span>comment_id: 684d9eb20000000020021105</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/684d84dd00000000120078a0?comment_id=684d9eb20000000020021105&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">很喜欢黄婷婷这种i人营业时的不安和局促</a>
+                    <p>眼神躲闪，躲闪，再躲闪[doge] + 结尾固定摇手拜拜， 真的超级典型大i人 。但是营业时的e状态也经营得很好。她就这样就很好[萌萌哒R]</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-9">
+              <div class="section-index">09</div>
+              <div class="section-copy">
+                <h2>猫塑/meme 梗图：黄婷婷是我的猫</h2>
+                <p>粉丝接受把黄婷婷本人做成猫塑、梗图、表情包，适合做轻互动素材。</p>
+                <div class="metric-row">
+                  <span><b>2,102</b> 可归因点赞</span>
+                  <span><b>2,097</b> 帖子赞</span>
+                  <span><b>5</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291139/4b4c5b5aeea324aa6f3d22f0a66b6ed0/notes_pre_post/1040g3k831snupbe3lebg5ol74jdmslpqdp12jio!nc_n_webp_mw_1" alt="建设踢踢meme梗图" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 578赞</div>
+        <a href="https://www.xiaohongshu.com/explore/6995c87d000000000a03e653?xsec_token=ABnpXcKDIV9GYbQ6KWNcS1M-IOuJVVQAuGDZFet58Nsr0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">建设踢踢meme梗图</a>
+        <p>大量萌图来袭，附赠一张四黄[吐舌头H]#黄婷婷[话题]##meme[话题]# #只能说是一模一样[话题]#</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291139/4b4c5b5aeea324aa6f3d22f0a66b6ed0/notes_pre_post/1040g3k831snupbe3lebg5ol74jdmslpqdp12jio!nc_n_webp_mw_1" alt="建设踢踢meme梗图" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 578赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6995c87d000000000a03e653?xsec_token=ABnpXcKDIV9GYbQ6KWNcS1M-IOuJVVQAuGDZFet58Nsr0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">建设踢踢meme梗图</a>
+                    <p>大量萌图来袭，附赠一张四黄[吐舌头H]#黄婷婷[话题]##meme[话题]# #只能说是一模一样[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291139/f6de9344ea70fd7fbd20e64599ed3089/1040g2sg31tss0ccp72e05q27nasms0flac76nco!nc_n_webp_mw_1" alt="嗯对 黄婷婷是我的猫(踢踢梗图3.0)" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 572赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69bb9400000000001a036dbc?xsec_token=ABw-FliTXPU1rljRM6I8GfI33UezSjhjWz1e3XLGabvuY=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">嗯对 黄婷婷是我的猫(踢踢梗图3.0)</a>
+                    <p>#黄婷婷[话题]# #meme[话题]# #梗图[话题]#</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291139/7fd1bb7071efd6c314e8dd6eeec9dbd5/notes_pre_post/1040g3k031sroual75ckg5ol74jdmslpqd2k30k8!nc_n_webp_mw_1" alt="建设踢踢meme梗图3.0" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 242赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6999b2e5000000000a03f789?xsec_token=AB5HCIpiHeNYNqfyM4pNU6YVbJ6Aks40TZoaFpCXHd97w=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">建设踢踢meme梗图3.0</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604291139/60739846bf4df13911b1725a491d9db1/notes_pre_post/1040g3k031l7dh77sl85g5petomqh91arjoj95no!nc_n_webp_mw_1" alt="黄婷婷梗图（2）" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 225赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/689f79e5000000001b030061?xsec_token=ABOZMqrHmB2irRdBKSYrgGoNbXPzX8fOfO5g8uysc-9tQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷梗图（2）</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290945/f8b24a21a50a957d20ff0f63ea0228eb/1040g00831u4o0ls5io005q27nasms0fltspsmk0!nc_n_webp_mw_1" alt="小狗挺婷～（踢踢梗图4.0)" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 190赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c3a44b00000000230062c8?xsec_token=ABAbhki4dfRIoNw9n3nMDS0ie2e6Tl7Jp-iqiA_FdLJ7M=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">小狗挺婷～（踢踢梗图4.0)</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301446/dc96c2af8209bcbb5931d31c6fac5e55/notes_pre_post/1040g3k831soi44qbl8705ol74jdmslpqqp1cj9o!nc_n_webp_mw_1" alt="全北京最可爱的小猫黄五一也要有meme！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 148赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/699665a9000000000c036b3b?xsec_token=ABrvUSHV9NERKQxZaNwHNIo2DeKj7lhfASVlYVxBlRpUs=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">全北京最可爱的小猫黄五一也要有meme！</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301440/011a67144a7c74fcdab54a0a63f46327/notes_pre_post/1040g3k831kfnfjeuj6dg48i7h4u7ja7473opt0g!nc_n_webp_mw_1" alt="黄婷婷著名表情包" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 73赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/688737250000000012015082?xsec_token=AB8V0AqoPZiR6IdgfB41maDsE_kEyyNpKlTlY4pgMdk-o=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷著名表情包</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301445/6270ddb79b64d16d8ae8e87346801895/notes_pre_post/1040g3k031v77vp072a005oj056fk0ishnbc5cg8!nc_n_webp_mw_1" alt="表情包评论区自行拿" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 69赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69e6f819000000002003b2cc?xsec_token=ABmXYDAZloyzo-d1048qtvOK1hN_myJk-zQfJ1j8_61YQ=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">表情包评论区自行拿</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-10">
+              <div class="section-index">10</div>
+              <div class="section-copy">
+                <h2>宠粉长情：不轻易承诺，但会把回应做出来</h2>
+                <p>这是最能打动核心粉的关系资产，重点不是甜言蜜语，而是被听见、被尊重。</p>
+                <div class="metric-row">
+                  <span><b>884</b> 可归因点赞</span>
+                  <span><b>645</b> 帖子赞</span>
+                  <span><b>239</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 501赞</div>
+        <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+        <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 501赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?xsec_token=ABKuuUICTAb6wsXcOPaNt8dHDwHiolkJVUezrTxVVfVto=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>晚上恰好遇上了踢踢的突袭直播，然后感触还蛮深的。 首先就是本人怒发红SC告白，完整版甚至提前写好打算过年发，结果错过[汗颜R]。因为字数限制今天踢读的是阉割版。然后踢踢第一反应就是我夸张了，哈哈哈。她可能不知道自己是个多好的偶像吧。没关系，我知道。 然后就是舰长礼那块，包括t3一直提的见面会。踢踢一直强调自己没答应，在</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301443/8ffa33b6a43c45a3a91637c9fdb8d02e/notes_pre_post/1040g3k831rv74h7i3i705p62h3a5729lt5gj258!nc_n_webp_mw_1" alt="htt真的有把粉丝送的东西好好珍藏和使用" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 133赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/697c7454000000000b00b017?xsec_token=AB9dcKRpfBC-Nd3O2KEMxuESTC_qRFClEtq9VHpL4rGTk=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">htt真的有把粉丝送的东西好好珍藏和使用</a>
+                    <p>在大眼刷到titi把很多以前粉丝送的东西都有用上甚至很多都是有很长年限的，她也一直没有丢，而是私底下好好保存着，就让我感觉到她是珍惜粉丝的爱的。 我没有追过星，因为我觉得内娱的大明星都太遥远了，而且很不真实，很假。（没有内涵谁哈）但这个爱去踢踢真的不一样，考古发现她真的很好很好…^_^ 我不知道会喜欢她多久，不敢说永远</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 82赞 <span>comment_id: 69a39142000000000b034e82</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a39142000000000b034e82&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>踢踢真的很细心，之前直播好多是在下午，在工作日，然后就有粉丝说在上班赶不上，踢踢现在直播就基本上在周末的晚上播了</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 41赞 <span>comment_id: 69a31283000000001500d068</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a31283000000001500d068&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>这条红sc我印象特别深 原来是老师您 而且全平台同一id哈哈 踢踢真的好真诚</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 40赞 <span>comment_id: 69a39199000000000c017f1b</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a39199000000000c017f1b&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>如果我没记错的话直播预告好像也是因为粉丝说总是错过才去研究怎么发的</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 30赞 <span>comment_id: 69a313ce000000000c009747</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a313ce000000000c009747&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>舰长礼物不太可行 毕竟不是全职 这个弄过一次就要一直弄。短期确定不太可能有见面会[吃瓜R]</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 24赞 <span>comment_id: 69a31357000000000600d58c</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a31357000000000600d58c&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>在用自己的方式宠粉，她每次下播前的举措真的情绪价值给很足[捂脸R]从说拜拜开始到关直播间基本都十分钟以上吧。底色是温柔的就是这样。</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301439/15f3e9d57a6886c4a1ea5a4ef7e9a81b/1040g2sg31t4sspinl8k05opgfif8vbt61v74l68!nc_n_webp_mw_1" alt="我要怎么跟你说黄婷婷是个多好的人呢" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 16赞 <span>comment_id: 69a32caa00000000060331ae</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69a30eb00000000023038f83?comment_id=69a32caa00000000060331ae&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我要怎么跟你说黄婷婷是个多好的人呢</a>
+                    <p>博主内心很细腻，说得很好，踢踢不轻易承诺，真诚踏实，讷于言敏于行。 答应t3发vlog几年了一直做，还是她自己剪的视频有小巧思。 她也很有趣，跟t3相处模式一如既往，嘴上傲娇，其实默默记在心里，都在行动里。 记得跨年直播冰箱贴被t3发现是很久以前送她的，就是这样默默的长情。 她不设房管也是对t3一视同仁，之前直播有不尊重她的，她看到当做没看到，情绪稳定，在她</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-11">
+              <div class="section-index">11</div>
+              <div class="section-copy">
+                <h2>陪伴线：生日、老粉多年后当面说出口</h2>
+                <p>这是情绪向资产，适合放在粉丝向物料或纪念节点里，不适合硬做大众传播。</p>
+                <div class="metric-row">
+                  <span><b>476</b> 可归因点赞</span>
+                  <span><b>434</b> 帖子赞</span>
+                  <span><b>42</b> 评论赞</span>
+                  <span><b>8</b> 来源URL</span>
+                </div>
+              </div>
+              <div class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">XHS</div></div>
+                
+      <div class="top-source">
+        <div class="source-kind">帖子 · 172赞</div>
+        <a href="https://www.xiaohongshu.com/explore/68bef6f7000000001d012bec" target="_blank" rel="noreferrer">致我小时候的少女偶像</a>
+        <p>2017.09.08在屏幕前第一次对你说生日快乐 2025.09.08第一次当面和你说出生日快乐 我们之间好像总差点运气，小时候做梦都想到上海看你的公演，但是后来我到了上海你却不在这里了 在今天迎来我们八年来的第一次见面 生日快乐！今天的蛋糕特别好吃[吧唧R] 也特别快乐～ @黄婷婷 #黄婷婷[话题]# #黄婷婷090</p>
+        
+      </div>
+    
+              </div>
+              <ol class="evidence-list">
+                
+                <li>
+                  <div class="mini-thumb"><div class="mini-thumb-fallback">源</div></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 172赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68bef6f7000000001d012bec" target="_blank" rel="noreferrer">致我小时候的少女偶像</a>
+                    <p>2017.09.08在屏幕前第一次对你说生日快乐 2025.09.08第一次当面和你说出生日快乐 我们之间好像总差点运气，小时候做梦都想到上海看你的公演，但是后来我到了上海你却不在这里了 在今天迎来我们八年来的第一次见面 生日快乐！今天的蛋糕特别好吃[吧唧R] 也特别快乐～ @黄婷婷 #黄婷婷[话题]# #黄婷婷090</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290943/92f486b9faff2a3bbdce131f69b47482/notes_pre_post/1040g3k831u91d8412q005nisttg09chv318s518!nc_n_webp_mw_1" alt="黄五一六岁生日快乐～" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 167赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c809b7000000002202a8d5?xsec_token=ABQ5RZlqjMOYprJUwZYpJgWfeJOzxJBXNUN5xcxihEiRo=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄五一六岁生日快乐～</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301438/a33e84c0d8d27dfad3261a355b14184e/1040g2sg31gin1so83qkg5okojdf6si44s6t3ano!nc_n_webp_mw_1" alt="黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 41赞 <span>comment_id: 680770fe000000001f01bf8c</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/680732c8000000000f038b07?comment_id=680770fe000000001f01bf8c&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷</a>
+                    <p>请全文背诵htt生诞公演上lyt写信的全文[偷笑R]</p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301447/a68fa1d48192c3bb76eae9110a0d4ad3/1040g2sg31m8n7hsb50005pomvaj7c5m6qa6eomo!nc_n_webp_mw_1" alt="黄婷婷17年生日签名画册和应援物" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 28赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/68c191aa000000001d00c959?xsec_token=ABwcXo8q6ySy6kLZt59GNkx2hoMI_1y8dcP2iqCK_IAQ0=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷17年生日签名画册和应援物</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290943/bd87fd758130b55aea6413db4ea5ace3/1040g00831u8jrlqg34605pdn46e3bh58mgkqovg!nc_n_webp_mw_1" alt="五一宝宝生日快乐，踢踢和五一要一直在一起" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 28赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c79ad5000000002200c077?xsec_token=ABLkIagGpyp5GT1EbnUgX1SybFtvdceYkijQd1tSZNCyY=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">五一宝宝生日快乐，踢踢和五一要一直在一起</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604290943/e8249bba28ad7561d450add986949fdf/notes_pre_post/1040g3k031u9ff47gii005om0tkf6t28fudflgv0!nc_n_webp_mw_1" alt="黄五一生日快乐！" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 27赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/69c87dfa0000000022003bc2?xsec_token=ABQ5RZlqjMOYprJUwZYpJgWWkj4xwmRPPWh3h7HPXqibI=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄五一生日快乐！</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301442/cccdfe57e58a36b9f82a0fb2067f9ce1/1040g2sg31b74saf4ngdg5o9tra50kctj04h8gf8!nc_n_webp_mw_1" alt="黄婷婷生日特别环节《wherever you are》" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">帖子 · 12赞 </div>
+                    <a href="https://www.xiaohongshu.com/explore/6757822c000000000201447f?xsec_token=ABU0fQmkMRC_C3Kz8r713zMQbBHxXeIYa_x0S6WkfMV0w=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">黄婷婷生日特别环节《wherever you are》</a>
+                    <p></p>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="mini-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202604301445/1c89beeb150bc1a57bdb3e76acef48d0/notes_pre_post/1040g3k831v23o0oghu005opgfif8vbt671f47u0!nc_n_webp_mw_1" alt="任何人上班都会身不由己，包括黄婷婷" loading="lazy" referrerpolicy="no-referrer"></div>
+                  <div>
+                    <div class="evidence-meta">评论 · 1赞 <span>comment_id: 69e375d70000000014019033</span></div>
+                    <a href="https://www.xiaohongshu.com/explore/69e1b979000000002200d6d2?comment_id=69e375d70000000014019033&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">任何人上班都会身不由己，包括黄婷婷</a>
+                    <p>轮廓好帅[doge]阿黄咋越来越帅了，小时候明明是萌萌的样子</p>
+                  </div>
+                </li>
+                
+              </ol>
+            </section>
+            
+  </main>
 </body>
 </html>
