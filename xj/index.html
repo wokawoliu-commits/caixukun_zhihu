@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>新疆视觉文化资产 | snackpaper</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231175a8'/%3E%3Cpath d='M32 8l6 18 18 6-18 6-6 18-6-18-18-6 18-6z' fill='%23f7efe0'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23c99a39'/%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --lake: #1175a8;
+        --lake-deep: #063f57;
+        --milk: #f7efe0;
+        --paper: #fbf7ee;
+        --pomegranate: #b82f32;
+        --almond: #c99a39;
+        --mulberry: #6e2430;
+        --grass: #4c6a3f;
+        --ink: #14120f;
+        --muted: #726b60;
+        --line: rgba(20, 18, 15, 0.16);
+        --shadow: 0 24px 70px rgba(20, 18, 15, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+          system-ui, sans-serif;
+        line-height: 1.65;
+        letter-spacing: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        padding: 20px 36px;
+        color: #fff;
+        transition:
+          background 240ms ease,
+          color 240ms ease,
+          box-shadow 240ms ease;
+      }
+
+      .site-header.is-scrolled {
+        background: rgba(251, 247, 238, 0.92);
+        color: var(--ink);
+        box-shadow: 0 8px 26px rgba(20, 18, 15, 0.08);
+        backdrop-filter: blur(14px);
+      }
+
+      .brand {
+        font-size: 15px;
+        font-weight: 780;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .nav a {
+        text-decoration: none;
+        opacity: 0.86;
+      }
+
+      .nav a:hover {
+        opacity: 1;
+      }
+
+      .hero {
+        position: relative;
+        min-height: 88svh;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        color: #fff;
+        isolation: isolate;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          linear-gradient(90deg, rgba(7, 30, 38, 0.84), rgba(7, 30, 38, 0.34) 54%, rgba(7, 30, 38, 0.1)),
+          linear-gradient(0deg, rgba(7, 30, 38, 0.78), rgba(7, 30, 38, 0.04) 46%),
+          url("image/sayram-lake.jpg?v=20260501") center / cover no-repeat;
+        transform: scale(1.02);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 28%;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(184, 47, 50, 0.38), rgba(201, 154, 57, 0.22), rgba(17, 117, 168, 0)),
+          repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0 2px, transparent 2px 17px);
+        mix-blend-mode: soft-light;
+        opacity: 0.74;
+      }
+
+      .hero-inner {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+        padding: 128px 0 76px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        font-size: 14px;
+        font-weight: 760;
+      }
+
+      .hero h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: 74px;
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero p {
+        max-width: 640px;
+        margin: 24px 0 0;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.88);
+      }
+
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 34px;
+      }
+
+      .hero-meta span {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        padding: 6px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.34);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        font-size: 13px;
+        font-weight: 720;
+        backdrop-filter: blur(10px);
+      }
+
+      section {
+        position: relative;
+        padding: 96px 0;
+      }
+
+      .wrap {
+        width: min(1180px, calc(100% - 48px));
+        margin: 0 auto;
+      }
+
+      .section-kicker {
+        margin: 0 0 12px;
+        color: var(--pomegranate);
+        font-size: 13px;
+        font-weight: 820;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 44px;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .section-lead {
+        max-width: 780px;
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .principle {
+        padding: 86px 0;
+        background: var(--ink);
+        color: var(--milk);
+      }
+
+      .principle .wrap {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 54px;
+        align-items: center;
+      }
+
+      .principle h2 {
+        max-width: 790px;
+        font-size: 52px;
+      }
+
+      .principle p {
+        margin: 22px 0 0;
+        max-width: 760px;
+        color: rgba(247, 239, 224, 0.76);
+        font-size: 18px;
+      }
+
+      .principle-mark {
+        min-height: 230px;
+        border: 1px solid rgba(247, 239, 224, 0.22);
+        border-radius: 8px;
+        background:
+          radial-gradient(circle at 50% 50%, rgba(201, 154, 57, 0.95) 0 8px, transparent 9px),
+          conic-gradient(from 22.5deg, transparent 0 6.25%, rgba(247, 239, 224, 0.86) 6.25% 12.5%, transparent 12.5% 18.75%, rgba(247, 239, 224, 0.86) 18.75% 25%, transparent 25% 31.25%, rgba(247, 239, 224, 0.86) 31.25% 37.5%, transparent 37.5% 43.75%, rgba(247, 239, 224, 0.86) 43.75% 50%, transparent 50% 56.25%, rgba(247, 239, 224, 0.86) 56.25% 62.5%, transparent 62.5% 68.75%, rgba(247, 239, 224, 0.86) 68.75% 75%, transparent 75% 81.25%, rgba(247, 239, 224, 0.86) 81.25% 87.5%, transparent 87.5% 93.75%, rgba(247, 239, 224, 0.86) 93.75% 100%),
+          linear-gradient(135deg, rgba(184, 47, 50, 0.9), rgba(17, 117, 168, 0.78));
+        background-size: 100% 100%;
+        box-shadow: inset 0 0 0 22px rgba(20, 18, 15, 0.34);
+      }
+
+      .asset-map {
+        background:
+          linear-gradient(180deg, rgba(247, 239, 224, 0.7), rgba(251, 247, 238, 1)),
+          radial-gradient(circle at 85% 8%, rgba(17, 117, 168, 0.18), transparent 28%);
+      }
+
+      .asset-layout {
+        display: grid;
+        grid-template-columns: 0.82fr 1.18fr;
+        gap: 44px;
+        align-items: start;
+        margin-top: 52px;
+      }
+
+      .mockup-stage {
+        position: sticky;
+        top: 104px;
+      }
+
+      .pack {
+        position: relative;
+        min-height: 520px;
+        padding: 34px;
+        border-radius: 8px;
+        overflow: hidden;
+        color: var(--ink);
+        background:
+          linear-gradient(90deg, transparent 0 70%, rgba(20, 18, 15, 0.08) 70% 72%, transparent 72%),
+          linear-gradient(180deg, #fff8ea, #f0dfbf);
+        box-shadow: var(--shadow);
+      }
+
+      .pack::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.85;
+        background:
+          radial-gradient(ellipse at 16% 46%, transparent 0 24px, rgba(184, 47, 50, 0.18) 25px 27px, transparent 28px),
+          radial-gradient(ellipse at 44% 42%, transparent 0 24px, rgba(17, 117, 168, 0.18) 25px 27px, transparent 28px),
+          radial-gradient(ellipse at 72% 48%, transparent 0 24px, rgba(76, 106, 63, 0.16) 25px 27px, transparent 28px),
+          repeating-linear-gradient(90deg, rgba(17, 117, 168, 0.22) 0 16px, rgba(184, 47, 50, 0.2) 16px 25px, rgba(201, 154, 57, 0.18) 25px 39px, transparent 39px 54px);
+        mix-blend-mode: multiply;
+      }
+
+      .pack::after {
+        content: "";
+        position: absolute;
+        inset: auto 0 0 0;
+        height: 76px;
+        background:
+          repeating-linear-gradient(45deg, rgba(20, 18, 15, 0.18) 0 2px, transparent 2px 14px),
+          linear-gradient(90deg, var(--lake), var(--pomegranate), var(--almond));
+      }
+
+      .pack-content {
+        position: relative;
+        z-index: 2;
+        display: grid;
+        min-height: 452px;
+        align-content: space-between;
+      }
+
+      .pack-title {
+        font-size: 48px;
+        line-height: 1.02;
+        font-weight: 860;
+      }
+
+      .pack-sub {
+        margin-top: 12px;
+        max-width: 240px;
+        color: rgba(20, 18, 15, 0.68);
+        font-size: 14px;
+        font-weight: 650;
+      }
+
+      .pack-badge {
+        width: 98px;
+        height: 98px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: var(--milk);
+        background:
+          radial-gradient(circle at center, var(--almond) 0 8px, transparent 9px),
+          conic-gradient(from 22deg, var(--mulberry), var(--lake), var(--grass), var(--pomegranate), var(--mulberry));
+        box-shadow: inset 0 0 0 10px rgba(251, 247, 238, 0.72);
+        font-size: 13px;
+        font-weight: 820;
+        text-align: center;
+      }
+
+      .asset-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .asset-card {
+        min-height: 374px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.64);
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease,
+          box-shadow 220ms ease;
+      }
+
+      .asset-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(184, 47, 50, 0.38);
+        box-shadow: 0 18px 44px rgba(20, 18, 15, 0.11);
+      }
+
+      .asset-preview {
+        position: relative;
+        height: 118px;
+        margin-bottom: 18px;
+        border: 1px solid rgba(20, 18, 15, 0.12);
+        border-radius: 7px;
+        overflow: hidden;
+        background: var(--milk);
+      }
+
+      .asset-preview::after {
+        content: attr(data-label);
+        position: absolute;
+        left: 12px;
+        bottom: 10px;
+        z-index: 2;
+        padding: 4px 8px;
+        border-radius: 999px;
+        color: #fff;
+        background: rgba(20, 18, 15, 0.72);
+        font-size: 11px;
+        font-weight: 780;
+        backdrop-filter: blur(8px);
+      }
+
+      .preview-adras {
+        background:
+          radial-gradient(ellipse at 18% 42%, rgba(247, 239, 224, 0.92) 0 10px, transparent 11px),
+          radial-gradient(ellipse at 51% 55%, rgba(247, 239, 224, 0.78) 0 13px, transparent 14px),
+          radial-gradient(ellipse at 83% 36%, rgba(247, 239, 224, 0.86) 0 9px, transparent 10px),
+          repeating-linear-gradient(90deg, #0c789d 0 18px, #b82f32 18px 29px, #d7ad4d 29px 44px, #fff2d3 44px 55px, #456a54 55px 70px, #6e2430 70px 88px);
+      }
+
+      .preview-almond {
+        background:
+          radial-gradient(ellipse at 25% 42%, transparent 0 22px, rgba(110, 36, 48, 0.8) 23px 25px, transparent 26px),
+          radial-gradient(ellipse at 55% 58%, transparent 0 22px, rgba(17, 117, 168, 0.62) 23px 25px, transparent 26px),
+          radial-gradient(ellipse at 82% 38%, transparent 0 18px, rgba(201, 154, 57, 0.72) 19px 21px, transparent 22px),
+          repeating-linear-gradient(135deg, rgba(201, 154, 57, 0.28) 0 9px, rgba(255, 251, 242, 0.92) 9px 28px);
+      }
+
+      .preview-tools {
+        background:
+          linear-gradient(90deg, transparent 0 28%, rgba(20, 18, 15, 0.22) 28% 30%, transparent 30% 35%, rgba(20, 18, 15, 0.22) 35% 37%, transparent 37%),
+          radial-gradient(circle at 26% 36%, transparent 0 22px, rgba(17, 117, 168, 0.88) 23px 26px, transparent 27px),
+          radial-gradient(circle at 72% 34%, transparent 0 16px, rgba(184, 47, 50, 0.9) 17px 20px, transparent 21px),
+          linear-gradient(180deg, transparent 0 58%, rgba(201, 154, 57, 0.42) 58% 62%, transparent 62%),
+          repeating-linear-gradient(90deg, #fff8ea 0 24px, #e9d7aa 24px 28px, #f4e7c6 28px 48px);
+      }
+
+      .preview-doppa {
+        background:
+          radial-gradient(circle at 26% 34%, #b82f32 0 7px, transparent 8px),
+          radial-gradient(circle at 26% 34%, transparent 0 17px, rgba(184, 47, 50, 0.72) 18px 20px, transparent 21px),
+          radial-gradient(circle at 73% 66%, #c99a39 0 7px, transparent 8px),
+          radial-gradient(circle at 73% 66%, transparent 0 18px, rgba(76, 106, 63, 0.7) 19px 21px, transparent 22px),
+          linear-gradient(45deg, transparent 0 47%, rgba(17, 117, 168, 0.74) 47% 49%, transparent 49%),
+          linear-gradient(-45deg, transparent 0 47%, rgba(110, 36, 48, 0.74) 47% 49%, transparent 49%),
+          #fff8ea;
+      }
+
+      .preview-embroidery {
+        background:
+          radial-gradient(circle at 18% 50%, rgba(184, 47, 50, 0.9) 0 5px, transparent 6px),
+          radial-gradient(circle at 38% 50%, rgba(201, 154, 57, 0.95) 0 5px, transparent 6px),
+          radial-gradient(circle at 58% 50%, rgba(17, 117, 168, 0.9) 0 5px, transparent 6px),
+          radial-gradient(circle at 78% 50%, rgba(76, 106, 63, 0.9) 0 5px, transparent 6px),
+          repeating-linear-gradient(90deg, transparent 0 24px, rgba(20, 18, 15, 0.18) 24px 26px, transparent 26px 48px),
+          repeating-linear-gradient(0deg, rgba(255, 251, 242, 1) 0 18px, rgba(247, 239, 224, 0.76) 18px 36px);
+      }
+
+      .preview-felt {
+        background:
+          conic-gradient(from 45deg at 24% 50%, var(--lake) 0 25%, transparent 25% 50%, var(--lake) 50% 75%, transparent 75% 100%),
+          conic-gradient(from 45deg at 50% 50%, var(--pomegranate) 0 25%, transparent 25% 50%, var(--pomegranate) 50% 75%, transparent 75% 100%),
+          conic-gradient(from 45deg at 76% 50%, var(--almond) 0 25%, transparent 25% 50%, var(--almond) 50% 75%, transparent 75% 100%),
+          #fff8ea;
+        background-size: 96px 96px, 96px 96px, 96px 96px, auto;
+      }
+
+      .preview-kazakh {
+        background:
+          radial-gradient(ellipse at 36% 52%, transparent 0 26px, rgba(247, 239, 224, 0.95) 27px 31px, transparent 32px),
+          radial-gradient(ellipse at 64% 52%, transparent 0 26px, rgba(247, 239, 224, 0.95) 27px 31px, transparent 32px),
+          conic-gradient(from 36deg at 50% 50%, #0b5572, #c99a39, #b82f32, #0b5572);
+      }
+
+      .preview-silkroad {
+        background:
+          radial-gradient(circle at 18% 30%, #b82f32 0 7px, transparent 8px),
+          radial-gradient(circle at 78% 72%, #c99a39 0 9px, transparent 10px),
+          conic-gradient(from 22.5deg at 50% 50%, transparent 0 6.25%, #fff8ea 6.25% 12.5%, transparent 12.5% 18.75%, #fff8ea 18.75% 25%, transparent 25% 31.25%, #fff8ea 31.25% 37.5%, transparent 37.5% 43.75%, #fff8ea 43.75% 50%, transparent 50% 56.25%, #fff8ea 56.25% 62.5%, transparent 62.5% 68.75%, #fff8ea 68.75% 75%, transparent 75% 81.25%, #fff8ea 81.25% 87.5%, transparent 87.5% 93.75%, #fff8ea 93.75% 100%),
+          linear-gradient(135deg, #063f57, #1175a8);
+        background-size: 86px 86px, 112px 112px, 92px 92px, auto;
+      }
+
+      .asset-card h3 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.22;
+      }
+
+      .asset-card p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .asset-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 16px;
+      }
+
+      .asset-tags span {
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: rgba(17, 117, 168, 0.1);
+        color: var(--lake-deep);
+        font-size: 12px;
+        font-weight: 760;
+      }
+
+      .caution {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid var(--line);
+        color: var(--mulberry);
+        font-size: 13px;
+        font-weight: 650;
+      }
+
+      .translation {
+        background: #fffdf7;
+      }
+
+      .translate-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .sample {
+        min-height: 290px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: #fff;
+      }
+
+      .sample-art {
+        height: 170px;
+      }
+
+      .adras {
+        background:
+          radial-gradient(ellipse at 22% 50%, rgba(247, 239, 224, 0.96) 0 15px, transparent 16px),
+          radial-gradient(ellipse at 60% 42%, rgba(247, 239, 224, 0.76) 0 18px, transparent 19px),
+          repeating-linear-gradient(90deg, var(--lake) 0 28px, var(--pomegranate) 28px 44px, var(--almond) 44px 68px, var(--grass) 68px 80px, var(--mulberry) 80px 102px);
+        filter: saturate(0.95);
+      }
+
+      .almond {
+        background:
+          radial-gradient(ellipse at 32% 42%, transparent 0 20px, rgba(20, 18, 15, 0.22) 21px 23px, transparent 24px),
+          radial-gradient(ellipse at 68% 58%, transparent 0 20px, rgba(20, 18, 15, 0.2) 21px 23px, transparent 24px),
+          repeating-linear-gradient(135deg, rgba(201, 154, 57, 0.32) 0 8px, rgba(247, 239, 224, 0.92) 8px 28px),
+          var(--milk);
+      }
+
+      .borderwork {
+        background:
+          linear-gradient(90deg, transparent 0 18%, rgba(184, 47, 50, 0.92) 18% 21%, transparent 21% 79%, rgba(184, 47, 50, 0.92) 79% 82%, transparent 82%),
+          repeating-linear-gradient(0deg, transparent 0 18px, rgba(17, 117, 168, 0.34) 18px 21px, transparent 21px 36px),
+          conic-gradient(from 45deg, rgba(201, 154, 57, 0.78), rgba(247, 239, 224, 0.92), rgba(17, 117, 168, 0.72), rgba(247, 239, 224, 0.92), rgba(201, 154, 57, 0.78));
+      }
+
+      .stars {
+        background:
+          radial-gradient(circle at 20% 28%, rgba(184, 47, 50, 0.95) 0 6px, transparent 7px),
+          radial-gradient(circle at 75% 66%, rgba(76, 106, 63, 0.86) 0 9px, transparent 10px),
+          conic-gradient(from 22.5deg at 50% 50%, transparent 0 6.25%, rgba(247, 239, 224, 0.95) 6.25% 12.5%, transparent 12.5% 18.75%, rgba(247, 239, 224, 0.95) 18.75% 25%, transparent 25% 31.25%, rgba(247, 239, 224, 0.95) 31.25% 37.5%, transparent 37.5% 43.75%, rgba(247, 239, 224, 0.95) 43.75% 50%, transparent 50% 56.25%, rgba(247, 239, 224, 0.95) 56.25% 62.5%, transparent 62.5% 68.75%, rgba(247, 239, 224, 0.95) 68.75% 75%, transparent 75% 81.25%, rgba(247, 239, 224, 0.95) 81.25% 87.5%, transparent 87.5% 93.75%, rgba(247, 239, 224, 0.95) 93.75% 100%),
+          linear-gradient(135deg, var(--lake-deep), var(--lake));
+        background-size: 80px 80px, 120px 120px, 100px 100px, auto;
+      }
+
+      .sample-body {
+        padding: 18px;
+      }
+
+      .sample-body h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .sample-body p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .palette {
+        background:
+          linear-gradient(180deg, var(--lake-deep), #092f37);
+        color: #fff;
+      }
+
+      .palette .section-kicker {
+        color: #f2c75d;
+      }
+
+      .palette .section-lead {
+        color: rgba(255, 255, 255, 0.74);
+      }
+
+      .palette-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 48px;
+      }
+
+      .palette-panel {
+        padding: 28px;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.06);
+      }
+
+      .palette-panel h3 {
+        margin: 0 0 10px;
+        font-size: 24px;
+      }
+
+      .palette-panel p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .swatches {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .swatch {
+        min-height: 124px;
+        display: grid;
+        align-content: end;
+        padding: 12px;
+        border-radius: 8px;
+        color: #fff;
+        box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+      }
+
+      .swatch.light {
+        color: var(--ink);
+      }
+
+      .swatch strong {
+        font-size: 13px;
+        line-height: 1.25;
+      }
+
+      .swatch span {
+        margin-top: 4px;
+        font-size: 12px;
+        opacity: 0.75;
+      }
+
+      .retail-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 26px;
+      }
+
+      .retail-strip {
+        min-height: 124px;
+        border-radius: 8px;
+        background:
+          linear-gradient(0deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.72)),
+          var(--tone);
+        display: grid;
+        align-content: end;
+        padding: 12px;
+        color: var(--ink);
+      }
+
+      .retail-strip strong {
+        font-size: 13px;
+      }
+
+      .guardrails {
+        background: var(--paper);
+      }
+
+      .guard-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .guard {
+        min-height: 334px;
+        display: grid;
+        align-content: start;
+        gap: 18px;
+        padding: 26px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: #fffbf2;
+      }
+
+      .guard.ok {
+        border-top: 5px solid var(--grass);
+      }
+
+      .guard.careful {
+        border-top: 5px solid var(--almond);
+      }
+
+      .guard.avoid {
+        border-top: 5px solid var(--pomegranate);
+      }
+
+      .guard h3 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .guard ul {
+        margin: 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .guard li + li {
+        margin-top: 10px;
+      }
+
+      .references {
+        background: #fffdf7;
+      }
+
+      .photo-grid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.9fr 0.9fr;
+        gap: 16px;
+        margin-top: 48px;
+      }
+
+      .photo-tile {
+        position: relative;
+        min-height: 360px;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #ddd;
+      }
+
+      .photo-tile.tall {
+        grid-row: span 2;
+        min-height: 736px;
+      }
+
+      .photo-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 520ms ease;
+      }
+
+      .photo-tile:hover img {
+        transform: scale(1.045);
+      }
+
+      .photo-caption {
+        position: absolute;
+        inset: auto 0 0 0;
+        padding: 18px;
+        color: #fff;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.72), transparent);
+        font-size: 14px;
+        font-weight: 720;
+      }
+
+      .source-note {
+        margin-top: 34px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .source-note a {
+        color: var(--lake-deep);
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: translateY(24px);
+        transition:
+          transform 620ms ease;
+      }
+
+      .reveal.is-visible {
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          scroll-behavior: auto !important;
+          transition-duration: 0.01ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .site-header {
+          padding: 16px 24px;
+        }
+
+        .nav {
+          display: none;
+        }
+
+        .hero-inner,
+        .wrap {
+          width: min(100% - 34px, 720px);
+        }
+
+        .hero h1 {
+          font-size: 46px;
+          line-height: 1.04;
+        }
+
+        .hero p,
+        .section-lead,
+        .principle p {
+          font-size: 16px;
+        }
+
+        h2,
+        .principle h2 {
+          font-size: 34px;
+        }
+
+        section {
+          padding: 72px 0;
+        }
+
+        .principle .wrap,
+        .asset-layout,
+        .palette-grid,
+        .guard-grid,
+        .photo-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mockup-stage {
+          position: relative;
+          top: auto;
+        }
+
+        .pack {
+          min-height: 440px;
+        }
+
+        .asset-list,
+        .translate-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-tile,
+        .photo-tile.tall {
+          min-height: 330px;
+          grid-row: auto;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .hero {
+          min-height: 86svh;
+        }
+
+        .hero-inner {
+          padding-bottom: 46px;
+        }
+
+        .hero h1 {
+          font-size: 40px;
+        }
+
+        .hero p {
+          font-size: 15px;
+        }
+
+        h2,
+        .principle h2 {
+          font-size: 30px;
+        }
+
+        .swatches,
+        .retail-row {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .pack-title {
+          font-size: 38px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="siteHeader">
+      <div class="brand">SNACKPAPER VISUAL ASSETS</div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#principle">总原则</a>
+        <a href="#asset-map">资产地图</a>
+        <a href="#translation">包装转译</a>
+        <a href="#palette">色彩系统</a>
+        <a href="#guardrails">风险边界</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner reveal">
+          <p class="eyebrow">面向年轻人的新疆文化零食开发研究</p>
+          <h1>新疆视觉文化资产</h1>
+          <p>
+            把地域纹样从“陈列式民族风”转译成可以进入零食包装的底纹、边饰、压纹与局部色带。
+          </p>
+          <div class="hero-meta" aria-label="核心视觉资产">
+            <span>艾德莱斯色带</span>
+            <span>巴旦木纹</span>
+            <span>花帽花果纹</span>
+            <span>刺绣边饰</span>
+            <span>八角星与葡萄纹</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="principle" id="principle">
+        <div class="wrap reveal">
+          <div>
+            <p class="section-kicker">01 / TRANSLATION RULE</p>
+            <h2>最适合包装的不是整套服饰，而是被抽象后的纹样秩序。</h2>
+            <p>
+              PDF 中的判断很明确：视觉资产要成为年轻消费品的设计语言，关键是把传统纹样处理为连续底纹、边饰、压纹和色带。这样既有新疆出处，又避免把文化元素做成表演化的“民俗贴纸”。
+            </p>
+          </div>
+          <div class="principle-mark" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="asset-map" id="asset-map">
+        <div class="wrap">
+          <p class="section-kicker reveal">02 / ASSET MAP</p>
+          <h2 class="reveal">从文化出处到包装位置</h2>
+          <p class="section-lead reveal">
+            下列资产按 PDF 中的优先级与风险提示重组：每一类都对应清晰的含义、可用位置和不能越界的地方。
+          </p>
+
+          <div class="asset-layout">
+            <div class="mockup-stage reveal">
+              <div class="pack" aria-label="snackpaper 包装视觉模拟">
+                <div class="pack-content">
+                  <div>
+                    <div class="pack-title">新疆春色<br />一口入袋</div>
+                    <div class="pack-sub">奶皮子酸奶、巴旦木、葡萄干、馕脆夹心</div>
+                  </div>
+                  <div class="pack-badge">抽象<br />纹样</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="asset-list">
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-adras" data-label="色带底纹" aria-hidden="true"></div>
+                  <h3>艾德莱斯色带 / 流水感纹样</h3>
+                  <p>来源于维吾尔族艾德莱斯绸，传达流动、节奏、春色和生命力。</p>
+                  <div class="asset-tags">
+                    <span>大面积底纹</span><span>腰封</span><span>封套内页</span>
+                  </div>
+                </div>
+                <div class="caution">避免整块照搬低价机印花，优先抽象化重构。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-almond" data-label="巴旦木 icon" aria-hidden="true"></div>
+                  <h3>巴旦木纹</h3>
+                  <p>在艾德莱斯、花帽与民间装饰中常见，指向丰饶、生命和地方果实记忆。</p>
+                  <div class="asset-tags">
+                    <span>主识别 icon</span><span>小图标系统</span><span>口味符号</span>
+                  </div>
+                </div>
+                <div class="caution">植物出处要清楚，避免画成泛化花瓣。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-tools" data-label="器物暗纹" aria-hidden="true"></div>
+                  <h3>热瓦甫 / 梳子 / 耳坠 / 流苏</h3>
+                  <p>来自艾德莱斯绸四大色类纹样，可表达音乐、日常器物与生活气息。</p>
+                  <div class="asset-tags">
+                    <span>隐藏彩蛋</span><span>局部细节</span><span>开箱触点</span>
+                  </div>
+                </div>
+                <div class="caution">不要堆满正面，否则容易显得民俗商品化。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-doppa" data-label="花帽花果" aria-hidden="true"></div>
+                  <h3>朵帕石榴花 / 桃花 / 巴旦木花</h3>
+                  <p>源自维吾尔族花帽的花果纹，适合表达吉祥、繁盛和花果乡土气息。</p>
+                  <div class="asset-tags">
+                    <span>盒盖四角</span><span>封口贴</span><span>节庆限定</span>
+                  </div>
+                </div>
+                <div class="caution">朵帕是服饰器物，不宜把包装做成帽形 cosplay。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-embroidery" data-label="刺绣边饰" aria-hidden="true"></div>
+                  <h3>维吾尔刺绣花卉 / 几何边饰</h3>
+                  <p>承载吉祥如意、层次和秩序感，是包装边框与侧边连续纹样的高效资源。</p>
+                  <div class="asset-tags">
+                    <span>边框</span><span>侧边连续纹</span><span>烫金压纹</span>
+                  </div>
+                </div>
+                <div class="caution">说明地区或工艺来源，避免“新疆民族风”一锅煮。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-felt" data-label="花毡回纹" aria-hidden="true"></div>
+                  <h3>花毡回纹 / 寿纹 / 博古纹</h3>
+                  <p>来自维吾尔族花毡与印花布，具有跨文化交流和手工传统的稳定气质。</p>
+                  <div class="asset-tags">
+                    <span>礼盒边框</span><span>内托花纹</span><span>低调底层视觉</span>
+                  </div>
+                </div>
+                <div class="caution">适合做“稳”的底层语言，少做强主题化宣称。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-kazakh" data-label="羊角鹿角" aria-hidden="true"></div>
+                  <h3>哈萨克羊角纹 / 鹿角 / 驼峰纹</h3>
+                  <p>来自哈萨克族刺绣，可表达力量、草原与牲畜文化。</p>
+                  <div class="asset-tags">
+                    <span>运动感包装</span><span>咸口限定线</span><span>边饰变体</span>
+                  </div>
+                </div>
+                <div class="caution">使用哈萨克元素时，不要混拼无关维吾尔脚本。</div>
+              </article>
+
+              <article class="asset-card reveal">
+                <div>
+                  <div class="asset-preview preview-silkroad" data-label="丝路几何" aria-hidden="true"></div>
+                  <h3>八角星 / 葡萄纹 / 文博衍生符号</h3>
+                  <p>属于丝路通用纹样与文博体系，适合做年轻化几何图案和文明叙事点缀。</p>
+                  <div class="asset-tags">
+                    <span>几何图案</span><span>安全折中语言</span><span>二次抽象点缀</span>
+                  </div>
+                </div>
+                <div class="caution">馆藏图像或成熟文创图形商用前要确认授权。</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="translation" id="translation">
+        <div class="wrap">
+          <p class="section-kicker reveal">03 / PACKAGING TRANSLATION</p>
+          <h2 class="reveal">四种更适合年轻零食的纹样转译</h2>
+          <p class="section-lead reveal">
+            同一套文化资产不必全上正面。高频包装触点可以分层：底纹负责氛围，边饰负责秩序，icon 负责记忆，压纹负责质感。
+          </p>
+          <div class="translate-grid">
+            <article class="sample reveal">
+              <div class="sample-art adras" aria-hidden="true"></div>
+              <div class="sample-body">
+                <h3>色带做底</h3>
+                <p>让艾德莱斯的强对比只留作流动色带，适合拍照与短视频画面。</p>
+              </div>
+            </article>
+            <article class="sample reveal">
+              <div class="sample-art almond" aria-hidden="true"></div>
+              <div class="sample-body">
+                <h3>巴旦木做识别</h3>
+                <p>把果实轮廓转成主 icon，连接口味记忆和新疆原料出处。</p>
+              </div>
+            </article>
+            <article class="sample reveal">
+              <div class="sample-art borderwork" aria-hidden="true"></div>
+              <div class="sample-body">
+                <h3>刺绣做边</h3>
+                <p>用连续边饰包住盒侧、封口和内托，节制但有工艺感。</p>
+              </div>
+            </article>
+            <article class="sample reveal">
+              <div class="sample-art stars" aria-hidden="true"></div>
+              <div class="sample-body">
+                <h3>丝路几何做骨架</h3>
+                <p>八角星与葡萄纹更适合年轻化几何系统，安全度也更高。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="palette" id="palette">
+        <div class="wrap">
+          <p class="section-kicker reveal">04 / COLOR SYSTEM</p>
+          <h2 class="reveal">双系统用色：社媒要高记忆，货架要可识别</h2>
+          <p class="section-lead reveal">
+            PDF 建议把视觉色彩分成两套：KV 与小红书画面可以更明艳，零售包装则降低饱和度，让强对比成为局部边饰。
+          </p>
+          <div class="palette-grid">
+            <div class="palette-panel reveal">
+              <h3>社媒 / KV 色组</h3>
+              <p>适合官宣海报、开箱图、九宫格种草和广告片。</p>
+              <div class="swatches">
+                <div class="swatch" style="background:#1175a8"><strong>赛里木湖蓝</strong><span>#1175A8</span></div>
+                <div class="swatch light" style="background:#f7efe0"><strong>奶皮米白</strong><span>#F7EFE0</span></div>
+                <div class="swatch" style="background:#b82f32"><strong>石榴红</strong><span>#B82F32</span></div>
+                <div class="swatch light" style="background:#c99a39"><strong>巴旦木金</strong><span>#C99A39</span></div>
+              </div>
+            </div>
+            <div class="palette-panel reveal">
+              <h3>零售 / 货架色组</h3>
+              <p>适合分享装、便利店尝鲜装和礼盒侧边信息。</p>
+              <div class="retail-row">
+                <div class="retail-strip" style="--tone:#1175a8"><strong>湖蓝降饱和</strong></div>
+                <div class="retail-strip" style="--tone:#f7efe0"><strong>奶白做主面</strong></div>
+                <div class="retail-strip" style="--tone:#b82f32"><strong>红色做封口</strong></div>
+                <div class="retail-strip" style="--tone:#c99a39"><strong>金色做压纹</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guardrails" id="guardrails">
+        <div class="wrap">
+          <p class="section-kicker reveal">05 / CULTURAL GUARDRAILS</p>
+          <h2 class="reveal">真正的风险控制点是根据、尊重与授权</h2>
+          <p class="section-lead reveal">
+            视觉元素不是不能用，而是要说明出处、避免误读，并在涉及宗教、图腾、仪式、博物馆图像或非遗核心工艺时做进一步确认。
+          </p>
+          <div class="guard-grid">
+            <article class="guard ok reveal">
+              <h3>优先使用</h3>
+              <ul>
+                <li>抽象化艾德莱斯色带与巴旦木 icon。</li>
+                <li>刺绣边饰、花毡回纹作为包装秩序。</li>
+                <li>八角星和葡萄纹作为年轻化几何语言。</li>
+              </ul>
+            </article>
+            <article class="guard careful reveal">
+              <h3>谨慎使用</h3>
+              <ul>
+                <li>朵帕花帽元素只取花果纹，不把包装做成帽形。</li>
+                <li>哈萨克羊角纹要保持族群系统一致。</li>
+                <li>文博符号只做二次抽象，商用前确认授权。</li>
+              </ul>
+            </article>
+            <article class="guard avoid reveal">
+              <h3>避免使用</h3>
+              <ul>
+                <li>净壶、圣龛等宗教相关纹样。</li>
+                <li>伪阿拉伯化字体与无依据的脚本混搭。</li>
+                <li>把公共纹样登记成企业独占版权。</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="references" id="references">
+        <div class="wrap">
+          <p class="section-kicker reveal">06 / IMAGE REFERENCES</p>
+          <h2 class="reveal">示例图像参考</h2>
+          <p class="section-lead reveal">
+            图片用于理解材质、色彩和纹样氛围；最终商业包装仍应重新设计，并按实际来源做授权核验。
+          </p>
+          <div class="photo-grid">
+            <figure class="photo-tile tall reveal">
+              <img src="image/sayram-lake.jpg?v=20260501" alt="赛里木湖风景" />
+              <figcaption class="photo-caption">赛里木湖蓝：适合做社媒主视觉的高记忆色</figcaption>
+            </figure>
+            <figure class="photo-tile reveal">
+              <img src="image/atlas-silk-factory.jpg?v=20260501" alt="和田 Atlas silk 工厂" />
+              <figcaption class="photo-caption">Atlas / 艾德莱斯相关丝绸场景</figcaption>
+            </figure>
+            <figure class="photo-tile reveal">
+              <img src="image/uyghur-doppa-maker.jpg?v=20260501" alt="传统维吾尔族花帽制作场景" />
+              <figcaption class="photo-caption">朵帕花帽：花果纹可转为四角与封口贴</figcaption>
+            </figure>
+            <figure class="photo-tile reveal">
+              <img src="image/kazakh-ornaments.jpg?v=20260501" alt="哈萨克纹样展示" />
+              <figcaption class="photo-caption">哈萨克纹样：适合咸口限定或运动感包装线</figcaption>
+            </figure>
+            <figure class="photo-tile reveal">
+              <img src="image/five-stars-armband.jpg?v=20260501" alt="五星出东方护膊图像" />
+              <figcaption class="photo-caption">文博符号：只建议二次抽象并先确认授权</figcaption>
+            </figure>
+          </div>
+          <p class="source-note reveal">
+            内容依据：本地 PDF《snackpaper 面向年轻人的新疆文化零食开发研究》第 5-6 页“新疆视觉文化资产”。图片来源：
+            <a href="https://commons.wikimedia.org/wiki/File:In_Lake_Sayram_Scenic_Spot,_Xinjiang,_China_37.jpg">Sayram Lake / Tomskyhaha / CC BY-SA 4.0</a>；
+            <a href="https://commons.wikimedia.org/wiki/File:Khotan-fabrica-seda-d17.jpg">Khotan Atlas Silk Factory / Colegota / CC BY-SA 2.5 ES</a>；
+            <a href="https://commons.wikimedia.org/wiki/File:Uyghur-Dopa-Maker.jpg">Uyghur Dopa Maker / joshuatintner / CC BY 2.0</a>；
+            <a href="https://commons.wikimedia.org/wiki/File:Kazakh_ornaments.jpg">Kazakh ornaments / Akbota Bakyt / CC BY-SA 4.0</a>；
+            <a href="https://commons.wikimedia.org/wiki/File:%22Five_stars_rising_in_the_East%22_armband.jpg">Five Stars rising in the East armband / Wikimedia Commons</a>。
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const header = document.querySelector("#siteHeader");
+      const revealItems = document.querySelectorAll(".reveal");
+
+      const updateHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 42);
+      };
+
+      window.addEventListener("scroll", updateHeader, { passive: true });
+      updateHeader();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.16 }
+      );
+
+      revealItems.forEach((item, index) => {
+        item.style.transitionDelay = `${Math.min(index % 5, 4) * 60}ms`;
+        observer.observe(item);
+      });
+    </script>
+  </body>
+</html>

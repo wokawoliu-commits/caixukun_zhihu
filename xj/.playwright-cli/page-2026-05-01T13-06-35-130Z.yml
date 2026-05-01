@@ -1,0 +1,235 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]: SNACKPAPER VISUAL ASSETS
+    - navigation "页面导航" [ref=e4]:
+      - link "总原则" [ref=e5] [cursor=pointer]:
+        - /url: "#principle"
+      - link "资产地图" [ref=e6] [cursor=pointer]:
+        - /url: "#asset-map"
+      - link "包装转译" [ref=e7] [cursor=pointer]:
+        - /url: "#translation"
+      - link "色彩系统" [ref=e8] [cursor=pointer]:
+        - /url: "#palette"
+      - link "风险边界" [ref=e9] [cursor=pointer]:
+        - /url: "#guardrails"
+  - main [ref=e10]:
+    - generic [ref=e12]:
+      - paragraph [ref=e13]: 面向年轻人的新疆文化零食开发研究
+      - heading "新疆视觉文化资产" [level=1] [ref=e14]
+      - paragraph [ref=e15]: 把地域纹样从“陈列式民族风”转译成可以进入零食包装的底纹、边饰、压纹与局部色带。
+      - generic "核心视觉资产" [ref=e16]:
+        - generic [ref=e17]: 艾德莱斯色带
+        - generic [ref=e18]: 巴旦木纹
+        - generic [ref=e19]: 花帽花果纹
+        - generic [ref=e20]: 刺绣边饰
+        - generic [ref=e21]: 八角星与葡萄纹
+    - generic [ref=e24]:
+      - paragraph [ref=e25]: 01 / TRANSLATION RULE
+      - heading "最适合包装的不是整套服饰，而是被抽象后的纹样秩序。" [level=2] [ref=e26]
+      - paragraph [ref=e27]: PDF 中的判断很明确：视觉资产要成为年轻消费品的设计语言，关键是把传统纹样处理为连续底纹、边饰、压纹和色带。这样既有新疆出处，又避免把文化元素做成表演化的“民俗贴纸”。
+    - generic [ref=e30]:
+      - paragraph [ref=e31]: 02 / ASSET MAP
+      - heading "从文化出处到包装位置" [level=2] [ref=e32]
+      - paragraph [ref=e33]: 下列资产按 PDF 中的优先级与风险提示重组：每一类都对应清晰的含义、可用位置和不能越界的地方。
+      - generic [ref=e34]:
+        - generic "snackpaper 包装视觉模拟" [ref=e36]:
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - generic [ref=e39]:
+                - text: 新疆春色
+                - text: 一口入袋
+              - generic [ref=e40]: 奶皮子酸奶、巴旦木、葡萄干、馕脆夹心
+            - generic [ref=e41]:
+              - text: 抽象
+              - text: 纹样
+        - generic [ref=e42]:
+          - article [ref=e43]:
+            - generic [ref=e44]:
+              - generic [ref=e45]: 色带底纹
+              - heading "艾德莱斯色带 / 流水感纹样" [level=3] [ref=e46]
+              - paragraph [ref=e47]: 来源于维吾尔族艾德莱斯绸，传达流动、节奏、春色和生命力。
+              - generic [ref=e48]:
+                - generic [ref=e49]: 大面积底纹
+                - generic [ref=e50]: 腰封
+                - generic [ref=e51]: 封套内页
+            - generic [ref=e52]: 避免整块照搬低价机印花，优先抽象化重构。
+          - article [ref=e53]:
+            - generic [ref=e54]:
+              - generic [ref=e55]: 巴旦木 icon
+              - heading "巴旦木纹" [level=3] [ref=e56]
+              - paragraph [ref=e57]: 在艾德莱斯、花帽与民间装饰中常见，指向丰饶、生命和地方果实记忆。
+              - generic [ref=e58]:
+                - generic [ref=e59]: 主识别 icon
+                - generic [ref=e60]: 小图标系统
+                - generic [ref=e61]: 口味符号
+            - generic [ref=e62]: 植物出处要清楚，避免画成泛化花瓣。
+          - article [ref=e63]:
+            - generic [ref=e64]:
+              - generic [ref=e65]: 器物暗纹
+              - heading "热瓦甫 / 梳子 / 耳坠 / 流苏" [level=3] [ref=e66]
+              - paragraph [ref=e67]: 来自艾德莱斯绸四大色类纹样，可表达音乐、日常器物与生活气息。
+              - generic [ref=e68]:
+                - generic [ref=e69]: 隐藏彩蛋
+                - generic [ref=e70]: 局部细节
+                - generic [ref=e71]: 开箱触点
+            - generic [ref=e72]: 不要堆满正面，否则容易显得民俗商品化。
+          - article [ref=e73]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: 花帽花果
+              - heading "朵帕石榴花 / 桃花 / 巴旦木花" [level=3] [ref=e76]
+              - paragraph [ref=e77]: 源自维吾尔族花帽的花果纹，适合表达吉祥、繁盛和花果乡土气息。
+              - generic [ref=e78]:
+                - generic [ref=e79]: 盒盖四角
+                - generic [ref=e80]: 封口贴
+                - generic [ref=e81]: 节庆限定
+            - generic [ref=e82]: 朵帕是服饰器物，不宜把包装做成帽形 cosplay。
+          - article [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e85]: 刺绣边饰
+              - heading "维吾尔刺绣花卉 / 几何边饰" [level=3] [ref=e86]
+              - paragraph [ref=e87]: 承载吉祥如意、层次和秩序感，是包装边框与侧边连续纹样的高效资源。
+              - generic [ref=e88]:
+                - generic [ref=e89]: 边框
+                - generic [ref=e90]: 侧边连续纹
+                - generic [ref=e91]: 烫金压纹
+            - generic [ref=e92]: 说明地区或工艺来源，避免“新疆民族风”一锅煮。
+          - article [ref=e93]:
+            - generic [ref=e94]:
+              - generic [ref=e95]: 花毡回纹
+              - heading "花毡回纹 / 寿纹 / 博古纹" [level=3] [ref=e96]
+              - paragraph [ref=e97]: 来自维吾尔族花毡与印花布，具有跨文化交流和手工传统的稳定气质。
+              - generic [ref=e98]:
+                - generic [ref=e99]: 礼盒边框
+                - generic [ref=e100]: 内托花纹
+                - generic [ref=e101]: 低调底层视觉
+            - generic [ref=e102]: 适合做“稳”的底层语言，少做强主题化宣称。
+          - article [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: 羊角鹿角
+              - heading "哈萨克羊角纹 / 鹿角 / 驼峰纹" [level=3] [ref=e106]
+              - paragraph [ref=e107]: 来自哈萨克族刺绣，可表达力量、草原与牲畜文化。
+              - generic [ref=e108]:
+                - generic [ref=e109]: 运动感包装
+                - generic [ref=e110]: 咸口限定线
+                - generic [ref=e111]: 边饰变体
+            - generic [ref=e112]: 使用哈萨克元素时，不要混拼无关维吾尔脚本。
+          - article [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: 丝路几何
+              - heading "八角星 / 葡萄纹 / 文博衍生符号" [level=3] [ref=e116]
+              - paragraph [ref=e117]: 属于丝路通用纹样与文博体系，适合做年轻化几何图案和文明叙事点缀。
+              - generic [ref=e118]:
+                - generic [ref=e119]: 几何图案
+                - generic [ref=e120]: 安全折中语言
+                - generic [ref=e121]: 二次抽象点缀
+            - generic [ref=e122]: 馆藏图像或成熟文创图形商用前要确认授权。
+    - generic [ref=e124]:
+      - paragraph [ref=e125]: 03 / PACKAGING TRANSLATION
+      - heading "四种更适合年轻零食的纹样转译" [level=2] [ref=e126]
+      - paragraph [ref=e127]: 同一套文化资产不必全上正面。高频包装触点可以分层：底纹负责氛围，边饰负责秩序，icon 负责记忆，压纹负责质感。
+      - generic [ref=e128]:
+        - article [ref=e129]:
+          - generic [ref=e131]:
+            - heading "色带做底" [level=3] [ref=e132]
+            - paragraph [ref=e133]: 让艾德莱斯的强对比只留作流动色带，适合拍照与短视频画面。
+        - article [ref=e134]:
+          - generic [ref=e136]:
+            - heading "巴旦木做识别" [level=3] [ref=e137]
+            - paragraph [ref=e138]: 把果实轮廓转成主 icon，连接口味记忆和新疆原料出处。
+        - article [ref=e139]:
+          - generic [ref=e141]:
+            - heading "刺绣做边" [level=3] [ref=e142]
+            - paragraph [ref=e143]: 用连续边饰包住盒侧、封口和内托，节制但有工艺感。
+        - article [ref=e144]:
+          - generic [ref=e146]:
+            - heading "丝路几何做骨架" [level=3] [ref=e147]
+            - paragraph [ref=e148]: 八角星与葡萄纹更适合年轻化几何系统，安全度也更高。
+    - generic [ref=e150]:
+      - paragraph [ref=e151]: 04 / COLOR SYSTEM
+      - heading "双系统用色：社媒要高记忆，货架要可识别" [level=2] [ref=e152]
+      - paragraph [ref=e153]: PDF 建议把视觉色彩分成两套：KV 与小红书画面可以更明艳，零售包装则降低饱和度，让强对比成为局部边饰。
+      - generic [ref=e154]:
+        - generic [ref=e155]:
+          - heading "社媒 / KV 色组" [level=3] [ref=e156]
+          - paragraph [ref=e157]: 适合官宣海报、开箱图、九宫格种草和广告片。
+          - generic [ref=e158]:
+            - generic [ref=e159]:
+              - strong [ref=e160]: 赛里木湖蓝
+              - generic [ref=e161]: "#1175A8"
+            - generic [ref=e162]:
+              - strong [ref=e163]: 奶皮米白
+              - generic [ref=e164]: "#F7EFE0"
+            - generic [ref=e165]:
+              - strong [ref=e166]: 石榴红
+              - generic [ref=e167]: "#B82F32"
+            - generic [ref=e168]:
+              - strong [ref=e169]: 巴旦木金
+              - generic [ref=e170]: "#C99A39"
+        - generic [ref=e171]:
+          - heading "零售 / 货架色组" [level=3] [ref=e172]
+          - paragraph [ref=e173]: 适合分享装、便利店尝鲜装和礼盒侧边信息。
+          - generic [ref=e174]:
+            - strong [ref=e176]: 湖蓝降饱和
+            - strong [ref=e178]: 奶白做主面
+            - strong [ref=e180]: 红色做封口
+            - strong [ref=e182]: 金色做压纹
+    - generic [ref=e184]:
+      - paragraph [ref=e185]: 05 / CULTURAL GUARDRAILS
+      - heading "真正的风险控制点是根据、尊重与授权" [level=2] [ref=e186]
+      - paragraph [ref=e187]: 视觉元素不是不能用，而是要说明出处、避免误读，并在涉及宗教、图腾、仪式、博物馆图像或非遗核心工艺时做进一步确认。
+      - generic [ref=e188]:
+        - article [ref=e189]:
+          - heading "优先使用" [level=3] [ref=e190]
+          - list [ref=e191]:
+            - listitem [ref=e192]: 抽象化艾德莱斯色带与巴旦木 icon。
+            - listitem [ref=e193]: 刺绣边饰、花毡回纹作为包装秩序。
+            - listitem [ref=e194]: 八角星和葡萄纹作为年轻化几何语言。
+        - article [ref=e195]:
+          - heading "谨慎使用" [level=3] [ref=e196]
+          - list [ref=e197]:
+            - listitem [ref=e198]: 朵帕花帽元素只取花果纹，不把包装做成帽形。
+            - listitem [ref=e199]: 哈萨克羊角纹要保持族群系统一致。
+            - listitem [ref=e200]: 文博符号只做二次抽象，商用前确认授权。
+        - article [ref=e201]:
+          - heading "避免使用" [level=3] [ref=e202]
+          - list [ref=e203]:
+            - listitem [ref=e204]: 净壶、圣龛等宗教相关纹样。
+            - listitem [ref=e205]: 伪阿拉伯化字体与无依据的脚本混搭。
+            - listitem [ref=e206]: 把公共纹样登记成企业独占版权。
+    - generic [ref=e208]:
+      - paragraph [ref=e209]: 06 / IMAGE REFERENCES
+      - heading "示例图像参考" [level=2] [ref=e210]
+      - paragraph [ref=e211]: 图片用于理解材质、色彩和纹样氛围；最终商业包装仍应重新设计，并按实际来源做授权核验。
+      - generic [ref=e212]:
+        - figure "赛里木湖蓝：适合做社媒主视觉的高记忆色" [ref=e213]:
+          - img "赛里木湖风景" [ref=e214]
+          - generic [ref=e215]: 赛里木湖蓝：适合做社媒主视觉的高记忆色
+        - figure "Atlas / 艾德莱斯相关丝绸场景" [ref=e216]:
+          - img "和田 Atlas silk 工厂" [ref=e217]
+          - generic [ref=e218]: Atlas / 艾德莱斯相关丝绸场景
+        - figure "朵帕花帽：花果纹可转为四角与封口贴" [ref=e219]:
+          - img "传统维吾尔族花帽制作场景" [ref=e220]
+          - generic [ref=e221]: 朵帕花帽：花果纹可转为四角与封口贴
+        - figure "哈萨克纹样：适合咸口限定或运动感包装线" [ref=e222]:
+          - img "哈萨克纹样展示" [ref=e223]
+          - generic [ref=e224]: 哈萨克纹样：适合咸口限定或运动感包装线
+        - figure "文博符号：只建议二次抽象并先确认授权" [ref=e225]:
+          - img "五星出东方护膊图像" [ref=e226]
+          - generic [ref=e227]: 文博符号：只建议二次抽象并先确认授权
+      - paragraph [ref=e228]:
+        - text: 内容依据：本地 PDF《snackpaper 面向年轻人的新疆文化零食开发研究》第 5-6 页“新疆视觉文化资产”。图片来源：
+        - link "Sayram Lake / Tomskyhaha / CC BY-SA 4.0" [ref=e229] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:In_Lake_Sayram_Scenic_Spot,_Xinjiang,_China_37.jpg
+        - text: ；
+        - link "Khotan Atlas Silk Factory / Colegota / CC BY-SA 2.5 ES" [ref=e230] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Khotan-fabrica-seda-d17.jpg
+        - text: ；
+        - link "Uyghur Dopa Maker / joshuatintner / CC BY 2.0" [ref=e231] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Uyghur-Dopa-Maker.jpg
+        - text: ；
+        - link "Kazakh ornaments / Akbota Bakyt / CC BY-SA 4.0" [ref=e232] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:Kazakh_ornaments.jpg
+        - text: ；
+        - link "Five Stars rising in the East armband / Wikimedia Commons" [ref=e233] [cursor=pointer]:
+          - /url: https://commons.wikimedia.org/wiki/File:%22Five_stars_rising_in_the_East%22_armband.jpg
+        - text: 。
