@@ -1,0 +1,2519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>迪丽热巴小红书记忆资产热度榜</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23b3482d'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='28' fill='%23fffaf2' font-family='Arial'%3E热%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #191714;
+      --muted: #736c62;
+      --line: #ddd3c6;
+      --accent: #b3482d;
+      --accent-soft: #f0d6ca;
+      --surface: #fffaf2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .hero {
+      min-height: 62svh;
+      padding: 56px clamp(18px, 5vw, 72px) 34px;
+      display: grid;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(115deg, rgba(179,72,45,.13), rgba(247,244,238,.2) 40%, rgba(25,23,20,.04)),
+        radial-gradient(circle at 82% 20%, rgba(25,23,20,.10), transparent 28%),
+        var(--bg);
+    }
+    .hero h1 {
+      max-width: 1120px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 104px);
+      line-height: .95;
+      font-weight: 760;
+    }
+    .hero p {
+      max-width: 790px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
+    }
+    .stats {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
+    }
+    .stats b {
+      display: block;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    main { padding: 34px clamp(14px, 4vw, 58px) 80px; }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+    .toolbar a {
+      color: var(--accent);
+      font-weight: 650;
+      margin-left: 14px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgba(255,250,242,.62);
+    }
+    table {
+      width: 100%;
+      min-width: 1120px;
+      border-collapse: collapse;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(247,244,238,.94);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: left;
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    td {
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    tr:hover { background: rgba(179,72,45,.055); }
+    .rank { width: 68px; color: var(--accent); font-weight: 760; }
+    .memory-name { font-size: 17px; font-weight: 760; text-decoration: none; }
+    .reading { margin-top: 7px; max-width: 480px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .number { white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 760; }
+    .bar {
+      width: min(340px, 100%);
+      height: 5px;
+      margin-top: 12px;
+      background: #e6dacf;
+      overflow: hidden;
+    }
+    .bar span { display: block; height: 100%; background: var(--accent); }
+    .sources { min-width: 260px; }
+    .source-link {
+      display: inline-block;
+      margin: 0 6px 7px 0;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--accent);
+    }
+    .top-source { max-width: 360px; }
+    .source-kind, .evidence-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 6px;
+    }
+    .top-source a, .evidence-list a { font-weight: 720; text-decoration: none; }
+    .top-source p, .evidence-list p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .memory-section {
+      display: grid;
+      grid-template-columns: 74px minmax(240px, 1fr) minmax(260px, 380px);
+      gap: 26px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-index {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 780;
+    }
+    .section-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .section-copy > p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .metric-row span {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metric-row b { color: var(--ink); }
+    .feature-source {
+      align-self: start;
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .evidence-list {
+      grid-column: 2 / 4;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .evidence-list li {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .mini-index {
+      color: var(--accent);
+      font-weight: 760;
+      font-variant-numeric: tabular-nums;
+    }
+    .note {
+      max-width: 760px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    @media (max-width: 860px) {
+      .hero { min-height: auto; padding-top: 88px; }
+      .toolbar { align-items: flex-start; flex-direction: column; }
+      .memory-section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 38px 0;
+      }
+      .section-index { font-size: 18px; }
+      .feature-source {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 16px 0 0;
+      }
+      .evidence-list { grid-column: auto; grid-template-columns: 1fr; }
+      .hero h1 { font-size: clamp(40px, 15vw, 74px); }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>迪丽热巴小红书记忆资产热度榜</h1>
+      <p>基于 6400 条小红书搜索记录、3957 条去重帖子，按“帖子标题或检索语境明确指向某个记忆点才计赞”的保守口径归因。</p>
+      <div class="stats">
+        <span><b>19</b>记忆点</span>
+        <span><b>8,410,425</b>可归因点赞</span>
+        <span><b>3957</b>去重帖子</span>
+        <span><b>6400</b>笔记记录</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="toolbar">
+      <div>字段：可归因点赞数 / 来源小红书 URL / 点赞最多来源</div>
+      <div>
+        <a href="memory_points_summary.csv">查看汇总 CSV</a>
+        <a href="memory_point_assignments.csv">查看归因 CSV</a>
+        <a href="search_results.jsonl">查看原始 JSONL</a>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>热门记忆点</th>
+            <th>可归因点赞数</th>
+            <th>来源小红书 URL</th>
+            <th>点赞最多来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="rank">#1</td>
+              <td>
+                <a class="memory-name" href="#m01">红毯造型封神/红毯没有王法</a>
+                <div class="reading">最强大众资产。粉丝反复提炼“红毯没有王法，只有热巴的想法”，造型、礼服、黑裙、皇冠和活动现场共同构成高辨识度视觉记忆。</div>
+                <div class="bar"><span style="width:100.00%"></span></div>
+              </td>
+              <td><div class="number">1,583,032</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68b81286000000001c03635f?xsec_token=AByqy277I8yUOR47bj010V6MGhO-OeF31rjBq9i8Ro694%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 382,544赞 · 68b81286</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68a56236000000001d010fab?xsec_token=ABjasH4qGIQaMpwonqdrHzhS1U2NxlMasSZgr2_OJZy5I%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 134,557赞 · 68a56236</a><a class="source-link" href="https://www.xiaohongshu.com/explore/690095ae000000000700e762?xsec_token=ABIC_eqgQPYLlL_0duy_7RxN1ztzDPTk_1Z93c645-vkk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 56,683赞 · 690095ae</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69b7ebfd000000001b021e54?xsec_token=AButOGC5yJULCS7aXZ1nnyuQDl1sk_5x7awSxnD89mSyQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 44,532赞 · 69b7ebfd</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 382,544赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68b81286000000001c03635f?xsec_token=AByqy277I8yUOR47bj010V6MGhO-OeF31rjBq9i8Ro694%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">斗胆仿一下热巴的红毯造型！</a>
+      <p>热巴 红毯</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#2</td>
+              <td>
+                <a class="memory-name" href="#m02">原声台词/演技哭戏被低估</a>
+                <div class="reading">围绕原声、哭戏和角色片段展开，讨论点集中在“被低估”“台词有力量”和情绪层次，是从颜值资产转向演员资产的关键通道。</div>
+                <div class="bar"><span style="width:62.48%"></span></div>
+              </td>
+              <td><div class="number">989,081</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69d8e56f000000001f0024af?xsec_token=AB9EzNzsaJk-Oa879Z4p8Jt_OxnfXwDLQ3zX7JYH2NxIM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 307,563赞 · 69d8e56f</a><a class="source-link" href="https://www.xiaohongshu.com/explore/685a93c30000000012015031?xsec_token=AB4M1-YBVjn-61Ax8NVdYIgBZzrS5b8gl2M56NeluY3Yw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 49,712赞 · 685a93c3</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68c94a740000000014008aad?xsec_token=ABVUvXOSf667S-gEv8Wfs93LuOqVwV6OHTXvL80t1JdO8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 42,449赞 · 68c94a74</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69c9ff4700000000220290fc?xsec_token=ABkOuQya-yn3BJO4IHP1bM3DqxSOVg4ATJ2l6pJuxSZ5o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 30,588赞 · 69c9ff47</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 307,563赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69d8e56f000000001f0024af?xsec_token=AB9EzNzsaJk-Oa879Z4p8Jt_OxnfXwDLQ3zX7JYH2NxIM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">班味女主？绝望鬼王？这届女主比反派还惨？</a>
+      <p>迪丽热巴 台词</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#3</td>
+              <td>
+                <a class="memory-name" href="#m03">综艺搞笑体质：金靖/抽象美女/方言小能手</a>
+                <div class="reading">粉丝喜欢她在综艺里的松弛和反差，金靖互动、抽象美女、方言梗、突然被逗笑等片段让“好笑但不刻意”成为可传播记忆。</div>
+                <div class="bar"><span style="width:51.67%"></span></div>
+              </td>
+              <td><div class="number">817,964</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/683c5ab2000000002300dd64?xsec_token=ABuZIfR6aac0_m9vIgacA71cxW6Sk4QlGbnCDnQndrB4w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 101,416赞 · 683c5ab2</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69107b5a0000000003013c46?xsec_token=AB6fkaUH3RxEjM4wjykBeDM9FxSKm-SCl9rOGUGg5zgw8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 30,863赞 · 69107b5a</a><a class="source-link" href="https://www.xiaohongshu.com/explore/694b95ee000000001f00eaf0?xsec_token=ABjurhzNfs383P2GwWpVtY2q-zn3Bo9jJlvC1cdzAPbHs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 29,942赞 · 694b95ee</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67f516c0000000001c014008?xsec_token=ABxTUc-2b3VKUoNhNxwzXxzck9JOzXHnTkuUk_751AJPE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 27,139赞 · 67f516c0</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 101,416赞</div>
+      <a href="https://www.xiaohongshu.com/explore/683c5ab2000000002300dd64?xsec_token=ABuZIfR6aac0_m9vIgacA71cxW6Sk4QlGbnCDnQndrB4w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">巴巴和金靖 磕到了磕到了</a>
+      <p>迪丽热巴 搞笑</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#4</td>
+              <td>
+                <a class="memory-name" href="#m04">反差出圈：不听劝/神性/性张力/女娲感</a>
+                <div class="reading">这类内容用“神性”“女娲感”“不听劝”等高浓度表达，把颜值、气场、反差和戏剧化镜头压缩成强情绪标签。</div>
+                <div class="bar"><span style="width:42.79%"></span></div>
+              </td>
+              <td><div class="number">677,441</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69db3d6f000000001d01ba8e?xsec_token=AB5PKBqTSG_Ol_CrlbFH9qmQvmxHCFgBxnqpPmWGsVhu8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 79,070赞 · 69db3d6f</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67bd343e000000002901c5ea?xsec_token=ABan6O-0i1Urq_eNa8dONValkzgXBei6IKY63qHUjUZKQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 76,245赞 · 67bd343e</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6992d661000000000a03fbae?xsec_token=ABfLgE3uNYbnn3pd08fythjzKtGZTVe9e-TfwkDi7Op3w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 76,075赞 · 6992d661</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69cf9f28000000001a025a43?xsec_token=AB349V9LrGAU86qEA8mlxfYIQ55C66NP_DicBJoHbjihk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 45,412赞 · 69cf9f28</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 79,070赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69db3d6f000000001d01ba8e?xsec_token=AB5PKBqTSG_Ol_CrlbFH9qmQvmxHCFgBxnqpPmWGsVhu8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">原来这就是不听劝的后果</a>
+      <p>迪丽热巴 反差</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#5</td>
+              <td>
+                <a class="memory-name" href="#m05">舞台跳舞：新疆舞/春晚直拍/扫腿舞</a>
+                <div class="reading">舞台和跳舞是粉丝反复回看的入坑入口，新疆舞、春晚直拍、扫腿舞和舞台救场共同强化身体表达记忆。</div>
+                <div class="bar"><span style="width:41.11%"></span></div>
+              </td>
+              <td><div class="number">650,766</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/66ceaf41000000001f01d37f?xsec_token=ABvGHUc4b8WUISz0BBOq4nDb8AwCHb4LSEyXQ0spaUvZI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 81,830赞 · 66ceaf41</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6889ef71000000002501fc8e?xsec_token=ABi3LkQW-uhdNtlkWJHTP2BeIrrwHTUnJFTXwfxq32YYo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 68,723赞 · 6889ef71</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67de3e93000000001c000e4d?xsec_token=ABO1iKwI_pOL6KTzXjNgQch2lROdEwQIimp41PkEAeh8E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 67,178赞 · 67de3e93</a><a class="source-link" href="https://www.xiaohongshu.com/explore/692559b0000000001f004e97?xsec_token=ABBxwwYAtgJain8LMNfwrntqoLPodcF7k6E0h8unWH5Ig%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 53,043赞 · 692559b0</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 81,830赞</div>
+      <a href="https://www.xiaohongshu.com/explore/66ceaf41000000001f01d37f?xsec_token=ABvGHUc4b8WUISz0BBOq4nDb8AwCHb4LSEyXQ0spaUvZI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">叫迪丽热巴的是不是都很好看 ？</a>
+      <p>迪丽热巴 可爱 / 迪丽热巴 跳舞</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#6</td>
+              <td>
+                <a class="memory-name" href="#m06">宠粉和双向奔赴：选择/合照/礼物/爱丽丝</a>
+                <div class="reading">核心粉丝关系资产。关键词不是单纯营业，而是被选择、被回应、收到礼物、互相取暖、记得爱丽丝。</div>
+                <div class="bar"><span style="width:37.35%"></span></div>
+              </td>
+              <td><div class="number">591,221</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69f0d674000000001a02e0d5?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nWVOeVBcBXT4vcr2cwVgbfs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 124,360赞 · 69f0d674</a><a class="source-link" href="https://www.xiaohongshu.com/explore/697377170000000028008885?xsec_token=ABFLND8775LP2B2kvxVP7zhigwY5RDl5lu9oH7yhBT3iI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 31,592赞 · 69737717</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69d61ea70000000022024a96?xsec_token=ABncobvgtbRHQ46_vng5soPkFvkp2gZF4jXXy9KaoQHlE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 15,827赞 · 69d61ea7</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6753c0e000000000080043e8?xsec_token=ABpXclxGe9BJQixWXS7bK8KYn4IT3Uksbt5d7kDv_qpN8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 12,672赞 · 6753c0e0</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 124,360赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69f0d674000000001a02e0d5?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nWVOeVBcBXT4vcr2cwVgbfs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69f0d674000000001a02e0d5</a>
+      <p>迪丽热巴 生日会 / 迪丽热巴 应援</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#7</td>
+              <td>
+                <a class="memory-name" href="#m07">机场接机：收信/喊话/邓超饭撒</a>
+                <div class="reading">线下互动密度高，上车后跑出来收信、机场喊话、偶遇和邓超帮忙饭撒都让粉丝把“可触达的温柔”记住。</div>
+                <div class="bar"><span style="width:32.62%"></span></div>
+              </td>
+              <td><div class="number">516,384</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/665296b000000000050070f3?xsec_token=ABG5jJQVVqztZlWkcYZHGkmRWd9ujmE1jm8-B9VUkoBdQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 33,164赞 · 665296b0</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6988638e000000000a02a420?xsec_token=ABZSAjSa4fublcfIPGJ__Wg2r8DO8b8cCxYgywTH1jSKU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 29,428赞 · 6988638e</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69cd1245000000001b002a01?xsec_token=ABhZJeJoRSNtWqfo6vXtFg4Hw6tvdggMl6LVugVNOsqkU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 29,347赞 · 69cd1245</a><a class="source-link" href="https://www.xiaohongshu.com/explore/66f2b133000000002c015dca?xsec_token=ABtOmlYvegT0IAOek1EF5ZEKpciBdyaxPB291ESULlKzg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 28,916赞 · 66f2b133</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 33,164赞</div>
+      <a href="https://www.xiaohongshu.com/explore/665296b000000000050070f3?xsec_token=ABG5jJQVVqztZlWkcYZHGkmRWd9ujmE1jm8-B9VUkoBdQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">北京✈️宁波</a>
+      <p>迪丽热巴 机场 粉丝</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#8</td>
+              <td>
+                <a class="memory-name" href="#m08">美食吃货梗：麻辣烫/热干面/偷吃草莓/酸奶疙瘩</a>
+                <div class="reading">最轻松的生活化梗。麻辣烫、热干面、偷吃草莓、酸奶疙瘩和综艺吃饭片段让她从神颜落回可亲近的人。</div>
+                <div class="bar"><span style="width:31.84%"></span></div>
+              </td>
+              <td><div class="number">503,998</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68627853000000002300702b?xsec_token=AB9TjkFOmrI_FPo2HldUyMZOjSEXhbrE17UpNEp-y1TcQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 123,784赞 · 68627853</a><a class="source-link" href="https://www.xiaohongshu.com/explore/680b5fad000000001b026b70?xsec_token=AB7w_jAK5q7I3Iau5Hz7fmDDqSzQXPWSKo-VB_yTd-Xm8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 74,898赞 · 680b5fad</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6805ec59000000001202dfa4?xsec_token=ABaFu5kCgo8uMuRDLvHbZZoCEq_d-lYAqco6SqZZ_tTI4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 65,912赞 · 6805ec59</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6889f8a10000000022039880?xsec_token=ABi3LkQW-uhdNtlkWJHTP2BbNrhgjCtW-Yr_usVTD_m98%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 47,168赞 · 6889f8a1</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 123,784赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68627853000000002300702b?xsec_token=AB9TjkFOmrI_FPo2HldUyMZOjSEXhbrE17UpNEp-y1TcQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">芜湖～麻辣烫🍢🌶️🔥</a>
+      <p>迪丽热巴 吃货</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#9</td>
+              <td>
+                <a class="memory-name" href="#m09">粉丝对视/眼神饭撒/被回应</a>
+                <div class="reading">高转化的私密感资产。对视、嘟嘴、飞吻、晚宴回应等内容都在制造“一秒被看见”的粉丝体验。</div>
+                <div class="bar"><span style="width:31.71%"></span></div>
+              </td>
+              <td><div class="number">501,925</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68d693fb000000001400ac99?xsec_token=ABHmhTL9L-UYF062Gpih8dvfm7xbQ_qDiSKS8zYyRwBmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 133,273赞 · 68d693fb</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68c50656000000001c010d39?xsec_token=ABfyVfIfw8DyH2olhPQPvD5SZ2gIB6qe4RtC0_UU9fq2g%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 78,506赞 · 68c50656</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67d1a12b000000000603bcf8?xsec_token=ABDiyLClIl8YWrdv72xVEo37kwKbdtsQ78FtNHNwmGZio%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 52,274赞 · 67d1a12b</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69c7d6cd0000000022028c51?xsec_token=ABLkIagGpyp5GT1EbnUgX1S2QwrQgzU6100yIEGpOfgHc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 40,215赞 · 69c7d6cd</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 133,273赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68d693fb000000001400ac99?xsec_token=ABHmhTL9L-UYF062Gpih8dvfm7xbQ_qDiSKS8zYyRwBmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">三千万人看过的热巴对视妆来咯💅</a>
+      <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 工作室</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#10</td>
+              <td>
+                <a class="memory-name" href="#m10">神图生图/怼脸美貌/腹肌</a>
+                <div class="reading">审美向入口，生图、神图、怼脸镜头、腹肌和妆容复刻构成“可截图、可仿妆、可二创”的视觉素材池。</div>
+                <div class="bar"><span style="width:20.64%"></span></div>
+              </td>
+              <td><div class="number">326,760</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/675f04ff000000000600eedb?xsec_token=ABd4LqVCk0MrKehJRA0YlsIAQHMS31Ewy3K7LaxTruxMc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 60,298赞 · 675f04ff</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69dd0806000000002301d60c?xsec_token=ABDbBF0DHr50z6rz05RtyxTbxgOu1onsSriBY4nRXQb1A%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 36,486赞 · 69dd0806</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67528d52000000000702a370?xsec_token=ABqREmE5SqeX_5L11ZCyQ8Ln2C59OAtOEFjFyjtH6mzZg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 36,424赞 · 67528d52</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6777cce1000000001300f391?xsec_token=AB7ZZJMFSSwVEXNDkv9IHt_0BXHqW12-xKtofil8ZXqgM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 19,690赞 · 6777cce1</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 60,298赞</div>
+      <a href="https://www.xiaohongshu.com/explore/675f04ff000000000600eedb?xsec_token=ABd4LqVCk0MrKehJRA0YlsIAQHMS31Ewy3K7LaxTruxMc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">675f04ff000000000600eedb</a>
+      <p>迪丽热巴 可爱 / 迪丽热巴 眼神</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#11</td>
+              <td>
+                <a class="memory-name" href="#m11">采访金句：能量/普通人/高跟鞋/土味情话</a>
+                <div class="reading">采访里的自我表达被粉丝转译成态度资产，关于能量、普通人、高跟鞋和土味情话的片段都更适合做文案化传播。</div>
+                <div class="bar"><span style="width:15.11%"></span></div>
+              </td>
+              <td><div class="number">239,235</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69ccd35c000000001d01b2e1?xsec_token=ABuQrTrnyThRDNYI24_H1cJABFgu006LNg6PHiZrwPY2E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 19,203赞 · 69ccd35c</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69ccf31b0000000021012079?xsec_token=ABuQrTrnyThRDNYI24_H1cJBpSxJTOaFMh-vshcd7GG9o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 14,339赞 · 69ccf31b</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68a04c3d000000001c03048a?xsec_token=AB7tpEffV_IuirHijHiCKSDxPQnjryLsfB945wcm-Iqe4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 12,299赞 · 68a04c3d</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68f48db3000000000703b01f?xsec_token=ABypjOuDfLiwvsYwkuNOAF9_FT-NN3q2ZrGkcLUsHBBVI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 12,214赞 · 68f48db3</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 19,203赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69ccd35c000000001d01b2e1?xsec_token=ABuQrTrnyThRDNYI24_H1cJABFgu006LNg6PHiZrwPY2E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴的香气扑面而来了。。。</a>
+      <p>迪丽热巴 粉丝 / 迪丽热巴 粉丝 梗 / 迪丽热巴 可爱 / 迪丽热巴 直播 粉丝 / 迪丽热巴 眼神 / 迪丽热巴 采访 粉丝</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#12</td>
+              <td>
+                <a class="memory-name" href="#m12">角色记忆：李慧珍/打工人成长共鸣</a>
+                <div class="reading">李慧珍相关讨论不是单纯怀旧，而是“长大后终于懂了”的共鸣，连接打工人、自卑、成长和重新理解角色。</div>
+                <div class="bar"><span style="width:14.35%"></span></div>
+              </td>
+              <td><div class="number">227,094</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/682d95ab000000000303bf95?xsec_token=ABmm2uzgCCT26sMna_Vc6dq5LwTLq2VWDP-tIXxuE7fyc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 133,046赞 · 682d95ab</a><a class="source-link" href="https://www.xiaohongshu.com/explore/680c5892000000001c02a3db?xsec_token=ABJ6LCAZsp16XM6ryo1F-Glp7DoebPG39nvxgpaVpaxig%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 23,811赞 · 680c5892</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69e22d75000000001f004dec?xsec_token=ABLDDwGCazmJ8L_uXm1taujDTm6zemFj5RrkikKvP3OCk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 20,467赞 · 69e22d75</a><a class="source-link" href="https://www.xiaohongshu.com/explore/699d4c860000000015020bbc?xsec_token=ABTiTRcjnTVDsGYzj9GjVB-nifL8MOb3uZAIy4L7pRtPo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 12,811赞 · 699d4c86</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 133,046赞</div>
+      <a href="https://www.xiaohongshu.com/explore/682d95ab000000000303bf95?xsec_token=ABmm2uzgCCT26sMna_Vc6dq5LwTLq2VWDP-tIXxuE7fyc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">李慧珍，我终于懂你了</a>
+      <p>迪丽热巴 漂亮的李慧珍</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#13</td>
+              <td>
+                <a class="memory-name" href="#m13">生日会/生日直播/生日应援</a>
+                <div class="reading">偏情绪和纪念节点的粉丝资产，适合做年度回顾、生日物料和核心粉丝社群内容。</div>
+                <div class="bar"><span style="width:10.80%"></span></div>
+              </td>
+              <td><div class="number">170,958</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/6940062e000000001e036823?xsec_token=ABE4IelaQVC5Q0kQM5EgEQjR0jsFkfalL5W9oLb71FuSY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 14,362赞 · 6940062e</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69ce751400000000230169d5?xsec_token=ABt17vM623UpeUzhGl37VdteWDgagkTBka_z6Wy0T27x4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 12,287赞 · 69ce7514</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69ccd7a4000000002200ee87?xsec_token=ABuQrTrnyThRDNYI24_H1cJFwyOEtre02pD_McvnOHHjk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 12,079赞 · 69ccd7a4</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69ce20ec0000000023020927?xsec_token=ABt17vM623UpeUzhGl37VdtafrNc9dXgynlRvquQbJZ-E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 10,138赞 · 69ce20ec</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 14,362赞</div>
+      <a href="https://www.xiaohongshu.com/explore/6940062e000000001e036823?xsec_token=ABE4IelaQVC5Q0kQM5EgEQjR0jsFkfalL5W9oLb71FuSY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴直播又遇土味情话，别冻着全世界</a>
+      <p>迪丽热巴 直播 粉丝 / 迪丽热巴 生日直播 / 迪丽热巴 采访 粉丝</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#14</td>
+              <td>
+                <a class="memory-name" href="#m14">角色记忆：乔晶晶/你是我的荣耀</a>
+                <div class="reading">乔晶晶是甜宠和都市女明星想象的稳定入口，于途、航天工程师、明星恋爱感等关键词持续产生长尾。</div>
+                <div class="bar"><span style="width:9.31%"></span></div>
+              </td>
+              <td><div class="number">147,426</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/680c5e3f000000001c010f47?xsec_token=ABJ6LCAZsp16XM6ryo1F-GlsZu1dSGuMpH8CLpw0_9Yus%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 44,278赞 · 680c5e3f</a><a class="source-link" href="https://www.xiaohongshu.com/explore/66ed57430000000025030c25?xsec_token=ABOr3U60nrn_plf_MebNpOIZRyPws82AOpgo5r-a_pnVc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 20,921赞 · 66ed5743</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67b67833000000002902b981?xsec_token=AB3QPBaz1Ij-K1JtJx9ux26MM-oRGEN5zspPaZCDTT4Jw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 8,394赞 · 67b67833</a><a class="source-link" href="https://www.xiaohongshu.com/explore/66a84feb000000000600f151?xsec_token=AB05H2lFT6lLgcO9ZhYogp6vjp2CiPLeMzbc2OIHsJ8Mg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 8,273赞 · 66a84feb</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 44,278赞</div>
+      <a href="https://www.xiaohongshu.com/explore/680c5e3f000000001c010f47?xsec_token=ABJ6LCAZsp16XM6ryo1F-GlsZu1dSGuMpH8CLpw0_9Yus%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">680c5e3f000000001c010f47</a>
+      <p>迪丽热巴 乔晶晶</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#15</td>
+              <td>
+                <a class="memory-name" href="#m15">工作室物料/宣发与妆容复刻</a>
+                <div class="reading">粉丝不仅消费成片，也关注宣发、工作室物料和妆造拆解，说明视觉资产已经进入二创和复刻层。</div>
+                <div class="bar"><span style="width:7.59%"></span></div>
+              </td>
+              <td><div class="number">120,077</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68a7d09d000000001c03d6a2?xsec_token=ABhze4d9-EzNxiGSXUDx5R_GGnAw5rYTeyqzBgnEMpXRI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 19,176赞 · 68a7d09d</a><a class="source-link" href="https://www.xiaohongshu.com/explore/691ede28000000001f00cee8?xsec_token=ABhnS8gimwQdFgu72TGFDzQB725kpka2eiluToq7bFzsw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 13,906赞 · 691ede28</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69a6a2c6000000001d0252de?xsec_token=ABaaaP3t3BHICZcJJV7Uxfx8BBPt6-qZn6R-PjcjBrR_k%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 13,904赞 · 69a6a2c6</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69186ba30000000004006aff?xsec_token=ABjruD7GaaHBx-_oFfx48f3p79NcdssHLr-Cb6YaSMEwU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 13,410赞 · 69186ba3</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 19,176赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68a7d09d000000001c03d6a2?xsec_token=ABhze4d9-EzNxiGSXUDx5R_GGnAw5rYTeyqzBgnEMpXRI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">化妆视频｜给热巴化的芭莎金九封面妆容</a>
+      <p>迪丽热巴 眼神</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#16</td>
+              <td>
+                <a class="memory-name" href="#m16">角色记忆：白凤九/小狐狸/东凤</a>
+                <div class="reading">白凤九是长尾很稳的古偶角色资产，小狐狸、青丘、东凤和枕上书持续触发老粉考古。</div>
+                <div class="bar"><span style="width:7.51%"></span></div>
+              </td>
+              <td><div class="number">118,909</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/67f27742000000001200ccfe?xsec_token=ABpWkgCHu9kfXZFb2RDp14lClvoAopmzbamfVM3l2D9Ck%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 60,336赞 · 67f27742</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67e5463d000000001e00303d?xsec_token=ABkPiS1mLXdNsNQVFG0uVd5mgMfqzqHnCL7k9o4V5jQGc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 12,115赞 · 67e5463d</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6794e646000000001701c93b?xsec_token=ABFaAHKLkve1Ke7ep1osbHozJNVgsL5ZhQPvdHlwCH6-o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 3,775赞 · 6794e646</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69f05281000000003502993f?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2neaaQw2d_plnczvsd5Qx8Yk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 3,632赞 · 69f05281</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 60,336赞</div>
+      <a href="https://www.xiaohongshu.com/explore/67f27742000000001200ccfe?xsec_token=ABpWkgCHu9kfXZFb2RDp14lClvoAopmzbamfVM3l2D9Ck%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">被凤九萌晕了，这是什么神仙小可爱？</a>
+      <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#17</td>
+              <td>
+                <a class="memory-name" href="#m17">角色记忆：高雯/戏精高雯</a>
+                <div class="reading">高雯承载早期出圈的喜剧和戏精人格，粉丝常用“表情多”“疯感可爱”“克拉恋人”来唤醒角色记忆。</div>
+                <div class="bar"><span style="width:6.92%"></span></div>
+              </td>
+              <td><div class="number">109,600</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/68456d66000000002100e2e6?xsec_token=ABseJbaYDaZd-IKJmdsMeHyUytEvU9ixtegPlgRWB-050%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 16,800赞 · 68456d66</a><a class="source-link" href="https://www.xiaohongshu.com/explore/686028de000000002201fa8e?xsec_token=AB_-sAGhYj62_Tk2V1SqDKtqNPFg778aOvRSt9630-jwk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 13,007赞 · 686028de</a><a class="source-link" href="https://www.xiaohongshu.com/explore/687cce6c0000000013011e4c?xsec_token=ABHOr-cx5cKzN2zPfHKEwE6H7egcsH_cTNbzJXSuAxSUA%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 9,976赞 · 687cce6c</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68ceed180000000012023967?xsec_token=ABpPrgwR8YRWQoVOfF6mVtoWq6_Gl5leoolbAOaCejMxw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 9,295赞 · 68ceed18</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 16,800赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68456d66000000002100e2e6?xsec_token=ABseJbaYDaZd-IKJmdsMeHyUytEvU9ixtegPlgRWB-050%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">克拉恋人里的高雯真的好可爱啊</a>
+      <p>迪丽热巴 克拉恋人</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#18</td>
+              <td>
+                <a class="memory-name" href="#m18">角色记忆：李长歌/长歌行</a>
+                <div class="reading">李长歌相关内容更多关联成长、独立和古装女主气质，是角色线里偏精神内核的一支。</div>
+                <div class="bar"><span style="width:4.00%"></span></div>
+              </td>
+              <td><div class="number">62,051</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69c3c106000000001d01b7d6?xsec_token=ABAbhki4dfRIoNw9n3nMDS0qA4iJcVxhYx7o33yo7eFME%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 13,837赞 · 69c3c106</a><a class="source-link" href="https://www.xiaohongshu.com/explore/68481e80000000002301084b?xsec_token=ABcMqGftyJY8IJacKMW_0uRHySlyTshJqDrNRX7-uPeAw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 9,967赞 · 68481e80</a><a class="source-link" href="https://www.xiaohongshu.com/explore/67e2a7430000000006028ee7?xsec_token=ABcjs7eQ5XurCC3nCSSIaf55m-JEUyumtgp72cCKgVBHI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 5,429赞 · 67e2a743</a><a class="source-link" href="https://www.xiaohongshu.com/explore/6990ced20000000015039eac?xsec_token=ABur1LVW50g7zV9qCxPN0gfrMMUVoL5y_MmFexRnB_0hI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 4,462赞 · 6990ced2</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 13,837赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69c3c106000000001d01b7d6?xsec_token=ABAbhki4dfRIoNw9n3nMDS0qA4iJcVxhYx7o33yo7eFME%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">长歌行 一定行！</a>
+      <p>迪丽热巴 长歌行</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#19</td>
+              <td>
+                <a class="memory-name" href="#m19">新疆身份记忆：新疆名片/维语/民族舞</a>
+                <div class="reading">地域身份增强独特性，新疆名片、维语采访、民族舞和新疆味儿生日歌共同构成身份标签。</div>
+                <div class="bar"><span style="width:4.00%"></span></div>
+              </td>
+              <td><div class="number">56,503</div></td>
+              <td class="sources"><a class="source-link" href="https://www.xiaohongshu.com/explore/69b67f9f0000000022027b60?xsec_token=AB6j5m_SR7VWQYYtwxndHAajReaUHAHVApjFsiXv-Hamc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子1 · 41,706赞 · 69b67f9f</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69f04aed0000000020038299?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nVM3aeuK3aVaAY5Z4Z66HzQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子2 · 8,934赞 · 69f04aed</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69d1fcfe0000000023005a90?xsec_token=ABsKdwxplzI3MgkvaLsOPD7H5hgrDZHBYssBwiGvPWmd8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子3 · 1,051赞 · 69d1fcfe</a><a class="source-link" href="https://www.xiaohongshu.com/explore/69ddd370000000002100549c?xsec_token=ABDbBF0DHr50z6rz05RtyxTbFb_nkpNogEb6ndRMCTPWY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">帖子4 · 829赞 · 69ddd370</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 41,706赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69b67f9f0000000022027b60?xsec_token=AB6j5m_SR7VWQYYtwxndHAajReaUHAHVApjFsiXv-Hamc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我愿称这姐为行走的新疆名片</a>
+      <p>迪丽热巴 新疆</p>
+    </td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+    <p class="note">说明：本页仅计入明确可归因到记忆点的帖子点赞；评论点赞未纳入本轮 HTML 统计，避免把未采集评论与帖子混算。来源链接使用小红书 Web 笔记 URL，若平台参数过期，可用笔记 ID 在原始表中复核。</p>
+    
+            <section class="memory-section" id="m01">
+              <div class="section-index">01</div>
+              <div class="section-copy">
+                <h2>红毯造型封神/红毯没有王法</h2>
+                <p>最强大众资产。粉丝反复提炼“红毯没有王法，只有热巴的想法”，造型、礼服、黑裙、皇冠和活动现场共同构成高辨识度视觉记忆。</p>
+                <div class="metric-row">
+                  <span><b>1,583,032</b> 可归因点赞</span>
+                  <span><b>642</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 382,544赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68b81286000000001c03635f?xsec_token=AByqy277I8yUOR47bj010V6MGhO-OeF31rjBq9i8Ro694%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">斗胆仿一下热巴的红毯造型！</a>
+      <p>热巴 红毯</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 382,544赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68b81286000000001c03635f?xsec_token=AByqy277I8yUOR47bj010V6MGhO-OeF31rjBq9i8Ro694%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">斗胆仿一下热巴的红毯造型！</a>
+          <p>热巴 红毯</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 134,557赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68a56236000000001d010fab?xsec_token=ABjasH4qGIQaMpwonqdrHzhS1U2NxlMasSZgr2_OJZy5I%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">68a56236000000001d010fab</a>
+          <p>迪丽热巴 红毯 名场面 / 迪丽热巴 微博之夜</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 56,683赞</div>
+          <a href="https://www.xiaohongshu.com/explore/690095ae000000000700e762?xsec_token=ABIC_eqgQPYLlL_0duy_7RxN1ztzDPTk_1Z93c645-vkk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">一个人贡献了几个亿的热度</a>
+          <p>热巴 红毯</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 44,532赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69b7ebfd000000001b021e54?xsec_token=AButOGC5yJULCS7aXZ1nnyuQDl1sk_5x7awSxnD89mSyQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">与生俱来的神性❗️</a>
+          <p>迪丽热巴 皇冠</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 42,936赞</div>
+          <a href="https://www.xiaohongshu.com/explore/688930010000000002002104?xsec_token=ABi3LkQW-uhdNtlkWJHTP2BVFNRWSDOg4tUukb-PYzjRM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">终于明白当年金鹰迪丽热巴为啥能拿奖了</a>
+          <p>迪丽热巴 金鹰节</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 34,471赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6711adee000000001600de49?xsec_token=AB7Ud2LTQz7cFJJF0iXt1ObG7KiyobT6ScVpShtK4ifl4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">Vogue官方出图，大半个娱乐圈人都在这了…</a>
+          <p>热巴 红毯</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 33,962赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6888a3c900000000220235fd?xsec_token=ABCL5t5QMj5k_RkkfSBbc-p3_AgLfsWMLG0nl6598-jxI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">19年的星光大赏无可复刻的存在</a>
+          <p>迪丽热巴 星光大赏</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,819赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68de05320000000007021f60?xsec_token=ABElZEV7d6Y59LZQvgb01whK-cXoZ0HhSCOZ-lH4arlv8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">下班的热巴想第一时间脱掉高跟鞋</a>
+          <p>迪丽热巴 采访 名场面 / 迪丽热巴 VOGUE</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m02">
+              <div class="section-index">02</div>
+              <div class="section-copy">
+                <h2>原声台词/演技哭戏被低估</h2>
+                <p>围绕原声、哭戏和角色片段展开，讨论点集中在“被低估”“台词有力量”和情绪层次，是从颜值资产转向演员资产的关键通道。</p>
+                <div class="metric-row">
+                  <span><b>989,081</b> 可归因点赞</span>
+                  <span><b>275</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 307,563赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69d8e56f000000001f0024af?xsec_token=AB9EzNzsaJk-Oa879Z4p8Jt_OxnfXwDLQ3zX7JYH2NxIM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">班味女主？绝望鬼王？这届女主比反派还惨？</a>
+      <p>迪丽热巴 台词</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 307,563赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69d8e56f000000001f0024af?xsec_token=AB9EzNzsaJk-Oa879Z4p8Jt_OxnfXwDLQ3zX7JYH2NxIM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">班味女主？绝望鬼王？这届女主比反派还惨？</a>
+          <p>迪丽热巴 台词</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 49,712赞</div>
+          <a href="https://www.xiaohongshu.com/explore/685a93c30000000012015031?xsec_token=AB4M1-YBVjn-61Ax8NVdYIgBZzrS5b8gl2M56NeluY3Yw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴原声台词还是被低估了，真的强！</a>
+          <p>迪丽热巴 台词</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 42,449赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68c94a740000000014008aad?xsec_token=ABVUvXOSf667S-gEv8Wfs93LuOqVwV6OHTXvL80t1JdO8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">听到小巴巴这段话真的会爱她一辈子🥹</a>
+          <p>迪丽热巴 台词</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 30,588赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c9ff4700000000220290fc?xsec_token=ABkOuQya-yn3BJO4IHP1bM3DqxSOVg4ATJ2l6pJuxSZ5o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">白日提灯｜迪丽热巴原声太绝了！</a>
+          <p>迪丽热巴 台词</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 28,696赞</div>
+          <a href="https://www.xiaohongshu.com/explore/688ec8ca0000000023037fdc?xsec_token=ABaHzvKCVlXyzKNS27pKP8L8BXKdqZDQ79vsnDArv-HSI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">主任一声令下 咬人</a>
+          <p>迪丽热巴 公诉</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 24,552赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69243375000000001e00c9b8?xsec_token=AB8OlpG_ekuLDBEHgfx8fzvfvYInlPPqNn04I5l0YYA5A%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴演技大赏</a>
+          <p>迪丽热巴 哭戏</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,518赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f04f49000000001f005c0b?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nd0DTyHdljbuarIuMjSjtyU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">先来欣赏下美神手机怼脸，📷稍后</a>
+          <p>迪丽热巴 安乐传 / 迪丽热巴 公诉</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 22,177赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cfad2f000000001a027108?xsec_token=AB349V9LrGAU86qEA8mlxfYO3eaBkEUGyT-ehrBWjJ4Oo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴满足了我对女帝的所有想象</a>
+          <p>迪丽热巴 高光 / 迪丽热巴 台词</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m03">
+              <div class="section-index">03</div>
+              <div class="section-copy">
+                <h2>综艺搞笑体质：金靖/抽象美女/方言小能手</h2>
+                <p>粉丝喜欢她在综艺里的松弛和反差，金靖互动、抽象美女、方言梗、突然被逗笑等片段让“好笑但不刻意”成为可传播记忆。</p>
+                <div class="metric-row">
+                  <span><b>817,964</b> 可归因点赞</span>
+                  <span><b>307</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 101,416赞</div>
+      <a href="https://www.xiaohongshu.com/explore/683c5ab2000000002300dd64?xsec_token=ABuZIfR6aac0_m9vIgacA71cxW6Sk4QlGbnCDnQndrB4w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">巴巴和金靖 磕到了磕到了</a>
+      <p>迪丽热巴 搞笑</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 101,416赞</div>
+          <a href="https://www.xiaohongshu.com/explore/683c5ab2000000002300dd64?xsec_token=ABuZIfR6aac0_m9vIgacA71cxW6Sk4QlGbnCDnQndrB4w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">巴巴和金靖 磕到了磕到了</a>
+          <p>迪丽热巴 搞笑</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 30,863赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69107b5a0000000003013c46?xsec_token=AB6fkaUH3RxEjM4wjykBeDM9FxSKm-SCl9rOGUGg5zgw8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我们热巴前一个名场面还没笑完下一个就来了</a>
+          <p>迪丽热巴 搞笑 / 迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,942赞</div>
+          <a href="https://www.xiaohongshu.com/explore/694b95ee000000001f00eaf0?xsec_token=ABjurhzNfs383P2GwWpVtY2q-zn3Bo9jJlvC1cdzAPbHs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">想到让迪丽热巴来演抽象美女的简直是天才</a>
+          <p>迪丽热巴 搞笑</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 27,139赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67f516c0000000001c014008?xsec_token=ABxTUc-2b3VKUoNhNxwzXxzck9JOzXHnTkuUk_751AJPE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">一看就想笑的综艺</a>
+          <p>迪丽热巴 极限挑战</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 26,099赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67065c2c000000002c014957?xsec_token=ABi3tsqSwOLbkmt5rI49m6XGp12jnOVWpvsXTzYWQkKqU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴真的好好笑😂</a>
+          <p>迪丽热巴 搞笑 / 迪丽热巴 麻辣变形计</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,587赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67ed309f000000001d03a1d6?xsec_token=ABx5tqJs9y6TYJ9UDCd3pqL5sbGx_nBmrTNhNaP9wvpgw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">你和你闺蜜实际的样子</a>
+          <p>迪丽热巴 麻辣变形计</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,414赞</div>
+          <a href="https://www.xiaohongshu.com/explore/685f9c19000000000b02eeb4?xsec_token=ABC4qwdF6O2fdPO5L5DdGa4TlLXvX5pRIXx2haZIaxXtM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">巴巴哄粉丝技术满分哈哈哈</a>
+          <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 采访 粉丝 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 22,306赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67a09701000000002901250f?xsec_token=ABFHbaDsdGU65fQUbA9698ecHpq0R2UZkgBXptdjbZ_Ak%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">67a09701000000002901250f</a>
+          <p>迪丽热巴 极限挑战</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m04">
+              <div class="section-index">04</div>
+              <div class="section-copy">
+                <h2>反差出圈：不听劝/神性/性张力/女娲感</h2>
+                <p>这类内容用“神性”“女娲感”“不听劝”等高浓度表达，把颜值、气场、反差和戏剧化镜头压缩成强情绪标签。</p>
+                <div class="metric-row">
+                  <span><b>677,441</b> 可归因点赞</span>
+                  <span><b>205</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 79,070赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69db3d6f000000001d01ba8e?xsec_token=AB5PKBqTSG_Ol_CrlbFH9qmQvmxHCFgBxnqpPmWGsVhu8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">原来这就是不听劝的后果</a>
+      <p>迪丽热巴 反差</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 79,070赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69db3d6f000000001d01ba8e?xsec_token=AB5PKBqTSG_Ol_CrlbFH9qmQvmxHCFgBxnqpPmWGsVhu8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">原来这就是不听劝的后果</a>
+          <p>迪丽热巴 反差</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 76,245赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67bd343e000000002901c5ea?xsec_token=ABan6O-0i1Urq_eNa8dONValkzgXBei6IKY63qHUjUZKQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">67bd343e000000002901c5ea</a>
+          <p>迪丽热巴 出圈</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 76,075赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6992d661000000000a03fbae?xsec_token=ABfLgE3uNYbnn3pd08fythjzKtGZTVe9e-TfwkDi7Op3w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我给热巴央视春晚化的人鱼姬妆容🧜🏼‍♀️</a>
+          <p>迪丽热巴 高光 / 迪丽热巴 造型 / 迪丽热巴 眼神</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 45,412赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cf9f28000000001a025a43?xsec_token=AB349V9LrGAU86qEA8mlxfYIQ55C66NP_DicBJoHbjihk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">这一幕代入女娲补天如同孤单又灿烂的神明</a>
+          <p>迪丽热巴 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,757赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c2537c0000000028008d55?xsec_token=ABKwEQGD0MPn2QMt9IelQiOWRZ37mftYX9FJzdiDF5ZzY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69c2537c0000000028008d55</a>
+          <p>迪丽热巴 高光</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,733赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69906081000000000c035c8a?xsec_token=ABur1LVW50g7zV9qCxPN0gfh7y77fA1wKWAFD0bS4EmOE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">历年春晚造型十大高光时刻| 经典永不过时</a>
+          <p>迪丽热巴 高光</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 20,084赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cd074e0000000023022015?xsec_token=ABhZJeJoRSNtWqfo6vXtFg4E9-tds3ayCn4FZqvSrPL-g%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴俪姐剧情还原里这段光影从暗到明好绝..</a>
+          <p>迪丽热巴 / 迪丽热巴 名场面 / 迪丽热巴 经典 / 迪丽热巴 反差 / 迪丽热巴 造型 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 17,626赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cccd76000000001b000849?xsec_token=ABuQrTrnyThRDNYI24_H1cJJ02QFltezcrjgF2aEbUSak%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">参见灵主～</a>
+          <p>迪丽热巴 内娱神颜 / 迪丽热巴 造型 / 迪丽热巴 眼神 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m05">
+              <div class="section-index">05</div>
+              <div class="section-copy">
+                <h2>舞台跳舞：新疆舞/春晚直拍/扫腿舞</h2>
+                <p>舞台和跳舞是粉丝反复回看的入坑入口，新疆舞、春晚直拍、扫腿舞和舞台救场共同强化身体表达记忆。</p>
+                <div class="metric-row">
+                  <span><b>650,766</b> 可归因点赞</span>
+                  <span><b>149</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 81,830赞</div>
+      <a href="https://www.xiaohongshu.com/explore/66ceaf41000000001f01d37f?xsec_token=ABvGHUc4b8WUISz0BBOq4nDb8AwCHb4LSEyXQ0spaUvZI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">叫迪丽热巴的是不是都很好看 ？</a>
+      <p>迪丽热巴 可爱 / 迪丽热巴 跳舞</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 81,830赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66ceaf41000000001f01d37f?xsec_token=ABvGHUc4b8WUISz0BBOq4nDb8AwCHb4LSEyXQ0spaUvZI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">叫迪丽热巴的是不是都很好看 ？</a>
+          <p>迪丽热巴 可爱 / 迪丽热巴 跳舞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 68,723赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6889ef71000000002501fc8e?xsec_token=ABi3LkQW-uhdNtlkWJHTP2BeIrrwHTUnJFTXwfxq32YYo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">不要错过迪丽热巴跳新疆舞</a>
+          <p>迪丽热巴 跳舞 / 迪丽热巴 舞台</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 67,178赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67de3e93000000001c000e4d?xsec_token=ABO1iKwI_pOL6KTzXjNgQch2lROdEwQIimp41PkEAeh8E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">才发现热巴舞台救场能力这么强！</a>
+          <p>迪丽热巴 舞台</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 53,043赞</div>
+          <a href="https://www.xiaohongshu.com/explore/692559b0000000001f004e97?xsec_token=ABBxwwYAtgJain8LMNfwrntqoLPodcF7k6E0h8unWH5Ig%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">怎么会有人第一次跳就这么美</a>
+          <p>迪丽热巴 跳舞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 27,032赞</div>
+          <a href="https://www.xiaohongshu.com/explore/687f89ac000000001d00f5b2?xsec_token=ABqhJQXyJuJU-JodIYhXJ8Ir2WefGgoRs_MIxPVQciKYU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴与扫腿舞的适配度🫶</a>
+          <p>迪丽热巴 跳舞 / 迪丽热巴 舞台</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 25,162赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ccdd52000000002301582e?xsec_token=ABuQrTrnyThRDNYI24_H1cJLxA6lWWVLqkGrwNubXiEfo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69ccdd52000000002301582e</a>
+          <p>迪丽热巴 / 迪丽热巴 跳舞 / 迪丽热巴 出圈</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 22,048赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6729f2530000000019019586?xsec_token=ABUhXDQOmKGOvBswSK793LdaXa0N36qvz1CMOjKqj4OtY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">那一年…她创下舞台最高播放量</a>
+          <p>迪丽热巴 舞台</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 18,073赞</div>
+          <a href="https://www.xiaohongshu.com/explore/676bdfec000000001300e042?xsec_token=ABgLwIpvKwXUUuim9jL-DtYePfE7QO2mjS_nGaU9XjI-w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">这一段唱进了我的心巴</a>
+          <p>迪丽热巴 极限挑战 / 迪丽热巴 舞台</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m06">
+              <div class="section-index">06</div>
+              <div class="section-copy">
+                <h2>宠粉和双向奔赴：选择/合照/礼物/爱丽丝</h2>
+                <p>核心粉丝关系资产。关键词不是单纯营业，而是被选择、被回应、收到礼物、互相取暖、记得爱丽丝。</p>
+                <div class="metric-row">
+                  <span><b>591,221</b> 可归因点赞</span>
+                  <span><b>399</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 124,360赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69f0d674000000001a02e0d5?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nWVOeVBcBXT4vcr2cwVgbfs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69f0d674000000001a02e0d5</a>
+      <p>迪丽热巴 生日会 / 迪丽热巴 应援</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 124,360赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f0d674000000001a02e0d5?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nWVOeVBcBXT4vcr2cwVgbfs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69f0d674000000001a02e0d5</a>
+          <p>迪丽热巴 生日会 / 迪丽热巴 应援</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 31,592赞</div>
+          <a href="https://www.xiaohongshu.com/explore/697377170000000028008885?xsec_token=ABFLND8775LP2B2kvxVP7zhigwY5RDl5lu9oH7yhBT3iI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">听粉丝名猜明星，看看你能猜对几个吧！</a>
+          <p>迪丽热巴 粉丝名</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 15,827赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69d61ea70000000022024a96?xsec_token=ABncobvgtbRHQ46_vng5soPkFvkp2gZF4jXXy9KaoQHlE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">看采访看哭了 永远想着爱丽丝的热巴</a>
+          <p>迪丽热巴 爱丽丝 / 迪丽热巴 采访 名场面 / 迪丽热巴 采访 粉丝 / 热巴 爱丽丝 / 热巴 采访</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,672赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6753c0e000000000080043e8?xsec_token=ABpXclxGe9BJQixWXS7bK8KYn4IT3Uksbt5d7kDv_qpN8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">🧡给迪丽热巴捏个娃娃～会是什么样呢？</a>
+          <p>迪丽热巴 爱丽丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 11,605赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f04e60000000000f03ac01?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nR6eA99xOCkstWvy9XVBV2g%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">没看过的！！最后还跳起来和爱丽丝打招呼</a>
+          <p>迪丽热巴 / 迪丽热巴 爱丽丝 / 迪丽热巴 星光大赏 / 热巴 爱丽丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 11,297赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cce12d000000001d01c7ae?xsec_token=ABuQrTrnyThRDNYI24_H1cJEW3QPlCe8Lrovu7-b3KrMM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴给飞宇戴狐狸耳朵，粉丝在battle</a>
+          <p>迪丽热巴 粉丝 / 迪丽热巴 粉丝 名场面 / 迪丽热巴 粉丝互动 / 迪丽热巴 直播 粉丝 / 迪丽热巴 采访 粉丝 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 10,958赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cce17a00000000210047f6?xsec_token=ABuQrTrnyThRDNYI24_H1cJL3gNLleUHVuVjNlHsNAqak%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴陈飞宇四手联弹致爱丽丝！</a>
+          <p>迪丽热巴 爱丽丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 10,611赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6804a7c4000000001d01cf69?xsec_token=ABphQO7F9biIzjJLRPzbG9TJGoZKm4aj2Vk6UnHghQJhE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴北京SKP生日庆活动最后一天来了</a>
+          <p>迪丽热巴 粉丝 名场面 / 热巴 爱丽丝</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m07">
+              <div class="section-index">07</div>
+              <div class="section-copy">
+                <h2>机场接机：收信/喊话/邓超饭撒</h2>
+                <p>线下互动密度高，上车后跑出来收信、机场喊话、偶遇和邓超帮忙饭撒都让粉丝把“可触达的温柔”记住。</p>
+                <div class="metric-row">
+                  <span><b>516,384</b> 可归因点赞</span>
+                  <span><b>146</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 33,164赞</div>
+      <a href="https://www.xiaohongshu.com/explore/665296b000000000050070f3?xsec_token=ABG5jJQVVqztZlWkcYZHGkmRWd9ujmE1jm8-B9VUkoBdQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">北京✈️宁波</a>
+      <p>迪丽热巴 机场 粉丝</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 33,164赞</div>
+          <a href="https://www.xiaohongshu.com/explore/665296b000000000050070f3?xsec_token=ABG5jJQVVqztZlWkcYZHGkmRWd9ujmE1jm8-B9VUkoBdQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">北京✈️宁波</a>
+          <p>迪丽热巴 机场 粉丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,428赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6988638e000000000a02a420?xsec_token=ABZSAjSa4fublcfIPGJ__Wg2r8DO8b8cCxYgywTH1jSKU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">上车了又跑出来收信的热巴🥹😭</a>
+          <p>迪丽热巴 机场 粉丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,347赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69cd1245000000001b002a01?xsec_token=ABhZJeJoRSNtWqfo6vXtFg4Hw6tvdggMl6LVugVNOsqkU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">被迪丽热巴坚定选择了！全场唯一的宠爱谁懂</a>
+          <p>迪丽热巴 / 迪丽热巴 粉丝 / 迪丽热巴 名场面 / 迪丽热巴 粉丝 名场面 / 迪丽热巴 粉丝 梗 / 迪丽热巴 物料 / 迪丽热巴 粉丝故事 / 迪丽热巴 宠粉 / 迪丽热巴 粉丝互动 / 迪丽热巴 机场 粉丝 / 迪丽热巴 直播 粉丝 / 迪丽热巴 生日直播 / 迪丽热巴 时装周 / 迪丽热巴 采访 粉丝 / 迪丽热巴 粉丝名 / 迪丽热巴 安利 / 热巴 粉丝 名场面 / 热巴 宠粉 / 迪丽热巴 直拍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 28,916赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66f2b133000000002c015dca?xsec_token=ABtOmlYvegT0IAOek1EF5ZEKpciBdyaxPB291ESULlKzg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴到达Dior</a>
+          <p>热巴 机场</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 21,953赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67b31bfd000000001902d2af?xsec_token=ABojVzJIk3cPtEk1yTFhaNdq-70bSlX-OcHfbZHOmP0yU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">〖250217 迪丽热巴 上海出发〗</a>
+          <p>热巴 机场</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 21,003赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f06da5000000001f00067b?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nXiIvy471Vh_Z_0tE2T_8Ps%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">今天第一个和热巴合照 还拥抱了嘿嘿 无敌美</a>
+          <p>迪丽热巴 粉丝互动 / 迪丽热巴 机场 粉丝 / 热巴 宠粉</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 17,166赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6852bd380000000015022062?xsec_token=ABvoMo3lKoufehA6h86KW-3SPJZWbyvT50bsKZY_mlf2k%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">〖250618 迪丽热巴 上海出发〗</a>
+          <p>热巴 机场</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 16,394赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f05515000000003701efa2?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nXBWvbF_vwQlzEaPw5TlJu4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">送给巴粉🎀🎀🎀</a>
+          <p>迪丽热巴 宠粉 / 迪丽热巴 粉丝互动 / 迪丽热巴 机场 粉丝 / 迪丽热巴 直播 粉丝 / 迪丽热巴 公诉 / 迪丽热巴 星光大赏 / 迪丽热巴 应援 / 热巴 生日会</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m08">
+              <div class="section-index">08</div>
+              <div class="section-copy">
+                <h2>美食吃货梗：麻辣烫/热干面/偷吃草莓/酸奶疙瘩</h2>
+                <p>最轻松的生活化梗。麻辣烫、热干面、偷吃草莓、酸奶疙瘩和综艺吃饭片段让她从神颜落回可亲近的人。</p>
+                <div class="metric-row">
+                  <span><b>503,998</b> 可归因点赞</span>
+                  <span><b>83</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 123,784赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68627853000000002300702b?xsec_token=AB9TjkFOmrI_FPo2HldUyMZOjSEXhbrE17UpNEp-y1TcQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">芜湖～麻辣烫🍢🌶️🔥</a>
+      <p>迪丽热巴 吃货</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 123,784赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68627853000000002300702b?xsec_token=AB9TjkFOmrI_FPo2HldUyMZOjSEXhbrE17UpNEp-y1TcQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">芜湖～麻辣烫🍢🌶️🔥</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 74,898赞</div>
+          <a href="https://www.xiaohongshu.com/explore/680b5fad000000001b026b70?xsec_token=AB7w_jAK5q7I3Iau5Hz7fmDDqSzQXPWSKo-VB_yTd-Xm8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">🔥别太会吃！明星综艺/红毯都偷吃的零食</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 65,912赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6805ec59000000001202dfa4?xsec_token=ABaFu5kCgo8uMuRDLvHbZZoCEq_d-lYAqco6SqZZ_tTI4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">武漢的熱乾麵 好好吃哦～</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 47,168赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6889f8a10000000022039880?xsec_token=ABi3LkQW-uhdNtlkWJHTP2BbNrhgjCtW-Yr_usVTD_m98%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">﻿迪丽热巴偷吃草莓被当场“抓包”</a>
+          <p>迪丽热巴 搞笑 / 迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 17,373赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f1e5f40000000022027a42?xsec_token=AB-Jt_C6ra1-TRkB6kJ4Ny1dk_QJtHomRQ5o4ytQIgLlE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">甜品主题限时精品店｜迪丽热巴 准备时刻</a>
+          <p>迪丽热巴 造型</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 16,561赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68667e24000000000b02f48d?xsec_token=ABrCZa4NLVgl-9XuHZ9LRdf3ysnZ7R-0zA_FUhJGqt1JA%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">不愧是好紫啧金靖 成功被巴安利酸奶疙瘩</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,483赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6868c3fc0000000011000a28?xsec_token=ABsjoYk41vD1yBfW8yM_QfpUHsexg3h2n1r_qKoSCir2g%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">那可是迪丽热巴啊</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,159赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68ed072d0000000007008e6a?xsec_token=AB25D_EZiNg7RlRstm-SLCN1OaQRueWSei3SasYlp8B0U%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">68ed072d0000000007008e6a</a>
+          <p>迪丽热巴 吃货</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m09">
+              <div class="section-index">09</div>
+              <div class="section-copy">
+                <h2>粉丝对视/眼神饭撒/被回应</h2>
+                <p>高转化的私密感资产。对视、嘟嘴、飞吻、晚宴回应等内容都在制造“一秒被看见”的粉丝体验。</p>
+                <div class="metric-row">
+                  <span><b>501,925</b> 可归因点赞</span>
+                  <span><b>35</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 133,273赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68d693fb000000001400ac99?xsec_token=ABHmhTL9L-UYF062Gpih8dvfm7xbQ_qDiSKS8zYyRwBmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">三千万人看过的热巴对视妆来咯💅</a>
+      <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 工作室</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 133,273赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68d693fb000000001400ac99?xsec_token=ABHmhTL9L-UYF062Gpih8dvfm7xbQ_qDiSKS8zYyRwBmo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">三千万人看过的热巴对视妆来咯💅</a>
+          <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 78,506赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68c50656000000001c010d39?xsec_token=ABfyVfIfw8DyH2olhPQPvD5SZ2gIB6qe4RtC0_UU9fq2g%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴：和她对视一秒再嘟嘴我：手段了得</a>
+          <p>迪丽热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 52,274赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67d1a12b000000000603bcf8?xsec_token=ABDiyLClIl8YWrdv72xVEo37kwKbdtsQ78FtNHNwmGZio%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">晚宴上被姐姐回应了🥹🫶🏻</a>
+          <p>迪丽热巴 粉丝 名场面 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 40,215赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c7d6cd0000000022028c51?xsec_token=ABLkIagGpyp5GT1EbnUgX1S2QwrQgzU6100yIEGpOfgHc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">给热巴撩害羞了</a>
+          <p>迪丽热巴 / 迪丽热巴 反差 / 迪丽热巴 眼神 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,349赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68c44bcf000000001d01e628?xsec_token=ABN4jwKervX7sBaxQv0rSztaF79OzKl_iQ_pf9eHTMuKw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">你怎么知道我跟迪丽热巴对视了</a>
+          <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 内娱神颜 / 热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 29,246赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69bd7301000000002301ca9b?xsec_token=ABk4bHKS77pjfTQOAkTQk0rbMS1R_ekWHPLHvaI6nmd9I%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我叫她胖迪了😂</a>
+          <p>热巴 粉丝 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 24,374赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69a11c6900000000260317f5?xsec_token=ABc3NZBU4L5ggSODflS7C9pZCLKhnGXQluKopXNu4cS7c%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">姐姐你真的特别美好</a>
+          <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 生日会</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 20,706赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67afd871000000001701fb40?xsec_token=ABFuRKEStOd5Lnqq_Q67-4xNB6Ui0rbPD-DzaZxkPPlxI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">喵～</a>
+          <p>迪丽热巴 粉丝 梗 / 热巴 梗</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m10">
+              <div class="section-index">10</div>
+              <div class="section-copy">
+                <h2>神图生图/怼脸美貌/腹肌</h2>
+                <p>审美向入口，生图、神图、怼脸镜头、腹肌和妆容复刻构成“可截图、可仿妆、可二创”的视觉素材池。</p>
+                <div class="metric-row">
+                  <span><b>326,760</b> 可归因点赞</span>
+                  <span><b>215</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 60,298赞</div>
+      <a href="https://www.xiaohongshu.com/explore/675f04ff000000000600eedb?xsec_token=ABd4LqVCk0MrKehJRA0YlsIAQHMS31Ewy3K7LaxTruxMc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">675f04ff000000000600eedb</a>
+      <p>迪丽热巴 可爱 / 迪丽热巴 眼神</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 60,298赞</div>
+          <a href="https://www.xiaohongshu.com/explore/675f04ff000000000600eedb?xsec_token=ABd4LqVCk0MrKehJRA0YlsIAQHMS31Ewy3K7LaxTruxMc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">675f04ff000000000600eedb</a>
+          <p>迪丽热巴 可爱 / 迪丽热巴 眼神</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 36,486赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69dd0806000000002301d60c?xsec_token=ABDbBF0DHr50z6rz05RtyxTbxgOu1onsSriBY4nRXQb1A%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我给热巴化的黑桃冷熏妆</a>
+          <p>迪丽热巴 内娱神颜 / 迪丽热巴 造型</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 36,424赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67528d52000000000702a370?xsec_token=ABqREmE5SqeX_5L11ZCyQ8Ln2C59OAtOEFjFyjtH6mzZg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我给热巴化的女王妆ccd🈶</a>
+          <p>迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 19,690赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6777cce1000000001300f391?xsec_token=AB7ZZJMFSSwVEXNDkv9IHt_0BXHqW12-xKtofil8ZXqgM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴十八张CCD</a>
+          <p>迪丽热巴 造型 / 迪丽热巴 神图</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 18,712赞</div>
+          <a href="https://www.xiaohongshu.com/explore/687cb07e000000002001b9ca?xsec_token=ABHOr-cx5cKzN2zPfHKEwE6IvOenqGtWkNtyul-ncPmY8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">用流淌笔画热巴，还有Q版的</a>
+          <p>迪丽热巴 可爱</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 15,230赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68a92f00000000001d027cb7?xsec_token=AB51S7j1lOUpKEjDNrW5CE0i_KKtH2P9XxKmlkXhEbbPw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">好可爱的巴</a>
+          <p>迪丽热巴 可爱</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 11,905赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ccd6a40000000023024a46?xsec_token=ABuQrTrnyThRDNYI24_H1cJJR4m5zywDe-xldp1TdLx9s%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">两张权威的脸。。。</a>
+          <p>迪丽热巴 腹肌</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 10,273赞</div>
+          <a href="https://www.xiaohongshu.com/explore/686d3b77000000000b01f9da?xsec_token=ABQvOsR88FSgNsAUJ3BUofj3hTAoDESAXsyWdu1pYxcys%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">美神侧颜</a>
+          <p>迪丽热巴 内娱神颜</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m11">
+              <div class="section-index">11</div>
+              <div class="section-copy">
+                <h2>采访金句：能量/普通人/高跟鞋/土味情话</h2>
+                <p>采访里的自我表达被粉丝转译成态度资产，关于能量、普通人、高跟鞋和土味情话的片段都更适合做文案化传播。</p>
+                <div class="metric-row">
+                  <span><b>239,235</b> 可归因点赞</span>
+                  <span><b>107</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 19,203赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69ccd35c000000001d01b2e1?xsec_token=ABuQrTrnyThRDNYI24_H1cJABFgu006LNg6PHiZrwPY2E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴的香气扑面而来了。。。</a>
+      <p>迪丽热巴 粉丝 / 迪丽热巴 粉丝 梗 / 迪丽热巴 可爱 / 迪丽热巴 直播 粉丝 / 迪丽热巴 眼神 / 迪丽热巴 采访 粉丝</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 19,203赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ccd35c000000001d01b2e1?xsec_token=ABuQrTrnyThRDNYI24_H1cJABFgu006LNg6PHiZrwPY2E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴的香气扑面而来了。。。</a>
+          <p>迪丽热巴 粉丝 / 迪丽热巴 粉丝 梗 / 迪丽热巴 可爱 / 迪丽热巴 直播 粉丝 / 迪丽热巴 眼神 / 迪丽热巴 采访 粉丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 14,339赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ccf31b0000000021012079?xsec_token=ABuQrTrnyThRDNYI24_H1cJBpSxJTOaFMh-vshcd7GG9o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">所有人感受迪丽热巴！</a>
+          <p>迪丽热巴 粉丝 名场面 / 迪丽热巴 采访 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,299赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68a04c3d000000001c03048a?xsec_token=AB7tpEffV_IuirHijHiCKSDxPQnjryLsfB945wcm-Iqe4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">68a04c3d000000001c03048a</a>
+          <p>迪丽热巴 采访 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,214赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68f48db3000000000703b01f?xsec_token=ABypjOuDfLiwvsYwkuNOAF9_FT-NN3q2ZrGkcLUsHBBVI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">这居然是当年央视新闻采访镜头下的她…</a>
+          <p>迪丽热巴 采访 名场面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 11,916赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68dd08200000000007032f17?xsec_token=ABLjuIcb_W8eB1tzidb2AvuzewUI0jjtw-eI17zllZ544%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴的采访</a>
+          <p>迪丽热巴 采访 名场面 / 热巴 采访</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,740赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c7a2d9000000001a025a39?xsec_token=ABLkIagGpyp5GT1EbnUgX1S6YUK2BmPrOwiWeqViEtqOw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“你拍戏的时候看清过我吗”</a>
+          <p>热巴 直播 / 热巴 采访</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,541赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68183e780000000022028699?xsec_token=ABIAiCBDAlglPPLGE_m8vbGqKm5N8y_jyrssCJ4qIQmHE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴说在节目里想当个普通人</a>
+          <p>迪丽热巴 采访 名场面 / 热巴 采访</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 8,677赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69edfdbb000000003501e8ed?xsec_token=ABY_EXAoNVR7WGZmKFgLHqVl2Eme7CmQolfIYgHNMw-70%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">百分之八十的粉丝没看过这个！</a>
+          <p>迪丽热巴 粉丝 / 迪丽热巴 直播 粉丝 / 迪丽热巴 采访 粉丝</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m12">
+              <div class="section-index">12</div>
+              <div class="section-copy">
+                <h2>角色记忆：李慧珍/打工人成长共鸣</h2>
+                <p>李慧珍相关讨论不是单纯怀旧，而是“长大后终于懂了”的共鸣，连接打工人、自卑、成长和重新理解角色。</p>
+                <div class="metric-row">
+                  <span><b>227,094</b> 可归因点赞</span>
+                  <span><b>68</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 133,046赞</div>
+      <a href="https://www.xiaohongshu.com/explore/682d95ab000000000303bf95?xsec_token=ABmm2uzgCCT26sMna_Vc6dq5LwTLq2VWDP-tIXxuE7fyc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">李慧珍，我终于懂你了</a>
+      <p>迪丽热巴 漂亮的李慧珍</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 133,046赞</div>
+          <a href="https://www.xiaohongshu.com/explore/682d95ab000000000303bf95?xsec_token=ABmm2uzgCCT26sMna_Vc6dq5LwTLq2VWDP-tIXxuE7fyc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">李慧珍，我终于懂你了</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 23,811赞</div>
+          <a href="https://www.xiaohongshu.com/explore/680c5892000000001c02a3db?xsec_token=ABJ6LCAZsp16XM6ryo1F-Glp7DoebPG39nvxgpaVpaxig%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">那压力确实是很大了</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 20,467赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69e22d75000000001f004dec?xsec_token=ABLDDwGCazmJ8L_uXm1taujDTm6zemFj5RrkikKvP3OCk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“亲爱的自己，我没有长成无聊的大人”</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,811赞</div>
+          <a href="https://www.xiaohongshu.com/explore/699d4c860000000015020bbc?xsec_token=ABTiTRcjnTVDsGYzj9GjVB-nifL8MOb3uZAIy4L7pRtPo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">现在到了李慧珍这个年纪才发现完全是纪录片</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 6,193赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69dce9f70000000023010731?xsec_token=AB9T2XCv-UN2RdD45h0KYAFcvLG4p4a5hgTwSAJQ-xV7w%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">最年轻的视后</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 4,106赞</div>
+          <a href="https://www.xiaohongshu.com/explore/699e7405000000001a024986?xsec_token=AB2DaMDnZT0Q3SmOvNXtbLfwr-qjuAw66yQ-CUCx9VxwM%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">每次大假收假开工就会再火一次😂</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 3,422赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68577066000000001c032dd4?xsec_token=ABieKwRVEpFnKa-DoXbzVZFjzV_FrFQRddsMJ1awZlPp4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">漂亮的李慧珍海报</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,832赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66edacb3000000001e019495?xsec_token=ABOr3U60nrn_plf_MebNpOIW8_M7BB7rTZPEsQMPyM2_Q%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">漂亮的李慧珍海报真漂亮</a>
+          <p>迪丽热巴 漂亮的李慧珍</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m13">
+              <div class="section-index">13</div>
+              <div class="section-copy">
+                <h2>生日会/生日直播/生日应援</h2>
+                <p>偏情绪和纪念节点的粉丝资产，适合做年度回顾、生日物料和核心粉丝社群内容。</p>
+                <div class="metric-row">
+                  <span><b>170,958</b> 可归因点赞</span>
+                  <span><b>154</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 14,362赞</div>
+      <a href="https://www.xiaohongshu.com/explore/6940062e000000001e036823?xsec_token=ABE4IelaQVC5Q0kQM5EgEQjR0jsFkfalL5W9oLb71FuSY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴直播又遇土味情话，别冻着全世界</a>
+      <p>迪丽热巴 直播 粉丝 / 迪丽热巴 生日直播 / 迪丽热巴 采访 粉丝</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 14,362赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6940062e000000001e036823?xsec_token=ABE4IelaQVC5Q0kQM5EgEQjR0jsFkfalL5W9oLb71FuSY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴直播又遇土味情话，别冻着全世界</a>
+          <p>迪丽热巴 直播 粉丝 / 迪丽热巴 生日直播 / 迪丽热巴 采访 粉丝</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,287赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ce751400000000230169d5?xsec_token=ABt17vM623UpeUzhGl37VdteWDgagkTBka_z6Wy0T27x4%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">白日提灯｜思胥万千太甜啦！！！</a>
+          <p>迪丽热巴 生日直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,079赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ccd7a4000000002200ee87?xsec_token=ABuQrTrnyThRDNYI24_H1cJFwyOEtre02pD_McvnOHHjk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">谁来管管热巴…谁来救救飞宇…</a>
+          <p>迪丽热巴 生日直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 10,138赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ce20ec0000000023020927?xsec_token=ABt17vM623UpeUzhGl37VdtafrNc9dXgynlRvquQbJZ-E%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴顶着这么美的脸搞抽象</a>
+          <p>迪丽热巴 名场面 / 迪丽热巴 梗 / 迪丽热巴 生日直播 / 热巴 梗</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,421赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67518933000000000703094e?xsec_token=ABti0grFV4HzMoo_5oSulrFRteov5H6pAIGGRB5R3j5NU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴美丽暴击！别开声音！</a>
+          <p>热巴 生日会</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 7,901赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ce5b9b000000002202a2a2?xsec_token=ABt17vM623UpeUzhGl37VdtQutfeOqoKhUYavKMkI4KEg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">就思胥万千这个姐狗爽！！！🥰</a>
+          <p>迪丽热巴 名场面 / 热巴 生日会 / 迪丽热巴 直拍</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 6,622赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f0cd43000000001b0214cb?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nQPTP0zaPwcfo9VKEH-oYds%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我是第一个收到返图的吗˃ ᵕ ˂今天太幸福了</a>
+          <p>迪丽热巴 生日会 / 迪丽热巴 微博之夜</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 6,150赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69e9e4560000000020000805?xsec_token=ABGAJOI2JjsSJNPm015Cu3c4lSjZbUZ3MLtWjBocElqY0%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">为姐姐倾倒😍</a>
+          <p>迪丽热巴 生日直播</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m14">
+              <div class="section-index">14</div>
+              <div class="section-copy">
+                <h2>角色记忆：乔晶晶/你是我的荣耀</h2>
+                <p>乔晶晶是甜宠和都市女明星想象的稳定入口，于途、航天工程师、明星恋爱感等关键词持续产生长尾。</p>
+                <div class="metric-row">
+                  <span><b>147,426</b> 可归因点赞</span>
+                  <span><b>114</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 44,278赞</div>
+      <a href="https://www.xiaohongshu.com/explore/680c5e3f000000001c010f47?xsec_token=ABJ6LCAZsp16XM6ryo1F-GlsZu1dSGuMpH8CLpw0_9Yus%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">680c5e3f000000001c010f47</a>
+      <p>迪丽热巴 乔晶晶</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 44,278赞</div>
+          <a href="https://www.xiaohongshu.com/explore/680c5e3f000000001c010f47?xsec_token=ABJ6LCAZsp16XM6ryo1F-GlsZu1dSGuMpH8CLpw0_9Yus%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">680c5e3f000000001c010f47</a>
+          <p>迪丽热巴 乔晶晶</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 20,921赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66ed57430000000025030c25?xsec_token=ABOr3U60nrn_plf_MebNpOIZRyPws82AOpgo5r-a_pnVc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">于途你是不是骗晶晶🥸</a>
+          <p>迪丽热巴 乔晶晶 / 迪丽热巴 你是我的荣耀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 8,394赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67b67833000000002902b981?xsec_token=AB3QPBaz1Ij-K1JtJx9ux26MM-oRGEN5zspPaZCDTT4Jw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">乔晶晶就是于途生活里的光吧</a>
+          <p>迪丽热巴 你是我的荣耀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 8,273赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66a84feb000000000600f151?xsec_token=AB05H2lFT6lLgcO9ZhYogp6vjp2CiPLeMzbc2OIHsJ8Mg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">当红女明星x航天工程师，男帅女美嗑死谁。</a>
+          <p>迪丽热巴 你是我的荣耀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 6,707赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68613d84000000002203d481?xsec_token=AB40J9ERpmlPqN3T9r-ejGDN6-8EFHs259jZiSPNByW1M%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">68613d84000000002203d481</a>
+          <p>迪丽热巴 你是我的荣耀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 5,328赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f02ba3000000003501c96a?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nW5FkEUNyXawsTmcXNi2_bk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“从此以后 一别两宽 ”</a>
+          <p>迪丽热巴 乔晶晶</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 5,311赞</div>
+          <a href="https://www.xiaohongshu.com/explore/685554d1000000000b02d9f1?xsec_token=ABQh6RmnkIt1NqxrJRHfAAAYwt6PZsVDAhPiWRqSA0Uvs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">你是我的荣耀</a>
+          <p>迪丽热巴 你是我的荣耀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 4,409赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6799e415000000002901e019?xsec_token=ABTE0gpo9dkZV45_ljnrd9DBnEKCxSW5LMXrN3RJrSclE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">6799e415000000002901e019</a>
+          <p>迪丽热巴 乔晶晶</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m15">
+              <div class="section-index">15</div>
+              <div class="section-copy">
+                <h2>工作室物料/宣发与妆容复刻</h2>
+                <p>粉丝不仅消费成片，也关注宣发、工作室物料和妆造拆解，说明视觉资产已经进入二创和复刻层。</p>
+                <div class="metric-row">
+                  <span><b>120,077</b> 可归因点赞</span>
+                  <span><b>104</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 19,176赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68a7d09d000000001c03d6a2?xsec_token=ABhze4d9-EzNxiGSXUDx5R_GGnAw5rYTeyqzBgnEMpXRI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">化妆视频｜给热巴化的芭莎金九封面妆容</a>
+      <p>迪丽热巴 眼神</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 19,176赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68a7d09d000000001c03d6a2?xsec_token=ABhze4d9-EzNxiGSXUDx5R_GGnAw5rYTeyqzBgnEMpXRI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">化妆视频｜给热巴化的芭莎金九封面妆容</a>
+          <p>迪丽热巴 眼神</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,906赞</div>
+          <a href="https://www.xiaohongshu.com/explore/691ede28000000001f00cee8?xsec_token=ABhnS8gimwQdFgu72TGFDzQB725kpka2eiluToq7bFzsw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴终于拥有了用心的宣发</a>
+          <p>迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,904赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69a6a2c6000000001d0252de?xsec_token=ABaaaP3t3BHICZcJJV7Uxfx8BBPt6-qZn6R-PjcjBrR_k%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69a6a2c6000000001d0252de</a>
+          <p>迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,410赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69186ba30000000004006aff?xsec_token=ABjruD7GaaHBx-_oFfx48f3p79NcdssHLr-Cb6YaSMEwU%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我给迪丽热巴化的神域猎夜妆</a>
+          <p>迪丽热巴 眼神</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 8,507赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f07df80000000035024aa3?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nWCk0O-Af-76rg9cZPYnNnk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">今日给热巴化的燕尾眼线妆</a>
+          <p>迪丽热巴 工作室 / 迪丽热巴 眼神</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 6,196赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68173c70000000001101e43c?xsec_token=ABQOsuLH5BvFqbWW7EyLBQq6TK0tGQaL5yv53L1xKNF0Q%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">工作室已经两年没有拍新年写真了</a>
+          <p>迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 5,609赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69a6870e0000000015022a24?xsec_token=ABaaaP3t3BHICZcJJV7Uxfx31Y8el8dDQXWnyFG7EYFME%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69a6870e0000000015022a24</a>
+          <p>迪丽热巴 工作室</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 3,522赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6920379b000000000d03a6ca?xsec_token=ABqYNNRD433TnITR8Gj-IsXwy4t46S5oIT9bkzw36MRIc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">✅兑！</a>
+          <p>迪丽热巴 物料</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m16">
+              <div class="section-index">16</div>
+              <div class="section-copy">
+                <h2>角色记忆：白凤九/小狐狸/东凤</h2>
+                <p>白凤九是长尾很稳的古偶角色资产，小狐狸、青丘、东凤和枕上书持续触发老粉考古。</p>
+                <div class="metric-row">
+                  <span><b>118,909</b> 可归因点赞</span>
+                  <span><b>135</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 60,336赞</div>
+      <a href="https://www.xiaohongshu.com/explore/67f27742000000001200ccfe?xsec_token=ABpWkgCHu9kfXZFb2RDp14lClvoAopmzbamfVM3l2D9Ck%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">被凤九萌晕了，这是什么神仙小可爱？</a>
+      <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 60,336赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67f27742000000001200ccfe?xsec_token=ABpWkgCHu9kfXZFb2RDp14lClvoAopmzbamfVM3l2D9Ck%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">被凤九萌晕了，这是什么神仙小可爱？</a>
+          <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 12,115赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67e5463d000000001e00303d?xsec_token=ABkPiS1mLXdNsNQVFG0uVd5mgMfqzqHnCL7k9o4V5jQGc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">你没错！凤九！都是我的错！看得让我心疼</a>
+          <p>迪丽热巴 三生三世</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 3,775赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6794e646000000001701c93b?xsec_token=ABFaAHKLkve1Ke7ep1osbHozJNVgsL5ZhQPvdHlwCH6-o%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">6794e646000000001701c93b</a>
+          <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 3,632赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f05281000000003502993f?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2neaaQw2d_plnczvsd5Qx8Yk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69f05281000000003502993f</a>
+          <p>迪丽热巴 三生三世</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,898赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69bc0e300000000023026c01?xsec_token=ABmbkhfdzTQhOPRgXX68SL9Ie44E4McqASBgi9hjl2qhg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">热巴剧照生图｜九年了，我还是没忘这个眼神</a>
+          <p>迪丽热巴 白凤九 / 迪丽热巴 三生三世 / 迪丽热巴 烈火如歌</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,416赞</div>
+          <a href="https://www.xiaohongshu.com/explore/689828850000000002001b2b?xsec_token=AB8xwFwI7ED4MoaRh13fshoqa3zsi0T4PSRTWCyUkYia0%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">救命！迪丽热巴这 12 年的角色杀疯了！</a>
+          <p>迪丽热巴 高雯 / 迪丽热巴 三生三世 / 迪丽热巴 烈火如歌</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,113赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69edc88d000000003601e8b2?xsec_token=ABY_EXAoNVR7WGZmKFgLHqVoQdZTFl9Z7VnuF_E25Rt6I%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">东华就这样装醉骗我们小凤九的初吻</a>
+          <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,083赞</div>
+          <a href="https://www.xiaohongshu.com/explore/66f7bb38000000002c0150f0?xsec_token=AB4fDoi5NRGqwVb7YWi65q8MOaa4ReZjt00x-UXryhf5k%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">可可爱爱的青丘小帝姬 白风九🦊</a>
+          <p>迪丽热巴 白凤九 / 迪丽热巴 凤九</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m17">
+              <div class="section-index">17</div>
+              <div class="section-copy">
+                <h2>角色记忆：高雯/戏精高雯</h2>
+                <p>高雯承载早期出圈的喜剧和戏精人格，粉丝常用“表情多”“疯感可爱”“克拉恋人”来唤醒角色记忆。</p>
+                <div class="metric-row">
+                  <span><b>109,600</b> 可归因点赞</span>
+                  <span><b>97</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 16,800赞</div>
+      <a href="https://www.xiaohongshu.com/explore/68456d66000000002100e2e6?xsec_token=ABseJbaYDaZd-IKJmdsMeHyUytEvU9ixtegPlgRWB-050%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">克拉恋人里的高雯真的好可爱啊</a>
+      <p>迪丽热巴 克拉恋人</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 16,800赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68456d66000000002100e2e6?xsec_token=ABseJbaYDaZd-IKJmdsMeHyUytEvU9ixtegPlgRWB-050%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">克拉恋人里的高雯真的好可爱啊</a>
+          <p>迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,007赞</div>
+          <a href="https://www.xiaohongshu.com/explore/686028de000000002201fa8e?xsec_token=AB_-sAGhYj62_Tk2V1SqDKtqNPFg778aOvRSt9630-jwk%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“反正要被换掉了，那就疯吧”</a>
+          <p>迪丽热巴 高雯 / 迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,976赞</div>
+          <a href="https://www.xiaohongshu.com/explore/687cce6c0000000013011e4c?xsec_token=ABHOr-cx5cKzN2zPfHKEwE6H7egcsH_cTNbzJXSuAxSUA%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">小表情这么多还不重样，怎么做到的！优秀！</a>
+          <p>迪丽热巴 高雯</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,295赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68ceed180000000012023967?xsec_token=ABpPrgwR8YRWQoVOfF6mVtoWq6_Gl5leoolbAOaCejMxw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">68ceed180000000012023967</a>
+          <p>迪丽热巴 高雯 / 迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 7,679赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6873c7c1000000001202e6ea?xsec_token=ABg08C3kZ53KrfYACHB5d8rvw2yuP_d6_e8s1NxM_c-Yo%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">迪丽热巴，绝对是个狠人。</a>
+          <p>迪丽热巴 高雯 / 迪丽热巴 克拉恋人 / 热巴 考古</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 7,250赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ce2031000000002200f464?xsec_token=ABt17vM623UpeUzhGl37VdtRGTSRtMGnH4puijn0MHWB8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">高雯不愧是“喜剧人”担当～🤣🤣</a>
+          <p>迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 7,173赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67f67746000000000e004b39?xsec_token=ABE33dVIQ6Wv2jSYUDkp7B_x66cim6UDxk-QAIb1EOWPs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">“高雯驾到，统统闪开”</a>
+          <p>迪丽热巴 高雯 / 迪丽热巴 克拉恋人</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 4,671赞</div>
+          <a href="https://www.xiaohongshu.com/explore/65ed78d60000000012022f19?xsec_token=AB3CTsN4n196NqLTb0AkPPSXkH5Y43KLgPlNElFCwY_zA%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">时光在她身上留下了什么</a>
+          <p>迪丽热巴 高雯 / 热巴 考古</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m18">
+              <div class="section-index">18</div>
+              <div class="section-copy">
+                <h2>角色记忆：李长歌/长歌行</h2>
+                <p>李长歌相关内容更多关联成长、独立和古装女主气质，是角色线里偏精神内核的一支。</p>
+                <div class="metric-row">
+                  <span><b>62,051</b> 可归因点赞</span>
+                  <span><b>68</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 13,837赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69c3c106000000001d01b7d6?xsec_token=ABAbhki4dfRIoNw9n3nMDS0qA4iJcVxhYx7o33yo7eFME%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">长歌行 一定行！</a>
+      <p>迪丽热巴 长歌行</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 13,837赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c3c106000000001d01b7d6?xsec_token=ABAbhki4dfRIoNw9n3nMDS0qA4iJcVxhYx7o33yo7eFME%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">长歌行 一定行！</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 9,967赞</div>
+          <a href="https://www.xiaohongshu.com/explore/68481e80000000002301084b?xsec_token=ABcMqGftyJY8IJacKMW_0uRHySlyTshJqDrNRX7-uPeAw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">阿隼:我已经没了我阿娜 我不能再失去她</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 5,429赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67e2a7430000000006028ee7?xsec_token=ABcjs7eQ5XurCC3nCSSIaf55m-JEUyumtgp72cCKgVBHI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我李长歌，不为公主贤妻，只做自己的炬火</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 4,462赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6990ced20000000015039eac?xsec_token=ABur1LVW50g7zV9qCxPN0gfrMMUVoL5y_MmFexRnB_0hI%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">6990ced20000000015039eac</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 3,411赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69c54624000000002003b4b2?xsec_token=ABBskLpQ7hmjYizAdSBnKgcLBwv3ru9n7iJ4Pd2iQVfnE%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">爱上李长歌人之常情</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,616赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67ce9fdd000000002900bd81?xsec_token=AB4AWWeHh_aRpjLbK6sFOnEpBQ5Ny9VQojDRu7fpYXjCw%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">内娱无代餐的一对！当年有多少人磕到了！</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 2,049赞</div>
+          <a href="https://www.xiaohongshu.com/explore/6867599300000000120223fe?xsec_token=AB8Cp4Dyfu_FfdFVhoFdVrsLven6k2VEX_uz9bo_zIh-0%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">长歌行，你最大的遗憾是什么！</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 1,514赞</div>
+          <a href="https://www.xiaohongshu.com/explore/67179251000000001b02faf0?xsec_token=ABJ3gHJR2Ttr0uMg5gmJOHhjGiMfNU3ypJUmvnwZHEkxc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">&quot;阿诗勒隼,纯爱战神一登场,无敌的存在的&quot;</a>
+          <p>迪丽热巴 长歌行</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="m19">
+              <div class="section-index">19</div>
+              <div class="section-copy">
+                <h2>新疆身份记忆：新疆名片/维语/民族舞</h2>
+                <p>地域身份增强独特性，新疆名片、维语采访、民族舞和新疆味儿生日歌共同构成身份标签。</p>
+                <div class="metric-row">
+                  <span><b>56,503</b> 可归因点赞</span>
+                  <span><b>58</b> 命中帖子</span>
+                  <span><b>8</b> 代表来源</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                
+      <div class="source-kind">帖子 · 41,706赞</div>
+      <a href="https://www.xiaohongshu.com/explore/69b67f9f0000000022027b60?xsec_token=AB6j5m_SR7VWQYYtwxndHAajReaUHAHVApjFsiXv-Hamc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我愿称这姐为行走的新疆名片</a>
+      <p>迪丽热巴 新疆</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+      <li>
+        <div class="mini-index">1</div>
+        <div>
+          <div class="evidence-meta">帖子 · 41,706赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69b67f9f0000000022027b60?xsec_token=AB6j5m_SR7VWQYYtwxndHAajReaUHAHVApjFsiXv-Hamc%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">我愿称这姐为行走的新疆名片</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">2</div>
+        <div>
+          <div class="evidence-meta">帖子 · 8,934赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69f04aed0000000020038299?xsec_token=ABjhRsbJ8Qw-qo4nOjABW2nVM3aeuK3aVaAY5Z4Z66HzQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">芭比娃娃吗？</a>
+          <p>迪丽热巴 / 迪丽热巴 新疆 / 迪丽热巴 安乐传 / 迪丽热巴 造型 / 迪丽热巴 安利</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">3</div>
+        <div>
+          <div class="evidence-meta">帖子 · 1,051赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69d1fcfe0000000023005a90?xsec_token=ABsKdwxplzI3MgkvaLsOPD7H5hgrDZHBYssBwiGvPWmd8%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">有的人天生就是吃这碗饭的</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">4</div>
+        <div>
+          <div class="evidence-meta">帖子 · 829赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69ddd370000000002100549c?xsec_token=ABDbBF0DHr50z6rz05RtyxTbFb_nkpNogEb6ndRMCTPWY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">美女如云的新疆“五步遇娜扎 十步见热巴”</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">5</div>
+        <div>
+          <div class="evidence-meta">帖子 · 760赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69e759390000000023005605?xsec_token=ABeDVp9u-Dc9aUTERLBzDC_JD5KWq6tU_oR1SyBdKfhWs%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">火遍全网的新疆导游，邀你共赴天山之旅。</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">6</div>
+        <div>
+          <div class="evidence-meta">帖子 · 489赞</div>
+          <a href="https://www.xiaohongshu.com/explore/688f682c0000000005008a61?xsec_token=ABRl1bMF3_CetQldO5iJzUr0cc4FT86XYLTmlLN5RqFwg%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">新疆指定有点东西!都是内娱浓颜天花板了吧！</a>
+          <p>迪丽热巴 出圈</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">7</div>
+        <div>
+          <div class="evidence-meta">帖子 · 484赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69df6802000000001f005be1?xsec_token=ABfKAoJYwfLMUqzH0gYNpYETXCVc-jFH3S-TPA75zzTQQ%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">灵主大人喊你来新疆啦！</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-index">8</div>
+        <div>
+          <div class="evidence-meta">帖子 · 350赞</div>
+          <a href="https://www.xiaohongshu.com/explore/69dbabd4000000001a035203?xsec_token=AB5PKBqTSG_Ol_CrlbFH9qmWdzDejp3ocyAMwUvIYjIzY%3D&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">69dbabd4000000001a035203</a>
+          <p>迪丽热巴 新疆</p>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+  </main>
+</body>
+</html>
