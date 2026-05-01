@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>求此女所有冷知识和萌点｜评论汇总</title>
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #191714;
+      --muted: #736c62;
+      --line: #ddd3c6;
+      --accent: #b3482d;
+      --accent-soft: #f0d6ca;
+      --surface: #fffaf2;
+      --coal: #29241f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .hero {
+      min-height: 62svh;
+      padding: 56px clamp(18px, 5vw, 72px) 34px;
+      display: grid;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(115deg, rgba(179,72,45,.13), rgba(247,244,238,.2) 40%, rgba(25,23,20,.04)),
+        radial-gradient(circle at 82% 20%, rgba(25,23,20,.10), transparent 28%),
+        var(--bg);
+      animation: fadeUp .7s ease both;
+    }
+    .hero h1 {
+      max-width: 1180px;
+      margin: 0;
+      font-size: clamp(42px, 6.2vw, 88px);
+      line-height: .95;
+      font-weight: 760;
+    }
+    .hero p {
+      max-width: 790px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
+    }
+    .stats {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
+    }
+    .stats b {
+      display: block;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+      max-width: 880px;
+    }
+    .tag-row span {
+      padding: 6px 9px;
+      border: 1px solid var(--line);
+      color: var(--accent);
+      background: rgba(255,250,242,.62);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    main { padding: 34px clamp(14px, 4vw, 58px) 80px; }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+    .toolbar a {
+      color: var(--accent);
+      font-weight: 650;
+    }
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 20px 0 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgba(255,250,242,.62);
+    }
+    table {
+      width: 100%;
+      min-width: 1060px;
+      border-collapse: collapse;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(247,244,238,.94);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: left;
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    td {
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    tr:hover { background: rgba(179,72,45,.055); }
+    .rank { width: 68px; color: var(--accent); font-weight: 760; }
+    .memory-name { font-size: 17px; font-weight: 760; text-decoration: none; }
+    .reading { margin-top: 7px; max-width: 500px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .number { white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 760; }
+    .bar {
+      width: min(340px, 100%);
+      height: 5px;
+      margin-top: 12px;
+      background: #e6dacf;
+      overflow: hidden;
+    }
+    .bar span { display: block; height: 100%; background: var(--accent); transition: width .45s ease; }
+    .source-link {
+      display: inline-block;
+      margin: 0 6px 7px 0;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--accent);
+    }
+    .comment-link {
+      display: inline-block;
+      margin: 6px 0 0;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .comment-link:hover { text-decoration: underline; }
+    .top-source { max-width: 410px; }
+    .source-kind, .evidence-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 6px;
+    }
+    .top-source p, .evidence-list p, .feature-source p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .raw-quote {
+      margin-top: 7px;
+      max-width: 560px;
+      color: var(--ink);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+    .comment-id {
+      display: inline-block;
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 11px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    .memory-section {
+      display: grid;
+      grid-template-columns: 74px minmax(240px, 1fr) minmax(260px, 380px);
+      gap: 26px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-index {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 780;
+    }
+    .section-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .section-copy > p {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .metric-row span {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metric-row b { color: var(--ink); }
+    .feature-source {
+      align-self: start;
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .feature-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 14px;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .feature-thumb img, .mini-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .35s ease;
+    }
+    .feature-thumb:hover img { transform: scale(1.035); }
+    .thumb-fallback, .mini-thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 760;
+      background: var(--accent-soft);
+    }
+    .evidence-list {
+      grid-column: 2 / 4;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .evidence-list li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 13px;
+      min-width: 0;
+    }
+    .mini-thumb {
+      width: 84px;
+      aspect-ratio: 1;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .muted { color: var(--muted); }
+    .source-note {
+      margin: 26px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+    .section-title {
+      margin: 54px 0 18px;
+      font-size: clamp(28px, 4vw, 50px);
+      line-height: 1.05;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 38px; }
+      .toolbar { display: block; }
+      .memory-section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .feature-source { border-left: 0; padding-left: 0; }
+      .evidence-list {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+      table { min-width: 920px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>求此女所有冷知识和萌点<br>评论汇总</h1>
+      <p>基于小红书笔记评论区完整展开后的 26 条主评论与 37 条回复整理，按主题归纳冷知识、生活照补档、入坑共鸣和考古路线。</p>
+      <div class="stats">
+        <div><b>63</b><span>条评论/回复</span></div>
+        <div><b>26</b><span>主评论</span></div>
+        <div><b>37</b><span>楼中楼回复</span></div>
+        <div><b>50</b><span>图片线索</span></div>
+        <div><b>570</b><span>赞同信号</span></div>
+      </div>
+      <div class="tag-row"><span>黄婷婷</span><span>姐感</span><span>神图</span><span>萌点</span><span>冷知识</span><span>日常照</span><span>美</span></div>
+    </div>
+  </header>
+  <main>
+    <div class="toolbar">
+      <div>来源笔记：吉利布丁 · 2025-12-24 · 整理 2026-05-01</div>
+      <a href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search" target="_blank" rel="noreferrer">打开原笔记</a>
+    </div>
+    <div class="source-links"><a class="source-link" href="#cold_facts">01 冷知识与反差萌</a>
+<a class="source-link" href="#variety_moment">02 节目趣事记忆点</a>
+<a class="source-link" href="#daily_photos">03 生活感照片补档</a>
+<a class="source-link" href="#sincere_care">04 真诚、温柔与照顾人</a>
+<a class="source-link" href="#research_routes">05 考古路线与资料入口</a>
+<a class="source-link" href="#new_fans">06 新粉入坑与回坑共鸣</a></div>
+
+    <section aria-label="主题热度表">
+      <h2 class="section-title">主题热度榜</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>排序</th>
+              <th>主题</th>
+              <th>互动热度</th>
+              <th>证据量</th>
+              <th>原文短摘 / 代表读法</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="rank">#01</td>
+              <td>
+                <a class="memory-name" href="#cold_facts">冷知识与反差萌</a>
+                <div class="reading">评论区最有信息量的部分：童年、学习、入团、外貌小细节和性格反差被集中补齐。</div>
+              </td>
+              <td>
+                <div class="number">162</div>
+                <div class="bar"><span style="width:100%"></span></div>
+              </td>
+              <td>6 条主评论<br><span class="muted">11 条回复 · 3 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>陆伍柒</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c3f0a000000001d00deba" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">除了断眉是小时候摔出来的，鼻子小时候也摔断过。姐小时候其实也蛮闹腾的，不爱吃饭要在饭里放...</p>
+                <p>最高信息密度冷知识串：小时候摔伤、豆豆小名、耳洞、跆拳道、素描、数学强、参军念头、独自面试等，被回复区收藏和继续追问。</p>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">#02</td>
+              <td>
+                <a class="memory-name" href="#variety_moment">节目趣事记忆点</a>
+                <div class="reading">一个高赞长评就撑起了可爱行为记忆：做饭、偷加调料、认真解释，具备强传播性。</div>
+              </td>
+              <td>
+                <div class="number">131</div>
+                <div class="bar"><span style="width:81%"></span></div>
+              </td>
+              <td>1 条主评论<br><span class="muted">5 条回复 · 1 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>花菜花菜花菜花</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694df204000000001502e893" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">讲一个节目里的趣事，昨天直播也有人提到了。踢踢她觉得做饭加方便面调料包会让汤这一类的东西...</p>
+                <p>节目趣事被反复转述：她在做鸭汤时想用方便面调料包增味，回复区继续补出处，形成很强的生活化反差萌。</p>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">#03</td>
+              <td>
+                <a class="memory-name" href="#daily_photos">生活感照片补档</a>
+                <div class="reading">多图评论承担了“求日常照”的核心任务，照片、近况链接和自修图把生活感变成可保存素材。</div>
+              </td>
+              <td>
+                <div class="number">130</div>
+                <div class="bar"><span style="width:80%"></span></div>
+              </td>
+              <td>7 条主评论<br><span class="muted">14 条回复 · 33 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>AAA叙拉古千层酥批发</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0d3d000000001600ca4f" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">不知道算不算生活感特别强的，但是我很喜欢🥰</p>
+                <p>9 张生活感照片是本帖最大图像补档之一，楼中楼继续补图、指路旧笔记，也让“日常照”需求被满足。</p>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">#04</td>
+              <td>
+                <a class="memory-name" href="#sincere_care">真诚、温柔与照顾人</a>
+                <div class="reading">纸飞机、字迹、杂图和帮人解围共同指向“外表清冷但内里认真可靠”的人格印象。</div>
+              </td>
+              <td>
+                <div class="number">122</div>
+                <div class="bar"><span style="width:75%"></span></div>
+              </td>
+              <td>3 条主评论<br><span class="muted">5 条回复 · 10 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>所以会喜欢小狗吗</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c1f1500000000140376f9" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">此女写字非常好看&amp;她很爱我们ʕ •ᴥ•ʔ（这是有一年总选开始前 她在录制别的节目的时候自...</p>
+                <p>纸飞机留言和漂亮字迹被当作宠粉证据，回复区顺势把她归到温柔、真诚、会把心意写出来的人。</p>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">#05</td>
+              <td>
+                <a class="memory-name" href="#research_routes">考古路线与资料入口</a>
+                <div class="reading">除了直接给答案，评论区还提供了总结帖、外部小组和旧笔记链接，适合整理成新粉导航。</div>
+              </td>
+              <td>
+                <div class="number">14</div>
+                <div class="bar"><span style="width:9%"></span></div>
+              </td>
+              <td>2 条主评论<br><span class="muted">2 条回复 · 3 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>一切随缘</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694bff320000000016027800" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">可以看看👀总结的很详细</p>
+                <p>评论提供了现成总结入口，属于新粉考古路线的一部分，楼主也表示会继续查看。</p>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">#06</td>
+              <td>
+                <a class="memory-name" href="#new_fans">新粉入坑与回坑共鸣</a>
+                <div class="reading">多条短评表达近期入坑、退河后再次喜欢、越了解越喜欢，说明评论区本身在推动二次入坑。</div>
+              </td>
+              <td>
+                <div class="number">11</div>
+                <div class="bar"><span style="width:7%"></span></div>
+              </td>
+              <td>7 条主评论<br><span class="muted">0 条回复 · 0 张图</span></td>
+              <td class="top-source">
+                <div class="source-kind">代表证据</div>
+                <strong>喝水大王-咩咩</strong>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69537d22000000001502ecb3" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">看着评论区的踢踢，看着好幸福[害羞R]是我之前不了解的踢踢</p>
+                <p>新观众通过评论区认识了更多面的她，反馈重点是原来还有这么多不了解的部分。</p>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">互动热度按该主题下主评论和已展开回复的点赞相加；评论摘要为转述整理，不直接整段复刻评论原文。</p>
+    </section>
+
+    
+            <section class="memory-section" id="cold_facts">
+              <div class="section-index">01</div>
+              <div class="section-copy">
+                <h2>冷知识与反差萌</h2>
+                <p>评论区最有信息量的部分：童年、学习、入团、外貌小细节和性格反差被集中补齐。</p>
+                <div class="metric-row">
+                  <span><b>162</b> 互动热度</span>
+                  <span><b>6</b> 主评论</span>
+                  <span><b>11</b> 回复</span>
+                  <span><b>3</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202605011652/23d650f56d38cd28d47ce2771597a31e/comment/1040g2h031qgiq9qd7u105ol4fppmt8r8eruboko!nd_whgt34_webp_wm_1" alt="冷知识与反差萌 代表图片" loading="lazy"></div>
+                <div class="source-kind">主题读法</div>
+                <p>评论区最有信息量的部分：童年、学习、入团、外貌小细节和性格反差被集中补齐。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">55</div>
+              </div>
+              <div>
+                <div class="evidence-meta">陆伍柒 · 55 赞 · 10 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c3f0a000000001d00deba" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">除了断眉是小时候摔出来的，鼻子小时候也摔断过。姐小时候其实也蛮闹腾的，不爱吃饭要在饭里放...</p>
+                <p>最高信息密度冷知识串：小时候摔伤、豆豆小名、耳洞、跆拳道、素描、数学强、参军念头、独自面试等，被回复区收藏和继续追问。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">40</div>
+              </div>
+              <div>
+                <div class="evidence-meta">收银男王king · 40 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694bfab1000000001d026c77" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">酷酷的断眉其实是小时候贪玩摔的</p>
+                <p>断眉来源被解释为小时候摔伤，评论区把酷感外貌反向读成很萌的成长小插曲。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">3</div>
+              </div>
+              <div>
+                <div class="evidence-meta">猫猫今天要睡12小时 · 3 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=6960d4c7000000000f00fb5e" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">此女给依琳买了401张专辑成为单推王，偶像前来谢谢，耿直回复不用谢不用谢[笑哭R]</p>
+                <p>买专辑支持偶像的故事被当成直爽又认真追星的冷知识，带出她作为粉丝的一面。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">1</div>
+              </div>
+              <div>
+                <div class="evidence-meta">小黑-95 · 1 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69a454ec00000000180234b9" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">tt是不是近视啊</p>
+                <p>围绕近视的小问题，体现评论区仍在持续提出细节型考古需求。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="variety_moment">
+              <div class="section-index">02</div>
+              <div class="section-copy">
+                <h2>节目趣事记忆点</h2>
+                <p>一个高赞长评就撑起了可爱行为记忆：做饭、偷加调料、认真解释，具备强传播性。</p>
+                <div class="metric-row">
+                  <span><b>131</b> 互动热度</span>
+                  <span><b>1</b> 主评论</span>
+                  <span><b>5</b> 回复</span>
+                  <span><b>1</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202605011652/18f15bb2c6bf6a5c8784334c77c6c8cb/comment/1040g2h031qi0rvem7u0g5ol4fppmt8r8u6vfopo!nd_whlt34_webp_wm_1" alt="节目趣事记忆点 代表图片" loading="lazy"></div>
+                <div class="source-kind">主题读法</div>
+                <p>一个高赞长评就撑起了可爱行为记忆：做饭、偷加调料、认真解释，具备强传播性。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">127</div>
+              </div>
+              <div>
+                <div class="evidence-meta">花菜花菜花菜花 · 127 赞 · 5 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694df204000000001502e893" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">讲一个节目里的趣事，昨天直播也有人提到了。踢踢她觉得做饭加方便面调料包会让汤这一类的东西...</p>
+                <p>节目趣事被反复转述：她在做鸭汤时想用方便面调料包增味，回复区继续补出处，形成很强的生活化反差萌。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="daily_photos">
+              <div class="section-index">03</div>
+              <div class="section-copy">
+                <h2>生活感照片补档</h2>
+                <p>多图评论承担了“求日常照”的核心任务，照片、近况链接和自修图把生活感变成可保存素材。</p>
+                <div class="metric-row">
+                  <span><b>130</b> 互动热度</span>
+                  <span><b>7</b> 主评论</span>
+                  <span><b>14</b> 回复</span>
+                  <span><b>33</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202605011652/5649e42fa82cf4d869daaeaf1e3722cf/comment/1040g2h031qfurijq7o6g5pn07477cd28ojauepo!nd_whgt34_webp_wm_1" alt="生活感照片补档 代表图片" loading="lazy"></div>
+                <div class="source-kind">主题读法</div>
+                <p>多图评论承担了“求日常照”的核心任务，照片、近况链接和自修图把生活感变成可保存素材。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">75</div>
+              </div>
+              <div>
+                <div class="evidence-meta">AAA叙拉古千层酥批发 · 75 赞 · 8 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0d3d000000001600ca4f" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">不知道算不算生活感特别强的，但是我很喜欢🥰</p>
+                <p>9 张生活感照片是本帖最大图像补档之一，楼中楼继续补图、指路旧笔记，也让“日常照”需求被满足。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">13</div>
+              </div>
+              <div>
+                <div class="evidence-meta">鲑鱼小帝 · 13 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c12fe000000000e0349ce" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">[图片评论：2 张图]</p>
+                <p>纯图片型补档，主要承担“直接投喂照片”的功能，楼主继续用图片回应喜欢。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">10</div>
+              </div>
+              <div>
+                <div class="evidence-meta">离岸潮 · 10 赞 · 2 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0b3d000000001502fb51" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">超喜欢这几张</p>
+                <p>偏审美向的图片补档，回复里还补充她喜欢周杰伦这一类轻量冷知识。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">8</div>
+              </div>
+              <div>
+                <div class="evidence-meta">tth · 8 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69513cac00000000160251a3" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">相册放不下了快[大笑R]</p>
+                <p>多图相册继续补足生活照库存，文字里带有相册已经放不下的轻松语气。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="sincere_care">
+              <div class="section-index">04</div>
+              <div class="section-copy">
+                <h2>真诚、温柔与照顾人</h2>
+                <p>纸飞机、字迹、杂图和帮人解围共同指向“外表清冷但内里认真可靠”的人格印象。</p>
+                <div class="metric-row">
+                  <span><b>122</b> 互动热度</span>
+                  <span><b>3</b> 主评论</span>
+                  <span><b>5</b> 回复</span>
+                  <span><b>10</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202605011652/fd4b429c9eb37f8d390adf7a987ba402/comment/1040g2h031qg118g70m00431bj0igc9k9rp6dg78!nd_whlt34_webp_wm_1" alt="真诚、温柔与照顾人 代表图片" loading="lazy"></div>
+                <div class="source-kind">主题读法</div>
+                <p>纸飞机、字迹、杂图和帮人解围共同指向“外表清冷但内里认真可靠”的人格印象。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">57</div>
+              </div>
+              <div>
+                <div class="evidence-meta">所以会喜欢小狗吗 · 57 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c1f1500000000140376f9" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">此女写字非常好看&amp;她很爱我们ʕ •ᴥ•ʔ（这是有一年总选开始前 她在录制别的节目的时候自...</p>
+                <p>纸飞机留言和漂亮字迹被当作宠粉证据，回复区顺势把她归到温柔、真诚、会把心意写出来的人。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">40</div>
+              </div>
+              <div>
+                <div class="evidence-meta">blanks · 40 赞 · 4 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694f6d25000000000f028c35" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">一些杂七杂八，但从中可以窥见一部分的她，很真诚很好很好</p>
+                <p>一组杂图被解读成可以窥见性格的碎片，回复集中在真诚、好好、很戳人的情绪反馈。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">15</div>
+              </div>
+              <div>
+                <div class="evidence-meta">狼一样的乌萨奇 · 15 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69526f8b000000001702e417" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">婷姐的梗很多也很暖心很宠队友，鞠婧祎有一年被调侃4000年是怎么来的，婷姐给她解围了，说...</p>
+                <p>队友和舞台语境里的暖心梗被提起，重点落在她会帮人解围、也有稳定的双担喜好。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="research_routes">
+              <div class="section-index">05</div>
+              <div class="section-copy">
+                <h2>考古路线与资料入口</h2>
+                <p>除了直接给答案，评论区还提供了总结帖、外部小组和旧笔记链接，适合整理成新粉导航。</p>
+                <div class="metric-row">
+                  <span><b>14</b> 互动热度</span>
+                  <span><b>2</b> 主评论</span>
+                  <span><b>2</b> 回复</span>
+                  <span><b>3</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><img src="https://sns-webpic-qc.xhscdn.com/202605011652/b34d02e66a34074a1d607783db520e43/comment/1040g2h031qft4mt47o005p9tonjs6en7l7pfev0!nd_whlt34_webp_wm_1" alt="考古路线与资料入口 代表图片" loading="lazy"></div>
+                <div class="source-kind">主题读法</div>
+                <p>除了直接给答案，评论区还提供了总结帖、外部小组和旧笔记链接，适合整理成新粉导航。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">11</div>
+              </div>
+              <div>
+                <div class="evidence-meta">一切随缘 · 11 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694bff320000000016027800" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">可以看看👀总结的很详细</p>
+                <p>评论提供了现成总结入口，属于新粉考古路线的一部分，楼主也表示会继续查看。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">3</div>
+              </div>
+              <div>
+                <div class="evidence-meta">不知道怎么说 · 3 赞 · 1 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0265000000001d00dbc1" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">可以去豆瓣红绿灯小组 tour 一下[偷笑R]</p>
+                <p>豆瓣相关小组被推荐为考古路径，补足本帖从评论区扩展到外部资料库的线索。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="new_fans">
+              <div class="section-index">06</div>
+              <div class="section-copy">
+                <h2>新粉入坑与回坑共鸣</h2>
+                <p>多条短评表达近期入坑、退河后再次喜欢、越了解越喜欢，说明评论区本身在推动二次入坑。</p>
+                <div class="metric-row">
+                  <span><b>11</b> 互动热度</span>
+                  <span><b>7</b> 主评论</span>
+                  <span><b>0</b> 回复</span>
+                  <span><b>0</b> 图片</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">COMMENT</div></div>
+                <div class="source-kind">主题读法</div>
+                <p>多条短评表达近期入坑、退河后再次喜欢、越了解越喜欢，说明评论区本身在推动二次入坑。</p>
+              </aside>
+              <ul class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">4</div>
+              </div>
+              <div>
+                <div class="evidence-meta">喝水大王-咩咩 · 4 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69537d22000000001502ecb3" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">看着评论区的踢踢，看着好幸福[害羞R]是我之前不了解的踢踢</p>
+                <p>新观众通过评论区认识了更多面的她，反馈重点是原来还有这么多不了解的部分。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">4</div>
+              </div>
+              <div>
+                <div class="evidence-meta">小葱烧不要葱 · 4 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694cec240000000014035a83" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">我也是退河多年后再次爱上[doge]只能说婷婷真的是太美好了</p>
+                <p>退河多年后再次喜欢她的共鸣出现，说明本帖不仅服务新粉，也激活回坑记忆。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">2</div>
+              </div>
+              <div>
+                <div class="evidence-meta">🍑 · 2 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694d1324000000001d00bb1a" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">我也是近期垂直入坑，越了解越喜欢[皱眉R]……</p>
+                <p>近期垂直入坑的用户表达越了解越喜欢，说明冷知识和生活照对新粉有实际转化。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb">
+                <div class="mini-thumb-fallback">1</div>
+              </div>
+              <div>
+                <div class="evidence-meta">187******26 · 1 赞 · 0 回复</div>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694d007c000000000f00fcab" target="_blank" rel="noreferrer">打开评论</a>
+                <p class="raw-quote">我老婆，谢谢[微笑R]</p>
+                <p>玩笑式占有表达，属于轻量互动，不提供新资料但增加评论区亲近感。</p>
+              </div>
+            </li>
+            
+              </ul>
+            </section>
+            
+
+    <section aria-label="主评论索引">
+      <h2 class="section-title">主评论索引</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>序</th>
+              <th>原文短摘 / 转述摘要</th>
+              <th>赞</th>
+              <th>结构</th>
+              <th>评论 ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="rank">01</td>
+              <td>
+                <div class="memory-name">花菜花菜花菜花</div>
+                <div class="raw-quote">讲一个节目里的趣事，昨天直播也有人提到了。踢踢她觉得做饭加方便面调料包会让汤这一类的东西更浓郁，之前参加节目的时候，...</div>
+                <div class="reading">节目趣事被反复转述：她在做鸭汤时想用方便面调料包增味，回复区继续补出处，形成很强的生活化反差萌。</div>
+              </td>
+              <td><div class="number">127</div></td>
+              <td>5 回复<br><span class="muted">1 张图 · 2025-12-26</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694df204000000001502e893" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694df204000000001502e893</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">02</td>
+              <td>
+                <div class="memory-name">陆伍柒</div>
+                <div class="raw-quote">除了断眉是小时候摔出来的，鼻子小时候也摔断过。姐小时候其实也蛮闹腾的，不爱吃饭要在饭里放糖豆才吃所以小名叫豆豆，喜欢...</div>
+                <div class="reading">最高信息密度冷知识串：小时候摔伤、豆豆小名、耳洞、跆拳道、素描、数学强、参军念头、独自面试等，被回复区收藏和继续追问。</div>
+              </td>
+              <td><div class="number">55</div></td>
+              <td>10 回复<br><span class="muted">2 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c3f0a000000001d00deba" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c3f0a000000001d00deba</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">03</td>
+              <td>
+                <div class="memory-name">AAA叙拉古千层酥批发</div>
+                <div class="raw-quote">不知道算不算生活感特别强的，但是我很喜欢🥰</div>
+                <div class="reading">9 张生活感照片是本帖最大图像补档之一，楼中楼继续补图、指路旧笔记，也让“日常照”需求被满足。</div>
+              </td>
+              <td><div class="number">75</div></td>
+              <td>8 回复<br><span class="muted">13 张图 · 2025-12-24</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0d3d000000001600ca4f" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c0d3d000000001600ca4f</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">04</td>
+              <td>
+                <div class="memory-name">所以会喜欢小狗吗</div>
+                <div class="raw-quote">此女写字非常好看&amp;她很爱我们ʕ •ᴥ•ʔ（这是有一年总选开始前 她在录制别的节目的时候自己折的纸飞机 自己写给我们的...</div>
+                <div class="reading">纸飞机留言和漂亮字迹被当作宠粉证据，回复区顺势把她归到温柔、真诚、会把心意写出来的人。</div>
+              </td>
+              <td><div class="number">57</div></td>
+              <td>1 回复<br><span class="muted">2 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c1f1500000000140376f9" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c1f1500000000140376f9</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">05</td>
+              <td>
+                <div class="memory-name">blanks</div>
+                <div class="raw-quote">一些杂七杂八，但从中可以窥见一部分的她，很真诚很好很好</div>
+                <div class="reading">一组杂图被解读成可以窥见性格的碎片，回复集中在真诚、好好、很戳人的情绪反馈。</div>
+              </td>
+              <td><div class="number">40</div></td>
+              <td>4 回复<br><span class="muted">8 张图 · 2025-12-27</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694f6d25000000000f028c35" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694f6d25000000000f028c35</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">06</td>
+              <td>
+                <div class="memory-name">收银男王king</div>
+                <div class="raw-quote">酷酷的断眉其实是小时候贪玩摔的</div>
+                <div class="reading">断眉来源被解释为小时候摔伤，评论区把酷感外貌反向读成很萌的成长小插曲。</div>
+              </td>
+              <td><div class="number">40</div></td>
+              <td>1 回复<br><span class="muted">1 张图 · 2025-12-24</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694bfab1000000001d026c77" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694bfab1000000001d026c77</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">07</td>
+              <td>
+                <div class="memory-name">狼一样的乌萨奇</div>
+                <div class="raw-quote">婷姐的梗很多也很暖心很宠队友，鞠婧祎有一年被调侃4000年是怎么来的，婷姐给她解围了，说4000年这个由来是杰伦哥歌...</div>
+                <div class="reading">队友和舞台语境里的暖心梗被提起，重点落在她会帮人解围、也有稳定的双担喜好。</div>
+              </td>
+              <td><div class="number">15</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-29</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69526f8b000000001702e417" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69526f8b000000001702e417</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">08</td>
+              <td>
+                <div class="memory-name">鲑鱼小帝</div>
+                <div class="raw-quote">[图片评论：2 张图]</div>
+                <div class="reading">纯图片型补档，主要承担“直接投喂照片”的功能，楼主继续用图片回应喜欢。</div>
+              </td>
+              <td><div class="number">13</div></td>
+              <td>1 回复<br><span class="muted">3 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c12fe000000000e0349ce" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c12fe000000000e0349ce</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">09</td>
+              <td>
+                <div class="memory-name">一切随缘</div>
+                <div class="raw-quote">可以看看👀总结的很详细</div>
+                <div class="reading">评论提供了现成总结入口，属于新粉考古路线的一部分，楼主也表示会继续查看。</div>
+              </td>
+              <td><div class="number">11</div></td>
+              <td>1 回复<br><span class="muted">2 张图 · 2025-12-24</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694bff320000000016027800" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694bff320000000016027800</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">10</td>
+              <td>
+                <div class="memory-name">离岸潮</div>
+                <div class="raw-quote">超喜欢这几张</div>
+                <div class="reading">偏审美向的图片补档，回复里还补充她喜欢周杰伦这一类轻量冷知识。</div>
+              </td>
+              <td><div class="number">10</div></td>
+              <td>2 回复<br><span class="muted">4 张图 · 2025-12-24</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0b3d000000001502fb51" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c0b3d000000001502fb51</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">11</td>
+              <td>
+                <div class="memory-name">tth</div>
+                <div class="raw-quote">相册放不下了快[大笑R]</div>
+                <div class="reading">多图相册继续补足生活照库存，文字里带有相册已经放不下的轻松语气。</div>
+              </td>
+              <td><div class="number">8</div></td>
+              <td>1 回复<br><span class="muted">8 张图 · 2025-12-28</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69513cac00000000160251a3" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69513cac00000000160251a3</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">12</td>
+              <td>
+                <div class="memory-name">tth</div>
+                <div class="raw-quote">MV自截自修的 喜欢她7年了[害羞R]</div>
+                <div class="reading">MV 自截自修图强化了长期粉丝的持续产出，时间跨度从多年喜欢延伸到当下补档。</div>
+              </td>
+              <td><div class="number">6</div></td>
+              <td>0 回复<br><span class="muted">1 张图 · 2025-12-28</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69513b65000000001702d51a" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69513b65000000001702d51a</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">13</td>
+              <td>
+                <div class="memory-name">喝水大王-咩咩</div>
+                <div class="raw-quote">看着评论区的踢踢，看着好幸福[害羞R]是我之前不了解的踢踢</div>
+                <div class="reading">新观众通过评论区认识了更多面的她，反馈重点是原来还有这么多不了解的部分。</div>
+              </td>
+              <td><div class="number">4</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-30</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69537d22000000001502ecb3" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69537d22000000001502ecb3</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">14</td>
+              <td>
+                <div class="memory-name">一切随缘</div>
+                <div class="raw-quote">爱上HTT 人之常情</div>
+                <div class="reading">短句式表白把爱上她归为自然反应，主要承担情绪共鸣和氛围烘托。</div>
+              </td>
+              <td><div class="number">4</div></td>
+              <td>0 回复<br><span class="muted">3 张图 · 2025-12-26</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694e690d000000001600ff7f" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694e690d000000001600ff7f</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">15</td>
+              <td>
+                <div class="memory-name">小葱烧不要葱</div>
+                <div class="raw-quote">我也是退河多年后再次爱上[doge]只能说婷婷真的是太美好了</div>
+                <div class="reading">退河多年后再次喜欢她的共鸣出现，说明本帖不仅服务新粉，也激活回坑记忆。</div>
+              </td>
+              <td><div class="number">4</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694cec240000000014035a83" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694cec240000000014035a83</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">16</td>
+              <td>
+                <div class="memory-name">不知道怎么说</div>
+                <div class="raw-quote">可以去豆瓣红绿灯小组 tour 一下[偷笑R]</div>
+                <div class="reading">豆瓣相关小组被推荐为考古路径，补足本帖从评论区扩展到外部资料库的线索。</div>
+              </td>
+              <td><div class="number">3</div></td>
+              <td>1 回复<br><span class="muted">1 张图 · 2025-12-24</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c0265000000001d00dbc1" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c0265000000001d00dbc1</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">17</td>
+              <td>
+                <div class="memory-name">猫猫今天要睡12小时</div>
+                <div class="raw-quote">此女给依琳买了401张专辑成为单推王，偶像前来谢谢，耿直回复不用谢不用谢[笑哭R]</div>
+                <div class="reading">买专辑支持偶像的故事被当成直爽又认真追星的冷知识，带出她作为粉丝的一面。</div>
+              </td>
+              <td><div class="number">3</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2026-01-09</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=6960d4c7000000000f00fb5e" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">6960d4c7000000000f00fb5e</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">18</td>
+              <td>
+                <div class="memory-name">Emir</div>
+                <div class="raw-quote">最近的她</div>
+                <div class="reading">近况图片和外链指路承担“最新状态”补档，回复区追问来源后获得小红书笔记入口。</div>
+              </td>
+              <td><div class="number">2</div></td>
+              <td>2 回复<br><span class="muted">1 张图 · 2026-01-07</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=695e277d000000001601ec1f" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">695e277d000000001601ec1f</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">19</td>
+              <td>
+                <div class="memory-name">🍑</div>
+                <div class="raw-quote">我也是近期垂直入坑，越了解越喜欢[皱眉R]……</div>
+                <div class="reading">近期垂直入坑的用户表达越了解越喜欢，说明冷知识和生活照对新粉有实际转化。</div>
+              </td>
+              <td><div class="number">2</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694d1324000000001d00bb1a" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694d1324000000001d00bb1a</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">20</td>
+              <td>
+                <div class="memory-name">187******26</div>
+                <div class="raw-quote">我老婆，谢谢[微笑R]</div>
+                <div class="reading">玩笑式占有表达，属于轻量互动，不提供新资料但增加评论区亲近感。</div>
+              </td>
+              <td><div class="number">1</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694d007c000000000f00fcab" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694d007c000000000f00fcab</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">21</td>
+              <td>
+                <div class="memory-name">小黑-95</div>
+                <div class="raw-quote">tt是不是近视啊</div>
+                <div class="reading">围绕近视的小问题，体现评论区仍在持续提出细节型考古需求。</div>
+              </td>
+              <td><div class="number">1</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2026-03-01</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69a454ec00000000180234b9" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69a454ec00000000180234b9</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">22</td>
+              <td>
+                <div class="memory-name">点点puppy</div>
+                <div class="raw-quote">反复爱上初恋姐只有一次和无数次🥺</div>
+                <div class="reading">初恋感式表达反复出现，强调她对老粉和新粉都有持续吸引力。</div>
+              </td>
+              <td><div class="number">0</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-31</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=695544700000000016021d50" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">695544700000000016021d50</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">23</td>
+              <td>
+                <div class="memory-name">浅墨映画</div>
+                <div class="raw-quote">我一直喜欢笑不露齿的女孩，认识她后觉得露牙齿也挺好的～</div>
+                <div class="reading">审美偏好被她改变：从喜欢笑不露齿，到因为她接受露齿笑，属于脸和气质层面的影响。</div>
+              </td>
+              <td><div class="number">0</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694c416d000000000601931e" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694c416d000000000601931e</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">24</td>
+              <td>
+                <div class="memory-name">露嘻</div>
+                <div class="raw-quote">她真的，那个眉毛真的好有意思hhhhhh</div>
+                <div class="reading">眉毛相关讨论再次回到断眉记忆点，说明这个外貌细节已经是高识别度萌点。</div>
+              </td>
+              <td><div class="number">0</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2026-01-15</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69689245000000000f019803" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69689245000000000f019803</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">25</td>
+              <td>
+                <div class="memory-name">偌夫淫雨</div>
+                <div class="raw-quote">求问她喜欢什么颜色呀</div>
+                <div class="reading">有人追问她喜欢的颜色，显示评论区仍在做更细的个人喜好补全。</div>
+              </td>
+              <td><div class="number">0</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2026-03-05</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=69a993ef000000000800c407" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">69a993ef000000000800c407</span>
+              </td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">26</td>
+              <td>
+                <div class="memory-name">昭昭momo</div>
+                <div class="raw-quote">越看越喜欢</div>
+                <div class="reading">短句表达越看越喜欢，归入整体回坑与持续入坑情绪。</div>
+              </td>
+              <td><div class="number">0</div></td>
+              <td>0 回复<br><span class="muted">0 张图 · 2025-12-25</span></td>
+              <td>
+                <a class="comment-link" href="https://www.xiaohongshu.com/explore/694bc555000000001e02d319?xsec_token=ABjurhzNfs383P2GwWpVtY2gq9x7KjD5YwjyjpEwtzBNA=&amp;xsec_source=pc_search&amp;comment_id=694cfc62000000000e035abb" target="_blank" rel="noreferrer">打开评论</a>
+                <span class="comment-id">694cfc62000000000e035abb</span>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">页面保留作者昵称、互动数、图片数和评论 ID，便于回到原始 JSON 或原笔记核对。</p>
+    </section>
+  </main>
+</body>
+</html>
