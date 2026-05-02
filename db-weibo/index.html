@@ -1,0 +1,3205 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>迪丽热巴微博记忆资产热度榜</title>
+  <link rel="icon" href="image/favicon.svg">
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #191714;
+      --muted: #736c62;
+      --line: #ddd3c6;
+      --accent: #b3482d;
+      --accent-soft: #f0d6ca;
+      --surface: #fffaf2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .hero {
+      min-height: 62svh;
+      padding: 56px clamp(18px, 5vw, 72px) 34px;
+      display: grid;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(115deg, rgba(179,72,45,.13), rgba(247,244,238,.2) 40%, rgba(25,23,20,.04)),
+        radial-gradient(circle at 82% 20%, rgba(25,23,20,.10), transparent 28%),
+        var(--bg);
+    }
+    .hero h1 {
+      max-width: 1080px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 104px);
+      line-height: .95;
+      font-weight: 760;
+    }
+    .hero p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
+    }
+    .stats {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
+    }
+    .stats b {
+      display: block;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    main { padding: 34px clamp(14px, 4vw, 58px) 80px; }
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+    .toolbar a { color: var(--accent); font-weight: 650; }
+    .table-wrap {
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgba(255,250,242,.62);
+    }
+    table {
+      width: 100%;
+      min-width: 1120px;
+      border-collapse: collapse;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(247,244,238,.94);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: left;
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    td {
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    tr:hover { background: rgba(179,72,45,.055); }
+    .rank { width: 68px; color: var(--accent); font-weight: 760; }
+    .memory-name { font-size: 17px; font-weight: 760; text-decoration: none; }
+    .reading { margin-top: 7px; max-width: 460px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .number { white-space: nowrap; font-variant-numeric: tabular-nums; font-size: 22px; font-weight: 760; }
+    .bar { width: min(340px, 100%); height: 5px; margin-top: 12px; background: #e6dacf; overflow: hidden; }
+    .bar span { display: block; height: 100%; background: var(--accent); }
+    .sources { min-width: 220px; }
+    .source-link {
+      display: inline-block;
+      margin: 0 6px 7px 0;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--accent);
+    }
+    .top-source { max-width: 360px; }
+    .source-kind, .evidence-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 6px;
+    }
+    .top-source a, .evidence-list a { font-weight: 720; text-decoration: none; overflow-wrap: anywhere; }
+    .top-source p, .evidence-list p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .source-note {
+      margin: 26px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 13px;
+    }
+    .memory-section {
+      display: grid;
+      grid-template-columns: 74px minmax(240px, 1fr) minmax(260px, 380px);
+      gap: 26px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-index {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 780;
+    }
+    .section-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .section-copy > p {
+      max-width: 700px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .metric-row span {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metric-row b { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .feature-source {
+      align-self: start;
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .feature-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 14px;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-size: clamp(42px, 8vw, 86px);
+      font-weight: 760;
+      background:
+        linear-gradient(135deg, rgba(179,72,45,.18), rgba(255,250,242,.5)),
+        var(--accent-soft);
+    }
+    .evidence-list {
+      grid-column: 2 / 4;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 28px;
+    }
+    .evidence-list li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 14px;
+      min-width: 0;
+    }
+    .mini-thumb {
+      width: 84px;
+      aspect-ratio: 1;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .mini-thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 760;
+      background: var(--accent-soft);
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 38px; }
+      .toolbar { align-items: flex-start; flex-direction: column; }
+      .memory-section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 38px 0;
+      }
+      .feature-source {
+        border-left: 0;
+        padding-left: 0;
+      }
+      .evidence-list {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>迪丽热巴微博记忆资产热度榜</h1>
+      <p>基于 10,003 条微博搜索帖子与 5,790 条高赞帖热评，按“帖子或评论明确指向某个记忆点才计赞”的保守口径归因。</p>
+      <div class="stats">
+        <span><b>31</b>记忆点</span>
+        <span><b>40,863,066</b>可归因点赞</span>
+        <span><b>10,003</b>去重帖子</span>
+        <span><b>5,790</b>热评记录</span>
+        <span><b>2,079</b>微博访问</span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="toolbar">
+      <div>字段：可归因点赞数 / 来源微博 URL / 点赞最多来源</div>
+      <a href="memory_points_summary.csv" target="_blank">查看汇总 CSV</a>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>热门记忆点</th>
+            <th>可归因点赞数</th>
+            <th>来源微博 URL</th>
+            <th>点赞最多来源</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+              <td class="rank">#1</td>
+              <td>
+                <a class="memory-name" href="#memory-1">FAKEME首位全球品牌代言与双向奔赴</a>
+                <div class="reading">品牌首位全球代言的声量极强，粉丝把“Find me / 多面自我”翻译成她与品牌气质互相确认的时刻。</div>
+                <div class="bar"><span style="width:100.00%"></span></div>
+              </td>
+              <td><div class="number">9,378,736</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">帖子1 · 8,659,382赞 · 8174647</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">评论2 · 71,296赞 · 8174647</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">评论3 · 52,666赞 · 8174647</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">评论4 · 47,505赞 · 8174647</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 8,659,382赞</div>
+      <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+      <p>很高兴成为@Fakeme眼镜官方微博 首位全球品牌代言人，演绎不一样的「我」。你、我都不止一面，温柔和酷飒、安静和果敢，也并不矛盾。 Fakeme，find me。戴上#Fakeme#，更清晰地找到自己的每一面。#Fakeme首位全球品牌代言人迪丽热巴# #Fakeme和迪丽热巴的双向奔赴#</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#2</td>
+              <td>
+                <a class="memory-name" href="#memory-2">Dior迪奥甜品店/全球品牌大使/高定时尚记忆</a>
+                <div class="reading">Dior 相关内容兼具商务背书、线下活动和造型讨论，是时尚线里最稳定的高热记忆资产。</div>
+                <div class="bar"><span style="width:70.00%"></span></div>
+              </td>
+              <td><div class="number">6,565,242</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">帖子1 · 4,205,215赞 · 5331545</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">帖子2 · 1,026,441赞 · 0413162</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292695004382303" target="_blank" rel="noreferrer">帖子3 · 270,476赞 · 4382303</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5293115495680963" target="_blank" rel="noreferrer">帖子4 · 160,647赞 · 5680963</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 4,205,215赞</div>
+      <a href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292681355331545</a>
+      <p>去“甜品王国”一日游🍰🍒 @DIOR迪奥 #DiorCigale#</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#3</td>
+              <td>
+                <a class="memory-name" href="#memory-3">幸运咖《相信就幸运》大片</a>
+                <div class="reading">幸运咖大片把品牌代言、咖啡日常和“相信幸运”的正向叙事打在一起，转评赞集中度很高。</div>
+                <div class="bar"><span style="width:54.86%"></span></div>
+              </td>
+              <td><div class="number">5,144,857</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">帖子1 · 4,808,243赞 · 8260767</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">评论2 · 30,545赞 · 8260767</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">评论3 · 25,700赞 · 8260767</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">评论4 · 24,114赞 · 8260767</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 4,808,243赞</div>
+      <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+      <p>《相信就幸运》，幸运大片首发来啦！ 一杯咖啡，开始一天的幸运奇遇 我们看见热烈张扬的态度，也看见勇敢尝试的从容 幸运，看似是命运眷顾的偶然，其实是用心打磨的必然 相信幸运的力量，让生活充满无限可能 希望能把这份幸运，传递给屏幕前的每个你~幸运咖的微博视频 ...全文</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#4</td>
+              <td>
+                <a class="memory-name" href="#memory-4">爱丽丝与热巴的粉丝双向奔赴</a>
+                <div class="reading">粉丝自称、工作室回应、亲密度测试和应援语境共同构成关系资产，是最核心的粉圈记忆线。</div>
+                <div class="bar"><span style="width:49.92%"></span></div>
+              </td>
+              <td><div class="number">4,681,918</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4916502577023434" target="_blank" rel="noreferrer">帖子1 · 218,981赞 · 7023434</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5288236174018483" target="_blank" rel="noreferrer">帖子2 · 180,663赞 · 4018483</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4938390447063756" target="_blank" rel="noreferrer">帖子3 · 125,689赞 · 7063756</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4932556111743050" target="_blank" rel="noreferrer">帖子4 · 83,774赞 · 1743050</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 218,981赞</div>
+      <a href="https://m.weibo.cn/detail/4916502577023434" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4916502577023434</a>
+      <p>致爱丽丝们： 近期，关于大家对工作室工作提出的意见和想法，工作室已认真阅读，并在内部对大家的反馈和建议展开了细致的沟通与探讨。目前，对大家重点关心的问题回复如下： 1. 关于其他平台的运营，工作室会积极拓展，如ins将列在工作计划内，后续会进行更新。 2. 关于造型，不排斥并且也会推 ...全文</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#5</td>
+              <td>
+                <a class="memory-name" href="#memory-5">乔晶晶与荣耀系记忆</a>
+                <div class="reading">乔晶晶仍是剧粉和大众记忆里的高峰角色，评论赞占比高，说明角色共情仍在持续复燃。</div>
+                <div class="bar"><span style="width:48.99%"></span></div>
+              </td>
+              <td><div class="number">4,594,724</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">帖子1 · 4,030,690赞 · 3816437</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">评论2 · 82,054赞 · 3816437</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">评论3 · 60,120赞 · 3816437</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">评论4 · 53,828赞 · 3816437</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 4,030,690赞</div>
+      <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+      <p>今晚荣耀大结局了，非常开心能和大家一起度过这个追剧的夏天，晶晶也在平行世界中拥有了美好的结局。从中学的青涩暗恋，到携手步入婚姻殿堂，晶晶和于途完成了一场属于彼此的双向奔赴，美好且热烈的旅程。 我们一起陪伴乔晶晶共情着她的美好追寻，一起喜欢着她的可爱调皮、一起欣赏着她的勇敢直率。 在 ...全文</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#6</td>
+              <td>
+                <a class="memory-name" href="#memory-6">放空时刻CCD/日常营业随拍</a>
+                <div class="reading">低门槛日常营业极受欢迎，粉丝喜欢从 CCD、随拍和轻松状态里捕捉真实陪伴感。</div>
+                <div class="bar"><span style="width:30.08%"></span></div>
+              </td>
+              <td><div class="number">2,820,684</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">帖子1 · 2,121,158赞 · 2431311</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5293766480237286" target="_blank" rel="noreferrer">帖子2 · 403,802赞 · 0237286</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5291287408281858" target="_blank" rel="noreferrer">帖子3 · 65,026赞 · 8281858</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5293768841629583" target="_blank" rel="noreferrer">帖子4 · 58,773赞 · 1629583</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 2,121,158赞</div>
+      <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+      <p>放空时刻很G∞d🎧😊 （补一些没完成的ccd ahhhh</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#7</td>
+              <td>
+                <a class="memory-name" href="#memory-7">白日提灯贺思慕/万灵之主/女鬼鬼王记忆</a>
+                <div class="reading">贺思慕提供了新的强视觉角色资产，女鬼、鬼王、万灵之主等关键词利于二创扩散。</div>
+                <div class="bar"><span style="width:26.47%"></span></div>
+              </td>
+              <td><div class="number">2,482,912</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5278578833883244" target="_blank" rel="noreferrer">帖子1 · 78,891赞 · 3883244</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5279940612196936" target="_blank" rel="noreferrer">帖子2 · 75,414赞 · 2196936</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5280368261596736" target="_blank" rel="noreferrer">帖子3 · 66,717赞 · 1596736</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5278937422764776" target="_blank" rel="noreferrer">帖子4 · 66,418赞 · 2764776</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 78,891赞</div>
+      <a href="https://m.weibo.cn/detail/5278578833883244" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278578833883244</a>
+      <p>迪丽热巴 🔛#贺思慕的五感体验卡# 王座之上，执掌生死。 贺思慕@Dear-迪丽热巴 提灯而来，洞悉人间未知事。#白日提灯##迪丽热巴贺思慕##白日提灯定档0328#</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#8</td>
+              <td>
+                <a class="memory-name" href="#memory-8">生日与生贺/小小迪超时空生日派对</a>
+                <div class="reading">生日节点是情绪型资产，适合承载陪伴、祝福、老粉记忆和周年叙事。</div>
+                <div class="bar"><span style="width:7.18%"></span></div>
+              </td>
+              <td><div class="number">673,565</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4776341105016896" target="_blank" rel="noreferrer">帖子1 · 163,722赞 · 5016896</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4909242761351159" target="_blank" rel="noreferrer">帖子2 · 79,227赞 · 1351159</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4776211202704755" target="_blank" rel="noreferrer">帖子3 · 56,714赞 · 2704755</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5040975519416433" target="_blank" rel="noreferrer">帖子4 · 37,523赞 · 9416433</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 163,722赞</div>
+      <a href="https://m.weibo.cn/detail/4776341105016896" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4776341105016896</a>
+      <p>迪丽热巴 🎁 #热巴与小小迪的超时空生日派对# 【惊喜party全纪录】来袭~ 童年照的回忆时间|生日礼物开箱惊喜连连|爱丽丝专属十问十答|端午节祝福彩蛋🈶 这不仅是一场轻松、欢乐、温情的派对，也是热巴与小小迪@Dear-迪丽热巴 送给爱丽丝们的真诚与感动#迪丽热巴0603生日快乐# ...全文</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#9</td>
+              <td>
+                <a class="memory-name" href="#memory-9">枭起青壤/疯刀药戏/演员突破记忆</a>
+                <div class="reading">讨论重点集中在表演突破和疯感片段，适合转化为“演员迪丽热巴”的专业证明。</div>
+                <div class="bar"><span style="width:7.05%"></span></div>
+              </td>
+              <td><div class="number">661,351</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5236900006200705" target="_blank" rel="noreferrer">帖子1 · 221,096赞 · 6200705</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5241150504962745" target="_blank" rel="noreferrer">帖子2 · 41,423赞 · 4962745</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5243466619555971" target="_blank" rel="noreferrer">帖子3 · 32,067赞 · 9555971</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5119792709370676" target="_blank" rel="noreferrer">帖子4 · 23,162赞 · 9370676</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 221,096赞</div>
+      <a href="https://m.weibo.cn/detail/5236900006200705" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5236900006200705</a>
+      <p>#枭起青壤夜枭搭子双向奔赴# 你的夜枭搭子聂九罗准时赴约！速戳#枭起青壤# 直播间，看我如何拿“聂”搭子团~#剧星驾到# Dear-迪丽热巴的微博直播</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#10</td>
+              <td>
+                <a class="memory-name" href="#memory-10">红毯神图与高定造型</a>
+                <div class="reading">红毯、妆造和神图是最容易被路人理解的美貌资产，适合视觉向传播。</div>
+                <div class="bar"><span style="width:6.91%"></span></div>
+              </td>
+              <td><div class="number">648,250</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5279381217350964" target="_blank" rel="noreferrer">帖子1 · 93,941赞 · 7350964</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5287372963188343" target="_blank" rel="noreferrer">帖子2 · 68,607赞 · 3188343</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292691165547282" target="_blank" rel="noreferrer">帖子3 · 54,980赞 · 5547282</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5222702962183625" target="_blank" rel="noreferrer">帖子4 · 43,187赞 · 2183625</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 93,941赞</div>
+      <a href="https://m.weibo.cn/detail/5279381217350964" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279381217350964</a>
+      <p>迪丽热巴 庭院一隅泛起油画柔光，玫瑰于指尖绽放🌹南法的香气，落在裙摆上就成了诗🌸跟随@Dear-迪丽热巴 穿香而行，共赴这场轻盈芬香之约～ 化妆：@王崇HUATIANQI-BEAUTY 发型：@方可frank 摄影：@MomentStudio- 造型：@闵塔鲨 @theRayback</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#11</td>
+              <td>
+                <a class="memory-name" href="#memory-11">时尚芭莎/VOGUE封面群像</a>
+                <div class="reading">封面合作强化时尚资历，适合用于阶段性成长和高级表达的背书。</div>
+                <div class="bar"><span style="width:4.70%"></span></div>
+              </td>
+              <td><div class="number">441,129</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5249492477284053" target="_blank" rel="noreferrer">帖子1 · 124,160赞 · 7284053</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5249494993078702" target="_blank" rel="noreferrer">帖子2 · 102,140赞 · 3078702</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5214125305105808" target="_blank" rel="noreferrer">帖子3 · 24,612赞 · 5105808</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5207498235581052" target="_blank" rel="noreferrer">帖子4 · 14,540赞 · 5581052</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 124,160赞</div>
+      <a href="https://m.weibo.cn/detail/5249492477284053" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5249492477284053</a>
+      <p>#迪丽热巴时尚芭莎开年刊##迪丽热巴迪奥开年首封#这是@Dear-迪丽热巴 与《时尚芭莎》的第七次单人封面合作。时间在此刻折叠，迪丽热巴身穿2026年春夏最新Dior成衣系列，与这所经典时装屋所代表的优雅摩登的时装精神重合于同一道光束下，她的成长轨迹亦如全新@DIOR迪奥 的蜕变——进取、柔韧、突破</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#12</td>
+              <td>
+                <a class="memory-name" href="#memory-12">虽然不能同时拥有一切/新剧期待</a>
+                <div class="reading">新剧预告和片单形成期待值资产，讨论更偏作品未来增量。</div>
+                <div class="bar"><span style="width:3.69%"></span></div>
+              </td>
+              <td><div class="number">346,357</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">帖子1 · 201,871赞 · 2733212</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289377796460765" target="_blank" rel="noreferrer">帖子2 · 34,636赞 · 6460765</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">评论3 · 14,757赞 · 2733212</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289724446770900" target="_blank" rel="noreferrer">帖子4 · 8,134赞 · 6770900</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 201,871赞</div>
+      <a href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289725082733212</a>
+      <p>#虽然不能同时拥有一切首发预告# 双生交汇版预告来袭。当一个人拥有可以同时选择两种生活的机会，是体验的新鲜更占上风？还是逃离的迷惘提前到来？虽然不能同时拥有一切，但可以活出你想要的人生。#2026爱奇艺世界大会# #2026爱奇艺造梦片单# 领衔主演：@Dear-迪丽热巴 领衔主演：@Edward陳</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#13</td>
+              <td>
+                <a class="memory-name" href="#memory-13">迪拜滞留/报平安/缺席时装周</a>
+                <div class="reading">突发事件里粉丝最在意的是安全与被回应，属于高情绪浓度的守护型记忆。</div>
+                <div class="bar"><span style="width:2.97%"></span></div>
+              </td>
+              <td><div class="number">278,303</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">评论1 · 38,612赞 · 0413162</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5278306905883732" target="_blank" rel="noreferrer">帖子2 · 26,970赞 · 5883732</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5272639673205876" target="_blank" rel="noreferrer">帖子3 · 19,605赞 · 3205876</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5272395050912212" target="_blank" rel="noreferrer">帖子4 · 18,570赞 · 0912212</a></td>
+              <td class="top-source">
+      <div class="source-kind">评论 · 38,612赞</div>
+      <a href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272383340413162</a>
+      <p>等待，一直在，迪迪健康平安就好</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#14</td>
+              <td>
+                <a class="memory-name" href="#memory-14">嘻嘻迪/可爱搞笑表情包记忆</a>
+                <div class="reading">昵称、可爱语气和表情包降低距离感，是轻互动内容的天然素材库。</div>
+                <div class="bar"><span style="width:2.88%"></span></div>
+              </td>
+              <td><div class="number">270,228</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5285783737210382" target="_blank" rel="noreferrer">帖子1 · 95,988赞 · 7210382</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4978882325776219" target="_blank" rel="noreferrer">帖子2 · 25,439赞 · 5776219</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4980676061299668" target="_blank" rel="noreferrer">帖子3 · 18,354赞 · 1299668</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4867516964537219" target="_blank" rel="noreferrer">帖子4 · 13,767赞 · 4537219</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 95,988赞</div>
+      <a href="https://m.weibo.cn/detail/5285783737210382" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5285783737210382</a>
+      <p>迪丽热巴 真奇怪，开了防沉迷系统，还是会为姐姐@Dear-迪丽热巴 着迷#嘻嘻迪#</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#15</td>
+              <td>
+                <a class="memory-name" href="#memory-15">花儿与少年/你好星期六/综艺片刻</a>
+                <div class="reading">综艺片段提供松弛、反应和互动素材，适合做轻量话题与短视频切片。</div>
+                <div class="bar"><span style="width:2.67%"></span></div>
+              </td>
+              <td><div class="number">250,204</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5279944909523374" target="_blank" rel="noreferrer">帖子1 · 53,011赞 · 9523374</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4960761240617504" target="_blank" rel="noreferrer">帖子2 · 39,889赞 · 0617504</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4978824249083389" target="_blank" rel="noreferrer">帖子3 · 23,932赞 · 9083389</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4968715307977664" target="_blank" rel="noreferrer">帖子4 · 17,421赞 · 7977664</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 53,011赞</div>
+      <a href="https://m.weibo.cn/detail/5279944909523374" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279944909523374</a>
+      <p>张凌赫的反应太好笑了🤣 知道迪丽热巴白宇不来录制开推4了，第一反应是不相信！假的！到时候都会来的 只有工作人员当着他面说才会相信严谨的boy不信任何网传信息 #张凌赫知道热巴白宇退出开推的反应##开始推理吧# 鸡蛋仔嘎嘣脆的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#16</td>
+              <td>
+                <a class="memory-name" href="#memory-16">行走的油画/神女美貌出圈</a>
+                <div class="reading">这条线把美貌从“好看”推到具象意象，油画、神女、人鱼姬等词很利于标题化。</div>
+                <div class="bar"><span style="width:2.41%"></span></div>
+              </td>
+              <td><div class="number">226,448</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4990207487120582" target="_blank" rel="noreferrer">帖子1 · 79,423赞 · 7120582</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5282916248322430" target="_blank" rel="noreferrer">帖子2 · 32,795赞 · 8322430</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5069150747104104" target="_blank" rel="noreferrer">帖子3 · 31,294赞 · 7104104</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">评论4 · 19,080赞 · 5331545</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 79,423赞</div>
+      <a href="https://m.weibo.cn/detail/4990207487120582" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4990207487120582</a>
+      <p>#迪丽热巴 行走的油画# 对行走的油画有了概念💘 迪丽热巴，美得很直接 #ip风向标# #微博之夜# 我的追星大号的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#17</td>
+              <td>
+                <a class="memory-name" href="#memory-17">机场路透与日常片刻</a>
+                <div class="reading">机场、接机和偶遇内容满足粉丝对线下存在感的确认，也能沉淀私服和生图讨论。</div>
+                <div class="bar"><span style="width:2.19%"></span></div>
+              </td>
+              <td><div class="number">205,608</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4993014231466612" target="_blank" rel="noreferrer">帖子1 · 59,517赞 · 1466612</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5288627192204676" target="_blank" rel="noreferrer">帖子2 · 31,676赞 · 2204676</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4642889622361161" target="_blank" rel="noreferrer">帖子3 · 13,701赞 · 2361161</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5288673371492024" target="_blank" rel="noreferrer">帖子4 · 12,643赞 · 1492024</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 59,517赞</div>
+      <a href="https://m.weibo.cn/detail/4993014231466612" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4993014231466612</a>
+      <p>迪丽热巴接机演练。好多人啊，厉害了我的喀什 不灭幽灵的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#18</td>
+              <td>
+                <a class="memory-name" href="#memory-18">陆地CP争议与网暴记忆</a>
+                <div class="reading">争议型记忆热度不低，但情绪风险更高，适合内部风控，不适合主动放大。</div>
+                <div class="bar"><span style="width:2.19%"></span></div>
+              </td>
+              <td><div class="number">205,192</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5290795670177480" target="_blank" rel="noreferrer">帖子1 · 24,717赞 · 0177480</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290854145328674" target="_blank" rel="noreferrer">帖子2 · 24,562赞 · 5328674</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290821344559409" target="_blank" rel="noreferrer">帖子3 · 17,086赞 · 4559409</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290821645767595" target="_blank" rel="noreferrer">帖子4 · 15,885赞 · 5767595</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 24,717赞</div>
+      <a href="https://m.weibo.cn/detail/5290795670177480" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290795670177480</a>
+      <p>#陆地cp#这是对迪丽热巴一场巨大的网暴，有🧊就去医院，别来招惹单身无辜女艺人，放过兢兢业业努力工作的迪丽热巴。</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#19</td>
+              <td>
+                <a class="memory-name" href="#memory-19">任安乐与安乐传记忆</a>
+                <div class="reading">任安乐仍有剧粉存量，评论赞贡献明显，适合在角色合集里保留。</div>
+                <div class="bar"><span style="width:1.97%"></span></div>
+              </td>
+              <td><div class="number">184,457</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">帖子1 · 95,979赞 · 9135863</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">评论2 · 7,261赞 · 9135863</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">评论3 · 7,047赞 · 9135863</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">评论4 · 6,549赞 · 9135863</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 95,979赞</div>
+      <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+      <p>#宠爱剧场520高甜上分# #优酷CP的氛围感藏不住了# 心动模式已开启~酷酷子被@Dear-迪丽热巴 @龚俊Simon 的捧脸pose一整个甜晕嘞！ 氛围感都要溢出屏幕啦 这个520，这份宠爱氛围够吗~#安乐传#</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#20</td>
+              <td>
+                <a class="memory-name" href="#memory-20">演员实绩与90花讨论</a>
+                <div class="reading">数据、番位和实绩讨论属于粉圈战斗力资产，热度有用但传播语气要克制。</div>
+                <div class="bar"><span style="width:1.52%"></span></div>
+              </td>
+              <td><div class="number">142,167</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5290969217897380" target="_blank" rel="noreferrer">帖子1 · 28,720赞 · 7897380</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5281504322130625" target="_blank" rel="noreferrer">帖子2 · 16,444赞 · 2130625</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289736348635862" target="_blank" rel="noreferrer">帖子3 · 11,201赞 · 8635862</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5288316033305631" target="_blank" rel="noreferrer">帖子4 · 10,740赞 · 3305631</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 28,720赞</div>
+      <a href="https://m.weibo.cn/detail/5290969217897380" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290969217897380</a>
+      <p>迪丽热巴是不是90🌸&amp;90后🌸第一个(2017年)&amp;唯一的有一番影视剧双破亿(一番云合集均破亿&amp;一番票房破亿)的演员</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#21</td>
+              <td>
+                <a class="memory-name" href="#memory-21">利剑玫瑰/央八重播记忆</a>
+                <div class="reading">央八重播和追剧清单偏作品长尾，适合补充国民渠道与剧集曝光。</div>
+                <div class="bar"><span style="width:1.50%"></span></div>
+              </td>
+              <td><div class="number">140,668</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5293485055022699" target="_blank" rel="noreferrer">帖子1 · 34,859赞 · 5022699</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5223400014349717" target="_blank" rel="noreferrer">帖子2 · 12,226赞 · 4349717</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290129767796127" target="_blank" rel="noreferrer">帖子3 · 11,014赞 · 7796127</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290177838974005" target="_blank" rel="noreferrer">帖子4 · 10,640赞 · 8974005</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 34,859赞</div>
+      <a href="https://m.weibo.cn/detail/5293485055022699" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293485055022699</a>
+      <p>#迪丽热巴利剑玫瑰央8重播#【转发分享！#五一假期追剧清单#】这份假期“电子榨菜”清单请查收↓↓这个假期，愿你放松心情，收获快乐！ 《利剑玫瑰》@Dear-迪丽热巴 @金世佳 《风与潮》@任嘉伦Allen @蓝盈莹Lyric 《太平年》@白宇WHITE @周雨彤微博 @朱亚文 @俞灏明 《六姊 ..</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#22</td>
+              <td>
+                <a class="memory-name" href="#memory-22">纪云禾与鲛人系记忆</a>
+                <div class="reading">纪云禾是古装角色资产之一，适合与其他角色共同构成角色宇宙。</div>
+                <div class="bar"><span style="width:1.28%"></span></div>
+              </td>
+              <td><div class="number">119,672</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4763931597603103" target="_blank" rel="noreferrer">帖子1 · 27,376赞 · 7603103</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4875259319158377" target="_blank" rel="noreferrer">帖子2 · 19,915赞 · 9158377</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4753183861901623" target="_blank" rel="noreferrer">帖子3 · 12,414赞 · 1901623</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4748323812805538" target="_blank" rel="noreferrer">帖子4 · 8,936赞 · 2805538</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 27,376赞</div>
+      <a href="https://m.weibo.cn/detail/4763931597603103" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4763931597603103</a>
+      <p>“恰恰神兵”战鼓擂🥁🥁#与君初相识##恰似故人归# 火热收官！@Dear-迪丽热巴 @任嘉伦Allen 等主演共同叙写东方童话极致浪漫爱情，@驭鲛记之恰似故人归 再创热度新高，微博评分8.9，长短剧评抵御外站注水低分舆情。热度与口碑并行，揭秘驭灵传奇微博流行密码。现揪5位恰恰神兵，随机送出主创签名、</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#23</td>
+              <td>
+                <a class="memory-name" href="#memory-23">跑男时期综艺记忆</a>
+                <div class="reading">跑男虽然是早期综艺记忆，但仍有稳定讨论，属于大众认知入口。</div>
+                <div class="bar"><span style="width:1.21%"></span></div>
+              </td>
+              <td><div class="number">113,028</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5291981527845904" target="_blank" rel="noreferrer">帖子1 · 44,070赞 · 7845904</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292004666769898" target="_blank" rel="noreferrer">帖子2 · 6,455赞 · 6769898</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292679061833365" target="_blank" rel="noreferrer">帖子3 · 4,813赞 · 1833365</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292005496196952" target="_blank" rel="noreferrer">帖子4 · 4,803赞 · 6196952</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 44,070赞</div>
+      <a href="https://m.weibo.cn/detail/5291981527845904" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291981527845904</a>
+      <p>#迪丽热巴跑男只录了12天#哦莫，我还是第一次知道迪丽热巴当初《奔跑吧》只录了12天！ 谁能想到这就给观众们留下这么深刻的印象，没有不爱上跑男迪的义务#奔跑吧##春日心动放映季# 娱乐榜姐的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#24</td>
+              <td>
+                <a class="memory-name" href="#memory-24">珠宝腕表品牌大片/MIKIMOTO</a>
+                <div class="reading">珠宝腕表内容偏精致商业与高级感，适合纳入时尚商务资产群。</div>
+                <div class="bar"><span style="width:0.77%"></span></div>
+              </td>
+              <td><div class="number">72,009</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5291562235857627" target="_blank" rel="noreferrer">帖子1 · 38,632赞 · 5857627</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5289136326183776" target="_blank" rel="noreferrer">帖子2 · 20,896赞 · 6183776</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5288723208209216" target="_blank" rel="noreferrer">帖子3 · 5,260赞 · 8209216</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5293711543766305" target="_blank" rel="noreferrer">帖子4 · 1,546赞 · 3766305</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 38,632赞</div>
+      <a href="https://m.weibo.cn/detail/5291562235857627" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291562235857627</a>
+      <p>Once Upon D Bag… 椭圆吊坠、一纸随手写就的诗意、从古典画中走出的缪斯……翻转Dior Medallion手袋的椭圆徽章，迪丽热巴的包藏戏梦正待上演。 ELLE的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#25</td>
+              <td>
+                <a class="memory-name" href="#memory-25">我很好能做任何事/坚韧发言记忆</a>
+                <div class="reading">一句话被粉丝反复引用，代表她的韧性、自我确认和情绪支点。</div>
+                <div class="bar"><span style="width:0.75%"></span></div>
+              </td>
+              <td><div class="number">70,643</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4968447574282408" target="_blank" rel="noreferrer">帖子1 · 58,412赞 · 4282408</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4969430352661177" target="_blank" rel="noreferrer">帖子2 · 7,438赞 · 2661177</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5069397472841040" target="_blank" rel="noreferrer">评论3 · 2,914赞 · 2841040</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5292991489248486" target="_blank" rel="noreferrer">帖子4 · 968赞 · 9248486</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 58,412赞</div>
+      <a href="https://m.weibo.cn/detail/4968447574282408" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4968447574282408</a>
+      <p>迪丽热巴：我很好 能做任何事 谁懂这句话的含金量</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#26</td>
+              <td>
+                <a class="memory-name" href="#memory-26">李长歌与长歌行记忆</a>
+                <div class="reading">李长歌是角色长尾资产，适合并入古装角色群像。</div>
+                <div class="bar"><span style="width:0.70%"></span></div>
+              </td>
+              <td><div class="number">66,049</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">评论1 · 26,862赞 · 2431311</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4627398991547003" target="_blank" rel="noreferrer">帖子2 · 9,868赞 · 1547003</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4611852481593946" target="_blank" rel="noreferrer">帖子3 · 8,098赞 · 1593946</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5280445420013457" target="_blank" rel="noreferrer">帖子4 · 6,334赞 · 0013457</a></td>
+              <td class="top-source">
+      <div class="source-kind">评论 · 26,862赞</div>
+      <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+      <p>宝贝 评论区有很多 长歌、云禾、慧珍、妍妍、思慕…谢谢你演绎、塑造完整的她们 你记得、我们记得、观众记得、她们也记得 我无比肯定、支持与期待你的每一个选择你所做的一切 愿你拥有沉浸享受的过程和让你眉眼弯弯的结果 你可以同时拥有一切 我 贺你 思你 慕你</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#27</td>
+              <td>
+                <a class="memory-name" href="#memory-27">新疆舞与舞台表现</a>
+                <div class="reading">新疆舞和舞台表现具备身份辨识度，是地域气质与舞台能力的结合。</div>
+                <div class="bar"><span style="width:0.47%"></span></div>
+              </td>
+              <td><div class="number">43,636</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5293105144135812" target="_blank" rel="noreferrer">帖子1 · 9,216赞 · 4135812</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5239910778798979" target="_blank" rel="noreferrer">帖子2 · 8,442赞 · 8798979</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5293162845178918" target="_blank" rel="noreferrer">帖子3 · 4,590赞 · 5178918</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5281053599077245" target="_blank" rel="noreferrer">帖子4 · 3,645赞 · 9077245</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 9,216赞</div>
+      <a href="https://m.weibo.cn/detail/5293105144135812" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293105144135812</a>
+      <p>#跳起舞就像换了个人#【转存！#谁的舞台让人反复拉进度条#】今天是世界舞蹈日，一起重温经典舞台↓↓愿你随心而舞，向阳而行！ @卡布叻_周深 @Dear-迪丽热巴 @王一博·YIBO @郭富城 @刘雨昕 @TFBOYS-易烊千玺 @刘宇Yu_ @刘浩存</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#28</td>
+              <td>
+                <a class="memory-name" href="#memory-28">白凤九与三生三世记忆</a>
+                <div class="reading">白凤九是老角色记忆，情怀属性强，适合承接早期入坑人群。</div>
+                <div class="bar"><span style="width:0.15%"></span></div>
+              </td>
+              <td><div class="number">14,032</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4905301876670628" target="_blank" rel="noreferrer">帖子1 · 5,689赞 · 6670628</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5125585204676679" target="_blank" rel="noreferrer">帖子2 · 1,734赞 · 4676679</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5280203658231991" target="_blank" rel="noreferrer">帖子3 · 1,719赞 · 8231991</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4932556111743050" target="_blank" rel="noreferrer">评论4 · 876赞 · 1743050</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 5,689赞</div>
+      <a href="https://m.weibo.cn/detail/4905301876670628" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4905301876670628</a>
+      <p>#适配的妆造对角色加成有多大# @Dear-迪丽热巴 在《三生三世》系列里可以是单纯可爱的凤九小殿下，也可以下凡历劫成为温婉大气的淑妃，最后蜕变成了气场全开的青丘帝姬。每一个身份都有着独特的妆造印记，形成了不同的角色性格。cr.们爱丽丝 #初夏能量站# 央视网文娱的微博视频</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#29</td>
+              <td>
+                <a class="memory-name" href="#memory-29">安旎与公诉记忆</a>
+                <div class="reading">安旎提供职业女性角色补充，热度不高但类型稀缺。</div>
+                <div class="bar"><span style="width:0.10%"></span></div>
+              </td>
+              <td><div class="number">9,224</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/4913346379780124" target="_blank" rel="noreferrer">帖子1 · 2,960赞 · 9780124</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4906464236278484" target="_blank" rel="noreferrer">帖子2 · 1,704赞 · 6278484</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4912101287791743" target="_blank" rel="noreferrer">帖子3 · 1,313赞 · 7791743</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4874413030246609" target="_blank" rel="noreferrer">帖子4 · 1,270赞 · 0246609</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 2,960赞</div>
+      <a href="https://m.weibo.cn/detail/4913346379780124" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4913346379780124</a>
+      <p>#迪丽热巴真发了100多张自拍# #公诉全员兑现flag#@Dear-迪丽热巴 可太懂我们想看什么了吧！《公诉》全员接力兑现弹幕flag，真实力宠粉！100张自拍真的能爱很久！今晚接着去鹅家追《公诉》了，安旎检察官请“诉诉”破案！想看！</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#30</td>
+              <td>
+                <a class="memory-name" href="#memory-30">胖迪昵称与吃货反差</a>
+                <div class="reading">胖迪与吃货反差是早期亲切感来源，适合做轻松考古。</div>
+                <div class="bar"><span style="width:0.08%"></span></div>
+              </td>
+              <td><div class="number">7,443</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5290643561910029" target="_blank" rel="noreferrer">帖子1 · 3,913赞 · 1910029</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4715454314582200" target="_blank" rel="noreferrer">评论2 · 1,276赞 · 4582200</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4682453170262879" target="_blank" rel="noreferrer">帖子3 · 1,042赞 · 0262879</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5290789932370439" target="_blank" rel="noreferrer">帖子4 · 533赞 · 2370439</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 3,913赞</div>
+      <a href="https://m.weibo.cn/detail/5290643561910029" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290643561910029</a>
+      <p>胖迪🥹 你的美好我一辈子珍藏</p>
+    </td>
+            </tr>
+            
+            <tr>
+              <td class="rank">#31</td>
+              <td>
+                <a class="memory-name" href="#memory-31">高雯出圈名场面</a>
+                <div class="reading">高雯是早期出圈角色，当前热度较低但辨识度仍在。</div>
+                <div class="bar"><span style="width:0.05%"></span></div>
+              </td>
+              <td><div class="number">4,330</div></td>
+              <td class="sources"><a class="source-link" href="https://m.weibo.cn/detail/5190361405719508" target="_blank" rel="noreferrer">帖子1 · 1,297赞 · 5719508</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5190378040853714" target="_blank" rel="noreferrer">帖子2 · 1,225赞 · 0853714</a>
+<a class="source-link" href="https://m.weibo.cn/detail/4799539712887834" target="_blank" rel="noreferrer">帖子3 · 1,068赞 · 2887834</a>
+<a class="source-link" href="https://m.weibo.cn/detail/5242672740568406" target="_blank" rel="noreferrer">帖子4 · 650赞 · 0568406</a></td>
+              <td class="top-source">
+      <div class="source-kind">帖子 · 1,297赞</div>
+      <a href="https://m.weibo.cn/detail/5190361405719508" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5190361405719508</a>
+      <p>#克拉恋人# “以至于我不想说其他人的名字” 笑到没who了的微博视频</p>
+    </td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+    <p class="source-note">说明：评论来源统一保留为对应微博 note URL；如需复核评论，可在原始 comments.jsonl 中按 note_id 与评论内容定位。访问日志显示最小访问间隔 10.0 秒，低于 10 秒次数为 0。</p>
+    
+            <section class="memory-section" id="memory-1">
+              <div class="section-index">01</div>
+              <div class="section-copy">
+                <h2>FAKEME首位全球品牌代言与双向奔赴</h2>
+                <p>品牌首位全球代言的声量极强，粉丝把“Find me / 多面自我”翻译成她与品牌气质互相确认的时刻。</p>
+                <div class="metric-row">
+                  <span><b>9,378,736</b> 可归因点赞</span>
+                  <span><b>8,940,840</b> 帖子赞</span>
+                  <span><b>437,896</b> 评论赞</span>
+                  <span><b>365</b> 命中帖子</span>
+                  <span><b>43</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#1</div></div>
+                
+      <div class="source-kind">帖子 · 8,659,382赞</div>
+      <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+      <p>很高兴成为@Fakeme眼镜官方微博 首位全球品牌代言人，演绎不一样的「我」。你、我都不止一面，温柔和酷飒、安静和果敢，也并不矛盾。 Fakeme，find me。戴上#Fakeme#，更清晰地找到自己的每一面。#Fakeme首位全球品牌代言人迪丽热巴# #Fakeme和迪丽热巴的双向奔赴#</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,659,382赞</div>
+                <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+                <p>很高兴成为@Fakeme眼镜官方微博 首位全球品牌代言人，演绎不一样的「我」。你、我都不止一面，温柔和酷飒、安静和果敢，也并不矛盾。 Fakeme，find me。戴上#Fakeme#，更清晰地找到自己的每一面。#Fakeme首位全球品牌代言人迪丽热巴# #Fakeme和迪丽热巴的双向奔赴#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 71,296赞</div>
+                <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+                <p>Fakeme荣幸宣布，迪丽热巴出任首位全球品牌代言人！Fakeme，Find me. 我本多面，「镜」在掌握！ 即刻见证风格与美的双向奔赴</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 52,666赞</div>
+                <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+                <p>#Fakeme首位全球品牌代言人迪丽热巴# 恭喜@Dear-迪丽热巴 解锁新代言，成为@Fakeme眼镜官方微博 首位全球品牌代言人！欢迎新朋友，未来和巴巴一起走花路呀～～</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 47,505赞</div>
+                <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+                <p>恭喜宝宝解锁新代言！！！释放温柔能量，诠释鲜活自我💐欢迎新朋友@Fakeme眼镜官方微博</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 44,506赞</div>
+                <a href="https://m.weibo.cn/detail/5259315298174647" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5259315298174647</a>
+                <p>恭喜姐姐@Dear-迪丽热巴 解锁新的全球代言人身份~欢迎新朋友到来@Fakeme眼镜官方微博 未来并肩探索更多精彩和更酷的造型呀🤓</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-2">
+              <div class="section-index">02</div>
+              <div class="section-copy">
+                <h2>Dior迪奥甜品店/全球品牌大使/高定时尚记忆</h2>
+                <p>Dior 相关内容兼具商务背书、线下活动和造型讨论，是时尚线里最稳定的高热记忆资产。</p>
+                <div class="metric-row">
+                  <span><b>6,565,242</b> 可归因点赞</span>
+                  <span><b>6,357,432</b> 帖子赞</span>
+                  <span><b>207,810</b> 评论赞</span>
+                  <span><b>934</b> 命中帖子</span>
+                  <span><b>159</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#2</div></div>
+                
+      <div class="source-kind">帖子 · 4,205,215赞</div>
+      <a href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292681355331545</a>
+      <p>去“甜品王国”一日游🍰🍒 @DIOR迪奥 #DiorCigale#</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,205,215赞</div>
+                <a href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292681355331545</a>
+                <p>去“甜品王国”一日游🍰🍒 @DIOR迪奥 #DiorCigale#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,026,441赞</div>
+                <a href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272383340413162</a>
+                <p>迪丽热巴 致各位爱丽丝们： 很遗憾地告知大家，因不可抗力因素，@Dear-迪丽热巴 目前已确定无法于法国巴黎时间3月3日抵达巴黎，故不得不将缺席此次@DIOR迪奥 二零二六秋冬大秀。在此，我们谨代表热巴本人及团队，向迪奥以及所有期待着热巴并做了各种充分应援准备的朋友们，致以最诚挚的歉意， ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 270,476赞</div>
+                <a href="https://m.weibo.cn/detail/5292695004382303" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292695004382303</a>
+                <p>#迪丽热巴邓为迪奥生图# 今日，迪丽热巴、邓为亮相同品牌活动，现场人气火爆，生图状态优越！谁的造型更吸引你呢 网页链接</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 160,647赞</div>
+                <a href="https://m.weibo.cn/detail/5293115495680963" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293115495680963</a>
+                <p>聚焦#迪奥全球品牌大使迪丽热巴# @Dear-迪丽热巴 为南京德基广场迪奥甜品主题限时精品店开幕的试装准备时刻。优雅造型来自迪奥女装、男装及高级订制系列创意总监乔纳森•安德森(Jonathan Anderson)设计的迪奥二零二六秋季系列。 DIOR迪奥的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 73,339赞</div>
+                <a href="https://m.weibo.cn/detail/5293171539711525" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293171539711525</a>
+                <p>#迪奥全球品牌大使迪丽热巴# @Dear-迪丽热巴 漫步于南京德基广场迪奥甜品主题限时精品店，探索迪奥的多元美学世界。</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-3">
+              <div class="section-index">03</div>
+              <div class="section-copy">
+                <h2>幸运咖《相信就幸运》大片</h2>
+                <p>幸运咖大片把品牌代言、咖啡日常和“相信幸运”的正向叙事打在一起，转评赞集中度很高。</p>
+                <div class="metric-row">
+                  <span><b>5,144,857</b> 可归因点赞</span>
+                  <span><b>4,901,391</b> 帖子赞</span>
+                  <span><b>243,466</b> 评论赞</span>
+                  <span><b>290</b> 命中帖子</span>
+                  <span><b>22</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#3</div></div>
+                
+      <div class="source-kind">帖子 · 4,808,243赞</div>
+      <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+      <p>《相信就幸运》，幸运大片首发来啦！ 一杯咖啡，开始一天的幸运奇遇 我们看见热烈张扬的态度，也看见勇敢尝试的从容 幸运，看似是命运眷顾的偶然，其实是用心打磨的必然 相信幸运的力量，让生活充满无限可能 希望能把这份幸运，传递给屏幕前的每个你~幸运咖的微博视频 ...全文</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,808,243赞</div>
+                <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+                <p>《相信就幸运》，幸运大片首发来啦！ 一杯咖啡，开始一天的幸运奇遇 我们看见热烈张扬的态度，也看见勇敢尝试的从容 幸运，看似是命运眷顾的偶然，其实是用心打磨的必然 相信幸运的力量，让生活充满无限可能 希望能把这份幸运，传递给屏幕前的每个你~幸运咖的微博视频 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 30,545赞</div>
+                <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+                <p>恭喜@Dear-迪丽热巴 解锁全新代言🎊🎊🎊迪丽热巴携手幸运咖☕，颜值与品质完美契合，品味匠心好咖，接住满满好运🎁，奔赴每一个闪闪发光的日常💞[/cp]</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 25,700赞</div>
+                <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+                <p>哇哦和热巴一起代言幸运咖好棒好棒</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 24,114赞</div>
+                <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+                <p>恭喜迪丽热巴成为幸运咖臻选咖啡全球品牌代言人 每天一杯咖啡 就选幸运咖#幸运咖臻选咖啡全球代言人迪丽热巴#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 22,608赞</div>
+                <a href="https://m.weibo.cn/detail/5289340248260767" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289340248260767</a>
+                <p>恭喜@Dear-迪丽热巴 解锁全新代言🎊🎊🎊迪丽热巴携手幸运咖☕，颜值与品质完美契合，品味匠心好咖，接住满满好运🎁，奔赴每一个闪闪发光的日常💞</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-4">
+              <div class="section-index">04</div>
+              <div class="section-copy">
+                <h2>爱丽丝与热巴的粉丝双向奔赴</h2>
+                <p>粉丝自称、工作室回应、亲密度测试和应援语境共同构成关系资产，是最核心的粉圈记忆线。</p>
+                <div class="metric-row">
+                  <span><b>4,681,918</b> 可归因点赞</span>
+                  <span><b>4,479,802</b> 帖子赞</span>
+                  <span><b>202,116</b> 评论赞</span>
+                  <span><b>2,932</b> 命中帖子</span>
+                  <span><b>301</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#4</div></div>
+                
+      <div class="source-kind">帖子 · 218,981赞</div>
+      <a href="https://m.weibo.cn/detail/4916502577023434" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4916502577023434</a>
+      <p>致爱丽丝们： 近期，关于大家对工作室工作提出的意见和想法，工作室已认真阅读，并在内部对大家的反馈和建议展开了细致的沟通与探讨。目前，对大家重点关心的问题回复如下： 1. 关于其他平台的运营，工作室会积极拓展，如ins将列在工作计划内，后续会进行更新。 2. 关于造型，不排斥并且也会推 ...全文</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 218,981赞</div>
+                <a href="https://m.weibo.cn/detail/4916502577023434" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4916502577023434</a>
+                <p>致爱丽丝们： 近期，关于大家对工作室工作提出的意见和想法，工作室已认真阅读，并在内部对大家的反馈和建议展开了细致的沟通与探讨。目前，对大家重点关心的问题回复如下： 1. 关于其他平台的运营，工作室会积极拓展，如ins将列在工作计划内，后续会进行更新。 2. 关于造型，不排斥并且也会推 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 180,663赞</div>
+                <a href="https://m.weibo.cn/detail/5288236174018483" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5288236174018483</a>
+                <p>#杨紫后援会集体辞职解散重组# 杨紫后援会回应关注迪丽热巴超话后，宣布集体辞职，解散重组：“很感谢一直以来紫米对于我们的帮助和包容，对于曾经没能做好的我们向紫和紫米们道歉，未来祝紫和紫圈都越来越好。 ”</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 125,689赞</div>
+                <a href="https://m.weibo.cn/detail/4938390447063756" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4938390447063756</a>
+                <p>迪丽热巴 是一则记录小迪@Dear-迪丽热巴 弹奏《致爱丽丝》的实拍🎶 祝大家晚安～ 嘉行迪丽热巴工作室的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 83,774赞</div>
+                <a href="https://m.weibo.cn/detail/4932556111743050" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4932556111743050</a>
+                <p>迪丽热巴 📝 爱丽丝们准备好了嘛「亲密度小测试」正式上线！在本条微博的评论区写下你的正确答案，就有机会获得小迪@Dear-迪丽热巴 准备的亲笔悄悄话💌 💡温馨提示：爱丽丝们要认真审题并按照问题顺序作答哦，楼中楼、错答漏答均不算哦～ 💞迪迪办祝大家好运</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 80,172赞</div>
+                <a href="https://m.weibo.cn/detail/4989462288797958" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4989462288797958</a>
+                <p>🍉🍉迪丽热巴1.22飞✈️喀什，要参加今年春晚xj分会场，爱丽丝又幸福了</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-5">
+              <div class="section-index">05</div>
+              <div class="section-copy">
+                <h2>乔晶晶与荣耀系记忆</h2>
+                <p>乔晶晶仍是剧粉和大众记忆里的高峰角色，评论赞占比高，说明角色共情仍在持续复燃。</p>
+                <div class="metric-row">
+                  <span><b>4,594,724</b> 可归因点赞</span>
+                  <span><b>4,090,457</b> 帖子赞</span>
+                  <span><b>504,267</b> 评论赞</span>
+                  <span><b>34</b> 命中帖子</span>
+                  <span><b>37</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#5</div></div>
+                
+      <div class="source-kind">帖子 · 4,030,690赞</div>
+      <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+      <p>今晚荣耀大结局了，非常开心能和大家一起度过这个追剧的夏天，晶晶也在平行世界中拥有了美好的结局。从中学的青涩暗恋，到携手步入婚姻殿堂，晶晶和于途完成了一场属于彼此的双向奔赴，美好且热烈的旅程。 我们一起陪伴乔晶晶共情着她的美好追寻，一起喜欢着她的可爱调皮、一起欣赏着她的勇敢直率。 在 ...全文</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,030,690赞</div>
+                <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+                <p>今晚荣耀大结局了，非常开心能和大家一起度过这个追剧的夏天，晶晶也在平行世界中拥有了美好的结局。从中学的青涩暗恋，到携手步入婚姻殿堂，晶晶和于途完成了一场属于彼此的双向奔赴，美好且热烈的旅程。 我们一起陪伴乔晶晶共情着她的美好追寻，一起喜欢着她的可爱调皮、一起欣赏着她的勇敢直率。 在 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 82,054赞</div>
+                <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+                <p>你说“要做随处可见的乔晶晶，要做一直敬业的女明星”姐姐已经实现这句话啦，有很多人认可你的表演，在轻轨上会看到有人看荣耀，刷别的社交软件能看到放着荣耀的背景。现在晶晶要回到书里了，虽然不舍但还是要和她说一句再见啦乔晶晶</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 60,120赞</div>
+                <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+                <p>希望晶晶和迪迪都能一直幸福。你们是夜空中最闪亮的星</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 53,828赞</div>
+                <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+                <p>乔晶晶很棒！热巴好棒！</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 45,889赞</div>
+                <a href="https://m.weibo.cn/detail/4673469763816437" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4673469763816437</a>
+                <p>再见乔晶晶 迪迪公主也要在自己的世界里闪闪发光</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-6">
+              <div class="section-index">06</div>
+              <div class="section-copy">
+                <h2>放空时刻CCD/日常营业随拍</h2>
+                <p>低门槛日常营业极受欢迎，粉丝喜欢从 CCD、随拍和轻松状态里捕捉真实陪伴感。</p>
+                <div class="metric-row">
+                  <span><b>2,820,684</b> 可归因点赞</span>
+                  <span><b>2,772,679</b> 帖子赞</span>
+                  <span><b>48,005</b> 评论赞</span>
+                  <span><b>173</b> 命中帖子</span>
+                  <span><b>30</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#6</div></div>
+                
+      <div class="source-kind">帖子 · 2,121,158赞</div>
+      <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+      <p>放空时刻很G∞d🎧😊 （补一些没完成的ccd ahhhh</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 2,121,158赞</div>
+                <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+                <p>放空时刻很G∞d🎧😊 （补一些没完成的ccd ahhhh</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 403,802赞</div>
+                <a href="https://m.weibo.cn/detail/5293766480237286" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293766480237286</a>
+                <p>站在春天里向夏天打了个招呼👋✌🏻#一起过五一#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 65,026赞</div>
+                <a href="https://m.weibo.cn/detail/5291287408281858" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291287408281858</a>
+                <p>迪丽热巴 随机掉落All black的甜酷姐姐@Dear-迪丽热巴 🖤</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 58,773赞</div>
+                <a href="https://m.weibo.cn/detail/5293768841629583" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293768841629583</a>
+                <p>迪丽热巴 随拍掉落！姐姐@Dear-迪丽热巴 就这样把自己裹成小团子🫳</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 38,592赞</div>
+                <a href="https://m.weibo.cn/detail/5292683849371367" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292683849371367</a>
+                <p>迪丽热巴 美好悄然酝酿静待纱影褪去，遇见姐姐@Dear-迪丽热巴 的甜蜜时刻✨</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-7">
+              <div class="section-index">07</div>
+              <div class="section-copy">
+                <h2>白日提灯贺思慕/万灵之主/女鬼鬼王记忆</h2>
+                <p>贺思慕提供了新的强视觉角色资产，女鬼、鬼王、万灵之主等关键词利于二创扩散。</p>
+                <div class="metric-row">
+                  <span><b>2,482,912</b> 可归因点赞</span>
+                  <span><b>2,367,977</b> 帖子赞</span>
+                  <span><b>114,935</b> 评论赞</span>
+                  <span><b>2,009</b> 命中帖子</span>
+                  <span><b>502</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#7</div></div>
+                
+      <div class="source-kind">帖子 · 78,891赞</div>
+      <a href="https://m.weibo.cn/detail/5278578833883244" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278578833883244</a>
+      <p>迪丽热巴 🔛#贺思慕的五感体验卡# 王座之上，执掌生死。 贺思慕@Dear-迪丽热巴 提灯而来，洞悉人间未知事。#白日提灯##迪丽热巴贺思慕##白日提灯定档0328#</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 78,891赞</div>
+                <a href="https://m.weibo.cn/detail/5278578833883244" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278578833883244</a>
+                <p>迪丽热巴 🔛#贺思慕的五感体验卡# 王座之上，执掌生死。 贺思慕@Dear-迪丽热巴 提灯而来，洞悉人间未知事。#白日提灯##迪丽热巴贺思慕##白日提灯定档0328#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 75,414赞</div>
+                <a href="https://m.weibo.cn/detail/5279940612196936" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279940612196936</a>
+                <p>#白日提灯贺思慕万灵之主特辑# 是执掌归墟的万灵之主，身处无感孤绝之境，却亦向往人间鲜活。 无情表象下，藏着兼护两界的柔软本心。 领衔主演：@Dear-迪丽热巴 3月28日起，#白日提灯# @腾讯视频 全网独播！ 腾讯预约：网页链接 微博预约：网页链接 白日提灯官微的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 66,717赞</div>
+                <a href="https://m.weibo.cn/detail/5280368261596736" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5280368261596736</a>
+                <p>迪丽热巴 😍#贺思慕的五感体验卡# 欢迎收看「贺思慕·美妆博主版」之“鬼王”是如何诞生的vlog 👀～ 3月28日12:00 ，路上遇到这样的姐姐@Dear-迪丽热巴 记得快点回家！#白日提灯# #迪丽热巴贺思慕# 嘉行迪丽热巴工作室的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 66,418赞</div>
+                <a href="https://m.weibo.cn/detail/5278937422764776" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278937422764776</a>
+                <p>迪丽热巴🔛#贺思慕的五感体验卡# 寒鸦掠夜，血色染红衣。贺思慕@Dear-迪丽热巴 垂眸间，世间万物尽皆俯首。#白日提灯##迪丽热巴贺思慕# 嘉行迪丽热巴工作室的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 62,197赞</div>
+                <a href="https://m.weibo.cn/detail/5278616466230011" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278616466230011</a>
+                <p>-𝟐𝟎𝟐𝟔𝟎𝟑𝟐𝟎 𝐃𝐢𝐨𝐫 赴约🖤@Dear-迪丽热巴 ·#今日星拍放送# ·#迪丽热巴 女王回归# ·#让迪丽热巴演女鬼的简直是天才# HotBalloon_迪丽热巴的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-8">
+              <div class="section-index">08</div>
+              <div class="section-copy">
+                <h2>生日与生贺/小小迪超时空生日派对</h2>
+                <p>生日节点是情绪型资产，适合承载陪伴、祝福、老粉记忆和周年叙事。</p>
+                <div class="metric-row">
+                  <span><b>673,565</b> 可归因点赞</span>
+                  <span><b>612,033</b> 帖子赞</span>
+                  <span><b>61,532</b> 评论赞</span>
+                  <span><b>106</b> 命中帖子</span>
+                  <span><b>144</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#8</div></div>
+                
+      <div class="source-kind">帖子 · 163,722赞</div>
+      <a href="https://m.weibo.cn/detail/4776341105016896" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4776341105016896</a>
+      <p>迪丽热巴 🎁 #热巴与小小迪的超时空生日派对# 【惊喜party全纪录】来袭~ 童年照的回忆时间|生日礼物开箱惊喜连连|爱丽丝专属十问十答|端午节祝福彩蛋🈶 这不仅是一场轻松、欢乐、温情的派对，也是热巴与小小迪@Dear-迪丽热巴 送给爱丽丝们的真诚与感动#迪丽热巴0603生日快乐# ...全文</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 163,722赞</div>
+                <a href="https://m.weibo.cn/detail/4776341105016896" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4776341105016896</a>
+                <p>迪丽热巴 🎁 #热巴与小小迪的超时空生日派对# 【惊喜party全纪录】来袭~ 童年照的回忆时间|生日礼物开箱惊喜连连|爱丽丝专属十问十答|端午节祝福彩蛋🈶 这不仅是一场轻松、欢乐、温情的派对，也是热巴与小小迪@Dear-迪丽热巴 送给爱丽丝们的真诚与感动#迪丽热巴0603生日快乐# ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 79,227赞</div>
+                <a href="https://m.weibo.cn/detail/4909242761351159" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4909242761351159</a>
+                <p>迪丽热巴 🎞️ #迪丽热巴0603生日快乐# 迪迪办携生日全纪录来咯 六月的风吹来夏日，美好被时光收藏🥰 爱丽丝们的心里话小迪@Dear-迪丽热巴 都听到啦🍒 迪迪办也想和小迪说：我们一直在你身后哦！ 带着这份爱与陪伴，一起奔向未来吧～ 关键词提示📌：一切都在很“尴尬”地 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 56,714赞</div>
+                <a href="https://m.weibo.cn/detail/4776211202704755" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4776211202704755</a>
+                <p>#迪丽热巴的生日微博评论区#今天是迪丽热巴的生日，5555微博评论区祝福简直破防了 这不就是双向奔赴嘛，不得不说阿丝们真的太棒太用心啦#ip风向标#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 37,523赞</div>
+                <a href="https://m.weibo.cn/detail/5040975519416433" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5040975519416433</a>
+                <p>#迪丽热巴0603生日快乐# 亲爱的热巴 这是一份笨拙的告白 没有过于华丽的词藻修饰 但却有无数格外真诚的呢喃 愿你生日快乐 永远快乐 愿你平安顺遂 自由如风 无论你在哪个转角回头 爱丽丝永远在你身后 请接收来自千千万万爱丽丝的祝福 带着热爱的力量开启新的一岁吧！ @Dear-迪丽热巴 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 29,102赞</div>
+                <a href="https://m.weibo.cn/detail/4776062937992897" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4776062937992897</a>
+                <p>#迪丽热巴0603生日快乐# 你永远可以相信迪丽热巴！从天真可爱白凤九、坚韧无畏李长歌到闪闪发光乔晶晶、自由洒脱纪云禾，热巴用爱与真诚，将每个角色演绎得鲜活明媚。 娇韵诗祝我们的代言人@Dear-迪丽热巴 生日快乐！愿你平安喜乐，万事胜意，每天都被爱意包围！爱丽丝宝宝们快来开启小娇精心设计的热 ...全文</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-9">
+              <div class="section-index">09</div>
+              <div class="section-copy">
+                <h2>枭起青壤/疯刀药戏/演员突破记忆</h2>
+                <p>讨论重点集中在表演突破和疯感片段，适合转化为“演员迪丽热巴”的专业证明。</p>
+                <div class="metric-row">
+                  <span><b>661,351</b> 可归因点赞</span>
+                  <span><b>624,258</b> 帖子赞</span>
+                  <span><b>37,093</b> 评论赞</span>
+                  <span><b>153</b> 命中帖子</span>
+                  <span><b>81</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#9</div></div>
+                
+      <div class="source-kind">帖子 · 221,096赞</div>
+      <a href="https://m.weibo.cn/detail/5236900006200705" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5236900006200705</a>
+      <p>#枭起青壤夜枭搭子双向奔赴# 你的夜枭搭子聂九罗准时赴约！速戳#枭起青壤# 直播间，看我如何拿“聂”搭子团~#剧星驾到# Dear-迪丽热巴的微博直播</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 221,096赞</div>
+                <a href="https://m.weibo.cn/detail/5236900006200705" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5236900006200705</a>
+                <p>#枭起青壤夜枭搭子双向奔赴# 你的夜枭搭子聂九罗准时赴约！速戳#枭起青壤# 直播间，看我如何拿“聂”搭子团~#剧星驾到# Dear-迪丽热巴的微博直播</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 41,423赞</div>
+                <a href="https://m.weibo.cn/detail/5241150504962745" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5241150504962745</a>
+                <p>#迪丽热巴 我有点不认识你了# 迪丽热巴《枭起青壤》这段疯刀药戏的细腻度，真的让人起鸡皮疙瘩！从松弛状态到被药物裹挟的“非人感”，迪丽热巴的切换像呼吸般自然：先是指尖微攥的隐忍脆弱，抬眼瞬间眼底疯劲骤起，带血的笑里混着狠戾，连眉梢的弧度都裹着失控的张力。 没有浓妆加持，全靠微表情撑满 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 32,067赞</div>
+                <a href="https://m.weibo.cn/detail/5243466619555971" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5243466619555971</a>
+                <p>#迪丽热巴 谁说演员不能看镜头# 迪丽热巴的眼神戏好有感觉 沉浸式的表演出每一个角色的不同 虽然在看着镜头但一点也不会觉得出戏 用心对话心！这就是好演员的魅力 #非正式跨年派对##2025娱乐年终盘点# 青春摸娱的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 23,162赞</div>
+                <a href="https://m.weibo.cn/detail/5119792709370676" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5119792709370676</a>
+                <p>迪丽热巴 青壮年艺术家 笑吐了🆘我怎么才刷到这个视频……《枭起青壤》的导演在台上发言时由于紧张把迪丽热巴和陈星旭形容为“德艺双馨的青壮年艺术家”。。。 迪丽热巴：青壮年？我吗？？？（wuli巴忙活一天打开手机天塌了🙉</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 19,737赞</div>
+                <a href="https://m.weibo.cn/detail/5234326759015158" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5234326759015158</a>
+                <p>#迪丽热巴 绝美ending# 被迪丽热巴笑不活了，聂九罗“最后就是这样，绝美ending”，摆好pose，大喘气，然后转过头，微笑着点头wink，哈哈哈哈，太懂了吧，太好笑了；迪丽热巴倒在地上，吐槽：“叫不醒一个装睡的人”，果然是剧组欢乐多啊 #枭起青壤# 花絮 ...全文</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-10">
+              <div class="section-index">10</div>
+              <div class="section-copy">
+                <h2>红毯神图与高定造型</h2>
+                <p>红毯、妆造和神图是最容易被路人理解的美貌资产，适合视觉向传播。</p>
+                <div class="metric-row">
+                  <span><b>648,250</b> 可归因点赞</span>
+                  <span><b>566,788</b> 帖子赞</span>
+                  <span><b>81,462</b> 评论赞</span>
+                  <span><b>193</b> 命中帖子</span>
+                  <span><b>117</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#10</div></div>
+                
+      <div class="source-kind">帖子 · 93,941赞</div>
+      <a href="https://m.weibo.cn/detail/5279381217350964" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279381217350964</a>
+      <p>迪丽热巴 庭院一隅泛起油画柔光，玫瑰于指尖绽放🌹南法的香气，落在裙摆上就成了诗🌸跟随@Dear-迪丽热巴 穿香而行，共赴这场轻盈芬香之约～ 化妆：@王崇HUATIANQI-BEAUTY 发型：@方可frank 摄影：@MomentStudio- 造型：@闵塔鲨 @theRayback</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 93,941赞</div>
+                <a href="https://m.weibo.cn/detail/5279381217350964" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279381217350964</a>
+                <p>迪丽热巴 庭院一隅泛起油画柔光，玫瑰于指尖绽放🌹南法的香气，落在裙摆上就成了诗🌸跟随@Dear-迪丽热巴 穿香而行，共赴这场轻盈芬香之约～ 化妆：@王崇HUATIANQI-BEAUTY 发型：@方可frank 摄影：@MomentStudio- 造型：@闵塔鲨 @theRayback</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 68,607赞</div>
+                <a href="https://m.weibo.cn/detail/5287372963188343" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5287372963188343</a>
+                <p>迪丽热巴 🕶️ 镜面效果，风格自有答案。@Dear-迪丽热巴 重构视线焦点，在冷调气场与锋利轮廓之间，步入梦「镜」之界，开启一场关于自我表达的风格漫游✨ 化妆：@金鹤龙 发型：@安城AnX_ 摄影：@MomentStudio- 造型：@闵塔鲨 @theRayback</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 54,980赞</div>
+                <a href="https://m.weibo.cn/detail/5292691165547282" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292691165547282</a>
+                <p>今日给迪丽热巴 化的燕尾眼线妆，线下更美！ 化妆：王亚飞 #迪丽热巴##美丽觉醒计划##春日尝新妆#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 43,187赞</div>
+                <a href="https://m.weibo.cn/detail/5222702962183625" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5222702962183625</a>
+                <p>家人们，谁还没被热巴的红毯造型美到过！“红毯闪耀605天，我的能量补给站是Swisse”，难怪状态一直这么能打！想get同款好状态就上京东APP搜【健康免单】，送迪丽热巴同款！宠粉女王这次联合@京东健康 带来11.11福利！明星免单天天送+千元补贴日日领。赶紧戳 网页链接 ，错过拍大腿！ ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 41,657赞</div>
+                <a href="https://m.weibo.cn/detail/5292723745593166" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292723745593166</a>
+                <p>迪丽热巴 🩵 撷一抹清蓝，雕琢利落廓形。于经典之上，重构当下表达。@Dear-迪丽热巴 在流动与结构之间，勾勒当代优雅的多面性。 化妆：@王亚飞Yafei 发型：@NANBEAUTY金刚 摄影：@刘任捷photographer</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-11">
+              <div class="section-index">11</div>
+              <div class="section-copy">
+                <h2>时尚芭莎/VOGUE封面群像</h2>
+                <p>封面合作强化时尚资历，适合用于阶段性成长和高级表达的背书。</p>
+                <div class="metric-row">
+                  <span><b>441,129</b> 可归因点赞</span>
+                  <span><b>331,706</b> 帖子赞</span>
+                  <span><b>109,423</b> 评论赞</span>
+                  <span><b>43</b> 命中帖子</span>
+                  <span><b>41</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#11</div></div>
+                
+      <div class="source-kind">帖子 · 124,160赞</div>
+      <a href="https://m.weibo.cn/detail/5249492477284053" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5249492477284053</a>
+      <p>#迪丽热巴时尚芭莎开年刊##迪丽热巴迪奥开年首封#这是@Dear-迪丽热巴 与《时尚芭莎》的第七次单人封面合作。时间在此刻折叠，迪丽热巴身穿2026年春夏最新Dior成衣系列，与这所经典时装屋所代表的优雅摩登的时装精神重合于同一道光束下，她的成长轨迹亦如全新@DIOR迪奥 的蜕变——进取、柔韧、突破</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 124,160赞</div>
+                <a href="https://m.weibo.cn/detail/5249492477284053" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5249492477284053</a>
+                <p>#迪丽热巴时尚芭莎开年刊##迪丽热巴迪奥开年首封#这是@Dear-迪丽热巴 与《时尚芭莎》的第七次单人封面合作。时间在此刻折叠，迪丽热巴身穿2026年春夏最新Dior成衣系列，与这所经典时装屋所代表的优雅摩登的时装精神重合于同一道光束下，她的成长轨迹亦如全新@DIOR迪奥 的蜕变——进取、柔韧、突破。 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 102,140赞</div>
+                <a href="https://m.weibo.cn/detail/5249494993078702" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5249494993078702</a>
+                <p>#迪丽热巴时尚芭莎开年刊# 对于@Dear-迪丽热巴 而言，真正的进取，从来都是一场精准的奔赴。于她而言，成长从不是刻意的转身，而是带着清醒，步步向光而行。她恰似惊涛之上掌舵的船长，不被浪潮裹挟，只锚定远方的航向。在风浪里沉淀自我，于航行中更新羽翼。克制里藏着极致的热爱，严谨中透着诗意的从 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 24,612赞</div>
+                <a href="https://m.weibo.cn/detail/5214125305105808" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5214125305105808</a>
+                <p>#VOGUE二十周年女演员群像封面##VOGUE二十周年多元之美大片# 延续十周年的传统，VOGUE在二十周年之际，再次以群像回应“当下”的命题——@宋佳、@辛芷蕾、@张小斐0110、@马思纯、@李庚希Teresa、@演员文淇、@张子枫、@Dear-迪丽热巴、@倪妮V、@杨幂、@刘亦菲 共同完成这一次意义非凡的集体创作。 摄 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 14,540赞</div>
+                <a href="https://m.weibo.cn/detail/5207498235581052" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5207498235581052</a>
+                <p>#迪丽热巴 西方油画里的女人#迪丽热巴解锁《服饰与美容VOGUE》二十周年刊，这份与顶奢杂志的双向奔赴也太有分量了！好像每一次拍迪丽热巴都能把她拍成西方油画里的女人。她眼中VOGUE是“记录时代风格的载体”，更期待用镜头呈现 “沉淀后的绽放”，一句 “美是流动的生命力”，精准戳中她身上鲜活又坚 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 11,715赞</div>
+                <a href="https://m.weibo.cn/detail/5064521913209900" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5064521913209900</a>
+                <p>其实真的没必要炫耀的（幸福巴月版）真的没必要在网上炫耀就好像迪丽热巴90花首位上五大芭莎金九，我也不想讲迪丽热巴两个新代言，三个线下活动，杀青物料和新戏开机物料，所以能过幸福巴月这件事真的没必要天天提，其实不是我想提幸福巴月，这件事毕竟爱丽丝都过过幸福巴月，反正我已经过过幸福巴月了 ...全文</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-12">
+              <div class="section-index">12</div>
+              <div class="section-copy">
+                <h2>虽然不能同时拥有一切/新剧期待</h2>
+                <p>新剧预告和片单形成期待值资产，讨论更偏作品未来增量。</p>
+                <div class="metric-row">
+                  <span><b>346,357</b> 可归因点赞</span>
+                  <span><b>308,254</b> 帖子赞</span>
+                  <span><b>38,103</b> 评论赞</span>
+                  <span><b>74</b> 命中帖子</span>
+                  <span><b>15</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#12</div></div>
+                
+      <div class="source-kind">帖子 · 201,871赞</div>
+      <a href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289725082733212</a>
+      <p>#虽然不能同时拥有一切首发预告# 双生交汇版预告来袭。当一个人拥有可以同时选择两种生活的机会，是体验的新鲜更占上风？还是逃离的迷惘提前到来？虽然不能同时拥有一切，但可以活出你想要的人生。#2026爱奇艺世界大会# #2026爱奇艺造梦片单# 领衔主演：@Dear-迪丽热巴 领衔主演：@Edward陳</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 201,871赞</div>
+                <a href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289725082733212</a>
+                <p>#虽然不能同时拥有一切首发预告# 双生交汇版预告来袭。当一个人拥有可以同时选择两种生活的机会，是体验的新鲜更占上风？还是逃离的迷惘提前到来？虽然不能同时拥有一切，但可以活出你想要的人生。#2026爱奇艺世界大会# #2026爱奇艺造梦片单# 领衔主演：@Dear-迪丽热巴 领衔主演：@Edward陳昊森 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 34,636赞</div>
+                <a href="https://m.weibo.cn/detail/5289377796460765" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289377796460765</a>
+                <p>#爱奇艺世界大会全明星应援# 桃厂新角色报到！@Dear-迪丽热巴 @Edward陳昊森 在线打call 想知道拥有双面人生的卫蓝与双面性格的何见在《虽然不能同时拥有一切》中有哪些精彩的故事吗？持续锁定#2026爱奇艺世界大会# ！ 爱奇艺的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 14,757赞</div>
+                <a href="https://m.weibo.cn/detail/5289725082733212" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289725082733212</a>
+                <p>好像某个时间点，我们都在羡慕别人的人生,向往自由，羡慕热烈，想要安稳……卫蓝的AB面，是每个女人内心的拉扯，也是关于自我救赎的成长过程，一起期待@Dear-迪丽热巴 在@迷你剧虽然不能同时拥有一切 中饰演的双面卫蓝会有怎样的女性力量。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,134赞</div>
+                <a href="https://m.weibo.cn/detail/5289724446770900" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289724446770900</a>
+                <p>#虽然不能同时拥有一切# 迪丽热巴《虽然不能同时拥有一切》首发预告#2026爱奇艺世界大会# 花生小生花的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 6,749赞</div>
+                <a href="https://m.weibo.cn/detail/5228603169047618" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5228603169047618</a>
+                <p>#迪丽热巴用腿刹车# 迪丽热巴#虽然不能同时拥有一切# 仙品路透，用腿刹车，美萌今天的卫蓝完全是女大，梦回关小迪</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-13">
+              <div class="section-index">13</div>
+              <div class="section-copy">
+                <h2>迪拜滞留/报平安/缺席时装周</h2>
+                <p>突发事件里粉丝最在意的是安全与被回应，属于高情绪浓度的守护型记忆。</p>
+                <div class="metric-row">
+                  <span><b>278,303</b> 可归因点赞</span>
+                  <span><b>190,166</b> 帖子赞</span>
+                  <span><b>88,137</b> 评论赞</span>
+                  <span><b>155</b> 命中帖子</span>
+                  <span><b>76</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#13</div></div>
+                
+      <div class="source-kind">评论 · 38,612赞</div>
+      <a href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272383340413162</a>
+      <p>等待，一直在，迪迪健康平安就好</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 38,612赞</div>
+                <a href="https://m.weibo.cn/detail/5272383340413162" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272383340413162</a>
+                <p>等待，一直在，迪迪健康平安就好</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 26,970赞</div>
+                <a href="https://m.weibo.cn/detail/5278306905883732" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5278306905883732</a>
+                <p>爱丽丝接机一直在喊“迪丽热巴，平安喜乐” 看的我都要哭了，好汹涌的爱意其实热巴坐在车里开窗的时候，就已经泪影婆娑了🥹她什么都知道#热巴好汹涌的爱意#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 19,605赞</div>
+                <a href="https://m.weibo.cn/detail/5272639673205876" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272639673205876</a>
+                <p>李佳念 迪丽热巴请你平安 李佳念的发文，让不少人又开始担心起了迪丽热巴，目前迪丽热巴本人并没有报平安。 热巴已经在迪拜被困了四天，而她团队已经直飞到了巴黎，真的太过荒谬，真正参加大秀的艺人，独自转机，其他团队辅助人员反而都是直飞到巴黎。热巴现在已经不是能不能参加大秀的问题，是怎么 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 18,570赞</div>
+                <a href="https://m.weibo.cn/detail/5272395050912212" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272395050912212</a>
+                <p>从第一波爆料出现后到现在，我知道其实我们所有人都处在担忧和焦虑之中。 在此情况下，大家能以最大的耐心和体贴，在没有任何官方声音的情况下，全体自发选择对她最佳的方式；能在这无回应的近20小时里集体按下担忧、坚持控好舆情，为她守好大后方，直到今天报平安—— 爱丽丝们真的都非常了不起。是最 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 17,864赞</div>
+                <a href="https://m.weibo.cn/detail/5272393920546624" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5272393920546624</a>
+                <p>【#迪丽热巴对接发文报平安#】#迪丽热巴对接称已在安全区域# 3月3日，迪丽热巴对接转发工作室微博，并发文热巴已在安全区域，请大家放心。此前工作室发文迪丽热巴因不可抗力影响，无法抵达巴黎，将缺席大秀。#迪丽热巴将缺席时装周# #迪丽热巴 滞留迪拜#</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-14">
+              <div class="section-index">14</div>
+              <div class="section-copy">
+                <h2>嘻嘻迪/可爱搞笑表情包记忆</h2>
+                <p>昵称、可爱语气和表情包降低距离感，是轻互动内容的天然素材库。</p>
+                <div class="metric-row">
+                  <span><b>270,228</b> 可归因点赞</span>
+                  <span><b>238,053</b> 帖子赞</span>
+                  <span><b>32,175</b> 评论赞</span>
+                  <span><b>48</b> 命中帖子</span>
+                  <span><b>90</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#14</div></div>
+                
+      <div class="source-kind">帖子 · 95,988赞</div>
+      <a href="https://m.weibo.cn/detail/5285783737210382" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5285783737210382</a>
+      <p>迪丽热巴 真奇怪，开了防沉迷系统，还是会为姐姐@Dear-迪丽热巴 着迷#嘻嘻迪#</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 95,988赞</div>
+                <a href="https://m.weibo.cn/detail/5285783737210382" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5285783737210382</a>
+                <p>迪丽热巴 真奇怪，开了防沉迷系统，还是会为姐姐@Dear-迪丽热巴 着迷#嘻嘻迪#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 25,439赞</div>
+                <a href="https://m.weibo.cn/detail/4978882325776219" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4978882325776219</a>
+                <p>迪丽热巴 迪丽热巴演近视人的痛苦日常 迪丽热巴：诶？那老头游到前面了 秦岚：那不是浮漂吗？ 弹幕都那在那哈哈哈哈哈哈哈哈哈哈哈狂笑😭而这是我们近视人的日常经常会闹的笑话😭😭 #迪丽热巴 迪士尼公主行为#😭 当红炸子鸡小陈的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 18,354赞</div>
+                <a href="https://m.weibo.cn/detail/4980676061299668" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4980676061299668</a>
+                <p>迪丽热巴：差点咬着我的后槽牙哈哈哈哈哈哈哈哈 #花儿与少年# 圈热议的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 13,767赞</div>
+                <a href="https://m.weibo.cn/detail/4867516964537219" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4867516964537219</a>
+                <p>#迪丽热巴 黄景瑜# 玩梗迪丽热巴“她超爱”的人手写道歉信了，超能摄影阳阳说自己是凭“第七感”….事情开始往一场闹剧发展了 #迪丽热巴猫人直播#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 11,825赞</div>
+                <a href="https://m.weibo.cn/detail/5208708942662294" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5208708942662294</a>
+                <p>这些公共真的好牛啊 #迪丽热巴#赵丽颖#詹妮弗劳伦斯#公关#追星 xc搞笑视频的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-15">
+              <div class="section-index">15</div>
+              <div class="section-copy">
+                <h2>花儿与少年/你好星期六/综艺片刻</h2>
+                <p>综艺片段提供松弛、反应和互动素材，适合做轻量话题与短视频切片。</p>
+                <div class="metric-row">
+                  <span><b>250,204</b> 可归因点赞</span>
+                  <span><b>242,502</b> 帖子赞</span>
+                  <span><b>7,702</b> 评论赞</span>
+                  <span><b>87</b> 命中帖子</span>
+                  <span><b>28</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#15</div></div>
+                
+      <div class="source-kind">帖子 · 53,011赞</div>
+      <a href="https://m.weibo.cn/detail/5279944909523374" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279944909523374</a>
+      <p>张凌赫的反应太好笑了🤣 知道迪丽热巴白宇不来录制开推4了，第一反应是不相信！假的！到时候都会来的 只有工作人员当着他面说才会相信严谨的boy不信任何网传信息 #张凌赫知道热巴白宇退出开推的反应##开始推理吧# 鸡蛋仔嘎嘣脆的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 53,011赞</div>
+                <a href="https://m.weibo.cn/detail/5279944909523374" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5279944909523374</a>
+                <p>张凌赫的反应太好笑了🤣 知道迪丽热巴白宇不来录制开推4了，第一反应是不相信！假的！到时候都会来的 只有工作人员当着他面说才会相信严谨的boy不信任何网传信息 #张凌赫知道热巴白宇退出开推的反应##开始推理吧# 鸡蛋仔嘎嘣脆的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 39,889赞</div>
+                <a href="https://m.weibo.cn/detail/4960761240617504" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4960761240617504</a>
+                <p>迪丽热巴：一些当年就好奇的问题在六七年后突然窜入脑海 #花儿与少年# #迪丽热巴花儿与少年##迪丽热巴 当年好奇的问题突然窜入脑海# 雪碧三分饱的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 23,932赞</div>
+                <a href="https://m.weibo.cn/detail/4978824249083389" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4978824249083389</a>
+                <p>迪丽热巴 | #花儿与少年丝路季# 迪丽热巴这是什么迪士尼公主行为啊 真的很喜欢和摄像机聊天，明明只是点头摇头，热巴却说：“他好乖啊 啥都说” 这不就是公主的能力吗，可以和万物对话，你说摄像机可爱殊不知在我们眼里你也很可爱啊！ 综艺少女的日常的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 17,421赞</div>
+                <a href="https://m.weibo.cn/detail/4968715307977664" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4968715307977664</a>
+                <p>#迪丽热巴送给我的呦#《花儿与少年》赵昭仪炫耀迪丽热巴送的礼物，这句“迪丽热巴送给我的呦”酸的我后槽牙都碎了，赵昭仪你是来花少追星的吧！爱丽丝实名羡慕了 圈内一把手的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 14,417赞</div>
+                <a href="https://m.weibo.cn/detail/5289849665882658" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289849665882658</a>
+                <p>#迪丽热巴刘耀文大屏# 爱奇艺在2026年世界大会官宣的新综艺《玫瑰与骑士》拟邀迪丽热巴与刘耀文担任核心嘉宾，主打“户外游戏×轻推理”的治愈冒险模式。大屏上的迪丽热巴和刘耀文怎么看怎么养眼🥰 期待官宣 #玫瑰与骑士##春日心动放映季# 娱乐扒皮的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-16">
+              <div class="section-index">16</div>
+              <div class="section-copy">
+                <h2>行走的油画/神女美貌出圈</h2>
+                <p>这条线把美貌从“好看”推到具象意象，油画、神女、人鱼姬等词很利于标题化。</p>
+                <div class="metric-row">
+                  <span><b>226,448</b> 可归因点赞</span>
+                  <span><b>183,670</b> 帖子赞</span>
+                  <span><b>42,778</b> 评论赞</span>
+                  <span><b>31</b> 命中帖子</span>
+                  <span><b>28</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#16</div></div>
+                
+      <div class="source-kind">帖子 · 79,423赞</div>
+      <a href="https://m.weibo.cn/detail/4990207487120582" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4990207487120582</a>
+      <p>#迪丽热巴 行走的油画# 对行走的油画有了概念💘 迪丽热巴，美得很直接 #ip风向标# #微博之夜# 我的追星大号的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 79,423赞</div>
+                <a href="https://m.weibo.cn/detail/4990207487120582" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4990207487120582</a>
+                <p>#迪丽热巴 行走的油画# 对行走的油画有了概念💘 迪丽热巴，美得很直接 #ip风向标# #微博之夜# 我的追星大号的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 32,795赞</div>
+                <a href="https://m.weibo.cn/detail/5282916248322430" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5282916248322430</a>
+                <p>迪丽热巴 美神，祝愚人节快乐！ #愚人节站姐团建#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 31,294赞</div>
+                <a href="https://m.weibo.cn/detail/5069150747104104" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5069150747104104</a>
+                <p>迪丽热巴 从油画里走出来的神女💧🕰️🪞 #迪丽热巴 从油画里走出来的神女#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 19,080赞</div>
+                <a href="https://m.weibo.cn/detail/5292681355331545" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292681355331545</a>
+                <p>宝宝美神降临✨美丽优雅的小公主🩵</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 11,777赞</div>
+                <a href="https://m.weibo.cn/detail/5292678566382222" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292678566382222</a>
+                <p>迪丽热巴 #王亚飞 迪丽热巴# 先来欣赏下美神手机怼脸@Dear-迪丽热巴 📷稍后 🈲搬运 #33岁迪丽热巴状态# 美丽脸蛋专属剧粉的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-17">
+              <div class="section-index">17</div>
+              <div class="section-copy">
+                <h2>机场路透与日常片刻</h2>
+                <p>机场、接机和偶遇内容满足粉丝对线下存在感的确认，也能沉淀私服和生图讨论。</p>
+                <div class="metric-row">
+                  <span><b>205,608</b> 可归因点赞</span>
+                  <span><b>192,692</b> 帖子赞</span>
+                  <span><b>12,916</b> 评论赞</span>
+                  <span><b>54</b> 命中帖子</span>
+                  <span><b>9</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#17</div></div>
+                
+      <div class="source-kind">帖子 · 59,517赞</div>
+      <a href="https://m.weibo.cn/detail/4993014231466612" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4993014231466612</a>
+      <p>迪丽热巴接机演练。好多人啊，厉害了我的喀什 不灭幽灵的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 59,517赞</div>
+                <a href="https://m.weibo.cn/detail/4993014231466612" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4993014231466612</a>
+                <p>迪丽热巴接机演练。好多人啊，厉害了我的喀什 不灭幽灵的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 31,676赞</div>
+                <a href="https://m.weibo.cn/detail/5288627192204676" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5288627192204676</a>
+                <p>#迪丽热巴# 回京后独自去做美容，随后在商场逛了一圈就乘车回去了，其实私下身为顶流的她出门经常都是一个人啊！ 刘一朵娱乐现场的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 13,701赞</div>
+                <a href="https://m.weibo.cn/detail/4642889622361161" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4642889622361161</a>
+                <p>名打卡点+1！colorkey珂拉琪全球代言人迪丽热巴在上海虹桥机场的大屏已亮相！ 各位爱丽丝，如果你偶遇热巴了，记得@colorkey珂拉琪，小编会认真欣赏并随机送出神秘好礼哟！#迪丽热巴珂拉琪全球代言# #美出多面 热力全开# colorkey珂拉琪的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 12,643赞</div>
+                <a href="https://m.weibo.cn/detail/5288673371492024" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5288673371492024</a>
+                <p>#迪丽热巴回京后独自去做美容#说的太对了，你们不觉得你们一直跟着一个女生你们很可怕吗？迪丽热巴一直以来就都是一个生活很干净无瑕的人，别去打扰别人私生活好嘛，让热巴一个人安静独处玩耍</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 12,403赞</div>
+                <a href="https://m.weibo.cn/detail/5291532082479254" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291532082479254</a>
+                <p>#迪丽热巴腿部肌肉线条# 迪丽热巴北京飞上海机场路透，迪迪腿部肌肉线条好绝 期待今晚 #迪丽热巴直播# （视频cr：logo） 星姐微博的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-18">
+              <div class="section-index">18</div>
+              <div class="section-copy">
+                <h2>陆地CP争议与网暴记忆</h2>
+                <p>争议型记忆热度不低，但情绪风险更高，适合内部风控，不适合主动放大。</p>
+                <div class="metric-row">
+                  <span><b>205,192</b> 可归因点赞</span>
+                  <span><b>189,360</b> 帖子赞</span>
+                  <span><b>15,832</b> 评论赞</span>
+                  <span><b>84</b> 命中帖子</span>
+                  <span><b>50</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#18</div></div>
+                
+      <div class="source-kind">帖子 · 24,717赞</div>
+      <a href="https://m.weibo.cn/detail/5290795670177480" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290795670177480</a>
+      <p>#陆地cp#这是对迪丽热巴一场巨大的网暴，有🧊就去医院，别来招惹单身无辜女艺人，放过兢兢业业努力工作的迪丽热巴。</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 24,717赞</div>
+                <a href="https://m.weibo.cn/detail/5290795670177480" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290795670177480</a>
+                <p>#陆地cp#这是对迪丽热巴一场巨大的网暴，有🧊就去医院，别来招惹单身无辜女艺人，放过兢兢业业努力工作的迪丽热巴。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 24,562赞</div>
+                <a href="https://m.weibo.cn/detail/5290854145328674" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290854145328674</a>
+                <p>#陆地cp# t，鹿晗迪丽热巴两家粉丝澄清，17年的时候鹿晗和迪丽热巴都明确表示过自己是单身，你们觉得哪一家的声明更有说服力？</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 17,086赞</div>
+                <a href="https://m.weibo.cn/detail/5290821344559409" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290821344559409</a>
+                <p>u1s1鹿晗前段时间最低谷都没翻炒过陆地cp…..真要回血那会不是更需要吗……反倒是现在有人一播完剧就开始了……. 热巴铁血唯粉剪刀手都开始剪陆地了……但我没看过任何一个鹿晗粉丝主动提的….翻炒就翻炒甩锅就没意思了…… #陆地cp#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 15,885赞</div>
+                <a href="https://m.weibo.cn/detail/5290821645767595" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290821645767595</a>
+                <p>【律师称：#反复造谣迪丽热巴已违法#】4月23日，话题“陆地CP”登上热搜，引发热议。#迪丽热巴被多次造谣法律底线不容挑战# 2017年《奔跑吧》@M鹿M @Dear-迪丽热巴 二人互动通过剪辑塑造“甜蜜感”，但在录制期间，鹿晗工作室多次发文强调“拒绝炒作”；迪丽热巴方亦通过微博文案（如“单身女子的清香 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 14,770赞</div>
+                <a href="https://m.weibo.cn/detail/5290814261168152" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290814261168152</a>
+                <p>#陆地cp# 新粉宝宝们，我们家不爱宣传苦痛，但是我们需要记住发生过什么。</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-19">
+              <div class="section-index">19</div>
+              <div class="section-copy">
+                <h2>任安乐与安乐传记忆</h2>
+                <p>任安乐仍有剧粉存量，评论赞贡献明显，适合在角色合集里保留。</p>
+                <div class="metric-row">
+                  <span><b>184,457</b> 可归因点赞</span>
+                  <span><b>113,723</b> 帖子赞</span>
+                  <span><b>70,734</b> 评论赞</span>
+                  <span><b>23</b> 命中帖子</span>
+                  <span><b>36</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#19</div></div>
+                
+      <div class="source-kind">帖子 · 95,979赞</div>
+      <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+      <p>#宠爱剧场520高甜上分# #优酷CP的氛围感藏不住了# 心动模式已开启~酷酷子被@Dear-迪丽热巴 @龚俊Simon 的捧脸pose一整个甜晕嘞！ 氛围感都要溢出屏幕啦 这个520，这份宠爱氛围够吗~#安乐传#</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 95,979赞</div>
+                <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+                <p>#宠爱剧场520高甜上分# #优酷CP的氛围感藏不住了# 心动模式已开启~酷酷子被@Dear-迪丽热巴 @龚俊Simon 的捧脸pose一整个甜晕嘞！ 氛围感都要溢出屏幕啦 这个520，这份宠爱氛围够吗~#安乐传#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 7,261赞</div>
+                <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+                <p>电视剧安乐传 看尽天下风华 仍是当年月下。一夜半白头，不过二十韶华。且看任安乐@Dear-迪丽热巴 如何一展芳华</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 7,047赞</div>
+                <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+                <p>任安乐我是你的压寨夫人 520快乐@Dear-迪丽热巴 电视剧安乐传</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 6,549赞</div>
+                <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+                <p>电视剧安乐传胸怀家国，兼济天下，君重不如国，国重不如民，💕期待@Dear-迪丽热巴 演绎的任安乐💕</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 6,308赞</div>
+                <a href="https://m.weibo.cn/detail/4771132949135863" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4771132949135863</a>
+                <p>电视剧安乐传 和既可在疆场展翅；亦可在朝堂翱翔的任安乐一起过520咯！期待与我们智勇双全的任安乐早日相见@Dear-迪丽热巴！</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-20">
+              <div class="section-index">20</div>
+              <div class="section-copy">
+                <h2>演员实绩与90花讨论</h2>
+                <p>数据、番位和实绩讨论属于粉圈战斗力资产，热度有用但传播语气要克制。</p>
+                <div class="metric-row">
+                  <span><b>142,167</b> 可归因点赞</span>
+                  <span><b>137,183</b> 帖子赞</span>
+                  <span><b>4,984</b> 评论赞</span>
+                  <span><b>44</b> 命中帖子</span>
+                  <span><b>14</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#20</div></div>
+                
+      <div class="source-kind">帖子 · 28,720赞</div>
+      <a href="https://m.weibo.cn/detail/5290969217897380" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290969217897380</a>
+      <p>迪丽热巴是不是90🌸&amp;90后🌸第一个(2017年)&amp;唯一的有一番影视剧双破亿(一番云合集均破亿&amp;一番票房破亿)的演员</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 28,720赞</div>
+                <a href="https://m.weibo.cn/detail/5290969217897380" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290969217897380</a>
+                <p>迪丽热巴是不是90🌸&amp;90后🌸第一个(2017年)&amp;唯一的有一番影视剧双破亿(一番云合集均破亿&amp;一番票房破亿)的演员</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 16,444赞</div>
+                <a href="https://m.weibo.cn/detail/5281504322130625" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5281504322130625</a>
+                <p>同一导演镜头下两位90花状态 白日提灯:迪丽热巴 长相思:杨紫 你们觉得谁状态好（ps都是拿的粉丝自己发的图）</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 11,201赞</div>
+                <a href="https://m.weibo.cn/detail/5289736348635862" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289736348635862</a>
+                <p>90花杨紫迪丽热巴今日发布最新新剧预告同平台对打谁让你有想看的冲动</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 10,740赞</div>
+                <a href="https://m.weibo.cn/detail/5288316033305631" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5288316033305631</a>
+                <p>客观说说哈，粉丝之间咋样是粉丝的事儿，感觉迪丽热巴和杨紫，她们本人对对方应该是惺惺相惜的。女演员本来就不容易。 优秀的女性一定会欣赏优秀的女性。 其实巴紫作为90花为数不多的代表，真的做得很好了，一直兢兢业业，谨言慎行，从未行差踏错。 反正我从来没听过她们本人说过什么不合时宜没有分寸 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 9,768赞</div>
+                <a href="https://m.weibo.cn/detail/4851389690291892" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4851389690291892</a>
+                <p>#杨紫迪丽热巴同款公主头造型# 只是美女央视春晚彩排路透罢了，今天上午也刚官宣了湖南卫视跨年 杨紫自己也刚结束电影拍摄已进组拍剧连轴转，紫粉也忙到处跑美美等电视上看杨紫 不要太关注有作品有大爆剧实绩人美心善宠粉的单身事业心女明星杨紫啦 实在忍不住关注美女热度的话可以腾讯视频《长 ...全文</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-21">
+              <div class="section-index">21</div>
+              <div class="section-copy">
+                <h2>利剑玫瑰/央八重播记忆</h2>
+                <p>央八重播和追剧清单偏作品长尾，适合补充国民渠道与剧集曝光。</p>
+                <div class="metric-row">
+                  <span><b>140,668</b> 可归因点赞</span>
+                  <span><b>117,741</b> 帖子赞</span>
+                  <span><b>22,927</b> 评论赞</span>
+                  <span><b>94</b> 命中帖子</span>
+                  <span><b>58</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#21</div></div>
+                
+      <div class="source-kind">帖子 · 34,859赞</div>
+      <a href="https://m.weibo.cn/detail/5293485055022699" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293485055022699</a>
+      <p>#迪丽热巴利剑玫瑰央8重播#【转发分享！#五一假期追剧清单#】这份假期“电子榨菜”清单请查收↓↓这个假期，愿你放松心情，收获快乐！ 《利剑玫瑰》@Dear-迪丽热巴 @金世佳 《风与潮》@任嘉伦Allen @蓝盈莹Lyric 《太平年》@白宇WHITE @周雨彤微博 @朱亚文 @俞灏明 《六姊 ..</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 34,859赞</div>
+                <a href="https://m.weibo.cn/detail/5293485055022699" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293485055022699</a>
+                <p>#迪丽热巴利剑玫瑰央8重播#【转发分享！#五一假期追剧清单#】这份假期“电子榨菜”清单请查收↓↓这个假期，愿你放松心情，收获快乐！ 《利剑玫瑰》@Dear-迪丽热巴 @金世佳 《风与潮》@任嘉伦Allen @蓝盈莹Lyric 《太平年》@白宇WHITE @周雨彤微博 @朱亚文 @俞灏明 《六姊 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 12,226赞</div>
+                <a href="https://m.weibo.cn/detail/5223400014349717" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5223400014349717</a>
+                <p>#利剑玫瑰扛起剧集社会责任# 微博视界大会年度剧集推荐，我给迪丽热巴主演的《利剑玫瑰》投上一票。 每个行业、每个从业者都肩负着不同的社会责任，由于影视行业天生自带的聚光灯效应，影视作品存在的意义绝不仅仅是给观众提供娱乐消遣的作品，不仅仅是创造了多高的收视率，更重要的是有没 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 11,014赞</div>
+                <a href="https://m.weibo.cn/detail/5290129767796127" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290129767796127</a>
+                <p>#浙江卫视重播利剑玫瑰##来浙江卫视N刷利剑玫瑰# 浙江卫视白天下午档正在播出@Dear-迪丽热巴 《利剑·玫瑰》！</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 10,640赞</div>
+                <a href="https://m.weibo.cn/detail/5290177838974005" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290177838974005</a>
+                <p>迪丽热巴《利剑玫瑰》又又又上星啦，品质好剧就是越品越醇，支持利剑玫瑰获奖，支持迪丽热巴获奖</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,564赞</div>
+                <a href="https://m.weibo.cn/detail/5197731951280485" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5197731951280485</a>
+                <p>#央视剧评#【《利剑·玫瑰》：深探打拐一线 剑护玫瑰团圆】剧中打拐民警没有“超级英雄”光环，“打拐铁三角”中的三位警察各有特点。当邓妍 @Dear-迪丽热巴 对被拐女孩郑薇薇 @胡茜茜HQQ 说“找回身体只是第一步，找回生活才是胜利”时，警察的职责已从“破案”升华为“救人”。#央视评利剑玫瑰# →戳 ...全文</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-22">
+              <div class="section-index">22</div>
+              <div class="section-copy">
+                <h2>纪云禾与鲛人系记忆</h2>
+                <p>纪云禾是古装角色资产之一，适合与其他角色共同构成角色宇宙。</p>
+                <div class="metric-row">
+                  <span><b>119,672</b> 可归因点赞</span>
+                  <span><b>100,752</b> 帖子赞</span>
+                  <span><b>18,920</b> 评论赞</span>
+                  <span><b>16</b> 命中帖子</span>
+                  <span><b>29</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#22</div></div>
+                
+      <div class="source-kind">帖子 · 27,376赞</div>
+      <a href="https://m.weibo.cn/detail/4763931597603103" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4763931597603103</a>
+      <p>“恰恰神兵”战鼓擂🥁🥁#与君初相识##恰似故人归# 火热收官！@Dear-迪丽热巴 @任嘉伦Allen 等主演共同叙写东方童话极致浪漫爱情，@驭鲛记之恰似故人归 再创热度新高，微博评分8.9，长短剧评抵御外站注水低分舆情。热度与口碑并行，揭秘驭灵传奇微博流行密码。现揪5位恰恰神兵，随机送出主创签名、</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 27,376赞</div>
+                <a href="https://m.weibo.cn/detail/4763931597603103" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4763931597603103</a>
+                <p>“恰恰神兵”战鼓擂🥁🥁#与君初相识##恰似故人归# 火热收官！@Dear-迪丽热巴 @任嘉伦Allen 等主演共同叙写东方童话极致浪漫爱情，@驭鲛记之恰似故人归 再创热度新高，微博评分8.9，长短剧评抵御外站注水低分舆情。热度与口碑并行，揭秘驭灵传奇微博流行密码。现揪5位恰恰神兵，随机送出主创签名、 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 19,915赞</div>
+                <a href="https://m.weibo.cn/detail/4875259319158377" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4875259319158377</a>
+                <p>#迪丽热巴水晶缀饰礼服#即使已经见过美女@Dear-迪丽热巴 的N种风格，👖也还是会发出第亿次感慨：女娲的所有耐心都用来雕刻热巴的神颜了吧！身穿水晶缀饰礼服，光影变幻间，是见一次心动一次的美貌 诚邀友友一起来酷家《与君初相识·恰似故人归》《三生三世十里桃花》《烈火如歌》、纪录 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 12,414赞</div>
+                <a href="https://m.weibo.cn/detail/4753183861901623" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4753183861901623</a>
+                <p>#与君初相识##恰似故人归# 酷酷子👖带着惊喜福利来啦 🦊仙友专属 万花谷限定之礼！先到先得！ 🦊一键预约 即日起至4月1日17:00，邀好友看片，即有机会预约纪云禾@Dear-迪丽热巴 专属来电！ 🦊静待“禾”音 预约成功者将在4月1日18点后get惊喜 具体活动信息戳图⬇️各位仙友 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,936赞</div>
+                <a href="https://m.weibo.cn/detail/4748323812805538" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4748323812805538</a>
+                <p>#迪丽热巴演的纪云禾是钓鱼高手吧# 小红砖这时候也要同框见证「美」一瞬以后看见小红砖就代表高能预警啦！跟小红砖一块追代言人@Dear-迪丽热巴 的剧拿宠粉礼吧#迪丽热巴与君初相识# 首轮「一块追剧」宠粉礼今天开奖，记得带#与君一块邂逅美好# 参与喔，传送门→ 网页链接 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 7,504赞</div>
+                <a href="https://m.weibo.cn/detail/5015832536549017" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5015832536549017</a>
+                <p>#迪丽热巴首位破3000w点赞女明星#这三千万里面有我很多份！一路走来，爱巴巴@Dear-迪丽热巴 不止三千万遍！炫耀一下合照，我和巴巴一直是双向奔赴！来看👖家巴巴好作品，一起双向奔赴👉《安乐传》《与君初相识·恰似故人归》《烈火如歌》《秦时丽人明月心》《三生三世十里桃花》《远山的呼唤》 等！</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-23">
+              <div class="section-index">23</div>
+              <div class="section-copy">
+                <h2>跑男时期综艺记忆</h2>
+                <p>跑男虽然是早期综艺记忆，但仍有稳定讨论，属于大众认知入口。</p>
+                <div class="metric-row">
+                  <span><b>113,028</b> 可归因点赞</span>
+                  <span><b>111,411</b> 帖子赞</span>
+                  <span><b>1,617</b> 评论赞</span>
+                  <span><b>103</b> 命中帖子</span>
+                  <span><b>6</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#23</div></div>
+                
+      <div class="source-kind">帖子 · 44,070赞</div>
+      <a href="https://m.weibo.cn/detail/5291981527845904" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291981527845904</a>
+      <p>#迪丽热巴跑男只录了12天#哦莫，我还是第一次知道迪丽热巴当初《奔跑吧》只录了12天！ 谁能想到这就给观众们留下这么深刻的印象，没有不爱上跑男迪的义务#奔跑吧##春日心动放映季# 娱乐榜姐的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 44,070赞</div>
+                <a href="https://m.weibo.cn/detail/5291981527845904" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291981527845904</a>
+                <p>#迪丽热巴跑男只录了12天#哦莫，我还是第一次知道迪丽热巴当初《奔跑吧》只录了12天！ 谁能想到这就给观众们留下这么深刻的印象，没有不爱上跑男迪的义务#奔跑吧##春日心动放映季# 娱乐榜姐的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 6,455赞</div>
+                <a href="https://m.weibo.cn/detail/5292004666769898" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292004666769898</a>
+                <p>#迪丽热巴跑男只录了12天#真的假的?居然只录制12天吗？我以为她当时是一直都在的。</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,813赞</div>
+                <a href="https://m.weibo.cn/detail/5292679061833365" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292679061833365</a>
+                <p>白鹿、孟子义、宋雨琦、迪丽热巴、Angelbaby，跑男常驻女MC你最喜欢谁？</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,803赞</div>
+                <a href="https://m.weibo.cn/detail/5292005496196952" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292005496196952</a>
+                <p>#迪丽热巴跑男只录了12天# 录了12天，被骂了9年 迪迪坨，向前走不回头</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,563赞</div>
+                <a href="https://m.weibo.cn/detail/5291989411038002" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291989411038002</a>
+                <p>#迪丽热巴跑男只录了12天# 只录了跑男12天就 大 爆 成 民 选 女 顶 流 天 生 红 人 命 罢 了 未来很久都不会出这种顶级女艺人了 喜欢上她就是一件很容易的事 我就是从不喜欢转到喜欢的，她个人魅力真的很强</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-24">
+              <div class="section-index">24</div>
+              <div class="section-copy">
+                <h2>珠宝腕表品牌大片/MIKIMOTO</h2>
+                <p>珠宝腕表内容偏精致商业与高级感，适合纳入时尚商务资产群。</p>
+                <div class="metric-row">
+                  <span><b>72,009</b> 可归因点赞</span>
+                  <span><b>71,951</b> 帖子赞</span>
+                  <span><b>58</b> 评论赞</span>
+                  <span><b>21</b> 命中帖子</span>
+                  <span><b>6</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#24</div></div>
+                
+      <div class="source-kind">帖子 · 38,632赞</div>
+      <a href="https://m.weibo.cn/detail/5291562235857627" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291562235857627</a>
+      <p>Once Upon D Bag… 椭圆吊坠、一纸随手写就的诗意、从古典画中走出的缪斯……翻转Dior Medallion手袋的椭圆徽章，迪丽热巴的包藏戏梦正待上演。 ELLE的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 38,632赞</div>
+                <a href="https://m.weibo.cn/detail/5291562235857627" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291562235857627</a>
+                <p>Once Upon D Bag… 椭圆吊坠、一纸随手写就的诗意、从古典画中走出的缪斯……翻转Dior Medallion手袋的椭圆徽章，迪丽热巴的包藏戏梦正待上演。 ELLE的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 20,896赞</div>
+                <a href="https://m.weibo.cn/detail/5289136326183776" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5289136326183776</a>
+                <p>迪丽热巴✖️MIKIMOTO🤍</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 5,260赞</div>
+                <a href="https://m.weibo.cn/detail/5288723208209216" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5288723208209216</a>
+                <p>MIKIMOTO🎞</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,546赞</div>
+                <a href="https://m.weibo.cn/detail/5293711543766305" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293711543766305</a>
+                <p>迪丽热巴MIKIMOTO御木本大屏地广，每一帧都是视觉的享受，太高级了😎 #迪丽热巴和素人合影# 搞到顶流明星了的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,532赞</div>
+                <a href="https://m.weibo.cn/detail/5292998219006417" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292998219006417</a>
+                <p>好可爱 热巴昨天迪奥活动展示手袋新物料 好漂亮的公主 #迪丽热巴金刚发型##迪丽热巴迪奥南京活动人气##迪丽热巴# Absinthea的微博视频</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-25">
+              <div class="section-index">25</div>
+              <div class="section-copy">
+                <h2>我很好能做任何事/坚韧发言记忆</h2>
+                <p>一句话被粉丝反复引用，代表她的韧性、自我确认和情绪支点。</p>
+                <div class="metric-row">
+                  <span><b>70,643</b> 可归因点赞</span>
+                  <span><b>66,925</b> 帖子赞</span>
+                  <span><b>3,718</b> 评论赞</span>
+                  <span><b>16</b> 命中帖子</span>
+                  <span><b>4</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#25</div></div>
+                
+      <div class="source-kind">帖子 · 58,412赞</div>
+      <a href="https://m.weibo.cn/detail/4968447574282408" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4968447574282408</a>
+      <p>迪丽热巴：我很好 能做任何事 谁懂这句话的含金量</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 58,412赞</div>
+                <a href="https://m.weibo.cn/detail/4968447574282408" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4968447574282408</a>
+                <p>迪丽热巴：我很好 能做任何事 谁懂这句话的含金量</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 7,438赞</div>
+                <a href="https://m.weibo.cn/detail/4969430352661177" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4969430352661177</a>
+                <p>迪丽热巴：“我很好，我能做任何事” 看花儿与少年对迪丽热巴增加了好感</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 2,914赞</div>
+                <a href="https://m.weibo.cn/detail/5069397472841040" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5069397472841040</a>
+                <p>愿意花💰的10w人头，谁懂这个含金量</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 968赞</div>
+                <a href="https://m.weibo.cn/detail/5292991489248486" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292991489248486</a>
+                <p>迪丽热巴轻轻一出手，近24小时在榜时长5天的含金量☝们中雕明珠美得好权威 #迪丽热巴金刚发型#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 682赞</div>
+                <a href="https://m.weibo.cn/detail/4968447574282408" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4968447574282408</a>
+                <p>“我一定会加油的！”→“我很好 我可以做任何事”好自信好有活力的宝宝</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-26">
+              <div class="section-index">26</div>
+              <div class="section-copy">
+                <h2>李长歌与长歌行记忆</h2>
+                <p>李长歌是角色长尾资产，适合并入古装角色群像。</p>
+                <div class="metric-row">
+                  <span><b>66,049</b> 可归因点赞</span>
+                  <span><b>37,755</b> 帖子赞</span>
+                  <span><b>28,294</b> 评论赞</span>
+                  <span><b>24</b> 命中帖子</span>
+                  <span><b>5</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#26</div></div>
+                
+      <div class="source-kind">评论 · 26,862赞</div>
+      <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+      <p>宝贝 评论区有很多 长歌、云禾、慧珍、妍妍、思慕…谢谢你演绎、塑造完整的她们 你记得、我们记得、观众记得、她们也记得 我无比肯定、支持与期待你的每一个选择你所做的一切 愿你拥有沉浸享受的过程和让你眉眼弯弯的结果 你可以同时拥有一切 我 贺你 思你 慕你</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 26,862赞</div>
+                <a href="https://m.weibo.cn/detail/5291284362431311" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5291284362431311</a>
+                <p>宝贝 评论区有很多 长歌、云禾、慧珍、妍妍、思慕…谢谢你演绎、塑造完整的她们 你记得、我们记得、观众记得、她们也记得 我无比肯定、支持与期待你的每一个选择你所做的一切 愿你拥有沉浸享受的过程和让你眉眼弯弯的结果 你可以同时拥有一切 我 贺你 思你 慕你</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 9,868赞</div>
+                <a href="https://m.weibo.cn/detail/4627398991547003" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4627398991547003</a>
+                <p>#长歌阿隼对视拥抱##长歌行# 哇偶，今天又是为“歌隼”爱情欢呼的一天。哈哈哈，真的被迪丽热巴和吴磊的幕后花絮笑到啦，没想到我们英勇无畏的阿隼竟然也会害羞啊，看着吴磊弟弟和热巴拥抱害羞的表情，真的莫名被甜到了。 正所谓双向奔赴，默默守护，这样的男女主感情戏真可谓是羡煞旁人了！屏幕前的你 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,098赞</div>
+                <a href="https://m.weibo.cn/detail/4611852481593946" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4611852481593946</a>
+                <p>#迪丽热巴李佳琦直播# 又见迪丽热巴的黑长直，玫红色毛衣+玫红色皮裙吧，热爱是真的，双向奔赴的，期待李长歌早日上线 娱乐扒皮的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 6,334赞</div>
+                <a href="https://m.weibo.cn/detail/5280445420013457" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5280445420013457</a>
+                <p>是长歌行里的涉尔，全世界最好的迪丽热巴</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 3,844赞</div>
+                <a href="https://m.weibo.cn/detail/4926011303003557" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4926011303003557</a>
+                <p>李长歌这个角色其实会让我一直对迪丽热巴有滤镜…长歌行让我对吴磊也有隼的滤镜 我们歌隼真的 从头到尾双向奔赴 没有俗套情节 就算是在不同立场也都是在为了百姓为了天下的清明 鸟蛋长情 长歌行剧粉长情不是没有道理的 长歌行值得</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-27">
+              <div class="section-index">27</div>
+              <div class="section-copy">
+                <h2>新疆舞与舞台表现</h2>
+                <p>新疆舞和舞台表现具备身份辨识度，是地域气质与舞台能力的结合。</p>
+                <div class="metric-row">
+                  <span><b>43,636</b> 可归因点赞</span>
+                  <span><b>39,150</b> 帖子赞</span>
+                  <span><b>4,486</b> 评论赞</span>
+                  <span><b>24</b> 命中帖子</span>
+                  <span><b>8</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#27</div></div>
+                
+      <div class="source-kind">帖子 · 9,216赞</div>
+      <a href="https://m.weibo.cn/detail/5293105144135812" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293105144135812</a>
+      <p>#跳起舞就像换了个人#【转存！#谁的舞台让人反复拉进度条#】今天是世界舞蹈日，一起重温经典舞台↓↓愿你随心而舞，向阳而行！ @卡布叻_周深 @Dear-迪丽热巴 @王一博·YIBO @郭富城 @刘雨昕 @TFBOYS-易烊千玺 @刘宇Yu_ @刘浩存</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 9,216赞</div>
+                <a href="https://m.weibo.cn/detail/5293105144135812" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293105144135812</a>
+                <p>#跳起舞就像换了个人#【转存！#谁的舞台让人反复拉进度条#】今天是世界舞蹈日，一起重温经典舞台↓↓愿你随心而舞，向阳而行！ @卡布叻_周深 @Dear-迪丽热巴 @王一博·YIBO @郭富城 @刘雨昕 @TFBOYS-易烊千玺 @刘宇Yu_ @刘浩存</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 8,442赞</div>
+                <a href="https://m.weibo.cn/detail/5239910778798979" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5239910778798979</a>
+                <p>【#迪丽热巴与家乡的双向奔赴#】#大美新疆邀大家枭洒走一回#新疆的石榴花，这一次家乡与你@Dear-迪丽热巴 实现了双向奔赴！#新疆的电视台有迪丽热巴专栏# 喀什博物馆里有你的春晚舞台照，家乡更是把你称为“闪亮的新疆名片”……尽情感受家乡人的宠爱吧~迪丽热巴</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 4,590赞</div>
+                <a href="https://m.weibo.cn/detail/5293162845178918" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293162845178918</a>
+                <p>艾嘛，不行了 嘿子怕不是在反向安利吧 因为这个视频 我就跑去考古热巴跳舞了，爱惨了…</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 3,645赞</div>
+                <a href="https://m.weibo.cn/detail/5281053599077245" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5281053599077245</a>
+                <p>迪丽热巴跳舞好萌啊啊啊 一块小猫吐司的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 3,255赞</div>
+                <a href="https://m.weibo.cn/detail/5282938899927127" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5282938899927127</a>
+                <p>巴粉今天很开心，某些蹲在阴沟里的小米奇就别在挑挑捡捡逐帧分析逐帧p图了，跳梁小丑一样的，都没空搭理。迪丽热巴今天不仅美死了还玩得很开心，又是台词又是唱歌又是跳舞又是链子又是超A女王又是贺小小，巴粉今天超级幸福，尖叫声就没断过</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-28">
+              <div class="section-index">28</div>
+              <div class="section-copy">
+                <h2>白凤九与三生三世记忆</h2>
+                <p>白凤九是老角色记忆，情怀属性强，适合承接早期入坑人群。</p>
+                <div class="metric-row">
+                  <span><b>14,032</b> 可归因点赞</span>
+                  <span><b>12,053</b> 帖子赞</span>
+                  <span><b>1,979</b> 评论赞</span>
+                  <span><b>12</b> 命中帖子</span>
+                  <span><b>6</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#28</div></div>
+                
+      <div class="source-kind">帖子 · 5,689赞</div>
+      <a href="https://m.weibo.cn/detail/4905301876670628" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4905301876670628</a>
+      <p>#适配的妆造对角色加成有多大# @Dear-迪丽热巴 在《三生三世》系列里可以是单纯可爱的凤九小殿下，也可以下凡历劫成为温婉大气的淑妃，最后蜕变成了气场全开的青丘帝姬。每一个身份都有着独特的妆造印记，形成了不同的角色性格。cr.们爱丽丝 #初夏能量站# 央视网文娱的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 5,689赞</div>
+                <a href="https://m.weibo.cn/detail/4905301876670628" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4905301876670628</a>
+                <p>#适配的妆造对角色加成有多大# @Dear-迪丽热巴 在《三生三世》系列里可以是单纯可爱的凤九小殿下，也可以下凡历劫成为温婉大气的淑妃，最后蜕变成了气场全开的青丘帝姬。每一个身份都有着独特的妆造印记，形成了不同的角色性格。cr.们爱丽丝 #初夏能量站# 央视网文娱的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,734赞</div>
+                <a href="https://m.weibo.cn/detail/5125585204676679" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5125585204676679</a>
+                <p>«偏偏»10位爱丽丝大合唱版 ——电视剧«三生三世枕上书»开播五周年纪念 ☁️音乐：网页链接 四海安然，佛铃花落，天海澄碧 悠悠三世一梦黄粱去 是灵动音容，是耳边软语 是剑头生花，是血雨淋漓 纵使兰若梦破，苍生归定 却仍心愉一侧，甘心魂离 天地六合皆于指掌间，流转未息 而心动，偏偏 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,719赞</div>
+                <a href="https://m.weibo.cn/detail/5280203658231991" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5280203658231991</a>
+                <p>#迪丽热巴眼技#真的很心疼迪丽热巴的黑粉，演技演技没得说，颜值颜值喷不了，人家得过奖，就是实打实的，出圈的咋没有，你好李慧珍，麻辣变形计，三生三世枕上书，利剑玫瑰，你是我的荣耀，还要喷啥，我记得高雯语录也很出圈吧，第一次看跑男一眼就看上她了，敬业程度在内娱也是排的上号的，宠粉也是真 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 876赞</div>
+                <a href="https://m.weibo.cn/detail/4932556111743050" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4932556111743050</a>
+                <p>高雯八百万粉丝等着共进晚餐，李长歌修了两只兔子，任安乐大理寺见了两位官员，阿娜尔罕首播是2015年，白凤九三生石上刻东华帝君的名字，安旎拿白棋，破八千万是2023年8月8号，你好星期六猜词猜到你是人质，老有所依，创造营是发起人身份，热爱举行时间是六月一号</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 782赞</div>
+                <a href="https://m.weibo.cn/detail/5290934608595399" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290934608595399</a>
+                <p>我全按照百度百科资料说的，造yao啥了…… 鹿晗当时不是男顶流吗？热巴当时不是凭三生三世火吗？</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-29">
+              <div class="section-index">29</div>
+              <div class="section-copy">
+                <h2>安旎与公诉记忆</h2>
+                <p>安旎提供职业女性角色补充，热度不高但类型稀缺。</p>
+                <div class="metric-row">
+                  <span><b>9,224</b> 可归因点赞</span>
+                  <span><b>8,952</b> 帖子赞</span>
+                  <span><b>272</b> 评论赞</span>
+                  <span><b>11</b> 命中帖子</span>
+                  <span><b>1</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#29</div></div>
+                
+      <div class="source-kind">帖子 · 2,960赞</div>
+      <a href="https://m.weibo.cn/detail/4913346379780124" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4913346379780124</a>
+      <p>#迪丽热巴真发了100多张自拍# #公诉全员兑现flag#@Dear-迪丽热巴 可太懂我们想看什么了吧！《公诉》全员接力兑现弹幕flag，真实力宠粉！100张自拍真的能爱很久！今晚接着去鹅家追《公诉》了，安旎检察官请“诉诉”破案！想看！</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 2,960赞</div>
+                <a href="https://m.weibo.cn/detail/4913346379780124" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4913346379780124</a>
+                <p>#迪丽热巴真发了100多张自拍# #公诉全员兑现flag#@Dear-迪丽热巴 可太懂我们想看什么了吧！《公诉》全员接力兑现弹幕flag，真实力宠粉！100张自拍真的能爱很久！今晚接着去鹅家追《公诉》了，安旎检察官请“诉诉”破案！想看！</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,704赞</div>
+                <a href="https://m.weibo.cn/detail/4906464236278484" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4906464236278484</a>
+                <p>#迪丽热巴私服#巴姐没有做错任何事 巴姐只是随随便便发个照片不小心秒了一众普女 不过是巴姐过生日和粉丝双向奔赴罢了 PS：明天欢迎收看美女检察官安旎的公诉</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,313赞</div>
+                <a href="https://m.weibo.cn/detail/4912101287791743" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4912101287791743</a>
+                <p>热爱是双向奔赴的🫶🏻热巴@Dear-迪丽热巴 新剧《公诉》正在播出，内容超敢拍，剧情超精彩，每晚更新，一起看安旎吧 #迪丽热巴的机场穿搭# ｜#迪丽热巴佟大为高燃时刻# 嘉行迪丽热巴工作室的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,270赞</div>
+                <a href="https://m.weibo.cn/detail/4874413030246609" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4874413030246609</a>
+                <p>【爱丽丝三月行程图】新鲜出炉，动态多多，机会多多，本月能见到新鲜巴宝咯～@Dear-迪丽热巴 本月你最期待的行程是？ #迪丽热巴公诉精英# dlrb#迪丽热巴安旎#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 914赞</div>
+                <a href="https://m.weibo.cn/detail/4853394520411263" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4853394520411263</a>
+                <p>🚝爱丽丝云游攻略——上海站 元旦假期的最后一天，美宣来给大家送上一份游玩小攻略迪迪vlog里有哪些可以get的同款呢？一起来看看吧 @Dear-迪丽热巴 #迪丽热巴公诉精英# dlrb#迪丽热巴安旎#</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-30">
+              <div class="section-index">30</div>
+              <div class="section-copy">
+                <h2>胖迪昵称与吃货反差</h2>
+                <p>胖迪与吃货反差是早期亲切感来源，适合做轻松考古。</p>
+                <div class="metric-row">
+                  <span><b>7,443</b> 可归因点赞</span>
+                  <span><b>5,691</b> 帖子赞</span>
+                  <span><b>1,752</b> 评论赞</span>
+                  <span><b>11</b> 命中帖子</span>
+                  <span><b>3</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#30</div></div>
+                
+      <div class="source-kind">帖子 · 3,913赞</div>
+      <a href="https://m.weibo.cn/detail/5290643561910029" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290643561910029</a>
+      <p>胖迪🥹 你的美好我一辈子珍藏</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 3,913赞</div>
+                <a href="https://m.weibo.cn/detail/5290643561910029" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290643561910029</a>
+                <p>胖迪🥹 你的美好我一辈子珍藏</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 1,276赞</div>
+                <a href="https://m.weibo.cn/detail/4715454314582200" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4715454314582200</a>
+                <p>胖迪@Dear-迪丽热巴 提前祝你圣诞/新年快乐呀～新的一年愿你热爱的都得到，得到的都热爱（vlog/十八宫自拍考虑考虑啥时候发呢）</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,042赞</div>
+                <a href="https://m.weibo.cn/detail/4682453170262879" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4682453170262879</a>
+                <p>小巴发微博最有趣的事就是看品牌爸爸们团建内娱模仿不来的宠爱还是由我家品牌爸爸首创，就很牛逼 #迪丽热巴晒自制美食#</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 533赞</div>
+                <a href="https://m.weibo.cn/detail/5290789932370439" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5290789932370439</a>
+                <p>一些早期胖迪的碎片日常🎥</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">评</div></div>
+              <div>
+                <div class="evidence-meta">评论 · 351赞</div>
+                <a href="https://m.weibo.cn/detail/5292476416918298" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5292476416918298</a>
+                <p>还有零食网页链接</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+            <section class="memory-section" id="memory-31">
+              <div class="section-index">31</div>
+              <div class="section-copy">
+                <h2>高雯出圈名场面</h2>
+                <p>高雯是早期出圈角色，当前热度较低但辨识度仍在。</p>
+                <div class="metric-row">
+                  <span><b>4,330</b> 可归因点赞</span>
+                  <span><b>4,319</b> 帖子赞</span>
+                  <span><b>11</b> 评论赞</span>
+                  <span><b>18</b> 命中帖子</span>
+                  <span><b>1</b> 命中评论</span>
+                </div>
+              </div>
+              <aside class="feature-source">
+                <div class="feature-thumb"><div class="thumb-fallback">#31</div></div>
+                
+      <div class="source-kind">帖子 · 1,297赞</div>
+      <a href="https://m.weibo.cn/detail/5190361405719508" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5190361405719508</a>
+      <p>#克拉恋人# “以至于我不想说其他人的名字” 笑到没who了的微博视频</p>
+    
+              </aside>
+              <ol class="evidence-list">
+                
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,297赞</div>
+                <a href="https://m.weibo.cn/detail/5190361405719508" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5190361405719508</a>
+                <p>#克拉恋人# “以至于我不想说其他人的名字” 笑到没who了的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,225赞</div>
+                <a href="https://m.weibo.cn/detail/5190378040853714" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5190378040853714</a>
+                <p>#克拉恋人# 当年的高雯太出圈了，简直是白月光般的存在，不许有人忤逆高雯！ 笑到没who了的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 1,068赞</div>
+                <a href="https://m.weibo.cn/detail/4799539712887834" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/4799539712887834</a>
+                <p>让我康康有多少爱丽丝是从大明星高雯入坑热巴的？#迪丽热巴 梦回高雯#真的没人能抗拒我们古灵精怪的高雯，现在再重温这部剧还是会沦陷在高雯的可爱里，女明星什么的角色和热巴适配度超高的！ 吃我一集安利的微博视频</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 650赞</div>
+                <a href="https://m.weibo.cn/detail/5242672740568406" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5242672740568406</a>
+                <p>认识热巴，是因为高雯这个角色； 但真正喜欢上她，是在镜头之外。 我喜欢她身上那份难得的安静—— 不喧哗、不急躁、不争抢、不迎合。 这些年，她一直在期待抑或是质疑里行进， 女性演员在行业里的生存难度本来就更高， 既要漂亮，又要扛剧； 既要商业成绩，又要深度角色； 既不能重复自己，又不能犯 ...全文</p>
+              </div>
+            </li>
+            
+
+            <li>
+              <div class="mini-thumb"><div class="mini-thumb-fallback">WB</div></div>
+              <div>
+                <div class="evidence-meta">帖子 · 60赞</div>
+                <a href="https://m.weibo.cn/detail/5293894565896702" target="_blank" rel="noreferrer">https://m.weibo.cn/detail/5293894565896702</a>
+                <p>投稿【迪丽热巴高雯 】 抬手不是抱歉 导演你还得练</p>
+              </div>
+            </li>
+            
+              </ol>
+            </section>
+            
+  </main>
+</body>
+</html>
