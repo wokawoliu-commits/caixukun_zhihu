@@ -1,2 +1,8 @@
+.DS_Store
+.assetsignore
+.gitattributes
+.git
+.github
+wrangler.jsonc
 htt-weibo2/weibo_50k_hotlist_visual_filtered.csv
 htt-weibo5/weibo_50k_hotlist_visual_filtered.csv
