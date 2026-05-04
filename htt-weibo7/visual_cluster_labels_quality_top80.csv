@@ -1,0 +1,11 @@
+cluster_id,label,notes
+vc0023,exclude,text/comment screenshot, not a person image
+vc0027,exclude,chat/text screenshot, not a person image
+vc0031,exclude,mostly text/video screenshot, not a person image
+vc0039,exclude,product graphic with tiny thumbnails, not a person image
+vc0050,exclude,product graphic with tiny thumbnails, not a person image
+vc0051,exclude,phone screenshot, not a person image
+vc0067,exclude,handwritten text image
+vc0068,exclude,meme/text image, not a person image
+vc0075,exclude,award certificate text image
+vc0080,exclude,cat screenshot, not a person image

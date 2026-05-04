@@ -1,0 +1,17 @@
+{
+  "deduped_posts": 50001,
+  "deduped_comments": 4068,
+  "source_mode": "all",
+  "acceptance_mode": "quality",
+  "source_posts": 50001,
+  "eligible_image_posts": 23277,
+  "accepted_post_ids": 1170,
+  "accepted_comment_ids": 4,
+  "candidate_pic_ids": 977,
+  "pic_rows": 977,
+  "cluster_top_pics": 900,
+  "downloaded_or_cached_images": 900,
+  "visual_clusters": 860,
+  "top_cluster_likes": 809,
+  "hash_distance": 7
+}

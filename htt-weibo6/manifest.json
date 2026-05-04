@@ -1,0 +1,20 @@
+{
+  "title": "黄婷婷微博图片记忆 Top 50｜严格筛选版",
+  "generated_at": "2026-05-04 01:26",
+  "source_csv": "data/weibo_huangtingting_image_assets/analysis_strict_memory_final/image_hotlist.csv",
+  "summary": {
+    "deduped_posts": 50001,
+    "deduped_comments": 4068,
+    "source_mode": "container",
+    "source_posts": 32323,
+    "eligible_image_posts": 17539,
+    "strict_image_discussion_posts": 382,
+    "accepted_post_ids": 382,
+    "accepted_comment_ids": 2,
+    "candidate_images": 332,
+    "scored_images": 323,
+    "top_total_likes": 275
+  },
+  "displayed_images": 50,
+  "image_dir": "image"
+}
