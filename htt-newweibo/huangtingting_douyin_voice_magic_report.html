@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>黄婷婷口播 ID 视频素材参考</title>
+  <style>
+    :root {
+      --paper: #f8f5ef;
+      --paper-2: #efe9dd;
+      --ink: #171615;
+      --muted: #6d6760;
+      --line: #d9d0c0;
+      --accent: #d65f43;
+      --accent-2: #23766f;
+      --deep: #263238;
+      --white: #fffdf8;
+      --shadow: 0 18px 48px rgba(38, 50, 56, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 74svh;
+      align-items: end;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(23, 22, 21, 0.82), rgba(23, 22, 21, 0.48) 45%, rgba(23, 22, 21, 0.12)),
+        url("images/cover_sleep_notice.png") center / cover no-repeat;
+      color: var(--white);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 18%;
+      background: linear-gradient(180deg, rgba(248, 245, 239, 0), var(--paper));
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 84px 0 112px;
+      animation: rise 680ms ease-out both;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: rgba(255, 253, 248, 0.78);
+      font-size: 13px;
+      letter-spacing: 0;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(42px, 6vw, 84px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: 760;
+    }
+
+    .hero-copy {
+      max-width: 660px;
+      margin: 24px 0 0;
+      color: rgba(255, 253, 248, 0.86);
+      font-size: clamp(16px, 2vw, 20px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .meta-pill {
+      border: 1px solid rgba(255, 253, 248, 0.32);
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(23, 22, 21, 0.28);
+      color: rgba(255, 253, 248, 0.86);
+      font-size: 13px;
+      backdrop-filter: blur(8px);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 72px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 1.2fr);
+      gap: 56px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(26px, 3.5vw, 44px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .stat {
+      min-height: 118px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1;
+      color: var(--deep);
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      margin: 18px 0 20px;
+      background: rgba(248, 245, 239, 0.92);
+      backdrop-filter: blur(10px);
+    }
+
+    .tab {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 9px 14px;
+      background: var(--white);
+      color: var(--muted);
+      font: inherit;
+      font-size: 14px;
+      cursor: pointer;
+      transition: transform 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .tab:hover,
+    .tab.active {
+      border-color: var(--accent);
+      color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .reference-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .ref-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 12px 32px rgba(38, 50, 56, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .ref-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 42px rgba(38, 50, 56, 0.14);
+    }
+
+    .thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: var(--paper-2);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 280ms ease;
+    }
+
+    .ref-card:hover .thumb img {
+      transform: scale(1.07);
+    }
+
+    .tag {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(23, 22, 21, 0.72);
+      color: var(--white);
+      font-size: 12px;
+    }
+
+    .ref-body {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .ref-title {
+      margin: 0;
+      min-height: 52px;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .creator {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .metric-row b {
+      display: block;
+      color: var(--ink);
+      font-size: 13px;
+    }
+
+    .ref-link {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 38px;
+      border-radius: 6px;
+      background: var(--deep);
+      color: var(--white);
+      font-size: 14px;
+      transition: background 160ms ease;
+    }
+
+    .ref-link:hover {
+      background: var(--accent);
+    }
+
+    .recommendations {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+    }
+
+    .rec {
+      padding: 24px;
+      background: var(--white);
+    }
+
+    .rec small {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .rec h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .rec p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .script-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .script {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 28px;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .script:first-child {
+      border-top: 0;
+    }
+
+    .script-label {
+      color: var(--accent-2);
+      font-weight: 760;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 0;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.55;
+      font-weight: 650;
+    }
+
+    .note {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .shoot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+    }
+
+    .shoot {
+      padding: 26px;
+      background: var(--white);
+    }
+
+    .shoot h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .shoot dl {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+    }
+
+    .shoot dt {
+      color: var(--accent-2);
+      font-weight: 760;
+    }
+
+    .shoot dd {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .source-table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .source-table th,
+    .source-table td {
+      padding: 15px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    .source-table th {
+      color: var(--muted);
+      font-weight: 650;
+      background: #f1ece2;
+    }
+
+    .source-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .source-table a {
+      color: var(--accent-2);
+      font-weight: 720;
+    }
+
+    footer {
+      padding: 34px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .section-head,
+      .script {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .stats,
+      .reference-grid,
+      .recommendations,
+      .shoot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 68svh;
+      }
+
+      .hero-inner {
+        width: min(100% - 28px, 1120px);
+        padding: 70px 0 88px;
+      }
+
+      main {
+        width: min(100% - 28px, 1120px);
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .stats,
+      .reference-grid,
+      .recommendations,
+      .shoot-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .source-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">MediaCrawler 抖音搜索整理 · 2026-05-06</p>
+        <h1>黄婷婷口播 ID 视频素材参考</h1>
+        <p class="hero-copy">围绕晚安语音、起床铃、零食魔术和饭撒小梗，筛出适合黄婷婷录制和拍摄的高互动抖音示例，并整理成可直接交给策划执行的版本。</p>
+        <div class="hero-meta">
+          <span class="meta-pill">两轮搜索</span>
+          <span class="meta-pill">10 组关键词</span>
+          <span class="meta-pill">140 条结果</span>
+          <span class="meta-pill">第二轮间隔 31 秒</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="reveal" id="summary">
+        <div class="section-head">
+          <h2>结论先看</h2>
+          <p class="lead">最适合黄婷婷的不是强剧情，而是“轻声靠近镜头 + 一句专属感 + 一个小动作”。晚安走姐姐式温柔管睡觉，起床走专属叫醒，魔术和小梗服务于官宣 ID、生日 ID 的开头破冰。</p>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>140</strong>
+            <span>MediaCrawler 抓取结果</span>
+          </div>
+          <div class="stat">
+            <strong>10</strong>
+            <span>抖音搜索关键词</span>
+          </div>
+          <div class="stat">
+            <strong>3</strong>
+            <span>语音素材方向</span>
+          </div>
+          <div class="stat">
+            <strong>4</strong>
+            <span>可拍摄趣味方案</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" id="references">
+        <div class="section-head">
+          <h2>精选抖音示例</h2>
+          <p class="lead">卡片按用途分组，点击按钮可打开原抖音视频。数据来自本次 MediaCrawler 搜索结果，点赞、收藏、转发和评论用于判断方向热度。</p>
+        </div>
+
+        <div class="tabs" aria-label="示例筛选">
+          <button class="tab active" data-filter="all">全部</button>
+          <button class="tab" data-filter="晚安语音">晚安语音</button>
+          <button class="tab" data-filter="起床语音">起床铃</button>
+          <button class="tab" data-filter="零食魔术">零食魔术</button>
+          <button class="tab" data-filter="饭撒小梗">饭撒小梗</button>
+        </div>
+
+        <div class="reference-grid">
+          <article class="ref-card" data-kind="晚安语音">
+            <div class="thumb">
+              <img src="images/cover_sleep_notice.png" alt="打扰一下，该睡觉了">
+              <span class="tag">晚安语音</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">打扰一下，该睡觉了！</p>
+              <span class="creator">小甜酒 · 温柔管睡觉</span>
+              <div class="metric-row"><span><b>324.1w</b>赞</span><span><b>37.5w</b>藏</span><span><b>61.2w</b>转</span><span><b>21.1w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7075870332820671774" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="晚安语音">
+            <div class="thumb">
+              <img src="images/cover_staying_up.jpg" alt="怎么还熬夜呢">
+              <span class="tag">晚安语音</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">怎么还熬夜呢</p>
+              <span class="creator">元呆呆 · 轻微嗔怪甜妹感</span>
+              <div class="metric-row"><span><b>136.2w</b>赞</span><span><b>11.4w</b>藏</span><span><b>38.9w</b>转</span><span><b>5.7w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7411516197365239052" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="晚安语音">
+            <div class="thumb">
+              <img src="images/cover_goodnight_pack.jpg" alt="晚安语音包">
+              <span class="tag">晚安语音</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">晚安语音包，可设置睡眠提醒</p>
+              <span class="creator">麻勒勒 · 明确语音素材定位</span>
+              <div class="metric-row"><span><b>27.1w</b>赞</span><span><b>4.0w</b>藏</span><span><b>6.9w</b>转</span><span><b>1.9w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7256798845361818917" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="起床语音">
+            <div class="thumb">
+              <img src="images/cover_wakeup.jpg" alt="起床啦">
+              <span class="tag">起床铃</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">起床啦</p>
+              <span class="creator">月如雪 · 短句强唤醒</span>
+              <div class="metric-row"><span><b>200.1w</b>赞</span><span><b>17.2w</b>藏</span><span><b>276.3w</b>转</span><span><b>9.2w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7587987624473858899" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="起床语音">
+            <div class="thumb">
+              <img src="images/cover_baby_wakeup.png" alt="宝宝起床了">
+              <span class="tag">起床铃</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">宝宝，起床了</p>
+              <span class="creator">小羊想暴富 · 第一视角叫醒</span>
+              <div class="metric-row"><span><b>180.4w</b>赞</span><span><b>10.3w</b>藏</span><span><b>108.3w</b>转</span><span><b>2.4w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7557976547430370612" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="起床语音">
+            <div class="thumb">
+              <img src="images/cover_morning_call.jpg" alt="以后换我叫你吧">
+              <span class="tag">起床铃</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">早安，以后换我叫你吧</p>
+              <span class="creator">芊芊一条龍 · 专属叫醒服务</span>
+              <div class="metric-row"><span><b>53.7w</b>赞</span><span><b>6.9w</b>藏</span><span><b>18.5w</b>转</span><span><b>9040</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7349852879382957350" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="零食魔术">
+            <div class="thumb">
+              <img src="images/cover_lollipop_magic.jpg" alt="空手变棒棒糖">
+              <span class="tag">零食魔术</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">空手变棒棒糖哄女朋友开心</p>
+              <span class="creator">魔术师阿龙 · 最适合替换成产品零食</span>
+              <div class="metric-row"><span><b>107.6w</b>赞</span><span><b>27.6w</b>藏</span><span><b>8.3w</b>转</span><span><b>2.8w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7218546801425550625" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="零食魔术">
+            <div class="thumb">
+              <img src="images/cover_candy_magic.jpg" alt="彩虹糖魔术">
+              <span class="tag">零食魔术</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">彩虹糖聚会魔术</p>
+              <span class="creator">大钱小钱 · 零食天然入镜</span>
+              <div class="metric-row"><span><b>8.5w</b>赞</span><span><b>1.5w</b>藏</span><span><b>1.3w</b>转</span><span><b>764</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7457120973268028687" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="饭撒小梗">
+            <div class="thumb">
+              <img src="images/cover_heart_pose.jpg" alt="花式比心">
+              <span class="tag">饭撒小梗</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">花式比心，花式爱你</p>
+              <span class="creator">仙女味的廉静 · 借位比心</span>
+              <div class="metric-row"><span><b>113.8w</b>赞</span><span><b>4.5w</b>藏</span><span><b>11.6w</b>转</span><span><b>7.9w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7122790775708011813" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="饭撒小梗">
+            <div class="thumb">
+              <img src="images/cover_idol_fanservice.jpg" alt="爱豆饭撒大全">
+              <span class="tag">饭撒小梗</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">爱豆饭撒大全，收藏让自担学起来</p>
+              <span class="creator">大家好我是盐水鸭 · ID 开头动作库</span>
+              <div class="metric-row"><span><b>7.7w</b>赞</span><span><b>8421</b>藏</span><span><b>8345</b>转</span><span><b>5144</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7473693999933459721" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+
+          <article class="ref-card" data-kind="饭撒小梗">
+            <div class="thumb">
+              <img src="images/cover_cat_cookie_pose.jpg" alt="小猫饼干饭撒姿势">
+              <span class="tag">饭撒小梗</span>
+            </div>
+            <div class="ref-body">
+              <p class="ref-title">让自担来学这个，不追星也能当拍照姿势</p>
+              <span class="creator">被麦香鸡救过命 · 饭撒手势舞</span>
+              <div class="metric-row"><span><b>49.7w</b>赞</span><span><b>13.9w</b>藏</span><span><b>8.8w</b>转</span><span><b>1.3w</b>评</span></div>
+              <a class="ref-link" href="https://www.douyin.com/video/7463859373404605759" target="_blank" rel="noreferrer">打开抖音示例</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="reveal" id="strategy">
+        <div class="section-head">
+          <h2>适配判断</h2>
+          <p class="lead">黄婷婷适合走“亲近但不油”的粉丝向口吻，镜头表达要自然，重点是让粉丝感觉这是专属素材，而不是泛用语音包。</p>
+        </div>
+        <div class="recommendations">
+          <div class="rec">
+            <small>晚安语音</small>
+            <h3>姐姐感 + 轻轻管一下</h3>
+            <p>爆款共性是“怎么还不睡”“该睡觉了”这类轻嗔怪句式。适合她用温柔、慢半拍、靠近麦克风的方式说。</p>
+          </div>
+          <div class="rec">
+            <small>起床铃</small>
+            <h3>专属叫醒 + 可设置铃声</h3>
+            <p>比音乐铃更适合的是“以后换我叫你”“专属叫醒服务”这类人声提醒，粉丝保存动机更强。</p>
+          </div>
+          <div class="rec">
+            <small>趣味开头</small>
+            <h3>动作要短，梗要轻</h3>
+            <p>ID 视频开头建议控制在 3 到 6 秒。魔术只做显现和遮挡，不做复杂手法，避免录制现场反复失败。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" id="scripts">
+        <div class="section-head">
+          <h2>可直接录的语音文案</h2>
+          <p class="lead">文案按照黄婷婷可说的语气重写，不照搬示例原文。录制时每条建议留两个版本：正常甜度和更轻一点的姐姐版。</p>
+        </div>
+        <div class="script-list">
+          <div class="script">
+            <div class="script-label">晚安语音 1</div>
+            <div>
+              <blockquote>打扰一下，该睡觉啦。今天已经很辛苦了，手机先放一放，眼睛闭上。今晚的梦要甜一点，明天醒来也要记得开心。晚安，好梦。</blockquote>
+              <p class="note">参考方向：小甜酒“该睡觉了”、麻勒勒“睡眠提醒铃声”。语气是温柔提醒，不要太撒娇。</p>
+            </div>
+          </div>
+          <div class="script">
+            <div class="script-label">晚安语音 2</div>
+            <div>
+              <blockquote>怎么还没睡呀？不许偷偷熬夜了哦。现在跟我一起倒数，三、二、一，关灯。今天到这里就很好了，剩下的明天再努力。晚安。</blockquote>
+              <p class="note">参考方向：元呆呆“怎么还熬夜呢”。适合粉丝循环听，最后“晚安”要轻一点。</p>
+            </div>
+          </div>
+          <div class="script">
+            <div class="script-label">起床铃</div>
+            <div>
+              <blockquote>起床啦，专属叫醒服务开始。再赖床一分钟，就要被我先吃掉啦。早安，今天也要元气满满地出门。</blockquote>
+              <p class="note">参考方向：月如雪“起床啦”、芊芊一条龍“以后换我叫你”。可以把“吃掉”替换成具体产品名。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" id="shooting">
+        <div class="section-head">
+          <h2>魔术和小梗脚本</h2>
+          <p class="lead">全部按“好学、不容易出错、能结合产品零食”的标准设计。官宣 ID 和生日 ID 可以直接套用。</p>
+        </div>
+        <div class="shoot-grid">
+          <div class="shoot">
+            <h3>官宣 ID：空手变零食</h3>
+            <dl>
+              <div>
+                <dt>道具</dt>
+                <dd>一包小体积产品零食，适合手心藏或镜头遮挡。</dd>
+              </div>
+              <div>
+                <dt>动作</dt>
+                <dd>先展示空手，双手在镜头前轻轻一捏，变出零食。可用手心藏物或跳切。</dd>
+              </div>
+              <div>
+                <dt>台词</dt>
+                <dd>“听说今天要官宣一个甜甜的消息，那我先把甜甜的东西变出来。”</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="shoot">
+            <h3>生日 ID：生日愿望袋</h3>
+            <dl>
+              <div>
+                <dt>道具</dt>
+                <dd>礼物袋、产品零食、生日祝福小卡。小卡和零食提前藏在袋子夹层。</dd>
+              </div>
+              <div>
+                <dt>动作</dt>
+                <dd>给镜头看空袋，摇一摇，从里面拿出零食和卡片。</dd>
+              </div>
+              <div>
+                <dt>台词</dt>
+                <dd>“今天的生日愿望我帮你变出来啦，第一口快乐，送给你。”</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="shoot">
+            <h3>开头小梗：假装变魔术比心</h3>
+            <dl>
+              <div>
+                <dt>动作</dt>
+                <dd>说“我给你变个魔术，看好了”，双手挡镜头一秒，打开后是手指比心。</dd>
+              </div>
+              <div>
+                <dt>台词</dt>
+                <dd>“变出来了，今天份的喜欢。”然后进入正式 ID。</dd>
+              </div>
+              <div>
+                <dt>参考</dt>
+                <dd>借位比心、花式比心、爱豆饭撒手势合集。</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="shoot">
+            <h3>开头小梗：零食冷笑话</h3>
+            <dl>
+              <div>
+                <dt>动作</dt>
+                <dd>拿起产品零食，对镜头认真发问，停顿半秒再揭晓。</dd>
+              </div>
+              <div>
+                <dt>台词</dt>
+                <dd>“你知道它为什么这么好吃吗？因为它有点东西。那我呢？我也有点想你。”</dd>
+              </div>
+              <div>
+                <dt>提示</dt>
+                <dd>冷笑话说完立刻笑一下收住，不要解释，直接切入 ID 正文。</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <section class="reveal" id="sources">
+        <div class="section-head">
+          <h2>搜索记录</h2>
+          <p class="lead">本页基于本地 MediaCrawler 结果整理。第一轮在新增间隔要求前完成；第二轮开始已把抓取休眠改为 31 秒。</p>
+        </div>
+        <table class="source-table">
+          <thead>
+            <tr>
+              <th>轮次</th>
+              <th>关键词</th>
+              <th>结果数</th>
+              <th>说明</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>第一轮</td>
+              <td>晚安语音、起床铃声、零食魔术、饭撒比心、变魔术比心</td>
+              <td>70</td>
+              <td>覆盖语音、魔术和饭撒大方向。</td>
+            </tr>
+            <tr>
+              <td>第二轮</td>
+              <td>起床语音、喊你起床、女友叫醒语音、早安语音、爱豆晚安语音</td>
+              <td>70</td>
+              <td>更精准补充叫醒语音和爱豆晚安参考；请求间隔 31 秒。</td>
+            </tr>
+            <tr>
+              <td>源数据</td>
+              <td colspan="3">/Users/huangdong/Downloads/codex-douyin/results/douyin/jsonl/search_contents_2026-05-06.jsonl</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      生成位置：/Users/huangdong/Downloads/github/caixukun_zhihu/htt-newweibo/huangtingting_douyin_voice_magic_report.html
+    </footer>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const cards = document.querySelectorAll(".ref-card");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item) => item.classList.remove("active"));
+        tab.classList.add("active");
+        const filter = tab.dataset.filter;
+        cards.forEach((card) => {
+          const visible = filter === "all" || card.dataset.kind === filter;
+          card.style.display = visible ? "grid" : "none";
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    document.querySelectorAll("img").forEach((img) => {
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        img.parentElement.style.background = "#efe9dd";
+      });
+    });
+  </script>
+</body>
+</html>
