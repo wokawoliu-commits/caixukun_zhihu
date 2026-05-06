@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>黄婷婷口播 ID 趣味素材参考</title>
+  <style>
+    :root {
+      --ink: #232323;
+      --muted: #6f6f6f;
+      --line: #e7e2d8;
+      --paper: #fffaf0;
+      --panel: #ffffff;
+      --accent: #db4c3f;
+      --accent-2: #2f8f83;
+      --accent-3: #f2b84b;
+      --soft: #f8efe4;
+      --soft-green: #edf8f4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      background: var(--paper);
+    }
+
+    a {
+      color: #9f2f29;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(159, 47, 41, 0.28);
+    }
+
+    a:hover {
+      border-bottom-color: currentColor;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 44px 28px 64px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.8fr);
+      gap: 28px;
+      align-items: end;
+      padding: 38px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: 38px;
+      line-height: 1.15;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 760px;
+      margin: 0;
+      color: #49413a;
+      font-size: 17px;
+    }
+
+    .meta {
+      display: grid;
+      gap: 10px;
+      padding: 18px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    .meta div {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 14px;
+    }
+
+    .meta span:first-child {
+      color: var(--muted);
+    }
+
+    section {
+      margin-top: 28px;
+      padding: 28px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 24px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 22px 0 10px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 5px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      color: #5a4c3f;
+      background: #fff6e8;
+      font-weight: 700;
+    }
+
+    .note {
+      padding: 14px 16px;
+      margin: 14px 0;
+      border-left: 4px solid var(--accent-3);
+      background: #fff8e8;
+      color: #4a4036;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .script,
+    .idea {
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: #fffdf9;
+    }
+
+    .script strong,
+    .idea strong {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #7f2b25;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 2px 9px;
+      margin: 0 6px 6px 0;
+      border: 1px solid rgba(47, 143, 131, 0.28);
+      color: #1f6f66;
+      background: var(--soft-green);
+      font-size: 13px;
+    }
+
+    .shot-list {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 8px 14px;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+
+    .shot-list b {
+      color: #5a4c3f;
+    }
+
+    .visual {
+      width: 100%;
+      margin-top: 12px;
+      border: 1px solid var(--line);
+      background: #f3f0ea;
+    }
+
+    .small {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .priority {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #fff;
+      background: var(--accent);
+      padding: 2px 8px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .ok {
+      background: var(--accent-2);
+    }
+
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 820px) {
+      .page {
+        padding: 24px 14px 40px;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        padding: 24px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .shot-list {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div>
+        <h1>黄婷婷口播 ID 趣味素材参考</h1>
+        <p class="subtitle">用于补充晚安语音、起床铃语音、官宣 ID、生日 ID 的趣味脚本与拍摄 demo。整体建议走“温柔陪伴 + 认真搞笑 + 轻量饭撒”的路线，避免太土味或太用力。</p>
+      </div>
+      <aside class="meta">
+        <div><span>整理日期</span><b>2026-05-06</b></div>
+        <div><span>核心人设</span><b>认真可爱、陪伴感、轻情景剧</b></div>
+        <div><span>适用场景</span><b>小红书 / 抖音 / 站内 ID 视频</b></div>
+        <div><span>内容状态</span><b>已补充外部热例，可直接拍摄</b></div>
+      </aside>
+    </header>
+
+    <section>
+      <h2>小红书参考示例</h2>
+      <p>这一版按“别人做过、但适合黄婷婷复用”来找，不再局限她本人。实际跑下来，晚安和起床铃最容易出圈的，不是纯温柔念稿，而是“有记忆点的声线 / 角色感 / 轻情景剧”；魔术和开场小梗则以“低门槛、立刻看懂、能在 3 秒内完成”为优先。</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>方向</th>
+            <th>可参考示例</th>
+            <th>热度</th>
+            <th>可借鉴点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>晚安语音 / 角色感</td>
+            <td><a href="https://www.xiaohongshu.com/explore/67b572ce000000002a00ccf6" target="_blank">太乙真人的铃声来了（晚安版）</a></td>
+            <td>5260 赞 / 2282 藏 / 155 评</td>
+            <td>这类晚安内容火点不在“晚安”两个字本身，而在鲜明声线和角色口头禅。评论里已经有人顺势要起床铃、高德语音包，说明“一个记忆点声线，延展多种语音素材”是成立的。黄婷婷可以借这个结构，但换成她自己的温柔吐槽或可爱口癖。</td>
+          </tr>
+          <tr>
+            <td>晚安语音 / 极简口令</td>
+            <td><a href="https://www.xiaohongshu.com/explore/65a415b70000000010011fbc" target="_blank">晚安玛卡巴卡！</a></td>
+            <td>502 赞 / 249 藏 / 71 评</td>
+            <td>说明“短、重复、带一点童趣催眠感”的晚安素材是有人存的。适合黄婷婷做成 8-12 秒短句版，比如一两句抓包式查寝，最后落到“快睡觉”。</td>
+          </tr>
+          <tr>
+            <td>起床铃 / 搞笑叫醒</td>
+            <td><a href="https://www.xiaohongshu.com/explore/67d4fed7000000001203cb47" target="_blank">谁好人室友设置这个闹铃为起床铃声～</a></td>
+            <td>2.8 万赞 / 9298 藏 / 313 评</td>
+            <td>这条很典型：不是温柔叫醒，而是“明知道会闹，但还是想设”的反差感。评论里有人说会弹射起床，也有人说喜欢的歌设成闹铃就不喜欢了。说明起床铃的传播点可以更偏洗脑、搞笑、轻折磨，黄婷婷版可以用“还不起床啊”“再不起我就吃掉你的零食”这种宠粉式小威胁。</td>
+          </tr>
+          <tr>
+            <td>起床铃 / 专属称呼</td>
+            <td><a href="https://www.xiaohongshu.com/explore/67cacda7000000002900c1be" target="_blank">给你的专属起床铃声~快起床啦小懒虫</a></td>
+            <td>151 赞 / 72 藏 / 48 评</td>
+            <td>虽然体量不算最大，但方向很准：第二人称直呼、轻撒娇、叫早里带宠感。适合黄婷婷保留“专属感”和“只对你说”的语气。</td>
+          </tr>
+          <tr>
+            <td>魔术 / 爱心类</td>
+            <td><a href="https://www.xiaohongshu.com/explore/67a6ddce000000001800ba08" target="_blank">魔术教学—纸巾变爱心❤️</a></td>
+            <td>7923 赞 / 5731 藏 / 37 评</td>
+            <td>非常适合迁移。描述里直接写了“纸巾变成爱心、小球等物品”，评论高频是“军训才艺表演靠这个活了”“一分钟要五六个小魔术”。这说明观众买账的不是专业魔术，而是低门槛、马上能学会、适合镜头前做一次的小把戏。黄婷婷可以把纸巾换成零食包装、祝福纸条或比心。</td>
+          </tr>
+          <tr>
+            <td>魔术 / 速成感</td>
+            <td><a href="https://www.xiaohongshu.com/explore/6915497c0000000005002e3b" target="_blank">这个魔术真的很神奇，看完瞬间学会😏</a></td>
+            <td>1.57 万赞 / 5116 藏 / 202 评</td>
+            <td>标题本身就证明了观众偏爱“看完我也能学会”的魔术，而不是复杂长流程。官宣 ID 和生日 ID 里，魔术只需要承担“开场抓一下人”和“自然带出零食”的功能，不需要做成完整表演。</td>
+          </tr>
+          <tr>
+            <td>开场小梗 / 可爱钩子</td>
+            <td><a href="https://www.xiaohongshu.com/explore/678509e10000000019036980" target="_blank">可爱风开头转场素材</a> / <a href="https://www.xiaohongshu.com/explore/6847d18b0000000021007f11" target="_blank">用 5 步让你的 vlog 开头出圈</a></td>
+            <td>4737 赞 / 2638 藏 / 1384 评；3992 赞 / 2828 藏 / 115 评</td>
+            <td>这两类不是偶像口播本身，但验证了一个事实：开头 1-3 秒先给动作或情绪，再进入正题，比直接自我介绍更抓人。所以“假装施法结果变出比心”“挡脸探头后接一句冷笑话”这类开头是成立的。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="note">
+        结论：真正火的语音素材，通常都带一个“可被模仿的记忆点”。
+        晚安靠声线和口头禅，起床铃靠反差和轻催促，魔术靠一眼看懂和马上学会，开场梗靠前三秒动作先行。黄婷婷完全可以借这些结构，但把内容换成她自己的语气和零食产品露出。
+      </div>
+    </section>
+
+    <section>
+      <h2>语音文案成稿</h2>
+      <div class="grid">
+        <article class="script">
+          <span class="priority ok">晚安 01</span>
+          <strong>温柔查寝版</strong>
+          <p>“现在，婷婷来查寝啦。手机放低一点，眼睛也休息一下。今天辛苦了，不开心的事情先交给夜晚保管，明天醒来再慢慢解决。晚安，T3，今晚要睡个很甜很甜的觉。”</p>
+          <p class="small">语气：轻、慢、贴近耳语；最后“很甜很甜”可以笑一下。</p>
+        </article>
+
+        <article class="script">
+          <span class="priority ok">晚安 02</span>
+          <strong>轻撒娇版</strong>
+          <p>“还没睡吗？被我发现了哦。再刷五分钟是不可以的，再想我五分钟……也不可以。乖啦，闭上眼睛。今天已经很努力了，剩下的交给梦。晚安，明天也要见。”</p>
+          <p class="small">语气：前半段带一点“抓包”，后半段放软。</p>
+        </article>
+
+        <article class="script">
+          <span class="priority">起床铃</span>
+          <strong>小凶叫醒版</strong>
+          <p>“起床啦，起床啦，还不起床啊？我数到三，再不起我就要把你的零食吃掉了。一、二、三，好，醒了就给自己一个今天也很厉害的表情。早安，快去发光吧。”</p>
+          <p class="small">语气：开头要有情景剧感，结尾给正向能量，贴合粉丝对闹钟样例的反馈。</p>
+        </article>
+
+        <article class="script">
+          <span class="priority">备用起床铃</span>
+          <strong>产品露出版</strong>
+          <p>“早安，快醒醒。今天的第一口快乐我已经帮你准备好了，但是你不起床的话，它就只能先被我吃掉了。三秒钟，坐起来，喝口水，然后带着好运出门。”</p>
+          <p class="small">语气：更适合品牌 ID，可顺手带出零食。</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>零食魔术 Demo</h2>
+      <div class="grid">
+        <article class="idea">
+          <span class="tag">官宣 ID</span><span class="tag">难度低</span><span class="tag">不易翻车</span>
+          <strong>空袋变新品 / 零食</strong>
+          <p>拿品牌纸袋或礼物袋，先让镜头看到“好像是空的”，念一句“今天我要宣布一件很重要的事”，挥一下手，从袋子里变出产品零食。</p>
+          <div class="shot-list">
+            <b>准备</b><span>双层纸袋、换物袋或魔术零食袋；产品提前藏在夹层。</span>
+            <b>台词</b><span>“我今天不变兔子，变一个你们会喜欢的东西。三、二、一，新朋友登场。”</span>
+            <b>重点</b><span>不要把“空袋”展示太久，镜头只给 1 秒扫过即可。</span>
+            <b>参考</b><span><a href="https://tricksupply.com/product/snack-bag/" target="_blank">Snack Bag</a>、<a href="https://magicmethods.com/p/stage-magic/magical-candy-box" target="_blank">Magical Candy Box</a></span>
+          </div>
+        </article>
+
+        <article class="idea">
+          <span class="tag">生日 ID</span><span class="tag">饭撒感</span><span class="tag">产品自然露出</span>
+          <strong>零食袋抽出生日祝福</strong>
+          <p>拿一包产品零食，假装“施法”，从包装袋或礼物盒里抽出一条折叠祝福纸，最后露出零食。</p>
+          <div class="shot-list">
+            <b>准备</b><span>祝福纸提前藏在袋口内侧或礼盒夹层；纸条颜色建议和品牌色一致。</span>
+            <b>台词</b><span>“生日愿望我帮你藏在这里了，抽出来看看……生日快乐！今天的快乐要比这包零食还满。”</span>
+            <b>重点</b><span>生日纸条不要太长，镜头能看清“生日快乐 + 名字”即可。</span>
+            <b>参考</b><span><a href="https://magictricksforkids.org/paper-bag-magic-trick/" target="_blank">Paper Bag Magic Trick</a>、<a href="https://www.goodtricks.net/mandms.html" target="_blank">糖果袋复原思路</a></span>
+          </div>
+        </article>
+      </div>
+
+      <h3>黄婷婷魔术样例动作拆解</h3>
+      <p>“阿黄大魔术师”样例的结构是：镜头前展示道具 → 用布遮盖 → 认真操作 → 揭晓成功 → 开心庆祝。这个节奏可以直接换成零食产品。</p>
+      <img class="visual" src="image/magic_contact_sheet.jpg" alt="黄婷婷魔术样例抽帧参考">
+      <p class="small">本地抽帧仅作内部动作节奏参考，不建议外发。</p>
+    </section>
+
+    <section>
+      <h2>开场饭撒 / 小梗</h2>
+      <div class="grid">
+        <article class="idea">
+          <strong>假魔术变比心</strong>
+          <p>动作：双手对镜头搓空气，认真说“我今天学会了一个魔术，可以把空气变甜。”停半秒，突然比心。</p>
+          <p>台词：“变好了，刚刚那一下是给你的。收到了吗？收到了就听我说正事。”</p>
+        </article>
+
+        <article class="idea">
+          <strong>“婷 / 停”冷笑话</strong>
+          <p>动作：拿零食轻轻挡一下脸，再探头出来。</p>
+          <p>台词：“知道为什么要听黄婷婷说话吗？因为我的‘婷’，就是让你先‘停’一下。停一下，看看我，顺便收下今天的快乐。”</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>拍摄执行建议</h2>
+      <ul>
+        <li>语音素材建议每条录 3 个版本：温柔版、带笑版、稍微情景剧版，后期选更自然的一条。</li>
+        <li>起床铃可以保留“还不起床啊？”这类被小红书评论记住的点，但注意语气是宠粉式催促。</li>
+        <li>魔术不要追求复杂，重点是“她很认真地玩一个小把戏”的可爱感。</li>
+        <li>产品露出应放在揭晓瞬间，不要从开头就持续硬拿，避免 ID 视频变成纯广告感。</li>
+        <li>晚安语音不要太长，15-25 秒更适合作为收藏、转发和反复听的素材。</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>来源与复核</h2>
+      <ul>
+        <li>小红书已核验外部参考：<a href="https://www.xiaohongshu.com/explore/67b572ce000000002a00ccf6" target="_blank">太乙真人的铃声来了（晚安版）</a>、<a href="https://www.xiaohongshu.com/explore/65a415b70000000010011fbc" target="_blank">晚安玛卡巴卡！</a>、<a href="https://www.xiaohongshu.com/explore/67d4fed7000000001203cb47" target="_blank">谁好人室友设置这个闹铃为起床铃声～</a>、<a href="https://www.xiaohongshu.com/explore/67cacda7000000002900c1be" target="_blank">给你的专属起床铃声~快起床啦小懒虫</a>。</li>
+        <li>小红书已核验外部魔术 / 开场参考：<a href="https://www.xiaohongshu.com/explore/67a6ddce000000001800ba08" target="_blank">魔术教学—纸巾变爱心❤️</a>、<a href="https://www.xiaohongshu.com/explore/6915497c0000000005002e3b" target="_blank">这个魔术真的很神奇，看完瞬间学会😏</a>、<a href="https://www.xiaohongshu.com/explore/678509e10000000019036980" target="_blank">可爱风开头转场素材</a>、<a href="https://www.xiaohongshu.com/explore/6847d18b0000000021007f11" target="_blank">用 5 步让你的 vlog 开头出圈</a>。</li>
+        <li>黄婷婷本人补充校准：<a href="https://www.xiaohongshu.com/explore/6983412e000000000e00e114" target="_blank">黄婷婷闹钟</a>、<a href="https://www.xiaohongshu.com/explore/69f9712e0000000036033248" target="_blank">阿黄“大魔术师”</a>。</li>
+        <li>艺人资料参考：<a href="https://www.cpophome.com/kotete-huang-tingting-profile/" target="_blank">Huang Tingting Profile</a>、<a href="https://www.snh48.com/html/snh/allnews/zixun/201809/4971.html" target="_blank">SNH48 黄婷婷生日会报道</a>。</li>
+        <li>魔术参考：<a href="https://tricksupply.com/product/snack-bag/" target="_blank">Snack Bag</a>、<a href="https://magicmethods.com/p/stage-magic/magical-candy-box" target="_blank">Magical Candy Box</a>、<a href="https://magictricksforkids.org/paper-bag-magic-trick/" target="_blank">Paper Bag Magic Trick</a>、<a href="https://www.goodtricks.net/mandms.html" target="_blank">M&M's Torn and Restored Candy Bag</a>。</li>
+      </ul>
+      <p class="small">备注：上述小红书热度为 2026-05-06 当天抓取到的站内公开互动数据，后续可能会变化。</p>
+    </section>
+
+    <footer>
+      文件：index.html
+    </footer>
+  </main>
+</body>
+</html>
