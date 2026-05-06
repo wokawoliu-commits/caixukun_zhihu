@@ -1,0 +1,1811 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云旗×郝熠然微博粉丝记忆资产｜严格筛选版</title>
+  <style>
+    :root {
+      --bg: #f6f7f4;
+      --ink: #181d1b;
+      --muted: #66706b;
+      --line: #d8ded8;
+      --surface: #ffffff;
+      --soft: #edf3ef;
+      --accent: #1d8f7a;
+      --accent-2: #c94d3f;
+      --gold: #c69a32;
+      --shadow: 0 18px 48px rgba(24, 29, 27, 0.10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.55; letter-spacing: 0; }
+    a { color: inherit; text-underline-offset: 3px; }
+    .shell { display: grid; grid-template-columns: 264px minmax(0, 1fr); min-height: 100svh; }
+    aside {
+      position: sticky;
+      top: 0;
+      height: 100svh;
+      padding: 24px 18px;
+      background: #111715;
+      color: #f7fbf8;
+      overflow: auto;
+    }
+    .brand { margin-bottom: 28px; }
+    .brand strong { display: block; font-size: 21px; line-height: 1.15; }
+    .brand span { display: block; margin-top: 8px; color: #aebbb5; font-size: 12px; }
+    nav { display: grid; gap: 5px; }
+    nav a {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+      min-height: 38px;
+      padding: 6px 8px;
+      border-radius: 8px;
+      color: #dfe9e4;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 160ms ease, color 160ms ease;
+    }
+    nav a:hover { background: rgba(255,255,255,0.08); color: #ffffff; }
+    nav span { color: #83d4bf; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .downloads { margin-top: 26px; display: grid; gap: 8px; }
+    .downloads a {
+      padding: 10px 11px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      text-decoration: none;
+      color: #dfe9e4;
+      font-size: 13px;
+    }
+    main { min-width: 0; }
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+      gap: 24px;
+      padding: clamp(26px, 4vw, 54px);
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(135deg, rgba(29, 143, 122, 0.10), rgba(201, 77, 63, 0.05) 48%, rgba(198, 154, 50, 0.10)),
+        var(--surface);
+    }
+    .kicker { margin: 0 0 12px; color: var(--accent); font-size: 13px; font-weight: 850; }
+    h1 { margin: 0; max-width: 880px; font-size: clamp(34px, 5vw, 72px); line-height: 1.02; letter-spacing: 0; }
+    .lead { max-width: 900px; margin: 18px 0 0; color: var(--muted); font-size: clamp(15px, 1.6vw, 18px); }
+    .search-panel { align-self: end; display: grid; gap: 12px; }
+    .search-panel label { color: var(--muted); font-size: 13px; font-weight: 800; }
+    #search {
+      width: 100%;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 14px;
+      color: var(--ink);
+      background: rgba(255,255,255,0.8);
+      font-size: 15px;
+      outline: none;
+    }
+    #search:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(29,143,122,0.14); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .stat-tile { min-height: 112px; padding: 22px clamp(16px, 2vw, 28px); background: var(--surface); }
+    .stat-tile strong { display: block; font-size: clamp(28px, 4vw, 46px); line-height: 1; font-variant-numeric: tabular-nums; }
+    .stat-tile span { display: block; margin-top: 9px; color: var(--muted); font-size: 13px; font-weight: 800; }
+    .stat-tile small { display: block; margin-top: 4px; color: #7d8782; font-size: 12px; }
+    .content { padding: clamp(24px, 4vw, 54px); }
+    .section-title { display: flex; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+    .section-title h2 { margin: 0; font-size: clamp(24px, 3vw, 40px); line-height: 1.05; }
+    .section-title p { max-width: 680px; margin: 0; color: var(--muted); font-size: 14px; }
+    .rank-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); box-shadow: 0 1px 0 rgba(24,29,27,0.03); }
+    table { width: 100%; border-collapse: collapse; min-width: 920px; }
+    th, td { padding: 16px 18px; border-bottom: 1px solid var(--line); vertical-align: top; text-align: left; }
+    th { color: var(--muted); font-size: 12px; font-weight: 850; background: #fbfcfa; }
+    tr:last-child td { border-bottom: 0; }
+    .rank-num { width: 68px; color: var(--accent); font-weight: 900; font-variant-numeric: tabular-nums; }
+    .memory-link { display: inline-block; font-weight: 900; text-decoration: none; }
+    td p { margin: 7px 0 0; color: var(--muted); font-size: 13px; max-width: 620px; }
+    .bar, .section-meter { height: 7px; margin-top: 12px; border-radius: 999px; background: #e7ece7; overflow: hidden; }
+    .bar i, .section-meter i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--gold)); }
+    .metric { font-size: 22px; font-weight: 900; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .split { color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .memory-list { display: grid; gap: 18px; margin-top: 34px; }
+    .memory-section {
+      scroll-margin-top: 18px;
+      padding: clamp(18px, 3vw, 30px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 1px 0 rgba(24,29,27,0.03);
+      transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+    }
+    .memory-section:hover { border-color: rgba(29,143,122,0.36); box-shadow: var(--shadow); transform: translateY(-1px); }
+    .memory-section.is-hidden { display: none; }
+    .section-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(160px, 220px); gap: 22px; align-items: start; }
+    .section-index { color: var(--accent); font-size: 13px; font-weight: 900; }
+    .memory-section h2 { margin: 4px 0 0; font-size: clamp(23px, 3vw, 38px); line-height: 1.05; }
+    .memory-section p { margin: 10px 0 0; color: var(--muted); }
+    .section-score { text-align: right; }
+    .section-score strong { display: block; font-size: clamp(30px, 4vw, 52px); line-height: 1; font-variant-numeric: tabular-nums; }
+    .section-score span { color: var(--muted); font-size: 13px; font-weight: 800; }
+    .section-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .section-metrics span { padding: 7px 10px; border-radius: 999px; background: var(--soft); color: var(--muted); font-size: 13px; }
+    .section-metrics b { color: var(--ink); font-variant-numeric: tabular-nums; }
+    .evidence-list { list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0 0; padding: 0; }
+    .evidence-item { min-height: 154px; padding: 15px; border: 1px solid var(--line); border-radius: 8px; background: #fbfcfa; }
+    .evidence-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 12px; font-weight: 850; }
+    .evidence-head a { color: var(--accent); white-space: nowrap; }
+    .evidence-item p { margin: 11px 0 0; color: var(--ink); font-size: 14px; }
+    .evidence-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; color: var(--muted); font-size: 12px; }
+    .method {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+      gap: 22px;
+      margin-top: 34px;
+      padding: clamp(20px, 3vw, 30px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #151b19;
+      color: #f8fbf9;
+    }
+    .method p { margin: 10px 0 0; color: #b7c3bd; }
+    .method ul { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+    .method li { position: relative; min-height: 34px; padding: 7px 74px 7px 0; border-bottom: 1px solid rgba(255,255,255,0.09); color: #dce8e2; font-size: 13px; overflow: hidden; }
+    .method li b { position: absolute; right: 0; top: 7px; color: #ffffff; font-variant-numeric: tabular-nums; }
+    .method li i { position: absolute; left: 0; bottom: -1px; height: 2px; border-radius: 999px; background: var(--accent); }
+    .method h2 { margin: 0; font-size: clamp(24px, 3vw, 38px); }
+    .method-grid { display: grid; gap: 10px; align-content: start; }
+    .method-chip { padding: 12px; border: 1px solid rgba(255,255,255,0.11); border-radius: 8px; background: rgba(255,255,255,0.04); }
+    .method-chip strong { display: block; font-size: 18px; }
+    .method-chip span { color: #b7c3bd; font-size: 12px; }
+    .footer { padding: 24px clamp(24px, 4vw, 54px) 46px; color: var(--muted); font-size: 12px; }
+    @media (max-width: 980px) {
+      .shell { display: flex; flex-direction: column; }
+      main { order: 1; }
+      aside { order: 2; position: relative; height: auto; }
+      nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .topbar, .method, .section-top { grid-template-columns: 1fr; }
+      .section-score { text-align: left; }
+      .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .evidence-list { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      nav { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .content { padding-left: 16px; padding-right: 16px; }
+      .topbar { padding-left: 18px; padding-right: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">
+        <strong>云旗×郝熠然<br>记忆资产</strong>
+        <span>严格筛选版 · 2026-05-06 07:56</span>
+      </div>
+      <nav aria-label="记忆点导航">
+        <a href="#memory-1"><span>01</span>小星河与引力场守护</a>
+<a href="#memory-2"><span>02</span>星河宇宙与引力文案</a>
+<a href="#memory-3"><span>03</span>不拆承诺与1.4定海神针</a>
+<a href="#memory-4"><span>04</span>旗熠青海与应援色</a>
+<a href="#memory-5"><span>05</span>角色作品入坑与真诚努力</a>
+<a href="#memory-6"><span>06</span>直播互动与口头名场面</a>
+<a href="#memory-7"><span>07</span>同框默契与并肩感</a>
+<a href="#memory-8"><span>08</span>演唱会奔赴与巡演回忆</a>
+<a href="#memory-9"><span>09</span>双向奔赴与爱意传递</a>
+<a href="#memory-10"><span>10</span>长情陪伴与共同回忆</a>
+      </nav>
+      <div class="downloads">
+        <a href="yunyi_memory_points_summary.csv">下载汇总 CSV</a>
+        <a href="yunyi_memory_evidence.csv">下载证据 CSV</a>
+        <a href="yunyi_memory_stats.json">查看统计 JSON</a>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar">
+        <div>
+          <p class="kicker">Weibo Memory Assets · Strict Fan Lens</p>
+          <h1>云旗×郝熠然微博粉丝记忆点热度榜</h1>
+          <p class="lead">本页基于 30,003 条微博与 1,261 条评论，按“粉丝明确表达记忆、关系点评或共同体叙事”采纳证据；纯商业、官宣、运营、投票、数据维护与无关宽词内容不计入。</p>
+        </div>
+        <div class="search-panel">
+          <label for="search">搜索记忆点或证据文本</label>
+          <input id="search" type="search" placeholder="例如：不拆、旗熠青、小星河、直播">
+        </div>
+      </header>
+      <section class="stats-grid" aria-label="关键统计">
+        
+      <div class="stat-tile">
+        <strong>30,003</strong>
+        <span>覆盖微博规模</span>
+        <small>目标 30,000，实际 30,003</small>
+      </div>
+    
+        
+      <div class="stat-tile">
+        <strong>5,244</strong>
+        <span>严格采纳微博</span>
+        <small>采纳率 17.5%</small>
+      </div>
+    
+        
+      <div class="stat-tile">
+        <strong>197</strong>
+        <span>严格采纳评论</span>
+        <small>采纳率 15.6%</small>
+      </div>
+    
+        
+      <div class="stat-tile">
+        <strong>1,624,949</strong>
+        <span>可归因点赞总量</span>
+        <small>异常 PC 点赞已清零</small>
+      </div>
+    
+      </section>
+      <div class="content">
+        <section>
+          <div class="section-title">
+            <h2>热门记忆点总览</h2>
+            <p>点赞数只来自明确指向某个记忆点的微博或评论；每个记忆点下方可继续查看高赞证据样本。</p>
+          </div>
+          <div class="rank-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>排名</th>
+                  <th>记忆点</th>
+                  <th>可归因点赞</th>
+                  <th>点赞拆分</th>
+                  <th>证据数量</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+            <tr>
+              <td class="rank-num">#1</td>
+              <td>
+                <a href="#memory-1" class="memory-link">小星河与引力场守护</a>
+                <p>小星河和引力场构成粉丝共同体的守护叙事，记忆点不只在两位艺人，也在粉丝如何一起维护这段关系。</p>
+                <div class="bar" aria-hidden="true"><i style="width:100.00%"></i></div>
+              </td>
+              <td class="metric">672,779</td>
+              <td class="split">微博 670,170<br>评论 2,609</td>
+              <td class="split">微博 1,307<br>评论 40</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#2</td>
+              <td>
+                <a href="#memory-2" class="memory-link">星河宇宙与引力文案</a>
+                <p>云熠粉圈不断复用星河、引力、轨迹、磁场等话术，形成一套稳定的文本记忆和情绪识别符号。</p>
+                <div class="bar" aria-hidden="true"><i style="width:69.96%"></i></div>
+              </td>
+              <td class="metric">470,660</td>
+              <td class="split">微博 469,829<br>评论 831</td>
+              <td class="split">微博 670<br>评论 17</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#3</td>
+              <td>
+                <a href="#memory-3" class="memory-link">不拆承诺与1.4定海神针</a>
+                <p>粉丝把“不拆”视为这段关系最核心的安全感记忆，1.4、正主亲自回应和后续声明都被当作稳定关系的锚点。</p>
+                <div class="bar" aria-hidden="true"><i style="width:36.14%"></i></div>
+              </td>
+              <td class="metric">243,109</td>
+              <td class="split">微博 242,290<br>评论 819</td>
+              <td class="split">微博 651<br>评论 38</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#4</td>
+              <td>
+                <a href="#memory-4" class="memory-link">旗熠青海与应援色</a>
+                <p>旗熠青把抽象支持变成可见的现场画面，是小星河最容易复述、最有视觉记忆的集体资产。</p>
+                <div class="bar" aria-hidden="true"><i style="width:7.63%"></i></div>
+              </td>
+              <td class="metric">51,336</td>
+              <td class="split">微博 46,911<br>评论 4,425</td>
+              <td class="split">微博 380<br>评论 46</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#5</td>
+              <td>
+                <a href="#memory-5" class="memory-link">角色作品入坑与真诚努力</a>
+                <p>部分粉丝从作品角色和两位本人的真诚努力入坑，这条线能解释CP粉从何处建立信任。</p>
+                <div class="bar" aria-hidden="true"><i style="width:7.56%"></i></div>
+              </td>
+              <td class="metric">50,892</td>
+              <td class="split">微博 50,849<br>评论 43</td>
+              <td class="split">微博 928<br>评论 6</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#6</td>
+              <td>
+                <a href="#memory-6" class="memory-link">直播互动与口头名场面</a>
+                <p>直播里的口头承诺、互相接梗和小动作，是粉丝会剪辑、转述、反复考古的轻量记忆。</p>
+                <div class="bar" aria-hidden="true"><i style="width:7.04%"></i></div>
+              </td>
+              <td class="metric">47,360</td>
+              <td class="split">微博 47,316<br>评论 44</td>
+              <td class="split">微博 297<br>评论 8</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#7</td>
+              <td>
+                <a href="#memory-7" class="memory-link">同框默契与并肩感</a>
+                <p>粉丝记住的是两人同框时自然流露的默契、并肩与磁场感，这类内容适合沉淀成关系名场面。</p>
+                <div class="bar" aria-hidden="true"><i style="width:5.72%"></i></div>
+              </td>
+              <td class="metric">38,458</td>
+              <td class="split">微博 38,038<br>评论 420</td>
+              <td class="split">微博 150<br>评论 12</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#8</td>
+              <td>
+                <a href="#memory-8" class="memory-link">演唱会奔赴与巡演回忆</a>
+                <p>线下演唱会把CP情绪落在真实见面、舞台、应援和跨城奔赴里，是近期记忆浓度最高的场景之一。</p>
+                <div class="bar" aria-hidden="true"><i style="width:5.54%"></i></div>
+              </td>
+              <td class="metric">37,289</td>
+              <td class="split">微博 35,020<br>评论 2,269</td>
+              <td class="split">微博 273<br>评论 10</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#9</td>
+              <td>
+                <a href="#memory-9" class="memory-link">双向奔赴与爱意传递</a>
+                <p>粉丝反复讲述信件、彩带、星星纸和祝福被送达，核心情绪是“我们的爱有被看见、有被回应”。</p>
+                <div class="bar" aria-hidden="true"><i style="width:1.93%"></i></div>
+              </td>
+              <td class="metric">13,015</td>
+              <td class="split">微博 10,790<br>评论 2,225</td>
+              <td class="split">微博 550<br>评论 20</td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank-num">#10</td>
+              <td>
+                <a href="#memory-10" class="memory-link">长情陪伴与共同回忆</a>
+                <p>当文本没有指向某个具体事件，但明确在说云熠、云旗郝熠然与粉丝之间的回忆、喜欢、陪伴或岁岁年年时，归入这一类。</p>
+                <div class="bar" aria-hidden="true"><i style="width:0.01%"></i></div>
+              </td>
+              <td class="metric">51</td>
+              <td class="split">微博 51<br>评论 0</td>
+              <td class="split">微博 38<br>评论 0</td>
+            </tr>
+            
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="memory-list" id="memory-list">
+          
+            <section class="memory-section" id="memory-1" data-title="小星河与引力场守护" data-search="小星河与引力场守护 小星河和引力场构成粉丝共同体的守护叙事，记忆点不只在两位艺人，也在粉丝如何一起维护这段关系。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">01</span>
+                  <h2>小星河与引力场守护</h2>
+                  <p>小星河和引力场构成粉丝共同体的守护叙事，记忆点不只在两位艺人，也在粉丝如何一起维护这段关系。</p>
+                </div>
+                <div class="section-score">
+                  <strong>672,779</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:100.00%"></i></div>
+              <div class="section-metrics">
+                <span><b>1,347</b> 采纳证据</span>
+                <span><b>1,307</b> 微博</span>
+                <span><b>40</b> 评论</span>
+                <span><b>670,170</b> 微博赞</span>
+                <span><b>2,609</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="桃桃爱吃桃HYY #云旗郝熠然# 并肩同行，走过岁岁年年，往后的路，我们陪你们一起走@云熠引力场:云熠星河超话 得偿所愿亦无忧无虑 @云旗Yunqi @郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 63,523 赞</span>
+          <a href="https://m.weibo.cn/detail/5293909880344666" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然# 并肩同行，走过岁岁年年，往后的路，我们陪你们一起走@云熠引力场:云熠星河超话 得偿所愿亦无忧无虑 @云旗Yunqi @郝熠然</p>
+        <div class="evidence-meta">
+          <span>桃桃爱吃桃HYY</span>
+          <span>05月01日 23:38</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="一枝翠竹出墙来 我靠，我被引力场的维权看哭了，原来我们小星河也是有人撑腰的！！！！@云熠引力场 老大！！！除了爱云熠，我还爱你和光请出来解决问题！公平对待cp粉！重视cp粉诉求！给我们云熠清晰的双人规划 ​！！#云熠星河维权##请和光公平对待cp粉##云熠星河# ​">
+        <div class="evidence-head">
+          <span>微博 · 17,763 赞</span>
+          <a href="https://m.weibo.cn/detail/5289518622311665" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>我靠，我被引力场的维权看哭了，原来我们小星河也是有人撑腰的！！！！@云熠引力场 老大！！！除了爱云熠，我还爱你和光请出来解决问题！公平对待cp粉！重视cp粉诉求！给我们云熠清晰的双人规划 ​！！#云熠星河维权##请和光公平对待cp粉##云熠星河# ​</p>
+        <div class="evidence-meta">
+          <span>一枝翠竹出墙来</span>
+          <span>04月19日 20:49</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="Tina_vr @云旗Yunqi @云熠引力场 小星河🌌 笑死云熠星河超话 演员云旗超话 云旗郝熠然超话 星澈引力场超话">
+        <div class="evidence-head">
+          <span>微博 · 9,469 赞</span>
+          <a href="https://m.weibo.cn/detail/5251388219327560" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>@云旗Yunqi @云熠引力场 小星河🌌 笑死云熠星河超话 演员云旗超话 云旗郝熠然超话 星澈引力场超话</p>
+        <div class="evidence-meta">
+          <span>Tina_vr</span>
+          <span>01月04日 15:33</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="旗熠光年paris 云熠星河超话#永夜星河# #云熠星河# #小星河# 永夜星河超话">
+        <div class="evidence-head">
+          <span>微博 · 9,234 赞</span>
+          <a href="https://m.weibo.cn/detail/5251843599109349" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话#永夜星河# #云熠星河# #小星河# 永夜星河超话</p>
+        <div class="evidence-meta">
+          <span>旗熠光年paris</span>
+          <span>01月05日 21:42</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="深爱已已知 小星河们快来郝熠然超话云熠星河超话演员云旗超话">
+        <div class="evidence-head">
+          <span>微博 · 9,234 赞</span>
+          <a href="https://m.weibo.cn/detail/5252193641829111" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>小星河们快来郝熠然超话云熠星河超话演员云旗超话</p>
+        <div class="evidence-meta">
+          <span>深爱已已知</span>
+          <span>01月06日 20:53</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="余生挚爱薛三岁-云熠99 我真的哭死，你们真的有在认真聆听粉丝的声音，喜欢你们是我做的最浪漫的事@云熠引力场 @郝熠然 @云旗Yunqi">
+        <div class="evidence-head">
+          <span>微博 · 8,692 赞</span>
+          <a href="https://m.weibo.cn/detail/5248867769783287" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>我真的哭死，你们真的有在认真聆听粉丝的声音，喜欢你们是我做的最浪漫的事@云熠引力场 @郝熠然 @云旗Yunqi</p>
+        <div class="evidence-meta">
+          <span>余生挚爱薛三岁-云熠99</span>
+          <span>2025年12月28日 16:37</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="爱吃红烧肉的刘小姐 存了很多图，一四事件后双人合体，帅的帅美的美，他们之间的磁场也太甜了//@云熠引力场:云熠星河超话 同步机场情况——云旗/郝熠然已在相关部门的规范引导下，安全离开机场。感谢大家的支持与喜爱">
+        <div class="evidence-head">
+          <span>微博 · 7,746 赞</span>
+          <a href="https://m.weibo.cn/detail/5252526488424169" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>存了很多图，一四事件后双人合体，帅的帅美的美，他们之间的磁场也太甜了//@云熠引力场:云熠星河超话 同步机场情况——云旗/郝熠然已在相关部门的规范引导下，安全离开机场。感谢大家的支持与喜爱</p>
+        <div class="evidence-meta">
+          <span>爱吃红烧肉的刘小姐</span>
+          <span>01月07日 18:56</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="可能我们太单纯 #云旗郝熠然52收官# 樊游的故事虽已结束，但云熠还会继续前行。舍不得52剧终，好在剧外有你们的甜蜜互动，有你们真诚相待。很庆幸在这个冬季，邂逅了你们，让我心甘情愿且满心欢喜的成为万千小星河中的一员，未来我们还会陪你们走很远很远，我们来日方长！云熠星河超话 @云旗Yunqi @郝熠然 查看图片">
+        <div class="evidence-head">
+          <span>微博 · 7,331 赞</span>
+          <a href="https://m.weibo.cn/detail/5251104153536824" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然52收官# 樊游的故事虽已结束，但云熠还会继续前行。舍不得52剧终，好在剧外有你们的甜蜜互动，有你们真诚相待。很庆幸在这个冬季，邂逅了你们，让我心甘情愿且满心欢喜的成为万千小星河中的一员，未来我们还会陪你们走很远很远，我们来日方长！云熠星河超话 @云旗Yunqi @郝熠然 查看图片</p>
+        <div class="evidence-meta">
+          <span>可能我们太单纯</span>
+          <span>01月03日 20:44</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-2" data-title="星河宇宙与引力文案" data-search="星河宇宙与引力文案 云熠粉圈不断复用星河、引力、轨迹、磁场等话术，形成一套稳定的文本记忆和情绪识别符号。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">02</span>
+                  <h2>星河宇宙与引力文案</h2>
+                  <p>云熠粉圈不断复用星河、引力、轨迹、磁场等话术，形成一套稳定的文本记忆和情绪识别符号。</p>
+                </div>
+                <div class="section-score">
+                  <strong>470,660</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:69.96%"></i></div>
+              <div class="section-metrics">
+                <span><b>687</b> 采纳证据</span>
+                <span><b>670</b> 微博</span>
+                <span><b>17</b> 评论</span>
+                <span><b>469,829</b> 微博赞</span>
+                <span><b>831</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="云熠引力场 云熠星河超话 🌌#云旗郝熠然# 什么是星河是星星 是银河是云与熠的相遇将星河揉进花束，把爱意藏入星河。旗熠青，始终与你们相伴同行。@云旗Yunqi @郝熠然 前方或许风起路远，偶有泥泞坎坷，但不必慌张。就像你们说过的，对的选择，都在未来里。所有的爱都会发音，所有的爱都会筑成通往未来的路，今后我们熠旗并肩，携手奔赴。">
+        <div class="evidence-head">
+          <span>微博 · 17,784 赞</span>
+          <a href="https://m.weibo.cn/detail/5291733052555375" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然# 什么是星河是星星 是银河是云与熠的相遇将星河揉进花束，把爱意藏入星河。旗熠青，始终与你们相伴同行。@云旗Yunqi @郝熠然 前方或许风起路远，偶有泥泞坎坷，但不必慌张。就像你们说过的，对的选择，都在未来里。所有的爱都会发音，所有的爱都会筑成通往未来的路，今后我们熠旗并肩，携手奔赴。</p>
+        <div class="evidence-meta">
+          <span>云熠引力场</span>
+          <span>04月28日 16:01 转赞人数超过2万</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="普洱味的ice 心中虽有万般不舍，但是我们小星河与云熠的故事还在继续，未来可期">
+        <div class="evidence-head">
+          <span>微博 · 7,331 赞</span>
+          <a href="https://m.weibo.cn/detail/5251116684280461" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>心中虽有万般不舍，但是我们小星河与云熠的故事还在继续，未来可期</p>
+        <div class="evidence-meta">
+          <span>普洱味的ice</span>
+          <span>01月03日 21:34</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="墨汁炸毛啦_ 云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 5,672 赞</span>
+          <a href="https://m.weibo.cn/detail/5252223035776910" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频</p>
+        <div class="evidence-meta">
+          <span>墨汁炸毛啦_</span>
+          <span>01月06日 22:50</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="庭院开满茉莉Molly 云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 5,672 赞</span>
+          <a href="https://m.weibo.cn/detail/5252220998128669" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频</p>
+        <div class="evidence-meta">
+          <span>庭院开满茉莉Molly</span>
+          <span>01月06日 22:42</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="阿缨i 云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 5,672 赞</span>
+          <a href="https://m.weibo.cn/detail/5252216854153233" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频</p>
+        <div class="evidence-meta">
+          <span>阿缨i</span>
+          <span>01月06日 22:25</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="Sweet_lo19 云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 5,672 赞</span>
+          <a href="https://m.weibo.cn/detail/5252216810377238" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频</p>
+        <div class="evidence-meta">
+          <span>Sweet_lo19</span>
+          <span>01月06日 22:25</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="Nebula星谕丨云熠 云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 5,672 赞</span>
+          <a href="https://m.weibo.cn/detail/5252149317472702" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗眼里的郝熠然# 补档 视频一则现在才知道这套连体衣到底有何意义@云旗Yunqi @郝熠然 PS:[云熠星谕所]更名为 「Nebula星谕｜云熠」。未来将更专注于记录两位艺人老师的线下活动，用图文的方式保存每一个值得被记住的瞬间，在时间中持续陪伴，永恒相伴。 LNebula星谕丨云熠的微博视频</p>
+        <div class="evidence-meta">
+          <span>Nebula星谕丨云熠</span>
+          <span>01月06日 17:57</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="一路同行云熠99 #云旗郝熠然# 🌌#云熠星河# 【四城五屏·光为你们留】以天为幕，以云为信，以熠为名。 这是粉丝的献礼 @云旗Yunqi @郝熠然 云携熠色垂落街巷，星河漫过长夜。当云最后一次为爱披上金边，熠光在天际写下——所有奔赴，终有回响。 风记得云的形状，夜记得熠的轨迹， 万里长空，皆为为你而亮的印记。 ✨ 此幕虽落，云熠长存 ✨ 我们以光相认，以永恒相续。">
+        <div class="evidence-head">
+          <span>微博 · 5,436 赞</span>
+          <a href="https://m.weibo.cn/detail/5249688710154604" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然# 🌌#云熠星河# 【四城五屏·光为你们留】以天为幕，以云为信，以熠为名。 这是粉丝的献礼 @云旗Yunqi @郝熠然 云携熠色垂落街巷，星河漫过长夜。当云最后一次为爱披上金边，熠光在天际写下——所有奔赴，终有回响。 风记得云的形状，夜记得熠的轨迹， 万里长空，皆为为你而亮的印记。 ✨ 此幕虽落，云熠长存 ✨ 我们以光相认，以永恒相续。</p>
+        <div class="evidence-meta">
+          <span>一路同行云熠99</span>
+          <span>2025年12月30日 22:59</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-3" data-title="不拆承诺与1.4定海神针" data-search="不拆承诺与1.4定海神针 粉丝把“不拆”视为这段关系最核心的安全感记忆，1.4、正主亲自回应和后续声明都被当作稳定关系的锚点。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">03</span>
+                  <h2>不拆承诺与1.4定海神针</h2>
+                  <p>粉丝把“不拆”视为这段关系最核心的安全感记忆，1.4、正主亲自回应和后续声明都被当作稳定关系的锚点。</p>
+                </div>
+                <div class="section-score">
+                  <strong>243,109</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:36.14%"></i></div>
+              <div class="section-metrics">
+                <span><b>689</b> 采纳证据</span>
+                <span><b>651</b> 微博</span>
+                <span><b>38</b> 评论</span>
+                <span><b>242,290</b> 微博赞</span>
+                <span><b>819</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="人生短短急个球-MH 啊！！！！不拆2.0名场面，不拆不拆不拆，小星河陪你们岁岁年年，云熠99#云旗郝熠然# #云熠星河# #向全世界安利云熠#">
+        <div class="evidence-head">
+          <span>微博 · 15,292 赞</span>
+          <a href="https://m.weibo.cn/detail/5292109802505573" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>啊！！！！不拆2.0名场面，不拆不拆不拆，小星河陪你们岁岁年年，云熠99#云旗郝熠然# #云熠星河# #向全世界安利云熠#</p>
+        <div class="evidence-meta">
+          <span>人生短短急个球-MH</span>
+          <span>04月27日 00:26</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="浅色夏沫-Ricky 云熠星河超话🌌#云熠星河# 🌌 @云旗Yunqi &amp;@郝熠然 盛大的初相识，瓦的天，初相识啊，那就是会继续以双人身份活动了，想想都开心，我们是第一家吧，小星河们幸福吗？开心吗？就这样细水长流吧……2026云熠99 @云旗Yunqi @郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 8,380 赞</span>
+          <a href="https://m.weibo.cn/detail/5251108425433210" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话🌌#云熠星河# 🌌 @云旗Yunqi &amp;@郝熠然 盛大的初相识，瓦的天，初相识啊，那就是会继续以双人身份活动了，想想都开心，我们是第一家吧，小星河们幸福吗？开心吗？就这样细水长流吧……2026云熠99 @云旗Yunqi @郝熠然</p>
+        <div class="evidence-meta">
+          <span>浅色夏沫-Ricky</span>
+          <span>01月03日 21:01</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="雨落无痕H 云熠99">
+        <div class="evidence-head">
+          <span>微博 · 8,270 赞</span>
+          <a href="https://m.weibo.cn/detail/5250403760608586" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠99</p>
+        <div class="evidence-meta">
+          <span>雨落无痕H</span>
+          <span>01月01日 22:21</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="云熠很甜别杠 我们小星河也在一起！！！云熠99云熠星河超话 #云旗郝熠然#">
+        <div class="evidence-head">
+          <span>微博 · 8,270 赞</span>
+          <a href="https://m.weibo.cn/detail/5250183210468993" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>我们小星河也在一起！！！云熠99云熠星河超话 #云旗郝熠然#</p>
+        <div class="evidence-meta">
+          <span>云熠很甜别杠</span>
+          <span>01月01日 07:44</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="深爱已已知 小星河不散，云熠99！一路生花">
+        <div class="evidence-head">
+          <span>微博 · 7,331 赞</span>
+          <a href="https://m.weibo.cn/detail/5252850900803244" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>小星河不散，云熠99！一路生花</p>
+        <div class="evidence-meta">
+          <span>深爱已已知</span>
+          <span>01月08日 16:25</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="治不开心药oo 云熠星河超话 又拍番外又有直播，小星河太幸福了，好激动！！！云熠99，云熠星河99">
+        <div class="evidence-head">
+          <span>微博 · 6,783 赞</span>
+          <a href="https://m.weibo.cn/detail/5248837636591372" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 又拍番外又有直播，小星河太幸福了，好激动！！！云熠99，云熠星河99</p>
+        <div class="evidence-meta">
+          <span>治不开心药oo</span>
+          <span>2025年12月28日 14:37</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="大大领主 喜欢一个人是藏不住的云熠99">
+        <div class="evidence-head">
+          <span>微博 · 6,394 赞</span>
+          <a href="https://m.weibo.cn/detail/5252217122326987" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>喜欢一个人是藏不住的云熠99</p>
+        <div class="evidence-meta">
+          <span>大大领主</span>
+          <span>01月06日 22:26</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="好嘟云 云熠星河超话“01.04 上皮樊游 “拆不拆”“所以呢””~">
+        <div class="evidence-head">
+          <span>微博 · 4,213 赞</span>
+          <a href="https://m.weibo.cn/detail/5251859472188874" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话“01.04 上皮樊游 “拆不拆”“所以呢””~</p>
+        <div class="evidence-meta">
+          <span>好嘟云</span>
+          <span>01月05日 22:45</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-4" data-title="旗熠青海与应援色" data-search="旗熠青海与应援色 旗熠青把抽象支持变成可见的现场画面，是小星河最容易复述、最有视觉记忆的集体资产。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">04</span>
+                  <h2>旗熠青海与应援色</h2>
+                  <p>旗熠青把抽象支持变成可见的现场画面，是小星河最容易复述、最有视觉记忆的集体资产。</p>
+                </div>
+                <div class="section-score">
+                  <strong>51,336</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:7.63%"></i></div>
+              <div class="section-metrics">
+                <span><b>426</b> 采纳证据</span>
+                <span><b>380</b> 微博</span>
+                <span><b>46</b> 评论</span>
+                <span><b>46,911</b> 微博赞</span>
+                <span><b>4,425</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="阿缨i #云旗郝熠然# 云熠星河超话旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。">
+        <div class="evidence-head">
+          <span>微博 · 6,783 赞</span>
+          <a href="https://m.weibo.cn/detail/5248982408499417" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然# 云熠星河超话旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。</p>
+        <div class="evidence-meta">
+          <span>阿缨i</span>
+          <span>2025年12月29日 00:13</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="熠点点甜 郝熠然超话 致全体小普洱： 经与艺人团队沟通，并充分尊重郝熠然本人意愿，郝熠然官方应援色及名称今日正式官宣！✨ 应援色名称：「霞光熠熠」标准色号：「#AA0A27」HSV：「349,94,67」RGB：「170,10,39」CMYK：「40,100,94,6」【寓意】日出时分光芒明亮闪烁、耀眼夺目的景象，霞是多层次红的组合，光是希望，熠取自熠然，愿如初升之日散发光芒，熠然生辉。从此，这抹专属于郝熠然的霞光，将由我们每一位小普洱共同点亮。往后星途，我们以霞光为帜，伴他一路熠然生辉！@郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 5,026 赞</span>
+          <a href="https://m.weibo.cn/detail/5247856189642468" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>郝熠然超话 致全体小普洱： 经与艺人团队沟通，并充分尊重郝熠然本人意愿，郝熠然官方应援色及名称今日正式官宣！✨ 应援色名称：「霞光熠熠」标准色号：「#AA0A27」HSV：「349,94,67」RGB：「170,10,39」CMYK：「40,100,94,6」【寓意】日出时分光芒明亮闪烁、耀眼夺目的景象，霞是多层次红的组合，光是希望，熠取自熠然，愿如初升之日散发光芒，熠然生辉。从此，这抹专属于郝熠然的霞光，将由我们每一位小普洱共同点亮。往后星途，我们以…</p>
+        <div class="evidence-meta">
+          <span>熠点点甜</span>
+          <span>2025年12月25日 21:37</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="爱穿碎花小裙子的小丸子 云熠星河超话🌌#云熠星河# 为什么会是一片旗熠青？当然是你星河爹去了呀，啊哈哈哈哈，还当我们是以前呢，以前是小星河，今天是纽祜禄星河爹！！！ @郝熠然 @云旗Yunqi ​">
+        <div class="evidence-head">
+          <span>微博 · 4,810 赞</span>
+          <a href="https://m.weibo.cn/detail/5278903839228915" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话🌌#云熠星河# 为什么会是一片旗熠青？当然是你星河爹去了呀，啊哈哈哈哈，还当我们是以前呢，以前是小星河，今天是纽祜禄星河爹！！！ @郝熠然 @云旗Yunqi ​</p>
+        <div class="evidence-meta">
+          <span>爱穿碎花小裙子的小丸子</span>
+          <span>03月21日 13:50</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="我家家产超帅 云熠星河超话 全部都是旗熠青 全部！ 站台栏杆星河姐全部抢到了 ​">
+        <div class="evidence-head">
+          <span>微博 · 3,330 赞</span>
+          <a href="https://m.weibo.cn/detail/5291672795615959" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 全部都是旗熠青 全部！ 站台栏杆星河姐全部抢到了 ​</p>
+        <div class="evidence-meta">
+          <span>我家家产超帅</span>
+          <span>04月25日 19:29</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="阿缨i 云熠星河超话#云旗郝熠然# 旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。">
+        <div class="evidence-head">
+          <span>微博 · 3,215 赞</span>
+          <a href="https://m.weibo.cn/detail/5249719102080719" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话#云旗郝熠然# 旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。</p>
+        <div class="evidence-meta">
+          <span>阿缨i</span>
+          <span>2025年12月31日 01:00</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="-葡萄冰美式- 以后不管是单人活动还是双人活动，应援就是旗熠青！！！手幅灯牌大家都带着，现场随机应变好么！！！这次吃的亏我们记着，以后不能再犯！！ ​">
+        <div class="evidence-head">
+          <span>微博 · 1,627 赞</span>
+          <a href="https://m.weibo.cn/detail/5278675516790654" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>以后不管是单人活动还是双人活动，应援就是旗熠青！！！手幅灯牌大家都带着，现场随机应变好么！！！这次吃的亏我们记着，以后不能再犯！！ ​</p>
+        <div class="evidence-meta">
+          <span>-葡萄冰美式-</span>
+          <span>03月20日 22:42</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="阿缨i 云熠星河超话 旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。">
+        <div class="evidence-head">
+          <span>微博 · 1,577 赞</span>
+          <a href="https://m.weibo.cn/detail/5250094771470670" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 旗熠青真是美好的颜色，每一次敲击“青”字都仿佛摩挲了一遍你们的名字。</p>
+        <div class="evidence-meta">
+          <span>阿缨i</span>
+          <span>01月01日 01:53</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="落日染桃花 旗熠青，太爽了😄 ​">
+        <div class="evidence-head">
+          <span>微博 · 1,449 赞</span>
+          <a href="https://m.weibo.cn/detail/5291681453966168" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>旗熠青，太爽了😄 ​</p>
+        <div class="evidence-meta">
+          <span>落日染桃花</span>
+          <span>04月25日 20:03</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-5" data-title="角色作品入坑与真诚努力" data-search="角色作品入坑与真诚努力 部分粉丝从作品角色和两位本人的真诚努力入坑，这条线能解释CP粉从何处建立信任。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">05</span>
+                  <h2>角色作品入坑与真诚努力</h2>
+                  <p>部分粉丝从作品角色和两位本人的真诚努力入坑，这条线能解释CP粉从何处建立信任。</p>
+                </div>
+                <div class="section-score">
+                  <strong>50,892</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:7.56%"></i></div>
+              <div class="section-metrics">
+                <span><b>934</b> 采纳证据</span>
+                <span><b>928</b> 微博</span>
+                <span><b>6</b> 评论</span>
+                <span><b>50,849</b> 微博赞</span>
+                <span><b>43</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="是hellowoody 这么甜怎么能不偷吃！！#云熠星河##云旗##郝熠然## 向全世界安利##无岸52无暗# L是hellowoody的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 11,011 赞</span>
+          <a href="https://m.weibo.cn/detail/5240962315979466" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>这么甜怎么能不偷吃！！#云熠星河##云旗##郝熠然## 向全世界安利##无岸52无暗# L是hellowoody的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>是hellowoody</span>
+          <span>2025年12月06日 21:04</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="不系舟xz 云熠同行，星河共鸣。 樊霄 游书朗 再见 云旗 郝熠然 你好">
+        <div class="evidence-head">
+          <span>微博 · 7,331 赞</span>
+          <a href="https://m.weibo.cn/detail/5251135860117186" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠同行，星河共鸣。 樊霄 游书朗 再见 云旗 郝熠然 你好</p>
+        <div class="evidence-meta">
+          <span>不系舟xz</span>
+          <span>01月03日 22:50</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="衬澍也叫陈述 #云旗郝熠然#请多多关注我们云旗和郝熠然老师 真诚又努力的两位老师谁还没来入坑啊 帅气暴击 又宠粉又真诚云旗老师饰演无岸里的樊霄超级带劲郝熠然老师饰演无岸里的游书朗非常文学请多多关注两位老师的后期作品吧 ​">
+        <div class="evidence-head">
+          <span>微博 · 3,110 赞</span>
+          <a href="https://m.weibo.cn/detail/5248616337771937" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然#请多多关注我们云旗和郝熠然老师 真诚又努力的两位老师谁还没来入坑啊 帅气暴击 又宠粉又真诚云旗老师饰演无岸里的樊霄超级带劲郝熠然老师饰演无岸里的游书朗非常文学请多多关注两位老师的后期作品吧 ​</p>
+        <div class="evidence-meta">
+          <span>衬澍也叫陈述</span>
+          <span>2025年12月27日 23:58</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="衬澍也叫陈述 #云熠星河#就这个云旗和郝熠然真的很真诚 又真诚又努力 谁还没粉呢 请来这里磕一磕 不要被一些乱七八糟泼脏水的人干扰正主亲自挑选CP应援色粉丝名的只有这一家 请认准云熠星河请来多多关注云旗和郝熠然好吗 ​">
+        <div class="evidence-head">
+          <span>微博 · 2,537 赞</span>
+          <a href="https://m.weibo.cn/detail/5248597312667874" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云熠星河#就这个云旗和郝熠然真的很真诚 又真诚又努力 谁还没粉呢 请来这里磕一磕 不要被一些乱七八糟泼脏水的人干扰正主亲自挑选CP应援色粉丝名的只有这一家 请认准云熠星河请来多多关注云旗和郝熠然好吗 ​</p>
+        <div class="evidence-meta">
+          <span>衬澍也叫陈述</span>
+          <span>2025年12月27日 22:42</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="顾烟凝 吾岸第十五集，看完结局，觉得算是我看过的环大陆综合条件最好的一部。首先这个故事起承转合很完整，游书朗樊霄两个人设很有张力，其次导演会拍，演员会演。整个剧我最嗑的一幕就是红砖铺路，太纯情太痴情了。一个对全世界没有什么感情的人，把心里仅剩的那点热乎气对着一个人全掏出来，这不就是我见众生如草木，唯独见你是青山。樊霄口口声声叫的菩萨，在这一刻具象化。从开始追妻，樊霄对游书朗展现的是一直仰视的捧着的状态，他对自己的定位是赎罪也是要不计回报的爱余生。所以他说要每个年都陪着游书朗，哪怕不能在他身边，也要默默注视着他。为啥说这个剧">
+        <div class="evidence-head">
+          <span>微博 · 2,532 赞</span>
+          <a href="https://m.weibo.cn/detail/5251132131640965" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>吾岸第十五集，看完结局，觉得算是我看过的环大陆综合条件最好的一部。首先这个故事起承转合很完整，游书朗樊霄两个人设很有张力，其次导演会拍，演员会演。整个剧我最嗑的一幕就是红砖铺路，太纯情太痴情了。一个对全世界没有什么感情的人，把心里仅剩的那点热乎气对着一个人全掏出来，这不就是我见众生如草木，唯独见你是青山。樊霄口口声声叫的菩萨，在这一刻具象化。从开始追妻，樊霄对游书朗展现的是一直仰视的捧着的状态，他对自己的定位是赎罪也是要不计回报的爱余生。所以他说要每个年…</p>
+        <div class="evidence-meta">
+          <span>顾烟凝</span>
+          <span>01月03日 22:35</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="星河永熠 云熠星河超话🌌 #云熠星河# 云旗用努力和真诚圈粉无数～ 执云旗，赴熠光，愿他星途坦荡 ，云旗所向熠光万丈。 @云旗Yunqi @郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 2,532 赞</span>
+          <a href="https://m.weibo.cn/detail/5253672718046478" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话🌌 #云熠星河# 云旗用努力和真诚圈粉无数～ 执云旗，赴熠光，愿他星途坦荡 ，云旗所向熠光万丈。 @云旗Yunqi @郝熠然</p>
+        <div class="evidence-meta">
+          <span>星河永熠</span>
+          <span>01月10日 22:50</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="云熠同心 “#云熠星河# 🌌#云旗郝熠然52收官# 游书朗与樊霄的故事已经完结，但是云旗和郝熠然的故事仍在继续，星河不散，永不独行，明晚八点不见不散哦@云旗Yunqi @郝熠然 ”">
+        <div class="evidence-head">
+          <span>微博 · 1,780 赞</span>
+          <a href="https://m.weibo.cn/detail/5251137339132823" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>“#云熠星河# 🌌#云旗郝熠然52收官# 游书朗与樊霄的故事已经完结，但是云旗和郝熠然的故事仍在继续，星河不散，永不独行，明晚八点不见不散哦@云旗Yunqi @郝熠然 ”</p>
+        <div class="evidence-meta">
+          <span>云熠同心</span>
+          <span>01月03日 22:56</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="十小世 又二刷了一遍，先心疼游主任，后又心疼樊小狗。我觉得云旗的古装造型很适合北堂傲，一个是云旗的长相真的是我的菜，而且他眉眼间的锋利天然带着那种冷峻。再一个我上条微博也说了，樊霄的性格底色和北堂傲很像，所以会带有那种联想。但是奇怪，我从没带入过普普演言非离。可能是游书朗已经很虐了，言非离比游书朗还惨，实在不忍心当然这不说明我在其他文里不会让某人生云熠星河超话">
+        <div class="evidence-head">
+          <span>微博 · 1,613 赞</span>
+          <a href="https://m.weibo.cn/detail/5252903142688272" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>又二刷了一遍，先心疼游主任，后又心疼樊小狗。我觉得云旗的古装造型很适合北堂傲，一个是云旗的长相真的是我的菜，而且他眉眼间的锋利天然带着那种冷峻。再一个我上条微博也说了，樊霄的性格底色和北堂傲很像，所以会带有那种联想。但是奇怪，我从没带入过普普演言非离。可能是游书朗已经很虐了，言非离比游书朗还惨，实在不忍心当然这不说明我在其他文里不会让某人生云熠星河超话</p>
+        <div class="evidence-meta">
+          <span>十小世</span>
+          <span>01月08日 19:52</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-6" data-title="直播互动与口头名场面" data-search="直播互动与口头名场面 直播里的口头承诺、互相接梗和小动作，是粉丝会剪辑、转述、反复考古的轻量记忆。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">06</span>
+                  <h2>直播互动与口头名场面</h2>
+                  <p>直播里的口头承诺、互相接梗和小动作，是粉丝会剪辑、转述、反复考古的轻量记忆。</p>
+                </div>
+                <div class="section-score">
+                  <strong>47,360</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:7.04%"></i></div>
+              <div class="section-metrics">
+                <span><b>305</b> 采纳证据</span>
+                <span><b>297</b> 微博</span>
+                <span><b>8</b> 评论</span>
+                <span><b>47,316</b> 微博赞</span>
+                <span><b>44</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="沸反盈天yunyi 云熠星河超话🌌#云熠星河# 我求了，请让@云旗Yunqi @郝熠然 提前开播吧！时间长一点！大家像朋友一样坐下来唠唠嗑，他们可以做做跨年饭，做一些互动小游戏。真的真的真的很喜欢他俩，想多看看他俩。以前直播的时间都太短了，求跨年直播时间长一些吧，我向你们请愿了。@云熠引力场 @小助理 #云旗郝熠然# #云旗# #郝熠然#">
+        <div class="evidence-head">
+          <span>微博 · 8,819 赞</span>
+          <a href="https://m.weibo.cn/detail/5249605432250924" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话🌌#云熠星河# 我求了，请让@云旗Yunqi @郝熠然 提前开播吧！时间长一点！大家像朋友一样坐下来唠唠嗑，他们可以做做跨年饭，做一些互动小游戏。真的真的真的很喜欢他俩，想多看看他俩。以前直播的时间都太短了，求跨年直播时间长一些吧，我向你们请愿了。@云熠引力场 @小助理 #云旗郝熠然# #云旗# #郝熠然#</p>
+        <div class="evidence-meta">
+          <span>沸反盈天yunyi</span>
+          <span>2025年12月30日 17:28</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="0_o在逃观众 云熠星河超话#云旗郝熠然# 小星河想要，小星河得到，今晚追完剧就能立刻看直播，虐不到我喽~ @郝熠然 @云旗Yunqi">
+        <div class="evidence-head">
+          <span>微博 · 6,783 赞</span>
+          <a href="https://m.weibo.cn/detail/5248840968178194" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话#云旗郝熠然# 小星河想要，小星河得到，今晚追完剧就能立刻看直播，虐不到我喽~ @郝熠然 @云旗Yunqi</p>
+        <div class="evidence-meta">
+          <span>0_o在逃观众</span>
+          <span>2025年12月28日 14:51</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="居然是你li 手机锁屏壁纸！入坑名场面！ #云旗说所以呢# @云旗Yunqi 这家伙太勇了。性格狠帅，直接最无敌！">
+        <div class="evidence-head">
+          <span>微博 · 5,136 赞</span>
+          <a href="https://m.weibo.cn/detail/5251499376773555" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>手机锁屏壁纸！入坑名场面！ #云旗说所以呢# @云旗Yunqi 这家伙太勇了。性格狠帅，直接最无敌！</p>
+        <div class="evidence-meta">
+          <span>居然是你li</span>
+          <span>01月04日 22:54</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="杰么娜0528 云熠星河超话 第五集名场面re分析（已失智） L杰么娜0528的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 3,070 赞</span>
+          <a href="https://m.weibo.cn/detail/5239534221788890" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 第五集名场面re分析（已失智） L杰么娜0528的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>杰么娜0528</span>
+          <span>2025年12月02日 22:29</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="我家家产超帅 #云熠星河# 🌌#云旗直播# 我们家永远不存在单人直播玩游戏的时候球是旗熠青，道具颜色也是努力还原旗熠青，衣服上的勋章是老婆买的裤子送的，（买图3的裤子会送图5的勋章）可偏要带在自己身上！说祝福语肖肖说的是祝你们一起！云旗说对 ​">
+        <div class="evidence-head">
+          <span>微博 · 2,241 赞</span>
+          <a href="https://m.weibo.cn/detail/5292780775805582" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云熠星河# 🌌#云旗直播# 我们家永远不存在单人直播玩游戏的时候球是旗熠青，道具颜色也是努力还原旗熠青，衣服上的勋章是老婆买的裤子送的，（买图3的裤子会送图5的勋章）可偏要带在自己身上！说祝福语肖肖说的是祝你们一起！云旗说对 ​</p>
+        <div class="evidence-meta">
+          <span>我家家产超帅</span>
+          <span>04月28日 20:52</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="茜茜qq琑Haoyun7 云熠星河超话 🌌#云熠星河# 两个名场面放一起，又锤坑里了，云旗说心眼太多，朝郝老师看了一眼，再问心眼多吗？其实问的不是樊霄心眼多吗，是问的郝老师云旗心眼多吗？郝老师说当然多，要聪明一点啊（云旗明白了）郝老师问为什么不扎小辫子，云旗说下次（他知道郝老师喜欢了）后来真的扎了小瓣子。云旗你个恋爱脑@云旗Yunqi @郝熠然 L茜茜qq琑Haoyun7的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 1,928 赞</span>
+          <a href="https://m.weibo.cn/detail/5290805696659718" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云熠星河# 两个名场面放一起，又锤坑里了，云旗说心眼太多，朝郝老师看了一眼，再问心眼多吗？其实问的不是樊霄心眼多吗，是问的郝老师云旗心眼多吗？郝老师说当然多，要聪明一点啊（云旗明白了）郝老师问为什么不扎小辫子，云旗说下次（他知道郝老师喜欢了）后来真的扎了小瓣子。云旗你个恋爱脑@云旗Yunqi @郝熠然 L茜茜qq琑Haoyun7的微博视频</p>
+        <div class="evidence-meta">
+          <span>茜茜qq琑Haoyun7</span>
+          <span>04月23日 10:03</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="二里地-- 我没看错吧？这是什么🤓🤓🤓🤓#名场面 #云旗##郝熠然##云熠星河# L二里地--的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 1,302 赞</span>
+          <a href="https://m.weibo.cn/detail/5293437352161496" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>我没看错吧？这是什么🤓🤓🤓🤓#名场面 #云旗##郝熠然##云熠星河# L二里地--的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>二里地--</span>
+          <span>04月30日 16:21</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="浅色夏沫-Ricky 云熠星河超话 🌌#云旗郝熠然# ☁️：衣服有点皱巴了，你说你也不帮我理理PUPU：…… ☁️：痒？我给你挠挠PUPU：…… ☁️：我的腰围是多少？（名场面）PUPU：“必须正面回答？”～眼神交流～ ☁️：“是哒”～确认过眼神～自然流露细节@云旗Yunqi @郝熠然 L浅色夏沫-Ricky的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 1,280 赞</span>
+          <a href="https://m.weibo.cn/detail/5290940721794476" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然# ☁️：衣服有点皱巴了，你说你也不帮我理理PUPU：…… ☁️：痒？我给你挠挠PUPU：…… ☁️：我的腰围是多少？（名场面）PUPU：“必须正面回答？”～眼神交流～ ☁️：“是哒”～确认过眼神～自然流露细节@云旗Yunqi @郝熠然 L浅色夏沫-Ricky的微博视频</p>
+        <div class="evidence-meta">
+          <span>浅色夏沫-Ricky</span>
+          <span>04月23日 19:00</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-7" data-title="同框默契与并肩感" data-search="同框默契与并肩感 粉丝记住的是两人同框时自然流露的默契、并肩与磁场感，这类内容适合沉淀成关系名场面。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">07</span>
+                  <h2>同框默契与并肩感</h2>
+                  <p>粉丝记住的是两人同框时自然流露的默契、并肩与磁场感，这类内容适合沉淀成关系名场面。</p>
+                </div>
+                <div class="section-score">
+                  <strong>38,458</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:5.72%"></i></div>
+              <div class="section-metrics">
+                <span><b>162</b> 采纳证据</span>
+                <span><b>150</b> 微博</span>
+                <span><b>12</b> 评论</span>
+                <span><b>38,038</b> 微博赞</span>
+                <span><b>420</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="怦然心动-YY 云熠星河超话#云旗郝熠然# 机场抓拍的氛围感拉满，小星河永远为你们心动💓">
+        <div class="evidence-head">
+          <span>微博 · 8,042 赞</span>
+          <a href="https://m.weibo.cn/detail/5252458148004411" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话#云旗郝熠然# 机场抓拍的氛围感拉满，小星河永远为你们心动💓</p>
+        <div class="evidence-meta">
+          <span>怦然心动-YY</span>
+          <span>01月07日 14:24</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="云熠星河揽巡组 #云熠星河# 🌌#云旗郝熠然#云熠星河超话管理规范正式发布，图文细则见下图！ 同执尺规，方得超话井然；共拥星河，不负此间温柔。 超管组同步设立两个专项群：①加精申请群:云熠星河超话加精负责个人超话作品的加精申报。②超like群:听说你想变成超like 帮助非超like成为超like。 诚邀各位小星河恪守规则，文明磕糖，与超管组携手共建清朗有序的专属天地！">
+        <div class="evidence-head">
+          <span>微博 · 4,875 赞</span>
+          <a href="https://m.weibo.cn/detail/5248979128288328" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云熠星河# 🌌#云旗郝熠然#云熠星河超话管理规范正式发布，图文细则见下图！ 同执尺规，方得超话井然；共拥星河，不负此间温柔。 超管组同步设立两个专项群：①加精申请群:云熠星河超话加精负责个人超话作品的加精申报。②超like群:听说你想变成超like 帮助非超like成为超like。 诚邀各位小星河恪守规则，文明磕糖，与超管组携手共建清朗有序的专属天地！</p>
+        <div class="evidence-meta">
+          <span>云熠星河揽巡组</span>
+          <span>2025年12月29日 00:00</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="深爱已已知 #云熠星河# 🌌#云旗郝熠然#云熠星河超话管理规范正式发布，图文细则见下图！ 同执尺规，方得超话井然；共拥星河，不负此间温柔。 超管组同步设立两个专项群：①加精申请群:云熠星河超话加精负责个人超话作品的加精申报。②超like群:听说你想变成超like 帮助非超like成为超like。 诚邀各位小星河恪守规则，文明磕糖，与超管组携手共建清朗有序的专属天地！">
+        <div class="evidence-head">
+          <span>微博 · 4,875 赞</span>
+          <a href="https://m.weibo.cn/detail/5252207821721690" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云熠星河# 🌌#云旗郝熠然#云熠星河超话管理规范正式发布，图文细则见下图！ 同执尺规，方得超话井然；共拥星河，不负此间温柔。 超管组同步设立两个专项群：①加精申请群:云熠星河超话加精负责个人超话作品的加精申报。②超like群:听说你想变成超like 帮助非超like成为超like。 诚邀各位小星河恪守规则，文明磕糖，与超管组携手共建清朗有序的专属天地！</p>
+        <div class="evidence-meta">
+          <span>深爱已已知</span>
+          <span>01月06日 21:49</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="是苏诗情啊 #郝熠然#🌌#熠期一会# 流云遇星火，旗熠照星河。云旗热烈赤诚，郝熠然温柔笃定，一动一静，一勇一稳，彼此互补，彼此照亮。他们用真诚打破套路，用陪伴书写长久，同框即是名场面，对视便有万种情。这世间最好的关系，是并肩而立，互为光芒。 ​">
+        <div class="evidence-head">
+          <span>微博 · 1,965 赞</span>
+          <a href="https://m.weibo.cn/detail/5272855449436968" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#郝熠然#🌌#熠期一会# 流云遇星火，旗熠照星河。云旗热烈赤诚，郝熠然温柔笃定，一动一静，一勇一稳，彼此互补，彼此照亮。他们用真诚打破套路，用陪伴书写长久，同框即是名场面，对视便有万种情。这世间最好的关系，是并肩而立，互为光芒。 ​</p>
+        <div class="evidence-meta">
+          <span>是苏诗情啊</span>
+          <span>03月04日 21:16</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="一条积极阳光奋发向上的伪咸鱼 云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,189 赞</span>
+          <a href="https://m.weibo.cn/detail/5248071014550522" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>一条积极阳光奋发向上的伪咸鱼</span>
+          <span>2025年12月26日 11:51</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="旗然自得 云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,189 赞</span>
+          <a href="https://m.weibo.cn/detail/5248067819537925" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>旗然自得</span>
+          <span>2025年12月26日 11:38</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="云熠星河动力组 云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,189 赞</span>
+          <a href="https://m.weibo.cn/detail/5248043160175171" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然# 【12.26:第一🛞盖楼】 小星河集合啦！和动力组并肩作战，目标金超全力冲刺❗❗【目标🎯 400】【在此博下，每人5🍎➕1外👍🏻➕5内👍🏻➕2🧱】🍎格式要求：“#云熠星河# 🌌#云旗郝熠然#➕15字文案 ➕@云旗Yunqi @郝熠然”【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>云熠星河动力组</span>
+          <span>2025年12月26日 10:00</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="嗑cp机器人 我不允许你们这样伤害云旗和郝熠然！你们若是不爱，若是看不到他们的好，就请放过这两个在娱乐圈里苦苦坚持的小孩，别用尖酸的话语把他们裹进冰冷的恶意里。你们不知道，每天刷到那些刺耳的评论时，我有多心如刀割：有人恶意调侃郝熠然是 “txl”，用最龌龊的心思揣测他的x向；有人对着云旗的长相恶语相向，说他 “长得像猴”，全然无视他眼里的真诚。每次看到这些，我都像被一只无形的手攥紧了心脏，闷得喘不过气，连呼吸都带着疼 —— 他们明明都是那么好、那么努力的小宝啊，怎么就值得这样的伤害？ 云旗在我眼里，从来都是个纯真的小孩。镜头前的">
+        <div class="evidence-head">
+          <span>微博 · 795 赞</span>
+          <a href="https://m.weibo.cn/detail/5242732479512701" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>我不允许你们这样伤害云旗和郝熠然！你们若是不爱，若是看不到他们的好，就请放过这两个在娱乐圈里苦苦坚持的小孩，别用尖酸的话语把他们裹进冰冷的恶意里。你们不知道，每天刷到那些刺耳的评论时，我有多心如刀割：有人恶意调侃郝熠然是 “txl”，用最龌龊的心思揣测他的x向；有人对着云旗的长相恶语相向，说他 “长得像猴”，全然无视他眼里的真诚。每次看到这些，我都像被一只无形的手攥紧了心脏，闷得喘不过气，连呼吸都带着疼 —— 他们明明都是那么好、那么努力的小宝啊，怎么就…</p>
+        <div class="evidence-meta">
+          <span>嗑cp机器人</span>
+          <span>2025年12月11日 18:18</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-8" data-title="演唱会奔赴与巡演回忆" data-search="演唱会奔赴与巡演回忆 线下演唱会把CP情绪落在真实见面、舞台、应援和跨城奔赴里，是近期记忆浓度最高的场景之一。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">08</span>
+                  <h2>演唱会奔赴与巡演回忆</h2>
+                  <p>线下演唱会把CP情绪落在真实见面、舞台、应援和跨城奔赴里，是近期记忆浓度最高的场景之一。</p>
+                </div>
+                <div class="section-score">
+                  <strong>37,289</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:5.54%"></i></div>
+              <div class="section-metrics">
+                <span><b>283</b> 采纳证据</span>
+                <span><b>273</b> 微博</span>
+                <span><b>10</b> 评论</span>
+                <span><b>35,020</b> 微博赞</span>
+                <span><b>2,269</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="云熠迷妹 云熠星河超话 话说，什么时候见面会安排一下啊，🤔🎆 小星河想要，小星河得到@云旗Yunqi @郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 8,692 赞</span>
+          <a href="https://m.weibo.cn/detail/5248870306286580" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 话说，什么时候见面会安排一下啊，🤔🎆 小星河想要，小星河得到@云旗Yunqi @郝熠然</p>
+        <div class="evidence-meta">
+          <span>云熠迷妹</span>
+          <span>2025年12月28日 16:47</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="暧宝 🌌🌌舞台因你们而闪耀，歌声因你们而动人，云旗郝熠然默契满分，每一次同台都惊艳全场，用心歌唱，不负热爱，@云旗Yunqi @郝熠然 未来一路璀璨！🌌🌌">
+        <div class="evidence-head">
+          <span>评论 · 1,440 赞</span>
+          <a href="https://m.weibo.cn/detail/5294084363126591" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>🌌🌌舞台因你们而闪耀，歌声因你们而动人，云旗郝熠然默契满分，每一次同台都惊艳全场，用心歌唱，不负热爱，@云旗Yunqi @郝熠然 未来一路璀璨！🌌🌌</p>
+        <div class="evidence-meta">
+          <span>暧宝</span>
+          <span>Sat May 02 11:12:34 +0800 2026</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="予橙七 云熠星河超话 16位小星河合唱《溺于业火》来自16位小星河的收官礼物🎁祝@云旗Yunqi @郝熠然 星途璀璨，继续并肩而行吧 L予橙七的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 1,393 赞</span>
+          <a href="https://m.weibo.cn/detail/5252208562276672" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 16位小星河合唱《溺于业火》来自16位小星河的收官礼物🎁祝@云旗Yunqi @郝熠然 星途璀璨，继续并肩而行吧 L予橙七的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>予橙七</span>
+          <span>01月06日 21:52</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="七月-云熠星河 云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,257 赞</span>
+          <a href="https://m.weibo.cn/detail/5251483631355855" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>七月-云熠星河</span>
+          <span>01月04日 21:52</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="RAN丨YUNYI 云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,257 赞</span>
+          <a href="https://m.weibo.cn/detail/5251483379435626" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>RAN丨YUNYI</span>
+          <span>01月04日 21:51</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="果子红红的 云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,257 赞</span>
+          <a href="https://m.weibo.cn/detail/5251440689810249" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>果子红红的</span>
+          <span>01月04日 19:01</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="云熠星河动力组 云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 1,257 赞</span>
+          <a href="https://m.weibo.cn/detail/5251434297167043" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然#1.3.第一🛞盖楼，冲金2小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>云熠星河动力组</span>
+          <span>01月04日 18:36</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="一颗苹果_旗熠星 云熠星河超话 🌌#云旗郝熠然52收官# 1.3.盖楼小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】">
+        <div class="evidence-head">
+          <span>微博 · 974 赞</span>
+          <a href="https://m.weibo.cn/detail/5251137215400544" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌#云旗郝熠然52收官# 1.3.盖楼小星河们，都来参与📊任/务，和动力组一起搞🔥度 【目标🎯 700➕】用以下文案盖楼🍎👇🏻“#云熠星河# 🌌#云旗郝熠然52收官# ➕15字文案➕@云旗Yunqi @郝熠然 ”【在此博下，每人5🍎➕1外👍🏻➕4内👍🏻➕2🧱】【做完扩散】</p>
+        <div class="evidence-meta">
+          <span>一颗苹果_旗熠星</span>
+          <span>01月03日 22:55</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-9" data-title="双向奔赴与爱意传递" data-search="双向奔赴与爱意传递 粉丝反复讲述信件、彩带、星星纸和祝福被送达，核心情绪是“我们的爱有被看见、有被回应”。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">09</span>
+                  <h2>双向奔赴与爱意传递</h2>
+                  <p>粉丝反复讲述信件、彩带、星星纸和祝福被送达，核心情绪是“我们的爱有被看见、有被回应”。</p>
+                </div>
+                <div class="section-score">
+                  <strong>13,015</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:1.93%"></i></div>
+              <div class="section-metrics">
+                <span><b>570</b> 采纳证据</span>
+                <span><b>550</b> 微博</span>
+                <span><b>20</b> 评论</span>
+                <span><b>10,790</b> 微博赞</span>
+                <span><b>2,225</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="是苏诗情啊 爱意从未改变，祝福都会抵达">
+        <div class="evidence-head">
+          <span>评论 · 1,302 赞</span>
+          <a href="https://m.weibo.cn/detail/5292335262861296" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>爱意从未改变，祝福都会抵达</p>
+        <div class="evidence-meta">
+          <span>是苏诗情啊</span>
+          <span>Mon Apr 27 15:22:06 +0800 2026</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="奶茶要放珠珠霞 云熠星河超话 🌌 #云熠星河# 高嘉辉又在上演偷偷藏不住了🫵🏻1️⃣➡️3️⃣宣示主权4️⃣大馋小子又在偷偷奖励自己了5️⃣人间萌物郝敬昀6️⃣你俩的手都挺胶黏7️⃣在20万➕的直播间里高嘉辉把隐晦爱意说尽8️⃣高嘉辉是讨打型人格9️⃣一般来说怕到这个程度，私底下已经打到不知天地为何物了">
+        <div class="evidence-head">
+          <span>微博 · 1,223 赞</span>
+          <a href="https://m.weibo.cn/detail/5250669007342924" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 🌌 #云熠星河# 高嘉辉又在上演偷偷藏不住了🫵🏻1️⃣➡️3️⃣宣示主权4️⃣大馋小子又在偷偷奖励自己了5️⃣人间萌物郝敬昀6️⃣你俩的手都挺胶黏7️⃣在20万➕的直播间里高嘉辉把隐晦爱意说尽8️⃣高嘉辉是讨打型人格9️⃣一般来说怕到这个程度，私底下已经打到不知天地为何物了</p>
+        <div class="evidence-meta">
+          <span>奶茶要放珠珠霞</span>
+          <span>01月02日 15:55</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="乄亍狸狸 云熠星河超话 姐妹们下午好呀，今天发现有部分姐妹用&quot;猴普&quot;来称呼我们的cp，可是大家一定要知道一个事情，这个称呼是黑粉给家产的称呼，带有事实意义上的rz性质，是黑粉肆无忌惮在我们面前rm家产的行为，真心爱护他们的话，请姐妹们还是使用家产所选择的带有爱意的称呼&quot;云熠星河&quot;，望所有小星河们都不要使用别的cp称呼来打扰到亲爱的他们。#郝熠然##云旗#郝熠然超话演员云旗超话">
+        <div class="evidence-head">
+          <span>微博 · 1,154 赞</span>
+          <a href="https://m.weibo.cn/detail/5252439863463568" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 姐妹们下午好呀，今天发现有部分姐妹用&quot;猴普&quot;来称呼我们的cp，可是大家一定要知道一个事情，这个称呼是黑粉给家产的称呼，带有事实意义上的rz性质，是黑粉肆无忌惮在我们面前rm家产的行为，真心爱护他们的话，请姐妹们还是使用家产所选择的带有爱意的称呼&quot;云熠星河&quot;，望所有小星河们都不要使用别的cp称呼来打扰到亲爱的他们。#郝熠然##云旗#郝熠然超话演员云旗超话</p>
+        <div class="evidence-meta">
+          <span>乄亍狸狸</span>
+          <span>01月07日 13:11</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="我家云熠超甜 云熠星河超话 姐妹们下午好呀，今天发现有部分姐妹用&quot;猴普&quot;来称呼我们的cp，可是大家一定要知道一个事情，这个称呼是黑粉给家产的称呼，带有事实意义上的rz性质，是黑粉肆无忌惮在我们面前rm家产的行为，真心爱护他们的话，请姐妹们还是使用家产所选择的带有爱意的称呼&quot;云熠星河&quot;，望所有小星河们都不要使用别的cp称呼来打扰到亲爱的他们。#郝熠然##云旗#郝熠然超话演员云旗超话">
+        <div class="evidence-head">
+          <span>微博 · 1,154 赞</span>
+          <a href="https://m.weibo.cn/detail/5252534781347983" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话 姐妹们下午好呀，今天发现有部分姐妹用&quot;猴普&quot;来称呼我们的cp，可是大家一定要知道一个事情，这个称呼是黑粉给家产的称呼，带有事实意义上的rz性质，是黑粉肆无忌惮在我们面前rm家产的行为，真心爱护他们的话，请姐妹们还是使用家产所选择的带有爱意的称呼&quot;云熠星河&quot;，望所有小星河们都不要使用别的cp称呼来打扰到亲爱的他们。#郝熠然##云旗#郝熠然超话演员云旗超话</p>
+        <div class="evidence-meta">
+          <span>我家云熠超甜</span>
+          <span>01月07日 19:29</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="我只想做小叮铛 郝熠然超话 郝熠然你该火，我一直喜欢看得见和拿得出手的爱。不论是爱粉丝、爱角色还是爱自己，你的行动与谈吐都证明你做到了!自己被挤成肉饼还在收的信，被粉丝调侃有回应的笑，离开时90度的鞠躬，在机场没见到粉丝立马出的道歉视频。真诚的人爱会永远有偏向。不论以后怎样，剧播后第一次走机场的新人美，真的好漂亮，我会永远记得💞@郝熠然">
+        <div class="evidence-head">
+          <span>微博 · 1,062 赞</span>
+          <a href="https://m.weibo.cn/detail/5244599900576886" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>郝熠然超话 郝熠然你该火，我一直喜欢看得见和拿得出手的爱。不论是爱粉丝、爱角色还是爱自己，你的行动与谈吐都证明你做到了!自己被挤成肉饼还在收的信，被粉丝调侃有回应的笑，离开时90度的鞠躬，在机场没见到粉丝立马出的道歉视频。真诚的人爱会永远有偏向。不论以后怎样，剧播后第一次走机场的新人美，真的好漂亮，我会永远记得💞@郝熠然</p>
+        <div class="evidence-meta">
+          <span>我只想做小叮铛</span>
+          <span>2025年12月16日 21:58</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="PeppaPeppa 你们这对真的还蛮神奇的，我发现每一次虽然没有完全合，但是其实都在暗戳戳的合。没有单飞局，只有双人行！要么一起出现，要么一起消失。他们的周身氛围好像只有彼此能踏入，出来营业就一起，神隐消失也一起！这种自成结界般的同步消失术，主打一个要见一起见，要跑一起跑。最狠的是，他们能做到哄哄大家的心意都同步！很懂怎么让大家满意，你想要的他们都给。总之这样的绑定感真的很有意思！大概想给大家吃到的就是那份“我们连体婴”般的心意相通吧！！#云旗# #郝熠然#">
+        <div class="evidence-head">
+          <span>微博 · 915 赞</span>
+          <a href="https://m.weibo.cn/detail/5246393863116771" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>你们这对真的还蛮神奇的，我发现每一次虽然没有完全合，但是其实都在暗戳戳的合。没有单飞局，只有双人行！要么一起出现，要么一起消失。他们的周身氛围好像只有彼此能踏入，出来营业就一起，神隐消失也一起！这种自成结界般的同步消失术，主打一个要见一起见，要跑一起跑。最狠的是，他们能做到哄哄大家的心意都同步！很懂怎么让大家满意，你想要的他们都给。总之这样的绑定感真的很有意思！大概想给大家吃到的就是那份“我们连体婴”般的心意相通吧！！#云旗# #郝熠然#</p>
+        <div class="evidence-meta">
+          <span>PeppaPeppa</span>
+          <span>2025年12月21日 20:47</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="吴晶的小窝 你们这对真的还蛮神奇的，我发现每一次虽然没有完全合，但是其实都在暗戳戳的合。没有单飞局，只有双人行！要么一起出现，要么一起消失。他们的周身氛围好像只有彼此能踏入，出来营业就一起，神隐消失也一起！这种自成结界般的同步消失术，主打一个要见一起见，要跑一起跑。最狠的是，他们能做到哄哄大家的心意都同步！很懂怎么让大家满意，你想要的他们都给。总之这样的绑定感真的很有意思！大概想给大家吃到的就是那份“我们连体婴”般的心意相通吧！！#云旗# #郝熠然#">
+        <div class="evidence-head">
+          <span>微博 · 915 赞</span>
+          <a href="https://m.weibo.cn/detail/5246722570978499" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>你们这对真的还蛮神奇的，我发现每一次虽然没有完全合，但是其实都在暗戳戳的合。没有单飞局，只有双人行！要么一起出现，要么一起消失。他们的周身氛围好像只有彼此能踏入，出来营业就一起，神隐消失也一起！这种自成结界般的同步消失术，主打一个要见一起见，要跑一起跑。最狠的是，他们能做到哄哄大家的心意都同步！很懂怎么让大家满意，你想要的他们都给。总之这样的绑定感真的很有意思！大概想给大家吃到的就是那份“我们连体婴”般的心意相通吧！！#云旗# #郝熠然#</p>
+        <div class="evidence-meta">
+          <span>吴晶的小窝</span>
+          <span>2025年12月22日 18:33</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="ZJ-琑OK云熠 云熠星河超话💞#云熠星河# “大雾四起遮住了我对你的爱意,我不怪你,怪大雾四起”">
+        <div class="evidence-head">
+          <span>微博 · 454 赞</span>
+          <a href="https://m.weibo.cn/detail/5244795316603216" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>云熠星河超话💞#云熠星河# “大雾四起遮住了我对你的爱意,我不怪你,怪大雾四起”</p>
+        <div class="evidence-meta">
+          <span>ZJ-琑OK云熠</span>
+          <span>2025年12月17日 10:55</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+
+            <section class="memory-section" id="memory-10" data-title="长情陪伴与共同回忆" data-search="长情陪伴与共同回忆 当文本没有指向某个具体事件，但明确在说云熠、云旗郝熠然与粉丝之间的回忆、喜欢、陪伴或岁岁年年时，归入这一类。">
+              <div class="section-top">
+                <div>
+                  <span class="section-index">10</span>
+                  <h2>长情陪伴与共同回忆</h2>
+                  <p>当文本没有指向某个具体事件，但明确在说云熠、云旗郝熠然与粉丝之间的回忆、喜欢、陪伴或岁岁年年时，归入这一类。</p>
+                </div>
+                <div class="section-score">
+                  <strong>51</strong>
+                  <span>严格可归因点赞</span>
+                </div>
+              </div>
+              <div class="section-meter"><i style="width:0.01%"></i></div>
+              <div class="section-metrics">
+                <span><b>38</b> 采纳证据</span>
+                <span><b>38</b> 微博</span>
+                <span><b>0</b> 评论</span>
+                <span><b>51</b> 微博赞</span>
+                <span><b>0</b> 评论赞</span>
+              </div>
+              <ol class="evidence-list">
+                
+      <li class="evidence-item" data-search="你就像伦敦的雨yu_ 左奇函超话 zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函反差萌rap担#&quot;对你念念不忘的原因大概是你曾在我的记忆里得过满分&quot;@TF家族-左奇函 ​L微风轻起_左奇函0319的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 21 赞</span>
+          <a href="https://m.weibo.cn/detail/5250766595953465" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函反差萌rap担#&quot;对你念念不忘的原因大概是你曾在我的记忆里得过满分&quot;@TF家族-左奇函 ​L微风轻起_左奇函0319的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>你就像伦敦的雨yu_</span>
+          <span>01月02日 22:22</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="eternity-___- #云旗郝熠然 你们保护好自己#大家都要注意安全，要保护好自己！祝大家都可以留有一个美好的回忆呀！ ​">
+        <div class="evidence-head">
+          <span>微博 · 12 赞</span>
+          <a href="https://m.weibo.cn/detail/5291237122771458" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>#云旗郝熠然 你们保护好自己#大家都要注意安全，要保护好自己！祝大家都可以留有一个美好的回忆呀！ ​</p>
+        <div class="evidence-meta">
+          <span>eternity-___-</span>
+          <span>04月24日 14:38</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="栀千映椿_ 左奇函超话 zqh#左奇函 四代第一rap担# zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函 四代首位rap作词人# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮@TF家族-左奇函 L告白函数0319丨左奇函的微博视频">
+        <div class="evidence-head">
+          <span>微博 · 8 赞</span>
+          <a href="https://m.weibo.cn/detail/5243527438011117" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 zqh#左奇函 四代第一rap担# zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函 四代首位rap作词人# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮@TF家族-左奇函 L告白函数0319丨左奇函的微博视频</p>
+        <div class="evidence-meta">
+          <span>栀千映椿_</span>
+          <span>2025年12月13日 22:57</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="邓林初见亦星辰 普普说的对，小道消息少看。就因为昨晚看了一个up主对【云熠】的分析，我整个人都崩塌了💔，今天一整天都很难过，心痛心痛心很痛，老天到底是爱我的，在我如此忧伤的时候推送了一条箴言，我也释然了一些。无论怎样，@云旗Yunqi @郝熠然 你们带给我的那抹甜是灰色天空下最美的记忆，只愿你们珍惜彼此，不离不弃，不被误会蒙蔽心神，不畏世俗勇敢前行，朋友也好，兄弟也罢，亦或恋人，无愧于天地便可以任何形态于世间。不问将来，无悔当下～">
+        <div class="evidence-head">
+          <span>微博 · 4 赞</span>
+          <a href="https://m.weibo.cn/detail/5253279168594749" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>普普说的对，小道消息少看。就因为昨晚看了一个up主对【云熠】的分析，我整个人都崩塌了💔，今天一整天都很难过，心痛心痛心很痛，老天到底是爱我的，在我如此忧伤的时候推送了一条箴言，我也释然了一些。无论怎样，@云旗Yunqi @郝熠然 你们带给我的那抹甜是灰色天空下最美的记忆，只愿你们珍惜彼此，不离不弃，不被误会蒙蔽心神，不畏世俗勇敢前行，朋友也好，兄弟也罢，亦或恋人，无愧于天地便可以任何形态于世间。不问将来，无悔当下～</p>
+        <div class="evidence-meta">
+          <span>邓林初见亦星辰</span>
+          <span>01月09日 20:46</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="我担把妹王rap 左奇函超话 zqh#左奇函 fashionfunction# zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函四代首位青年演员# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮𝓈 𝓸𝒻 𝓎𝓸𝓊𝓉𝒽, 𝒻𝓊𝓁𝓁 𝓸𝒻 𝒷𝓮𝒶𝓊𝓉𝒾𝒻𝓊𝓁.&quot;@TF家族-左奇函">
+        <div class="evidence-head">
+          <span>微博 · 2 赞</span>
+          <a href="https://m.weibo.cn/detail/5245851264093655" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 zqh#左奇函 fashionfunction# zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函四代首位青年演员# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮𝓈 𝓸𝒻 𝓎𝓸𝓊𝓉𝒽, 𝒻𝓊𝓁𝓁 𝓸𝒻 𝒷𝓮𝒶𝓊𝓉𝒾𝒻𝓊𝓁.&quot;@TF家族-左奇函</p>
+        <div class="evidence-meta">
+          <span>我担把妹王rap</span>
+          <span>2025年12月20日 08:51</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="腰间有颗痣_ 左奇函超话 zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函 反差萌rap担#“总希望你是我的独家记忆 可是我却清楚的记得 你是很多人的唯一”@TF家族-左奇函http://t.cn/A60TT29T ​">
+        <div class="evidence-head">
+          <span>微博 · 2 赞</span>
+          <a href="https://m.weibo.cn/detail/5246773015614461" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 zqh#左奇函 一稔初见 破云熠晖# zqh#左奇函 反差萌rap担#“总希望你是我的独家记忆 可是我却清楚的记得 你是很多人的唯一”@TF家族-左奇函http://t.cn/A60TT29T ​</p>
+        <div class="evidence-meta">
+          <span>腰间有颗痣_</span>
+          <span>2025年12月22日 21:53</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="奇Qi酱 左奇函超话 💙#左奇函 四代唯一all蓝# 💙#左奇函 一稔初见 破云熠晖# 💙#左奇函四代首位青年演员# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮𝓈 𝓸𝒻 𝓎𝓸𝓊𝓉𝒽, 𝒻𝓊𝓁𝓁 𝓸𝒻 𝒷𝓮𝒶𝓊𝓉𝒾𝒻𝓊𝓁.&quot;@TF家族-左奇函">
+        <div class="evidence-head">
+          <span>微博 · 1 赞</span>
+          <a href="https://m.weibo.cn/detail/5242422768435991" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 💙#左奇函 四代唯一all蓝# 💙#左奇函 一稔初见 破云熠晖# 💙#左奇函四代首位青年演员# “你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮𝓈 𝓸𝒻 𝓎𝓸𝓊𝓉𝒽, 𝒻𝓊𝓁𝓁 𝓸𝒻 𝒷𝓮𝒶𝓊𝓉𝒾𝒻𝓊𝓁.&quot;@TF家族-左奇函</p>
+        <div class="evidence-meta">
+          <span>奇Qi酱</span>
+          <span>2025年12月10日 21:47</span>
+        </div>
+      </li>
+    
+
+      <li class="evidence-item" data-search="萌鼠小呆qi 左奇函超话 💙#左奇函 反差萌rap担#💙#左奇函 一稔初见 破云熠晖#💙“你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮@TF家族-左奇函 L微风轻起_左奇函0319的微博视频 ​">
+        <div class="evidence-head">
+          <span>微博 · 1 赞</span>
+          <a href="https://m.weibo.cn/detail/5244603714503205" target="_blank" rel="noreferrer">打开微博</a>
+        </div>
+        <p>左奇函超话 💙#左奇函 反差萌rap担#💙#左奇函 一稔初见 破云熠晖#💙“你的身影落在了青春的回忆，充满了美好”＂𝒴𝓸𝓊𝓇 𝒻𝒾𝓰𝓊𝓇𝓮 𝒻𝓮𝓁𝓁 𝒾𝓃 𝓉𝒽𝓮 𝓂𝓮𝓂𝓸𝓇𝒾𝓮@TF家族-左奇函 L微风轻起_左奇函0319的微博视频 ​</p>
+        <div class="evidence-meta">
+          <span>萌鼠小呆qi</span>
+          <span>2025年12月16日 22:13</span>
+        </div>
+      </li>
+    
+              </ol>
+            </section>
+            
+        </section>
+        <section class="method">
+          <div>
+            <h2>筛选口径</h2>
+            <p>这版延续“粉丝记忆资产”口径：一条微博或评论必须明确表现粉丝视角的点评、回忆、关系确认、应援记忆、入坑叙事或共同体守护，才会被计入对应记忆点的点赞总量。</p>
+            <p>扩量后额外处理了两类噪声：第一，品牌、杂志、美妆、商业应援和投票征集不计入；第二，PC 搜索里重复出现的异常高点赞值只保留文本证据，点赞清零，避免转发链继承同一数值造成刷榜。</p>
+            <ul>
+              
+            <li>
+              <span>微博：缺少粉丝点评或记忆表达</span>
+              <b>9,909</b>
+              <i style="width:100.00%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：未指向可识别记忆点</span>
+              <b>7,352</b>
+              <i style="width:74.20%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：商业联名/购买/福利语境</span>
+              <b>2,399</b>
+              <i style="width:24.21%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：记忆点指向不够明确</span>
+              <b>1,618</b>
+              <i style="width:16.33%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：未明确指向云旗×郝熠然主体</span>
+              <b>808</b>
+              <i style="width:8.15%"></i>
+            </li>
+            
+
+            <li>
+              <span>评论：评论未明确表达粉丝记忆/关系点评</span>
+              <b>779</b>
+              <i style="width:7.86%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：转发维护/标签堆叠但缺少记忆表达</span>
+              <b>679</b>
+              <i style="width:6.85%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：运营账目/领取规则/活动执行信息</span>
+              <b>657</b>
+              <i style="width:6.63%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：文本过短</span>
+              <b>599</b>
+              <i style="width:6.05%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：争议/维权语境但缺少关系记忆</span>
+              <b>408</b>
+              <i style="width:4.12%"></i>
+            </li>
+            
+
+            <li>
+              <span>微博：运营账目/领取规则/数据维护</span>
+              <b>193</b>
+              <i style="width:1.95%"></i>
+            </li>
+            
+
+            <li>
+              <span>评论：争议诉求偏重且缺少中心记忆</span>
+              <b>84</b>
+              <i style="width:0.85%"></i>
+            </li>
+            
+            </ul>
+          </div>
+          <div class="method-grid">
+            <div class="method-chip"><strong>514</strong><span>超过 100,000 的 PC 点赞值已清零</span></div>
+            <div class="method-chip"><strong>44</strong><span>重复高点赞值已清零，阈值 10,000</span></div>
+            <div class="method-chip"><strong>5,441</strong><span>最终进入榜单的微博与评论证据</span></div>
+          </div>
+        </section>
+      </div>
+      <footer class="footer">生成时间：2026-05-06 07:56。数据文件来自本地采集目录 data/weibo_yunyi_memory_assets。</footer>
+    </main>
+  </div>
+  <script>
+    const input = document.getElementById('search');
+    const sections = Array.from(document.querySelectorAll('.memory-section'));
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase();
+      sections.forEach(section => {
+        const haystack = section.textContent.toLowerCase();
+        section.classList.toggle('is-hidden', q.length > 0 && !haystack.includes(q));
+      });
+    });
+  </script>
+</body>
+</html>
