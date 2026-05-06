@@ -1,0 +1,1647 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云旗 × 郝熠然小红书记忆资产热度榜</title>
+
+  <style>
+    :root {
+      --bg: #f7f4ee;
+      --ink: #191714;
+      --muted: #736c62;
+      --line: #ddd3c6;
+      --accent: #b3482d;
+      --accent-soft: #f0d6ca;
+      --surface: #fffaf2;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .hero {
+      min-height: 64svh;
+      padding: 56px clamp(18px, 5vw, 72px) 34px;
+      display: grid;
+      align-items: end;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(115deg, rgba(179,72,45,.13), rgba(247,244,238,.2) 40%, rgba(25,23,20,.04)),
+        radial-gradient(circle at 82% 20%, rgba(25,23,20,.10), transparent 28%),
+        var(--bg);
+    }
+    .hero h1 {
+      max-width: 1040px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 104px);
+      line-height: .95;
+      font-weight: 760;
+    }
+    .hero p {
+      max-width: 820px;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 21px);
+      line-height: 1.7;
+    }
+    .hero .editor-note {
+      max-width: 920px;
+      margin-top: 20px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .stats {
+      margin-top: 34px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 34px;
+      color: var(--muted);
+    }
+    .stats b {
+      display: block;
+      color: var(--ink);
+      font-size: 28px;
+      line-height: 1.1;
+      font-variant-numeric: tabular-nums;
+    }
+    main { padding: 34px clamp(14px, 4vw, 58px) 80px; }
+    .toolbar {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+    .toolbar p {
+      margin: 0;
+      max-width: 720px;
+      line-height: 1.65;
+      font-size: 14px;
+    }
+    .toolbar-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px 14px;
+      min-width: 220px;
+    }
+    .toolbar-nav a {
+      color: var(--accent);
+      font-weight: 650;
+      text-decoration: none;
+      white-space: nowrap;
+      font-size: 13px;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border-block: 1px solid var(--line);
+      background: rgba(255,250,242,.62);
+    }
+    table {
+      width: 100%;
+      min-width: 1180px;
+      border-collapse: collapse;
+    }
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      background: rgba(247,244,238,.94);
+      color: var(--muted);
+      font-size: 12px;
+      text-align: left;
+      font-weight: 700;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    td {
+      vertical-align: top;
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    tr:hover { background: rgba(179,72,45,.055); }
+    .rank { width: 68px; color: var(--accent); font-weight: 760; }
+    .memory-name {
+      font-size: 17px;
+      font-weight: 760;
+      text-decoration: none;
+    }
+    .reading {
+      margin-top: 7px;
+      max-width: 440px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .number {
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+      font-size: 22px;
+      font-weight: 760;
+    }
+    .bar {
+      width: min(340px, 100%);
+      height: 5px;
+      margin-top: 12px;
+      background: #e6dacf;
+      overflow: hidden;
+    }
+    .bar span { display: block; height: 100%; background: var(--accent); }
+    .top-source { min-width: 260px; max-width: 360px; }
+    .source-kind {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 760;
+      margin-bottom: 6px;
+    }
+    .top-source a, .evidence-list a, .feature-source a {
+      font-weight: 720;
+      text-decoration: none;
+    }
+    .top-source p, .evidence-list p, .feature-source p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+    .sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .source-link {
+      display: inline-block;
+      padding: 5px 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--accent);
+    }
+    .memory-section {
+      display: grid;
+      grid-template-columns: 74px minmax(240px, 1fr) minmax(260px, 380px);
+      gap: 26px;
+      padding: 48px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-index {
+      color: var(--accent);
+      font-size: 28px;
+      font-weight: 780;
+      font-variant-numeric: tabular-nums;
+    }
+    .section-copy h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 48px);
+      line-height: 1.08;
+    }
+    .section-copy > p {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .section-copy .supporting {
+      margin-top: 14px;
+      font-size: 14px;
+    }
+    .metric-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .metric-row span {
+      padding: 8px 10px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .metric-row b {
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+    }
+    .feature-source {
+      align-self: start;
+      border-left: 1px solid var(--line);
+      padding-left: 22px;
+    }
+    .feature-thumb {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      margin-bottom: 14px;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .feature-thumb img, .mini-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      background: #e7ded2;
+    }
+    .thumb-fallback, .mini-thumb-fallback {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      font-weight: 760;
+      background: var(--accent-soft);
+    }
+    .thumb-fallback {
+      font-size: clamp(24px, 4vw, 36px);
+      letter-spacing: 1px;
+    }
+    .evidence-list {
+      grid-column: 2 / 4;
+      list-style: none;
+      padding: 0;
+      margin: 8px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .evidence-list li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 13px;
+      min-width: 0;
+    }
+    .mini-thumb {
+      width: 84px;
+      aspect-ratio: 1;
+      background: #e7ded2;
+      overflow: hidden;
+    }
+    .footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    @media (max-width: 900px) {
+      .hero { min-height: auto; padding-top: 38px; }
+      .toolbar {
+        flex-direction: column;
+      }
+      .toolbar-nav {
+        justify-content: flex-start;
+        min-width: 0;
+      }
+      .memory-section {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .feature-source {
+        border-left: 0;
+        padding-left: 0;
+      }
+      .evidence-list {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <h1>云旗 × 郝熠然小红书记忆资产热度榜</h1>
+      <p>基于 2,043 条去重候选帖子、1,371 条明确相关帖子和 19 条代表帖详情样本，按“帖子或评论明确指向某个记忆点才计赞”的保守口径做归因。</p>
+      <p class="editor-note">策划判断上，第一梯队是 云熠小世界/官方物料、一周年/相见/想念、红发/红秀/新造型；第二梯队是 演唱会/彼岸/澳门香港曼谷场、吾岸/角色与剧集记忆、星河姐/小星河的爱拿得出手、不拆/不拆2.0、双人直播。前者适合承担主叙事，后者更适合拆成梗点、场次与片刻型传播单元。</p>
+      <div class="stats">
+        <div><b>2,043</b>去重候选帖子</div>
+<div><b>1,371</b>明确相关帖子</div>
+<div><b>19</b>代表帖详情样本</div>
+<div><b>15</b>最终记忆点数</div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section>
+      <div class="toolbar">
+        <p>
+          综合热度 = 帖子点赞总数 + 代表帖可见评论/回复点赞样本。
+          评论不是全平台全量统计，而是为策划判断服务的代表帖样本，所以更适合做优先级和叙事方向选择。
+        </p>
+        <nav class="toolbar-nav">
+          <a href="#heat-table">热度总表</a>
+          <a href="#point-01">重点记忆点</a>
+          <a href="xhs_memory_points_final_deliverable.csv">表格导出</a>
+          <a href="#point-01">01 云熠小世界/官方物料</a>
+<a href="#point-02">02 一周年/相见/想念</a>
+<a href="#point-03">03 红发/红秀/新造型</a>
+<a href="#point-04">04 演唱会/彼岸/澳门香港…</a>
+<a href="#point-05">05 吾岸/角色与剧集记忆</a>
+<a href="#point-06">06 星河姐/小星河的爱拿得…</a>
+<a href="#point-07">07 不拆/不拆2.0</a>
+<a href="#point-08">08 双人直播</a>
+        </nav>
+      </div>
+      <div class="table-wrap" id="heat-table">
+        <table>
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>记忆点</th>
+              <th>综合热度</th>
+              <th>帖子点赞</th>
+              <th>评论样本</th>
+              <th>相关帖子</th>
+              <th>代表证据</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+              <td class="rank">01</td>
+              <td>
+                <a class="memory-name" href="#point-01">云熠小世界/官方物料</a>
+                <div class="reading">共同等待与共同刷新，是粉丝群体最稳的一条时间线记忆。</div>
+              </td>
+              <td>
+                <div class="number">530,764</div>
+                <div class="bar"><span style="width:100%"></span></div>
+              </td>
+              <td class="number">511,783</td>
+              <td class="number">18,981</td>
+              <td class="number">73</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/6944c14a000000001e00dbdc" target="_blank" rel="noreferrer">无奖竞猜star会和谁跑</a><p>云熠小世界 · 97,000 赞 · 0 评</p><div class="sources"><span class="source-link">user:云熠小世界</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">02</td>
+              <td>
+                <a class="memory-name" href="#point-02">一周年/相见/想念</a>
+                <div class="reading">等待终于被兑现，情绪价值非常集中，适合承担情感主叙事。</div>
+              </td>
+              <td>
+                <div class="number">165,882</div>
+                <div class="bar"><span style="width:31%"></span></div>
+              </td>
+              <td class="number">165,855</td>
+              <td class="number">27</td>
+              <td class="number">115</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69e6ce76000000002103814e" target="_blank" rel="noreferrer">和//光，你真的很好，才不是ctbz！！</a><p>熠然云深处</p><div class="sources"><span class="source-link">云熠红发</span><span class="source-link">云熠期待见面</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">03</td>
+              <td>
+                <a class="memory-name" href="#point-03">红发/红秀/新造型</a>
+                <div class="reading">视觉名场面最集中，最适合转成主视觉、海报与短视频封面。</div>
+              </td>
+              <td>
+                <div class="number">162,989</div>
+                <div class="bar"><span style="width:31%"></span></div>
+              </td>
+              <td class="number">162,414</td>
+              <td class="number">575</td>
+              <td class="number">102</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69707a0f0000000009039d1b" target="_blank" rel="noreferrer">红气养人</a><p>杂VISION</p><div class="sources"><span class="source-link">云熠红发</span><span class="source-link">云熠期待见面</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">04</td>
+              <td>
+                <a class="memory-name" href="#point-04">演唱会/彼岸/澳门香港曼谷场</a>
+                <div class="reading">现场共同见证感很强，最适合拆场次和名场面来做传播。</div>
+              </td>
+              <td>
+                <div class="number">92,918</div>
+                <div class="bar"><span style="width:18%"></span></div>
+              </td>
+              <td class="number">91,920</td>
+              <td class="number">998</td>
+              <td class="number">482</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69ea01580000000019025c07" target="_blank" rel="noreferrer">接到云熠啦</a><p>木木 🌻 · 4,188 赞 · 174 评</p><div class="sources"><span class="source-link">云熠星海现场</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">05</td>
+              <td>
+                <a class="memory-name" href="#point-05">吾岸/角色与剧集记忆</a>
+                <div class="reading">角色滤镜和真人关系互文，是很多粉丝的入坑路径。</div>
+              </td>
+              <td>
+                <div class="number">63,425</div>
+                <div class="bar"><span style="width:12%"></span></div>
+              </td>
+              <td class="number">56,999</td>
+              <td class="number">6,426</td>
+              <td class="number">36</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/6936d773000000001b021188" target="_blank" rel="noreferrer">西湖边逛一逛嘿嘿</a><p>云旗Yunqi · 40,655 赞 · 1,810 评</p><div class="sources"><span class="source-link">云旗郝熠然吾岸</span><span class="source-link">云旗 郝熠然 吾岸</span><span class="source-link">吾岸 樊霄 游书朗</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">06</td>
+              <td>
+                <a class="memory-name" href="#point-06">星河姐/小星河的爱拿得出手</a>
+                <div class="reading">这是粉丝身份感和社群荣誉感最强的一组资产。</div>
+              </td>
+              <td>
+                <div class="number">40,129</div>
+                <div class="bar"><span style="width:8%"></span></div>
+              </td>
+              <td class="number">39,179</td>
+              <td class="number">950</td>
+              <td class="number">165</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/699af0b1000000001a034da6" target="_blank" rel="noreferrer">旗熠青的由来，不知道的星河宝子看过来😅</a><p>好运⭐星瓶 · 1,606 赞 · 81 评</p><div class="sources"><span class="source-link">云熠拿得出手</span><span class="source-link">云熠现场壁纸</span><span class="source-link">云熠全屏壁纸</span><span class="source-link">吾岸 云熠</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">07</td>
+              <td>
+                <a class="memory-name" href="#point-07">不拆/不拆2.0</a>
+                <div class="reading">高浓度黑话和口号感，是圈层内部最鲜明的共识表达。</div>
+              </td>
+              <td>
+                <div class="number">37,812</div>
+                <div class="bar"><span style="width:7%"></span></div>
+              </td>
+              <td class="number">32,605</td>
+              <td class="number">5,207</td>
+              <td class="number">52</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/695a7be2000000001d03e543" target="_blank" rel="noreferrer">嘉辉逼宫普强要名分 表明立塲免惹麻煩</a><p>Waswa_ · 16,637 赞 · 734 评</p><div class="sources"><span class="source-link">云熠不拆</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">08</td>
+              <td>
+                <a class="memory-name" href="#point-08">双人直播</a>
+                <div class="reading">趣事、失控片刻和即时反应都在这里，适合做短视频钩子。</div>
+              </td>
+              <td>
+                <div class="number">33,820</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">32,362</td>
+              <td class="number">1,458</td>
+              <td class="number">94</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/6971bf59000000002203226c" target="_blank" rel="noreferrer">聊着聊着就把人搂怀里了</a><p>Coffeey33_ · 4,791 赞 · 829 评</p><div class="sources"><span class="source-link">云熠CP</span><span class="source-link">云熠cp</span><span class="source-link">云熠直播</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">09</td>
+              <td>
+                <a class="memory-name" href="#point-09">亲密互动泛记忆</a>
+                <div class="reading">这是能持续供给想象空间的关系型日常资产。</div>
+              </td>
+              <td>
+                <div class="number">26,289</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">23,739</td>
+              <td class="number">2,550</td>
+              <td class="number">9</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/698deffa000000000a033165" target="_blank" rel="noreferrer">云旗啊！！！你也太会了！！！</a><p>月野遥（见过云熠版） · 7,081 赞 · 295 评</p><div class="sources"><span class="source-link">云旗郝熠然</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">10</td>
+              <td>
+                <a class="memory-name" href="#point-10">捏脸</a>
+                <div class="reading">动作切片型高甜片刻，适合反复剪辑和二创传播。</div>
+              </td>
+              <td>
+                <div class="number">15,678</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">13,559</td>
+              <td class="number">2,119</td>
+              <td class="number">46</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69a42d440000000015038dc1" target="_blank" rel="noreferrer">这两个人互相捏脸给人的感觉好不一样。。</a><p>Celebrity Style 明星风尚 · 7,099 赞 · 199 评</p><div class="sources"><span class="source-link">云熠捏脸</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">11</td>
+              <td>
+                <a class="memory-name" href="#point-11">旗熠青/青色灯牌</a>
+                <div class="reading">颜色和应援物让抽象关系有了可视化符号。</div>
+              </td>
+              <td>
+                <div class="number">11,483</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">10,533</td>
+              <td class="number">950</td>
+              <td class="number">127</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/699af0b1000000001a034da6" target="_blank" rel="noreferrer">旗熠青的由来，不知道的星河宝子看过来😅</a><p>好运⭐星瓶 · 1,606 赞 · 81 评</p><div class="sources"><span class="source-link">云熠青色灯牌</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">12</td>
+              <td>
+                <a class="memory-name" href="#point-12">对视</a>
+                <div class="reading">极短却极强的一眼记忆，是适合做慢镜头放大的片刻。</div>
+              </td>
+              <td>
+                <div class="number">9,800</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">9,530</td>
+              <td class="number">270</td>
+              <td class="number">41</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/6925adb20000000019027cac" target="_blank" rel="noreferrer">对视30秒纯享版！！！！！甜！</a><p>momo · 1,808 赞 · 54 评</p><div class="sources"><span class="source-link">云熠对视</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">13</td>
+              <td>
+                <a class="memory-name" href="#point-13">命中注定/缘分叙事</a>
+                <div class="reading">很适合承接宿命感和天选感的文案包装。</div>
+              </td>
+              <td>
+                <div class="number">9,753</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">9,193</td>
+              <td class="number">560</td>
+              <td class="number">41</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69eca8bb000000002202549b" target="_blank" rel="noreferrer">你我本无缘，全凭郝熠然！</a><p>酒店人老王 · 2,139 赞 · 239 评</p><div class="sources"><span class="source-link">小星河</span><span class="source-link">云旗 郝熠然</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">14</td>
+              <td>
+                <a class="memory-name" href="#point-14">手机壳/亲签/周边</a>
+                <div class="reading">把记忆带回家，是最容易转成可拥有物的资产。</div>
+              </td>
+              <td>
+                <div class="number">5,595</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">5,434</td>
+              <td class="number">161</td>
+              <td class="number">74</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69ecb8e30000000038023a96" target="_blank" rel="noreferrer">这才是双商该有的样子！星河姐也太幸福了！</a><p>周边狗仔队(资讯版） · 934 赞 · 385 评</p><div class="sources"><span class="source-link">星河姐</span></div></td>
+            </tr>
+            
+
+            <tr>
+              <td class="rank">15</td>
+              <td>
+                <a class="memory-name" href="#point-15">单曲循环</a>
+                <div class="reading">音乐和氛围记忆更像辅助层，适合做情绪收口。</div>
+              </td>
+              <td>
+                <div class="number">1,980</div>
+                <div class="bar"><span style="width:6%"></span></div>
+              </td>
+              <td class="number">1,953</td>
+              <td class="number">27</td>
+              <td class="number">20</td>
+              <td class="top-source"><div class="source-kind">代表帖</div><a href="https://www.xiaohongshu.com/explore/69f8abc800000000370354bb" target="_blank" rel="noreferrer">我们不拆，好好听</a><p>🍧莫奈的花园 · 1,070 赞 · 368 评</p><div class="sources"><span class="source-link">云熠双人直播</span><span class="source-link">云熠星海</span><span class="source-link">云熠不拆</span><span class="source-link">云熠灯牌</span></div></td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      
+            <section class="memory-section" id="point-01">
+              <div class="section-index">01</div>
+              <div class="section-copy">
+                <h2>云熠小世界/官方物料</h2>
+                <p>共同等待与共同刷新，是粉丝群体最稳的一条时间线记忆。</p>
+                <p class="supporting">高赞集中在“找啊找啊找”“和大家分享一下今天”“训练加紧中”等小世界账号内容，像是粉丝共同刷新的主阵地。</p>
+                <div class="metric-row"><span>综合热度 <b>530,764</b></span><span>帖子点赞 <b>511,783</b></span><span>评论样本 <b>18,981</b></span><span>相关帖子 <b>73</b></span><span>评论条数 <b>17</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-254ae447ec-abe662dcea.webp" alt="云熠小世界/官方物料" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/6944c14a000000001e00dbdc" target="_blank" rel="noreferrer">无奖竞猜star会和谁跑</a>
+            <p>云熠小世界 · 97,000 赞 · 0 评</p>
+            <div class="sources"><span class="source-link">user:云熠小世界</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-254ae447ec-abe662dcea.webp" alt="无奖竞猜star会和谁跑" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6944c14a000000001e00dbdc" target="_blank" rel="noreferrer">无奖竞猜star会和谁跑</a>
+          <p>云熠小世界 · 97,000 赞 · 0 评 · user:云熠小世界</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-e0ee7c5945-d5cdd9f201.webp" alt="初雪时候跳一跳 " loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/693e4c94000000001e008ce9" target="_blank" rel="noreferrer">初雪时候跳一跳</a>
+          <p>云熠小世界 · 96,000 赞 · 0 评 · user:云熠小世界</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-0e139dc5a2-c316bab285.webp" alt="嘿嘿一会儿见 " loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6932adc8000000001d03da1c" target="_blank" rel="noreferrer">嘿嘿一会儿见</a>
+          <p>云熠小世界 · 83,000 赞 · 0 评 · user:云熠小世界</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-254ae447ec-abe662dcea.webp" alt="云旗普普下次拍这个好不好！好想看！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>云旗普普下次拍这个好不好！好想看！</span>
+          <p>包菜籽 · 7,047 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-254ae447ec-abe662dcea.webp" alt="笑死了，我每次都能在评论区体会到中国文字的强大" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>笑死了，我每次都能在评论区体会到中国文字的强大</span>
+          <p>是小皮啊 · 3,426 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-02">
+              <div class="section-index">02</div>
+              <div class="section-copy">
+                <h2>一周年/相见/想念</h2>
+                <p>等待终于被兑现，情绪价值非常集中，适合承担情感主叙事。</p>
+                <p class="supporting">一周年节点，以及“终于到了相见的日子”“想念值超标”等等待与见面的叙事。</p>
+                <div class="metric-row"><span>综合热度 <b>165,882</b></span><span>帖子点赞 <b>165,855</b></span><span>评论样本 <b>27</b></span><span>相关帖子 <b>115</b></span><span>评论条数 <b>20</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-35253e1b4c-dc6acf3d87.webp" alt="一周年/相见/想念" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/69e6ce76000000002103814e" target="_blank" rel="noreferrer">和//光，你真的很好，才不是ctbz！！</a>
+            <p>熠然云深处</p>
+            <div class="sources"><span class="source-link">云熠红发</span><span class="source-link">云熠期待见面</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-ca2c7f4de4-5ecae8faf1.webp" alt="想念值已超标" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/699efd1e000000002303b63b" target="_blank" rel="noreferrer">想念值已超标</a>
+          <p>郝熠然 · 140,530 赞 · 41,601 评 · 云熠红发 / 云熠期待见面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-1d63dea5d3-f8b6a43a19.webp" alt="五月的第一天和郝熠然一起来到他的家乡！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69f9e2e10000000022029c47" target="_blank" rel="noreferrer">五月的第一天和郝熠然一起来到他的家乡！</a>
+          <p>真的郝文辉 · 10,241 赞 · 1,234 评 · 郝熠然想念值已超标</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-11ee4dc638-50b033a900.webp" alt="&lt;无标题&gt;" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69f929ee0000000035029756" target="_blank" rel="noreferrer">&lt;无标题&gt;</a>
+          <p>重生之我在网上乱逛 · 1,477 赞 · 95 评 · 云熠 / 云熠星海 / 云熠拿得出手</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-35253e1b4c-dc6acf3d87.webp" alt="重新发，配个BGM，全都是泡沫，再惹哭一帮人[偷笑R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>重新发，配个BGM，全都是泡沫，再惹哭一帮人[偷笑R]</span>
+          <p>熠熠生辉🐳 · 4 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-35253e1b4c-dc6acf3d87.webp" alt="我一个字一个字的全看完了，就是没看水印[哭惹R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>我一个字一个字的全看完了，就是没看水印[哭惹R]</span>
+          <p>琳琳姐 · 3 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-03">
+              <div class="section-index">03</div>
+              <div class="section-copy">
+                <h2>红发/红秀/新造型</h2>
+                <p>视觉名场面最集中，最适合转成主视觉、海报与短视频封面。</p>
+                <p class="supporting">郝熠然红发、红秀、红气养人、新造型相关视觉记忆。</p>
+                <div class="metric-row"><span>综合热度 <b>162,989</b></span><span>帖子点赞 <b>162,414</b></span><span>评论样本 <b>575</b></span><span>相关帖子 <b>102</b></span><span>评论条数 <b>20</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-b07808059d-ad7095c866.webp" alt="红发/红秀/新造型" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/69707a0f0000000009039d1b" target="_blank" rel="noreferrer">红气养人</a>
+            <p>杂VISION</p>
+            <div class="sources"><span class="source-link">云熠红发</span><span class="source-link">云熠期待见面</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-ca2c7f4de4-5ecae8faf1.webp" alt="想念值已超标" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/699efd1e000000002303b63b" target="_blank" rel="noreferrer">想念值已超标</a>
+          <p>郝熠然 · 140,530 赞 · 41,601 评 · 云熠红发 / 云熠期待见面</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6a1403a788-7d8c786ae3.webp" alt="年前拿到了红秀！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/698c7ada000000000b0090fb" target="_blank" rel="noreferrer">年前拿到了红秀！</a>
+          <p>嗑疯了的野人 · 3,121 赞 · 157 评 · 云熠红秀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b07808059d-ad7095c866.webp" alt="红气养人" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69707a0f0000000009039d1b" target="_blank" rel="noreferrer">红气养人</a>
+          <p>杂VISION · 2,442 赞 · 158 评 · 云熠红秀</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b07808059d-ad7095c866.webp" alt="但其实是三个月前拍的，剧还没播" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>但其实是三个月前拍的，剧还没播</span>
+          <p>班尼尼尼 · 252 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b07808059d-ad7095c866.webp" alt="红秀还是太太太有眼光了！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>红秀还是太太太有眼光了！</span>
+          <p>sunnyrhg · 138 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-04">
+              <div class="section-index">04</div>
+              <div class="section-copy">
+                <h2>演唱会/彼岸/澳门香港曼谷场</h2>
+                <p>现场共同见证感很强，最适合拆场次和名场面来做传播。</p>
+                <p class="supporting">围绕巡演、彼岸、星海以及澳门/香港/曼谷场的现场图文、壁纸、回顾。</p>
+                <div class="metric-row"><span>综合热度 <b>92,918</b></span><span>帖子点赞 <b>91,920</b></span><span>评论样本 <b>998</b></span><span>相关帖子 <b>482</b></span><span>评论条数 <b>19</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-15ae03c1da-fa580f5baa.webp" alt="演唱会/彼岸/澳门香港曼谷场" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/69ea01580000000019025c07" target="_blank" rel="noreferrer">接到云熠啦</a>
+            <p>木木 🌻 · 4,188 赞 · 174 评</p>
+            <div class="sources"><span class="source-link">云熠星海现场</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-15ae03c1da-fa580f5baa.webp" alt="接到云熠啦" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69ea01580000000019025c07" target="_blank" rel="noreferrer">接到云熠啦</a>
+          <p>木木 🌻 · 4,188 赞 · 174 评 · 云熠星海现场</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5166cdcd6c-79f6ced17a.webp" alt="52分钟室内原地超慢跑（云熠演唱会版）" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69aea24f0000000016009419" target="_blank" rel="noreferrer">52分钟室内原地超慢跑（云熠演唱会版）</a>
+          <p>秋十三酱酱 · 4,017 赞 · 256 评 · 云旗郝熠然吾岸 / 云熠演唱会 / 云旗 郝熠然 吾岸</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-d59baabd57-7f819a960f.webp" alt="&lt;无标题&gt;" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69ee3a4b000000001b021829" target="_blank" rel="noreferrer">&lt;无标题&gt;</a>
+          <p>娱乐可爱蛙 · 3,137 赞 · 58 评 · 云熠CP / 云熠cp / 云旗郝熠然</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-15ae03c1da-fa580f5baa.webp" alt="南瓦三公子携爱人回国[偷笑R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>南瓦三公子携爱人回国[偷笑R]</span>
+          <p>TOMYSHORE露从今夜白 · 424 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-15ae03c1da-fa580f5baa.webp" alt="小高对不起，但你的今日穿搭真的是提溜算卦[捂脸R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>小高对不起，但你的今日穿搭真的是提溜算卦[捂脸R]</span>
+          <p>抠脚山大王 · 190 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-05">
+              <div class="section-index">05</div>
+              <div class="section-copy">
+                <h2>吾岸/角色与剧集记忆</h2>
+                <p>角色滤镜和真人关系互文，是很多粉丝的入坑路径。</p>
+                <p class="supporting">吾岸、樊霄/游书朗相关角色语境，但只保留标题/作者明确相关的内容。</p>
+                <div class="metric-row"><span>综合热度 <b>63,425</b></span><span>帖子点赞 <b>56,999</b></span><span>评论样本 <b>6,426</b></span><span>相关帖子 <b>36</b></span><span>评论条数 <b>19</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-5898eb3f2b-db07ffae3f.webp" alt="吾岸/角色与剧集记忆" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/6936d773000000001b021188" target="_blank" rel="noreferrer">西湖边逛一逛嘿嘿</a>
+            <p>云旗Yunqi · 40,655 赞 · 1,810 评</p>
+            <div class="sources"><span class="source-link">云旗郝熠然吾岸</span><span class="source-link">云旗 郝熠然 吾岸</span><span class="source-link">吾岸 樊霄 游书朗</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5898eb3f2b-db07ffae3f.webp" alt="西湖边逛一逛嘿嘿" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6936d773000000001b021188" target="_blank" rel="noreferrer">西湖边逛一逛嘿嘿</a>
+          <p>云旗Yunqi · 40,655 赞 · 1,810 评 · 云旗郝熠然吾岸 / 云旗 郝熠然 吾岸 / 吾岸 樊霄 游书朗</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5166cdcd6c-79f6ced17a.webp" alt="52分钟室内原地超慢跑（云熠演唱会版）" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69aea24f0000000016009419" target="_blank" rel="noreferrer">52分钟室内原地超慢跑（云熠演唱会版）</a>
+          <p>秋十三酱酱 · 4,017 赞 · 256 评 · 云旗郝熠然吾岸 / 云熠演唱会 / 云旗 郝熠然 吾岸</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-9e91523255-0684d54be4.webp" alt="云熠cp为什么会让这么多人上头" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69992783000000001600af3f" target="_blank" rel="noreferrer">云熠cp为什么会让这么多人上头</a>
+          <p>不忘山上雪 · 2,481 赞 · 351 评 · 云熠星河 / 云熠 / 云熠CP</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5898eb3f2b-db07ffae3f.webp" alt="拍这个 和你老婆拍这个[害羞R][害羞R][害羞R][害羞R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>拍这个 和你老婆拍这个[害羞R][害羞R][害羞R][害羞R]</span>
+          <p>被狗追着跑 · 1,287 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5898eb3f2b-db07ffae3f.webp" alt="小孩哥～这个壁纸！我要你这个壁纸！（虽然说给就给很没面子～但我尊嘟好喜欢" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>小孩哥～这个壁纸！我要你这个壁纸！（虽然说给就给很没面子～但我尊嘟好喜欢</span>
+          <p>Wwwwwwwwwwww · 794 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-06">
+              <div class="section-index">06</div>
+              <div class="section-copy">
+                <h2>星河姐/小星河的爱拿得出手</h2>
+                <p>这是粉丝身份感和社群荣誉感最强的一组资产。</p>
+                <p class="supporting">粉丝自称、应援、产出和“拿得出手”的群体表达。</p>
+                <div class="metric-row"><span>综合热度 <b>40,129</b></span><span>帖子点赞 <b>39,179</b></span><span>评论样本 <b>950</b></span><span>相关帖子 <b>165</b></span><span>评论条数 <b>16</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="星河姐/小星河的爱拿得出手" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/699af0b1000000001a034da6" target="_blank" rel="noreferrer">旗熠青的由来，不知道的星河宝子看过来😅</a>
+            <p>好运⭐星瓶 · 1,606 赞 · 81 评</p>
+            <div class="sources"><span class="source-link">云熠拿得出手</span><span class="source-link">云熠现场壁纸</span><span class="source-link">云熠全屏壁纸</span><span class="source-link">吾岸 云熠</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5786f7f0ac-e83a9b3273.webp" alt="送上一些高清壁纸！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6971c81b000000001a01cd98" target="_blank" rel="noreferrer">送上一些高清壁纸！</a>
+          <p>明明 · 4,946 赞 · 642 评 · 云熠拿得出手 / 云熠现场壁纸 / 云熠全屏壁纸</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-8892872bd3-9d605f17f0.webp" alt="星河姐们的爱太拿的出手" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69f69edb000000002202801b" target="_blank" rel="noreferrer">星河姐们的爱太拿的出手</a>
+          <p>小林jove · 3,665 赞 · 328 评 · 云熠星河 / 云熠拿得出手</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-7c47e9a7a7-6b0a808253.webp" alt="&lt;无标题&gt;" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69aaee65000000001b01c0a8" target="_blank" rel="noreferrer">&lt;无标题&gt;</a>
+          <p>云熠星河航迹组 · 2,648 赞 · 299 评 · 小星河</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="还记得当初他俩窝窝囊囊的就把主做了[捂脸R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>还记得当初他俩窝窝囊囊的就把主做了[捂脸R]</span>
+          <p>31、 · 453 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="窝窝囊囊坚定的选了青色" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>窝窝囊囊坚定的选了青色</span>
+          <p>绛染 · 151 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-07">
+              <div class="section-index">07</div>
+              <div class="section-copy">
+                <h2>不拆/不拆2.0</h2>
+                <p>高浓度黑话和口号感，是圈层内部最鲜明的共识表达。</p>
+                <p class="supporting">“不拆”全过程、曼谷不拆2.0、久久不拆等强口号记忆。</p>
+                <div class="metric-row"><span>综合热度 <b>37,812</b></span><span>帖子点赞 <b>32,605</b></span><span>评论样本 <b>5,207</b></span><span>相关帖子 <b>52</b></span><span>评论条数 <b>17</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-bc7e52ea17-fa5d0398a1.webp" alt="不拆/不拆2.0" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/695a7be2000000001d03e543" target="_blank" rel="noreferrer">嘉辉逼宫普强要名分 表明立塲免惹麻煩</a>
+            <p>Waswa_ · 16,637 赞 · 734 评</p>
+            <div class="sources"><span class="source-link">云熠不拆</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bc7e52ea17-fa5d0398a1.webp" alt="嘉辉逼宫普强要名分 表明立塲免惹麻煩" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/695a7be2000000001d03e543" target="_blank" rel="noreferrer">嘉辉逼宫普强要名分 表明立塲免惹麻煩</a>
+          <p>Waswa_ · 16,637 赞 · 734 评 · 云熠不拆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-36f92ef039-03bfb47ef5.webp" alt="《不拆》全过程！！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69eeacc0000000002301fee3" target="_blank" rel="noreferrer">《不拆》全过程！！</a>
+          <p>三斤鱼🐟 · 2,001 赞 · 112 评 · 云熠不拆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-1719bb2acf-11f94d94fd.webp" alt="曼谷2分11秒不拆2.0全过程！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69ee512c000000003601f76f" target="_blank" rel="noreferrer">曼谷2分11秒不拆2.0全过程！</a>
+          <p>背着然竣跑🦊 · 1,829 赞 · 123 评 · 云熠不拆 / 云熠曼谷演唱会</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bc7e52ea17-fa5d0398a1.webp" alt="他其实一直在压情绪的，他就是在要名分，一直盯着看，他严肃的时候超级凶，如果普普给的答案他不满意，他肯定要爆，这么多人面前要名分，魔丸就是魔丸，又猛又勇" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>他其实一直在压情绪的，他就是在要名分，一直盯着看，他严肃的时候超级凶，如果普普给的答案他不满意，他肯定要爆，这…</span>
+          <p>光摇银海眩生花 · 2,365 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bc7e52ea17-fa5d0398a1.webp" alt="本来看网上说他学生说都不敢靠近他半米之内，我还不信，现在我信了，这样的樊🐶我一米都不想接近，太压迫人了，一秒樊霄附体[捂脸R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>本来看网上说他学生说都不敢靠近他半米之内，我还不信，现在我信了，这样的樊🐶我一米都不想接近，太压迫人了，一秒樊…</span>
+          <p>流筑月 · 730 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-08">
+              <div class="section-index">08</div>
+              <div class="section-copy">
+                <h2>双人直播</h2>
+                <p>趣事、失控片刻和即时反应都在这里，适合做短视频钩子。</p>
+                <p class="supporting">双人直播、直播预告、直播间互动、下播后的粉丝解读。</p>
+                <div class="metric-row"><span>综合热度 <b>33,820</b></span><span>帖子点赞 <b>32,362</b></span><span>评论样本 <b>1,458</b></span><span>相关帖子 <b>94</b></span><span>评论条数 <b>20</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-bd0971fcf4-467d0f0ab4.webp" alt="双人直播" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/6971bf59000000002203226c" target="_blank" rel="noreferrer">聊着聊着就把人搂怀里了</a>
+            <p>Coffeey33_ · 4,791 赞 · 829 评</p>
+            <div class="sources"><span class="source-link">云熠CP</span><span class="source-link">云熠cp</span><span class="source-link">云熠直播</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bd0971fcf4-467d0f0ab4.webp" alt="聊着聊着就把人搂怀里了" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6971bf59000000002203226c" target="_blank" rel="noreferrer">聊着聊着就把人搂怀里了</a>
+          <p>Coffeey33_ · 4,791 赞 · 829 评 · 云熠CP / 云熠cp / 云熠直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5036fcc78e-9114437215.webp" alt="云熠双人直播预告📢" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69d79c70000000002103ac3c" target="_blank" rel="noreferrer">云熠双人直播预告📢</a>
+          <p>云熠星河航迹组 · 3,790 赞 · 550 评 · 云熠直播 / 云熠双人直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-c3f77f04fb-c6d6379e8c.webp" alt="原来第一场双人直播这么好看" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69e4a75d000000002102c111" target="_blank" rel="noreferrer">原来第一场双人直播这么好看</a>
+          <p>熠然郝云旗 · 3,251 赞 · 115 评 · 云熠双人直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bd0971fcf4-467d0f0ab4.webp" alt="播着播着上床了" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>播着播着上床了</span>
+          <p>啊 秋～（小星河） · 619 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bd0971fcf4-467d0f0ab4.webp" alt="无人在意的角落卡姿兰榜一了" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>无人在意的角落卡姿兰榜一了</span>
+          <p>水儿 · 377 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-09">
+              <div class="section-index">09</div>
+              <div class="section-copy">
+                <h2>亲密互动泛记忆</h2>
+                <p>这是能持续供给想象空间的关系型日常资产。</p>
+                <p class="supporting">暧昧、年下、私下关系、搂怀里、云旗太会了等互动解读。</p>
+                <div class="metric-row"><span>综合热度 <b>26,289</b></span><span>帖子点赞 <b>23,739</b></span><span>评论样本 <b>2,550</b></span><span>相关帖子 <b>9</b></span><span>评论条数 <b>19</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-62bd50cf0f-1702cac2fd.webp" alt="亲密互动泛记忆" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/698deffa000000000a033165" target="_blank" rel="noreferrer">云旗啊！！！你也太会了！！！</a>
+            <p>月野遥（见过云熠版） · 7,081 赞 · 295 评</p>
+            <div class="sources"><span class="source-link">云旗郝熠然</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-62bd50cf0f-1702cac2fd.webp" alt="云旗啊！！！你也太会了！！！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/698deffa000000000a033165" target="_blank" rel="noreferrer">云旗啊！！！你也太会了！！！</a>
+          <p>月野遥（见过云熠版） · 7,081 赞 · 295 评 · 云旗郝熠然</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-5687cdcedb-79e47addbe.webp" alt="他们私下关系这么好" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69ef67280000000038020f01" target="_blank" rel="noreferrer">他们私下关系这么好</a>
+          <p>郝郝郝 · 4,826 赞 · 162 评 · 云旗郝熠然 / 郝熠然云旗 / 云旗 郝熠然</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-bd0971fcf4-467d0f0ab4.webp" alt="聊着聊着就把人搂怀里了" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6971bf59000000002203226c" target="_blank" rel="noreferrer">聊着聊着就把人搂怀里了</a>
+          <p>Coffeey33_ · 4,791 赞 · 829 评 · 云熠CP / 云熠cp / 云熠直播</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-62bd50cf0f-1702cac2fd.webp" alt="这个高家辉不会真的是母单吧，第一次拍戏，还那么多吻戏，真的给他拍得发了狠忘了情没了命。" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>这个高家辉不会真的是母单吧，第一次拍戏，还那么多吻戏，真的给他拍得发了狠忘了情没了命。</span>
+          <p>钱难挣屎难吃 · 802 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-62bd50cf0f-1702cac2fd.webp" alt="到底谁想多亲两边阿[doge]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>到底谁想多亲两边阿[doge]</span>
+          <p>中国女孩 · 679 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-10">
+              <div class="section-index">10</div>
+              <div class="section-copy">
+                <h2>捏脸</h2>
+                <p>动作切片型高甜片刻，适合反复剪辑和二创传播。</p>
+                <p class="supporting">两个人互相捏脸的亲密互动片刻。</p>
+                <div class="metric-row"><span>综合热度 <b>15,678</b></span><span>帖子点赞 <b>13,559</b></span><span>评论样本 <b>2,119</b></span><span>相关帖子 <b>46</b></span><span>评论条数 <b>20</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-a5d8f70eed-65c2f4c48d.webp" alt="捏脸" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/69a42d440000000015038dc1" target="_blank" rel="noreferrer">这两个人互相捏脸给人的感觉好不一样。。</a>
+            <p>Celebrity Style 明星风尚 · 7,099 赞 · 199 评</p>
+            <div class="sources"><span class="source-link">云熠捏脸</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-a5d8f70eed-65c2f4c48d.webp" alt="这两个人互相捏脸给人的感觉好不一样。。" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69a42d440000000015038dc1" target="_blank" rel="noreferrer">这两个人互相捏脸给人的感觉好不一样。。</a>
+          <p>Celebrity Style 明星风尚 · 7,099 赞 · 199 评 · 云熠捏脸</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-248ff2df73-39bffe8f3d.webp" alt="捏脸完整版 有人傻乐有人宠溺" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69d66961000000001a02752d" target="_blank" rel="noreferrer">捏脸完整版 有人傻乐有人宠溺</a>
+          <p>发财柠 · 1,083 赞 · 11 评 · 云熠捏脸</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-214b4baaaf-2faea0d2d7.webp" alt="人间理想郝熠然，你真的很棒" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69f46a06000000001a035bf9" target="_blank" rel="noreferrer">人间理想郝熠然，你真的很棒</a>
+          <p>云熠生辉 · 790 赞 · 87 评 · 云旗郝熠然吾岸 / 云熠捏脸 / 郝熠然想念值已超标</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-a5d8f70eed-65c2f4c48d.webp" alt="郝熠然的表情很像拍婚纱照时新娘的表情包，(抱歉，我没有女化他的意思)就是那种傲娇的表情，懂吗？[害羞R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>郝熠然的表情很像拍婚纱照时新娘的表情包，(抱歉，我没有女化他的意思)就是那种傲娇的表情，懂吗？[害羞R]</span>
+          <p>90-LXQ · 825 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-a5d8f70eed-65c2f4c48d.webp" alt="小高捏脸：我lp好看吧 可爱吧 羡慕吧[偷笑R]
+普普捏脸：这个家是谁做主 看出来了吧[暗中观察R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>小高捏脸：我lp好看吧 可爱吧 羡慕吧[偷笑R] 普普捏脸：这个家是谁做主 看出来了吧[暗中观察R]</span>
+          <p>陶不言 · 349 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-11">
+              <div class="section-index">11</div>
+              <div class="section-copy">
+                <h2>旗熠青/青色灯牌</h2>
+                <p>颜色和应援物让抽象关系有了可视化符号。</p>
+                <p class="supporting">应援色、灯牌、现场颜色记忆。</p>
+                <div class="metric-row"><span>综合热度 <b>11,483</b></span><span>帖子点赞 <b>10,533</b></span><span>评论样本 <b>950</b></span><span>相关帖子 <b>127</b></span><span>评论条数 <b>16</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="旗熠青/青色灯牌" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/699af0b1000000001a034da6" target="_blank" rel="noreferrer">旗熠青的由来，不知道的星河宝子看过来😅</a>
+            <p>好运⭐星瓶 · 1,606 赞 · 81 评</p>
+            <div class="sources"><span class="source-link">云熠青色灯牌</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="旗熠青的由来，不知道的星河宝子看过来😅" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/699af0b1000000001a034da6" target="_blank" rel="noreferrer">旗熠青的由来，不知道的星河宝子看过来😅</a>
+          <p>好运⭐星瓶 · 1,606 赞 · 81 评 · 云熠青色灯牌</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-2e1ccfa3f4-17a81c0f81.webp" alt="我们不拆，好好听" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69f8abc800000000370354bb" target="_blank" rel="noreferrer">我们不拆，好好听</a>
+          <p>🍧莫奈的花园 · 1,070 赞 · 368 评 · 云熠双人直播 / 云熠星海 / 云熠不拆</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-9f6df51845-958353d322.webp" alt="最好看的旗熠青！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69bdf3430000000022000957" target="_blank" rel="noreferrer">最好看的旗熠青！</a>
+          <p>改个马甲 · 962 赞 · 237 评 · 旗熠青 / 云熠青色灯牌</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="还记得当初他俩窝窝囊囊的就把主做了[捂脸R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>还记得当初他俩窝窝囊囊的就把主做了[捂脸R]</span>
+          <p>31、 · 453 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-6d0dd05da8-6ce921ffd6.webp" alt="窝窝囊囊坚定的选了青色" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>窝窝囊囊坚定的选了青色</span>
+          <p>绛染 · 151 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+
+            <section class="memory-section" id="point-12">
+              <div class="section-index">12</div>
+              <div class="section-copy">
+                <h2>对视</h2>
+                <p>极短却极强的一眼记忆，是适合做慢镜头放大的片刻。</p>
+                <p class="supporting">对视30秒、纯享版等强片刻剪辑。</p>
+                <div class="metric-row"><span>综合热度 <b>9,800</b></span><span>帖子点赞 <b>9,530</b></span><span>评论样本 <b>270</b></span><span>相关帖子 <b>41</b></span><span>评论条数 <b>19</b></span></div>
+              </div>
+              
+          <aside class="feature-source">
+            <div class="feature-thumb">
+              <img src="images/xhs-b900afb934-cd7d9c5db4.webp" alt="对视" loading="lazy" referrerpolicy="no-referrer">
+            </div>
+            <div class="source-kind">代表帖</div>
+            <a href="https://www.xiaohongshu.com/explore/6925adb20000000019027cac" target="_blank" rel="noreferrer">对视30秒纯享版！！！！！甜！</a>
+            <p>momo · 1,808 赞 · 54 评</p>
+            <div class="sources"><span class="source-link">云熠对视</span></div>
+          </aside>
+        
+              <ul class="evidence-list">
+                
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b900afb934-cd7d9c5db4.webp" alt="对视30秒纯享版！！！！！甜！" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/6925adb20000000019027cac" target="_blank" rel="noreferrer">对视30秒纯享版！！！！！甜！</a>
+          <p>momo · 1,808 赞 · 54 评 · 云熠对视</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-9bc159bf14-e0f943160b.webp" alt="看看得了，还这那的" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69e1cbf4000000001a022f31" target="_blank" rel="noreferrer">看看得了，还这那的</a>
+          <p>啦布拉多多 · 1,201 赞 · 108 评 · 云熠对视</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-16082fae24-acb15edcaa.webp" alt="&lt;无标题&gt;" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">帖子样本</div>
+          <a href="https://www.xiaohongshu.com/explore/69ef789400000000200389cf" target="_blank" rel="noreferrer">&lt;无标题&gt;</a>
+          <p>养了只小基🌌 · 891 赞 · 34 评 · 云熠对视</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b900afb934-cd7d9c5db4.webp" alt="其实是年长者看出来年下者眼里抑制不住的欲望怕他再看下去就亲上来了所以才假装自己没憋住笑然后移开视线[色色R][萌萌哒R]我不管，你俩不解释就是默认（就是这样造yao）[笑哭R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>其实是年长者看出来年下者眼里抑制不住的欲望怕他再看下去就亲上来了所以才假装自己没憋住笑然后移开视线[色色R][…</span>
+          <p>瑞恩很美我知道🧡💖 · 97 赞</p>
+        </div>
+      </li>
+    
+
+      <li>
+        <div class="mini-thumb">
+          <img src="images/xhs-b900afb934-cd7d9c5db4.webp" alt="对视果然是人类不带情欲的精神接吻啊，眼神都拉丝啦[偷笑R][偷笑R]" loading="lazy" referrerpolicy="no-referrer">
+        </div>
+        <div>
+          <div class="source-kind">评论样本</div>
+          <span>对视果然是人类不带情欲的精神接吻啊，眼神都拉丝啦[偷笑R][偷笑R]</span>
+          <p>困困熊.xx · 59 赞</p>
+        </div>
+      </li>
+    
+              </ul>
+            </section>
+            
+    </section>
+
+    <section class="footer">
+      <div>方法说明：combined_heat = post_like_total + sampled visible comment/reply likes from one representative post per memory point</div>
+      <div>使用边界：评论层是代表帖可见样本，不建议直接作为官方统计口径引用，但足够支持策划排序、主叙事选择和梗点筛选。</div>
+    </section>
+  </main>
+</body>
+</html>

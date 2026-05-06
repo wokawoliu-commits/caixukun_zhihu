@@ -1,0 +1,83 @@
+cluster_id,label,notes
+vc0001,exclude,hand-drawn/cartoon
+vc0002,exclude,hand-drawn/cartoon
+vc0003,exclude,hand-drawn/cartoon
+vc0004,exclude,hand-drawn/cartoon
+vc0006,exclude,hand-drawn/cartoon
+vc0007,exclude,hand-drawn/cartoon
+vc0008,exclude,hand-drawn/cartoon
+vc0009,exclude,hand-drawn/cartoon
+vc0010,exclude,hand-drawn/cartoon
+vc0012,exclude,hand-drawn/cartoon
+vc0013,exclude,hand-drawn/cartoon
+vc0015,exclude,hand-drawn/cartoon
+vc0018,exclude,hand-drawn/cartoon
+vc0020,exclude,hand-drawn/cartoon
+vc0023,exclude,hand-drawn/cartoon
+vc0026,exclude,hand-drawn/cartoon
+vc0028,exclude,text/document image
+vc0029,exclude,hand-drawn/cartoon
+vc0031,exclude,hand-drawn/cartoon
+vc0032,exclude,hand-drawn/cartoon
+vc0033,exclude,meme/screenshot
+vc0034,exclude,chat/screenshot
+vc0035,exclude,hand-drawn/cartoon
+vc0039,exclude,object/place not person-focused
+vc0042,exclude,text/document image
+vc0045,exclude,hand-drawn/cartoon
+vc0049,exclude,hand-drawn/cartoon
+vc0052,exclude,cropped body detail not identifiable
+vc0054,exclude,text-heavy poster
+vc0055,exclude,anime/video screenshot
+vc0057,exclude,text/social screenshot
+vc0067,exclude,place/audience not person-focused
+vc0069,exclude,back view not identifiable
+vc0072,exclude,tv/screen collage
+vc0074,exclude,chat/screenshot
+vc0078,exclude,object not person-focused
+vc0079,exclude,social/video screenshot
+vc0092,exclude,text-heavy ad/poster
+vc0094,exclude,text/social screenshot
+vc0096,exclude,text-heavy poster
+vc0102,exclude,text-heavy poster
+vc0103,exclude,hand-drawn/cartoon
+vc0104,exclude,text-heavy poster
+vc0112,exclude,text-heavy ad/poster
+vc0113,exclude,phone screenshot
+vc0114,exclude,hand-drawn/cartoon
+vc0118,exclude,phone screenshot
+vc0120,exclude,cropped body detail not person photo
+vc0125,exclude,object/screen not person-focused
+vc0130,exclude,object not person-focused
+vc0132,exclude,scenery not person
+vc0133,exclude,phone screenshot
+vc0138,exclude,text-heavy card
+vc0140,exclude,text/note image
+vc0141,exclude,meme/text image
+vc0144,exclude,text/social screenshot
+vc0148,exclude,hand-drawn/cartoon
+vc0151,exclude,text/certificate image
+vc0152,exclude,text/list screenshot
+vc0156,exclude,hand-drawn/cartoon
+vc0157,exclude,non-person image
+vc0159,exclude,hand-drawn/cartoon
+vc0160,exclude,rotated/screen capture
+vc0163,exclude,hand-drawn/cartoon
+vc0164,exclude,text/banner image
+vc0168,exclude,text/social screenshot
+vc0170,exclude,phone screenshot
+vc0173,exclude,text-heavy poster
+vc0177,exclude,phone graphic/screenshot
+vc0178,exclude,product mockup/text-heavy
+vc0180,exclude,text-heavy poster
+vc0183,exclude,sketch/drawing
+vc0184,exclude,hand-drawn/cartoon
+vc0188,exclude,sketch/drawing
+vc0192,exclude,non-person image
+vc0193,exclude,text/social screenshot
+vc0421,exclude,text/cartoon image
+vc0871,exclude,hand-drawn/cartoon
+vc0932,exclude,cartoon strip
+vc0933,exclude,text-heavy billboard
+vc1021,exclude,broken/cropped image
+vc1023,exclude,hand-drawn/cartoon
