@@ -1,0 +1,29 @@
+{
+  "collected_at": "2026-05-11",
+  "target_image_count": 5000,
+  "source_count": 84,
+  "image_count": 5000,
+  "candidate_count": 19743,
+  "failure_count": 35265,
+  "category_counts": {
+    "作品剧照": 1088,
+    "公开私服": 467,
+    "品牌活动": 644,
+    "墨镜眼镜": 174,
+    "杂志封面": 714,
+    "珠宝腕表": 355,
+    "红毯礼服": 976,
+    "综合图库": 405,
+    "综艺穿搭": 177
+  },
+  "level_counts": {
+    "A": 25,
+    "B": 25,
+    "B/C": 4,
+    "C": 4946
+  },
+  "verification_counts": {
+    "needs_review": 4950,
+    "verified": 50
+  }
+}
