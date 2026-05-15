@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>肖宇梁访谈节目与概念企划调研报告</title>
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --ink: #1f2528;
+      --muted: #69727a;
+      --line: #d9d8d1;
+      --accent: #0f6c67;
+      --accent-2: #8c4f2e;
+      --accent-3: #344e7a;
+      --risk: #a33c2f;
+      --risk-bg: #fff3ef;
+      --soft: #eef5f4;
+      --gold-soft: #f6eee1;
+      --shadow: 0 18px 45px rgba(42, 39, 32, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.68;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 292px minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+      padding: 28px 22px;
+      border-right: 1px solid var(--line);
+      background: #fbfaf6;
+    }
+
+    .brand {
+      display: grid;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #a8c7c3;
+      background: var(--soft);
+      color: var(--accent);
+      border-radius: 8px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .brand-title {
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .brand-sub {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tools {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 20px;
+    }
+
+    .search {
+      width: 100%;
+      height: 40px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 12px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 14px;
+    }
+
+    .tool-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    button,
+    .small-link {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      height: 36px;
+      padding: 0 10px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    button:hover,
+    .small-link:hover {
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav {
+      display: grid;
+      gap: 3px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .nav a {
+      color: #2c3438;
+      border-radius: 6px;
+      padding: 7px 9px;
+      line-height: 1.35;
+      text-decoration: none;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: var(--soft);
+      color: var(--accent);
+    }
+
+    .nav-main {
+      font-size: 14px;
+      font-weight: 750;
+      margin-top: 5px;
+    }
+
+    .nav-sub {
+      font-size: 12px;
+      color: var(--muted) !important;
+      padding-left: 20px !important;
+    }
+
+    .content {
+      max-width: 1180px;
+      width: 100%;
+      padding: 34px 52px 72px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 26px;
+      align-items: stretch;
+      margin-bottom: 28px;
+    }
+
+    .hero-main {
+      padding: 30px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 760;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      margin: 0 0 14px;
+      font-size: 34px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 0;
+      max-width: 780px;
+    }
+
+    .hero-side {
+      display: grid;
+      gap: 12px;
+    }
+
+    .metric {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      min-height: 86px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.15;
+      color: var(--accent-3);
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .brief-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0 30px;
+    }
+
+    .brief {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .brief h2 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      border: 0;
+      padding: 0;
+    }
+
+    .brief p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    article {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 34px 42px 44px;
+    }
+
+    article > h1:first-child {
+      display: none;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 1.25;
+      margin: 40px 0 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 28px 0 12px;
+      letter-spacing: 0;
+    }
+
+    h4 {
+      font-size: 15px;
+      margin: 22px 0 10px;
+      color: var(--accent-3);
+      letter-spacing: 0;
+    }
+
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 22px; }
+    li { margin: 7px 0; }
+
+    .risk-heading {
+      color: var(--risk);
+    }
+
+    .planning-heading {
+      color: var(--accent-3);
+    }
+
+    .risk-item {
+      background: var(--risk-bg);
+      border-left: 3px solid var(--risk);
+      padding: 7px 10px;
+      border-radius: 0 6px 6px 0;
+      list-style-position: inside;
+    }
+
+    .question-line {
+      background: #f7f9fb;
+      border: 1px solid #dce5ee;
+      border-radius: 7px;
+      padding: 10px 12px;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .report-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-size: 14px;
+    }
+
+    .report-table th,
+    .report-table td {
+      padding: 11px 12px;
+      border-bottom: 1px solid #e6e4de;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .report-table th {
+      background: #f2f0e9;
+      font-weight: 760;
+      color: #273034;
+      white-space: nowrap;
+    }
+
+    .report-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .report-table tr:has(td:first-child:nth-last-child(n)) td {
+      word-break: break-word;
+    }
+
+    blockquote {
+      margin: 18px 0;
+      padding: 14px 18px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      color: #2d3a3c;
+      border-radius: 0 8px 8px 0;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92em;
+      background: #f0eee8;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    mark {
+      background: #fff0a8;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .no-results {
+      display: none;
+      background: var(--gold-soft);
+      border: 1px solid #d9bf90;
+      color: #5c4321;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
+    }
+
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 980px) {
+      .layout { display: block; }
+      .sidebar {
+        position: relative;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        max-height: 260px;
+        overflow: auto;
+      }
+      .content { padding: 24px 18px 58px; }
+      .hero { grid-template-columns: 1fr; }
+      .brief-grid { grid-template-columns: 1fr; }
+      article { padding: 24px 18px 34px; }
+      .hero h1 { font-size: 28px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .sidebar, .hero, .brief-grid, .back-top { display: none; }
+      .layout { display: block; }
+      .content { max-width: none; padding: 0; }
+      article { box-shadow: none; border: 0; padding: 0; }
+      a { color: #111; text-decoration: underline; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">研</div>
+        <div class="brand-title">肖宇梁策划调研</div>
+        <div class="brand-sub">访谈节目 / 概念宣发 / 拍摄策划</div>
+      </div>
+      <div class="tools">
+        <input id="search" class="search" type="search" placeholder="搜索关键词：宠物、禁区、造型…">
+        <div class="tool-row">
+          <button type="button" onclick="window.print()">打印</button>
+          <a class="small-link" href="./xiao_yuliang_research_20260515.md">Markdown</a>
+        </div>
+      </div>
+      <nav class="nav" id="nav">
+        <a class="nav-main" href="#0-数据口径与证据">0. 数据口径与证据</a>
+<a class="nav-main" href="#1-明星人设与故事素材">1. 明星人设与故事素材</a>
+<a class="nav-sub" href="#1-1-五个核心人设标签">1.1 五个核心人设标签</a>
+<a class="nav-sub" href="#1-2-关键经历与发展线">1.2 关键经历与发展线</a>
+<a class="nav-sub" href="#1-3-可展开素材与采访问题">1.3 可展开素材与采访问题</a>
+<a class="nav-sub" href="#1-4-明确不能碰的禁区与敏感词">1.4 明确不能碰的禁区与敏感词</a>
+<a class="nav-sub" href="#1-5-已经多次公开讨论过-应避免重复的问题">1.5 已经多次公开讨论过、应避免重复的问题</a>
+<a class="nav-sub" href="#1-6-宠物相处故事与宠物性格点">1.6 宠物相处故事与宠物性格点</a>
+<a class="nav-main" href="#2-粉丝内容偏好与反馈">2. 粉丝内容偏好与反馈</a>
+<a class="nav-sub" href="#2-1-粉丝想了解和想问的问题">2.1 粉丝想了解和想问的问题</a>
+<a class="nav-sub" href="#2-2-造型偏好与拍摄策划">2.2 造型偏好与拍摄策划</a>
+<a class="nav-sub" href="#2-3-粉丝与肖宇梁共享的-10-个珍贵记忆物件-瞬间">2.3 粉丝与肖宇梁共享的 10 个珍贵记忆物件/瞬间</a>
+<a class="nav-sub" href="#2-4-粉丝内部分歧与避雷">2.4 粉丝内部分歧与避雷</a>
+<a class="nav-main" href="#3-总体策划建议">3. 总体策划建议</a>
+<a class="nav-sub" href="#3-1-访谈主线">3.1 访谈主线</a>
+<a class="nav-sub" href="#3-2-最适合品牌挖掘的温暖力量">3.2 最适合品牌挖掘的温暖力量</a>
+<a class="nav-sub" href="#3-3-最应避免的节目做法">3.3 最应避免的节目做法</a>
+<a class="nav-main" href="#4-可直接使用的-36-个采访问题汇总">4. 可直接使用的 36 个采访问题汇总</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <section class="hero" id="top">
+        <div class="hero-main">
+          <div class="eyebrow">2026-05-15 · 品牌策划阅读版</div>
+          <h1>肖宇梁访谈节目与概念企划调研报告</h1>
+          <p>将小红书、微博、抖音补充样本和公开资料整理成策划可直接使用的阅读页。重点放在可挖掘的正向人格、故事素材、粉丝偏好、拍摄方向和品牌避雷。</p>
+        </div>
+        <div class="hero-side">
+          <div class="metric"><strong>1192</strong><span>小红书去重笔记样本</span></div>
+          <div class="metric"><strong>138</strong><span>微博去重样本</span></div>
+          <div class="metric"><strong>36</strong><span>可直接使用采访问题</span></div>
+        </div>
+      </section>
+
+      <section class="brief-grid" aria-label="关键结论">
+        <div class="brief">
+          <h2>主线</h2>
+          <p>练习成为光，也练习回到生活。用专业训练承接“演员”，用宠物与日常承接“陪伴”。</p>
+        </div>
+        <div class="brief">
+          <h2>最强素材</h2>
+          <p>舞蹈武生底色、舞台磨练、金路易新节点、宠物饭搭子、相机与生活碎片。</p>
+        </div>
+        <div class="brief">
+          <h2>最高风险</h2>
+          <p>CP/唯粉冲突、盗墓 IP 旧争议、职业低谷叙事、宠物安全争议和私生路透。</p>
+        </div>
+      </section>
+
+      <div class="no-results" id="noResults">没有找到匹配内容。可以换一个更短的关键词试试。</div>
+
+      <article id="article">
+        <h1 id="_1">肖宇梁访谈节目与概念企划调研报告</h1>
+<p>生成时间：2026-05-15<br/>
+调研用途：品牌访谈节目、概念宣发、拍摄策划<br/>
+核心原则：可挖掘温暖、专业、正向表达；敏感议题只做避雷，不做传播。</p>
+<h2 id="0-数据口径与证据">0. 数据口径与证据</h2>
+<p>本轮采集遵守了你给出的平台规则：</p>
+<div class="table-wrap"><table class="report-table">
+<thead>
+<tr>
+<th>平台</th>
+<th style="text-align: right;">工具</th>
+<th style="text-align: right;">采集量</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>小红书</td>
+<td style="text-align: right;">TikHub XHS App V2 API</td>
+<td style="text-align: right;">394 次 API 调用；2179 条搜索命中，1192 个去重笔记，180 条详情，344 条评论样本</td>
+<td>使用 search/detail/comment/user-notes，未登录小红书账号</td>
+</tr>
+<tr>
+<td>微博</td>
+<td style="text-align: right;">NanmiCoder MediaCrawler</td>
+<td style="text-align: right;">13 次请求；158 条搜索结果，138 个去重微博</td>
+<td>已登录可见浏览器；请求间隔按 15 秒控制</td>
+</tr>
+<tr>
+<td>抖音</td>
+<td style="text-align: right;">NanmiCoder MediaCrawler</td>
+<td style="text-align: right;">3 次请求；26 条搜索结果，25 个去重视频</td>
+<td>只作补充。发现 MediaCrawler 在失败关键词后的间隔不完全可控后已中止，未超过 50 次</td>
+</tr>
+</tbody>
+</table></div>
+<p>主要数据文件：</p>
+<ul>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/data/xhs_xiao_yuliang/search_hits.csv">小红书搜索结果</a></li>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/data/xhs_xiao_yuliang/details.csv">小红书笔记详情</a></li>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/data/xhs_xiao_yuliang/comments.csv">小红书评论样本</a></li>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/MediaCrawler/data/weibo/jsonl/search_contents_2026-05-15.jsonl">微博采集结果</a></li>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/MediaCrawler/data/douyin/jsonl/search_contents_2026-05-15.jsonl">抖音补充样本</a></li>
+<li><a href="/Users/huangdong/Downloads/codex-xhs7/data/query_counts.json">平台请求计数</a></li>
+</ul>
+<p>外部公开资料参考：</p>
+<ul>
+<li>TikHub 小红书 API 端点说明：<a href="https://docs.tikhub.io/" rel="noopener noreferrer" target="_blank">TikHub Docs</a> 与 <a href="https://blog.tikhub.io/zh/article/7" rel="noopener noreferrer" target="_blank">TikHub 小红书 API 使用指南</a></li>
+<li>肖宇梁基础履历：<a href="https://www.iq.com/actor-info/rainco-d-space-xiao-yu-liang-238126605?_from=iqiyi&amp;lang=en_us" rel="noopener noreferrer" target="_blank">iQIYI 个人资料页</a>、<a href="https://piaofang.maoyan.com/celebrity?id=2876320" rel="noopener noreferrer" target="_blank">猫眼专业版</a></li>
+<li>舞台剧资料：<a href="https://www.icm.gov.mo/fam/35/HP/4443/gb/" rel="noopener noreferrer" target="_blank">澳门艺术节《德龄与慈禧》页面</a>、<a href="https://www.bjnews.com.cn/detail/1778658758168031.html" rel="noopener noreferrer" target="_blank">新京报《大戏法》专访</a></li>
+<li>采访资料：<a href="https://k.sina.cn/article_6524158272_184dec14000100w5k2.html" rel="noopener noreferrer" target="_blank">Sina/聚光《肖宇梁专访：此刻，纵享“丝滑”》</a>、<a href="https://www.bilibili.com/read/cv9946213/" rel="noopener noreferrer" target="_blank">Bilibili 聚光专访</a></li>
+</ul>
+<h2 id="1-明星人设与故事素材">1. 明星人设与故事素材</h2>
+<h3 id="1-1-五个核心人设标签">1.1 五个核心人设标签</h3>
+<div class="table-wrap"><table class="report-table">
+<thead>
+<tr>
+<th>标签</th>
+<th>来源属性</th>
+<th>证据与解读</th>
+<th>可用于品牌表达</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>舞蹈与武生底色</td>
+<td>主动经历 + 粉丝/媒体强化</td>
+<td>iQIYI、猫眼均写到舞蹈背景；澳门艺术节页面写其因打戏出众获“旦脸武生”评价。微博高互动帖常用“旦脸武生”“身段”“核心力量”“打戏”描述他。</td>
+<td>“身体里有多年训练留下的秩序感”：可谈专业、克制、身体记忆。</td>
+</tr>
+<tr>
+<td>清冷贵公子/人间手办</td>
+<td>粉丝/媒体赋予</td>
+<td>小红书和微博高频词包括清冷、贵公子、人间手办、白月光、氛围感。聚光专访也提到有人称他“人间手办”。</td>
+<td>适合拍摄概念，但要从“外形标签”升级到“安静、有锋芒、有距离的角色气质”。</td>
+</tr>
+<tr>
+<td>严格自律的舞台型演员</td>
+<td>主动塑造 + 粉丝强化</td>
+<td>聚光专访中他说自己不算天赋型，但很努力；微博《德龄与慈禧》《大戏法》讨论反复提到台词、无剪辑舞台、魔术训练、排练辛苦。</td>
+<td>访谈可从“练习如何改变一个人”切入，正向且有内容。</td>
+</tr>
+<tr>
+<td>温柔爱动物的生活分享者</td>
+<td>主动塑造 + 粉丝赋予</td>
+<td>XHS官方宠物笔记互动极高：小黑、酒酒、黑皇、包里有什么、礼物、旅行等日常内容点赞评论高。微博也有大量“毛孩子”“饭搭子”讨论。</td>
+<td>非常适合品牌柔性内容：家、陪伴、照顾、慢下来。</td>
+</tr>
+<tr>
+<td>中二幽默与反差感</td>
+<td>主动表达 + 粉丝赋予</td>
+<td>Sina专访讨论“丝滑”“盲盒”“影流之主”等梗；微博热评喜欢他“冷脸酷哥与会耍宝无缝切换”。XHS“小猫和我”评论也把中二感当作可爱点。</td>
+<td>可做轻互动，不要变成尴尬复刻老梗；让他自然解释“为什么觉得好玩”。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="1-2-关键经历与发展线">1.2 关键经历与发展线</h3>
+<ol>
+<li>1995-01-23 出生于甘肃天水。iQIYI、猫眼均列出出生日期与出生地。</li>
+<li>早年系统学习舞蹈，本科为四川大学舞蹈相关背景，后进入中央民族大学舞蹈学院研究生阶段。猫眼资料写到2015年本科毕业并考入中央民族大学研究生班。</li>
+<li>2016 年加入 ZERO-G 出道。iQIYI、猫眼均记录此节点。</li>
+<li>2017 年参演《择天记》，开始影视表演。</li>
+<li>2018 年《沙海》饰张起灵，进入盗墓 IP 受众视野。</li>
+<li>2019 年《反骗天下》饰米若。搜狐采访中他谈到拿到剧本后需要快速理清人物关系。</li>
+<li>2020 年《终极笔记》再次饰张起灵，因打戏、身段、角色还原度被大量讨论，形成“人间手办”“旦脸武生”等外部标签。</li>
+<li>2021 年多篇媒体采访集中讨论其舞蹈经历、性格反差、张起灵表演和“丝滑”梗。</li>
+<li>2023 年后转向舞台训练与作品积累，公开讨论中常出现“重启演员生涯”“舞台磨练”等表述。</li>
+<li>2024 年参演话剧《德龄与慈禧》，饰光绪。澳门艺术节页面写其 2024 年参演并饰忧国忧民、有志难伸的青年君主。</li>
+<li>2025 年小红书官方账号持续经营日常、宠物、OOTD、相机、礼物、旅行等内容，粉丝对“本人生活感”反馈强烈。</li>
+<li>2026 年《大戏法》北京首演前后，微博、抖音讨论集中在金路易、魔术、舞台台词、西装背头、武戏与“跨界挑战”。</li>
+</ol>
+<h3 class="planning-heading" id="1-3-可展开素材与采访问题">1.3 可展开素材与采访问题</h3>
+<h4 id="6">6 个适合深度展开的经历故事</h4>
+<ol>
+<li>
+<p>从舞者到演员：身体训练如何变成角色表达能力。<br/>
+问题：什么时候第一次意识到，舞蹈训练不只是技巧，而是在帮你理解角色？<br/>
+问题：如果把“身体记忆”当成一种语言，它最常替你说出什么？</p>
+</li>
+<li>
+<p>早年不自信但靠努力向前：聚光专访中他讲到内向、练舞、考学与自我要求。<br/>
+问题：你曾说自己不是特别有天赋的孩子，那“努力”对你来说是压力、习惯，还是安全感？<br/>
+问题：有没有一个瞬间让你觉得，原来慢一点也可以走到想去的地方？</p>
+</li>
+<li>
+<p>张起灵带来的角色出圈：不讲争议，只谈“被看见”和“如何放下角色”。<br/>
+问题：一个角色被很多人珍藏时，演员如何既珍惜它，又继续向前走？<br/>
+问题：你现在回望那段经历，最想感谢的是角色、观众，还是当时那个拼命的自己？</p>
+</li>
+<li>
+<p>话剧《德龄与慈禧》：从影视到舞台，声音、台词、实时反馈的训练。<br/>
+问题：舞台没有剪辑和重来，你觉得它最诚实的地方是什么？<br/>
+问题：饰演一个被时代困住的人，会不会让你更珍惜当下的自由与表达？</p>
+</li>
+<li>
+<p>《大戏法》金路易：魔术、武术、舞台调度、年轻演员和前辈合作。<br/>
+问题：学习一个全新技能时，你最怕的是“不熟”，还是“看起来不真”？<br/>
+问题：如果金路易身上有一个词可以送给现实中的自己，你会选什么？</p>
+</li>
+<li>
+<p>宠物与家：从忙碌工作中回到照顾关系。<br/>
+问题：你照顾小动物时，有没有被它们反过来照顾的时刻？<br/>
+问题：对你来说，“回家”是一个地点、一种声音，还是某个等你的人和毛孩子？</p>
+</li>
+</ol>
+<h4 id="6_1">6 个适合趣味互动的人设点、话题或事件</h4>
+<ol>
+<li>
+<p>“丝滑”与影流之主：<br/>
+问题：你会怎么评价当年的自己：太会冲浪，还是太敢玩？<br/>
+问题：有没有一个梗你到现在仍然觉得“我当时真是这么想的”？</p>
+</li>
+<li>
+<p>包里有什么：<br/>
+问题：如果今天现场翻包，最能暴露你生活习惯的东西会是什么？<br/>
+问题：你的包里有没有一个东西是粉丝完全猜不到、但你离不开的？</p>
+</li>
+<li>
+<p>相机、CCD、试光：<br/>
+问题：你喜欢照片里的“清楚”，还是喜欢一点偶然和颗粒感？<br/>
+问题：如果让你给自己拍一组“最近的我”，你会选什么光线？</p>
+</li>
+<li>
+<p>OOTD 与库存图：<br/>
+问题：你发照片时会认真挑，还是凭当下心情？<br/>
+问题：有没有一套衣服是你觉得“这就是我舒服的状态”？</p>
+</li>
+<li>
+<p>台下幽默：如大戏法彩排“记得鼓掌”一类现场互动。<br/>
+问题：你在舞台下调节气氛时，是有意识地照顾大家，还是本能反应？<br/>
+问题：你最喜欢观众给你的哪一种现场反馈？</p>
+</li>
+<li>
+<p>小猫小狗人格测试：<br/>
+问题：如果把你家的毛孩子都放进一个剧组，谁会是导演、谁会是主演、谁会临场加戏？<br/>
+问题：你觉得自己更像哪只毛孩子？为什么？</p>
+</li>
+</ol>
+<h4 id="6_2">6 个适合轻松分享的日常生活</h4>
+<ol>
+<li>
+<p>回家陪酒酒吃饭：<br/>
+问题：忙碌之后和毛孩子一起吃饭，对你来说像不像一种充电？<br/>
+问题：你会不会因为它们改变自己的作息？</p>
+</li>
+<li>
+<p>礼物开箱：<br/>
+问题：收到粉丝礼物时，什么细节会让你觉得“她们真的很懂我”？<br/>
+问题：有没有一个礼物让你记住了很久？</p>
+</li>
+<li>
+<p>旅行与海边/沙漠：<br/>
+问题：你旅行时更喜欢把自己放空，还是用相机收集细节？<br/>
+问题：海边、沙漠、城市街头，哪里最像你当下的心境？</p>
+</li>
+<li>
+<p>护肤、出门准备、生活小工具：<br/>
+问题：你是仪式感型出门，还是“差不多就走”型？<br/>
+问题：有没有一个生活习惯被粉丝发现后，你自己也觉得好笑？</p>
+</li>
+<li>
+<p>拉伸、训练、身体管理：<br/>
+问题：练舞的人是不是很难真正离开拉伸和训练？<br/>
+问题：现在的身体训练更像工作要求，还是保持状态的私人习惯？</p>
+</li>
+<li>
+<p>在家拍照、试光、修图：<br/>
+问题：你发“试光”时，是在求助，还是在邀请大家进入你的日常？<br/>
+问题：你觉得生活照最动人的瞬间，是好看，还是够真实？</p>
+</li>
+</ol>
+<h3 class="risk-heading" id="1-4-明确不能碰的禁区与敏感词">1.4 明确不能碰的禁区与敏感词</h3>
+<p>以下不是事实定性，而是品牌节目避雷清单。建议节目脚本、花字、互动题、宣发文案、评论区运营都避开。</p>
+<div class="table-wrap"><table class="report-table">
+<thead>
+<tr>
+<th>风险区</th>
+<th>具体敏感词/触发词</th>
+<th>为什么不碰</th>
+<th>替代表达</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CP 与粉籍冲突</td>
+<td>宇日俱曾、瓶邪、肖瓶、曾舜晞、刘宇宁、铁三角、书剧分离、cpf、唯粉、双担</td>
+<td>XHS/微博里 CP 向内容量大，也有唯粉、CP粉边界讨论，容易把品牌节目从“肖宇梁本人”带偏。</td>
+<td>只说“经典角色”“合作作品”，不点 CP 名。</td>
+</tr>
+<tr>
+<td>盗墓 IP 旧争议</td>
+<td>张起灵雷点、纯元瓶、连帽衫、藏袍、吸血、网暴、不能提名字</td>
+<td>搜索中出现“雷点”“网暴”“角色消费”等讨论，粉丝情绪复杂。</td>
+<td>只谈“角色曾被观众记住”，不让他回应争议。</td>
+</tr>
+<tr>
+<td>职业空窗与行业矛盾</td>
+<td>雪藏、四年半、病休、公司、独立演员、Pua、内外交困</td>
+<td>粉丝会用这些词解释经历，但品牌不应主动引导受害叙事。</td>
+<td>讲“阶段性沉淀”“舞台训练”“重新出发”。</td>
+</tr>
+<tr>
+<td>宠物安全争议</td>
+<td>猫鸟同框、小8、八哥、强强、猫和鸟、审判、带节奏</td>
+<td>宠物内容很受欢迎，但也有围绕饲养安全的辩论。</td>
+<td>只拍温柔陪伴，不设计跨物种同框风险桥段。</td>
+</tr>
+<tr>
+<td>私生与代拍</td>
+<td>代拍、路透、私生、跟车、酒店、上下班、站姐、偷拍视频</td>
+<td>造型讨论常来自路透，但品牌应避免鼓励非正式拍摄。</td>
+<td>采用官方幕后、正式物料、授权花絮。</td>
+</tr>
+<tr>
+<td>身体/健康/用药</td>
+<td>按时吃药、太瘦、病、累到心疼</td>
+<td>粉丝会关心，但节目不宜追问隐私或制造怜爱焦虑。</td>
+<td>问“如何照顾自己”“如何恢复能量”。</td>
+</tr>
+<tr>
+<td>黑称与攻击性词</td>
+<td>塌房、有钱吗、讨厌、骂他、黑料、避雷挂人</td>
+<td>会污染品牌评论区。</td>
+<td>不设置“澄清型”议题。</td>
+</tr>
+<tr>
+<td>具体人名拉踩</td>
+<td>南派三叔、前合作演员、其他流量演员、某剧组</td>
+<td>易引发跨粉圈冲突。</td>
+<td>不比较、不拉踩、不问“谁更怎样”。</td>
+</tr>
+</tbody>
+</table></div>
+<h3 class="planning-heading" id="1-5-已经多次公开讨论过-应避免重复的问题">1.5 已经多次公开讨论过、应避免重复的问题</h3>
+<ol>
+<li>“为什么学舞蹈/从什么时候开始跳舞”：聚光专访已讲得很完整，包括少时学拉丁、中专训练、大学考学。</li>
+<li>“如何理解张起灵/为什么像张起灵”：2021 年前后采访和粉丝考古非常多。可换成“一个角色被珍藏后，演员如何继续出发”。</li>
+<li class="risk-item">“影流之主/丝滑梗”：Sina 专访已做过，若再用要短而新，不要整段复刻。</li>
+<li>“蒙古舞有没有完整版”：Sina 专访已经谈过动作编排和完整度。</li>
+<li>“宠物名字/酒酒怎么来的”：NowFresh 采访、微博/XHS二创已有讨论。可问“它们现在有没有新的习惯”。</li>
+<li>“包里有什么”：XHS 已有高互动官方内容。可改成“这次录制现场限定翻包”。</li>
+<li>“OOTD/CCD/相机型号”：XHS 官方多次发过。可问“为什么喜欢这种颗粒和光线”。</li>
+<li>“光绪/国家强大很幸福”：微博已大量转述《春妮的周末时光》采访。可从“舞台角色如何改变历史感受”切入。</li>
+<li>“见面会京剧扮相/生日会”：粉丝讨论密集。可只做视觉灵感，不让访谈重复回忆。</li>
+<li>“大戏法排练辛苦/第一次魔术”：近期微博、抖音 repo 已大量出现。节目可拿到更独家的“练习过程细节”，否则容易重复。</li>
+</ol>
+<h3 id="1-6-宠物相处故事与宠物性格点">1.6 宠物相处故事与宠物性格点</h3>
+<h4 id="10">至少 10 个相处故事/日常分享</h4>
+<ol>
+<li>小黑“i猫”与零食诱惑：XHS官方笔记《有你们好快乐》互动最高之一，描述小黑有点社恐，靠零食拉近距离。</li>
+<li>酒酒陪吃饭：XHS官方笔记《还有谁get不到酒酒陪吃饭的感觉》把“回家陪酒酒快乐炫饭”与忙碌间隙放慢节奏绑定。</li>
+<li>酒酒的小老弟：XHS官方《今天学到一个词“格雷系”》写到黑猫是酒酒的小老弟，粉丝把“猫狗家庭关系”当连续剧追。</li>
+<li>“小猫和我”：XHS官方 2025-11-17 笔记《小猫和我》强调“世界不可以没有猫猫”，评论区把他和猫一起“中二化”解读。</li>
+<li>黑皇当演员：XHS官方《Live图也可撕拉片》把拍摄环境写成灰暗小家，演员是黑皇，粉丝喜欢这种把宠物当家人和合作者的叙述。</li>
+<li>叫米诺起床：XHS粉丝笔记和微博转述都把“米诺起床”当作幸福小狗日常。</li>
+<li>米诺与角色名关联：粉丝笔记提到《反骗天下》角色米若/米诺的联想，成为老粉冷知识。</li>
+<li>酒酒名字与 NowFresh 宠爱专访：微博高互动记录显示酒酒曾和“爸爸”一起参加养宠采访，粉丝对“酒酒自己选名字”的说法很感兴趣。</li>
+<li>路遇狗狗想带回北京：微博样本中《跟我走吧朋友》相关内容提到他看到狗狗换鞋会互动，甚至想带走，强化“见到小动物就心软”。</li>
+<li>救助流浪小猫“强强”：微博粉丝讨论中反复提到他曾照顾流浪猫，并在离开后仍记得小生命。品牌可只抽象成“遇到小动物会忍不住照顾”，不点伤感结局。</li>
+<li>小鸟小8小窝：微博讨论提到为新成员准备小窝、等快递、手作布置。此点有宠物安全争议边缘，适合内部了解，不建议节目展开。</li>
+<li>出差时牵挂猫狗：微博粉丝把“出门久了会想猫狗”作为温柔点，适合访谈轻带。</li>
+</ol>
+<h4 id="10_1">至少 10 个宠物性格特点/出圈事件</h4>
+<ol>
+<li>小黑：i猫、社恐、需要零食诱惑。</li>
+<li>酒酒：饭搭子属性强，和“陪吃饭”绑定。</li>
+<li>酒酒：被粉丝称为“小酒”，有被奶奶养胖的可爱讨论。</li>
+<li>酒酒：被称“嫡长子”，粉丝将它放进家庭排序。</li>
+<li>黑皇：镜头感强，被写成“演员”。</li>
+<li>黑皇：适合低光、撕拉片、灰调影像，是拍摄梗。</li>
+<li>米诺：小狗，粉丝称其聪明、舔颜、亲人。</li>
+<li>米诺：和“叫起床”“被吓到”等日常短视频关联。</li>
+<li>小老四/言言：新近粉丝讨论里常被羡慕“能被抱很久”“被带在图里”。</li>
+<li class="risk-item">小8：爱睡觉、喝奶、好动、喜欢暖和小窝；但涉及猫鸟同框争议，节目不碰。</li>
+<li>两只八哥：粉丝总结一只外向爱说话、一只低调沉默。</li>
+<li>猫狗齐全：粉丝把他家宠物系统称为“家里的一切才是最美的乐园”，是陪伴记忆点。</li>
+</ol>
+<h2 id="2-粉丝内容偏好与反馈">2. 粉丝内容偏好与反馈</h2>
+<h3 class="planning-heading" id="2-1-粉丝想了解和想问的问题">2.1 粉丝想了解和想问的问题</h3>
+<p>粉丝最买账的不是单一“帅”，而是“专业能力 + 生活细节 + 反差性格”的组合。</p>
+<ol>
+<li>想看他如何准备角色：台词、动作、魔术、武戏、舞台排练。</li>
+<li>想听他谈舞蹈训练：身体控制、即兴、民族舞、刀马、京剧身段。</li>
+<li>想知道他的近况：工作状态、最近在看什么、在练什么、有没有新技能。</li>
+<li>想看生活日常：包里有什么、相机、OOTD、礼物、旅行、吃饭。</li>
+<li>想看宠物：酒酒、小黑、黑皇、米诺等近况。</li>
+<li class="risk-item">想听他谈“如何照顾自己”：但不要问病、药、伤痛隐私。</li>
+<li>想看幕后：拍摄花絮、试光、选片、录制间隙。</li>
+<li class="risk-item">想看他自然开玩笑：不要硬拗梗，最好由现场物件触发。</li>
+<li>想看他被认真对待：粉丝对“好好问专业问题”反馈会更好。</li>
+<li>想看他和粉丝的双向陪伴：礼物、信、生日、见面会记忆。</li>
+<li class="risk-item">想知道他对舞台与影视的选择：但不要问“为什么之前没进组”。</li>
+<li>想看新鲜视觉：白发、红衣、新中式、京剧、魔术师、西装背头、清冷古装。</li>
+</ol>
+<h3 class="planning-heading" id="2-2-造型偏好与拍摄策划">2.2 造型偏好与拍摄策划</h3>
+<h4 id="_2">粉丝高讨论造型方向</h4>
+<ol>
+<li>清冷贵公子：微博话题和 XHS古装、花六童、沈赋言路透中高频。</li>
+<li>旦脸武生：舞蹈身段、武戏、京剧扮相、刀马动作。</li>
+<li>红衣古装：小红书“红衣古装赛道”相关内容互动明显。</li>
+<li>白发/白毛小猫：微博《焕然新生》张七十路透讨论高。</li>
+<li>京剧扮相/国风杀：微博高互动提到“眉眼藏锋、身段挺拔”。</li>
+<li>西装背头魔术师：2026《大戏法》讨论最新、热度上升。</li>
+<li>CCD/OOTD/秋天氛围：XHS官方日常图点赞评论稳定高。</li>
+<li>沙漠/旅行/风镜：XHS官方“沙漠两日游”点赞 3.8 万级。</li>
+<li>碎冰蓝应援妆：XHS粉丝妆容分享互动较高，可作粉丝共创灵感。</li>
+<li class="risk-item">反派/病娇/危险感：XHS评论中有“想看反派”的明确偏好，但品牌要控制尺度，避免阴暗过头。</li>
+</ol>
+<h4 id="10_2">10 个拍摄妆造选项</h4>
+<div class="table-wrap"><table class="report-table">
+<thead>
+<tr>
+<th>选项</th>
+<th>风格</th>
+<th>简述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>清冷贵公子</td>
+<td>浅灰、银白、冷玉质感，立领或长衫，少量金属冷光。</td>
+</tr>
+<tr>
+<td>2</td>
+<td>西装魔术师</td>
+<td>黑白礼服、手套、扑克牌、怀表，结合《大戏法》新鲜记忆。</td>
+</tr>
+<tr>
+<td>3</td>
+<td>旦脸武生</td>
+<td>不完整戏妆，不做全脸戏曲复刻；突出眼尾、身段、折扇/水袖。</td>
+</tr>
+<tr>
+<td>4</td>
+<td>红衣少年将军</td>
+<td>红黑或红金，长风、马灯、剑鞘，强调英气和破碎感。</td>
+</tr>
+<tr>
+<td>5</td>
+<td>白发雪地</td>
+<td>白发或银灰挑染，雪、玻璃、冷雾，避免过度 cosplay 张起灵。</td>
+</tr>
+<tr>
+<td>6</td>
+<td>CCD秋日</td>
+<td>北京秋天、胶片颗粒、围巾、旧相机，呼应 XHS“秋天氛围”。</td>
+</tr>
+<tr>
+<td>7</td>
+<td>沙漠旅人</td>
+<td>风镜、沙色外套、地图、旧车，呼应官方沙漠分享。</td>
+</tr>
+<tr>
+<td>8</td>
+<td>家中低光</td>
+<td>台灯、相机、猫影、包、旧唱片，突出真实生活，不让宠物承受复杂拍摄。</td>
+</tr>
+<tr>
+<td>9</td>
+<td>校园男大</td>
+<td>白衬衫、运动外套、书包、操场光影，呼应川大校草/少年感，但不装嫩。</td>
+</tr>
+<tr>
+<td>10</td>
+<td>水边夜航</td>
+<td>深蓝、雨、伞、船灯或码头，做安静叙事感，适合访谈主视觉。</td>
+</tr>
+</tbody>
+</table></div>
+<h4 id="10_3">不少于 10 条拍摄建议</h4>
+<ol>
+<li class="risk-item">主视觉不要只拍“脸好看”，要拍“身体训练留下的线条”：手、肩颈、站姿、转身。</li>
+<li>至少安排一组动态大片：拉伸、转身、抛牌、开扇、走台步，比静态硬照更能发挥优势。</li>
+<li class="risk-item">避免直接复刻张起灵服装、连帽衫、藏袍等敏感视觉符号。</li>
+<li>宠物桥段只做低刺激、短时、可退出的生活感拍摄，不做猫鸟同框，不强迫互动。</li>
+<li class="risk-item">魔术师方向可用手部特写、扑克牌、丝巾、报纸、水杯，别让他现场表演高难魔术以免失误风险。</li>
+<li class="risk-item">京剧/武生方向要请专业戏曲造型顾问，避免文化符号廉价化。</li>
+<li class="risk-item">反派/危险感可以拍成“克制的锋利”，不要做血腥、变态、阴湿过度。</li>
+<li class="risk-item">粉丝共创可设“你最想看肖宇梁尝试的光线/道具”，但不要设 CP 或角色投票。</li>
+<li>服装建议多用黑、白、灰、红、墨绿、深蓝，减少大面积粉紫梦幻风。</li>
+<li>拍摄文案主轴建议为“练习、回家、被看见、继续出发”，比“逆袭”“虐粉”更安全。</li>
+<li>花絮要保留他说笑、试光、看成片、和道具互动的片段，粉丝喜欢“自然状态”。</li>
+<li>可以设置一组“粉丝记忆物件静物”：相机、礼物盒、扑克牌、风镜、包、猫玩具，作为访谈章节转场。</li>
+</ol>
+<h3 id="2-3-粉丝与肖宇梁共享的-10-个珍贵记忆物件-瞬间">2.3 粉丝与肖宇梁共享的 10 个珍贵记忆物件/瞬间</h3>
+<ol>
+<li>宇航员：粉丝群体的自我称呼，也和早期“空间站/宇航员”表达有关。</li>
+<li>普通保温杯：Sina专访开头提到抽奖礼物，粉丝会把“欧气”和他的中二感联系起来。</li>
+<li>月亮盲盒：生日发布的蒙古舞，被粉丝视作认真专业的一面。</li>
+<li>“记得鼓掌”：大戏法彩排下班互动被微博反复传播，是近期香港味很强的现场记忆。</li>
+<li>包里有什么：XHS官方高互动日常，是粉丝进入他生活细节的入口。</li>
+<li>CCD/100v/手机：XHS官方分享相机型号，粉丝喜欢他认真试光和求助。</li>
+<li>风镜与沙漠两日游：XHS官方旅行笔记互动高，适合做自由感视觉符号。</li>
+<li>酒酒饭搭子：宠物陪伴和“回家吃饭”绑定，温暖且安全。</li>
+<li>小黑 i猫：小黑社恐、零食诱惑，是宠物人格化的代表记忆。</li>
+<li>粉丝礼物：XHS“看看我收到的礼物吧”互动极高，说明粉丝重视“他看见了我们的心意”。</li>
+<li>京剧扮相：见面会后微博高讨论，代表粉丝对他传统美学适配度的认可。</li>
+<li>金路易西装背头：2026 最新舞台记忆，适合品牌抓住“正在发生”的新鲜感。</li>
+</ol>
+<h3 class="risk-heading" id="2-4-粉丝内部分歧与避雷">2.4 粉丝内部分歧与避雷</h3>
+<ol>
+<li>唯粉 vs CP粉：核心冲突在于节目是否把他与某些合作对象、CP名、角色关系绑定。品牌应坚持“肖宇梁本人中心”。</li>
+<li class="risk-item">老粉 vs 新粉：老粉更在意职业阶段、旧伤害与边界；新粉更容易从颜值、路透、张起灵、宠物切入。节目需避免新粉式冒犯提问。</li>
+<li>剧粉/IP粉 vs 本人粉：剧粉喜欢张起灵、瓶邪、盗墓记忆；本人粉不希望他长期被角色消耗。建议只谈“角色礼物”，不做“再演一次”的压力。</li>
+<li>CP粉内部/跨粉圈：提及曾舜晞、刘宇宁、铁三角等容易引来不同粉籍。节目嘉宾为单人时不主动带其他演员。</li>
+<li class="risk-item">舞台粉 vs 影视粉：有粉丝希望他多演话剧，也有粉丝催影视进组。可问“不同媒介带来的训练”，不要问“以后到底选哪边”。</li>
+<li class="risk-item">宠物粉 vs 动保敏感讨论：宠物内容受欢迎，但猫鸟同框、小8等容易引发争论。拍摄中所有宠物安排需专业、透明、克制。</li>
+<li class="risk-item">事业粉 vs 妈粉：事业粉想看专业突破，妈粉关心休息和身体。访谈可兼顾“练习”和“照顾自己”，不要过度虐粉。</li>
+<li>路透粉 vs 反私生：粉丝喜欢路透里的造型，但品牌不能鼓励非授权跟拍。宣发素材全部官方化。</li>
+<li>梦女/颜粉 vs 专业粉：颜值表达有效，但若只夸脸，会被专业粉认为浅。每个视觉标签最好配一个专业支点。</li>
+<li class="risk-item">黑称和负面澄清：不要设置“回应争议”“澄清误解”“怎么看黑粉”等问题，会直接把评论区带向不可控。</li>
+</ol>
+<h2 id="3-总体策划建议">3. 总体策划建议</h2>
+<h3 id="3-1-访谈主线">3.1 访谈主线</h3>
+<p>建议主题：<strong>“练习成为光，也练习回到生活”</strong><br/>
+逻辑：舞蹈训练让他拥有身体表达，角色让他被看见，舞台让他重新打磨自己，宠物和日常让他保持柔软。</p>
+<p>可分四章：</p>
+<ol>
+<li>身体：舞蹈、武生、台词、魔术、练习。</li>
+<li>角色：被观众记住，但不被单一角色困住。</li>
+<li>生活：包、相机、旅行、礼物、宠物。</li>
+<li>陪伴：粉丝如何把细节记住，他如何回应这份记住。</li>
+</ol>
+<h3 id="3-2-最适合品牌挖掘的温暖力量">3.2 最适合品牌挖掘的温暖力量</h3>
+<ol>
+<li>他不是“天赋神话”，更像“长期训练的人”：这对大众有可共情的正向力量。</li>
+<li>他有明显的柔软面：宠物、礼物、粉丝互动、现场照顾氛围。</li>
+<li>他有反差，但不是人设表演：冷脸、清冷、贵公子和中二幽默并存。</li>
+<li>他适合“把专业讲得轻松”：舞蹈、台词、魔术都能变成有内容的访谈。</li>
+<li>他近期有新的舞台节点《大戏法》，节目如果现在做，会有“此刻正在成长”的时效性。</li>
+</ol>
+<h3 id="3-3-最应避免的节目做法">3.3 最应避免的节目做法</h3>
+<ol>
+<li class="risk-item">不要把访谈做成“终极笔记回忆专场”。</li>
+<li class="risk-item">不要把宠物内容做成吸睛游戏。</li>
+<li class="risk-item">不要用“雪藏、低谷、被误解、翻红”这类虐粉叙事做主轴。</li>
+<li class="risk-item">不要让主持人 cue CP 名、合作演员、粉籍称呼。</li>
+<li class="risk-item">不要把高互动路透当官方素材来源。</li>
+<li class="risk-item">不要只问颜值和粉丝彩虹屁，粉丝其实很期待专业问题。</li>
+</ol>
+<h2 class="planning-heading" id="4-可直接使用的-36-个采访问题汇总">4. 可直接使用的 36 个采访问题汇总</h2>
+<ol>
+<li>什么时候第一次意识到，舞蹈训练不只是技巧，而是在帮你理解角色？</li>
+<li>如果把“身体记忆”当成一种语言，它最常替你说出什么？</li>
+<li>你曾说自己不是特别有天赋的孩子，那“努力”对你来说是压力、习惯，还是安全感？</li>
+<li>有没有一个瞬间让你觉得，原来慢一点也可以走到想去的地方？</li>
+<li>一个角色被很多人珍藏时，演员如何既珍惜它，又继续向前走？</li>
+<li>你现在回望那段经历，最想感谢的是角色、观众，还是当时那个拼命的自己？</li>
+<li>舞台没有剪辑和重来，你觉得它最诚实的地方是什么？</li>
+<li>饰演一个被时代困住的人，会不会让你更珍惜当下的自由与表达？</li>
+<li>学习一个全新技能时，你最怕的是“不熟”，还是“看起来不真”？</li>
+<li>如果金路易身上有一个词可以送给现实中的自己，你会选什么？</li>
+<li>你照顾小动物时，有没有被它们反过来照顾的时刻？</li>
+<li>对你来说，“回家”是一个地点、一种声音，还是某个等你的人和毛孩子？</li>
+<li>你会怎么评价当年的自己：太会冲浪，还是太敢玩？</li>
+<li>有没有一个梗你到现在仍然觉得“我当时真是这么想的”？</li>
+<li>如果今天现场翻包，最能暴露你生活习惯的东西会是什么？</li>
+<li>你的包里有没有一个东西是粉丝完全猜不到、但你离不开的？</li>
+<li>你喜欢照片里的“清楚”，还是喜欢一点偶然和颗粒感？</li>
+<li>如果让你给自己拍一组“最近的我”，你会选什么光线？</li>
+<li>你发照片时会认真挑，还是凭当下心情？</li>
+<li>有没有一套衣服是你觉得“这就是我舒服的状态”？</li>
+<li>你在舞台下调节气氛时，是有意识地照顾大家，还是本能反应？</li>
+<li>你最喜欢观众给你的哪一种现场反馈？</li>
+<li>如果把你家的毛孩子都放进一个剧组，谁会是导演、谁会是主演、谁会临场加戏？</li>
+<li>你觉得自己更像哪只毛孩子？为什么？</li>
+<li>忙碌之后和毛孩子一起吃饭，对你来说像不像一种充电？</li>
+<li>你会不会因为它们改变自己的作息？</li>
+<li>收到粉丝礼物时，什么细节会让你觉得“她们真的很懂我”？</li>
+<li>有没有一个礼物让你记住了很久？</li>
+<li>你旅行时更喜欢把自己放空，还是用相机收集细节？</li>
+<li>海边、沙漠、城市街头，哪里最像你当下的心境？</li>
+<li>你是仪式感型出门，还是“差不多就走”型？</li>
+<li>有没有一个生活习惯被粉丝发现后，你自己也觉得好笑？</li>
+<li>练舞的人是不是很难真正离开拉伸和训练？</li>
+<li>现在的身体训练更像工作要求，还是保持状态的私人习惯？</li>
+<li>你发“试光”时，是在求助，还是在邀请大家进入你的日常？</li>
+<li>你觉得生活照最动人的瞬间，是好看，还是够真实？</li>
+</ol>
+      </article>
+    </main>
+  </div>
+  <button class="back-top" type="button" title="回到顶部" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
+
+  <script>
+    const search = document.getElementById('search');
+    const article = document.getElementById('article');
+    const noResults = document.getElementById('noResults');
+    const originalHTML = article.innerHTML;
+    const navLinks = Array.from(document.querySelectorAll('.nav a'));
+    const headings = navLinks
+      .map(link => document.getElementById(link.getAttribute('href').slice(1)))
+      .filter(Boolean);
+
+    function escapeRegExp(value) {
+      return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function runSearch() {
+      const q = search.value.trim();
+      article.innerHTML = originalHTML;
+      noResults.style.display = 'none';
+      if (!q) return;
+
+      const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      const re = new RegExp(escapeRegExp(q), 'gi');
+      let count = 0;
+      nodes.forEach(node => {
+        const text = node.nodeValue;
+        if (!re.test(text)) return;
+        re.lastIndex = 0;
+        const span = document.createElement('span');
+        span.innerHTML = text.replace(re, match => `<mark>${match}</mark>`);
+        node.parentNode.replaceChild(span, node);
+        count += 1;
+      });
+      noResults.style.display = count ? 'none' : 'block';
+    }
+
+    search.addEventListener('input', runSearch);
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(link => link.classList.toggle(
+          'active',
+          link.getAttribute('href') === '#' + entry.target.id
+        ));
+      });
+    }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+
+    headings.forEach(h => observer.observe(h));
+  </script>
+</body>
+</html>
