@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小红书品牌人群与传播分析</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f8;
+      --paper: #ffffff;
+      --ink: #1c1c1f;
+      --muted: #646a73;
+      --line: #dde1e6;
+      --line-strong: #bcc5d0;
+      --red: #c9364a;
+      --green: #1f7a65;
+      --blue: #315f9f;
+      --gold: #9b6a1f;
+      --soft-red: #fff1f3;
+      --soft-green: #effaf6;
+      --soft-blue: #eff5ff;
+      --soft-gold: #fff7e8;
+      --shadow: 0 18px 50px rgba(31, 35, 40, 0.08);
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #ffffff 0, #f6f7f8 420px),
+        var(--bg);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    a {
+      color: var(--blue);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .page {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 52px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .subhead {
+      margin: 18px 0 0;
+      max-width: 830px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .meta {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.78);
+      color: #353940;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 38px;
+      align-items: start;
+      padding: 28px 0 72px;
+    }
+
+    nav {
+      position: sticky;
+      top: 20px;
+      padding: 18px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    nav a {
+      display: block;
+      padding: 6px 14px 6px 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    main {
+      min-width: 0;
+    }
+
+    section {
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:first-child {
+      padding-top: 8px;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      font-size: 26px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 28px 0 12px;
+      font-size: 21px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h4 {
+      margin: 20px 0 8px;
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    .lead {
+      max-width: 820px;
+      color: #363b42;
+      font-size: 18px;
+    }
+
+    .kicker {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .brand-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0 10px;
+    }
+
+    .brand-cell {
+      min-height: 190px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .brand-cell.livary {
+      border-top: 4px solid var(--red);
+    }
+
+    .brand-cell.pane {
+      border-top: 4px solid var(--green);
+    }
+
+    .brand-cell.madeinam {
+      border-top: 4px solid var(--blue);
+    }
+
+    .brand-cell h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+
+    .brand-cell p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 20px 0 8px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      background: #fff;
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .note {
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 16px;
+      background: var(--soft-gold);
+      color: #49320f;
+      font-size: 14px;
+    }
+
+    .brand-detail {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
+    }
+
+    .detail-block {
+      border-left: 4px solid var(--line-strong);
+      padding: 2px 0 2px 18px;
+    }
+
+    .detail-block.livary {
+      border-left-color: var(--red);
+    }
+
+    .detail-block.pane {
+      border-left-color: var(--green);
+    }
+
+    .detail-block.madeinam {
+      border-left-color: var(--blue);
+    }
+
+    .detail-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .table-wrap {
+      width: 100%;
+      overflow-x: auto;
+      margin: 16px 0 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    table {
+      width: 100%;
+      min-width: 840px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      vertical-align: top;
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: #f0f2f4;
+      color: #22262c;
+      font-size: 13px;
+      line-height: 1.4;
+      z-index: 1;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td {
+      color: #373c43;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    td:first-child,
+    th:first-child {
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 4px 6px 0;
+      border-radius: 999px;
+      padding: 3px 9px;
+      background: #eef0f3;
+      color: #3f454d;
+      font-size: 12px;
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .tag.red {
+      background: var(--soft-red);
+      color: var(--red);
+    }
+
+    .tag.green {
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .tag.blue {
+      background: var(--soft-blue);
+      color: var(--blue);
+    }
+
+    ol {
+      margin: 8px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .source {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      background: var(--paper);
+      font-size: 14px;
+    }
+
+    .source b {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      padding: 24px 0 48px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .page {
+        width: min(100% - 24px, var(--max));
+      }
+
+      header {
+        padding-top: 34px;
+      }
+
+      .layout {
+        display: block;
+        padding-top: 0;
+      }
+
+      nav {
+        position: static;
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        margin: 0 -12px;
+        padding: 12px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        background: rgba(246, 247, 248, 0.92);
+      }
+
+      nav a {
+        flex: 0 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 7px 11px;
+        background: #fff;
+        white-space: nowrap;
+      }
+
+      .brand-strip,
+      .metric-grid,
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 28px 0;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 12px;
+      }
+
+      .page {
+        width: 100%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .layout {
+        display: block;
+        padding: 0;
+      }
+
+      header,
+      section {
+        break-inside: avoid;
+      }
+
+      .brand-cell,
+      .metric,
+      .source,
+      .table-wrap {
+        box-shadow: none;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header id="top">
+      <p class="eyebrow">Xiaohongshu Brand Research</p>
+      <h1>小红书品牌人群与传播分析</h1>
+      <p class="subhead">里性 LIVARY MIO、PANE、MADEINAM 三个品牌在小红书上的定位、人群特征、传播资源和 KOL/KOC 内容效果。</p>
+      <div class="meta-row" aria-label="报告元信息">
+        <span class="meta">抓取日期：2026-05-16</span>
+        <span class="meta">平台：小红书</span>
+        <span class="meta">口径：前台可见互动和公开资料</span>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav aria-label="章节导航">
+        <a href="#summary">核心结论</a>
+        <a href="#assets">账号资产</a>
+        <a href="#positioning">品牌与人群</a>
+        <a href="#kol">KOL / KOC</a>
+        <a href="#sales-risk">销售与风险</a>
+        <a href="#recommendations">传播建议</a>
+        <a href="#sources">关键资料</a>
+      </nav>
+
+      <main>
+        <section id="summary">
+          <h2>1. 核心结论</h2>
+          <p class="lead">三个品牌都不是单纯靠官方号发声，而是分别把“明星穿搭”“真实试穿”“主理人社群”做成了小红书上的主要传播引擎。</p>
+
+          <div class="brand-strip" aria-label="三品牌摘要">
+            <article class="brand-cell livary">
+              <h3>里性 LIVARY MIO</h3>
+              <p>东方美学 x 法式设计的场景化时尚内衣。依靠明星/演员种草、穿搭达人和创始人专业背书，核心人群是追求精致、松弛、可外穿内搭的女性。</p>
+              <span class="tag red">明星同款</span>
+              <span class="tag red">法式内衣</span>
+              <span class="tag red">真丝蕾丝</span>
+            </article>
+
+            <article class="brand-cell pane">
+              <h3>PANE</h3>
+              <p>中国独立复古运动鞋履，从鞋延展到生活方式空间。外部 UGC 比官方号更能打，试穿、掉跟、尺码和竞品比较带来强购买讨论。</p>
+              <span class="tag green">复古鞋履</span>
+              <span class="tag green">KOC 试穿</span>
+              <span class="tag green">门店空间</span>
+            </article>
+
+            <article class="brand-cell madeinam">
+              <h3>MADEINAM</h3>
+              <p>Denim lifestyle：以牛仔裤和丹宁生活方式为核心的 AM 女孩社群。主理人账号和蓝房子快闪比单纯产品笔记更能形成传播。</p>
+              <span class="tag blue">AM 女孩</span>
+              <span class="tag blue">蓝房子快闪</span>
+              <span class="tag blue">主理人 IP</span>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>品牌</th>
+                  <th>定位一句话</th>
+                  <th>小红书主力人群</th>
+                  <th>传播抓手</th>
+                  <th>当前效果判断</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>里性 LIVARY MIO</td>
+                  <td>东方美学 x 法式设计的场景化时尚内衣</td>
+                  <td>追求精致、松弛、可外穿内搭的女性；对真丝、蕾丝、法式氛围和明星同款敏感</td>
+                  <td>明星/演员种草 + 穿搭达人 + 创始人专业背书 + 线下首店</td>
+                  <td>有明确爆文与明星杠杆，收藏效率高；但高客单价评论中有价格劝退</td>
+                </tr>
+                <tr>
+                  <td>PANE</td>
+                  <td>中国独立复古运动鞋履，从鞋延展到生活方式空间</td>
+                  <td>喜欢薄底复古鞋、德训鞋、通勤鞋的小众审美用户，男女同款、都市潮流人群</td>
+                  <td>低粉 KOC 真实试穿 + 品牌科普号 + 门店空间 + 系列化鞋款</td>
+                  <td>外部讨论比官方号更能打，UGC 评论以试穿/掉跟/尺码/竞品比较为主，消费意向强</td>
+                </tr>
+                <tr>
+                  <td>MADEINAM</td>
+                  <td>Denim lifestyle：以牛仔裤/丹宁生活方式为核心的 AM 女孩社群</td>
+                  <td>关注牛仔裤版型、主理人审美、亲子/家庭/生活方式的女性</td>
+                  <td>主理人账号 AKIKIYU、张悦儿Masami + 蓝房子快闪 + 限定周边/预约/直播</td>
+                  <td>快闪事件传播强，社群感强；官方产品笔记弱于主理人人设和线下场景</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="assets">
+          <h2>2. 账号与传播资产</h2>
+          <p class="kicker">小红书账号粉丝和互动数为抓取时前台可见数据。</p>
+
+          <div class="metric-grid" aria-label="官方账号概览">
+            <div class="metric">
+              <strong>6.27 万</strong>
+              <span>里性官方粉丝；获赞收藏 31.8 万</span>
+            </div>
+            <div class="metric">
+              <strong>4.3 万</strong>
+              <span>PANE 官方粉丝；获赞收藏 9.33 万</span>
+            </div>
+            <div class="metric">
+              <strong>4.24 万</strong>
+              <span>MADEINAM 官方粉丝；获赞收藏 6.41 万</span>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>品牌</th>
+                  <th>官方账号数据</th>
+                  <th>关联账号 / 人格化资源</th>
+                  <th>代表性笔记效果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>里性 LIVARY MIO</td>
+                  <td>粉丝 6.27 万；获赞收藏 31.8 万</td>
+                  <td>创始人 Miche 黄尹茜，粉丝 2.25 万；官方简介关联“里性 Moments”“里性港汇恒隆店”</td>
+                  <td>蔡文静《春夏内搭神器已安排》约 3.2 万赞、6701 收藏、627 评论；东东miaaa 5523 赞、2045 收藏；官方徐艺洋同款 4556 赞</td>
+                </tr>
+                <tr>
+                  <td>PANE</td>
+                  <td>粉丝 4.3 万；获赞收藏 9.33 万</td>
+                  <td>PANEroom 粉丝 2355，做“生活里的样子”；线下门店与空间内容</td>
+                  <td>赢的YIPPY《最近很火的一个品牌》1127 赞、386 收藏、155 评论、691 分享；麦小姐与陈姑娘 488 赞、176 收藏；VSecond 487 赞、242 收藏、181 评论</td>
+                </tr>
+                <tr>
+                  <td>MADEINAM</td>
+                  <td>粉丝 4.24 万；获赞收藏 6.41 万</td>
+                  <td>AKIKIYU 粉丝 20.86 万；张悦儿Masami 粉丝 28.04 万；MADEINAM灵感衣橱粉丝 2200</td>
+                  <td>AKIKIYU《这一刻，像在做梦一样》1296 赞、250 评论、175 分享；官方《限定掉落》主页可见 2460 赞；探店号“蓝房子”类笔记产生中低量但密集打卡</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="positioning">
+          <h2>3. 品牌定位及人群特征</h2>
+
+          <article class="brand-detail">
+            <div class="detail-block livary">
+              <h3>里性 LIVARY MIO</h3>
+              <h4>定位与产品线</h4>
+              <p>官方简介写法是“我的内里·自由天性”“东方美学×法式设计”“开创场景化时尚内衣”。公开报道中，里性早期就以“场景化穿搭”切入，强调小胸穿搭、大胸显瘦、组合码和中国女性胸型数据；历史公开资料称其早期爆款单品累计销量破 10 万套，并以天猫、微信商城为主渠道。</p>
+              <p>产品命名有强审美词汇：如“星熠”“寻真”“如约”“漫漫”“薄雾”“翩翩”“晨露”“云迹”“幻影”“浮梦”“星河”等。内容表达集中在法式、真丝、蕾丝、美背、背心内衣、内搭外穿、度假穿搭、Staycation。</p>
+              <h4>人群画像</h4>
+              <p>核心是 25-38 岁、愿为“内衣作为穿搭单品”付费的女性。她们关心的是“好看、松弛、精致、可露出、可叠穿”，而不只是基础舒适。评论里也出现对 700 元左右价格的劝退，说明品牌面向有一定消费力、但需要用材质/设计/明星同款解释溢价的人群。</p>
+              <h4>推广策略</h4>
+              <p>里性的打法很清晰：明星放大审美势能，穿搭达人负责“这件怎么穿”，创始人负责专业可信度，官方号承接产品命名和线下门店资产。高效内容通常不是单纯内衣测评，而是“春夏内搭神器”“度假穿搭”“明星同款”“真丝蕾丝美背”等穿搭场景。</p>
+            </div>
+
+            <div class="detail-block pane">
+              <h3>PANE</h3>
+              <h4>定位与产品线</h4>
+              <p>PANE 小红书简介是 “Behave as mortals 瞬逝、优雅、凡常。” 官方和报道均指向中国独立复古运动鞋履。公开访谈列出 LIGHT TRAINING 轻训、PACE NOSTALGIA 故途、RUGBY 拉格比、RIVIERA RUN 海岸、AISLE 步道、CREST KICK 风跃等系列；小红书官方近期还在推“轻训 NO-GI”“轻影”“ARCHIVES / AUTHENTIC GOODS”。</p>
+              <p>PANE 命名逻辑偏“系列 + 配色/主题”，如“轻训NO-GI 配色赤训/澄息/森绿/绛序/月黑之夜/摩卡慕斯”“轻影系列 配色立序/蓄力/展息”。这套命名比里性更克制，更像鞋款档案系统。</p>
+              <h4>人群画像</h4>
+              <p>用户是对鬼冢虎、德训鞋、复古跑鞋、薄底鞋有认知的都市男女。小红书评论频繁围绕“好不好穿”“和鬼冢虎比怎么样”“掉不掉跟”“颜色/断码/排队/发货”展开，是典型的高购买意向讨论。</p>
+              <h4>推广策略</h4>
+              <p>PANE 的强项不是官方号爆文，而是“像真实消费者突然刷到”的 KOC 扩散。几个高互动笔记的作者粉丝数很低，但分享数和评论数高，说明算法吃到了“最近很火”“不可能只买一双”“与鬼冢虎对比”这类强消费决策内容。品牌侧则用门店、建筑美学、深圳湾/北京/上海空间，把鞋履品牌升级成生活方式提案。</p>
+            </div>
+
+            <div class="detail-block madeinam">
+              <h3>MADEINAM</h3>
+              <h4>定位与产品线</h4>
+              <p>官方简介是 “Denim for days, Ease for life.” 重点是牛仔裤和丹宁生活方式。小红书主页产品命名高度编码化：W3 巴黎女孩口袋裤、ST11 破洞少年裤、B9 木工裤、W4 三角插片阔腿裤、ST9 老钱轻薄纸片裤、ST10 纯白低腰直筒裤、SL4 挺缝线烟管裤、B8 深靛蓝弯刀裤等。除牛仔裤外，也出现“免穿 Bra 版背心”、男装、童装和快闪限定周边。</p>
+              <h4>人群画像</h4>
+              <p>核心是“AM 女孩”：重视牛仔版型、主理人审美、生活方式同温层和线下参与感的女性。通过 AKIKIYU、张悦儿Masami 两个高粉生活方式账号，品牌把“买牛仔裤”包装成“加入一个家/社群/蓝房子”的体验。</p>
+              <h4>推广策略</h4>
+              <p>MADEINAM 不是单纯产品种草，而是事件型传播：Home In Blue 蓝房子快闪、东湖路打卡、限定掉落、拍照机、周边、男装/童装首发、预约机制。官方产品笔记互动不算高，但主理人笔记和快闪探店笔记把品牌变成了可参与、可合影、可打卡的社群事件。</p>
+            </div>
+          </article>
+        </section>
+
+        <section id="kol">
+          <h2>4. KOL / KOC 结构与效果</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>品牌</th>
+                  <th>使用的 KOL/KOC 类型</th>
+                  <th>代表账号</th>
+                  <th>内容作用</th>
+                  <th>效果</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>里性</td>
+                  <td>明星艺人、穿搭博主、明星同款搬运号、创始人</td>
+                  <td>蔡文静、董洁、徐艺洋、东东miaaa、臭脸少女王尼美、Miche黄尹茜</td>
+                  <td>明星提升审美可信度，达人解释穿搭场景，创始人补充专业和品牌价值</td>
+                  <td>明星/达人笔记收藏明显高，最强单条超 3 万赞；但评论存在价格阻力</td>
+                </tr>
+                <tr>
+                  <td>PANE</td>
+                  <td>真实试穿 KOC、品牌科普号、鞋履/穿搭讨论号</td>
+                  <td>赢的YIPPY、麦小姐与陈姑娘、VSecond、每天认识一个品牌</td>
+                  <td>解决“是否好穿/是否值得买/和竞品比”的购买决策</td>
+                  <td>低粉账号也能出高分享高评论，说明话题更靠产品势能和算法扩散</td>
+                </tr>
+                <tr>
+                  <td>MADEINAM</td>
+                  <td>主理人/生活方式账号、探店号、AM 社群素人</td>
+                  <td>AKIKIYU、张悦儿Masami、虞氏小女探街、Samantha、CeCelia</td>
+                  <td>把牛仔裤转化成社群身份、线下事件和主理人审美</td>
+                  <td>快闪期集中爆发，主理人账号评论更深，探店号贡献地点扩散</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="sales-risk">
+          <h2>5. 销售情况与风险判断</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>品牌</th>
+                  <th>可见销售/转化信号</th>
+                  <th>风险点</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>里性</td>
+                  <td>历史公开报道有早期爆款 10 万套级别、近亿元销售等信息；小红书高收藏达人笔记说明强种草转化潜力</td>
+                  <td>高价评论劝退，需要持续解释材质、版型、尺码和场景价值</td>
+                </tr>
+                <tr>
+                  <td>PANE</td>
+                  <td>公开报道称 2025 年天猫双11设计师鞋靴榜第一；小红书讨论高度围绕试穿、断码、排队、发货、竞品对比</td>
+                  <td>掉跟、尺码、断码、发货慢会成为真实用户讨论中的放大点</td>
+                </tr>
+                <tr>
+                  <td>MADEINAM</td>
+                  <td>蓝房子快闪、预约、限定掉落、主理人直播/售后通道是强转化线索；官方与主理人账号共同拉动</td>
+                  <td>搜索中出现“发货”“避雷牛仔裤”等负面笔记，需关注履约和版型预期管理</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">注意：小红书前台互动不能直接等同于 GMV。本节只使用公开报道、互动数据和评论主题作为转化信号。</p>
+        </section>
+
+        <section id="recommendations">
+          <h2>6. 传播建议</h2>
+
+          <div class="detail-block livary">
+            <h3>里性</h3>
+            <ol>
+              <li>继续把“内衣”包装成“穿搭解决方案”，而不是单件内衣；重点打春夏、度假、露背、微透衬衫、针织开衫等场景。</li>
+              <li>达人分层建议：明星/艺人做审美背书，10-20 万粉穿搭博主做穿法教学，素人做尺码/胸型真实反馈。</li>
+              <li>对价格阻力，需要用“真丝/蕾丝/工艺/尺码包容/一衣多穿”做解释，同时增加更强的评论区尺码客服内容。</li>
+            </ol>
+          </div>
+
+          <div class="detail-block pane">
+            <h3>PANE</h3>
+            <ol>
+              <li>放大 KOC 真实试穿，尤其是“和鬼冢虎/德训鞋/薄底通勤鞋比较”的决策型内容。</li>
+              <li>官方号应增加尺码、脚型、掉跟解决方案、门店试穿库存等实用内容，减少只做美学展示。</li>
+              <li>PANEroom 适合继续承担“生活方式影像”，但主账号可更直接承接购买问题。</li>
+            </ol>
+          </div>
+
+          <div class="detail-block madeinam">
+            <h3>MADEINAM</h3>
+            <ol>
+              <li>保持主理人账号作为第一传播中心，官方号做产品信息和购买承接。</li>
+              <li>蓝房子快闪适合沉淀为长期 IP：AM女孩打卡、亲子/男装/周边、拍照机、城市巡回。</li>
+              <li>需要正面处理发货、版型、退换货等负面关键词，避免强社群情绪被履约问题反噬。</li>
+            </ol>
+          </div>
+        </section>
+
+        <section id="sources">
+          <h2>7. 关键资料</h2>
+          <p>本地抓取数据目录：<code>/Users/huangdong/Downloads/codex-xhs10/xhs_research/</code></p>
+
+          <div class="source-list">
+            <div class="source">
+              <b>36氪：里性融资与早期产品信息</b>
+              <a href="https://36kr.com/p/770993574950152">https://36kr.com/p/770993574950152</a>
+            </div>
+            <div class="source">
+              <b>猎云网：里性“新性感”和产品线信息</b>
+              <a href="https://lieyunpro.com/archives/477066">https://lieyunpro.com/archives/477066</a>
+            </div>
+            <div class="source">
+              <b>PANE 官方网站：产品与线下门店</b>
+              <a href="https://paneshoes.com/">https://paneshoes.com/</a>
+            </div>
+            <div class="source">
+              <b>Laststyle：PANE 访谈与系列信息</b>
+              <a href="https://www.laststylebrand.com/article/463">https://www.laststylebrand.com/article/463</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>HTML 报告由 Markdown 版本整理生成。原始 Markdown：<a href="./brand_analysis_report.md">brand_analysis_report.md</a></p>
+    </footer>
+  </div>
+</body>
+</html>
