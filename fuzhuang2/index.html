@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BtD 定价参考 | Fysea / Oneup / THE BLENDER</title>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #666a70;
+      --line: #d9d9d4;
+      --paper: #fbfbf8;
+      --panel: #ffffff;
+      --accent: #b23a2e;
+      --green: #2e6c69;
+      --gold: #b9821b;
+      --shadow: 0 18px 45px rgba(0, 0, 0, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 0 28px;
+      background: rgba(251, 251, 248, .88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .mark { font-weight: 800; letter-spacing: 0; white-space: nowrap; }
+    .nav { display: flex; gap: 18px; font-size: 13px; color: var(--muted); }
+    .nav a { text-decoration: none; }
+    .hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr);
+      align-items: stretch;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(120deg, rgba(21,21,21,.96), rgba(21,21,21,.72)),
+        radial-gradient(circle at 82% 10%, rgba(178,58,46,.34), transparent 30%),
+        #181818;
+      color: #fff;
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px min(8vw, 96px);
+      max-width: 920px;
+    }
+    .eyebrow {
+      color: rgba(255,255,255,.68);
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: .08em;
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 6.2vw, 96px);
+      line-height: .98;
+      letter-spacing: 0;
+      max-width: 780px;
+    }
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 640px;
+      font-size: clamp(16px, 1.5vw, 20px);
+      color: rgba(255,255,255,.78);
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 48px;
+      max-width: 720px;
+    }
+    .metric {
+      border-top: 1px solid rgba(255,255,255,.28);
+      padding-top: 14px;
+    }
+    .metric strong { display: block; font-size: 30px; line-height: 1; }
+    .metric span { display: block; margin-top: 8px; color: rgba(255,255,255,.62); font-size: 13px; }
+    .hero-media {
+      min-height: 540px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 1fr;
+      overflow: hidden;
+    }
+    .hero-media a {
+      position: relative;
+      min-height: 180px;
+      overflow: hidden;
+      border-left: 1px solid rgba(255,255,255,.16);
+      border-bottom: 1px solid rgba(255,255,255,.16);
+      text-decoration: none;
+      animation: floatIn .7s ease both;
+    }
+    .hero-media a:nth-child(2n) { transform: translateY(38px); }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.9) contrast(1.04);
+      transition: transform .45s ease, filter .45s ease;
+    }
+    .hero-media a:hover img { transform: scale(1.05); filter: saturate(1.04) contrast(1.08); }
+    .hero-media span {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      padding: 8px 10px;
+      background: rgba(0,0,0,.52);
+      color: #fff;
+      font-size: 12px;
+      border-radius: 6px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: .28s ease;
+    }
+    .hero-media a:hover span { opacity: 1; transform: translateY(0); }
+    main section {
+      padding: 86px min(6vw, 78px);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, 340px) minmax(0, 1fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 36px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .insights {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .insight {
+      border-top: 2px solid var(--ink);
+      padding-top: 18px;
+      min-height: 190px;
+    }
+    .insight small { color: var(--muted); font-size: 12px; text-transform: uppercase; }
+    .insight h3 { margin: 16px 0 10px; font-size: 24px; line-height: 1.18; }
+    .insight p { margin: 0; color: var(--muted); }
+    .brand-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .brand {
+      padding: 28px;
+      border-right: 1px solid var(--line);
+    }
+    .brand:last-child { border-right: 0; }
+    .brand h3 { margin: 0 0 12px; font-size: 28px; }
+    .brand dl { display: grid; grid-template-columns: 82px 1fr; gap: 8px 12px; margin: 0; color: var(--muted); font-size: 14px; }
+    .brand dt { color: var(--ink); }
+    .brand dd { margin: 0; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .controls button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 999px;
+      padding: 9px 14px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    .controls button[aria-pressed="true"] {
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      max-width: 100%;
+      border-top: 1px solid var(--ink);
+      background: var(--panel);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      font-size: 13px;
+    }
+    th, td {
+      padding: 13px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      position: sticky;
+      top: 58px;
+      z-index: 2;
+      background: var(--ink);
+      color: #fff;
+      font-weight: 700;
+    }
+    td a { color: var(--green); }
+    .confidence {
+      display: inline-block;
+      padding: 3px 8px;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      color: var(--green);
+      white-space: nowrap;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .product {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,.04);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .product:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .product img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+      background: #efefeb;
+    }
+    .product-body { padding: 14px; }
+    .product-kicker {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+    .product h3 {
+      margin: 0 0 12px;
+      font-size: 15px;
+      line-height: 1.35;
+      min-height: 60px;
+    }
+    .product-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .product-meta strong { display: block; font-size: 18px; color: var(--accent); }
+    .note {
+      max-width: 960px;
+      color: var(--muted);
+      margin-top: 22px;
+      font-size: 14px;
+    }
+    .sources {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .sources a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      text-decoration: none;
+      background: #fff;
+      color: var(--green);
+      font-size: 13px;
+    }
+    footer {
+      padding: 36px min(6vw, 78px);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @keyframes floatIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 980px) {
+      .topbar { padding: 0 18px; }
+      .nav { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 64px 24px; }
+      .hero-media { min-height: 420px; grid-template-columns: repeat(2, 1fr); }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .insights, .brand-strip, .product-grid { grid-template-columns: 1fr; }
+      .brand { border-right: 0; border-bottom: 1px solid var(--line); }
+      .brand:last-child { border-bottom: 0; }
+      main section { padding: 58px 18px; }
+      .hero-metrics { grid-template-columns: 1fr; }
+      th { top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="mark" href="#top">BtD 定价调研</a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#summary">结论</a>
+      <a href="#channels">渠道</a>
+      <a href="#bands">价格带</a>
+      <a href="#top-products">TOP商品</a>
+      <a href="#seasons">季节</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">公开渠道样本 · 2026-05-17</div>
+        <h1>Fysea / Oneup / THE BLENDER 定价研究</h1>
+        <p>围绕成人女性家居服与关联生活方式产品，整理天猫/淘宝公开销量、商品图、小红书内容热度与季节价格带，为 BtD 定价做参照。</p>
+        <div class="hero-metrics" aria-label="样本概览">
+          <div class="metric"><strong>62</strong><span>天猫/淘宝公开 SKU</span></div>
+          <div class="metric"><strong>74</strong><span>THE BLENDER 独立站 SKU</span></div>
+          <div class="metric"><strong>14</strong><span>渠道 x 品类价格带</span></div>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="代表商品图">
+        <a href="https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html" target="_blank" rel="noreferrer" style="animation-delay:0ms"><img src="https://img.alicdn.com/bao/uploaded/i2/_XXX_KKK_/O1CN01d9YVxO1xqlQNZKW3Y_!!0-item_pic.jpg" alt="厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女" loading="eager"><span>Fysea · 厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女</span></a><a href="https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html" target="_blank" rel="noreferrer" style="animation-delay:70ms"><img src="https://img.alicdn.com/bao/uploaded/i2/2204109291146/O1CN01u4b0vO1KKv1hZoyIQ_!!2204109291146.png" alt="【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤" loading="eager"><span>Fysea · 【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤</span></a><a href="https://tao.hooos.com/goods_V7JkNMyu6twvn6nqBJf22qUvtV-NeRBBocnwBZyj4vHy.html" target="_blank" rel="noreferrer" style="animation-delay:140ms"><img src="https://img.alicdn.com/bao/uploaded/i4/2215250388160/O1CN01EQYpus2A9Kp5KpUWe_!!2215250388160.png" alt="ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣" loading="lazy"><span>Oneup · ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣</span></a><a href="https://tao.hooos.com/goods_x9Y3OVnuktq9X2XbGoSQ6aTAt9-WkRwwpuQr8eYxOYia.html" target="_blank" rel="noreferrer" style="animation-delay:210ms"><img src="https://img.alicdn.com/bao/uploaded/i1/2215250388160/O1CN015UtxVT2A9L1hynF4s_!!2215250388160.jpg" alt="oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤" loading="lazy"><span>Oneup · oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤</span></a><a href="https://tao.hooos.com/goods_YM9NknPiptXQzoz29WtWamU2t6-9OgVVDuOj2ap2yWFX.html" target="_blank" rel="noreferrer" style="animation-delay:280ms"><img src="https://img.alicdn.com/bao/uploaded/i3/2215250388160/O1CN01mBk87z2A9L1LbLOEO_!!2215250388160.jpg" alt="oneup莱赛尔天丝亚麻修身正肩短袖t恤女夏季修身健身瑜伽运动上衣" loading="lazy"><span>Oneup · oneup莱赛尔天丝亚麻修身正肩短袖t恤女夏季修身健身瑜伽运动上衣</span></a><a href="https://tao.hooos.com/goods_ryVZqz9uOtVmXaXdGRi66jFqtZ-XNReeAC0DxAd3YMUm.html" target="_blank" rel="noreferrer" style="animation-delay:350ms"><img src="https://img.alicdn.com/bao/uploaded/i1/2215250388160/O1CN01l1XCkT2A9KwTrzOh2_!!2215250388160.jpg" alt="oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤" loading="lazy"><span>Oneup · oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤</span></a>
+      </div>
+    </section>
+
+    <section id="summary" class="reveal">
+      <div class="section-head">
+        <h2>结论先读</h2>
+        <p>数据按“公开成交可核验”和“内容/渠道信号”拆开处理。THE BLENDER 与 Oneup 可作为硬价格参考，Fysea 更适合作为家居服调性与高端感锚点。</p>
+      </div>
+      <div class="insights">
+        <article class="insight">
+          <small>THE BLENDER</small>
+          <h3>贴身吊带/美背内衣是成交核心</h3>
+          <p>公开榜单 TOP 款月销 1万+，爆款集中在 ¥98-¥200 附近，内裤多件包价位约 ¥56/条。</p>
+        </article>
+        <article class="insight">
+          <small>Oneup</small>
+          <h3>T 恤与弯刀裤形成两档价格</h3>
+          <p>T 恤和短裤约 ¥92-¥152，长裤/弯刀裤约 ¥217-¥289，适合参考运动生活方式高频穿搭定价。</p>
+        </article>
+        <article class="insight">
+          <small>Fysea</small>
+          <h3>公开成交少，家居氛围强</h3>
+          <p>可核验电商 SKU 只有少量，家居裤样本约 ¥419；小红书上新集中棉麻、羊毛、薄绒、浴巾等生活方式品类。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="brands" class="reveal">
+      <div class="section-head">
+        <h2>品牌快照</h2>
+        <p>小红书侧只作为内容热度和上新节奏参考，不与成交销量混算。</p>
+      </div>
+      <div class="brand-strip">
+        <article class="brand">
+              <h3>Fysea</h3>
+              <dl>
+                <dt>粉丝</dt><dd>7.7K</dd>
+                <dt>互动</dt><dd>13.6K</dd>
+                <dt>属地</dt><dd>浙江</dd>
+                <dt>高销品类</dt><dd>家居服-裤装</dd>
+                <dt>主页</dt><dd><a href="https://www.xiaohongshu.com/user/profile/5f1402c00000000001001520" target="_blank" rel="noreferrer">小红书</a></dd>
+              </dl>
+            </article><article class="brand">
+              <h3>Oneup</h3>
+              <dl>
+                <dt>粉丝</dt><dd>227.7K</dd>
+                <dt>互动</dt><dd>717.4K</dd>
+                <dt>属地</dt><dd>广东</dd>
+                <dt>高销品类</dt><dd>T恤</dd>
+                <dt>主页</dt><dd><a href="https://www.xiaohongshu.com/user/profile/614f2d710000000002026cf7" target="_blank" rel="noreferrer">小红书</a></dd>
+              </dl>
+            </article><article class="brand">
+              <h3>THE BLENDER</h3>
+              <dl>
+                <dt>粉丝</dt><dd>57K</dd>
+                <dt>互动</dt><dd>741.8K</dd>
+                <dt>属地</dt><dd>浙江</dd>
+                <dt>高销品类</dt><dd>背心吊带-单件</dd>
+                <dt>主页</dt><dd><a href="https://www.xiaohongshu.com/user/profile/5c8cfb14000000001603649c" target="_blank" rel="noreferrer">小红书</a></dd>
+              </dl>
+            </article>
+      </div>
+    </section>
+
+    <section id="channels" class="reveal">
+      <div class="section-head">
+        <h2>渠道覆盖</h2>
+        <p>天猫/淘宝用于价格带和 TOP 商品；小红书用于内容热度；抖音和线下目前多是渠道存在性线索，建议后续用后台或第三方工具补齐成交。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>品牌</th><th>渠道</th><th>公开数据状态</th><th>置信度</th></tr></thead>
+          <tbody>
+        <tr>
+          <td>Fysea</td>
+          <td>天猫/淘宝</td>
+          <td>仅检出少量 Fysea/Fyseahome 关键词 SKU，未确认官方旗舰店。</td>
+          <td><span class="confidence">样本低</span></td>
+        </tr>
+        <tr>
+          <td>Fysea</td>
+          <td>小红书</td>
+          <td>主页定位 HOMEWEAR，内容集中家居服、棉麻、浴巾、袜等。</td>
+          <td><span class="confidence">内容信号</span></td>
+        </tr>
+        <tr>
+          <td>Fysea</td>
+          <td>抖音</td>
+          <td>未检出稳定可核验官方抖音店铺公开商品数据。</td>
+          <td><span class="confidence">待补</span></td>
+        </tr>
+        <tr>
+          <td>Fysea</td>
+          <td>线下</td>
+          <td>未找到公开线下店铺价格/销量资料。</td>
+          <td><span class="confidence">待补</span></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>天猫/淘宝</td>
+          <td>T 恤、短裤、弯刀/香蕉裤公开销量靠前。</td>
+          <td><span class="confidence">高</span></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>小红书</td>
+          <td>粉丝 22.7 万+，内容以城市运动穿搭、SS/AW 和裤装为主。</td>
+          <td><span class="confidence">中</span></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>抖音</td>
+          <td>可检索相关店铺入口，成交明细需罗盘/蝉妈妈补齐。</td>
+          <td><span class="confidence">待补</span></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>线下</td>
+          <td>公开报道提到杭州嘉里中心首店，弯刀裤是试穿重点。</td>
+          <td><span class="confidence">中</span></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>天猫</td>
+          <td>旗舰店公开榜单显示美背内衣、吊带背心、内裤为核心成交。</td>
+          <td><span class="confidence">高</span></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>小红书</td>
+          <td>粉丝 5.7 万+，获赞与收藏 74.1 万+，种草集中贴身衣物。</td>
+          <td><span class="confidence">中</span></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>抖音</td>
+          <td>可检索相关商品/店铺入口，直播成交需第三方工具补齐。</td>
+          <td><span class="confidence">待补</span></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>线下</td>
+          <td>未找到稳定公开门店价格/成交资料。</td>
+          <td><span class="confidence">待补</span></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="bands" class="reveal">
+      <div class="section-head">
+        <h2>品类价格带</h2>
+        <p>按成人女性核心品类归类：背心吊带、T 恤、内裤、裤装、长袖衬衫、家居服、眼罩；关联生活方式产品单独保留。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>品牌</th><th>渠道</th><th>品类</th><th>SKU</th><th>最低</th><th>中位</th><th>最高</th><th>最高月销</th><th>代表商品</th></tr></thead>
+          <tbody>
+        <tr>
+          <td>Fysea</td>
+          <td>淘宝店铺</td>
+          <td>家居服-裤装</td>
+          <td>1</td>
+          <td>¥419.1</td>
+          <td>¥419.1</td>
+          <td>¥419.1</td>
+          <td>0</td>
+          <td><a href="https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html" target="_blank" rel="noreferrer">厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女</a></td>
+        </tr>
+        <tr>
+          <td>Fysea</td>
+          <td>淘宝店铺</td>
+          <td>裤装-长裤</td>
+          <td>1</td>
+          <td>¥74.8</td>
+          <td>¥74.8</td>
+          <td>¥74.8</td>
+          <td>0</td>
+          <td><a href="https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html" target="_blank" rel="noreferrer">【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>淘宝店铺</td>
+          <td>背心吊带-单件</td>
+          <td>3</td>
+          <td>¥135</td>
+          <td>¥160</td>
+          <td>¥160</td>
+          <td>5000+</td>
+          <td><a href="https://tao.hooos.com/goods_zVYKO2xuetaWOGOPvDCvd6udt4-Mw0WW4FV7MD6VmNsK.html" target="_blank" rel="noreferrer">oneup可拆卸带胸垫弹力红色吊带挂脖背心女夏外穿瑜伽服运动上衣</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>淘宝店铺</td>
+          <td>关联生活方式产品</td>
+          <td>1</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>7000+</td>
+          <td><a href="https://tao.hooos.com/goods_2Xajq8vUotgN2d2KAvCaa7fDtD-9OgVVDuOmKGq3o2SX.html" target="_blank" rel="noreferrer">oneup防走光白色运动短裙女夏羽毛球网球裙子a字包臀半身裙卫裙</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>淘宝店铺</td>
+          <td>裤装-短裤</td>
+          <td>3</td>
+          <td>¥92</td>
+          <td>¥92</td>
+          <td>¥152</td>
+          <td>2万+</td>
+          <td><a href="https://tao.hooos.com/goods_x9Y3OVnuktq9X2XbGoSQ6aTAt9-WkRwwpuQr8eYxOYia.html" target="_blank" rel="noreferrer">oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>天猫店铺</td>
+          <td>裤装-短裤</td>
+          <td>1</td>
+          <td>¥92</td>
+          <td>¥92</td>
+          <td>¥92</td>
+          <td>4000+</td>
+          <td><a href="https://tao.hooos.com/goods_XPdpWnnsGtXv646RMWtVYbhBtg-9OgVVDuO2NDopZ0hR.html" target="_blank" rel="noreferrer">Oneup超短裤女2026夏季新款美式健身运动弹力小个子休闲黑色紧身</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>淘宝店铺</td>
+          <td>裤装-长裤</td>
+          <td>3</td>
+          <td>¥237</td>
+          <td>¥245</td>
+          <td>¥245</td>
+          <td>1万+</td>
+          <td><a href="https://tao.hooos.com/goods_ryVZqz9uOtVmXaXdGRi66jFqtZ-XNReeAC0DxAd3YMUm.html" target="_blank" rel="noreferrer">oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>天猫店铺</td>
+          <td>裤装-长裤</td>
+          <td>2</td>
+          <td>¥217</td>
+          <td>¥221</td>
+          <td>¥225</td>
+          <td>9000+</td>
+          <td><a href="https://tao.hooos.com/goods_6pKodr3T8tGx9p9ovqHwwNiot3-YA3ppxSBWRBRNdqFa3.html" target="_blank" rel="noreferrer">【Oneup官方】高级白色弯刀裤夏季休闲美式宽松香蕉裤长裤子女男</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>淘宝店铺</td>
+          <td>T恤</td>
+          <td>11</td>
+          <td>¥92</td>
+          <td>¥118</td>
+          <td>¥169</td>
+          <td>3万+</td>
+          <td><a href="https://tao.hooos.com/goods_V7JkNMyu6twvn6nqBJf22qUvtV-NeRBBocnwBZyj4vHy.html" target="_blank" rel="noreferrer">ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣</a></td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>天猫店铺</td>
+          <td>T恤</td>
+          <td>6</td>
+          <td>¥92</td>
+          <td>¥94.5</td>
+          <td>¥114</td>
+          <td>1万+</td>
+          <td><a href="https://tao.hooos.com/goods_8AgKdMvcnt9zO3Om5YSgKaubt8-Gn755MIqy8RKOQPu3.html" target="_blank" rel="noreferrer">Oneup美式基础正肩弹力t恤2026新款夏季修身黑色休闲上衣短袖女款</a></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>天猫店铺</td>
+          <td>背心吊带-单件</td>
+          <td>24</td>
+          <td>¥15.3</td>
+          <td>¥148.55</td>
+          <td>¥200</td>
+          <td>1万+</td>
+          <td><a href="https://tao.hooos.com/goods_70Zk35U4t58QyQaWZFnZYSMtV-PNzeejCKRRwzerdT2n.html" target="_blank" rel="noreferrer">【可拆卸胸垫】The Blender细肩带黑色性感三角杯美背内衣夏季女</a></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>天猫店铺</td>
+          <td>背心吊带-多件包/套装</td>
+          <td>2</td>
+          <td>¥140</td>
+          <td>¥146</td>
+          <td>¥152</td>
+          <td>1万+</td>
+          <td><a href="https://tao.hooos.com/goods_AmG3WMhzt4jMGMpR0umXPIvtn-9OgVVDuO09ewy7mCXk.html" target="_blank" rel="noreferrer">【固定胸垫】The Blender可交叉细肩带三角杯美背内衣套装夏季女</a></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>淘宝店铺</td>
+          <td>背心吊带-多件包/套装</td>
+          <td>1</td>
+          <td>¥68</td>
+          <td>¥68</td>
+          <td>¥68</td>
+          <td>1000+</td>
+          <td><a href="https://tao.hooos.com/goods_Nva7JMC5tG8V4VMkAtxxMsRtB-KaykkBHjzOVO48QiN.html" target="_blank" rel="noreferrer">【特价清仓】The Blender限量福利内衣任选79元起</a></td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>天猫店铺</td>
+          <td>内裤</td>
+          <td>3</td>
+          <td>¥55.67</td>
+          <td>¥55.67</td>
+          <td>¥55.67</td>
+          <td>2000+</td>
+          <td><a href="https://tao.hooos.com/goods_GY4NBxS8tYvPzPwJDhYYztQtJ-0Rakk7FB7NwZD6quq.html" target="_blank" rel="noreferrer">【任选3条159元】The Blender撞色舒适一片式中低腰三角内裤女</a></td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="top-products" class="reveal">
+      <div class="section-head">
+        <h2>TOP 商品</h2>
+        <p>按公开商品页的销量排序呈现。Fysea 样本不足，页面保留实际可核验的 2 个 SKU，不硬凑 TOP10。</p>
+      </div>
+      <div class="controls" id="productFilters" aria-label="商品筛选">
+        <button type="button" data-brand="全部" aria-pressed="true">全部</button>
+        <button type="button" data-brand="Fysea" aria-pressed="false">Fysea</button><button type="button" data-brand="Oneup" aria-pressed="false">Oneup</button><button type="button" data-brand="THE BLENDER" aria-pressed="false">THE BLENDER</button>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <p class="note">商品图与详情链接来自公开商品页；月销量为公开页面展示值，带“+”的数值按区间下限记录。</p>
+    </section>
+
+    <section id="seasons" class="reveal">
+      <div class="section-head">
+        <h2>季节价格带</h2>
+        <p>季节依据商品标题、系列名、发布时间和小红书 24AW/秋冬内容线索判断。9-11 月重点看秋季上新、长袖、轻薄长裤、薄绒和羊毛层搭。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>品牌</th><th>季节</th><th>品类</th><th>币种</th><th>样本</th><th>最低</th><th>中位</th><th>最高</th><th>代表商品/线索</th></tr></thead>
+          <tbody>
+        <tr>
+          <td>Fysea</td>
+          <td>夏季</td>
+          <td>家居服-裤装</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥419.1</td>
+          <td>¥419.1</td>
+          <td>¥419.1</td>
+          <td>厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女</td>
+        </tr>
+        <tr>
+          <td>Fysea</td>
+          <td>夏季</td>
+          <td>裤装-长裤</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥74.8</td>
+          <td>¥74.8</td>
+          <td>¥74.8</td>
+          <td>【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>春季</td>
+          <td>背心吊带-单件</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥160</td>
+          <td>¥160</td>
+          <td>¥160</td>
+          <td>oneup可拆卸胸垫弹力挂脖吊带背心女春季修身运动健身瑜伽上衣</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>夏季</td>
+          <td>背心吊带-单件</td>
+          <td>RMB</td>
+          <td>2</td>
+          <td>¥135</td>
+          <td>¥147.5</td>
+          <td>¥160</td>
+          <td>oneup可拆卸带胸垫弹力红色吊带挂脖背心女夏外穿瑜伽服运动上衣 | oneup裸感超弹可拆卸带胸垫弹力抹胸女夏季外穿瑜伽背心运动上衣</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>夏季</td>
+          <td>关联生活方式产品</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>oneup防走光白色运动短裙女夏羽毛球网球裙子a字包臀半身裙卫裙</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>夏季</td>
+          <td>裤装-短裤</td>
+          <td>RMB</td>
+          <td>4</td>
+          <td>¥92</td>
+          <td>¥92</td>
+          <td>¥152</td>
+          <td>oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤 | Oneup超短裤女2026夏季新款美式健身运动弹力小个子休闲黑色紧身 | oneup美式毛圈休闲运动短裤女夏季纯棉直筒裤子纯色健身瑜伽短裤 | oneup美式紧身跑步骑行休闲短裤女夏季外穿热裤运动健身瑜伽裤子</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>夏季</td>
+          <td>裤装-长裤</td>
+          <td>RMB</td>
+          <td>5</td>
+          <td>¥217</td>
+          <td>¥237</td>
+          <td>¥245</td>
+          <td>oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤 | oneup美式白色裤子弯刀裤女夏季长裤香蕉裤纯棉宽松阔腿裤休闲裤 | oneup夏季薄款运动裤防晒速干裤休闲九分裤子女黑色阔腿裤弯刀裤 | 【Oneup官方】高级白色弯刀裤夏季休闲美式宽松香蕉裤长裤子女男</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>夏季</td>
+          <td>T恤</td>
+          <td>RMB</td>
+          <td>15</td>
+          <td>¥92</td>
+          <td>¥106</td>
+          <td>¥169</td>
+          <td>ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣 | oneup莱赛尔天丝亚麻修身正肩短袖t恤女夏季修身健身瑜伽运动上衣 | Oneup美式基础正肩弹力t恤2026新款夏季修身黑色休闲上衣短袖女款 | oneup美式修身正肩polo衫短袖t恤女夏季黑色羽毛球网球服运动上衣</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>秋季</td>
+          <td>其他/待判定</td>
+          <td>无价格</td>
+          <td>线索</td>
+          <td>未公开</td>
+          <td>未公开</td>
+          <td>未公开</td>
+          <td>Oneup 24AW｜Everyone, Living Wellness.</td>
+        </tr>
+        <tr>
+          <td>Oneup</td>
+          <td>冬季</td>
+          <td>T恤</td>
+          <td>RMB</td>
+          <td>2</td>
+          <td>¥118</td>
+          <td>¥143.5</td>
+          <td>¥169</td>
+          <td>oneup莱赛尔天丝羊毛修身正肩短袖T恤女夏季薄款针织瑜伽运动上衣 | oneup莱赛尔天丝羊毛针织五分袖短袖t恤女夏季薄款黑色中袖上衣</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>背心吊带-单件</td>
+          <td>USD</td>
+          <td>26</td>
+          <td>$35</td>
+          <td>$38</td>
+          <td>$69</td>
+          <td>Crew Neck Contrast Logo Thin Strap Cropped Cami Dress | Asymmetrical Neck Cami Bodysuit | Contrast Trim Open Back Loose Fit Cami Top | Crew Neck Y-Back Strappy Backless Cami Top</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>衬衫-长袖</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>$59</td>
+          <td>$59</td>
+          <td>$59</td>
+          <td>Color-Block Long Sleeve T-Shirt</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>关联生活方式产品</td>
+          <td>USD</td>
+          <td>3</td>
+          <td>$56</td>
+          <td>$56</td>
+          <td>$56</td>
+          <td>SLIVER RIVER Backless One-Shoulder Beachwear | One-Piece Beachwear | Clashing colors one-piece Beachwear</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>裤装-短裤</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>$35</td>
+          <td>$35</td>
+          <td>$35</td>
+          <td>SKIN JEANS-High waisted boxer shorts</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>裤装-长裤</td>
+          <td>USD</td>
+          <td>4</td>
+          <td>$19</td>
+          <td>$44</td>
+          <td>$69</td>
+          <td>Pure Cotton Multi-Pocket Cargo Straight-Leg Elastic Waist Pants | Relaxed Straight-Leg Casual Pants | GREEEN Mid-rise Trousers | GREEEN Mid-rise Trousers（Ribbed model）</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>内裤</td>
+          <td>USD</td>
+          <td>8</td>
+          <td>$19</td>
+          <td>$19</td>
+          <td>$19</td>
+          <td>Mid-Rise Seamless Briefs | SKIN JEANS Side-Cut Mid-Rise Triangle Briefs | SKIN JEANS-LOW-RISE Briefs | Mid-Rise Color-Block Briefs</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>其他/待判定</td>
+          <td>USD</td>
+          <td>9</td>
+          <td>$37</td>
+          <td>$49</td>
+          <td>$69</td>
+          <td>Printed Open Back Vacation One-Piece Swimsuit | Printed Halter Neck Vacation Bikini Set | GREEEN Square Neck Slim Fit Backless Midi Slip Dress | Halter Neck Bikini Set</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>春季</td>
+          <td>T恤</td>
+          <td>USD</td>
+          <td>2</td>
+          <td>$49</td>
+          <td>$63.5</td>
+          <td>$78</td>
+          <td>Crew Neck Contrast Cuff Open Back Slim Tee | Openwork Relaxed Long-Sleeve Tee</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>夏季</td>
+          <td>背心吊带-单件</td>
+          <td>RMB</td>
+          <td>14</td>
+          <td>¥103.9</td>
+          <td>¥152.35</td>
+          <td>¥182</td>
+          <td>【可拆卸胸垫】The Blender细肩带黑色性感三角杯美背内衣夏季女 | 【环保系列】The Blender轻运动固定胸垫调节肩带白色内衣夏季女 | The Blender纯色无缝一体织轻薄固定胸垫美背夏季白色吊带背心女 | The Blender可拆卸胸垫细肩带深V美背背心式三角杯内衣女夏季</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>夏季</td>
+          <td>背心吊带-单件</td>
+          <td>USD</td>
+          <td>3</td>
+          <td>$0</td>
+          <td>$39</td>
+          <td>$42</td>
+          <td>Cut-out Mock Neck Vest &amp; Tie-Front Long Sleeve Top | GREEEN Deep V-Neck Vest Bra | OVER $80 , GET A BRA FOR FREE!!!!</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>夏季</td>
+          <td>背心吊带-多件包/套装</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>¥152</td>
+          <td>【固定胸垫】The Blender可交叉细肩带三角杯美背内衣套装夏季女</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>夏季</td>
+          <td>其他/待判定</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>$59</td>
+          <td>$59</td>
+          <td>$59</td>
+          <td>GREEEN Lightweight Shaping Bodysuit</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>秋季</td>
+          <td>背心吊带-单件</td>
+          <td>RMB</td>
+          <td>1</td>
+          <td>¥76</td>
+          <td>¥76</td>
+          <td>¥76</td>
+          <td>【限时折扣】The Blender无缝针织可拆卸胸垫交叉肩带轻运动背心</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>秋季</td>
+          <td>背心吊带-单件</td>
+          <td>USD</td>
+          <td>3</td>
+          <td>$35</td>
+          <td>$35</td>
+          <td>$35</td>
+          <td>U-neck Vest Bra | Flat Neck Narrow Cup Tank Bra | V-Neck Tank Style Bralette</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>秋季</td>
+          <td>裤装-长裤</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>$49</td>
+          <td>$49</td>
+          <td>$49</td>
+          <td>Contrast-Logo Embroidered Dralon Pants</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>秋季</td>
+          <td>其他/待判定</td>
+          <td>USD</td>
+          <td>4</td>
+          <td>$49</td>
+          <td>$49</td>
+          <td>$79</td>
+          <td>Off-Shoulder Cutout Reversible Slim Knit Top | Contrast-Logo Embroidered Robe | Slant Henley Collar Long-Sleeve Top | Asymmetrical Henley Collar Tencel-Wool Top</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>冬季</td>
+          <td>背心吊带-单件</td>
+          <td>USD</td>
+          <td>5</td>
+          <td>$35</td>
+          <td>$39</td>
+          <td>$49</td>
+          <td>GREEEN V-neck Removable Pads Bra | GREEEN Ribbed Square Neck Wide Strap Camisole | Contrast Color V-neck Vest Bra | Contrast Mesh Panel Triangle Cup Bra</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>冬季</td>
+          <td>内裤</td>
+          <td>USD</td>
+          <td>2</td>
+          <td>$19</td>
+          <td>$19</td>
+          <td>$19</td>
+          <td>Contrast Color Comfort Low-Rise Briefs | Contrast Color Mesh Splicing Briefs</td>
+        </tr>
+        <tr>
+          <td>THE BLENDER</td>
+          <td>冬季</td>
+          <td>其他/待判定</td>
+          <td>USD</td>
+          <td>1</td>
+          <td>$29</td>
+          <td>$29</td>
+          <td>$29</td>
+          <td>Heating Fiber Lightweight Crew Neck Thermal Top</td>
+        </tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="sources" class="reveal">
+      <div class="section-head">
+        <h2>来源与口径</h2>
+        <p>本页是公开渠道快照，不等同于品牌后台、店铺生意参谋或抖音罗盘数据。后续若有后台导出，可直接替换 SKU 明细重算。</p>
+      </div>
+      <div class="sources"><a href="https://www.xiaohongshu.com/user/profile/5f1402c00000000001001520" target="_blank" rel="noreferrer">小红书 Fysea</a><a href="https://www.xiaohongshu.com/user/profile/614f2d710000000002026cf7" target="_blank" rel="noreferrer">小红书 Oneup</a><a href="https://www.xiaohongshu.com/user/profile/5c8cfb14000000001603649c" target="_blank" rel="noreferrer">小红书 THE BLENDER</a><a href="https://tao.hooos.com/" target="_blank" rel="noreferrer">Hooos 淘宝/天猫公开页</a><a href="https://theblender.shop/products.json?limit=250" target="_blank" rel="noreferrer">THE BLENDER official shop</a><a href="https://mdaily.hangzhou.com.cn/mrsb/2025/05/16/article_detail_3_20250516A091.html" target="_blank" rel="noreferrer">杭州日报 Oneup 杭州首店</a><a href="https://www.cfw.cn/news/371366-1.html" target="_blank" rel="noreferrer">中国服饰 Oneup 杭州首店</a><a href="https://www.digitaling.com/articles/688302.html" target="_blank" rel="noreferrer">数英 THE BLENDER 品牌资料</a></div>
+    </section>
+  </main>
+
+  <footer>
+    生成日期：2026-05-17 · 输出目录：/Users/huangdong/Downloads/github/caixukun_zhihu/fuzhuang2
+  </footer>
+
+  <script>
+    const DATA = {"topProducts":[{"brand":"Fysea","rankByPublicSort":1,"title":"厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女","category":"家居服-裤装","price":419.1,"originalPrice":419.1,"store":"寨晨优选","mall":"淘宝","channel":"淘宝店铺","location":"山西 忻州","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/_XXX_KKK_/O1CN01d9YVxO1xqlQNZKW3Y_!!0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html","sourceUrl":"https://tao.hooos.com/search?w=Fysea&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"0","monthlySales":0,"activity":"","sourceCategory":"睡裤/家居裤","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"XkZx2VoUGtXKkNwapwsVY9FBtg-QAnppRSb2g6DK30Fk"},{"brand":"Fysea","rankByPublicSort":2,"title":"【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤","category":"裤装-长裤","price":74.8,"originalPrice":79.8,"store":"莫奈STUDIO","mall":"淘宝","channel":"淘宝店铺","location":"广东 广州","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2204109291146/O1CN01u4b0vO1KKv1hZoyIQ_!!2204109291146.png","detailUrl":"https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html","sourceUrl":"https://tao.hooos.com/search?w=Fysea&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"0","monthlySales":0,"activity":"","sourceCategory":"休闲裤","sourceItemType":"女装/女士精品","taobaoId":"9oOPYMdTBtO9q9woj5F23dfQt6-QAnppRSbR0awjYPIA"},{"brand":"Oneup","rankByPublicSort":1,"title":"ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣","category":"T恤","price":92,"originalPrice":109,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2215250388160/O1CN01EQYpus2A9Kp5KpUWe_!!2215250388160.png","detailUrl":"https://tao.hooos.com/goods_V7JkNMyu6twvn6nqBJf22qUvtV-NeRBBocnwBZyj4vHy.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"3万+","monthlySales":30000,"activity":"","sourceCategory":"T恤","sourceItemType":"女装/女士精品","taobaoId":"e7xK0rVCDtd2j0M9J2C8XGszt0-NeRBBoczqR8vNePs9"},{"brand":"Oneup","rankByPublicSort":2,"title":"oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤","category":"裤装-短裤","price":92,"originalPrice":109,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/2215250388160/O1CN015UtxVT2A9L1hynF4s_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_x9Y3OVnuktq9X2XbGoSQ6aTAt9-WkRwwpuQr8eYxOYia.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"2万+","monthlySales":20000,"activity":"","sourceCategory":"休闲裤","sourceItemType":"女装/女士精品","taobaoId":"9oOPYMdTBtO9q9woj5F23dfQt6-QAnppRSbR0awjYPIA"},{"brand":"Oneup","rankByPublicSort":3,"title":"oneup莱赛尔天丝亚麻修身正肩短袖t恤女夏季修身健身瑜伽运动上衣","category":"T恤","price":152,"originalPrice":179,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2215250388160/O1CN01mBk87z2A9L1LbLOEO_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_YM9NknPiptXQzoz29WtWamU2t6-9OgVVDuOj2ap2yWFX.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"T恤","sourceItemType":"女装/女士精品","taobaoId":"e7xK0rVCDtd2j0M9J2C8XGszt0-NeRBBoczqR8vNePs9"},{"brand":"Oneup","rankByPublicSort":4,"title":"oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤","category":"裤装-长裤","price":245,"originalPrice":289,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/2215250388160/O1CN01l1XCkT2A9KwTrzOh2_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_ryVZqz9uOtVmXaXdGRi66jFqtZ-XNReeAC0DxAd3YMUm.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"休闲裤","sourceItemType":"女装/女士精品","taobaoId":"9oOPYMdTBtO9q9woj5F23dfQt6-QAnppRSbR0awjYPIA"},{"brand":"Oneup","rankByPublicSort":5,"title":"Oneup美式基础正肩弹力t恤2026新款夏季修身黑色休闲上衣短袖女款","category":"T恤","price":92,"originalPrice":109,"store":"oneup旗舰店","mall":"天猫","channel":"天猫店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/2217647639339/O1CN01u5u9AD2IrJuIpvzRV_!!4611686018427382571-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_8AgKdMvcnt9zO3Om5YSgKaubt8-Gn755MIqy8RKOQPu3.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"T恤","sourceItemType":"男装","taobaoId":"w4B96xbHgtDK2w35MvcoopSbtd-rkOPPMub7vRRZ0Os5"},{"brand":"Oneup","rankByPublicSort":6,"title":"oneup美式白色裤子弯刀裤女夏季长裤香蕉裤纯棉宽松阔腿裤休闲裤","category":"裤装-长裤","price":237,"originalPrice":279,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2215250388160/O1CN01LWnKPR2A9KsoeKIs8_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_aBWwyn3HotMm767ekzSQQZCjty-Gn755MIqRW3OmPdIZ.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"休闲裤","sourceItemType":"女装/女士精品","taobaoId":"NOg3KRMwu5tGnX3M4nMhxxdhRtB-KaykkBHjq5Damy2FN"},{"brand":"Oneup","rankByPublicSort":7,"title":"oneup美式修身正肩polo衫短袖t恤女夏季黑色羽毛球网球服运动上衣","category":"T恤","price":118,"originalPrice":139,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2215250388160/O1CN01dURUZx2A9KpiFc1wF_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_3XoKdbycAtY6737g8nT0xOI9tJ-QAnppRSbWqzDBoeTK.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"T恤","sourceItemType":"女装/女士精品","taobaoId":"e7xK0rVCDtd2j0M9J2C8XGszt0-NeRBBoczqR8vNePs9"},{"brand":"Oneup","rankByPublicSort":8,"title":"oneup夏季薄款运动裤防晒速干裤休闲九分裤子女黑色阔腿裤弯刀裤","category":"裤装-长裤","price":245,"originalPrice":289,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2215250388160/O1CN01ZvWbFV2A9KyFJlwPr_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_MebpXAOSKtXvW6WMPKtVVasQtA-k5v00Gf8n5mVXpaIp.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"5000+","monthlySales":5000,"activity":"","sourceCategory":"休闲裤","sourceItemType":"女装/女士精品","taobaoId":"NOg3KRMwu5tGnX3M4nMhxxdhRtB-KaykkBHjq5Damy2FN"},{"brand":"Oneup","rankByPublicSort":9,"title":"【Oneup官方】高级白色弯刀裤夏季休闲美式宽松香蕉裤长裤子女男","category":"裤装-长裤","price":217,"originalPrice":279,"store":"oneup旗舰店","mall":"天猫","channel":"天猫店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2217647639339/O1CN01dH4EzG2IrJuMxkUZt_!!4611686018427382571-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_6pKodr3T8tGx9p9ovqHwwNiot3-YA3ppxSBWRBRNdqFa3.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"9000+","monthlySales":9000,"activity":"","sourceCategory":"休闲裤","sourceItemType":"男装","taobaoId":"jVe9nn0i0tJq8QA7ZxfBJBIJte-rkOPPMuMjy6db06sJ"},{"brand":"Oneup","rankByPublicSort":10,"title":"oneup美式弹力纯色紧身修身正肩短袖t恤女夏季瑜伽健身运动上衣","category":"T恤","price":92,"originalPrice":109,"store":"oneup","mall":"淘宝","channel":"淘宝店铺","location":"福建 福州","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2215250388160/O1CN01z411ES2A9L1NDAJk6_!!2215250388160.jpg","detailUrl":"https://tao.hooos.com/goods_8AgKdMqHnt9zO3Om5YSggOsbt8-YA3ppxSBNKnZOB7s8.html","sourceUrl":"https://tao.hooos.com/search?w=Oneup&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"T恤","sourceItemType":"女装/女士精品","taobaoId":"e7xK0rVCDtd2j0M9J2C8XGszt0-NeRBBoczqR8vNePs9"},{"brand":"THE BLENDER","rankByPublicSort":1,"title":"【固定胸垫】The Blender可交叉细肩带三角杯美背内衣套装夏季女","category":"背心吊带-多件包/套装","price":152,"originalPrice":179,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/2207282655070/O1CN01DwBHpT1nK7C64kSmJ_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_AmG3WMhzt4jMGMpR0umXPIvtn-9OgVVDuO09ewy7mCXk.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":2,"title":"【可拆卸胸垫】The Blender细肩带黑色性感三角杯美背内衣夏季女","category":"背心吊带-单件","price":143,"originalPrice":169,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2207282655070/O1CN01Hj2Wu11nK7C61ounG_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_70Zk35U4t58QyQaWZFnZYSMtV-PNzeejCKRRwzerdT2n.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":3,"title":"【环保系列】The Blender轻运动固定胸垫调节肩带白色内衣夏季女","category":"背心吊带-单件","price":182,"originalPrice":229,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2207282655070/O1CN01i1pXpx1nK7C64yagh_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_avxarefotMm767epxUQQRcjty-BmWKKNHrJxa6yQ3f0.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":4,"title":"The Blender纯色无缝一体织轻薄固定胸垫美背夏季白色吊带背心女","category":"背心吊带-单件","price":157,"originalPrice":199,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2207282655070/O1CN01r4mEfo1nK7C6DNari_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_WvKdPaHot20ZQZApWTaaosQta-p3j775cR7N5eDa7Iq4.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"8000+","monthlySales":8000,"activity":"","sourceCategory":"背心吊带","sourceItemType":"女装/女士精品","taobaoId":"7wMj4yvt4t58bQDnWbfnZqfMtV-BmWKKNHr47j6p2mhp"},{"brand":"THE BLENDER","rankByPublicSort":5,"title":"The Blender撞色可拆卸胸垫美背法式三角杯性感细肩带内衣女套装","category":"背心吊带-多件包/套装","price":140,"originalPrice":179,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/2207282655070/O1CN01dyVGCC1nK7C64tDjM_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_zd4JBkietaWOGOPMySvYgSdt4-gQXnn3s2vgrNzPdHG.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"未判定","monthlySalesText":"1万+","monthlySales":10000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"zzdxApqIetaWROpGR8uvvvtdt4-WkRwwpuQPoXvdoWsd3"},{"brand":"THE BLENDER","rankByPublicSort":6,"title":"The Blender可拆卸胸垫细肩带深V美背背心式三角杯内衣女夏季","category":"背心吊带-单件","price":116.25,"originalPrice":159,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2207282655070/O1CN01X0Ev6i1nK7BzXKrPN_!!4611686018427383646-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_VnDQgxF6twvn6nqrou27KhvtV-YA3ppxSdJzj0raqCav.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"9000+","monthlySales":9000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":7,"title":"The Blender固定胸垫细肩带多场景穿搭白色背心式美背内衣夏季女","category":"背心吊带-单件","price":148.55,"originalPrice":199,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2207282655070/O1CN01HN1Gmw1nK7C68GfpJ_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_RvDyJZuZtjrvQv8Votrr0sMt6-rkOPPMub2rbaaZvs5.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"3000+","monthlySales":3000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":8,"title":"【限时折扣】The Blender大V领低胸可拆卸胸垫美背背心内衣女夏季","category":"背心吊带-单件","price":160.55,"originalPrice":199,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2207282655070/O1CN01flv3Ds1nK7C3cwOB6_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_Pv4PQvi3t6vbwb93etvDAHPt6-yz622osAmx90MDQIV.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"2000+","monthlySales":2000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"08KNO8jf7t8y2oJbDdh05MU2t6-bWZ332uv6YqnKRxHO"},{"brand":"THE BLENDER","rankByPublicSort":9,"title":"【限时特价】The Blender撞色固定轻薄胸垫可调节肩带内衣三角杯","category":"背心吊带-单件","price":97.85,"originalPrice":179,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2207282655070/O1CN01G1E6KO1nK7C6HneSq_!!4611686018427383646-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_6q0On5f8tGx9p9oNrtwwKtot3-yz622osmy77X3Q5t4.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"未判定","monthlySalesText":"3000+","monthlySales":3000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"zzdxApqIetaWROpGR8uvvvtdt4-WkRwwpuQPoXvdoWsd3"},{"brand":"THE BLENDER","rankByPublicSort":10,"title":"The Blender深V纯色三角杯可拆卸胸垫背心式美背内衣女夏季","category":"背心吊带-单件","price":148.55,"originalPrice":199,"store":"theblender旗舰店","mall":"天猫","channel":"天猫店铺","location":"浙江 绍兴","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/2207282655070/O1CN01y0xxHI1nK7C64lKqE_!!2207282655070.jpg","detailUrl":"https://tao.hooos.com/goods_ZvDVJwS6tPdv5vKm6fBdwTVt6-oMZ778FBwPQGPZmSj.html","sourceUrl":"https://tao.hooos.com/search?w=THE%20BLENDER&sort=total_sales_des","source":"Hooos 天猫/淘宝公开销量排序","season":"夏季","monthlySalesText":"3000+","monthlySales":3000,"activity":"","sourceCategory":"文胸","sourceItemType":"女士内衣/男士内衣/家居服","taobaoId":"zzdxApqIetaWROpGR8uvvvtdt4-WkRwwpuQPoXvdoWsd3"}],"priceBands":[{"brand":"Fysea","channel":"淘宝店铺","category":"家居服-裤装","skuCount":1,"minPrice":419.1,"p25Price":419.1,"medianPrice":419.1,"p75Price":419.1,"maxPrice":419.1,"topMonthlySales":0,"topMonthlySalesText":"0","topProduct":"厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女","topProductLink":"https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Fysea","channel":"淘宝店铺","category":"裤装-长裤","skuCount":1,"minPrice":74.8,"p25Price":74.8,"medianPrice":74.8,"p75Price":74.8,"maxPrice":74.8,"topMonthlySales":0,"topMonthlySalesText":"0","topProduct":"【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤","topProductLink":"https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"淘宝店铺","category":"背心吊带-单件","skuCount":3,"minPrice":135,"p25Price":147.5,"medianPrice":160,"p75Price":160,"maxPrice":160,"topMonthlySales":5000,"topMonthlySalesText":"5000+","topProduct":"oneup可拆卸带胸垫弹力红色吊带挂脖背心女夏外穿瑜伽服运动上衣","topProductLink":"https://tao.hooos.com/goods_zVYKO2xuetaWOGOPvDCvd6udt4-Mw0WW4FV7MD6VmNsK.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"淘宝店铺","category":"关联生活方式产品","skuCount":1,"minPrice":152,"p25Price":152,"medianPrice":152,"p75Price":152,"maxPrice":152,"topMonthlySales":7000,"topMonthlySalesText":"7000+","topProduct":"oneup防走光白色运动短裙女夏羽毛球网球裙子a字包臀半身裙卫裙","topProductLink":"https://tao.hooos.com/goods_2Xajq8vUotgN2d2KAvCaa7fDtD-9OgVVDuOmKGq3o2SX.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"淘宝店铺","category":"裤装-短裤","skuCount":3,"minPrice":92,"p25Price":92,"medianPrice":92,"p75Price":122,"maxPrice":152,"topMonthlySales":20000,"topMonthlySalesText":"2万+","topProduct":"oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤","topProductLink":"https://tao.hooos.com/goods_x9Y3OVnuktq9X2XbGoSQ6aTAt9-WkRwwpuQr8eYxOYia.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"天猫店铺","category":"裤装-短裤","skuCount":1,"minPrice":92,"p25Price":92,"medianPrice":92,"p75Price":92,"maxPrice":92,"topMonthlySales":4000,"topMonthlySalesText":"4000+","topProduct":"Oneup超短裤女2026夏季新款美式健身运动弹力小个子休闲黑色紧身","topProductLink":"https://tao.hooos.com/goods_XPdpWnnsGtXv646RMWtVYbhBtg-9OgVVDuO2NDopZ0hR.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"淘宝店铺","category":"裤装-长裤","skuCount":3,"minPrice":237,"p25Price":241,"medianPrice":245,"p75Price":245,"maxPrice":245,"topMonthlySales":10000,"topMonthlySalesText":"1万+","topProduct":"oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤","topProductLink":"https://tao.hooos.com/goods_ryVZqz9uOtVmXaXdGRi66jFqtZ-XNReeAC0DxAd3YMUm.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"天猫店铺","category":"裤装-长裤","skuCount":2,"minPrice":217,"p25Price":219,"medianPrice":221,"p75Price":223,"maxPrice":225,"topMonthlySales":9000,"topMonthlySalesText":"9000+","topProduct":"【Oneup官方】高级白色弯刀裤夏季休闲美式宽松香蕉裤长裤子女男","topProductLink":"https://tao.hooos.com/goods_6pKodr3T8tGx9p9ovqHwwNiot3-YA3ppxSBWRBRNdqFa3.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"Oneup","channel":"淘宝店铺","category":"T恤","skuCount":11,"minPrice":92,"p25Price":105,"medianPrice":118,"p75Price":152,"maxPrice":169,"topMonthlySales":30000,"topMonthlySalesText":"3万+","topProduct":"ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣","topProductLink":"https://tao.hooos.com/goods_V7JkNMyu6twvn6nqBJf22qUvtV-NeRBBocnwBZyj4vHy.html","dataCoverage":"样本较充分（公开页前排 SKU）"},{"brand":"Oneup","channel":"天猫店铺","category":"T恤","skuCount":6,"minPrice":92,"p25Price":92,"medianPrice":94.5,"p75Price":103.75,"maxPrice":114,"topMonthlySales":10000,"topMonthlySalesText":"1万+","topProduct":"Oneup美式基础正肩弹力t恤2026新款夏季修身黑色休闲上衣短袖女款","topProductLink":"https://tao.hooos.com/goods_8AgKdMvcnt9zO3Om5YSgKaubt8-Gn755MIqy8RKOQPu3.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"THE BLENDER","channel":"天猫店铺","category":"背心吊带-单件","skuCount":24,"minPrice":15.3,"p25Price":104.35,"medianPrice":148.55,"p75Price":160.55,"maxPrice":200,"topMonthlySales":10000,"topMonthlySalesText":"1万+","topProduct":"【可拆卸胸垫】The Blender细肩带黑色性感三角杯美背内衣夏季女","topProductLink":"https://tao.hooos.com/goods_70Zk35U4t58QyQaWZFnZYSMtV-PNzeejCKRRwzerdT2n.html","dataCoverage":"样本较充分（公开页前排 SKU）"},{"brand":"THE BLENDER","channel":"天猫店铺","category":"背心吊带-多件包/套装","skuCount":2,"minPrice":140,"p25Price":143,"medianPrice":146,"p75Price":149,"maxPrice":152,"topMonthlySales":10000,"topMonthlySalesText":"1万+","topProduct":"【固定胸垫】The Blender可交叉细肩带三角杯美背内衣套装夏季女","topProductLink":"https://tao.hooos.com/goods_AmG3WMhzt4jMGMpR0umXPIvtn-9OgVVDuO09ewy7mCXk.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"THE BLENDER","channel":"淘宝店铺","category":"背心吊带-多件包/套装","skuCount":1,"minPrice":68,"p25Price":68,"medianPrice":68,"p75Price":68,"maxPrice":68,"topMonthlySales":1000,"topMonthlySalesText":"1000+","topProduct":"【特价清仓】The Blender限量福利内衣任选79元起","topProductLink":"https://tao.hooos.com/goods_Nva7JMC5tG8V4VMkAtxxMsRtB-KaykkBHjzOVO48QiN.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"},{"brand":"THE BLENDER","channel":"天猫店铺","category":"内裤","skuCount":3,"minPrice":55.67,"p25Price":55.67,"medianPrice":55.67,"p75Price":55.67,"maxPrice":55.67,"topMonthlySales":2000,"topMonthlySalesText":"2000+","topProduct":"【任选3条159元】The Blender撞色舒适一片式中低腰三角内裤女","topProductLink":"https://tao.hooos.com/goods_GY4NBxS8tYvPzPwJDhYYztQtJ-0Rakk7FB7NwZD6quq.html","dataCoverage":"样本有限（仅公开可抓取 SKU）"}],"seasonRows":[{"brand":"Fysea","season":"夏季","category":"家居服-裤装","currency":"RMB","skuCount":1,"minPrice":419.1,"medianPrice":419.1,"maxPrice":419.1,"representativeProducts":"厂家Fysea极j简轻薄水洗全棉高级感睡衣家居长裤系带春夏款睡裤女","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Fysea","season":"夏季","category":"裤装-长裤","currency":"RMB","skuCount":1,"minPrice":74.8,"medianPrice":74.8,"maxPrice":74.8,"representativeProducts":"【fysea~】蓝色阔腿休闲裤女夏季新款松紧腰宽松垂感拖地百搭长裤","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"春季","category":"背心吊带-单件","currency":"RMB","skuCount":1,"minPrice":160,"medianPrice":160,"maxPrice":160,"representativeProducts":"oneup可拆卸胸垫弹力挂脖吊带背心女春季修身运动健身瑜伽上衣","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"夏季","category":"背心吊带-单件","currency":"RMB","skuCount":2,"minPrice":135,"medianPrice":147.5,"maxPrice":160,"representativeProducts":"oneup可拆卸带胸垫弹力红色吊带挂脖背心女夏外穿瑜伽服运动上衣 | oneup裸感超弹可拆卸带胸垫弹力抹胸女夏季外穿瑜伽背心运动上衣","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"夏季","category":"关联生活方式产品","currency":"RMB","skuCount":1,"minPrice":152,"medianPrice":152,"maxPrice":152,"representativeProducts":"oneup防走光白色运动短裙女夏羽毛球网球裙子a字包臀半身裙卫裙","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"夏季","category":"裤装-短裤","currency":"RMB","skuCount":4,"minPrice":92,"medianPrice":92,"maxPrice":152,"representativeProducts":"oneup美式休闲骑行运动短裤女夏季灰色紧身包臀热裤健身瑜伽短裤 | Oneup超短裤女2026夏季新款美式健身运动弹力小个子休闲黑色紧身 | oneup美式毛圈休闲运动短裤女夏季纯棉直筒裤子纯色健身瑜伽短裤 | oneup美式紧身跑步骑行休闲短裤女夏季外穿热裤运动健身瑜伽裤子","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"夏季","category":"裤装-长裤","currency":"RMB","skuCount":5,"minPrice":217,"medianPrice":237,"maxPrice":245,"representativeProducts":"oneup防晒运动裤休闲裤子速干裤女夏季薄款长裤白色香蕉裤弯刀裤 | oneup美式白色裤子弯刀裤女夏季长裤香蕉裤纯棉宽松阔腿裤休闲裤 | oneup夏季薄款运动裤防晒速干裤休闲九分裤子女黑色阔腿裤弯刀裤 | 【Oneup官方】高级白色弯刀裤夏季休闲美式宽松香蕉裤长裤子女男","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"夏季","category":"T恤","currency":"RMB","skuCount":15,"minPrice":92,"medianPrice":106,"maxPrice":169,"representativeProducts":"ONEUP美式白色正肩短袖t恤女夏季修身半袖纯棉健身瑜伽运动上衣 | oneup莱赛尔天丝亚麻修身正肩短袖t恤女夏季修身健身瑜伽运动上衣 | Oneup美式基础正肩弹力t恤2026新款夏季修身黑色休闲上衣短袖女款 | oneup美式修身正肩polo衫短袖t恤女夏季黑色羽毛球网球服运动上衣","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"Oneup","season":"秋季","category":"其他/待判定","currency":"无价格","skuCount":null,"minPrice":null,"medianPrice":null,"maxPrice":null,"representativeProducts":"Oneup 24AW｜Everyone, Living Wellness.","sepOctNovFocus":"小红书秋季/9-11月相关上新或穿搭内容线索；未公开价格/销量。","source":"小红书品牌主页笔记"},{"brand":"Oneup","season":"冬季","category":"T恤","currency":"RMB","skuCount":2,"minPrice":118,"medianPrice":143.5,"maxPrice":169,"representativeProducts":"oneup莱赛尔天丝羊毛修身正肩短袖T恤女夏季薄款针织瑜伽运动上衣 | oneup莱赛尔天丝羊毛针织五分袖短袖t恤女夏季薄款黑色中袖上衣","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"THE BLENDER","season":"春季","category":"背心吊带-单件","currency":"USD","skuCount":26,"minPrice":35,"medianPrice":38,"maxPrice":69,"representativeProducts":"Crew Neck Contrast Logo Thin Strap Cropped Cami Dress | Asymmetrical Neck Cami Bodysuit | Contrast Trim Open Back Loose Fit Cami Top | Crew Neck Y-Back Strappy Backless Cami Top","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"衬衫-长袖","currency":"USD","skuCount":1,"minPrice":59,"medianPrice":59,"maxPrice":59,"representativeProducts":"Color-Block Long Sleeve T-Shirt","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"关联生活方式产品","currency":"USD","skuCount":3,"minPrice":56,"medianPrice":56,"maxPrice":56,"representativeProducts":"SLIVER RIVER Backless One-Shoulder Beachwear | One-Piece Beachwear | Clashing colors one-piece Beachwear","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"裤装-短裤","currency":"USD","skuCount":1,"minPrice":35,"medianPrice":35,"maxPrice":35,"representativeProducts":"SKIN JEANS-High waisted boxer shorts","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"裤装-长裤","currency":"USD","skuCount":4,"minPrice":19,"medianPrice":44,"maxPrice":69,"representativeProducts":"Pure Cotton Multi-Pocket Cargo Straight-Leg Elastic Waist Pants | Relaxed Straight-Leg Casual Pants | GREEEN Mid-rise Trousers | GREEEN Mid-rise Trousers（Ribbed model）","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"内裤","currency":"USD","skuCount":8,"minPrice":19,"medianPrice":19,"maxPrice":19,"representativeProducts":"Mid-Rise Seamless Briefs | SKIN JEANS Side-Cut Mid-Rise Triangle Briefs | SKIN JEANS-LOW-RISE Briefs | Mid-Rise Color-Block Briefs","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"其他/待判定","currency":"USD","skuCount":9,"minPrice":37,"medianPrice":49,"maxPrice":69,"representativeProducts":"Printed Open Back Vacation One-Piece Swimsuit | Printed Halter Neck Vacation Bikini Set | GREEEN Square Neck Slim Fit Backless Midi Slip Dress | Halter Neck Bikini Set","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"春季","category":"T恤","currency":"USD","skuCount":2,"minPrice":49,"medianPrice":63.5,"maxPrice":78,"representativeProducts":"Crew Neck Contrast Cuff Open Back Slim Tee | Openwork Relaxed Long-Sleeve Tee","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"夏季","category":"背心吊带-单件","currency":"RMB","skuCount":14,"minPrice":103.9,"medianPrice":152.35000000000002,"maxPrice":182,"representativeProducts":"【可拆卸胸垫】The Blender细肩带黑色性感三角杯美背内衣夏季女 | 【环保系列】The Blender轻运动固定胸垫调节肩带白色内衣夏季女 | The Blender纯色无缝一体织轻薄固定胸垫美背夏季白色吊带背心女 | The Blender可拆卸胸垫细肩带深V美背背心式三角杯内衣女夏季","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"THE BLENDER","season":"夏季","category":"背心吊带-单件","currency":"USD","skuCount":3,"minPrice":0,"medianPrice":39,"maxPrice":42,"representativeProducts":"Cut-out Mock Neck Vest & Tie-Front Long Sleeve Top | GREEEN Deep V-Neck Vest Bra | OVER $80 , GET A BRA FOR FREE!!!!","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"夏季","category":"背心吊带-多件包/套装","currency":"RMB","skuCount":1,"minPrice":152,"medianPrice":152,"maxPrice":152,"representativeProducts":"【固定胸垫】The Blender可交叉细肩带三角杯美背内衣套装夏季女","sepOctNovFocus":"","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"THE BLENDER","season":"夏季","category":"其他/待判定","currency":"USD","skuCount":1,"minPrice":59,"medianPrice":59,"maxPrice":59,"representativeProducts":"GREEEN Lightweight Shaping Bodysuit","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"秋季","category":"背心吊带-单件","currency":"RMB","skuCount":1,"minPrice":76,"medianPrice":76,"maxPrice":76,"representativeProducts":"【限时折扣】The Blender无缝针织可拆卸胸垫交叉肩带轻运动背心","sepOctNovFocus":"重点季节：若 published_at/月度字段可见则优先收录；否则按标题中的秋季/长袖/24AW/AW 判断。","source":"Hooos 天猫/淘宝公开销量排序"},{"brand":"THE BLENDER","season":"秋季","category":"背心吊带-单件","currency":"USD","skuCount":3,"minPrice":35,"medianPrice":35,"maxPrice":35,"representativeProducts":"U-neck Vest Bra | Flat Neck Narrow Cup Tank Bra | V-Neck Tank Style Bralette","sepOctNovFocus":"重点季节：若 published_at/月度字段可见则优先收录；否则按标题中的秋季/长袖/24AW/AW 判断。","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"秋季","category":"裤装-长裤","currency":"USD","skuCount":1,"minPrice":49,"medianPrice":49,"maxPrice":49,"representativeProducts":"Contrast-Logo Embroidered Dralon Pants","sepOctNovFocus":"重点季节：若 published_at/月度字段可见则优先收录；否则按标题中的秋季/长袖/24AW/AW 判断。","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"秋季","category":"其他/待判定","currency":"USD","skuCount":4,"minPrice":49,"medianPrice":49,"maxPrice":79,"representativeProducts":"Off-Shoulder Cutout Reversible Slim Knit Top | Contrast-Logo Embroidered Robe | Slant Henley Collar Long-Sleeve Top | Asymmetrical Henley Collar Tencel-Wool Top","sepOctNovFocus":"重点季节：若 published_at/月度字段可见则优先收录；否则按标题中的秋季/长袖/24AW/AW 判断。","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"冬季","category":"背心吊带-单件","currency":"USD","skuCount":5,"minPrice":35,"medianPrice":39,"maxPrice":49,"representativeProducts":"GREEEN V-neck Removable Pads Bra | GREEEN Ribbed Square Neck Wide Strap Camisole | Contrast Color V-neck Vest Bra | Contrast Mesh Panel Triangle Cup Bra","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"冬季","category":"内裤","currency":"USD","skuCount":2,"minPrice":19,"medianPrice":19,"maxPrice":19,"representativeProducts":"Contrast Color Comfort Low-Rise Briefs | Contrast Color Mesh Splicing Briefs","sepOctNovFocus":"","source":"THE BLENDER official products.json"},{"brand":"THE BLENDER","season":"冬季","category":"其他/待判定","currency":"USD","skuCount":1,"minPrice":29,"medianPrice":29,"maxPrice":29,"representativeProducts":"Heating Fiber Lightweight Crew Neck Thermal Top","sepOctNovFocus":"","source":"THE BLENDER official products.json"}]};
+    const productGrid = document.querySelector("#productGrid");
+    const filters = document.querySelectorAll("#productFilters button");
+
+    function money(value) {
+      if (!Number.isFinite(value)) return "未公开";
+      return "¥" + Number(value).toLocaleString("zh-CN", { maximumFractionDigits: 2 });
+    }
+    function productCard(p) {
+      const title = p.title || "未命名商品";
+      const sales = p.monthlySalesText || (Number.isFinite(p.monthlySales) ? p.monthlySales : "未公开");
+      return `
+        <article class="product">
+          <a href="${p.detailUrl || "#"}" target="_blank" rel="noreferrer">
+            <img src="${p.imageUrl || ""}" alt="${title.replace(/"/g, "&quot;")}" loading="lazy">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker"><span>${p.brand}</span><span>#${p.rankByPublicSort || "-"}</span></div>
+            <h3><a href="${p.detailUrl || "#"}" target="_blank" rel="noreferrer">${title}</a></h3>
+            <div class="product-meta">
+              <span><strong>${money(p.price)}</strong>售价</span>
+              <span><strong>${sales}</strong>月销</span>
+              <span>${p.category || "未分类"}</span>
+              <span>${p.channel || ""}</span>
+            </div>
+          </div>
+        </article>`;
+    }
+    function renderProducts(brand = "全部") {
+      const rows = DATA.topProducts.filter((p) => brand === "全部" || p.brand === brand);
+      productGrid.innerHTML = rows.map(productCard).join("");
+    }
+    filters.forEach((button) => {
+      button.addEventListener("click", () => {
+        filters.forEach((b) => b.setAttribute("aria-pressed", "false"));
+        button.setAttribute("aria-pressed", "true");
+        renderProducts(button.dataset.brand);
+      });
+    });
+    renderProducts();
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      }
+    }, { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
