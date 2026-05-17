@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>里性 LIVARY MIO 小红书人群与传播推广分析</title>
+  <style>
+    :root {
+      --ink: #161918;
+      --muted: #68706b;
+      --line: #dce1dc;
+      --paper: #f7f8f5;
+      --surface: #ffffff;
+      --rose: #a65f62;
+      --rose-dark: #7d4144;
+      --sage: #687a68;
+      --mint: #dce7dc;
+      --night: #101816;
+      --gold: #bd965a;
+      --radius: 6px;
+      --max: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 30;
+      width: 0;
+      height: 3px;
+      background: var(--rose);
+      transition: width 80ms linear;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(22, 25, 24, 0.12);
+      background: rgba(247, 248, 245, 0.92);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brandmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brandmark::before {
+      content: "";
+      width: 9px;
+      height: 28px;
+      background: var(--rose);
+      border-radius: 12px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 13px;
+      color: #43504a;
+    }
+
+    .nav a {
+      padding: 7px 10px;
+      border-radius: 999px;
+      transition: background 180ms ease, color 180ms ease;
+    }
+
+    .nav a:hover {
+      background: var(--mint);
+      color: var(--ink);
+    }
+
+    .hero {
+      background: var(--night);
+      color: #f8faf5;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      min-height: 520px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(340px, 0.98fr);
+      gap: 44px;
+      align-items: center;
+      padding: 70px 0 64px;
+    }
+
+    .hero-copy {
+      animation: riseIn 680ms ease both;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: #d7c3a5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 0.94;
+      letter-spacing: 0;
+      font-weight: 780;
+    }
+
+    .hero-lead {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: #dbe2da;
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .hero-meta span {
+      border: 1px solid rgba(248, 250, 245, 0.24);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #eef2ed;
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 430px;
+      animation: fadeIn 900ms ease 120ms both;
+    }
+
+    .image-stack {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 0.78fr;
+      grid-template-rows: 1fr 0.75fr;
+      gap: 12px;
+      transform: rotate(-1.2deg);
+    }
+
+    .image-stack figure {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(248, 250, 245, 0.18);
+      background: #26312e;
+      border-radius: var(--radius);
+    }
+
+    .image-stack figure:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .image-stack img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.95) contrast(1.04);
+      transition: transform 500ms ease;
+    }
+
+    .image-stack figure:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-note {
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      max-width: 285px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(16, 24, 22, 0.78);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 16px;
+      color: #edf2ec;
+      font-size: 14px;
+    }
+
+    main {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 78px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.34fr) minmax(0, 0.66fr);
+      gap: 38px;
+      align-items: start;
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      color: var(--rose-dark);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .section-copy {
+      margin: 0;
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .answer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .answer {
+      min-height: 192px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .answer:hover {
+      transform: translateY(-3px);
+      border-color: rgba(166, 95, 98, 0.46);
+    }
+
+    .answer b {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--rose-dark);
+      font-size: 14px;
+    }
+
+    .answer p {
+      margin: 0;
+      color: #333b37;
+    }
+
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      margin-top: 24px;
+      border: 1px solid var(--line);
+      background: var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .metric {
+      background: var(--surface);
+      padding: 20px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(25px, 4vw, 42px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .product {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+
+    .product:hover {
+      transform: translateY(-3px);
+      border-color: rgba(104, 122, 104, 0.5);
+    }
+
+    .product-media {
+      aspect-ratio: 1 / 1;
+      background: #edf0eb;
+      overflow: hidden;
+    }
+
+    .product-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-body {
+      padding: 18px;
+    }
+
+    .product-title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      flex: 0 0 auto;
+      color: var(--rose-dark);
+      font-weight: 800;
+      font-size: 22px;
+      line-height: 1;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #46514b;
+      background: #fbfcfa;
+      font-size: 12px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.48fr);
+      gap: 26px;
+      align-items: start;
+    }
+
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .matrix th,
+    .matrix td {
+      padding: 15px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .matrix th {
+      background: #eef2ed;
+      color: #2e3832;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .matrix tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .matrix td {
+      color: #37413c;
+      font-size: 14px;
+    }
+
+    .channel-list,
+    .discussion-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .channel,
+    .discussion {
+      border-left: 4px solid var(--sage);
+      background: var(--surface);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 16px 18px;
+    }
+
+    .channel strong,
+    .discussion strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .channel span,
+    .discussion span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .kol-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .kol {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr) 170px;
+      gap: 16px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 15px 18px;
+      transition: border-color 180ms ease, transform 180ms ease;
+    }
+
+    .kol:hover {
+      transform: translateX(3px);
+      border-color: rgba(166, 95, 98, 0.45);
+    }
+
+    .kol b {
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .kol p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .kol small {
+      color: var(--rose-dark);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .theme {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 250px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px;
+    }
+
+    .theme .rank {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #314035;
+      font-weight: 800;
+    }
+
+    .quote-band {
+      border: 1px solid rgba(166, 95, 98, 0.24);
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 30px;
+    }
+
+    .quote-band blockquote {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(22px, 3vw, 36px);
+      line-height: 1.25;
+      font-weight: 760;
+    }
+
+    .quote-band p {
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    details {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+    }
+
+    details + details {
+      margin-top: 10px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #2b342f;
+    }
+
+    details p,
+    details li {
+      color: var(--muted);
+    }
+
+    .sources {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .source-block {
+      border-top: 2px solid var(--ink);
+      padding-top: 16px;
+    }
+
+    .source-block ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 34px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 1020px) {
+      .hero-inner,
+      .section-head,
+      .two-col,
+      .sources {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-inner {
+        min-height: auto;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+      }
+
+      .answer-grid,
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metric-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .theme-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .topbar-inner,
+      main,
+      .hero-inner {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 0;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero-inner {
+        padding: 44px 0 42px;
+        gap: 28px;
+      }
+
+      .hero-visual {
+        min-height: 330px;
+      }
+
+      .hero-note {
+        right: 10px;
+        bottom: 10px;
+        max-width: 250px;
+        font-size: 12px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .answer-grid,
+      .product-grid,
+      .metric-strip,
+      .theme-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .kol {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .kol small {
+        text-align: left;
+      }
+
+      .matrix {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .matrix th,
+      .matrix td {
+        min-width: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brandmark" href="#top">LIVARY MIO XHS Report</a>
+      <nav class="nav" aria-label="页面目录">
+        <a href="#answers">结论</a>
+        <a href="#products">产品</a>
+        <a href="#channels">渠道</a>
+        <a href="#kol">KOL</a>
+        <a href="#themes">标签</a>
+        <a href="#discussion">讨论</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker">小红书人群与传播推广分析 / 2026-05-17</p>
+        <h1>里性 LIVARY MIO</h1>
+        <p class="hero-lead">围绕“核心产品、定价、KOL、销售线索、渠道、标签主题、用户讨论”整理的老板汇报版单页。</p>
+        <div class="hero-meta">
+          <span>143 篇去重小红书笔记</span>
+          <span>6 篇重点评论精读</span>
+          <span>官方粉丝 62,711</span>
+          <span>获赞收藏 318,024</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="核心产品视觉">
+        <div class="image-stack">
+          <figure><img src="https://image.maigoo.com/upload/images/20230211/14350245268_800x800.jpg_200_200.jpg" alt="里性赴约真丝吊带美背文胸"></figure>
+          <figure><img src="https://image.maigoo.com/upload/images/20250708/16213296690_800x800.jpg_200_200.jpg" alt="里性异想蕾丝真丝文胸"></figure>
+          <figure><img src="https://image.maigoo.com/upload/images/20250708/16213429213_800x800.jpg_200_200.jpg" alt="里性琉璃高级真丝美背内衣"></figure>
+        </div>
+        <div class="hero-note">定位：东方女性胸型洞察 + 法式浪漫内衣设计 + 可外穿/可叠穿的场景化时尚内衣。</div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section id="answers" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">01 / EXECUTIVE ANSWERS</div>
+        <div>
+          <h2>老板最关心的六个问题，先给硬答案。</h2>
+          <p class="section-copy">公开前台数据无法替代品牌后台 GMV，因此这里把“已确认”“可推断”“需后台确认”的边界放清楚。</p>
+        </div>
+      </div>
+
+      <div class="answer-grid">
+        <article class="answer">
+          <b>核心产品</b>
+          <p>当前可见核心款为赴约、异想、琉璃、对白、花茎、宠爱。价格带约 ￥308-￥698，其中赴约和异想是社媒与电商前台信号最强的两款。</p>
+        </article>
+        <article class="answer">
+          <b>销售最多产品</b>
+          <p>历史已确认销售爆款是早期美背内衣，公开报道显示累计破 10 万套；能点名的早期超级单品是“宠爱”。当前全渠道销量第一需后台确认。</p>
+        </article>
+        <article class="answer">
+          <b>销量最高渠道</b>
+          <p>公开信息最能支持“天猫旗舰店”为主要销售阵地；小红书负责种草，微信商城承接私域，京东与港汇恒隆店是补充交易和体验渠道。</p>
+        </article>
+        <article class="answer">
+          <b>社媒 KOL</b>
+          <p>核心结构是明星艺人引爆、穿搭达人转化、探店 KOC 线下引流、创始人背书。蔡文静、丁儿丁儿、东东miaaa、阿陆Joyce、O644_ 最值得重点看。</p>
+        </article>
+        <article class="answer">
+          <b>核心标签主题</b>
+          <p>品牌词：里性LIVARYMIO；产品词：法式内衣、真丝内衣、蕾丝内衣、美背内衣；场景词：春夏内搭、内搭外穿、Staycation穿搭。</p>
+        </article>
+        <article class="answer">
+          <b>讨论度最高</b>
+          <p>单条最高讨论为蔡文静《春夏内搭神器已安排》，627 评论。讨论集中在价格、胸型尺码、购买路径和内搭方式。</p>
+        </article>
+      </div>
+
+      <div class="metric-strip" aria-label="关键样本数据">
+        <div class="metric"><strong>143</strong><span>去重小红书笔记样本</span></div>
+        <div class="metric"><strong>6</strong><span>详情页与评论精读</span></div>
+        <div class="metric"><strong>62,711</strong><span>官方账号粉丝</span></div>
+        <div class="metric"><strong>318,024</strong><span>官方获赞与收藏</span></div>
+        <div class="metric"><strong>627</strong><span>最高单条评论数</span></div>
+      </div>
+    </section>
+
+    <section id="products" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">02 / CORE PRODUCTS</div>
+        <div>
+          <h2>核心产品不是“基础内衣”，而是可被保存和复用的穿搭单品。</h2>
+          <p class="section-copy">产品命名以情绪词和场景词为主，再用真丝、蕾丝、美背、无钢圈、可外穿承接转化。</p>
+        </div>
+      </div>
+
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20230211/14350245268_800x800.jpg_200_200.jpg" alt="赴约真丝吊带美背文胸"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>赴约</h3><div class="price">￥528</div></div>
+            <p>真丝吊带细肩带美背文胸，可外穿内衣背心。当前社媒与电商前台信号最强，最贴近“春夏/度假/内搭”的主心智。</p>
+            <div class="tag-row"><span class="tag">真丝美背</span><span class="tag">可外穿</span><span class="tag">500+ 评论</span></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20250708/16213296690_800x800.jpg_200_200.jpg" alt="异想细肩带蕾丝真丝文胸"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>异想</h3><div class="price">￥438</div></div>
+            <p>细肩带蕾丝无钢圈法式三角杯真丝文胸。26 春夏与明星同款语境中的审美款，适合承接“法式、蕾丝、不对称”。</p>
+            <div class="tag-row"><span class="tag">明星同款</span><span class="tag">蕾丝真丝</span><span class="tag">500+ 评价</span></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20250708/16213429213_800x800.jpg_200_200.jpg" alt="琉璃高级真丝美背内衣"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>琉璃 Glaze</h3><div class="price">￥588</div></div>
+            <p>高级真丝美背内衣，无钢圈可外穿。更偏高客单材质心智，与评论区“600+”价格感知一致。</p>
+            <div class="tag-row"><span class="tag">高级真丝</span><span class="tag">无钢圈</span><span class="tag">可外穿</span></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20250708/16213419041_800x800.jpg_200_200.jpg" alt="对白蕾丝真丝无钢圈内衣"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>对白</h3><div class="price">￥698</div></div>
+            <p>蕾丝真丝无钢圈内衣，可外穿不对称设计背心。处于价格敏感区，需要更多材质、工艺和穿搭场景解释。</p>
+            <div class="tag-row"><span class="tag">不对称</span><span class="tag">高价形象款</span><span class="tag">价格敏感</span></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20250708/16213567484_800x800.jpg_200_200.jpg" alt="花茎真丝拼蕾丝抹胸内衣"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>花茎 Stem</h3><div class="price">￥468</div></div>
+            <p>真丝拼蕾丝抹胸，可拆卸肩带无钢圈内衣。对应露肩、露背、度假和夏季外搭场景。</p>
+            <div class="tag-row"><span class="tag">抹胸</span><span class="tag">可拆肩带</span><span class="tag">度假穿搭</span></div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-media"><img src="https://image.maigoo.com/upload/images/20220131/23253324588_800x800.jpg_200_200.jpg" alt="宠爱法式背心式无痕内衣"></div>
+          <div class="product-body">
+            <div class="product-title"><h3>宠爱</h3><div class="price">￥308</div></div>
+            <p>性感蕾丝法式背心式无痕内衣。公开访谈中被提及为早期线上引流超级单品。</p>
+            <div class="tag-row"><span class="tag">早期超级单品</span><span class="tag">美背</span><span class="tag">中价位</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="channels" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">03 / SALES CHANNELS</div>
+        <div>
+          <h2>销量主阵地是天猫，小红书更像“审美种草 + 搜索承接”。</h2>
+          <p class="section-copy">现有公开资料无法证明 2026 年全渠道销量第一，但能清楚判断渠道分工。</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>渠道</th>
+              <th>判断</th>
+              <th>依据</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>天猫旗舰店</td>
+              <td>最高概率销售主阵地</td>
+              <td>公开访谈称“天猫是主要运营平台”；早期爆款在淘宝天猫美背内衣 200-400 元价位段排名第一。</td>
+            </tr>
+            <tr>
+              <td>微信商城</td>
+              <td>早期重要私域交易渠道</td>
+              <td>36氪披露早期主销售渠道包括天猫旗舰店和微信商城。</td>
+            </tr>
+            <tr>
+              <td>小红书</td>
+              <td>种草和搜索承接</td>
+              <td>明星、达人、KOC 内容拉动收藏、评论和品牌搜索，但不是主要成交口径。</td>
+            </tr>
+            <tr>
+              <td>京东</td>
+              <td>补充交易入口</td>
+              <td>可见官方旗舰店和部分商品评价量，但前台信息不足以证明高于天猫。</td>
+            </tr>
+            <tr>
+              <td>港汇恒隆店</td>
+              <td>体验与试穿承接</td>
+              <td>适合解释高客单、解决尺码与胸型问题，并形成线下打卡内容。</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="channel-list">
+          <div class="channel"><strong>历史销量爆款</strong><span>早期美背内衣累计破 10 万套；报道未直接披露具体品名。</span></div>
+          <div class="channel"><strong>可点名单品</strong><span>创始人访谈提到早期线上引流超级单品为“宠爱”。</span></div>
+          <div class="channel"><strong>当前热销线索款</strong><span>赴约、异想在电商评价量和小红书传播中信号最强。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kol" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">04 / KOL & KOC</div>
+        <div>
+          <h2>KOL 不是单层投放，而是明星引爆、穿搭转化、探店承接。</h2>
+          <p class="section-copy">以下为小红书前台出现或合作痕迹明显的传播资源；是否付费需以后端投放记录确认。</p>
+        </div>
+      </div>
+
+      <div class="kol-list">
+        <div class="kol"><b>蔡文静</b><p>明星艺人；《春夏内搭神器已安排》是最高讨论笔记。</p><small>31,846 赞 / 627 评论</small></div>
+        <div class="kol"><b>丁儿丁儿</b><p>头部穿搭/生活方式；“心机内搭、脱了外套也精致”强化穿搭公式。</p><small>5,660 赞 / 1,941 收藏</small></div>
+        <div class="kol"><b>东东miaaa</b><p>腰部生活方式/穿搭；“法式真丝美背、春夏入新”与品牌审美贴合。</p><small>5,649 赞 / 2,077 收藏</small></div>
+        <div class="kol"><b>阿陆Joyce</b><p>腰部穿搭/美妆；收藏接近点赞，说明购买决策价值强。</p><small>1,435 赞 / 1,278 收藏</small></div>
+        <div class="kol"><b>O644_</b><p>中小探店 KOC；港汇恒隆首店云逛店，引发线下购买和价格讨论。</p><small>2,143 赞 / 334 分享</small></div>
+        <div class="kol"><b>米奇拉Mikaela</b><p>腰部审美/生活方式；绸缎、法式蕾丝、私藏内衣内容。</p><small>2,008 赞 / 986 收藏</small></div>
+        <div class="kol"><b>臭脸少女王尼美</b><p>场景生活方式；Staycation 度假穿搭，评论率较高。</p><small>933 赞 / 125 评论</small></div>
+        <div class="kol"><b>明星同款矩阵</b><p>董洁、徐艺洋、Angelababy、钟楚曦、王紫璇、宣璐、段艺璇、许靖韵、方媛，以及 Fancy Notes、Choc Fashion、PICK星装记等搬运号。</p><small>强化同款搜索</small></div>
+      </div>
+    </section>
+
+    <section id="themes" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">05 / TAGS & THEMES</div>
+        <div>
+          <h2>传播主题围绕“可外穿的法式真丝美背”展开。</h2>
+          <p class="section-copy">标签词的价值不是堆搜索量，而是把内衣从私密品类转成可分享、可收藏、可试穿的穿搭内容。</p>
+        </div>
+      </div>
+
+      <div class="theme-grid">
+        <article class="theme">
+          <span class="rank">1</span>
+          <h3>品牌搜索词</h3>
+          <div class="tag-row"><span class="tag">#里性LIVARYMIO</span><span class="tag">#里性内衣</span><span class="tag">#里性LivaryMio</span></div>
+        </article>
+        <article class="theme">
+          <span class="rank">2</span>
+          <h3>产品卖点词</h3>
+          <div class="tag-row"><span class="tag">#法式内衣</span><span class="tag">#真丝内衣</span><span class="tag">#蕾丝内衣</span><span class="tag">#美背内衣</span></div>
+        </article>
+        <article class="theme">
+          <span class="rank">3</span>
+          <h3>穿搭场景词</h3>
+          <div class="tag-row"><span class="tag">#内衣穿搭</span><span class="tag">#春夏穿搭</span><span class="tag">#内搭外穿都好看</span><span class="tag">#Staycation穿搭</span></div>
+        </article>
+        <article class="theme">
+          <span class="rank">4</span>
+          <h3>明星同款词</h3>
+          <div class="tag-row"><span class="tag">#明星同款</span><span class="tag">#徐艺洋同款</span><span class="tag">董洁</span><span class="tag">蔡文静</span><span class="tag">Angelababy</span></div>
+        </article>
+        <article class="theme">
+          <span class="rank">5</span>
+          <h3>线下门店词</h3>
+          <div class="tag-row"><span class="tag">#上海新店</span><span class="tag">#魔都新店</span><span class="tag">#里性线下店</span><span class="tag">港汇恒隆</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="discussion" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">06 / USER DISCUSSION</div>
+        <div>
+          <h2>用户讨论最高的不是“好不好看”，而是“贵不贵、合不合身、怎么买”。</h2>
+          <p class="section-copy">这决定了后续内容不能只拍氛围，必须加强尺码、胸型、价格解释和购买路径。</p>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="quote-band">
+          <blockquote>“七百左右的价格劝退了”</blockquote>
+          <p>蔡文静最高讨论笔记下的高赞评论，代表高客单传播中的第一阻力。用户被明星和穿搭吸引后，会迅速转入价格、胸型和链接问题。</p>
+        </div>
+
+        <div class="discussion-list">
+          <div class="discussion"><strong>价格阻力</strong><span>“600+”“700 左右”反复出现，需要用真丝、蕾丝、版型和一衣多穿解释溢价。</span></div>
+          <div class="discussion"><strong>胸型/尺码适配</strong><span>“适合大胸吗”“大胸能不能穿”说明品牌应强化胸型分层内容。</span></div>
+          <div class="discussion"><strong>购买路径</strong><span>“什么品牌”“有链接吗”“线下咋买啊”说明种草到成交链路仍有断点。</span></div>
+          <div class="discussion"><strong>内搭方式</strong><span>“里面还要贴胸贴吗”“文胸是什么颜色”说明穿搭教学比纯新品视觉更能转化。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="reveal">
+      <div class="section-head">
+        <div class="eyebrow">07 / METHOD & SOURCES</div>
+        <div>
+          <h2>数据口径与资料来源。</h2>
+          <p class="section-copy">本报告使用小红书登录态抓取、公开报道、电商公开页和第三方商品聚合页；所有销量判断均按公开信息边界表达。</p>
+        </div>
+      </div>
+
+      <details open>
+        <summary>小红书样本口径</summary>
+        <p>共参考 143 篇去重小红书笔记，其中官方主页 61 篇唯一笔记、关键词搜索 85 篇唯一有效笔记，两者重叠 3 篇；详情页和评论精读 6 篇。</p>
+      </details>
+      <details>
+        <summary>关键限制</summary>
+        <p>小红书互动和电商评论量只能作为前台热度线索，不能等同真实 GMV 或实际销量。当前全渠道销量第一产品、各渠道 GMV 排名需要品牌后台确认。</p>
+      </details>
+
+      <div class="sources" style="margin-top: 28px;">
+        <div class="source-block">
+          <h3>本地抓取</h3>
+          <ul>
+            <li>livary_user_20260517.json</li>
+            <li>search_livary_mio_topliked_20260517.json</li>
+            <li>search_livary_underwear_topliked_20260517.json</li>
+            <li>search_livary_store_20260517.json</li>
+            <li>重点笔记详情与评论 JSON</li>
+          </ul>
+        </div>
+        <div class="source-block">
+          <h3>公开资料</h3>
+          <ul>
+            <li>36氪：融资、早期爆款、渠道信息</li>
+            <li>TopMarketing：创始人访谈、产品逻辑、天猫平台判断</li>
+            <li>MAIGOO：产品图与参考价</li>
+            <li>京东公开页：商品评价量与商品图</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">生成文件：/Users/huangdong/Downloads/github/caixukun_zhihu/fuzhuang6/index.html</div>
+  </main>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const updateProgress = () => {
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      progress.style.width = height > 0 ? `${(scrollTop / height) * 100}%` : "0";
+    };
+    document.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+  </script>
+</body>
+</html>
