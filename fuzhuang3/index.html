@@ -1,0 +1,1608 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BtD 定价参考 | TBH / Ubras / Almondrocks</title>
+  <style>
+    :root {
+      --ink: #171817;
+      --muted: #68706d;
+      --line: #d7ddd8;
+      --paper: #f7f7f2;
+      --panel: #ffffff;
+      --deep: #123b37;
+      --accent: #b95537;
+      --gold: #a4772a;
+      --green: #27706a;
+      --shadow: 0 22px 70px rgba(18, 59, 55, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 28px;
+      background: rgba(247,247,242,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--line);
+    }
+    .mark { font-weight: 800; color: var(--deep); white-space: nowrap; }
+    .nav { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: var(--muted); }
+    .nav a:hover { color: var(--accent); }
+    .report-hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
+      border-bottom: 1px solid var(--line);
+      background: #111816;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-copy {
+      padding: 72px min(7vw, 92px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+    }
+    .eyebrow {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-size: clamp(42px, 6.8vw, 94px);
+      line-height: .96;
+      letter-spacing: 0;
+    }
+    .hero-copy > p {
+      margin: 0;
+      max-width: 620px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(16px, 1.5vw, 20px);
+    }
+    .kpi-line {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(90px, 1fr));
+      gap: 1px;
+      max-width: 620px;
+      background: rgba(255,255,255,.16);
+      border: 1px solid rgba(255,255,255,.16);
+    }
+    .kpi-line div {
+      padding: 16px;
+      background: rgba(255,255,255,.06);
+    }
+    .kpi-line strong { display: block; font-size: 24px; line-height: 1; }
+    .kpi-line span { display: block; margin-top: 8px; color: rgba(255,255,255,.62); font-size: 12px; }
+    .hero-gallery {
+      min-height: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.12);
+    }
+    .hero-gallery a {
+      position: relative;
+      min-height: 28vh;
+      overflow: hidden;
+      background: #24312e;
+    }
+    .hero-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.04);
+      filter: saturate(.92);
+      opacity: .92;
+      transition: transform .7s ease, opacity .7s ease;
+    }
+    .hero-gallery a:hover img { transform: scale(1.11); opacity: 1; }
+    .hero-gallery span {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      color: #fff;
+      font-size: 12px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.6);
+    }
+    .section {
+      padding: 76px min(6vw, 84px);
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    .section-head h2 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(30px, 4vw, 58px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      margin: 0;
+      max-width: 470px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .brand-panel {
+      background: var(--panel);
+      padding: 24px;
+      min-width: 0;
+    }
+    .brand-heading p { margin: 0 0 8px; color: var(--muted); font-size: 12px; }
+    .brand-heading h3 { margin: 0; font-size: 28px; line-height: 1.08; color: var(--deep); }
+    .brand-proof {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+      align-items: center;
+    }
+    .brand-proof img {
+      width: 112px;
+      height: 112px;
+      object-fit: cover;
+      background: #e8ebe5;
+    }
+    .brand-proof span { color: var(--muted); font-size: 12px; }
+    .brand-proof strong { display: block; margin-top: 6px; font-size: 22px; color: var(--accent); }
+    .brand-proof p { margin: 8px 0 0; color: var(--muted); font-size: 13px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .band-list { border-top: 1px solid var(--line); }
+    .band-row {
+      display: grid;
+      grid-template-columns: 110px minmax(0, 1fr);
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .band-row span { color: var(--deep); font-weight: 700; }
+    .band-row strong { font-size: 14px; }
+    .band-row em { grid-column: 2; color: var(--muted); font-size: 12px; font-style: normal; }
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .chip, .season-tab {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      min-height: 38px;
+      padding: 0 14px;
+      font: inherit;
+      cursor: pointer;
+      transition: background .22s ease, color .22s ease, border-color .22s ease;
+    }
+    .chip.active, .season-tab.active {
+      background: var(--deep);
+      color: #fff;
+      border-color: var(--deep);
+    }
+    .search {
+      margin-left: auto;
+      min-width: min(280px, 100%);
+      min-height: 38px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font: inherit;
+    }
+    .matrix-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    table { border-collapse: collapse; width: 100%; min-width: 920px; }
+    th, td { border-bottom: 1px solid var(--line); padding: 14px; text-align: left; vertical-align: top; }
+    th { background: var(--deep); color: #fff; font-size: 13px; }
+    td:first-child { font-weight: 800; color: var(--deep); }
+    td strong { display: block; font-size: 14px; }
+    td span { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; }
+    td.empty { color: #a0a7a3; font-size: 13px; }
+    .season-shell {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+    .season-tabs {
+      position: sticky;
+      top: 82px;
+      display: grid;
+      gap: 10px;
+    }
+    .season-panel {
+      display: none;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .season-panel.active { display: grid; }
+    .season-row {
+      background: #fff;
+      padding: 18px;
+      min-height: 156px;
+    }
+    .season-row span { color: var(--muted); font-size: 12px; }
+    .season-row strong { display: block; margin-top: 6px; font-size: 18px; color: var(--deep); }
+    .season-row em { display: block; margin-top: 8px; color: var(--accent); font-style: normal; font-weight: 800; }
+    .season-row p { margin: 10px 0 0; color: var(--muted); font-size: 13px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .product-card {
+      background: #fff;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); z-index: 2; }
+    .product-image {
+      aspect-ratio: 1 / 1;
+      background: #e9ede8;
+      overflow: hidden;
+    }
+    .product-image img { width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+    .product-card:hover img { transform: scale(1.06); }
+    .product-body { padding: 15px; display: flex; flex: 1; flex-direction: column; gap: 11px; }
+    .product-meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .product-body h4 {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.35;
+      min-height: 58px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .product-numbers {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .product-numbers strong { color: var(--accent); font-size: 22px; }
+    .product-numbers em { color: var(--green); font-style: normal; font-weight: 700; }
+    .product-body > a { color: var(--deep); font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
+    .autumn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .autumn-list { background: #fff; padding: 24px; }
+    .autumn-list h3 { margin: 0 0 18px; font-size: 24px; color: var(--deep); }
+    .autumn-item {
+      display: block;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+    .autumn-item span { color: var(--muted); font-size: 12px; }
+    .autumn-item strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+    .autumn-item em { display: block; margin-top: 5px; color: var(--accent); font-style: normal; font-size: 13px; }
+    .method {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 36px;
+      align-items: start;
+    }
+    .method-copy {
+      background: var(--deep);
+      color: #fff;
+      padding: 28px;
+    }
+    .method-copy h3 { margin: 0 0 14px; font-size: 28px; }
+    .method-copy p { margin: 0 0 12px; color: rgba(255,255,255,.75); }
+    .source-links {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .source-links a {
+      background: #fff;
+      padding: 16px;
+      color: var(--deep);
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .hidden { display: none !important; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 1180px) {
+      .report-hero { grid-template-columns: 1fr; }
+      .hero-gallery { min-height: 55vh; }
+      .brand-grid, .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 760px) {
+      .topbar { align-items: flex-start; flex-direction: column; padding: 12px 18px; }
+      .nav { gap: 10px; }
+      .hero-copy, .section { padding: 44px 18px; }
+      .kpi-line { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .hero-gallery a { min-height: 190px; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 14px; }
+      .brand-grid, .season-panel, .product-grid, .autumn-grid, .method, .source-links { grid-template-columns: 1fr; }
+      .season-shell { grid-template-columns: 1fr; }
+      .season-tabs { position: static; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .search { margin-left: 0; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="mark" href="#">BtD Pricing Desk</a>
+    <nav class="nav">
+      <a href="#brands">品牌结论</a>
+      <a href="#matrix">品类价格带</a>
+      <a href="#season">季节</a>
+      <a href="#top10">TOP10</a>
+      <a href="#autumn">9-11月</a>
+      <a href="#method">数据口径</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="report-hero">
+      <div class="hero-copy">
+        <div class="eyebrow">2026-05-17 · TBH / Ubras / Almondrocks</div>
+        <h1>家居服与关联生活方式定价参考</h1>
+        <p>围绕成人女性核心品类，整理天猫/淘宝公开价格与月销、小红书账号动态、秋冬上新线索，给 BtD 建立可比价格锚点。</p>
+        <div class="kpi-line" aria-label="样本规模">
+          <div><strong>214</strong><span>天猫/淘宝商品样本</span></div>
+          <div><strong>276</strong><span>小红书相关样本</span></div>
+          <div><strong>24</strong><span>品类价格带</span></div>
+          <div><strong>30</strong><span>TOP商品</span></div>
+        </div>
+      </div>
+      <div class="hero-gallery">
+        
+              <a href="https://tao.hooos.com/goods_xVyBPdgIktq9kXyGjeCQWatAt9-KaykkBHjVkD0dXYCP.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01MrFww82LZPLwGb9WZ_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣">
+                <span>tbh家居 · ¥272.35</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_a9z9Rx2fotMmaaX47ZIQz3tjty-YA3ppxSB2JZQR8QSz.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01htJUd82LZPLwfyts4_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿女士睡衣">
+                <span>tbh家居 · ¥452.05</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_p6xXAn4cxt6MBANv37heeJuptm-2RmPPyFMnPZWopNc3.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i4/3913319706/O1CN01HPHzKj2LZPLruORA6_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣">
+                <span>tbh家居 · ¥377.80</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_6GVQ8J4i8tGxY9MNa4HwrRCot3-mOZQQNuWp8xGqezCZ.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN01x1SHJc1wMhyiCRNxq_!!4611686018427382902-0-item_pic.jpg" alt="虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸">
+                <span>Ubras · ¥89</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_kG2wd5xuYtarv6oX87sGGwsPtJ-RWRNNzu25bymoy2CO.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01UMNn9p1wMhyhCNqDN_!!4611686018427382902-0-item_pic.jpg" alt="ubras无尺码无痕内裤女中腰隐形15A蔓越莓纯棉加长裆夏季薄款短裤">
+                <span>Ubras · ¥73</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_RzKa3WocZtjrGvDVk2urXwiMt6-DokRR8IPZzpP6N2iOK.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01UGqaek1wMhyhomWpb_!!3369266294.jpg" alt="ubras纯棉内裤女15A蔓越莓抗菌裆透气中高腰夏薄款三角少女短裤头">
+                <span>Ubras · ¥64</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_AwKVRmVizt4j6Mm5B2TmXJSvtn-Gn755MIqZppxAB8to.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i2/2207244481824/O1CN01i4Z8vQ1PLRZ28E8bU_!!4611686018427385120-0-item_pic.jpg" alt="AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜">
+                <span>Almondrocks · ¥67.90</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_K9rRgvkC3toA2NRawgFmpASJtW-WkRwwpuQzaBKnmdtZ.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/2207244481824/O1CN01q4y9cY1PLRYIid395_!!4611686018427385120-0-item_pic.jpg" alt="AR复古浮雕花边罗口丝袜亮光丝轻薄芭蕾风2026新款中筒袜玛丽珍袜">
+                <span>Almondrocks · ¥41.60</span>
+              </a>
+              <a href="https://tao.hooos.com/goods_oy5QebKcrtK6Vj2DoZfDAmSntN-d8ZBBDFn5PxPQAKcP.html" target="_blank" rel="noreferrer">
+                <img src="https://img.alicdn.com/bao/uploaded/i1/2207244481824/O1CN013ZtwIO1PLRYwnOVmZ_!!4611686018427385120-0-item_pic.jpg" alt="AR花朵网纱物理防晒袖套时尚好看开车防护冰袖轻薄透气手臂套袖女">
+                <span>Almondrocks · ¥84.10</span>
+              </a>
+      </div>
+    </section>
+
+    <section id="brands" class="section">
+      <div class="section-head reveal">
+        <h2>先看定价锚点，再看品牌差异</h2>
+        <p>Ubras 是走量基准，tbh 是套装和礼赠溢价基准，Almondrocks 更像从袜子/防晒进入家居服的生活方式样本。</p>
+      </div>
+      <div class="brand-grid">
+        
+    <section class="brand-panel reveal" data-brand="tbh">
+      <div class="brand-heading">
+        <p>75.7K 粉丝 · 785.7K 获赞与收藏</p>
+        <h3>tbh家居</h3>
+      </div>
+      <div class="brand-proof">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01MrFww82LZPLwGb9WZ_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣">
+        <div>
+          <span>最高公开销售品类</span>
+          <strong>家居服-套装</strong>
+          <p>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣</p>
+        </div>
+      </div>
+      <div class="band-list">
+        
+              <a class="band-row" href="https://tao.hooos.com/goods_xVyBPdgIktq9kXyGjeCQWatAt9-KaykkBHjVkD0dXYCP.html" target="_blank" rel="noreferrer">
+                <span>家居服-套装</span>
+                <strong>¥256.20 - ¥1,877.05｜中位 ¥377.80</strong>
+                <em>3万+ · 30 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_OxGQoMNTzt6v9zRK0dhNNMsMtJ-DokRR8I6Kdad885sO.html" target="_blank" rel="noreferrer">
+                <span>家居服-上装</span>
+                <strong>¥191.60 - ¥455.85｜中位 ¥272.35</strong>
+                <em>8000+ · 10 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_7qAqnZ9t4t58bbPnQNFnZkuMtV-OpRwwaF0x5eApo7T9.html" target="_blank" rel="noreferrer">
+                <span>家居服-裤装</span>
+                <strong>¥264.75 - ¥264.75｜中位 ¥264.75</strong>
+                <em>3000+ · 1 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_xbjz4Bjiktq9kkANWJhQQYiAt9-8ZkvvmF55kRQMR3tA.html" target="_blank" rel="noreferrer">
+                <span>眼罩</span>
+                <strong>¥216.30 - ¥297.05｜中位 ¥256.68</strong>
+                <em>300+ · 2 SKU</em>
+              </a>
+      </div>
+    </section>
+    <section class="brand-panel reveal" data-brand="ubras">
+      <div class="brand-heading">
+        <p>190.9K 粉丝 · 1.4M 获赞与收藏</p>
+        <h3>Ubras</h3>
+      </div>
+      <div class="brand-proof">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN01x1SHJc1wMhyiCRNxq_!!4611686018427382902-0-item_pic.jpg" alt="虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸">
+        <div>
+          <span>最高公开销售品类</span>
+          <strong>内裤</strong>
+          <p>虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸</p>
+        </div>
+      </div>
+      <div class="band-list">
+        
+              <a class="band-row" href="https://tao.hooos.com/goods_6GVQ8J4i8tGxY9MNa4HwrRCot3-mOZQQNuWp8xGqezCZ.html" target="_blank" rel="noreferrer">
+                <span>背心吊带-单件</span>
+                <strong>¥88.90 - ¥159｜中位 ¥119</strong>
+                <em>50万+ · 18 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_kG2wd5xuYtarv6oX87sGGwsPtJ-RWRNNzu25bymoy2CO.html" target="_blank" rel="noreferrer">
+                <span>内裤</span>
+                <strong>¥8 - ¥91｜中位 ¥64.50</strong>
+                <em>40万+ · 28 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_Vmw8AXPc6twvjnKrQ7U2k7cvtV-rkOPPMuM9P9B4WPSR.html" target="_blank" rel="noreferrer">
+                <span>背心吊带-多件包/套装</span>
+                <strong>¥128.90 - ¥159｜中位 ¥143.95</strong>
+                <em>10万+ · 2 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_mJya8MJIktJD8Npwa3HzA8fot3-Gn755MIqoga8yjjso.html" target="_blank" rel="noreferrer">
+                <span>家居服-上装</span>
+                <strong>¥180.80 - ¥204｜中位 ¥194.50</strong>
+                <em>7万+ · 4 SKU</em>
+              </a>
+      </div>
+    </section>
+    <section class="brand-panel reveal" data-brand="almond">
+      <div class="brand-heading">
+        <p>130.2K 粉丝 · 234.7K 获赞与收藏</p>
+        <h3>Almondrocks</h3>
+      </div>
+      <div class="brand-proof">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/2207244481824/O1CN01i4Z8vQ1PLRZ28E8bU_!!4611686018427385120-0-item_pic.jpg" alt="AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜">
+        <div>
+          <span>最高公开销售品类</span>
+          <strong>关联生活方式产品</strong>
+          <p>AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜</p>
+        </div>
+      </div>
+      <div class="band-list">
+        
+              <a class="band-row" href="https://tao.hooos.com/goods_goZkbdnF3t2WvnrVdzCo27uatr-jdZqqnCdvVoJPwqfy.html" target="_blank" rel="noreferrer">
+                <span>家居服-上装</span>
+                <strong>¥169 - ¥313｜中位 ¥199</strong>
+                <em>3000+ · 4 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_52Y3G3Rcxtyv660kYQF775tMtV-3RZ770F07bMGwejsQ.html" target="_blank" rel="noreferrer">
+                <span>T恤</span>
+                <strong>¥119.40 - ¥229｜中位 ¥169</strong>
+                <em>2000+ · 21 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_wGdaB3MCgtDO4NPgXyfooOtbtd-YA3ppxSBedGwZe0SZ.html" target="_blank" rel="noreferrer">
+                <span>家居服-套装</span>
+                <strong>¥119.40 - ¥254｜中位 ¥209</strong>
+                <em>1000+ · 13 SKU</em>
+              </a>
+              <a class="band-row" href="https://tao.hooos.com/goods_4RjnbeKSgtNv22YdwQtwQBcNtg-JRMPPdFa07BwYMeTg.html" target="_blank" rel="noreferrer">
+                <span>裤装-长裤</span>
+                <strong>¥169 - ¥254｜中位 ¥229</strong>
+                <em>700+ · 9 SKU</em>
+              </a>
+      </div>
+    </section>
+      </div>
+    </section>
+
+    <section id="matrix" class="section">
+      <div class="section-head reveal">
+        <h2>核心品类价格带对比</h2>
+        <p>只保留成人女性相关品类；儿童、男士单独款、PDF资料等已剔除。关联生活方式品单独用于渠道观察。</p>
+      </div>
+      
+    <div class="matrix-wrap reveal">
+      <table class="matrix-table">
+        <thead>
+          <tr>
+            <th>品类</th>
+            <th>tbh家居</th><th>Ubras</th><th>Almondrocks</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+                <tr>
+                  <td>背心吊带-单件</td>
+                  <td class="empty">未检出稳定样本</td><td><strong>¥88.90 - ¥159｜中位 ¥119</strong><span>50万+ · 18 SKU</span></td><td class="empty">未检出稳定样本</td>
+                </tr>
+                <tr>
+                  <td>背心吊带-多件包/套装</td>
+                  <td class="empty">未检出稳定样本</td><td><strong>¥128.90 - ¥159｜中位 ¥143.95</strong><span>10万+ · 2 SKU</span></td><td class="empty">未检出稳定样本</td>
+                </tr>
+                <tr>
+                  <td>T恤</td>
+                  <td class="empty">未检出稳定样本</td><td class="empty">未检出稳定样本</td><td><strong>¥119.40 - ¥229｜中位 ¥169</strong><span>2000+ · 21 SKU</span></td>
+                </tr>
+                <tr>
+                  <td>内裤</td>
+                  <td class="empty">未检出稳定样本</td><td><strong>¥8 - ¥91｜中位 ¥64.50</strong><span>40万+ · 28 SKU</span></td><td class="empty">未检出稳定样本</td>
+                </tr>
+                <tr>
+                  <td>裤装-长裤</td>
+                  <td class="empty">未检出稳定样本</td><td class="empty">未检出稳定样本</td><td><strong>¥169 - ¥254｜中位 ¥229</strong><span>700+ · 9 SKU</span></td>
+                </tr>
+                <tr>
+                  <td>家居服-上装</td>
+                  <td><strong>¥191.60 - ¥455.85｜中位 ¥272.35</strong><span>8000+ · 10 SKU</span></td><td><strong>¥180.80 - ¥204｜中位 ¥194.50</strong><span>7万+ · 4 SKU</span></td><td><strong>¥169 - ¥313｜中位 ¥199</strong><span>3000+ · 4 SKU</span></td>
+                </tr>
+                <tr>
+                  <td>家居服-裤装</td>
+                  <td><strong>¥264.75 - ¥264.75｜中位 ¥264.75</strong><span>3000+ · 1 SKU</span></td><td class="empty">未检出稳定样本</td><td class="empty">未检出稳定样本</td>
+                </tr>
+                <tr>
+                  <td>家居服-套装</td>
+                  <td><strong>¥256.20 - ¥1,877.05｜中位 ¥377.80</strong><span>3万+ · 30 SKU</span></td><td><strong>¥130 - ¥293.90｜中位 ¥186.95</strong><span>4万+ · 12 SKU</span></td><td><strong>¥119.40 - ¥254｜中位 ¥209</strong><span>1000+ · 13 SKU</span></td>
+                </tr>
+                <tr>
+                  <td>眼罩</td>
+                  <td><strong>¥216.30 - ¥297.05｜中位 ¥256.68</strong><span>300+ · 2 SKU</span></td><td class="empty">未检出稳定样本</td><td class="empty">未检出稳定样本</td>
+                </tr>
+        </tbody>
+      </table>
+    </div>
+    </section>
+
+    <section id="season" class="section">
+      <div class="section-head reveal">
+        <h2>分季节价格带</h2>
+        <p>季节判断来自商品标题中的春夏、秋冬、长袖、短袖、凉感、半边绒等词。公开页不稳定披露真实上市日。</p>
+      </div>
+      <div class="season-shell">
+        <div class="season-tabs">
+          <button class="season-tab " data-season="春季">春季</button><button class="season-tab " data-season="夏季">夏季</button><button class="season-tab active" data-season="秋季">秋季</button><button class="season-tab " data-season="冬季">冬季</button>
+        </div>
+        <div>
+          
+    <div class="season-panel" data-season-panel="春季">
+      
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-上装</strong>
+              <em>¥272.35 - ¥297.05｜中位 ¥284.70</em>
+              <p>tbh野兽派家居都市野兽黑豹星光缎家居服男四季可外穿情侣睡衣女 | tbh野兽派家居都市野兽黑豹星光缎提花家居服四季可外穿情侣睡衣</p>
+            </div>
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-套装</strong>
+              <em>¥272.35 - ¥1,877.05｜中位 ¥402.03</em>
+              <p>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣 | 【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居都市野兽黑豹天丝棉家居服套装四季可外穿情侣睡衣</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-上装</strong>
+              <em>¥190 - ¥204｜中位 ¥196</em>
+              <p>【虞书欣同款】ubras流光家居服女款长袖带胸垫睡衣男可外穿春夏 | ubras呼呼睡系列碎花V领短袖裙带杯家居服26年新款可外穿春夏睡衣 | ubras呼呼睡衣V领短袖家居服柔软吊带睡裙女长袖带胸垫26新款春夏</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-套装</strong>
+              <em>¥130 - ¥221.90｜中位 ¥180</em>
+              <p>刘雯同款|ubras呼呼睡衣深睡碎花家居服套装女士2026年新款春夏季 | 刘雯同款|ubras云棉家居服女士睡衣情侣套装男款冰丝短袖短裤春夏 | 虞书欣同款ubras睡衣女款短袖短裤情侣家居服套装春夏新款带胸垫 | 【刘雯同款】ubras呼呼睡衣碎花长袖家居服套装女款春夏季2026年</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-上装</strong>
+              <em>¥152 - ¥322｜中位 ¥186</em>
+              <p>AR「softnotes」纯色竹节棉家居服可外穿长袖t恤春夏季宽松上衣女 | 【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女 | AR「softnotes」竹节棉V领纯棉短袖t恤女春季家居服慵懒早春上衣 | AR条纹长袖T恤上衣女春秋家居服宽松百搭显瘦慵懒风早春男女同款</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-套装</strong>
+              <em>¥119.40 - ¥254｜中位 ¥219</em>
+              <p>AR天丝棉视错觉条纹家居长裤可外穿春长袖家居服套装四季直筒裤 | AR天丝棉视错觉条纹长袖家居服套装可外穿春夏长裤睡衣男女四季 | AR纯色可外穿家居服套装2026春夏四季睡衣长袖长短裤AlmondRocks | AR元素波点天丝棉长袖家居服套装可外穿复古睡衣四季上衣长裤女</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>裤装-长裤</strong>
+              <em>¥169 - ¥254｜中位 ¥254</em>
+              <p>AR波点可外穿家居裤宽松条纹休闲裤豹纹遛弯裤度假裤散步长裤春夏 | AR天丝棉视错觉条纹休闲裤子女款春夏季家居裤可外穿休闲百搭长裤 | AR复古拼色防晒裤2026春夏季山系户外长裤轻薄透气防紫外线UPF50+ | AR复古速干散步裤可外穿家居长裤2026新款春夏慵懒百搭休闲直筒裤</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>T恤</strong>
+              <em>¥119.40 - ¥229｜中位 ¥169</em>
+              <p>AR「softnotes」纯色竹节纱长袖上衣春夏季圆领打底衫宽松T恤女 | AR复古条纹miu系撞色拼接长袖T恤2026春夏宽松套头衫慵懒风上衣女 | AR【线条交响乐】半透短袖T恤春季透气上衣薄女r线AlmondRocks | AR复古条纹miu系宽松长袖T恤撞色休闲圆领打底衫上衣2026新款春夏</p>
+            </div>
+    </div>
+    <div class="season-panel" data-season-panel="夏季">
+      
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-上装</strong>
+              <em>¥272.35 - ¥455.85｜中位 ¥297.05</em>
+              <p>tbh野兽派家居都市野兽黑豹星光缎家居服男四季可外穿情侣睡衣女 | tbh野兽派家居都市野兽黑豹星光缎提花家居服四季可外穿情侣睡衣 | tbh野兽派家居三丽欧Hello Kitty天丝棉家居睡裙可外穿短袖睡衣女 | tbh野兽派家居都市野兽黑豹针织家居睡裙夏季室内长袖家居服女</p>
+            </div>
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-套装</strong>
+              <em>¥256.20 - ¥1,877.05｜中位 ¥393</em>
+              <p>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣 | 【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居三丽鸥Hello Kitty星光缎家居服套装可外穿睡衣女夏</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>背心吊带-单件</strong>
+              <em>¥89 - ¥159｜中位 ¥131.50</em>
+              <p>虞书欣同款ubras小凉风无尺码v领夏季薄款内衣女吊带背心无痕文胸 | ubras小雏菊吊带背心女内搭搭bra无袖挂脖上衣夏外穿美背t恤女 | ubras白色吊带背心带胸垫女内搭搭bra夏可外穿挂脖上衣内衣t恤女 | ubras白色吊带背心抹胸带胸垫夏冰丝上衣搭bra薄可外穿内衣t恤女</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-上装</strong>
+              <em>¥180.80 - ¥204｜中位 ¥193</em>
+              <p>虞书欣同款|ubras流光家居服女带杯可外穿冰丝睡衣男26年新款夏季 | 【虞书欣同款】ubras流光家居服女款长袖带胸垫睡衣男可外穿春夏 | ubras呼呼睡系列碎花V领短袖裙带杯家居服26年新款可外穿春夏睡衣 | ubras呼呼睡衣V领短袖家居服柔软吊带睡裙女长袖带胸垫26新款春夏</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-套装</strong>
+              <em>¥130 - ¥293.90｜中位 ¥189.90</em>
+              <p>刘雯同款|ubras呼呼睡衣深睡碎花家居服套装女士2026年新款春夏季 | 刘雯同款|ubras云棉家居服女士睡衣情侣套装男款冰丝短袖短裤春夏 | 刘雯同款ubras呼呼睡衣柔软女短袖家居服吊带长袖套装带胸罩新夏 | 刘雯同款|ubras天丝家居服缎面睡衣套装女款冰丝夏季凉感26年新款</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>内裤</strong>
+              <em>¥15 - ¥91｜中位 ¥64</em>
+              <p>ubras无尺码无痕内裤女中腰隐形15A蔓越莓纯棉加长裆夏季薄款短裤 | ubras无痕甩甩干内裤女夏季薄款隐形中腰加长裆运动速干三角短裤 | ubras纯棉内裤女15A蔓越莓抗菌裆透气中高腰夏薄款三角少女短裤头 | ubras无尺码安全裤防走光夏季薄款无痕隐形免穿内裤女短裤打底裤</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-上装</strong>
+              <em>¥152 - ¥229｜中位 ¥169</em>
+              <p>AR「softnotes」竹节棉短袖T恤纯色圆领可外穿家居服宽松上衣女 | AR「softnotes」纯色竹节棉家居服可外穿长袖t恤春夏季宽松上衣女 | 【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女 | AR「softnotes」竹节棉V领纯棉短袖t恤女春季家居服慵懒早春上衣</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-套装</strong>
+              <em>¥119.40 - ¥254｜中位 ¥209</em>
+              <p>AR天丝棉视错觉条纹家居长裤可外穿春长袖家居服套装四季直筒裤 | AR天丝棉视错觉条纹长袖家居服套装可外穿春夏长裤睡衣男女四季 | AR纯色可外穿家居服套装2026春夏四季睡衣长袖长短裤AlmondRocks | AR元素波点天丝棉长袖家居服套装可外穿复古睡衣四季上衣长裤女</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>裤装-长裤</strong>
+              <em>¥169 - ¥254｜中位 ¥229</em>
+              <p>AR波点可外穿家居裤宽松条纹休闲裤豹纹遛弯裤度假裤散步长裤春夏 | 【doudou推荐】AlmondRocks机能户外山系防晒运动裤轻薄速干长裤 | AR「softnotes」纯色竹节棉休闲裤子女款夏季纯棉家居裤慵懒长裤 | 【博主推荐】AR防晒裤女款夏凉裤轻薄透气防紫外线UPF50+运动长裤</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>T恤</strong>
+              <em>¥119.40 - ¥229｜中位 ¥169</em>
+              <p>【doudou推荐】AR「softnotes」棉莫代尔圆领短袖正肩T恤宽松上衣 | 【沈月同款】AR「softnotes」竹节棉长袖T恤防晒轻薄罩衫宽松上衣 | AlmondRocks网球运动清凉天丝速干长袖T恤亚麻轻薄防晒罩衫上衣 | AR「softnotes」纯色竹节纱长袖上衣春夏季圆领打底衫宽松T恤女</p>
+            </div>
+    </div>
+    <div class="season-panel" data-season-panel="秋季">
+      
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-上装</strong>
+              <em>¥191.60 - ¥455.85｜中位 ¥264.75</em>
+              <p>tbh野兽派家居都市野兽黑豹星光缎家居服男四季可外穿情侣睡衣女 | tbh野兽派家居都市野兽黑豹星光缎提花家居服四季可外穿情侣睡衣 | tbh野兽派家居三丽鸥Hello Kitty弹力针织棉长袖T恤家居服睡衣女 | tbh野兽派家居半边绒长袖睡裙可外穿秋冬女士加厚保暖家居服</p>
+            </div>
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-套装</strong>
+              <em>¥256.20 - ¥1,877.05｜中位 ¥385.88</em>
+              <p>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣 | 【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居都市野兽黑豹天丝棉家居服套装四季可外穿情侣睡衣</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>背心吊带-单件</strong>
+              <em>¥119 - ¥119｜中位 ¥119</em>
+              <p>ubras无尺码小奶皮纸片人大胸显小文胸卫衣显瘦无痕隐形内衣背心</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-上装</strong>
+              <em>¥190 - ¥199｜中位 ¥196</em>
+              <p>【虞书欣同款】ubras流光家居服女款长袖带胸垫睡衣男可外穿春夏 | ubras呼呼睡衣V领短袖家居服柔软吊带睡裙女长袖带胸垫26新款春夏 | ubras奶酪绒家居服女士婚礼红色睡衣男款情侣本命年送礼新年秋冬</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-套装</strong>
+              <em>¥130 - ¥222｜中位 ¥181.50</em>
+              <p>刘雯同款ubras呼呼睡衣柔软女短袖家居服吊带长袖套装带胸罩新夏 | 【刘雯同款】ubras呼呼睡衣碎花长袖家居服套装女款春夏季2026年 | ubras呼呼睡衣套装碎花莫代尔家居服女生长袖睡裙子26年新款春夏 | ubras呼呼睡衣奶fufu女士亲肤莫代尔长袖套装情侣家居服男春夏季</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-上装</strong>
+              <em>¥186 - ¥322｜中位 ¥220</em>
+              <p>AR「softnotes」纯色竹节棉家居服可外穿长袖t恤春夏季宽松上衣女 | 【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女 | AR「softnotes」纯色卫衣毛巾布长袖可外穿家居服连帽外套开衫女 | AR条纹长袖T恤上衣女春秋家居服宽松百搭显瘦慵懒风早春男女同款</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-套装</strong>
+              <em>¥169 - ¥254｜中位 ¥209</em>
+              <p>AR天丝棉视错觉条纹家居长裤可外穿春长袖家居服套装四季直筒裤 | AR小众撞色纯棉高级感家居服套装可外穿长袖长裤女AlmondRocks | AR天丝棉视错觉条纹长袖家居服套装可外穿春夏长裤睡衣男女四季 | 【章若楠同款】AR拼色半边绒家居服套装可外穿开衫睡衣女保暖长袖</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>裤装-长裤</strong>
+              <em>¥254 - ¥254｜中位 ¥254</em>
+              <p>【现货秒发】AR「softnotes」毛巾布卫裤长裤可外穿家居散步裤</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>T恤</strong>
+              <em>¥152 - ¥229｜中位 ¥186</em>
+              <p>【沈月同款】AR「softnotes」竹节棉长袖T恤防晒轻薄罩衫宽松上衣 | AlmondRocks网球运动清凉天丝速干长袖T恤亚麻轻薄防晒罩衫上衣 | AR「softnotes」纯色竹节纱长袖上衣春夏季圆领打底衫宽松T恤女 | 【沈月同款】AR「softnotes」纯色竹节棉长袖T恤轻薄防晒罩衫上衣</p>
+            </div>
+    </div>
+    <div class="season-panel" data-season-panel="冬季">
+      
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-上装</strong>
+              <em>¥264.75 - ¥297.05｜中位 ¥268.55</em>
+              <p>tbh野兽派家居都市野兽黑豹星光缎家居服男四季可外穿情侣睡衣女 | tbh野兽派家居都市野兽黑豹星光缎提花家居服四季可外穿情侣睡衣 | tbh野兽派家居半边绒长袖睡裙可外穿秋冬女士加厚保暖家居服 | tbh野兽派家居Pingu合作系列半边绒长袖睡裙女士可外穿冬季家居服</p>
+            </div>
+            <div class="season-row">
+              <span>tbh家居</span>
+              <strong>家居服-套装</strong>
+              <em>¥256.20 - ¥1,877.05｜中位 ¥377.80</em>
+              <p>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣 | 【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣 | tbh野兽派家居都市野兽黑豹天丝棉家居服套装四季可外穿情侣睡衣</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-上装</strong>
+              <em>¥199 - ¥199｜中位 ¥199</em>
+              <p>ubras奶酪绒家居服女士婚礼红色睡衣男款情侣本命年送礼新年秋冬</p>
+            </div>
+            <div class="season-row">
+              <span>Ubras</span>
+              <strong>家居服-套装</strong>
+              <em>¥184 - ¥184｜中位 ¥184</em>
+              <p>刘雯同款|ubras软绵绵家居服女士蕾丝睡衣羽绒化情侣套装男款秋冬</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-上装</strong>
+              <em>¥186 - ¥322｜中位 ¥229</em>
+              <p>【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女 | AR卫衣纯棉可外穿家居服毛圈睡衣上衣女春季短款刺绣连帽拉链外套 | AR长袖t恤女打底衫秋冬保暖条纹拼接上衣显瘦家居服宽松落肩袖ins</p>
+            </div>
+            <div class="season-row">
+              <span>Almondrocks</span>
+              <strong>家居服-套装</strong>
+              <em>¥169 - ¥254｜中位 ¥219</em>
+              <p>AR天丝棉视错觉条纹家居长裤可外穿春长袖家居服套装四季直筒裤 | AR天丝棉视错觉条纹长袖家居服套装可外穿春夏长裤睡衣男女四季 | 【章若楠同款】AR拼色半边绒家居服套装可外穿开衫睡衣女保暖长袖 | AR纯色可外穿家居服套装2026春夏四季睡衣长袖长短裤AlmondRocks</p>
+            </div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="top10" class="section">
+      <div class="section-head reveal">
+        <h2>每品牌 TOP10 商品</h2>
+        <p>按公开月销量优先排序。图片和商品链接来自天猫/淘宝公开页镜像，点击可回到商品详情。</p>
+      </div>
+      <div class="controls">
+        <button class="chip active" data-filter="all">全部</button>
+        <button class="chip" data-filter="tbh">tbh家居</button><button class="chip" data-filter="ubras">Ubras</button><button class="chip" data-filter="almond">Almondrocks</button>
+        <input class="search" type="search" placeholder="搜索品类或商品名" aria-label="搜索商品">
+      </div>
+      <div class="product-grid" id="productGrid">
+        
+    <article class="product-card reveal" data-brand="tbh" data-title="【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_xVyBPdgIktq9kXyGjeCQWatAt9-KaykkBHjVkD0dXYCP.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01MrFww82LZPLwGb9WZ_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣</h4>
+        <div class="product-numbers">
+          <strong>¥272.35</strong>
+          <em>3万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_xVyBPdgIktq9kXyGjeCQWatAt9-KaykkBHjVkD0dXYCP.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿女士睡衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_a9z9Rx2fotMmaaX47ZIQz3tjty-YA3ppxSB2JZQR8QSz.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01htJUd82LZPLwfyts4_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿女士睡衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿女士睡衣</h4>
+        <div class="product-numbers">
+          <strong>¥452.05</strong>
+          <em>3万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_a9z9Rx2fotMmaaX47ZIQz3tjty-YA3ppxSB2JZQR8QSz.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_p6xXAn4cxt6MBANv37heeJuptm-2RmPPyFMnPZWopNc3.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/3913319706/O1CN01HPHzKj2LZPLruORA6_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣</h4>
+        <div class="product-numbers">
+          <strong>¥377.80</strong>
+          <em>2万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_p6xXAn4cxt6MBANv37heeJuptm-2RmPPyFMnPZWopNc3.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居Hello Kitty法兰绒家居服套装冬季可外穿睡衣女">
+      <a class="product-image" href="https://tao.hooos.com/goods_0bDbv8bf7t8BqqdQw3s0qYt2t6-8ZkvvmF50MWzP2PF2.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01RHn4Ne2LZPLwyuOad_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居Hello Kitty法兰绒家居服套装冬季可外穿睡衣女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居Hello Kitty法兰绒家居服套装冬季可外穿睡衣女</h4>
+        <div class="product-numbers">
+          <strong>¥345.50</strong>
+          <em>2万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_0bDbv8bf7t8BqqdQw3s0qYt2t6-8ZkvvmF50MWzP2PF2.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居熊猫嘭嘭法兰绒家居服套装可外穿秋冬长袖情侣睡衣*">
+      <a class="product-image" href="https://tao.hooos.com/goods_ANNy78gKCzt4j66Jn5JImJ5ivtn-7QGWW2swbqYqyBdib.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3913319706/O1CN01pu2EoI2LZPLwMTu58_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居熊猫嘭嘭法兰绒家居服套装可外穿秋冬长袖情侣睡衣*">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居熊猫嘭嘭法兰绒家居服套装可外穿秋冬长袖情侣睡衣*</h4>
+        <div class="product-numbers">
+          <strong>¥256.20</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_ANNy78gKCzt4j66Jn5JImJ5ivtn-7QGWW2swbqYqyBdib.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿睡衣女">
+      <a class="product-image" href="https://tao.hooos.com/goods_6yNyR0vI8tGxYYgk94IwwWfot3-aAZjjVSdme5JQ8efN.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3913319706/O1CN01382b4O2LZPLwOINBw_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿睡衣女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿睡衣女</h4>
+        <div class="product-numbers">
+          <strong>¥329.35</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_6yNyR0vI8tGxYYgk94IwwWfot3-aAZjjVSdme5JQ8efN.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_yVqXMnaiRt2Rm43G0nso5ZivtA-oMZ778FBgz5q6eKiK.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/3913319706/O1CN01EdJYK02LZPLwyeUHH_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣</h4>
+        <div class="product-numbers">
+          <strong>¥393.95</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_yVqXMnaiRt2Rm43G0nso5ZivtA-oMZ778FBgz5q6eKiK.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="【明星同款】tbh野兽派家居天丝棉家居服套装女可外穿情侣睡衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_Bnvra0Zf6t83gpke4rIpM6trte-4RDrrQF86zxqaBpF2.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01A7x6ww2LZPLwZSq3Y_!!4611686018427381018-0-item_pic.jpg" alt="【明星同款】tbh野兽派家居天丝棉家居服套装女可外穿情侣睡衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>【明星同款】tbh野兽派家居天丝棉家居服套装女可外穿情侣睡衣</h4>
+        <div class="product-numbers">
+          <strong>¥377.80</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_Bnvra0Zf6t83gpke4rIpM6trte-4RDrrQF86zxqaBpF2.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居三丽鸥Hello Kitty星光缎家居服套装可外穿睡衣女夏">
+      <a class="product-image" href="https://tao.hooos.com/goods_vxWx6R0hZt6w00JrzDCAP6I0te-VeR99wckd9wAgpXFn.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/3913319706/O1CN01bilYNU2LZPLwxMf6p_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居三丽鸥Hello Kitty星光缎家居服套装可外穿睡衣女夏">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居三丽鸥Hello Kitty星光缎家居服套装可外穿睡衣女夏</h4>
+        <div class="product-numbers">
+          <strong>¥392.05</strong>
+          <em>9000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_vxWx6R0hZt6w00JrzDCAP6I0te-VeR99wckd9wAgpXFn.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="tbh" data-title="tbh野兽派家居井柏然同款天丝棉家居服套装四季可外穿情侣睡衣女">
+      <a class="product-image" href="https://tao.hooos.com/goods_gvGkK0bS3t2Wvnr4AqsooDsatr-k5v00Gf8eB6KxdaS6.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/3913319706/O1CN01mPcWiz2LZPLwGL2jf_!!4611686018427381018-0-item_pic.jpg" alt="tbh野兽派家居井柏然同款天丝棉家居服套装四季可外穿情侣睡衣女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>tbh家居</span>
+          <span>家居服-套装</span>
+        </div>
+        <h4>tbh野兽派家居井柏然同款天丝棉家居服套装四季可外穿情侣睡衣女</h4>
+        <div class="product-numbers">
+          <strong>¥377.80</strong>
+          <em>9000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_gvGkK0bS3t2Wvnr4AqsooDsatr-k5v00Gf8eB6KxdaS6.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸">
+      <a class="product-image" href="https://tao.hooos.com/goods_6GVQ8J4i8tGxY9MNa4HwrRCot3-mOZQQNuWp8xGqezCZ.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN01x1SHJc1wMhyiCRNxq_!!4611686018427382902-0-item_pic.jpg" alt="虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>背心吊带-单件</span>
+        </div>
+        <h4>虞书欣同款ubras无尺码小奶皮背心内衣女无痕隐形细吊带运动文胸</h4>
+        <div class="product-numbers">
+          <strong>¥89</strong>
+          <em>50万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_6GVQ8J4i8tGxY9MNa4HwrRCot3-mOZQQNuWp8xGqezCZ.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubras无尺码无痕内裤女中腰隐形15A蔓越莓纯棉加长裆夏季薄款短裤">
+      <a class="product-image" href="https://tao.hooos.com/goods_kG2wd5xuYtarv6oX87sGGwsPtJ-RWRNNzu25bymoy2CO.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01UMNn9p1wMhyhCNqDN_!!4611686018427382902-0-item_pic.jpg" alt="ubras无尺码无痕内裤女中腰隐形15A蔓越莓纯棉加长裆夏季薄款短裤">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>内裤</span>
+        </div>
+        <h4>ubras无尺码无痕内裤女中腰隐形15A蔓越莓纯棉加长裆夏季薄款短裤</h4>
+        <div class="product-numbers">
+          <strong>¥73</strong>
+          <em>40万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_kG2wd5xuYtarv6oX87sGGwsPtJ-RWRNNzu25bymoy2CO.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubras纯棉内裤女15A蔓越莓抗菌裆透气中高腰夏薄款三角少女短裤头">
+      <a class="product-image" href="https://tao.hooos.com/goods_RzKa3WocZtjrGvDVk2urXwiMt6-DokRR8IPZzpP6N2iOK.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01UGqaek1wMhyhomWpb_!!3369266294.jpg" alt="ubras纯棉内裤女15A蔓越莓抗菌裆透气中高腰夏薄款三角少女短裤头">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>内裤</span>
+        </div>
+        <h4>ubras纯棉内裤女15A蔓越莓抗菌裆透气中高腰夏薄款三角少女短裤头</h4>
+        <div class="product-numbers">
+          <strong>¥64</strong>
+          <em>30万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_RzKa3WocZtjrGvDVk2urXwiMt6-DokRR8IPZzpP6N2iOK.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubras无尺码粉底液吊带隐形细肩带无痕背心舒适美背文胸罩内衣女">
+      <a class="product-image" href="https://tao.hooos.com/goods_bJdvjzVugtoryjVdyaiyxGFQt6-PNzeejCKNGpKBYRU2X.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01NwzDC71wMhygNXIos_!!3369266294.jpg" alt="ubras无尺码粉底液吊带隐形细肩带无痕背心舒适美背文胸罩内衣女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>背心吊带-单件</span>
+        </div>
+        <h4>ubras无尺码粉底液吊带隐形细肩带无痕背心舒适美背文胸罩内衣女</h4>
+        <div class="product-numbers">
+          <strong>¥88.90</strong>
+          <em>20万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_bJdvjzVugtoryjVdyaiyxGFQt6-PNzeejCKNGpKBYRU2X.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubras莫代尔内裤女士一体织纯棉15A蔓越莓裆中高腰夏季薄款三角裤">
+      <a class="product-image" href="https://tao.hooos.com/goods_8meXbZ6Snt9zdO4WQ5Ugg9hbt8-k5v00GfgaXJQ4qnFp.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/3369266294/O1CN01HCu4l41wMhyi8w7MR_!!3369266294.jpg" alt="ubras莫代尔内裤女士一体织纯棉15A蔓越莓裆中高腰夏季薄款三角裤">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>内裤</span>
+        </div>
+        <h4>ubras莫代尔内裤女士一体织纯棉15A蔓越莓裆中高腰夏季薄款三角裤</h4>
+        <div class="product-numbers">
+          <strong>¥80</strong>
+          <em>20万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_8meXbZ6Snt9zdO4WQ5Ugg9hbt8-k5v00GfgaXJQ4qnFp.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="虞书欣同款ubras无痕粉底液隐形小胸聚拢细肩带收副乳文胸罩内衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_aXV2qDqFotMma73pVZcQQnijty-oMZ778FBD34vX3rUj.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN01m0ZZLD1wMhyg5xPa2_!!3369266294.jpg" alt="虞书欣同款ubras无痕粉底液隐形小胸聚拢细肩带收副乳文胸罩内衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>背心吊带-单件</span>
+        </div>
+        <h4>虞书欣同款ubras无痕粉底液隐形小胸聚拢细肩带收副乳文胸罩内衣</h4>
+        <div class="product-numbers">
+          <strong>¥106</strong>
+          <em>20万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_aXV2qDqFotMma73pVZcQQnijty-oMZ778FBD34vX3rUj.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubrasEO灭菌一次性内裤女士纯棉旅行出差便携免洗日抛男士短裤">
+      <a class="product-image" href="https://tao.hooos.com/goods_bg2M0B7IgtoryjV97PFyx3uQt6-aAZjjVSdGD5V2p7cq.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN012tlvcv1wMhyi3dB6Q_!!3369266294.jpg" alt="ubrasEO灭菌一次性内裤女士纯棉旅行出差便携免洗日抛男士短裤">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>内裤</span>
+        </div>
+        <h4>ubrasEO灭菌一次性内裤女士纯棉旅行出差便携免洗日抛男士短裤</h4>
+        <div class="product-numbers">
+          <strong>¥15</strong>
+          <em>20万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_bg2M0B7IgtoryjV97PFyx3uQt6-aAZjjVSdGD5V2p7cq.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="虞书欣同款ubras无尺码小奶皮细吊带内衣粉底液无痕隐形文胸罩女">
+      <a class="product-image" href="https://tao.hooos.com/goods_meNroVQHktJD8NpwK3UzAwhot3-gQXnn3speQopMQPSo.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/3369266294/O1CN01lQWOU81wMhyiIVMZ4_!!4611686018427382902-0-item_pic.jpg" alt="虞书欣同款ubras无尺码小奶皮细吊带内衣粉底液无痕隐形文胸罩女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>背心吊带-单件</span>
+        </div>
+        <h4>虞书欣同款ubras无尺码小奶皮细吊带内衣粉底液无痕隐形文胸罩女</h4>
+        <div class="product-numbers">
+          <strong>¥109</strong>
+          <em>20万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_meNroVQHktJD8NpwK3UzAwhot3-gQXnn3speQopMQPSo.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="虞书欣同款ubras小凉风无尺码v领夏季薄款内衣女吊带背心无痕文胸">
+      <a class="product-image" href="https://tao.hooos.com/goods_7pw0KA5C4t58bQkXbaUnn2hMtV-9OgVVDuOmjRZk8nhy.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/3369266294/O1CN01zgAl7e1wMhyj6GKil_!!3369266294.jpg" alt="虞书欣同款ubras小凉风无尺码v领夏季薄款内衣女吊带背心无痕文胸">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>背心吊带-单件</span>
+        </div>
+        <h4>虞书欣同款ubras小凉风无尺码v领夏季薄款内衣女吊带背心无痕文胸</h4>
+        <div class="product-numbers">
+          <strong>¥129</strong>
+          <em>10万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_7pw0KA5C4t58bQkXbaUnn2hMtV-9OgVVDuOmjRZk8nhy.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="ubras" data-title="ubras果冻硅胶乳贴女婚纱用防走光隐形防凸点胸贴轻薄内衣3对装">
+      <a class="product-image" href="https://tao.hooos.com/goods_PmjKRdpt3t6vPbZ3MohvDWsPt6-KaykkBHjzMZqRyQi5.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/3369266294/O1CN01St3GX61wMhyjPXTcr_!!3369266294.jpg" alt="ubras果冻硅胶乳贴女婚纱用防走光隐形防凸点胸贴轻薄内衣3对装">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Ubras</span>
+          <span>内裤</span>
+        </div>
+        <h4>ubras果冻硅胶乳贴女婚纱用防走光隐形防凸点胸贴轻薄内衣3对装</h4>
+        <div class="product-numbers">
+          <strong>¥18</strong>
+          <em>10万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_PmjKRdpt3t6vPbZ3MohvDWsPt6-KaykkBHjzMZqRyQi5.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜">
+      <a class="product-image" href="https://tao.hooos.com/goods_AwKVRmVizt4j6Mm5B2TmXJSvtn-Gn755MIqZppxAB8to.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/2207244481824/O1CN01i4Z8vQ1PLRZ28E8bU_!!4611686018427385120-0-item_pic.jpg" alt="AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>AR专业运动压力小腿袜压缩袜健身骑行袜跑步网球袜毛圈飞机长筒袜</h4>
+        <div class="product-numbers">
+          <strong>¥67.90</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_AwKVRmVizt4j6Mm5B2TmXJSvtn-Gn755MIqZppxAB8to.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AR复古浮雕花边罗口丝袜亮光丝轻薄芭蕾风2026新款中筒袜玛丽珍袜">
+      <a class="product-image" href="https://tao.hooos.com/goods_K9rRgvkC3toA2NRawgFmpASJtW-WkRwwpuQzaBKnmdtZ.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/2207244481824/O1CN01q4y9cY1PLRYIid395_!!4611686018427385120-0-item_pic.jpg" alt="AR复古浮雕花边罗口丝袜亮光丝轻薄芭蕾风2026新款中筒袜玛丽珍袜">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>AR复古浮雕花边罗口丝袜亮光丝轻薄芭蕾风2026新款中筒袜玛丽珍袜</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>1万+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_K9rRgvkC3toA2NRawgFmpASJtW-WkRwwpuQzaBKnmdtZ.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AR花朵网纱物理防晒袖套时尚好看开车防护冰袖轻薄透气手臂套袖女">
+      <a class="product-image" href="https://tao.hooos.com/goods_oy5QebKcrtK6Vj2DoZfDAmSntN-d8ZBBDFn5PxPQAKcP.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/2207244481824/O1CN013ZtwIO1PLRYwnOVmZ_!!4611686018427385120-0-item_pic.jpg" alt="AR花朵网纱物理防晒袖套时尚好看开车防护冰袖轻薄透气手臂套袖女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>AR花朵网纱物理防晒袖套时尚好看开车防护冰袖轻薄透气手臂套袖女</h4>
+        <div class="product-numbers">
+          <strong>¥84.10</strong>
+          <em>8000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_oy5QebKcrtK6Vj2DoZfDAmSntN-d8ZBBDFn5PxPQAKcP.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="【勃肯鞋搭子合辑】 AR春夏基础百搭精梳棉无骨中筒袜堆堆袜女">
+      <a class="product-image" href="https://tao.hooos.com/goods_M9rqgvXtKtXvJWrkA2tVYKcQtA-jdZqqnCXN535V4Qt6.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/2207244481824/O1CN01ijGUrE1PLRYqrL4Ex_!!4611686018427385120-0-item_pic.jpg" alt="【勃肯鞋搭子合辑】 AR春夏基础百搭精梳棉无骨中筒袜堆堆袜女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>【勃肯鞋搭子合辑】 AR春夏基础百搭精梳棉无骨中筒袜堆堆袜女</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>7000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_M9rqgvXtKtXvJWrkA2tVYKcQtA-jdZqqnCXN535V4Qt6.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="【任选3件95折】AR复古蕾丝花纹水晶袜2026夏季透明玻璃丝袜薄女">
+      <a class="product-image" href="https://tao.hooos.com/goods_m08rVxOfktJD8NXrpqtzz3uot3-5Bmqq9UXdwz3x59s4.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/2207244481824/O1CN01yyGgIu1PLRYvuwnBg_!!4611686018427385120-0-item_pic.jpg" alt="【任选3件95折】AR复古蕾丝花纹水晶袜2026夏季透明玻璃丝袜薄女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>【任选3件95折】AR复古蕾丝花纹水晶袜2026夏季透明玻璃丝袜薄女</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>5000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_m08rVxOfktJD8NXrpqtzz3uot3-5Bmqq9UXdwz3x59s4.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女">
+      <a class="product-image" href="https://tao.hooos.com/goods_goZkbdnF3t2WvnrVdzCo27uatr-jdZqqnCdvVoJPwqfy.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/2207244481824/O1CN01k0p00v1PLRYvhnIsr_!!2207244481824.jpg" alt="【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>家居服-上装</span>
+        </div>
+        <h4>【董生活同款】AlmondRocks轻暖绒开衫半边绒家居服女春夏睡衣女</h4>
+        <div class="product-numbers">
+          <strong>¥229</strong>
+          <em>3000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_goZkbdnF3t2WvnrVdzCo27uatr-jdZqqnCdvVoJPwqfy.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AlmondRocks网球运动清凉天丝速干长袖T恤亚麻轻薄防晒罩衫上衣">
+      <a class="product-image" href="https://tao.hooos.com/goods_52Y3G3Rcxtyv660kYQF775tMtV-3RZ770F07bMGwejsQ.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i3/2207244481824/O1CN01RVMbQE1PLRZ0BDgID_!!4611686018427385120-0-item_pic.jpg" alt="AlmondRocks网球运动清凉天丝速干长袖T恤亚麻轻薄防晒罩衫上衣">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>T恤</span>
+        </div>
+        <h4>AlmondRocks网球运动清凉天丝速干长袖T恤亚麻轻薄防晒罩衫上衣</h4>
+        <div class="product-numbers">
+          <strong>¥169</strong>
+          <em>2000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_52Y3G3Rcxtyv660kYQF775tMtV-3RZ770F07bMGwejsQ.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AR袜子女款中筒袜春夏季薄复古百搭蓝色花边罗口亮光卡丝袜芭蕾风">
+      <a class="product-image" href="https://tao.hooos.com/goods_mJzq9kyTktJD88ZK2BtzzKuot3-4RDrrQF8OQVz2OBiO.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/90902128/O1CN012UfAkg1RafxywJPYC_!!90902128.jpg" alt="AR袜子女款中筒袜春夏季薄复古百搭蓝色花边罗口亮光卡丝袜芭蕾风">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>AR袜子女款中筒袜春夏季薄复古百搭蓝色花边罗口亮光卡丝袜芭蕾风</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>2000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_mJzq9kyTktJD88ZK2BtzzKuot3-4RDrrQF8OQVz2OBiO.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="AR蓝色袜子女款春夏季薄款复古中筒袜舒适百搭美腿显瘦秋冬堆堆袜">
+      <a class="product-image" href="https://tao.hooos.com/goods_8gOpoDYunt9zdd6G8ACggNSbt8-VeR99wck3yxYBe4Tw.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i1/90902128/O1CN01EM9ixE1RafxNVc0Gg_!!90902128.jpg" alt="AR蓝色袜子女款春夏季薄款复古中筒袜舒适百搭美腿显瘦秋冬堆堆袜">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>AR蓝色袜子女款春夏季薄款复古中筒袜舒适百搭美腿显瘦秋冬堆堆袜</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>2000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_8gOpoDYunt9zdd6G8ACggNSbt8-VeR99wck3yxYBe4Tw.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+    <article class="product-card reveal" data-brand="almond" data-title="City Chill都市松弛感 | AR中筒袜女/小腿袜/堆堆袜/玛丽珍袜">
+      <a class="product-image" href="https://tao.hooos.com/goods_GxrBgYrU8tYvXP85WVsYPXUQtJ-8ZkvvmF0gNWPPgNfb.html" target="_blank" rel="noreferrer">
+        <img src="https://img.alicdn.com/bao/uploaded/i4/2207244481824/O1CN015LK1xC1PLRYhVpfV5_!!4611686018427385120-0-item_pic.jpg" alt="City Chill都市松弛感 | AR中筒袜女/小腿袜/堆堆袜/玛丽珍袜">
+      </a>
+      <div class="product-body">
+        <div class="product-meta">
+          <span>Almondrocks</span>
+          <span>关联生活方式产品</span>
+        </div>
+        <h4>City Chill都市松弛感 | AR中筒袜女/小腿袜/堆堆袜/玛丽珍袜</h4>
+        <div class="product-numbers">
+          <strong>¥41.60</strong>
+          <em>2000+</em>
+        </div>
+        <a href="https://tao.hooos.com/goods_GxrBgYrU8tYvXP85WVsYPXUQtJ-8ZkvvmF0gNWPPgNfb.html" target="_blank" rel="noreferrer">查看商品链接</a>
+      </div>
+    </article>
+      </div>
+    </section>
+
+    <section id="autumn" class="section">
+      <div class="section-head reveal">
+        <h2>9-11 月与秋冬上新重点</h2>
+        <p>重点关注长袖、轻暖绒/半边绒、秋冬套装、家居长裤、可外穿层搭与带杯睡裙。</p>
+      </div>
+      
+    <div class="autumn-grid">
+      <div class="autumn-list reveal">
+        <h3>秋冬商品重点</h3>
+        
+              <a class="autumn-item" href="https://tao.hooos.com/goods_xVyBPdgIktq9kXyGjeCQWatAt9-KaykkBHjVkD0dXYCP.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>【明星同款】tbh野兽派家居星光缎家居服套装四季可外穿情侣睡衣</strong>
+                <em>¥272.35 · 3万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_p6xXAn4cxt6MBANv37heeJuptm-2RmPPyFMnPZWopNc3.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>【明星同款】tbh野兽派家居天丝棉家居服套装四季可外穿情侣睡衣</strong>
+                <em>¥377.80 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_yVqXMnaiRt2Rm43G0nso5ZivtA-oMZ778FBgz5q6eKiK.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>tbh野兽派家居小王子梦想家天丝棉家居服套装四季可外穿情侣睡衣</strong>
+                <em>¥393.95 · 1万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_BNpkqWXH6t83gpkexNHpMJFrte-xzQZZ4sOqvno60JS4.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居哈利波特生日蛋糕二合一法兰绒暖香毯抱枕生日礼物</strong>
+                <em>¥297.05 · 4万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_vBdgW2ZuZt6w0z8ageUAA3I0te-gQXnn3spwd6nmjyUn.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty二合一法兰绒毯子抱枕车载抱枕毯</strong>
+                <em>¥264.75 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_0bDbv8bf7t8BqqdQw3s0qYt2t6-8ZkvvmF50MWzP2PF2.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>tbh野兽派家居Hello Kitty法兰绒家居服套装冬季可外穿睡衣女</strong>
+                <em>¥345.50 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_kG7gzbRSYtarv6o72wIG6OuPtJ-oMZ778FBp274vAnCj.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty巨无霸保温杯吸管杯不锈钢保冷杯</strong>
+                <em>¥216.30 · 10万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_vBdgWZPsZt6w0z8ageUAA2U0te-Gn755MIro4qx7V9HZ.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居 新款莫奈花园纸袋 仅随商品购买 礼盒包装袋</strong>
+                <em>¥7.60 · 9万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_8mKyWkxCnt9zdO452oFgKmFbt8-bWZ332uGgaJGWeAFx.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居懒蓝猫长条抱枕夹腿靠垫沙发腰枕送人礼物</strong>
+                <em>¥160.55 · 6万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_a9z9Rx2fotMmaaX47ZIQz3tjty-YA3ppxSB2JZQR8QSz.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿女士睡衣</strong>
+                <em>¥452.05 · 3万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_6VoPNX3u8tGxY9MvWVHw4xtot3-4RDrrQF8gKMqO2dcr.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居 腊肠狗条形抱枕可爱靠垫午睡枕靠枕腰枕颈枕卧室</strong>
+                <em>¥160.55 · 3万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_30K5wdNcAtY6k7K80Pc00QT9tJ-8ZkvvmF5beJXYKwTq.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居星星人“天生一对“条形抱枕对装玩偶靠枕送人礼物</strong>
+                <em>¥460 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_72XMAGys4t58bQkw4qunnmhMtV-mOZQQNu7X2AajBWsN.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty手提大容量旅行绗缝洗漱化妆包</strong>
+                <em>¥103.55 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_dDN0zZJuZt3AQdBreYujjMCet3-QAnppRS9Qqy95jeFo.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty连帽旅行U型枕旅行护颈枕头枕</strong>
+                <em>¥189.05 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_WpeNzR4Uot207Z6yoKharMTQta-5Bmqq9U6W3eovXkToO.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 关联生活方式产品</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty不锈钢保温杯便携随行杯喝水杯子</strong>
+                <em>¥184 · 2万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_6yNyR0vI8tGxYYgk94IwwWfot3-aAZjjVSdme5JQ8efN.html" target="_blank" rel="noreferrer" data-brand="tbh">
+                <span>tbh家居 · 家居服-套装</span>
+                <strong>tbh野兽派家居三丽鸥Hello Kitty天丝棉家居服套装可外穿睡衣女</strong>
+                <em>¥329.35 · 1万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_mJya8MJIktJD8Npwa3HzA8fot3-Gn755MIqoga8yjjso.html" target="_blank" rel="noreferrer" data-brand="ubras">
+                <span>Ubras · 家居服-上装</span>
+                <strong>【虞书欣同款】ubras流光家居服女款长袖带胸垫睡衣男可外穿春夏</strong>
+                <em>¥190 · 7万+</em>
+              </a>
+              <a class="autumn-item" href="https://tao.hooos.com/goods_jKnj2O0u0tJmQyjWYvUBBBFJte-WkRwwpuQPoXvdoWsd3.html" target="_blank" rel="noreferrer" data-brand="ubras">
+                <span>Ubras · 背心吊带-单件</span>
+                <strong>ubras无尺码小奶皮纸片人大胸显小文胸卫衣显瘦无痕隐形内衣背心</strong>
+                <em>¥119 · 10万+</em>
+              </a>
+      </div>
+      <div class="autumn-list reveal">
+        <h3>小红书 9-11 月/秋冬线索</h3>
+        
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/6522b181000000001c016536?xsec_token=ABDvJFbCxA2im4_lllaukKDdydKshphpVu8tntiBHNCrY%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2023-10-08</span>
+                <strong>OOTD ｜ 你好👋🏿色彩</strong>
+                <em>赞33/藏10/评9</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/65a8dc5e00000000290352fc?xsec_token=ABAmgP2r5hBjCRFxx11KjKKc3cQ_oRkvl_pqa5CBrdJTk%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2024-01-18</span>
+                <strong>AR家居服开箱～ar半边绒材质好舒服～</strong>
+                <em>赞93/藏38/评12</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/674042f6000000000202cdd8?xsec_token=AB8Q1EOfv7UbR7n3uKwmUYe8bzD08rQDlfaUjkTy0dRHc%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2024-11-22</span>
+                <strong>宅家</strong>
+                <em>赞157/藏34/评8</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/68cd0c8a0000000011017993?xsec_token=ABJG2d-u2W33eI9sp2RWCs1aoHssoT62cCuh0t5LLDpUM%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-09-19</span>
+                <strong>直播预告｜全新家居服，相聚「董」生活直播间</strong>
+                <em>赞19/藏9/评0</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/68f8ba38000000000402b58b?xsec_token=AB8Ji8VTmsPgNQhRmJkGjW-tLAfT_4JsE81-kULyLNt_Y%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-10-22</span>
+                <strong>居家活力派对🎨 明星好物get了吗🍄</strong>
+                <em>赞0/藏0/评1</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/68fc797900000000050326c6?xsec_token=ABaCCvOVgejDdiIzsgC58xuRzuUyVolTRBLXZkrfkjEWk%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-10-25</span>
+                <strong>家居服Top榜🏆，排名不重要，你喜欢最重要！</strong>
+                <em>赞16/藏6/评2</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/6902f3500000000003035941?xsec_token=ABuscqkzwbA5SIXxqJgluVzEpVhbgDEBkmWLtPSr1ot0o%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-10-30</span>
+                <strong>我很会把握时间 我睡一整天</strong>
+                <em>赞45/藏6/评9</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/6912d048000000000302fde0?xsec_token=ABox4ZZc1UP44gKo3pZZpDSM3A7un0dNm6GBQkA-YyWv0%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-11-11</span>
+                <strong>感谢董洁🙏冬天体面又保暖的家居服有了！</strong>
+                <em>赞46/藏6/评0</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/69170858000000000d038df5?xsec_token=ABTV8kjKCfFzZ--09TSqcg9FQvzy9nV6yc2wNc1VeKbNg%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-11-14</span>
+                <strong>最近风很大的Almondrocks 真的太让人下头</strong>
+                <em>赞12/藏0/评15</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/69244e4f000000001b030f21?xsec_token=AB8OlpG_ekuLDBEHgfx8fzvUikHxB9Gp6_uT-9vhdeIgE%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2025-11-24</span>
+                <strong>今天是海盐饼干姐姐</strong>
+                <em>赞118/藏44/评28</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/69b79b8e000000001f003a1c?xsec_token=AButOGC5yJULCS7aXZ1nnyuaLpjWOsHOv2JTB4-h_ltBg%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2026-03-16</span>
+                <strong>Almond Rocks 26AW SHOWROOM</strong>
+                <em>赞14/藏5/评0</em>
+              </a>
+              <a class="autumn-item note" href="https://www.xiaohongshu.com/explore/6a0412c800000000350332f3?xsec_token=ABa1vGT5pF7syMAktX4h9yyCcrkChjke17VfOJRnIiyqQ%3D" target="_blank" rel="noreferrer" data-brand="almond">
+                <span>Almondrocks · 2026-05-13</span>
+                <strong>🔥澳洲PA秋冬新款实体店实拍一眼沦陷家居服</strong>
+                <em>赞5/藏0/评0</em>
+              </a>
+      </div>
+    </div>
+    </section>
+
+    <section id="method" class="section">
+      <div class="method">
+        <div class="method-copy reveal">
+          <h3>数据口径</h3>
+          <p>天猫/淘宝：价格、图片、公开月销量、店铺和详情链接来自 Hooos 聚合页及商品详情页。</p>
+          <p>小红书：共纳入 276 条相关样本，其中品牌主页动态 183 条，搜索补充笔记 93 条。</p>
+          <p>抖音与线下：本次仅记录渠道线索，不混入价格带；成交额和直播商品排行需用抖音罗盘、蝉妈妈或商家后台补齐。</p>
+        </div>
+        <div class="source-links reveal">
+          <a href="https://tao.hooos.com/" target="_blank" rel="noreferrer">Hooos 淘宝/天猫公开聚合页</a><a href="https://www.xiaohongshu.com/user/profile/5e00ef970000000001004611" target="_blank" rel="noreferrer">小红书 tbh家居主页</a><a href="https://www.xiaohongshu.com/user/profile/5b924e7dd187da0001d956bc" target="_blank" rel="noreferrer">小红书 Ubras 主页</a><a href="https://www.xiaohongshu.com/user/profile/5b7e64b99eac5a0001521e2f" target="_blank" rel="noreferrer">小红书 Almond Rocks 主页</a><a href="https://tbhofficial.com/en-us/" target="_blank" rel="noreferrer">tbh official site</a><a href="https://wild-animals.nl/blogs/news/beast-collaboration" target="_blank" rel="noreferrer">TBH x Rop van Mierlo</a><a href="https://www.ubras.cn/?page_id=11574" target="_blank" rel="noreferrer">Ubras 官方品牌页</a><a href="https://m.winshang.com/news739116.html" target="_blank" rel="noreferrer">Almond Rocks 赢商访谈</a><a href="https://www.showroomshanghai.com/brand/1577" target="_blank" rel="noreferrer">Almond Rocks Showroom Shanghai</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+    const seasonTabs = document.querySelectorAll('.season-tab');
+    const seasonPanels = document.querySelectorAll('[data-season-panel]');
+    function setSeason(season) {
+      seasonTabs.forEach((tab) => tab.classList.toggle('active', tab.dataset.season === season));
+      seasonPanels.forEach((panel) => panel.classList.toggle('active', panel.dataset.seasonPanel === season));
+    }
+    seasonTabs.forEach((tab) => tab.addEventListener('click', () => setSeason(tab.dataset.season)));
+    setSeason('秋季');
+
+    const chips = document.querySelectorAll('.chip');
+    const search = document.querySelector('.search');
+    const products = document.querySelectorAll('.product-card');
+    let activeBrand = 'all';
+    function applyProductFilter() {
+      const q = (search.value || '').trim().toLowerCase();
+      products.forEach((card) => {
+        const brandOk = activeBrand === 'all' || card.dataset.brand === activeBrand;
+        const textOk = !q || (card.dataset.title || '').toLowerCase().includes(q) || card.textContent.toLowerCase().includes(q);
+        card.classList.toggle('hidden', !(brandOk && textOk));
+      });
+    }
+    chips.forEach((chip) => chip.addEventListener('click', () => {
+      activeBrand = chip.dataset.filter;
+      chips.forEach((item) => item.classList.toggle('active', item === chip));
+      applyProductFilter();
+    }));
+    search.addEventListener('input', applyProductFilter);
+  </script>
+</body>
+</html>
