@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fysea 定价分析 | BtD 家居服参考</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --paper: #f6f7f3;
+      --surface: #ffffff;
+      --ink: #17201d;
+      --muted: #66706b;
+      --line: #d9e0da;
+      --deep: #113f39;
+      --sea: #2d7771;
+      --coral: #bd5740;
+      --amber: #b98228;
+      --blue: #426c85;
+      --wash: #e8f0ec;
+      --shadow: 0 18px 58px rgba(17, 63, 57, .12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 28px;
+      background: rgba(246, 247, 243, .92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+
+    .mark {
+      font-weight: 800;
+      color: var(--deep);
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .nav a {
+      padding: 8px 0;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav a:hover {
+      color: var(--deep);
+      border-bottom-color: var(--coral);
+    }
+
+    .hero {
+      min-height: calc(100svh - 58px);
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+      background:
+        linear-gradient(110deg, rgba(17, 63, 57, .97), rgba(18, 89, 81, .82)),
+        #123f3a;
+      color: #fff;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px min(7vw, 92px);
+      gap: 26px;
+      animation: rise .7s ease-out both;
+    }
+
+    .eyebrow {
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 6vw, 88px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero-copy p {
+      max-width: 660px;
+      margin: 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(15px, 1.5vw, 18px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 16px;
+      border: 1px solid rgba(255,255,255,.28);
+      color: #fff;
+      font-weight: 700;
+      font-size: 14px;
+      background: rgba(255,255,255,.08);
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.16);
+      border-color: rgba(255,255,255,.56);
+    }
+
+    .hero-media {
+      position: relative;
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 34px;
+      align-content: center;
+      background: rgba(255,255,255,.08);
+    }
+
+    .hero-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent, rgba(17,63,57,.36)),
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,.22), transparent 28%);
+      pointer-events: none;
+    }
+
+    .media-tile {
+      position: relative;
+      min-height: 210px;
+      overflow: hidden;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.14);
+      animation: driftIn .8s ease-out both;
+    }
+
+    .media-tile:nth-child(2) { transform: translateY(26px); animation-delay: .08s; }
+    .media-tile:nth-child(3) { transform: translateY(-18px); animation-delay: .16s; }
+    .media-tile:nth-child(4) { animation-delay: .24s; }
+
+    .media-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      aspect-ratio: 1 / 1.1;
+      filter: saturate(.96) contrast(1.02);
+      transition: transform .6s ease;
+    }
+
+    .media-tile:hover img { transform: scale(1.05); }
+
+    .hero-note {
+      position: absolute;
+      right: 34px;
+      bottom: 34px;
+      z-index: 2;
+      max-width: 310px;
+      padding: 18px 20px;
+      background: rgba(10, 31, 29, .72);
+      border: 1px solid rgba(255,255,255,.18);
+      backdrop-filter: blur(12px);
+      color: rgba(255,255,255,.82);
+      font-size: 13px;
+    }
+
+    main {
+      display: block;
+      width: 100%;
+      min-width: 0;
+    }
+
+    section {
+      width: 100%;
+      min-width: 0;
+      padding: 72px min(6vw, 80px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-inner {
+      width: 100%;
+      min-width: 0;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, .44fr) minmax(0, .56fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 3.2vw, 46px);
+      line-height: 1.06;
+      letter-spacing: 0;
+      color: var(--deep);
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      min-height: 132px;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .metric strong {
+      display: block;
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: 1;
+      color: var(--deep);
+      margin-bottom: 12px;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .callout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .callout > div {
+      padding: 26px;
+      background: var(--surface);
+    }
+
+    .callout h3,
+    .source-list h3 {
+      margin: 0 0 12px;
+      color: var(--deep);
+      font-size: 20px;
+    }
+
+    .callout p,
+    .source-list p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .table-wrap {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th {
+      position: sticky;
+      top: 58px;
+      z-index: 2;
+      background: #eaf0ec;
+      color: var(--deep);
+      text-align: left;
+      font-size: 12px;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    th, td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    tbody tr {
+      transition: background .16s ease;
+    }
+
+    tbody tr:hover {
+      background: #f2f6f3;
+    }
+
+    td a {
+      color: var(--deep);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: rgba(17, 63, 57, .28);
+    }
+
+    .num {
+      font-weight: 800;
+      color: var(--coral);
+      white-space: nowrap;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 9px;
+      border: 1px solid var(--line);
+      background: var(--wash);
+      color: var(--deep);
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .tag.warn {
+      background: #fff2e4;
+      color: #8a4c0c;
+      border-color: #ebd0ad;
+    }
+
+    .tag.bad {
+      background: #fbe9e5;
+      color: #963e28;
+      border-color: #e8c6bd;
+    }
+
+    .product-cell {
+      display: grid;
+      grid-template-columns: 74px minmax(220px, 1fr);
+      gap: 14px;
+      align-items: center;
+      min-width: 320px;
+    }
+
+    .product-cell img {
+      width: 74px;
+      height: 84px;
+      object-fit: cover;
+      background: #edf1ee;
+      border: 1px solid var(--line);
+    }
+
+    .product-cell strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .product-cell small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .season {
+      background: var(--surface);
+      padding: 24px;
+      min-height: 250px;
+    }
+
+    .season h3 {
+      margin: 0 0 10px;
+      color: var(--deep);
+      font-size: 22px;
+    }
+
+    .season .price {
+      color: var(--coral);
+      font-weight: 900;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .season p {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .source-list article {
+      background: var(--surface);
+      padding: 22px;
+    }
+
+    .source-list a {
+      color: var(--deep);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(17, 63, 57, .26);
+    }
+
+    .footer {
+      padding: 34px min(6vw, 80px);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+    }
+
+    .reveal {
+      animation: rise .7s ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 18%;
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes driftIn {
+      from { opacity: 0; translate: 0 22px; }
+      to { opacity: 1; translate: 0 0; }
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 12px 18px;
+        gap: 8px;
+      }
+
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 52px 22px 34px;
+      }
+
+      .hero-media {
+        min-height: auto;
+        padding: 18px;
+      }
+
+      .hero-note {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        grid-column: 1 / -1;
+        max-width: none;
+      }
+
+      section {
+        padding: 52px 18px;
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .metrics,
+      .callout,
+      .season-grid,
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+
+      th {
+        top: 0;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-media {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .media-tile {
+        min-height: 150px;
+      }
+
+      .product-cell {
+        grid-template-columns: 58px minmax(180px, 1fr);
+      }
+
+      .product-cell img {
+        width: 58px;
+        height: 68px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="mark" href="#top">Fysea Pricing Study</a>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#summary">结论</a>
+      <a href="#channels">渠道</a>
+      <a href="#bands">价格带</a>
+      <a href="#top10">TOP10</a>
+      <a href="#season">季节</a>
+      <a href="#sources">来源</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-copy">
+      <div class="eyebrow">BtD 家居服定价参考 · 2026-05-17</div>
+      <h1>Fysea 定价与上新节奏分析</h1>
+      <p>聚焦成人女性家居服及关联生活方式产品。公开成交样本有限，因此本页把“官方内容信号”和“第三方/疑似价格样本”分开处理，避免把互动量误读成销量。</p>
+      <div class="hero-actions">
+        <a class="button" href="#top10">查看 TOP10</a>
+        <a class="button" href="#season">查看 9-11 月上新</a>
+      </div>
+    </div>
+    <div class="hero-media" aria-label="Fysea 商品与系列图">
+      <div class="media-tile">
+        <img src="assets/fysea_easy_window.webp" alt="FyseaEasy 窗边静坐">
+      </div>
+      <div class="media-tile">
+        <img src="assets/fysea_winter_forest.webp" alt="FyseaWinter 林间冬日系列">
+      </div>
+      <div class="media-tile">
+        <img src="https://img.alicdn.com/bao/uploaded/i2/_XXX_KKK_/O1CN01d9YVxO1xqlQNZKW3Y_!!0-item_pic.jpg_500x500q90" alt="Fysea 家居长裤公开样本">
+      </div>
+      <div class="media-tile">
+        <img src="assets/fysea_aurora_pink.webp" alt="Fysea 幻粉极光">
+      </div>
+      <div class="hero-note">官方小红书内容可核验；官方天猫/抖音成交数据未找到公开证据。价格带仅来自可观察的第三方/疑似样本。</div>
+    </div>
+  </section>
+
+  <main>
+    <section id="summary">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>核心结论</h2>
+          <p>Fysea 更适合作为家居服调性、系列节奏与秋冬视觉表达参考；硬价格锚点需要用更充分的官方竞品价格池补足。</p>
+        </div>
+        <div class="metrics" aria-label="关键指标">
+          <div class="metric">
+            <strong>7.7K</strong>
+            <span>小红书粉丝，官方主页可核验</span>
+          </div>
+          <div class="metric">
+            <strong>13.6K</strong>
+            <span>获赞与收藏，内容热度指标</span>
+          </div>
+          <div class="metric">
+            <strong>2</strong>
+            <span>可抓取公开电商价格 SKU，均非官方核验</span>
+          </div>
+          <div class="metric">
+            <strong>0</strong>
+            <span>2 个公开电商 SKU 的月销量字段均为 0</span>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 28px;">
+          <div>
+            <h3>可用结论</h3>
+            <p>官方内容集中在家居服、棉麻罩衫/阔腿裤、浴袍/浴巾、薄绒套装、条纹与羊毛礼品。9-11 月是秋冬新品和生活方式延伸的密集期。</p>
+          </div>
+          <div>
+            <h3>使用边界</h3>
+            <p>RMB 74.8-79.8 与 RMB 419.1 只能作为第三方/疑似公开样本，不代表 Fysea 官方价格带，也不建议单独作为 BtD 主价位决策依据。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="channels">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>渠道与可信度</h2>
+          <p>把内容、交易、第三方线索拆开，确保每个数字都有清晰来源。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>渠道</th>
+                <th>公开证据</th>
+                <th>可信度</th>
+                <th>可用字段</th>
+                <th>对 BtD 的用法</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>天猫/淘宝店铺</td>
+                <td><a href="https://tao.hooos.com/search?w=Fysea&amp;sort=total_sales_des" target="_blank" rel="noreferrer">Hooos 聚合搜索</a>检出 2 个 Fysea/Fyseahome 相关 SKU；店铺为“寨晨优选”“莫奈STUDIO”。</td>
+                <td><span class="tag warn">第三方/疑似</span></td>
+                <td>商品图、标题、价格、原价、店铺、月销量。</td>
+                <td>可作公开价格样本，但必须与官方价格带分开。</td>
+              </tr>
+              <tr>
+                <td>小红书主页/店铺</td>
+                <td><a href="https://www.xiaohongshu.com/user/profile/5f1402c00000000001001520" target="_blank" rel="noreferrer">Fysea 小红书主页</a>可核验品牌主页、简介、粉丝与官方笔记。</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>笔记标题、封面、发布时间推定、互动量。</td>
+                <td>用于产品系列、季节上新、热度判断，不作为销量。</td>
+              </tr>
+              <tr>
+                <td>抖音店铺</td>
+                <td>通过公开搜索未找到稳定可核验的 Fysea 官方抖音店铺或成交数据。</td>
+                <td><span class="tag bad">未找到公开证据</span></td>
+                <td>无</td>
+                <td>不纳入价格带。</td>
+              </tr>
+              <tr>
+                <td>线下店铺</td>
+                <td>未找到公开可核验的 Fysea 线下门店、门店价格或线下销量资料。</td>
+                <td><span class="tag bad">未找到公开证据</span></td>
+                <td>无</td>
+                <td>不纳入价格带。</td>
+              </tr>
+              <tr>
+                <td>其他第三方电商</td>
+                <td><a href="https://www.jd.com/brand/1315da5a07efbb2feb1e.html" target="_blank" rel="noreferrer">京东聚合页</a>出现第三方 Fysea 文案商品；<a href="https://www.etmall.com.tw/Search?keyword=Fysea" target="_blank" rel="noreferrer">ETMall 搜索页</a>可打开，但历史商品直链当前不可订购。</td>
+                <td><span class="tag warn">第三方/历史样本</span></td>
+                <td>标题、部分图片/评论或上下架状态。</td>
+                <td>仅做渠道线索，不用于核心价格带。</td>
+              </tr>
+              <tr>
+                <td>内容/媒体线索</td>
+                <td><a href="https://www.sohu.com/a/654940654_114799" target="_blank" rel="noreferrer">搜狐文章</a>曾提及“店铺名：Fysea”和淘宝移动链接，并描述条纹睡衣式衬衫。</td>
+                <td><span class="tag warn">历史内容线索</span></td>
+                <td>店铺名、产品描述、淘宝短链。</td>
+                <td>只作为曾存在淘宝购买链路的佐证。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="bands">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>品类价格带</h2>
+          <p>价格带只统计可公开核验价格的商品；小红书官方内容若无价格，仅作为“上新/互动样本”。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>品类</th>
+                <th>官方价格带</th>
+                <th>第三方/疑似公开价格带</th>
+                <th>样本数</th>
+                <th>销量/互动最高样本</th>
+                <th>数据判断</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>背心吊带-单件</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>1 条官方内容</td>
+                <td><a href="https://www.xiaohongshu.com/explore/67dbccac0000000003028a65?xsec_token=ABprmnujif4XXSH7eyuqPh9THb68Fn7hHuAPrubM80fjM=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">复古方领背心</a>，互动 13（非销量）</td>
+                <td>有明确品类，但缺少电商价格。</td>
+              </tr>
+              <tr>
+                <td>背心吊带-多件包</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>0</td>
+                <td>未发现</td>
+                <td>不纳入定价判断。</td>
+              </tr>
+              <tr>
+                <td>T恤</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>0</td>
+                <td>未发现</td>
+                <td>不纳入定价判断。</td>
+              </tr>
+              <tr>
+                <td>内裤</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>0</td>
+                <td>未发现</td>
+                <td>不纳入定价判断。</td>
+              </tr>
+              <tr>
+                <td>裤装-短裤</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>0</td>
+                <td>未发现</td>
+                <td>不纳入定价判断。</td>
+              </tr>
+              <tr>
+                <td>裤装-长裤</td>
+                <td>未公开</td>
+                <td><span class="num">RMB 74.8-79.8</span></td>
+                <td>2</td>
+                <td>淘宝疑似 SKU“蓝色阔腿休闲裤”，月销量 0；官方小红书“松弛亚麻阔腿裤”互动 63（非销量）</td>
+                <td>可见价低，但来自第三方/疑似店铺，可信度低。</td>
+              </tr>
+              <tr>
+                <td>长袖衬衫</td>
+                <td>未公开</td>
+                <td>未发现当前公开价格</td>
+                <td>1 条历史内容线索</td>
+                <td>搜狐历史文章描述条纹睡衣式衬衫，无当前价格/销量</td>
+                <td>有风格线索，无可用价格。</td>
+              </tr>
+              <tr>
+                <td>家居服-上装</td>
+                <td>未公开</td>
+                <td>未发现公开价格</td>
+                <td>多条官方内容</td>
+                <td>FyseaEasy 系列互动最高：窗边静坐 631（非销量）</td>
+                <td>官方内容热度强，但价格未公开。</td>
+              </tr>
+              <tr>
+                <td>家居服-裤装</td>
+                <td>未公开</td>
+                <td><span class="num">RMB 419.1</span></td>
+                <td>1</td>
+                <td>淘宝第三方 SKU“水洗全棉家居长裤/睡裤”，月销量 0</td>
+                <td>当前唯一高价可观察 SKU，但非官方核验。</td>
+              </tr>
+              <tr>
+                <td>家居服-套装</td>
+                <td>未公开</td>
+                <td>未发现当前公开价格</td>
+                <td>多条官方内容 + 1 条历史第三方页</td>
+                <td>FyseaWinter“林间冬日”系列互动 124（非销量）</td>
+                <td>有秋冬上新信号，无成交价格。</td>
+              </tr>
+              <tr>
+                <td>眼罩</td>
+                <td>未公开</td>
+                <td>未发现 Fysea 核心样本</td>
+                <td>0</td>
+                <td>未发现</td>
+                <td>不纳入定价判断。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="top10">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>TOP10 商品/系列</h2>
+          <p>前 2 位为有公开价格字段的电商样本；后续按小红书官方内容互动量排序，并明确标注非销量。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>排名</th>
+                <th>产品/系列</th>
+                <th>品类</th>
+                <th>价格</th>
+                <th>销量/互动</th>
+                <th>渠道</th>
+                <th>可信度</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <div class="product-cell">
+                    <img src="https://img.alicdn.com/bao/uploaded/i2/_XXX_KKK_/O1CN01d9YVxO1xqlQNZKW3Y_!!0-item_pic.jpg_500x500q90" alt="家居长裤">
+                    <div><strong><a href="https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html" target="_blank" rel="noreferrer">水洗全棉高级感睡衣家居长裤</a></strong><small>店铺：寨晨优选；品牌字段 Fyseahome</small></div>
+                  </div>
+                </td>
+                <td>家居服-裤装</td>
+                <td><span class="num">RMB 419.1</span></td>
+                <td>月销量 0</td>
+                <td>淘宝公开页镜像</td>
+                <td><span class="tag warn">第三方/疑似</span></td>
+                <td>价格最高的公开可抓取样本。</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>
+                  <div class="product-cell">
+                    <img src="https://img.alicdn.com/bao/uploaded/i2/2204109291146/O1CN01u4b0vO1KKv1hZoyIQ_!!2204109291146.png_500x500q90" alt="蓝色阔腿裤">
+                    <div><strong><a href="https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html" target="_blank" rel="noreferrer">蓝色阔腿休闲裤女夏季新款</a></strong><small>店铺：莫奈STUDIO</small></div>
+                  </div>
+                </td>
+                <td>裤装-长裤</td>
+                <td><span class="num">RMB 74.8 / 79.8</span></td>
+                <td>月销量 0</td>
+                <td>淘宝公开页镜像</td>
+                <td><span class="tag warn">第三方/疑似</span></td>
+                <td>低价疑似款，不能代表官方定价。</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><div class="product-cell"><img src="assets/fysea_easy_window.webp" alt="窗边静坐"><div><strong><a href="https://www.xiaohongshu.com/explore/69f03e1d000000003601ef94?xsec_token=ABJLvU6-n5nQJjYl3UQGeNF9G4Rbk9wl2Q76yOuBtptLA=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaEasy | 窗边静坐</a></strong><small>官方产品氛围内容中互动最高</small></div></div></td>
+                <td>家居服-上装/场景系列</td>
+                <td>未公开</td>
+                <td>互动 631（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>Easy 系列内容热度高。</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><div class="product-cell"><img src="assets/fysea_easy_wake.webp" alt="初醒"><div><strong><a href="https://www.xiaohongshu.com/explore/69f03e090000000038035a1f?xsec_token=ABJLvU6-n5nQJjYl3UQGeNF1wMj8UaiLrCUIWUDNYZ50w=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaEasy | 初醒</a></strong><small>与 Easy 系列同批上新</small></div></div></td>
+                <td>家居服-上装/场景系列</td>
+                <td>未公开</td>
+                <td>互动 230（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>春末内容信号。</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><div class="product-cell"><img src="assets/fysea_linen.webp" alt="亚麻系列"><div><strong><a href="https://www.xiaohongshu.com/explore/69c0f6f1000000001a02a9e8?xsec_token=ABexNPbdJXVeHDMR6KjNfG9YKosSHpK-xBCvOj5g8J-_I=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaLinen | 亚麻系列</a></strong><small>春季棉麻/亚麻系列信号</small></div></div></td>
+                <td>家居服-上装/裤装系列</td>
+                <td>未公开</td>
+                <td>互动 161（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>春季轻质材料方向。</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td><div class="product-cell"><img src="assets/fysea_aurora_pink.webp" alt="幻粉极光"><div><strong><a href="https://www.xiaohongshu.com/explore/68b54bcb000000001d013088?xsec_token=AB6878k4rUAaqfEB8VEy0NSw2zzaoMNT4G-4IZmOeVdqo=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">Fysea新品｜幻粉极光</a></strong><small>9 月上新重点之一</small></div></div></td>
+                <td>家居服-套装/系列</td>
+                <td>未公开</td>
+                <td>互动 132（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>秋季新品色彩主题。</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td><div class="product-cell"><img src="assets/fysea_winter_forest.webp" alt="林间冬日"><div><strong><a href="https://www.xiaohongshu.com/explore/68f1e5d40000000003013d7a?xsec_token=AB08sR3mNpA_4IA6B1V7p3KuNf609zq4bkz5cosvL6tLM=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaWinter | 林间冬日系列</a></strong><small>10 月秋冬重点系列</small></div></div></td>
+                <td>家居服-套装</td>
+                <td>未公开</td>
+                <td>互动 124（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>秋冬核心系列。</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td><div class="product-cell"><img src="assets/fysea_easy_read.webp" alt="花草与闲读"><div><strong><a href="https://www.xiaohongshu.com/explore/69f03e32000000003700e488?xsec_token=ABJLvU6-n5nQJjYl3UQGeNF3jXR-LXOH-QXNUkTbk9Yf4=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaEasy | 花草与闲读</a></strong><small>Easy 系列内容热度稳定</small></div></div></td>
+                <td>家居服-上装/场景系列</td>
+                <td>未公开</td>
+                <td>互动 99（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>生活方式场景表达。</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td><div class="product-cell"><img src="assets/fysea_stripe_gift.webp" alt="条纹之礼"><div><strong><a href="https://www.xiaohongshu.com/explore/6981b151000000001a01ef58?xsec_token=AB_m2GqjXAobAfW2eyTnstMBFgDWidZfUSg1Nxfuz2ckg=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">Fysea | 条纹之礼</a></strong><small>冬季/礼品化表达</small></div></div></td>
+                <td>家居服-套装/礼品</td>
+                <td>未公开</td>
+                <td>互动 88（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>礼品与条纹视觉。</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td><div class="product-cell"><img src="assets/fysea_sunbreak.webp" alt="阳光小憩"><div><strong><a href="https://www.xiaohongshu.com/explore/69f03e680000000037037547?xsec_token=ABJLvU6-n5nQJjYl3UQGeNF0p7yWbTWC2Q4kTNWDEpd7Q=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaEasy | 阳光小憩</a></strong><small>抓取详情文案提及浴袍场景</small></div></div></td>
+                <td>家居服-上装/浴袍场景</td>
+                <td>未公开</td>
+                <td>互动 78（非销量）</td>
+                <td>小红书官方内容</td>
+                <td><span class="tag">官方内容</span></td>
+                <td>浴袍与晨间场景。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="season">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>四季价格带与上新节奏</h2>
+          <p>秋季重点覆盖 9 月、10 月、11 月：9 月新品与浴袍/浴巾，10 月薄绒套装，11 月沙棕条纹。</p>
+        </div>
+        <div class="season-grid">
+          <article class="season">
+            <h3>春季</h3>
+            <div class="price">RMB 419.1</div>
+            <p>价格来自第三方/疑似春夏家居长裤；官方内容偏早春条纹、复古方领背心、棉麻罩衫和亚麻阔腿裤。</p>
+            <span class="tag warn">不能当官方锚点</span>
+          </article>
+          <article class="season">
+            <h3>夏季</h3>
+            <div class="price">RMB 74.8-79.8</div>
+            <p>价格来自第三方/疑似蓝色阔腿裤；官方内容包含夏日居家新品、热浪、明媚色彩。</p>
+            <span class="tag warn">低价疑似样本</span>
+          </article>
+          <article class="season">
+            <h3>秋季</h3>
+            <div class="price">未公开</div>
+            <p>内容上新密集：9 月新品/浴袍/浴巾，10 月薄绒套装/冬季系列，11 月沙棕条纹。</p>
+            <span class="tag">节奏参考价值高</span>
+          </article>
+          <article class="season">
+            <h3>冬季</h3>
+            <div class="price">未公开</div>
+            <p>强调礼品、柔软、保暖、条纹和羊毛；11 月沙棕条纹承接冬季系列。</p>
+            <span class="tag">价格需补采</span>
+          </article>
+        </div>
+
+        <div class="table-wrap" style="margin-top: 30px;">
+          <table>
+            <thead>
+              <tr>
+                <th>月份</th>
+                <th>日期</th>
+                <th>产品/系列</th>
+                <th>品类</th>
+                <th>价格</th>
+                <th>互动指标</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>9 月</td>
+                <td>2025-09-01</td>
+                <td><a href="https://www.xiaohongshu.com/explore/68b54bcb000000001d013088?xsec_token=AB6878k4rUAaqfEB8VEy0NSw2zzaoMNT4G-4IZmOeVdqo=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">Fysea新品｜幻粉极光</a></td>
+                <td>家居服-套装/系列</td>
+                <td>未公开</td>
+                <td>132（非销量）</td>
+                <td>秋季新品色彩主题。</td>
+              </tr>
+              <tr>
+                <td>9 月</td>
+                <td>2025-09-26</td>
+                <td><a href="https://www.xiaohongshu.com/explore/68d68d78000000001203dacb?xsec_token=AByqRMQ1PG-y2EgCxaB3puNduOr2Hpf1c0wX-7xfsA0bY=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaBath | 一件可以陪伴你很久的浴袍</a></td>
+                <td>家居服-上装/浴袍</td>
+                <td>未公开</td>
+                <td>62（非销量）</td>
+                <td>浴袍/浴室生活方式扩展。</td>
+              </tr>
+              <tr>
+                <td>9 月</td>
+                <td>2025-09-29</td>
+                <td>FyseaBath 精梳棉条纹浴巾等</td>
+                <td>关联生活方式产品</td>
+                <td>未公开</td>
+                <td>单条 5-18（非销量）</td>
+                <td>浴巾不纳入核心服装价格带。</td>
+              </tr>
+              <tr>
+                <td>10 月</td>
+                <td>2025-10-17</td>
+                <td><a href="https://www.xiaohongshu.com/explore/68f1e5d40000000003013d7a?xsec_token=AB08sR3mNpA_4IA6B1V7p3KuNf609zq4bkz5cosvL6tLM=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaWinter | 林间冬日系列</a></td>
+                <td>家居服-套装</td>
+                <td>未公开</td>
+                <td>124（非销量）</td>
+                <td>秋冬核心系列。</td>
+              </tr>
+              <tr>
+                <td>10 月</td>
+                <td>2025-10-22</td>
+                <td><a href="https://www.xiaohongshu.com/explore/68f8c54d000000000302d493?xsec_token=ABcNVtXxBL6rj_jcr5LyRFk2ZJI4GcHc4QR16qSITTeOw=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaWinter | 简约圆领薄绒套装</a></td>
+                <td>家居服-套装</td>
+                <td>未公开</td>
+                <td>30（非销量）</td>
+                <td>明确套装与薄绒。</td>
+              </tr>
+              <tr>
+                <td>10 月</td>
+                <td>2025-10-24</td>
+                <td><a href="https://www.xiaohongshu.com/explore/68fb3c380000000007003fbe?xsec_token=ABvgwK32F_MhHCf-9kazSlyrzo5HRUgJWU9ELV_ukOd_4=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaWiner | 冬季轻盈半边绒</a></td>
+                <td>家居服-套装/上装</td>
+                <td>未公开</td>
+                <td>21（非销量）</td>
+                <td>标题原文为 Winer，推定为 Winter 系列。</td>
+              </tr>
+              <tr>
+                <td>11 月</td>
+                <td>2025-11-04</td>
+                <td><a href="https://www.xiaohongshu.com/explore/69096edb0000000007031b9e?xsec_token=ABCY7bTWHzKfREvuSSfzGPM5jD3KXR66xdK32qWrwkbvE=&amp;xsec_source=pc_user" target="_blank" rel="noreferrer">FyseaWinter | 大地的沙棕条纹</a></td>
+                <td>家居服-套装/长袖</td>
+                <td>未公开</td>
+                <td>18（非销量）</td>
+                <td>条纹、沙棕、冬季视觉主题。</td>
+              </tr>
+              <tr>
+                <td>11 月</td>
+                <td>2025-11-06/10</td>
+                <td>Fysea 温柔的形态 / 用色彩包裹家的实感</td>
+                <td>家居服-场景内容</td>
+                <td>未公开</td>
+                <td>8-12（非销量）</td>
+                <td>11 月持续内容，但无价格/销量。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="recommendation">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>BtD 定价参考建议</h2>
+          <p>把 Fysea 当作调性和季节节奏样本，而不是成交价格样本。</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>参考方向</th>
+                <th>可采取策略</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>核心家居服裤装</td>
+                <td>不建议直接采用 Fysea 第三方低价 RMB 74.8 或高价 RMB 419.1 作为官方锚点；可把 RMB 400+ 看作“高质感睡裤/家居裤上限参考”，并标注样本可信度低。</td>
+              </tr>
+              <tr>
+                <td>家居服套装</td>
+                <td>Fysea 秋冬内容强调薄绒、条纹、礼品、柔软，但无公开价格。BtD 可单独建立官方竞品价格池补充验证后，再决定套装主价位。</td>
+              </tr>
+              <tr>
+                <td>背心吊带</td>
+                <td>Fysea 有早春方领背心内容，但无价格。若 BtD 要做吊带/背心，应另取 THE BLENDER、Ubras 等成交更充分品牌作硬价参照。</td>
+              </tr>
+              <tr>
+                <td>眼罩/生活方式</td>
+                <td>Fysea 有浴袍、浴巾、袜品等生活方式延伸；未发现眼罩核心样本。BtD 若做眼罩，更适合作为加购/赠品或礼盒组合件。</td>
+              </tr>
+              <tr>
+                <td>上新节奏</td>
+                <td>9-11 月是 Fysea 秋冬视觉与新品密集期：9 月浴袍/浴巾/色彩新品，10 月薄绒套装，11 月条纹与冬季氛围。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <h2>数据来源与限制</h2>
+          <p>所有第三方和历史线索都保留限制说明，避免过度外推。</p>
+        </div>
+        <div class="source-list">
+          <article>
+            <h3><a href="https://www.xiaohongshu.com/user/profile/5f1402c00000000001001520" target="_blank" rel="noreferrer">Fysea 小红书主页</a></h3>
+            <p>官方简介、粉丝、笔记标题、封面、互动量、上新节奏；公开页不提供商品成交价与销量。</p>
+          </article>
+          <article>
+            <h3><a href="https://tao.hooos.com/search?w=Fysea&amp;sort=total_sales_des" target="_blank" rel="noreferrer">Hooos 淘宝/天猫聚合搜索</a></h3>
+            <p>用于淘宝公开价格、店铺、月销量字段；聚合页非淘宝官方前台，且检出店铺非官方核验。</p>
+          </article>
+          <article>
+            <h3><a href="https://tao.hooos.com/goods_BAXeB689I6t83pZ9WmjUpMasrte-KaykkBHjro8XRqAf63.html" target="_blank" rel="noreferrer">Hooos 商品页 1</a></h3>
+            <p>家居服裤装价格 RMB 419.1、月销量 0、店铺/品牌字段；第三方/疑似，不能代表官方。</p>
+          </article>
+          <article>
+            <h3><a href="https://tao.hooos.com/goods_4VNz8qabigtNvr6Q4nAIwwesNtg-vz2ooBs87pqDOXmS4.html" target="_blank" rel="noreferrer">Hooos 商品页 2</a></h3>
+            <p>裤装价格 RMB 74.8/79.8、月销量 0、优惠周期；第三方/疑似，不能代表官方。</p>
+          </article>
+          <article>
+            <h3><a href="https://www.jd.com/brand/1315da5a07efbb2feb1e.html" target="_blank" rel="noreferrer">京东聚合页</a></h3>
+            <p>第三方 Fysea 文案商品线索；聚合结果混杂品牌，价格不稳定。</p>
+          </article>
+          <article>
+            <h3><a href="https://www.sohu.com/a/654940654_114799" target="_blank" rel="noreferrer">搜狐历史内容</a></h3>
+            <p>历史内容中出现“店铺名：Fysea”和淘宝购买链路；无当前价格/销量。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Fysea 定价分析 · BtD 参考</span>
+      <span>口径：官方内容优先，第三方/疑似价格样本单独标注。</span>
+    </div>
+  </footer>
+</body>
+</html>

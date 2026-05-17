@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BtD 家居服定价参考 | Victoria's Secret / MUJI / Zara Home</title>
+  <style>
+    :root {
+      --paper: #f7f5ef;
+      --surface: #fffdf8;
+      --ink: #171513;
+      --muted: #68635b;
+      --line: #ddd6ca;
+      --deep: #123f3a;
+      --deep-2: #0b2c2a;
+      --accent: #b44736;
+      --amber: #c18c2d;
+      --blue: #476d8c;
+      --shadow: 0 20px 60px rgba(31, 24, 15, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      max-width: 100%;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.52;
+    }
+    a { color: inherit; text-underline-offset: 3px; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 0 28px;
+      background: rgba(247, 245, 239, .9);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
+    }
+    .mark { font-weight: 800; white-space: nowrap; letter-spacing: 0; }
+    .nav { display: flex; align-items: center; gap: 18px; font-size: 13px; color: var(--muted); }
+    .nav a { text-decoration: none; }
+    .download {
+      color: var(--deep);
+      font-weight: 700;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr);
+      min-height: calc(100svh - 58px);
+      background:
+        linear-gradient(110deg, rgba(18, 63, 58, .98), rgba(18, 63, 58, .8)),
+        #123f3a;
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 70px min(8vw, 96px);
+    }
+    .eyebrow {
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(42px, 6.4vw, 94px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    .hero-copy p {
+      margin: 24px 0 0;
+      max-width: 680px;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(16px, 1.35vw, 20px);
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 46px;
+      max-width: 680px;
+    }
+    .stat {
+      border-top: 1px solid rgba(255,255,255,.28);
+      padding-top: 14px;
+    }
+    .stat strong {
+      display: block;
+      font-size: clamp(26px, 3.2vw, 44px);
+      line-height: 1;
+    }
+    .stat span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+    }
+    .hero-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: minmax(180px, 1fr);
+      overflow: hidden;
+    }
+    .hero-gallery a {
+      display: block;
+      position: relative;
+      min-height: 180px;
+      overflow: hidden;
+      border-left: 1px solid rgba(255,255,255,.14);
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      animation: fadeRise .7s ease both;
+    }
+    .hero-gallery a:nth-child(2n) { transform: translateY(34px); }
+    .hero-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(.92) contrast(1.03);
+      transition: transform .5s ease, filter .5s ease;
+    }
+    .hero-gallery a:hover img { transform: scale(1.055); filter: saturate(1.04) contrast(1.07); }
+    .wrap {
+      width: min(1440px, calc(100% - 56px));
+      margin: 0 auto;
+    }
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .7fr) minmax(0, 1.1fr);
+      gap: 44px;
+      margin-bottom: 34px;
+      align-items: end;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 3.2vw, 52px);
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+    .section-head p,
+    .note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .brand-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+    .brand-pane {
+      padding: 28px;
+      min-height: 260px;
+      border-right: 1px solid var(--line);
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 12px;
+      transition: background .25s ease, transform .25s ease;
+    }
+    .brand-pane:last-child { border-right: 0; }
+    .brand-pane:hover { background: #fff; transform: translateY(-2px); }
+    .brand-pane h3 { margin: 0; font-size: 24px; }
+    .brand-pane .range { font-size: 28px; font-weight: 800; }
+    .brand-pane p { margin: 0; color: var(--muted); }
+    .brand-pane a { font-size: 13px; color: var(--deep); font-weight: 700; }
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .segments {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    button.segment {
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 9px 14px;
+      font: inherit;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+    button.segment.active {
+      background: var(--deep);
+      color: #fff;
+      border-color: var(--deep);
+    }
+    .search {
+      width: min(340px, 100%);
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      color: var(--ink);
+    }
+    .table-shell {
+      overflow: auto;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 980px;
+      font-size: 13px;
+    }
+    th {
+      position: sticky;
+      top: 58px;
+      z-index: 5;
+      text-align: left;
+      padding: 13px 14px;
+      background: var(--deep-2);
+      color: #fff;
+      white-space: nowrap;
+    }
+    td {
+      padding: 13px 14px;
+      border-top: 1px solid #ebe5d9;
+      vertical-align: top;
+    }
+    tbody tr:hover { background: #fbf7ed; }
+    .num { text-align: right; white-space: nowrap; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 12px;
+      color: var(--muted);
+      background: #fff;
+      white-space: nowrap;
+    }
+    .top-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .product {
+      background: var(--surface);
+      min-height: 380px;
+      display: grid;
+      grid-template-rows: 220px auto 1fr auto;
+      overflow: hidden;
+      text-decoration: none;
+      transition: transform .22s ease, background .22s ease;
+    }
+    .product:hover { transform: translateY(-4px); background: #fff; }
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #eee8db;
+    }
+    .product .body { padding: 16px; }
+    .product h3 {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+    .product .meta {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .price {
+      padding: 0 16px 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .price strong { color: var(--ink); font-size: 20px; }
+    .channels {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .channel {
+      background: var(--surface);
+      padding: 20px;
+      min-height: 190px;
+    }
+    .channel h3 { margin: 0 0 10px; font-size: 18px; }
+    .channel p { margin: 0; color: var(--muted); font-size: 14px; }
+    .signal {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .signal strong { font-size: 17px; }
+    .signal span { color: var(--muted); font-size: 13px; text-align: right; }
+    .rules {
+      columns: 2 360px;
+      column-gap: 34px;
+    }
+    .rule {
+      break-inside: avoid;
+      padding: 0 0 18px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+    .rule h3 { margin: 0 0 6px; font-size: 17px; }
+    .rule p { margin: 0; color: var(--muted); font-size: 14px; }
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .source-links a {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--surface);
+      color: var(--deep);
+      font-size: 13px;
+      text-decoration: none;
+    }
+    .footer {
+      padding: 42px 0 56px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes fadeRise {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1050px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-gallery { min-height: 520px; }
+      .brand-strip, .channels { grid-template-columns: 1fr; }
+      .brand-pane, .channel { border-right: 0; border-bottom: 1px solid var(--line); }
+      .top-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-head { grid-template-columns: 1fr; gap: 14px; }
+    }
+    @media (max-width: 680px) {
+      .topbar { padding: 0 16px; }
+      .nav a:not(.download) { display: none; }
+      .hero-copy { padding: 54px 22px; }
+      .hero-stats { grid-template-columns: 1fr; }
+      .hero-gallery { grid-template-columns: repeat(2, 1fr); min-height: 560px; }
+      .wrap { width: calc(100% - 28px); }
+      section { padding: 54px 0; }
+      .controls { align-items: stretch; flex-direction: column; }
+      .search { width: 100%; }
+      .top-grid { grid-template-columns: 1fr; }
+      th { top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="mark">BtD 定价参考</div>
+    <nav class="nav">
+      <a href="#price">价格带</a>
+      <a href="#top">TOP10</a>
+      <a href="#season">季节</a>
+      <a href="#sources">来源</a>
+      <a class="download" href="./VS_MUJI_ZaraHome_pricing_analysis_20260517.xlsx">Excel</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Victoria's Secret / MUJI / Zara Home</div>
+        <h1>家居服价格带与上新节奏调研</h1>
+        <p>以成人女性核心品类为口径，合并公开电商价格、销量/排序信号、小红书内容热度与线下/抖音可得性限制，为 BtD 秋季定价提供参考。</p>
+        <div class="hero-stats">
+          <div class="stat"><strong>3</strong><span>品牌</span></div>
+          <div class="stat"><strong>163</strong><span>商品样本</span></div>
+          <div class="stat"><strong>374</strong><span>小红书线索</span></div>
+        </div>
+      </div>
+      <div class="hero-gallery" id="heroGallery"></div>
+    </section>
+
+    <section id="summary" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>品牌结论</h2>
+          <p>维密可取天猫官方公开销量；MUJI 以官网公开价和京东官方榜单为主；Zara Home 以中国官网价格和小红书内容热度作代理口径。</p>
+        </div>
+        <div class="brand-strip" id="brandStrip"></div>
+      </div>
+    </section>
+
+    <section id="channels" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>渠道覆盖与限制</h2>
+          <p>天猫/淘宝、小红书、抖音、线下门店分开标注，避免把内容热度、官网排序和商品销量混为同一口径。</p>
+        </div>
+        <div class="controls">
+          <div class="segments" data-filter="brand"></div>
+          <input class="search" id="channelSearch" placeholder="搜索渠道或说明" />
+        </div>
+        <div class="channels" id="channelGrid"></div>
+      </div>
+    </section>
+
+    <section id="price" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>品类价格带对比</h2>
+          <p>按品牌、渠道、归类品类汇总最低价、P25、中位价、P75 和最高价。公开销量只在可取得的渠道显示，未公开处保留原始说明。</p>
+        </div>
+        <div class="controls">
+          <div class="segments" data-filter="brand"></div>
+          <input class="search" id="priceSearch" placeholder="搜索品类、渠道或商品" />
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>品牌</th><th>渠道</th><th>品类</th><th>SKU</th><th class="num">最低</th><th class="num">中位</th><th class="num">最高</th><th>最高销量/排序</th><th>代表TOP商品</th>
+              </tr>
+            </thead>
+            <tbody id="priceRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="top" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>各品牌 TOP10 商品</h2>
+          <p>维密按公开月销量排序；MUJI/Zara Home 因官方商品销量不公开，按官方榜单/分类页排序和公开样本口径呈现。</p>
+        </div>
+        <div class="controls">
+          <div class="segments" data-filter="brand"></div>
+          <input class="search" id="topSearch" placeholder="搜索商品标题或品类" />
+        </div>
+        <div class="top-grid" id="topGrid"></div>
+      </div>
+    </section>
+
+    <section id="season" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>季节价格带</h2>
+          <p>春夏秋冬按商品标题、季节关键词和公开发布时间归类。秋季尤其关注 9月、10月、11月或标题含秋冬/长袖/保暖的样本。</p>
+        </div>
+        <div class="controls">
+          <div class="segments" data-filter="season"></div>
+          <input class="search" id="seasonSearch" placeholder="搜索品牌、品类或代表商品" />
+        </div>
+        <div class="table-shell">
+          <table>
+            <thead>
+              <tr>
+                <th>品牌</th><th>季节</th><th>品类</th><th>SKU</th><th class="num">最低</th><th class="num">中位</th><th class="num">最高</th><th>代表商品</th><th>9-11月说明</th>
+              </tr>
+            </thead>
+            <tbody id="seasonRows"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="sepnov" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>9-11月上新重点</h2>
+          <p>合并商品标题秋冬线索、小红书上新/内容线索和官网公开排序，帮助判断秋季可验证的品类方向。</p>
+        </div>
+        <div id="signals"></div>
+      </div>
+    </section>
+
+    <section id="rules" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>品类归类规则</h2>
+          <p>仅看成人女性产品。儿童、男士单独款、误召回资料和无法归因样本不进入核心结论。</p>
+        </div>
+        <div class="rules" id="rulesList"></div>
+      </div>
+    </section>
+
+    <section id="sources" class="reveal">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>来源与交付物</h2>
+          <p>公开页价格为前台价，不等同成交净价；小红书互动不等同销量；抖音商品级价格/销量未接入。</p>
+        </div>
+        <div class="source-links" id="sourceLinks"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">生成时间：2026/5/17 15:44:27。完整明细见同目录 Excel。</div>
+  </footer>
+
+  <script type="application/json" id="payload">{"generatedAt":"2026-05-17T07:44:27.875Z","stats":[{"brand":"Victoria's Secret 维多利亚的秘密","short":"Victoria's Secret","fans":"97.3K","interactions":"672.5K","productCount":104,"minPrice":53,"maxPrice":918,"topCategory":"内裤","topProduct":"5件228|维密时尚舒适棉质内裤LOGO字母腰带中腰性感三角裤女夏薄","topImage":"https://img.alicdn.com/bao/uploaded/i2/3265150369/O1CN012UfiG81Eb3HuftzpO_!!4611686018427387297-0-item_pic.jpg","topLink":"https://tao.hooos.com/goods_88V3GkVntnt9zdkewrzugK2hbt8-bWZ332uBW6aQApbiW.html","topSignal":"10万+"},{"brand":"MUJI 无印良品","short":"MUJI","fans":"491.5K","interactions":"1.1M","productCount":37,"minPrice":59,"maxPrice":618.45,"topCategory":"家居服-套装","topProduct":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣","topImage":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","topLink":"https://item.jd.com/10204904466687.html","topSignal":"京东官方店销售排行榜 #5（销量未公开）"},{"brand":"Zara Home","short":"Zara Home","fans":"26.5K","interactions":"32.8K","productCount":22,"minPrice":239,"maxPrice":783,"topCategory":"裤装-短裤","topProduct":"亚麻短裤","topImage":"https://static.zarahome.cn/assets/public/4c63/aa7c/3d9640c58723/eb45afc4f158/41181123802-a7/41181123802-a7.jpg?ts=1777880721761&f=auto&w=480&f=auto","topLink":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E7%9F%AD%E8%A3%A4-l41181123","topSignal":"官方分类页排序 #2（销量未公开）"}],"channelRows":[["Victoria's Secret 维多利亚的秘密","天猫店铺","已采集 VICTORIA'S SECRET官方旗舰店 104 个目标/生活方式公开样本","价格、图片、商品链接、部分公开月销量；非后台成交数据","中"],["Victoria's Secret 维多利亚的秘密","小红书店铺/账号","品牌官方账号 Victoria's Secret维多利亚的秘密；粉丝 97.3K","上新、明星同款、穿搭内容与互动热度；不公开商品销量","中"],["Victoria's Secret 维多利亚的秘密","抖音店铺","公开搜索可见“维多利亚的秘密官方旗舰店”抖音号，但本次未取得稳定商品级价格/销量字段","建议用抖店后台/罗盘补充；不纳入价格带计算","低"],["Victoria's Secret 维多利亚的秘密","线下店铺","公开资料显示北京/上海曾有全球旗舰店/全品类门店，本次不作为完整门店清单","可验证线下陈列与试穿体验，价格以门店实时吊牌为准","低-中"],["MUJI 无印良品","天猫/淘宝店铺","Hooos 可见样本主要为天猫国际/代购/公开店铺；未稳定取得 MUJI 天猫官方店商品级销量","价格和少量公开销量只作补充，不与官方店销量横比","低-中"],["MUJI 无印良品","京东官方旗舰店/官网","已采集 MUJI 中国官网公开价与京东官方店榜单，目标样本 37 个","官网/京东公开价格、销售排行榜和品类目录；京东商品级销量未公开","中"],["MUJI 无印良品","小红书店铺/账号","MUJI无印良品官方账号；粉丝 491.5K","上新、门店与内容热度；不公开商品销量","中"],["MUJI 无印良品","抖音店铺","公开平台存在多个“无印良品”相似店名，官方归属需后台/品牌授权核验","不纳入价格带；需防止山寨/抢注品牌混淆","低"],["MUJI 无印良品","线下店铺","官网提供店铺信息入口；京东官方店声明其为日本 MUJI 品牌中国大陆真正权利人之一","线下是重要价格/陈列验证渠道，需按城市门店抽样","中"],["Zara Home","天猫/淘宝店铺","未取得稳定官方天猫商品级样本；Zara Home中国官网可直接下单并显示现价","不以天猫价格带作为主口径","低"],["Zara Home","品牌官网","已采集 Zara Home 中国官网女士睡衣/家居服 22 个目标公开样本","官网展示现价、图片、商品页；不公开销量","中"],["Zara Home","小红书店铺/账号","ZARA HOME官方账号；粉丝 26.5K","内容主题、门店/活动线索和互动热度；不公开销量","中"],["Zara Home","抖音店铺","本次未取得稳定官方抖音商品级公开字段","不纳入价格带；需抖店后台/罗盘补充","低"],["Zara Home","线下店铺","官网提供 Store Locator；公开报道显示上海南京西路亚洲旗舰店等线下门店","可作线下陈列和视觉价位验证，非完整门店清单","中"]],"priceBands":[{"brand":"MUJI 无印良品","channel":"京东官方旗舰店","category":"家居服-套装","skuCount":1,"minPrice":248,"p25Price":260.5,"medianPrice":273,"p75Price":285.5,"maxPrice":298,"topMonthlySales":"","topMonthlySalesText":"京东官方店销售排行榜 #5（销量未公开）","topProduct":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣","topProductLink":"https://item.jd.com/10204904466687.html","buyJumpUrl":"https://item.jd.com/10204904466687.html","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"品牌官网","category":"家居服-上装","skuCount":1,"minPrice":348,"p25Price":348,"medianPrice":348,"p75Price":348,"maxPrice":348,"topMonthlySales":"","topMonthlySalesText":"官网公开价（销量未公开）","topProduct":"印度棉法兰绒 印度风睡裙","topProductLink":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"品牌官网","category":"家居服-套装","skuCount":2,"minPrice":198,"p25Price":198,"medianPrice":220.5,"p75Price":269.25,"maxPrice":348,"topMonthlySales":"","topMonthlySalesText":"官网公开价（销量未公开）","topProduct":"无侧缝法兰绒 睡衣","topProductLink":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"品牌官网","category":"裤装-长裤","skuCount":2,"minPrice":78,"p25Price":78,"medianPrice":83.5,"p75Price":89,"maxPrice":89,"topMonthlySales":"","topMonthlySalesText":"官网公开价（销量未公开）","topProduct":"使用了棉的冬季内衣 十分长收腿裤","topProductLink":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"品牌官网","category":"内裤","skuCount":1,"minPrice":78,"p25Price":78,"medianPrice":78,"p75Price":78,"maxPrice":78,"topMonthlySales":"","topMonthlySalesText":"官网公开价（销量未公开）","topProduct":"使用了棉的冬季内衣 腹带短裤","topProductLink":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"品牌官网","category":"T恤","skuCount":3,"minPrice":74,"p25Price":78,"medianPrice":78,"p75Price":78,"maxPrice":128,"topMonthlySales":"","topMonthlySalesText":"官网公开价（销量未公开）","topProduct":"使用了棉的冬季内衣 U领八分袖T恤","topProductLink":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","sampleNote":"官方中国官网/京东官方店公开信息与少量天猫国际/代购公开样本；官方店销量不披露，天猫国际/代购样本只作价格参考。"},{"brand":"MUJI 无印良品","channel":"淘宝店铺","category":"T恤","skuCount":1,"minPrice":71.14,"p25Price":71.14,"medianPrice":71.14,"p75Price":71.14,"maxPrice":71.14,"topMonthlySales":"","topMonthlySalesText":"公开店铺月销量 0（非官方/代购）","topProduct":"无印良品女子天竺梭织圆领短袖t恤上底衬衫25夏季女装","topProductLink":"https://tao.hooos.com/goods_yqer28YhRt2RmvYy8GcooPfvtA-d8ZBBDF0beAjja2tPy.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=ZWjZG80h6tPdQgeqQbCBdPtVt6-p3j775c234pYdqNuj","sampleNote":"天猫国际/代购/公开店铺样本，非MUJI中国官方后台；仅用于补充公开价格与可见销量。"},{"brand":"MUJI 无印良品","channel":"天猫国际/代购公开页","category":"家居服-上装","skuCount":4,"minPrice":350.55,"p25Price":362.66,"medianPrice":367.85,"p75Price":370,"maxPrice":373,"topMonthlySales":"","topMonthlySalesText":"公开店铺月销量 3（非官方/代购）","topProduct":"1h可退 日本直邮MUJI 女士 无侧缝双层纱布长袖睡衣 454807663627","topProductLink":"https://tao.hooos.com/goods_J5kzJG9euRtqNkno7YKTXXkIvta-63XvvVc6xPez4W0FBW.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=YaOwavGiptXQAxqQqrUW73f2t6-KaykkBHjXn6PodoT5","sampleNote":"天猫国际/代购/公开店铺样本，非MUJI中国官方后台；仅用于补充公开价格与可见销量。"},{"brand":"MUJI 无印良品","channel":"天猫国际/代购公开页","category":"家居服-套装","skuCount":4,"minPrice":246.05,"p25Price":270.01,"medianPrice":289.1,"p75Price":303.9,"maxPrice":315,"topMonthlySales":"","topMonthlySalesText":"公开店铺月销量 3（非官方/代购）","topProduct":"日本直邮MUJI 女士 双层纱布短袖家居服套装 4548076681809睡衣","topProductLink":"https://tao.hooos.com/goods_Np5jXqWI5tG8gZb4aoHxxKhRtB-k5v00GfRqzOzQaVCp.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=ANoMjPAdUzt4j6nwBRdcmX5tvtn-YA3ppxSB2JZQR8QSz","sampleNote":"天猫国际/代购/公开店铺样本，非MUJI中国官方后台；仅用于补充公开价格与可见销量。"},{"brand":"MUJI 无印良品","channel":"天猫国际/代购公开页","category":"裤装-长裤","skuCount":10,"minPrice":167.2,"p25Price":259,"medianPrice":264.1,"p75Price":274.55,"maxPrice":618.45,"topMonthlySales":"","topMonthlySalesText":"公开店铺月销量 0（非官方/代购）","topProduct":"日本直邮MUJI Labo 男女同款 亚麻莱赛尔宽松长裤 4548076843450","topProductLink":"https://tao.hooos.com/goods_r764QGoIOtVmovqJ9Ri66wiqtZ-63XvvVc6JN30krASq.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=XXQ3GbQtGtXKgabjQ5UVYpHBtg-9OgVVDu578mM3GmFO","sampleNote":"天猫国际/代购/公开店铺样本，非MUJI中国官方后台；仅用于补充公开价格与可见销量。"},{"brand":"MUJI 无印良品","channel":"天猫国际/代购公开页","category":"T恤","skuCount":8,"minPrice":59,"p25Price":98,"medianPrice":99,"p75Price":106.5,"maxPrice":178,"topMonthlySales":"","topMonthlySalesText":"公开店铺月销量 1（非官方/代购）","topProduct":"日本无印良品MUJI专柜 春夏女式棉编织圆领休闲纯色短袖T恤 百搭","topProductLink":"https://tao.hooos.com/goods_vP0boA7hZt6w0nDdPaTAPOi0te-YA3ppxSBDwDOr3wsa3.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=96m8N9XsBtOqV8jrvzs22BuQt6-qKZqqrSn8VmwBBOF7","sampleNote":"天猫国际/代购/公开店铺样本，非MUJI中国官方后台；仅用于补充公开价格与可见销量。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"背心吊带-单件","skuCount":17,"minPrice":129,"p25Price":158,"medianPrice":183,"p75Price":243,"maxPrice":358,"topMonthlySales":100000,"topMonthlySalesText":"10万+","topProduct":"维密 单依纯同款果冻条反重力PRO文胸小胸微聚拢无痕背心内衣女夏","topProductLink":"https://tao.hooos.com/goods_Z5KbDRYT6tPdQgxV3BFBBotVt6-vz2ooBsBP4XGnB9FOR.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=vAWVP6etZt6wpQDdDdUAAwI0te-63XvvVc66YBVVQOfz","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"衬衫-长袖","skuCount":1,"minPrice":168,"p25Price":168,"medianPrice":168,"p75Price":168,"maxPrice":168,"topMonthlySales":100,"topMonthlySalesText":"100+","topProduct":"3折起|维密柔软宽松针织纽扣衬衫长袖睡衣上衣家居服送女友2026夏","topProductLink":"https://tao.hooos.com/goods_PONP7pX4s3t6vP7mv9kSvDQhPt6-4RDrrQF8o3GYwp0sOz.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=0vP86eYji7t8BqaPndDc05mC2t6-9OgVVDuO2qXr8rnHY","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"家居服-上装","skuCount":17,"minPrice":117,"p25Price":181,"medianPrice":374,"p75Price":552,"maxPrice":873,"topMonthlySales":9000,"topMonthlySalesText":"9000+","topProduct":"维密柔软舒适系带长款居家睡袍家居服长款晨袍女新娘睡衣浴袍26","topProductLink":"https://tao.hooos.com/goods_gYkyYwyH3t2WvzQWQZUooBIatr-3RZ770F09Xro7Jeiqy.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=zqZNqdWhetaWRZwWw4Hvv2Cdt4-4RDrrQF95YdYOvmck","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"家居服-套装","skuCount":19,"minPrice":228,"p25Price":480.5,"medianPrice":618,"p75Price":668,"maxPrice":918,"topMonthlySales":20000,"topMonthlySalesText":"2万+","topProduct":"维密杨幂同款宅度假天丝云柔蕾丝印花凉感睡衣短袖家居服套装女夏","topProductLink":"https://tao.hooos.com/goods_GK04a2Nkh8tYvX2gZ9rIYYrUQtJ-9OgVVDu5v7DVeOqhX.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=V6XZX8mF6twbxrJVrDt22kcvtV-ejZ00KFzGD0JmvNiD","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"裤装-短裤","skuCount":4,"minPrice":99,"p25Price":196.5,"medianPrice":283.5,"p75Price":353,"maxPrice":398,"topMonthlySales":32,"topMonthlySalesText":"32","topProduct":"4折起|维密VSX高腰弹力骑行短裤女2026夏","topProductLink":"https://tao.hooos.com/goods_9z90GOJcBtOKZBJ8nnT22DUQt6-xzQZZ4s6KJw5xX0iY.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=BAAkk9bxt6t83gVa2YGspp5Frte-d8ZBBDF0zyeJZAjtk","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"裤装-长裤","skuCount":7,"minPrice":283,"p25Price":398,"medianPrice":415,"p75Price":543,"maxPrice":758,"topMonthlySales":7,"topMonthlySalesText":"7","topProduct":"5折起|维密舒适中腰微喇长裤女春","topProductLink":"https://tao.hooos.com/goods_D33qW8KeUDt52ARpQqkUQq6ujtn-3RZ770FXb60ob00un.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=GKKQbMa9t8tYvX2xkPJtYvZCQtJ-ejZ00KFzRDbQ2RvUa","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"内裤","skuCount":33,"minPrice":53,"p25Price":66,"medianPrice":66,"p75Price":132,"maxPrice":518,"topMonthlySales":100000,"topMonthlySalesText":"10万+","topProduct":"5件228|维密时尚舒适棉质内裤LOGO字母腰带中腰性感三角裤女夏薄","topProductLink":"https://tao.hooos.com/goods_88V3GkVntnt9zdkewrzugK2hbt8-bWZ332uBW6aQApbiW.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=88V3GkVntnt9zdkewrzugK2hbt8-bWZ332uBW6aQApbiW","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Victoria's Secret 维多利亚的秘密","channel":"天猫店铺","category":"T恤","skuCount":6,"minPrice":126,"p25Price":164.5,"medianPrice":203,"p75Price":266.25,"maxPrice":298,"topMonthlySales":80000,"topMonthlySalesText":"8万+","topProduct":"维密LOGO字母肩带聚拢文胸性感无痕T恤搭档隐形粉底液内衣女夏薄","topProductLink":"https://tao.hooos.com/goods_0vzZkMWNH7t8Bqa4DOvt059f2t6-OpRwwaFxBN5qb9duN.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=vAWVP6etZt6wpQDdDdUAAwI0te-63XvvVc66YBVVQOfz","sampleNote":"天猫 VICTORIA'S SECRET官方旗舰店公开样本；价格为前台优惠价/在售价，销量为公开月销量字段，非后台成交数据。"},{"brand":"Zara Home","channel":"品牌官网","category":"衬衫-长袖","skuCount":1,"minPrice":299,"p25Price":299,"medianPrice":299,"p75Price":299,"maxPrice":299,"topMonthlySales":"","topMonthlySalesText":"官方分类页排序 #13（销量未公开）","topProduct":"棉质长袖衬衫","topProductLink":"https://www.zarahome.cn/cn/%E6%A3%89%E8%B4%A8%E9%95%BF%E8%A2%96%E8%A1%AC%E8%A1%AB-l49186579","buyJumpUrl":"https://www.zarahome.cn/cn/%E6%A3%89%E8%B4%A8%E9%95%BF%E8%A2%96%E8%A1%AC%E8%A1%AB-l49186579","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"},{"brand":"Zara Home","channel":"品牌官网","category":"家居服-上装","skuCount":3,"minPrice":549,"p25Price":624,"medianPrice":699,"p75Price":699,"maxPrice":699,"topMonthlySales":"","topMonthlySalesText":"官网商品页（销量未公开）","topProduct":"缎面睡袍","topProductLink":"https://www.zarahome.cn/cn/%E7%BC%8E%E9%9D%A2%E7%9D%A1%E8%A2%8D-l41125434","buyJumpUrl":"https://www.zarahome.cn/cn/%E7%BC%8E%E9%9D%A2%E7%9D%A1%E8%A2%8D-l41125434","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"},{"brand":"Zara Home","channel":"品牌官网","category":"家居服-套装","skuCount":1,"minPrice":783,"p25Price":783,"medianPrice":783,"p75Price":783,"maxPrice":783,"topMonthlySales":"","topMonthlySalesText":"官网商品页（销量未公开）","topProduct":"Limoncella x The Animals Observatory 睡衣套装","topProductLink":"https://www.zarahome.cn/cn/limoncella-x-the-animals-observatory-%E7%9D%A1%E8%A1%A3%E5%A5%97%E8%A3%85-l44673117","buyJumpUrl":"https://www.zarahome.cn/cn/limoncella-x-the-animals-observatory-%E7%9D%A1%E8%A1%A3%E5%A5%97%E8%A3%85-l44673117","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"},{"brand":"Zara Home","channel":"品牌官网","category":"裤装-短裤","skuCount":5,"minPrice":239,"p25Price":299,"medianPrice":349,"p75Price":349,"maxPrice":439,"topMonthlySales":"","topMonthlySalesText":"官方分类页排序 #2（销量未公开）","topProduct":"亚麻短裤","topProductLink":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E7%9F%AD%E8%A3%A4-l41181123","buyJumpUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E7%9F%AD%E8%A3%A4-l41181123","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"},{"brand":"Zara Home","channel":"品牌官网","category":"裤装-长裤","skuCount":6,"minPrice":299,"p25Price":311.5,"medianPrice":394,"p75Price":439,"maxPrice":439,"topMonthlySales":"","topMonthlySalesText":"官方分类页排序 #3（销量未公开）","topProduct":"亚麻长裤","topProductLink":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E9%95%BF%E8%A3%A4-l41176122","buyJumpUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E9%95%BF%E8%A3%A4-l41176122","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"},{"brand":"Zara Home","channel":"品牌官网","category":"T恤","skuCount":6,"minPrice":299,"p25Price":311.5,"medianPrice":349,"p75Price":349,"maxPrice":439,"topMonthlySales":"","topMonthlySalesText":"官方分类页排序 #4（销量未公开）","topProduct":"花卉刺绣上衣","topProductLink":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E4%B8%8A%E8%A1%A3-l49162120","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E4%B8%8A%E8%A1%A3-l49162120","sampleNote":"Zara Home中国官网女士睡衣/家居服公开商品；官网展示价格和图片但不披露销量，TOP10按官方分类页排序与小红书热度辅助判断。"}],"topProducts":[{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":1,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件228|维密时尚舒适棉质内裤LOGO字母腰带中腰性感三角裤女夏薄","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"10万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/3265150369/O1CN012UfiG81Eb3HuftzpO_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_88V3GkVntnt9zdkewrzugK2hbt8-bWZ332uBW6aQApbiW.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=88V3GkVntnt9zdkewrzugK2hbt8-bWZ332uBW6aQApbiW","query":"维密 内裤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":2,"category":"背心吊带-单件","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"维密 单依纯同款果冻条反重力PRO文胸小胸微聚拢无痕背心内衣女夏","price":183,"priceMax":"","originalPrice":208,"currency":"CNY","salesText":"10万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/3265150369/O1CN0188n8Ka1Eb3HwVPdYR_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_Z5KbDRYT6tPdQgxV3BFBBotVt6-vz2ooBsBP4XGnB9FOR.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=vAWVP6etZt6wpQDdDdUAAwI0te-63XvvVc66YBVVQOfz","query":"维密 背心"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":3,"category":"背心吊带-单件","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"直降158|维密果冻条字母肩带内衣背心式运动软支撑可外穿文胸女26","price":158,"priceMax":"","originalPrice":278,"currency":"CNY","salesText":"10万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/3265150369/O1CN01nEfSzq1Eb3Hr0PCCz_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_Omoa4R7fzt6v9kgQGyUN47hMtJ-ZWRNNbuARWR5oMgfv.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=vAWVP6etZt6wpQDdDdUAAwI0te-63XvvVc66YBVVQOfz","query":"维密 背心"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":4,"category":"T恤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"维密LOGO字母肩带聚拢文胸性感无痕T恤搭档隐形粉底液内衣女夏薄","price":178,"priceMax":"","originalPrice":378,"currency":"CNY","salesText":"8万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/3265150369/O1CN01VrHieS1Eb3HlyKZ9W_!!3265150369.jpg","detailUrl":"https://tao.hooos.com/goods_0vzZkMWNH7t8Bqa4DOvt059f2t6-OpRwwaFxBN5qb9duN.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=vAWVP6etZt6wpQDdDdUAAwI0te-63XvvVc66YBVVQOfz","query":"维密 T恤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":5,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件228|维密天丝莫代尔7A抗菌三角裤内裤LOGO蕾丝舒适女2026夏","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"7万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01FRs02v1Eb3Hm5i8Bd_!!3265150369.jpg","detailUrl":"https://tao.hooos.com/goods_4Vy6jDyNHgtNv2Gb58vhw7osNtg-4RDrrQF8OnYyGk0cr.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=d8OVppATZt3AdwbxMbCjDQSet3-ejZ00KFG8JXgqDjuM","query":"维密 内裤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":6,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件278|维密LOGO弹性腰带一片式性感低腰女士三角裤内裤女夏薄款","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"7万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/3265150369/O1CN01a0RZEw1Eb3HyKZIAs_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_oK2kvZ2NsrtK6VzBb56sDDmsntN-VeR99wckkaRW97qSz.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=d8OVppATZt3AdwbxMbCjDQSet3-ejZ00KFG8JXgqDjuM","query":"维密 内裤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":7,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件228|维密无缝一体织抗菌内裤LOGO字母时尚低腰舒适三角裤女夏","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"6万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/3265150369/O1CN01TDnwPj1Eb3HtTr3HH_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_GK0yj70nc8tYvX2xrjvfYYncQtJ-gQXnn3speoRwxXWhp.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=eQwqMVQPCDtdXbjPyjWc88yizt0-0Rakk7FNjgdrWnYH8","query":"维密 内裤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":8,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件228|维密双尺码无痕内裤贴身舒适中腰弹力三角裤女士26","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"6万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01drjmIm1Eb3Hx84SJv_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_NOxyzRxaU5tG8gZJqj8Hx7VTRtB-9OgVVDuOP7de3YXTXk.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=8bQKvyBhnt9yzvPb5RIggOsbt8-mOZQQNujOOvN8PyTB","query":"维密 内裤"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":9,"category":"背心吊带-单件","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"维密果冻条背心式运动内衣软支撑字母肩带彩色可外穿无痕文胸女夏","price":158,"priceMax":"","originalPrice":278,"currency":"CNY","salesText":"6万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01AZQPh61Eb3Hvz1nIK_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_Z5KbDRyf6tPdQgxV3BFBBPfVt6-QAnppRSbmwn07nWfG.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=7nJkZkWGh4t58bV7w7YFnzgtMtV-jdZqqnCdABBak3OtK","query":"维密 背心"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","rank":10,"category":"内裤","brandTopCategory":"内裤","salesBasis":"公开月销量","title":"5件228|维密天丝™莫代尔7A抗菌三角裤内裤LOGO字母边饰女2026夏","price":66,"priceMax":"","originalPrice":98,"currency":"CNY","salesText":"4万+","store":"VICTORIA'S SECRET官方旗舰店","channel":"天猫店铺","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/3265150369/O1CN01LGsdMW1Eb3Hw7Gc1T_!!4611686018427387297-0-item_pic.jpg","detailUrl":"https://tao.hooos.com/goods_ZrJo7RJmC6tPdQgxVydUBwAiVt6-5Bmqq9UWp72kbnPCY.html","buyJumpUrl":"https://tao.hooos.com/static/go.html?id=eQwqMVQPCDtdXbjPyjWc88yizt0-0Rakk7FNjgdrWnYH8","query":"维密 内裤"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":1,"category":"家居服-套装","brandTopCategory":"家居服-套装","salesBasis":"官方店/官网榜单排序","title":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣","price":248,"priceMax":298,"originalPrice":298,"currency":"CNY","salesText":"京东官方店销售排行榜 #5（销量未公开）","store":"无印良品MUJI官方旗舰店","channel":"京东官方旗舰店","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://item.jd.com/10204904466687.html","buyJumpUrl":"https://item.jd.com/10204904466687.html","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":2,"category":"家居服-套装","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"无侧缝法兰绒 睡衣","price":243,"priceMax":348,"originalPrice":348,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":3,"category":"家居服-套装","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"无侧缝天竺编织 睡衣","price":198,"priceMax":198,"originalPrice":198,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":4,"category":"家居服-上装","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"印度棉法兰绒 印度风睡裙","price":348,"priceMax":348,"originalPrice":348,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":5,"category":"T恤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"使用了棉的冬季内衣 U领八分袖T恤","price":78,"priceMax":78,"originalPrice":78,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":6,"category":"T恤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"使用了棉的冬季内衣 圆领短袖T恤","price":78,"priceMax":78,"originalPrice":78,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":7,"category":"裤装-长裤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"使用了棉的冬季内衣 十分长收腿裤","price":78,"priceMax":78,"originalPrice":78,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":8,"category":"内裤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"使用了棉的冬季内衣 腹带短裤","price":78,"priceMax":78,"originalPrice":78,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":9,"category":"T恤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"棉羊毛冬季内衣 U领八分袖T恤","price":74,"priceMax":128,"originalPrice":128,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","rank":10,"category":"裤装-长裤","brandTopCategory":"家居服-套装","salesBasis":"公开销售数值未披露","title":"棉羊毛冬季内衣 细筒裤","price":89,"priceMax":89,"originalPrice":89,"currency":"CNY","salesText":"官网公开价（销量未公开）","store":"MUJI 官方公开渠道","channel":"品牌官网","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","detailUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","buyJumpUrl":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","query":"MUJI 官方公开价/京东官方店"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":1,"category":"裤装-短裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"亚麻短裤","price":349,"priceMax":"","originalPrice":349,"currency":"CNY","salesText":"官方分类页排序 #2（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/4c63/aa7c/3d9640c58723/eb45afc4f158/41181123802-a7/41181123802-a7.jpg?ts=1777880721761&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E7%9F%AD%E8%A3%A4-l41181123","buyJumpUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E7%9F%AD%E8%A3%A4-l41181123","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":2,"category":"裤装-长裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"亚麻长裤","price":439,"priceMax":"","originalPrice":439,"currency":"CNY","salesText":"官方分类页排序 #3（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/b7d9/1246/ba3444c08160/cb9ffa4164c2/41176122802-a7/41176122802-a7.jpg?ts=1778767181603&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E9%95%BF%E8%A3%A4-l41176122","buyJumpUrl":"https://www.zarahome.cn/cn/%E4%BA%9A%E9%BA%BB%E9%95%BF%E8%A3%A4-l41176122","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":3,"category":"T恤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"花卉刺绣上衣","price":299,"priceMax":"","originalPrice":299,"currency":"CNY","salesText":"官方分类页排序 #4（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/58ab/baa3/53b34eb4a064/52da911d238d/49162120251-a7/49162120251-a7.jpg?ts=1778765196709&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E4%B8%8A%E8%A1%A3-l49162120","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E4%B8%8A%E8%A1%A3-l49162120","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":4,"category":"裤装-短裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"花卉刺绣短裤","price":299,"priceMax":"","originalPrice":299,"currency":"CNY","salesText":"官方分类页排序 #5（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/106c/16cf/46cc4cf4aad3/784f3c600df9/49162123251-a7/49162123251-a7.jpg?ts=1778765196788&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E7%9F%AD%E8%A3%A4-l49162123","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%88%BA%E7%BB%A3%E7%9F%AD%E8%A3%A4-l49162123","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":5,"category":"裤装-长裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"钩针长裤","price":439,"priceMax":"","originalPrice":439,"currency":"CNY","salesText":"官方分类页排序 #7（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/307e/1a80/5eee47c8b7e6/054596184d8f/42134122251-a7/42134122251-a7.jpg?ts=1778763441874&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E9%92%A9%E9%92%88%E9%95%BF%E8%A3%A4-l42134122","buyJumpUrl":"https://www.zarahome.cn/cn/%E9%92%A9%E9%92%88%E9%95%BF%E8%A3%A4-l42134122","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":6,"category":"T恤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"蕾丝短款上衣","price":349,"priceMax":"","originalPrice":349,"currency":"CNY","salesText":"官方分类页排序 #8（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/c705/35f1/1540479b952f/ea7df22f7fdc/42130120712-a7/42130120712-a7.jpg?ts=1778763441803&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E8%95%BE%E4%B8%9D%E7%9F%AD%E6%AC%BE%E4%B8%8A%E8%A1%A3-l42130120","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%95%BE%E4%B8%9D%E7%9F%AD%E6%AC%BE%E4%B8%8A%E8%A1%A3-l42130120","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":7,"category":"裤装-长裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"蕾丝长裤","price":349,"priceMax":"","originalPrice":349,"currency":"CNY","salesText":"官方分类页排序 #9（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/eec1/61b5/7b2b4595a74d/66d2c4e79f48/42129122250-a7/42129122250-a7.jpg?ts=1777562189861&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E8%95%BE%E4%B8%9D%E9%95%BF%E8%A3%A4-l42129122","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%95%BE%E4%B8%9D%E9%95%BF%E8%A3%A4-l42129122","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":8,"category":"T恤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"花卉图案上衣","price":299,"priceMax":"","originalPrice":299,"currency":"CNY","salesText":"官方分类页排序 #10（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/4f19/e859/90844f768b50/c4ea1216db0d/41182120250-f/41182120250-f.jpg?ts=1778596052368&f=auto&w=960&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%9B%BE%E6%A1%88%E4%B8%8A%E8%A1%A3-l41182120","buyJumpUrl":"https://www.zarahome.cn/cn/%E8%8A%B1%E5%8D%89%E5%9B%BE%E6%A1%88%E4%B8%8A%E8%A1%A3-l41182120","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":9,"category":"裤装-长裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"碎花长裤","price":299,"priceMax":"","originalPrice":299,"currency":"CNY","salesText":"官方分类页排序 #11（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/196f/43a8/14da4f3c8219/444ed0a50882/41182122250-a7/41182122250-a7.jpg?ts=1776151781616&f=auto&w=480&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E7%A2%8E%E8%8A%B1%E9%95%BF%E8%A3%A4-l41182122","buyJumpUrl":"https://www.zarahome.cn/cn/%E7%A2%8E%E8%8A%B1%E9%95%BF%E8%A3%A4-l41182122","query":"Zara Home 官网女士睡衣分类页"},{"brand":"Zara Home","shortBrand":"Zara Home","rank":10,"category":"裤装-短裤","brandTopCategory":"裤装-长裤","salesBasis":"官网分类页排序","title":"碎花短裤","price":239,"priceMax":"","originalPrice":239,"currency":"CNY","salesText":"官方分类页排序 #12（销量未公开）","store":"Zara Home 中国官网","channel":"品牌官网","imageUrl":"https://static.zarahome.cn/assets/public/b875/4d20/1f5e4496bc1a/3b5428713117/41182123250-f/41182123250-f.jpg?ts=1778596127250&f=auto&w=960&f=auto","detailUrl":"https://www.zarahome.cn/cn/%E7%A2%8E%E8%8A%B1%E7%9F%AD%E8%A3%A4-l41182123","buyJumpUrl":"https://www.zarahome.cn/cn/%E7%A2%8E%E8%8A%B1%E7%9F%AD%E8%A3%A4-l41182123","query":"Zara Home 官网女士睡衣分类页"}],"seasonRows":[{"brand":"MUJI 无印良品","season":"春季","category":"家居服-套装","skuCount":2,"minPrice":198,"medianPrice":223,"maxPrice":298,"topMonthlySalesText":"京东官方店销售排行榜 #5（销量未公开）","representativeProducts":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣；无侧缝天竺编织 睡衣","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"春季","category":"T恤","skuCount":2,"minPrice":59,"medianPrice":79,"maxPrice":99,"topMonthlySalesText":"公开店铺月销量 1（非官方/代购）","representativeProducts":"日本无印良品MUJI专柜 春夏女式棉编织圆领休闲纯色短袖T恤 百搭；日本无印良品MUJI专柜 春夏粗条纹女式圆领纯棉直筒短袖T恤","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"夏季","category":"家居服-套装","skuCount":2,"minPrice":246.05,"medianPrice":280.52,"maxPrice":315,"topMonthlySalesText":"公开店铺月销量 3（非官方/代购）","representativeProducts":"日本直邮MUJI 女士 双层纱布短袖家居服套装 4548076681809睡衣；日本直邮MUJI 男女同款 双面毛圈纯棉短袖家居服套装 45480764437","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"夏季","category":"T恤","skuCount":9,"minPrice":59,"medianPrice":98,"maxPrice":178,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"使用了棉的冬季内衣 圆领短袖T恤；日本无印良品MUJI专柜 春夏女式棉编织圆领休闲纯色短袖T恤 百搭；无印良品女子天竺梭织圆领短袖t恤上底衬衫25夏季女装","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"秋季","category":"家居服-上装","skuCount":5,"minPrice":348,"medianPrice":358.63,"maxPrice":373,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"印度棉法兰绒 印度风睡裙；1h可退 日本直邮MUJI 女士 无侧缝双层纱布长袖睡衣 454807663627；1h可退 日本直邮MUJI 女士 无侧缝 双层棉纱长袖睡衣 45505849715","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"秋季","category":"家居服-套装","skuCount":5,"minPrice":198,"medianPrice":263,"maxPrice":348,"topMonthlySalesText":"京东官方店销售排行榜 #5（销量未公开）","representativeProducts":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣；无侧缝法兰绒 睡衣；无侧缝天竺编织 睡衣","note":"含 1 个9-11月/秋冬重点样本"},{"brand":"MUJI 无印良品","season":"冬季","category":"家居服-上装","skuCount":1,"minPrice":348,"medianPrice":348,"maxPrice":348,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"印度棉法兰绒 印度风睡裙","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"冬季","category":"家居服-套装","skuCount":3,"minPrice":243,"medianPrice":296.5,"maxPrice":348,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"无侧缝法兰绒 睡衣；日本MUJI无印良品正品 女式秋冬款 法兰绒无侧缝睡衣家居服套装；日本直邮MUJI 男女同款 双面毛圈纯棉短袖家居服套装 45480764437","note":"含 1 个9-11月/秋冬重点样本"},{"brand":"MUJI 无印良品","season":"冬季","category":"裤装-长裤","skuCount":2,"minPrice":78,"medianPrice":83.5,"maxPrice":89,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"使用了棉的冬季内衣 十分长收腿裤；棉羊毛冬季内衣 细筒裤","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"冬季","category":"内裤","skuCount":1,"minPrice":78,"medianPrice":78,"maxPrice":78,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"使用了棉的冬季内衣 腹带短裤","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"冬季","category":"T恤","skuCount":4,"minPrice":74,"medianPrice":78,"maxPrice":128,"topMonthlySalesText":"官网公开价（销量未公开）","representativeProducts":"使用了棉的冬季内衣 U领八分袖T恤；使用了棉的冬季内衣 圆领短袖T恤；棉羊毛冬季内衣 U领八分袖T恤","note":"未见明确9-11月上市字段"},{"brand":"MUJI 无印良品","season":"四季/未判定","category":"裤装-长裤","skuCount":10,"minPrice":167.2,"medianPrice":264.1,"maxPrice":618.45,"topMonthlySalesText":"公开店铺月销量 0（非官方/代购）","representativeProducts":"日本直邮MUJI Labo 男女同款 亚麻莱赛尔宽松长裤 4548076843450；日本直邮MUJI 无印良品 女士防水直筒长裤裤子；日本直邮MUJI 无印良品 女士防水直筒长裤裤子","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"春季","category":"裤装-长裤","skuCount":1,"minPrice":283,"medianPrice":283,"maxPrice":283,"topMonthlySalesText":"7","representativeProducts":"5折起|维密舒适中腰微喇长裤女春","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"春季","category":"内裤","skuCount":4,"minPrice":66,"medianPrice":66,"maxPrice":66,"topMonthlySalesText":"1万+","representativeProducts":"维密交叉LOGO字母腰带内裤性感低腰可甜可辣棉质三角裤女2026春；5件228|维密天丝莫代尔7A抗菌内裤LOGO蕾丝舒适中腰三角裤女26春；5件228|维密流光内裤精致LOGO纹理提花舒适亲肤三角裤女2026春","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"背心吊带-单件","skuCount":15,"minPrice":129,"medianPrice":183,"maxPrice":358,"topMonthlySalesText":"10万+","representativeProducts":"维密 单依纯同款果冻条反重力PRO文胸小胸微聚拢无痕背心内衣女夏；维密果冻条背心式运动内衣软支撑字母肩带彩色可外穿无痕文胸女夏；维密果冻条软支撑内衣无痕字母肩带美背背心式细肩带薄款文胸女夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"衬衫-长袖","skuCount":1,"minPrice":168,"medianPrice":168,"maxPrice":168,"topMonthlySalesText":"100+","representativeProducts":"3折起|维密柔软宽松针织纽扣衬衫长袖睡衣上衣家居服送女友2026夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"家居服-上装","skuCount":10,"minPrice":146,"medianPrice":393,"maxPrice":873,"topMonthlySalesText":"8000+","representativeProducts":"维密宅度假系列天丝绵柔印花凉感睡衣泡泡袖娃娃领家居服女2026夏；维密性感浪漫蕾丝饰边缎面华丽长款睡袍睡衣浴袍女家居服26夏季；维密性感系带收腰光泽缎面宽松优雅短睡袍浴袍黑色送女友2026夏季","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"家居服-套装","skuCount":18,"minPrice":273,"medianPrice":643,"maxPrice":918,"topMonthlySalesText":"2万+","representativeProducts":"维密杨幂同款宅度假天丝云柔蕾丝印花凉感睡衣短袖家居服套装女夏；维密天丝索罗娜睡衣套装丝滑缎面凉感长袖长裤宽松家居服女26夏季；直降298|维密PINK缎面荷叶边短袖短裤睡衣套装家居服女26新款夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"裤装-短裤","skuCount":4,"minPrice":99,"medianPrice":283.5,"maxPrice":398,"topMonthlySalesText":"32","representativeProducts":"4折起|维密VSX高腰弹力骑行短裤女2026夏；6折起|维密PINK 丹宁中腰宽松牛仔短裤女2026夏；维密柔软休闲舒适中腰运动短裤女2026夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"裤装-长裤","skuCount":6,"minPrice":398,"medianPrice":466.5,"maxPrice":758,"topMonthlySalesText":"5","representativeProducts":"维密高腰无接缝紧身瑜伽裤长裤女2026夏；维密舒适高腰家居长裤女2026夏；维密舒适宽松中腰阔腿裤长裤运动裤女2026夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"内裤","skuCount":19,"minPrice":53,"medianPrice":66,"maxPrice":198,"topMonthlySalesText":"10万+","representativeProducts":"5件228|维密时尚舒适棉质内裤LOGO字母腰带中腰性感三角裤女夏薄；5件228|维密天丝莫代尔7A抗菌三角裤内裤LOGO蕾丝舒适女2026夏；5件278|维密LOGO弹性腰带一片式性感低腰女士三角裤内裤女夏薄款","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"夏季","category":"T恤","skuCount":5,"minPrice":160,"medianPrice":228,"maxPrice":298,"topMonthlySalesText":"8万+","representativeProducts":"维密LOGO字母肩带聚拢文胸性感无痕T恤搭档隐形粉底液内衣女夏薄；5折起|维密LOGO字母肩带文胸性感无痕T恤隐形内衣女2026夏；维密宽松舒适休闲圆领短袖T恤上装女2026夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"秋季","category":"衬衫-长袖","skuCount":1,"minPrice":168,"medianPrice":168,"maxPrice":168,"topMonthlySalesText":"100+","representativeProducts":"3折起|维密柔软宽松针织纽扣衬衫长袖睡衣上衣家居服送女友2026夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"秋季","category":"家居服-上装","skuCount":1,"minPrice":552,"medianPrice":552,"maxPrice":552,"topMonthlySalesText":"54","representativeProducts":"4折起|维密经典LOGO羊毛开衫针织衫外套家居服男女同款送女友26","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"秋季","category":"家居服-套装","skuCount":4,"minPrice":454,"medianPrice":564,"maxPrice":838,"topMonthlySalesText":"2000+","representativeProducts":"维密天丝索罗娜睡衣套装丝滑缎面凉感长袖长裤宽松家居服女26夏季；维密丝滑长袖长裤家居服宽松舒适睡衣套装可外穿女2026新款夏；4折起|维密优雅时尚光泽长袖长裤睡衣套装可外穿家居服女2026夏季","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"秋季","category":"内裤","skuCount":1,"minPrice":53,"medianPrice":53,"maxPrice":53,"topMonthlySalesText":"3万+","representativeProducts":"3件98|维密PINK 少女LOGO舒适抗菌无痕女士三角裤内裤女24秋冬","note":"含 1 个9-11月/秋冬重点样本"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"秋季","category":"T恤","skuCount":1,"minPrice":126,"medianPrice":126,"maxPrice":126,"topMonthlySalesText":"300+","representativeProducts":"4折起|维密连体衣T恤开衫卫衣女","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"冬季","category":"家居服-上装","skuCount":2,"minPrice":117,"medianPrice":334.5,"maxPrice":552,"topMonthlySalesText":"1000+","representativeProducts":"维密小暖皮显瘦塑形时尚带胸垫一体背心保暖睡眠免脱可外穿睡衣26；4折起|维密经典LOGO羊毛开衫针织衫外套家居服男女同款送女友26","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"冬季","category":"家居服-套装","skuCount":2,"minPrice":228,"medianPrice":418,"maxPrice":608,"topMonthlySalesText":"8000+","representativeProducts":"维密宅度假系列奶舒绒睡衣轻柔抗静电保暖家居服套装女可外穿26；维密丝绒光泽缎面高级感短袖睡衣套装家居服可外穿女2026新款夏","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"冬季","category":"内裤","skuCount":1,"minPrice":53,"medianPrice":53,"maxPrice":53,"topMonthlySalesText":"3万+","representativeProducts":"3件98|维密PINK 少女LOGO舒适抗菌无痕女士三角裤内裤女24秋冬","note":"含 1 个9-11月/秋冬重点样本"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"四季/未判定","category":"背心吊带-单件","skuCount":2,"minPrice":138,"medianPrice":148,"maxPrice":158,"topMonthlySalesText":"10万+","representativeProducts":"直降158|维密果冻条字母肩带内衣背心式运动软支撑可外穿文胸女26；5折起|维密性感舒适繁花蕾丝无钢圈法式三角杯美背背心文胸内衣女","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"四季/未判定","category":"家居服-上装","skuCount":5,"minPrice":181,"medianPrice":374,"maxPrice":618,"topMonthlySalesText":"9000+","representativeProducts":"维密柔软舒适系带长款居家睡袍家居服长款晨袍女新娘睡衣浴袍26；3折起|维密柔软舒适宽松版型系带收腰居家短款睡袍浴袍送女友26；3折起|维密光泽感缎面高级优雅复古性感系带睡袍浴袍家居服女2026","note":"未见明确9-11月上市字段"},{"brand":"Victoria's Secret 维多利亚的秘密","season":"四季/未判定","category":"内裤","skuCount":9,"minPrice":66,"medianPrice":128,"maxPrice":518,"topMonthlySalesText":"6万+","representativeProducts":"5件228|维密双尺码无痕内裤贴身舒适中腰弹力三角裤女士26；5件228|维密天丝™莫代尔7A抗菌内裤性感网纱透气中腰包臀三角裤；3件278|维密花漾蕾丝舒适有弹性高级性感低腰三角裤内裤女新款","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"夏季","category":"裤装-短裤","skuCount":5,"minPrice":239,"medianPrice":349,"maxPrice":439,"topMonthlySalesText":"官方分类页排序 #2（销量未公开）","representativeProducts":"亚麻短裤；花卉刺绣短裤；碎花短裤","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"秋季","category":"衬衫-长袖","skuCount":1,"minPrice":299,"medianPrice":299,"maxPrice":299,"topMonthlySalesText":"官方分类页排序 #13（销量未公开）","representativeProducts":"棉质长袖衬衫","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"四季/未判定","category":"家居服-上装","skuCount":3,"minPrice":549,"medianPrice":699,"maxPrice":699,"topMonthlySalesText":"官网商品页（销量未公开）","representativeProducts":"缎面睡袍；亚麻睡袍；短款睡裙","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"四季/未判定","category":"家居服-套装","skuCount":1,"minPrice":783,"medianPrice":783,"maxPrice":783,"topMonthlySalesText":"官网商品页（销量未公开）","representativeProducts":"Limoncella x The Animals Observatory 睡衣套装","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"四季/未判定","category":"裤装-长裤","skuCount":6,"minPrice":299,"medianPrice":394,"maxPrice":439,"topMonthlySalesText":"官方分类页排序 #3（销量未公开）","representativeProducts":"亚麻长裤；钩针长裤；蕾丝长裤","note":"未见明确9-11月上市字段"},{"brand":"Zara Home","season":"四季/未判定","category":"T恤","skuCount":6,"minPrice":299,"medianPrice":349,"maxPrice":439,"topMonthlySalesText":"官方分类页排序 #4（销量未公开）","representativeProducts":"花卉刺绣上衣；蕾丝短款上衣；花卉图案上衣","note":"未见明确9-11月上市字段"}],"sepNovRows":[{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季、冬季","title":"日本MUJI无印良品正品 女式秋冬款 法兰绒无侧缝睡衣家居服套装","category":"家居服-套装","price":278,"monthlySalesText":"公开店铺月销量 11（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_9W47dqduBtOKZBzVG6H2ndcQt6-RWRNNzuVdOw64G6uY.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/83136574/O1CN01gDeKr01yQwbxSc2HI_!!83136574.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"1h可退 日本直邮MUJI 女士 无侧缝双层纱布长袖睡衣 454807663627","category":"家居服-上装","price":366.7,"monthlySalesText":"公开店铺月销量 3（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_J5kzJG9euRtqNkno7YKTXXkIvta-63XvvVc6xPez4W0FBW.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/2201168176213/O1CN01Z6v5Ii1vlbtboSHmV_!!2201168176213-0-tmg_sticker.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"1h可退 日本直邮MUJI 女士 无侧缝 双层棉纱长袖睡衣 45505849715","category":"家居服-上装","price":350.55,"monthlySalesText":"公开店铺月销量 3（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_gPjJWG7At3t2WvzQ40Ntoo7tatr-aAZjjVSjdoQoGg6f4.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2201168176213/O1CN015UOz6L1vlbthW4eFc_!!2201168176213-0-tmg_sticker.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"1h可退 日本直邮MUJI 女士 无侧缝 双层棉纱长袖睡衣 45505849715","category":"家居服-上装","price":369,"monthlySalesText":"公开店铺月销量 1（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_xnDjXyoQIktq9kvKGMxTQ6YuAt9-ZWRNNbuRGBkMXa0tN.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/4066234693/O1CN01bY9Rzo1kXRsSKw1Ud_!!4066234693-0-tmg_sticker.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"1h可退 日本直邮MUJI 女士 无侧缝双层纱布长袖睡衣 454807663627","category":"家居服-上装","price":373,"monthlySalesText":"公开店铺月销量 2（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_xnDjXyobfktq9kvKGMxTQQGCAt9-PNzeejCOgqjJvR6I2X.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i2/4066234693/O1CN0143zv561kXRsTqJIkS_!!4066234693-0-tmg_sticker.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"1h可退 日本直邮MUJI 女士 有机棉双层纱布长袖睡衣套装 45480766","category":"家居服-套装","price":300.2,"monthlySalesText":"公开店铺月销量 2（非官方/代购）","interaction":"","link":"https://tao.hooos.com/goods_y3D9JqkMcRt2RmveGMXtoomivtA-BmWKKNHZKMOk6p3hp.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/2201168176213/O1CN01FJAPI71vlbthGDUX2_!!2201168176213-0-tmg_sticker.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"冬季","title":"棉羊毛冬季内衣 U领八分袖T恤","category":"T恤","price":74,"monthlySalesText":"官网公开价（销量未公开）","interaction":"","link":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"冬季","title":"棉羊毛冬季内衣 细筒裤","category":"裤装-长裤","price":89,"monthlySalesText":"官网公开价（销量未公开）","interaction":"","link":"https://www.muji.com.cn/cn/net/feature/warmunderwear/","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"商品标题秋冬线索","dateOrSeason":"春季、秋季","title":"无印良品 MUJI 女式 无侧缝 双层纱织 长袖睡衣","category":"家居服-套装","price":248,"monthlySalesText":"京东官方店销售排行榜 #5（销量未公开）","interaction":"","link":"https://item.jd.com/10204904466687.html","imageUrl":"https://img14.360buyimg.com/n1/jfs/t1/425986/23/20481/22741/69fa09f1Fb105b562/008332032050d163.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-05-15","title":"夏日小零食上新｜一口清爽，健康轻负担","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 115 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/6a06d417000000000603078b?xsec_token=ABEV6clmCGQnuSkWo9O8LkMf2fa1ArNnSdgNRnoQ9Et5g%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/979b1104e3b5b3070ff8d506e4fbfab4/spectrum/1040g0k03206baea75i005o129lig94co98c0s20!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-04-26","title":"上海新旗舰店餐厅上新｜限定菜品，欢迎品尝","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 6363 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69edc3e1000000002202842f?xsec_token=ABTLWOKx1MWDb1DdyH5TK3w2GQB8JVN5Zn4hh-etpMROo%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/92658f0da505e612c0a58fbebcfa4ae2/spectrum/1040g34o31vdrn5ij1m0g5o129lig94cog4q8gv0!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-04-20","title":"餐厅上新 | 尝杯罗望子美式的酸甜清爽","category":"关联生活方式产品","price":"","monthlySalesText":"","interaction":"赞 226 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69e5cc3e0000000022024f7e?xsec_token=ABoILg5eAA1jI81DrvZlHpf-1u-IAoT64CpPAtq-p0ORY%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/8d7d18b2285ae41099e2001564442a33/spectrum/1040g0k031v6396b61m005o129lig94co2q1ued8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-04-10","title":"🎁新品防晒上市｜守护海洋更守护肌肤","category":"关联生活方式产品","price":"","monthlySalesText":"","interaction":"赞 512 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69d85f5e0000000021011d40?xsec_token=ABFLLK0jB5VWlusosj5fMNMiwacSlf7wq7uqbtVK1Cu-c%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/8efae9b5b46cc619858fb9d74e299f70/spectrum/1040g34o31uovlc68hm1g5o129lig94cok60btq8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-04-09","title":"MUJI Labo上新 | 自然面料，轻盈入夏","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 112 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69d71dba000000001a021183?xsec_token=ABytbEOx7Fv1U7NHO6SbHLTR3_IZJEJu0i0_mK7XspziY%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/07d8346e8f5f07141dfa43b843ff8847/spectrum/1040g0k031unnqab01m005o129lig94cok03iur8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-04-02","title":"零食上新｜轻松时刻，从美味下午茶开始","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 157 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69cddf0a0000000028009bbd?xsec_token=ABuJp4mygXUBGC8kM6aZIXJKWPVoqV2Vf3A6ogX530OGg%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/25cfa5b0669fb1c26126e3a94bc2576b/spectrum/1040g34o31ueni92vj4005o129lig94covnkqdqg!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-03-30","title":"26年春夏汉麻系列上新|以自然为伴，自在呼吸","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 382 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69ca30d000000000220023cd?xsec_token=ABkbLIF0tD2Ijd5GBIeoGnmeOUcsMzLtop_oR9h9B1zgU%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/69835e635e5fac10b387ca814f304ef2/spectrum/1040g34o31ub2v110hs205o129lig94co7c4fir8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-03-30","title":"26年春夏汉麻系列上新|以自然为伴，自在呼吸","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 382 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69ca30d000000000220023cd?xsec_token=ABkbLIF0tD2Ijd5GBIeoGnmeOUcsMzLtop_oR9h9B1zgU%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/69835e635e5fac10b387ca814f304ef2/spectrum/1040g34o31ub2v110hs205o129lig94co7c4fir8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-03-27","title":"IDÉE系列上新 | 自然惬意，开启舒适日常","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 210 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69c5f7ac000000002200299b?xsec_token=ABJnmsgAuDEPcbe0yXIPI7BY9pkg0ImUYoQ2IBpCS_iEA%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/1be62b4bf18fe8214e269e5f75125a3b/spectrum/1040g34o31u6vvhqm2se05o129lig94cofav4bag!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2026-03-25","title":"OBP系列上新 | 环保与舒适，自在同行","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 129 / 藏 0 / 评 0","link":"https://www.xiaohongshu.com/explore/69c394430000000023011d91?xsec_token=ABFIE3Xw6V6yLUiANUQnt9p2XQlAGqucWnDmIsTY3ZbGw%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/f09c9bbfce44c48f430bcffeb8204386/spectrum/1040g34o31u4lpjuo2s5g5o129lig94codosdj40!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2025-11-28","title":"MUJI成都太古里世界旗舰店焕新启幕——","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 805 / 藏 144 / 评 130","link":"https://www.xiaohongshu.com/explore/692968f70000000019025266?xsec_token=ABBK40gktfCH0PVgT9ZMHKOSm3qG7XgxshCVnceldBRlU%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/2950d0cb151a841e8ad362d934040890/spectrum/1040g0k031pe45991ic005o129lig94cotk1ilt8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2025-11-26","title":"Muji冬季男友家居服选美大赛🙉","category":"家居服-上装","price":"","monthlySalesText":"","interaction":"赞 43 / 藏 5 / 评 2","link":"https://www.xiaohongshu.com/explore/6926a977000000001e02ea70?xsec_token=ABX88aEmEMrB0BpTq2b2tP7KvidLoKxblqSDZPrNDIWXo%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/8745e893fbdb788d9392182df2ba1126/1040g00831pbds8fojc005q7q1iedok761e2m190!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2025-10-09","title":"MUJI秋冬家居服模特穿搭专场~~~","category":"家居服-上装","price":"","monthlySalesText":"","interaction":"赞 83 / 藏 30 / 评 9","link":"https://www.xiaohongshu.com/explore/68e73a0500000000070388ca?xsec_token=ABN4o7HE29KVGhiTYWOwNr3S4dMfw53RsTAWOKUsNSwoM%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/7fe51c944319502932b5872ad9134d01/notes_pre_post/1040g3k031ndg27efl21g5q3fepdngdcp6ga0dt8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"MUJI 无印良品","type":"小红书内容/上新线索","dateOrSeason":"2025-09-24","title":"无印良品2025秋冬睡衣套装上新啦","category":"家居服-套装","price":"","monthlySalesText":"","interaction":"赞 116 / 藏 37 / 评 49","link":"https://www.xiaohongshu.com/explore/68d36f6f000000001301a75b?xsec_token=AB2SeF4wya3WlAiLLBnAoPhuP50d0QjHKae3QJc9EhN9Q%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/7f6fecb6f311cf4718e37b37176ff11f/notes_pre_post/1040g3k831mq5ismemm004a56j6fjgk200h1bito!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"夏季、秋季","title":"维密天丝索罗娜睡衣套装丝滑缎面凉感长袖长裤宽松家居服女26夏季","category":"家居服-套装","price":838,"monthlySalesText":"2000+","interaction":"","link":"https://tao.hooos.com/goods_Xqq8kA58SGtXv3OAa6nFVV2tBtg-oMZ778FeAwQbo6Os7.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/3265150369/O1CN01XwXeBC1Eb3HvYZKlj_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"夏季、秋季","title":"维密丝滑长袖长裤家居服宽松舒适睡衣套装可外穿女2026新款夏","category":"家居服-套装","price":618,"monthlySalesText":"100+","interaction":"","link":"https://tao.hooos.com/goods_Rggedz4psZtjrGn9JvVsrX5SMt6-8ZkvvmF5R2rowVwiO.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/3265150369/O1CN01I5teBp1Eb3HvfUAF8_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"夏季、秋季","title":"3折起|维密柔软宽松针织纽扣衬衫长袖睡衣上衣家居服送女友2026夏","category":"衬衫-长袖","price":168,"monthlySalesText":"100+","interaction":"","link":"https://tao.hooos.com/goods_PONP7pX4s3t6vP7mv9kSvDQhPt6-4RDrrQF8o3GYwp0sOz.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01fzpgEa1Eb3Hva4VtR_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"夏季、秋季","title":"4折起|维密优雅时尚光泽长袖长裤睡衣套装可外穿家居服女2026夏季","category":"家居服-套装","price":454,"monthlySalesText":"27","interaction":"","link":"https://tao.hooos.com/goods_k33mgGYJhYtarvjKY6XhGGRtPtJ-oMZ778FB252xy3dfj.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01YBmvQ11Eb3Hw78L9R_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"夏季、秋季","title":"维密经典宽松优雅条纹舒适长袖长裤睡衣套装家居服女2026新款夏","category":"家居服-套装","price":510,"monthlySalesText":"26","interaction":"","link":"https://tao.hooos.com/goods_Rggedz4OfZtjrGn9JvVsrrjUMt6-Mw0WW4FA0nbKoVvHK.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i3/3265150369/O1CN01h0MyS71Eb3HxTEcQ7_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"秋季、冬季","title":"3件98|维密PINK 少女LOGO舒适抗菌无痕女士三角裤内裤女24秋冬","category":"内裤","price":53,"monthlySalesText":"3万+","interaction":"","link":"https://tao.hooos.com/goods_y3nWv6nbuRt2RmveXbRUo5vCvtA-k5v00Gf8Z72X5xGsn.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i1/3265150369/O1CN01QEecay1Eb3HxvcaAx_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"商品标题秋冬线索","dateOrSeason":"秋季、冬季","title":"4折起|维密经典LOGO羊毛开衫针织衫外套家居服男女同款送女友26","category":"家居服-上装","price":552,"monthlySalesText":"54","interaction":"","link":"https://tao.hooos.com/goods_6R3O75drh8tGxYmjxoXIwrwFot3-BmWKKNHrX69PjZjHz.html","imageUrl":"https://img.alicdn.com/bao/uploaded/i4/3265150369/O1CN01Hy4RhP1Eb3Hx70vuW_!!4611686018427387297-0-item_pic.jpg","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"小红书内容/上新线索","dateOrSeason":"2025-11-04","title":"冬天就要这样穿🎄🎄每天都是暖暖的","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 280 / 藏 51 / 评 56","link":"https://www.xiaohongshu.com/explore/690989850000000005039f92?xsec_token=ABDaENoQrsHSngTCptE6smk59H1SMKuq1_GlJPk1xWp38%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/a76ce4126bc284da0b3d5584e0401ca8/notes_pre_post/1040g3k831of05jp5582g4adeic2h6jbr07vo40g!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"小红书内容/上新线索","dateOrSeason":"2025-09-23","title":"“睡”美人新皮肤🛋️提升秋冬幸福宅家感","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 1306 / 藏 236 / 评 25","link":"https://www.xiaohongshu.com/explore/68d264380000000012023cad?xsec_token=ABqpEFKzMTDhLx7A0MbsNXlKKuQLWPj3RS5izhW2MskbQ%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/b13c7e711d54f3a1c10e3226f5284fdc/1040g00831mp4fj284q004a4peluu5ih4vd32tp8!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"Victoria's Secret 维多利亚的秘密","type":"小红书内容/上新线索","dateOrSeason":"2024-09-03","title":"VS衣橱 | 沉醉杨幂的舒适秋光","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 949 / 藏 61 / 评 91","link":"https://www.xiaohongshu.com/explore/66d6d871000000001d017976?xsec_token=ABkKVJHLi98D2h22rv03v2m7PGjKXs_ecTHL25hyzztQs%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/a3335df8550a4009ba89e3e509fc1adc/spectrum/1040g0k0317c4gvrr0o004bte5nbsg46t3lt11n0!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"Zara Home","type":"商品标题秋冬线索","dateOrSeason":"秋季","title":"棉质长袖衬衫","category":"衬衫-长袖","price":299,"monthlySalesText":"官方分类页排序 #13（销量未公开）","interaction":"","link":"https://www.zarahome.cn/cn/%E6%A3%89%E8%B4%A8%E9%95%BF%E8%A2%96%E8%A1%AC%E8%A1%AB-l49186579","imageUrl":"https://static.zarahome.cn/assets/public/6594/3b64/fefe48c193e5/cf3603bdd36a/49186579802-a7/49186579802-a7.jpg?ts=1775641476916&f=auto&w=480&f=auto","note":"标题含秋冬/长袖/保暖等关键词，具体上市日期未公开"},{"brand":"Zara Home","type":"小红书内容/上新线索","dateOrSeason":"2026-01-19","title":"打折的zarahome垃圾桶一眨眼变新品","category":"其他/待判定","price":"","monthlySalesText":"","interaction":"赞 172 / 藏 30 / 评 50","link":"https://www.xiaohongshu.com/explore/696da94a000000001a03276b?xsec_token=ABRcGR-LtzUnjanWs9wB7Il8RjSu6763OGD4cVEtgLkg0%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/59d45f297b6f905898fb7b344c3a20c1/notes_pre_post/1040g3k831rgotovmg0705nu3pimgboft1flp3d0!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"},{"brand":"Zara Home","type":"小红书内容/上新线索","dateOrSeason":"2025-12-03","title":"“2套秋冬暖气房家居服🎄圣诞仪式感满满✨”","category":"家居服-上装","price":"","monthlySalesText":"","interaction":"赞 16 / 藏 5 / 评 8","link":"https://www.xiaohongshu.com/explore/692fc842000000001e0027eb?xsec_token=ABG-Zg0ouopji_ygwuPwWyCaji-6QPc9vNaFXREu8powQ%3D&xsec_source=pc_search","imageUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/8b4da00e47164e93595d422a4dae9885/1040g00831pk994ut3u0g4busqrqve61rc5js9f0!nc_n_webp_mw_1","note":"互动热度不等同销量；用于识别上新/门店/内容重点"}],"xhsRows":[{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2026-01-08","noteTitle":"请看！这些是我家里的舒适区","category":"其他/待判定","seasonTags":"四季/未判定","liked":"19309","collected":"4292","comments":"905","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/3ba36d228a6677dc43f64e777e66a98d/spectrum/1040g34o31r2muqjdgm1049pjunnhaq6pgkpq8f0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/695f50b6000000001a02a9dd?xsec_token=ABrwCdc-BkjwoSmG_A2rnXGZpJCknbD2-YsgidFgzTpt8%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-19","noteTitle":"夏日“纯”度超标 ","category":"其他/待判定","seasonTags":"夏季","liked":"1.6万","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/b66c7c146ae5ea036eb878e270411ef6/spectrum/1040g0k031tt6uh0rh6004bte5nbsg46tvrbko5o!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bbd5e2000000002003bb7c?xsec_token=AB-q_3MzJogUXmsIrHYPsb31FXdEa0yxgU-Em5pQyGNyQ%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-03-30","noteTitle":"淮海755门店关灯时刻，记录这一刻","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1.5万","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/fae0f2a068fe457d7a618eef96c084ac/spectrum/1040g0k031ub0qc9qhs005o129lig94co2voj1a8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69ca120a0000000023012dce?xsec_token=ABkbLIF0tD2Ijd5GBIeoGnmStYi0jIrZRAPsuyZ3Lkdu0%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-19","noteTitle":"维密中国区品牌代言人单依纯","category":"其他/待判定","seasonTags":"四季/未判定","liked":"9287","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/e9ee7e28df601747efce09104598af5c/spectrum/1040g0k031tt1f1nhgs004bte5nbsg46t30080g0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bbc0b80000000020038fcd?xsec_token=AB-q_3MzJogUXmsIrHYPsb33WH_dIOQEdfu25Db-MZT7Y%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-21","noteTitle":"良友节预告——📅🔵回归好物","category":"其他/待判定","seasonTags":"四季/未判定","liked":"7388","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/48bcf6281ff057d21af47a5f131573b1/spectrum/1040g34o31v7hirlgk0105o129lig94codj6riv0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69e74aa6000000001a02511a?xsec_token=AB-ZAmy0Za2y8AyML8SoONQxkyMxHnunza7k0w9Fc4nlg%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-26","noteTitle":"上海新旗舰店餐厅上新｜限定菜品，欢迎品尝","category":"其他/待判定","seasonTags":"四季/未判定","liked":"6363","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/92658f0da505e612c0a58fbebcfa4ae2/spectrum/1040g34o31vdrn5ij1m0g5o129lig94cog4q8gv0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69edc3e1000000002202842f?xsec_token=ABTLWOKx1MWDb1DdyH5TK3w2GQB8JVN5Zn4hh-etpMROo%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2025-11-27","noteTitle":"无印良品睡衣，穿了七八年，谁懂它的舒适性","category":"家居服-上装","seasonTags":"四季/未判定","liked":"5822","collected":"1263","comments":"1887","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/d86e1db1d21f9023c96789225668af81/notes_pre_post/1040g3k031pd3q3h2i86g4a19i2g1c6g95tqssm0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69285fd9000000001e016403?xsec_token=ABnMvAD9r1pzGvOq-GLO7ggyMz91pKzL6vKZATORFvATg%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-20","noteTitle":"🚪太神奇了咿呀呀——","category":"其他/待判定","seasonTags":"四季/未判定","liked":"5286","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/d701d66b1eefcad5fb00076a39db6be0/spectrum/1040g34o31tuasc7q0o104bte5nbsg46t9mcep58!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bd1410000000001f001f72?xsec_token=ABgQHIZHUJsqiVRkCflglLbFIRh7_pDrBxK71sbSOOWYc%3D&xsec_source=pc_search"},{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2024-10-29","noteTitle":"Jennie的新睡衣！","category":"家居服-上装","seasonTags":"四季/未判定","liked":"4608","collected":"478","comments":"15","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/5213c2c65c5f1cfd4a29bc5b2a03b83a/1040g2sg319hob8p76o705n8vu72kahshgava47g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/6720d5e1000000001901b3e8?xsec_token=ABh678CgWtYMYonXylZOp6yrcAi07euDOMTxx4AVtzve8%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2025-06-14","noteTitle":"维密睡衣越买越上瘾","category":"家居服-上装","seasonTags":"四季/未判定","liked":"4356","collected":"1086","comments":"198","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171527/5dab8bda856f4fb7f93269b079c09183/notes_pre_post/1040g3k831imv8rj2he9g4ae9vk44i9lhlvj7gao!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/684d17e5000000002001d734?xsec_token=AB_xB6-8--MHUkwV4mdW-vJ6nxVasUw_li1yW7wMxLtNc%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-29","noteTitle":"🎁蓝色波点化妆包，开启初夏清爽好心情！","category":"关联生活方式产品","seasonTags":"夏季","liked":"4259","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/28e6ea4ae85afb562cd402b9e2b8b00f/spectrum/1040g34o31vhgolmkk8105o129lig94cocl3v768!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69f180420000000036031072?xsec_token=ABF6l6Q1FLsPCjKp4R1DtzUH0QGZB-OpDFyiw9fvjVDxM%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-20","noteTitle":"📷📸📷📸 单依依依依依依依依纯","category":"其他/待判定","seasonTags":"四季/未判定","liked":"4218","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/d5c6fdcf3e92f35760e0dca922e8f4f5/spectrum/1040g34o31tual62q1ae04bte5nbsg46t8mkmk8g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bd1299000000001f0055fb?xsec_token=ABgQHIZHUJsqiVRkCflglLbEp0sR_SYYNtJWd68cYHF9Y%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2025-07-28","noteTitle":"超爱的几套维密睡衣💕","category":"家居服-上装","seasonTags":"四季/未判定","liked":"4115","collected":"1081","comments":"139","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171527/e466341f37741b1025a1379a178c2399/notes_pre_post/1040g3k031kfufnv2j6005pjeianhogv47oa6fpg!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/68876ed60000000025015ef2?xsec_token=AB8V0AqoPZiR6IdgfB41maDoXuo8Oqdq2vmpiDaL5W4z8%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-16","noteTitle":"☀️夏天 “纯纯”欲动","category":"其他/待判定","seasonTags":"夏季","liked":"3724","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/c375723ad389aec4cdaacbe2059e6188/spectrum/1040g0k031tp95s8umi004bte5nbsg46tdj9c5p8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69b7e5ee000000001b02017c?xsec_token=ABiy7biJcanNglBHyCouVU342TRljhaVZchbIyQsh0ups%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-25","noteTitle":"会员良友节活动，一篇攻略讲清楚","category":"其他/待判定","seasonTags":"四季/未判定","liked":"3653","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/f6ee78ae03163ce6e99b2e280458c9ea/spectrum/1040g0k031vchpnpthu005o129lig94coq22qc50!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69ec688100000000200386e0?xsec_token=AB60yLu6ghzEMQkYi2nDquC5mtWsDgA1e3rRZVNCNvKPU%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-20","noteTitle":"节奏再快 不及🥚的风格变化快","category":"其他/待判定","seasonTags":"四季/未判定","liked":"3595","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/58217e9ac21bc2b57e51054664071bd4/spectrum/1040g0k031tubpmfah8004bte5nbsg46t5jj7co0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bd15dd000000002202681e?xsec_token=ABgQHIZHUJsqiVRkCflglLbDLqwGLfZ7S4cZuqYXEFFHM%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-19","noteTitle":"维密夏日特辑☀️ ","category":"其他/待判定","seasonTags":"夏季","liked":"3338","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/1a724787f892eaf34c3a52b53f54205c/spectrum/1040g34o31tt7s6e8h60g4bte5nbsg46t3rbl3p8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bba7700000000020038ff0?xsec_token=AB-q_3MzJogUXmsIrHYPsb37hMX9W3PlbnFU0fPrNFkW0%3D&xsec_source=pc_search"},{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2025-04-12","noteTitle":"宅家日记📓｜今天穿什么～","category":"其他/待判定","seasonTags":"四季/未判定","liked":"2563","collected":"1301","comments":"158","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/d4a93f05a1e63ca41f6ac31aaf0bc9db/1040g2sg31g667cndi09g5pfc0gmh9jbohfgo648!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/67fa5ec8000000001e00433e?xsec_token=ABl438EWnw29Zrj0chvFer_JDVWvOowCUX5NPanLW8FQY%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2025-11-03","noteTitle":"🎀维秘睡衣测评｜最热门的颜色材质推荐","category":"家居服-上装","seasonTags":"四季/未判定","liked":"2522","collected":"715","comments":"56","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/1f744799d9f298e02a4cfdddd6ba7e58/notes_pre_post/1040g3k031oe86ar66m0g5ng286eg8p0rfq7bt7g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/6908c6ff0000000003020ab6?xsec_token=ABFM0yPVMXHhsanI064Wg2cQPad2oro3LLKzomOgUa6GU%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-05-07","noteTitle":"🎁夏日毛孩子刚需，凉爽舒适过夏天","category":"其他/待判定","seasonTags":"夏季","liked":"2185","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/c67fbc09ccee4c17c01bf70a795b05b0/spectrum/1040g34o31vs2nb5b2s305o129lig94cokooogig!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69fc4f460000000020039049?xsec_token=ABrXmjKGGHi6oxnXD4hUBNTXArNcPPXvLprfSRTp5RaBc%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2025-08-26","noteTitle":"世界上最舒服的衣服(不夸张","category":"其他/待判定","seasonTags":"四季/未判定","liked":"2061","collected":"921","comments":"116","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/a4fb2edca324556d8b20283bf19f31fe/1040g00831lnb2c3nleeg5oagavq0kdut5r2glp8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/68adc60f000000001d0227af?xsec_token=ABVQCHisehSv-9ii3kFU26u6LwpIKrdDW9neD39Q7lLtg%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-05-11","noteTitle":"MUJI餐厅定食 | 一人食点单指南","category":"其他/待判定","seasonTags":"四季/未判定","liked":"2019","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/05f5b4d293eb0d8fc116e155eaf0fb18/spectrum/1040g0k032013ees456005o129lig94codi4ptng!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/6a0173620000000008027b7a?xsec_token=ABlvFfXIRZyH_83IcWQIBXnD4UnNQy_KgUC9LGprUk1K4%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-20","noteTitle":"🧊今天也自我感觉“凉”好","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1979","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/b0a0393d81263879f6bec17dfb462a61/spectrum/1040g34o31tub6lmo0o0g4bte5nbsg46t0obcpl8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bd16d7000000001f006e3b?xsec_token=ABgQHIZHUJsqiVRkCflglLbOqwHAsCMtW0UK03fEAI65A%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-16","noteTitle":"🆚：明天才官宣 ","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1971","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/2ed00b0b1aeef70796e9975c2c97968e/spectrum/1040g0k031tp9anlumo004bte5nbsg46ts3ngah0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69b7e82d000000001f00296b?xsec_token=ABiy7biJcanNglBHyCouVU3xOXWDIyw7-KkEfDCX1vfUg%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2025-09-01","noteTitle":"这套维密该买吗？","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1971","collected":"496","comments":"149","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/39150ebabc303a0ae447115da4c5910f/notes_pre_post/1040g3k031lsjklcv5e005n9kiq342fcfk7dpbv0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/68b52a92000000001d034f4c?xsec_token=ABZEViI5_XbjG8zgAUabfzhH7yT-3XIBvQxB-2Lu69T6I%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-06","noteTitle":"春天的第一束鲜花送给你","category":"其他/待判定","seasonTags":"春季","liked":"1965","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/2b5f3180f2bea8ba5caf17a7544e149f/1040g00831tcfhg2sle004bte5nbsg46thk9ai10!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69aacb2e000000002602d01d?xsec_token=AB5wm6zALz8Jkn33lCAXIf1mR32kXkedUPL6d522dv7YQ%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-27","noteTitle":"餐厅好味 | 一勺吃到多重口感的蛋包饭","category":"关联生活方式产品","seasonTags":"四季/未判定","liked":"1893","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/fa3283e5194f92f68d5a55c5be3391b5/spectrum/1040g0k031veumfbrk8005o129lig94cog1ah7v0!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69eedf54000000002202ae90?xsec_token=ABKRbVwZxWRhMDOieL0lz1dLQdJkpAs_xUHnvBnoye-78%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-20","noteTitle":"🏖️这个班就上到这儿了","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1829","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/db1e5680ac60e13ef6c0d6ca0a86982d/spectrum/1040g0k031tub9vnhh8004bte5nbsg46tik2giuo!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bd174c0000000023016d4d?xsec_token=ABgQHIZHUJsqiVRkCflglLbCv4P-e1ZimWJfuZhfiZdaE%3D&xsec_source=pc_search"},{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2026-01-29","noteTitle":"Zara Zarahome  每一个都好美","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1715","collected":"435","comments":"147","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/76c7bbda96bd610ec65daac4649f9656/1040g00831rttg75rj20g5q8hd0ldt6tccs91c1g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/697ae49e000000000d008b73?xsec_token=ABSAHwQ0sfnkbPdFUub_BCHuauaNEjx6qMWET49hJwsAg%3D&xsec_source=pc_search"},{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2026-03-19","noteTitle":"游戏时间到！ ","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1668","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/b520a1ea7aac63125454e45842d1b03f/1040g00831tspjbui6u005nll4ch08q46r0fp35g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bb800e00000000210103cd?xsec_token=AB-q_3MzJogUXmsIrHYPsb3yBcM_GIoTFz-2XjZsdY-Vw%3D&xsec_source=pc_search"},{"brand":"Zara Home","shortBrand":"Zara Home","noteDate":"2026-03-19","noteTitle":"游戏时间到！","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1668","collected":"809","comments":"25","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171529/14aa79a378a77377e3bb2ccf085df59b/1040g00831tspjbui6u005nll4ch08q46r0fp35g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69bb800e00000000210103cd?xsec_token=ABw-FliTXPU1rljRM6I8GfIy_GVQex3fdpsE7NfLTwYrI%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-04-07","noteTitle":"","category":"其他/待判定","seasonTags":"四季/未判定","liked":"1450","collected":"188","comments":"383","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/910383ad4ee683eee1c2b0c840ed9d6e/1040g2sg31ulo8nt52oe05pmccrqncbdpcl9tfo8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69d50eb0000000001b022535?xsec_token=AB5NqnhAul02RZfXdpOlmQxx64NFY_3i_R8pFhNl-7Lgk%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2025-09-23","noteTitle":"“睡”美人新皮肤🛋️提升秋冬幸福宅家感","category":"其他/待判定","seasonTags":"秋季、冬季","liked":"1306","collected":"236","comments":"25","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171528/b13c7e711d54f3a1c10e3226f5284fdc/1040g00831mp4fj284q004a4peluu5ih4vd32tp8!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/68d264380000000012023cad?xsec_token=ABqpEFKzMTDhLx7A0MbsNXlKKuQLWPj3RS5izhW2MskbQ%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-13","noteTitle":"🍦春天的好心情是Gelato给的","category":"其他/待判定","seasonTags":"春季","liked":"1217","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/44741ea20b60952903db98b57d554e50/spectrum/1040g0k031ut6ibbkhm005o129lig94col9apn28!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69dcaffb0000000022001fa5?xsec_token=ABo2bDx3Kxk4qYLP5burMtgmqvOGICQtt_aFB9fNvuQM0%3D&xsec_source=pc_search"},{"brand":"MUJI 无印良品","shortBrand":"MUJI","noteDate":"2026-04-03","noteTitle":"带上MUJI餐厅便当，到春天里走走","category":"其他/待判定","seasonTags":"春季","liked":"1214","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/936a1a0603783ce254813c76f7488347/1040g2sg31ul22ijaig0g5o129lig94cosbv8v98!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69cf6d9c000000002800a020?xsec_token=ABnfxDG34ljw4kHGZ5-Rwt_N30tHHSfS3Vxixu6wO55zw%3D&xsec_source=pc_search"},{"brand":"Victoria's Secret 维多利亚的秘密","shortBrand":"Victoria's Secret","noteDate":"2026-03-30","noteTitle":"走吗？去感受一夏🌴","category":"其他/待判定","seasonTags":"夏季","liked":"1144","collected":"0","comments":"0","coverUrl":"http://sns-webpic-qc.xhscdn.com/202605171530/f19a36f2d5edb5a7eb2b8d6b42183e58/spectrum/1040g0k031ub8uhh7hu004bte5nbsg46t49buo2g!nc_n_webp_mw_1","noteUrl":"https://www.xiaohongshu.com/explore/69ca575f0000000021004f58?xsec_token=ABkbLIF0tD2Ijd5GBIeoGnmSSSGte__b-IdbiDcEJllVs%3D&xsec_source=pc_search"}],"categoryRules":[["背心吊带-单件","吊带、背心、美背、挂脖、抹胸、bra/cami/tank/halter/strapless/built-in bra","单件背心、吊带、带杯上身单品。"],["背心吊带-多件包/套装","上述关键词 + 2件/3件/多件/任选/套装/pack","多件包单独区分，避免影响单价判断。"],["T恤","T恤、短袖、polo、tee、t-shirt、long-sleeve tee、top/pullover","如标题明确为睡衣/家居服，优先归入家居服。"],["内裤","内裤、brief、panty/panties、underwear、安全裤、打底裤","成人女性贴身底裤口径。"],["裤装-短裤","短裤、热裤、骑行裤、bermuda、shorts","外穿短裤。"],["裤装-长裤","长裤、裤子、阔腿裤、parachute、cargo、pants/trousers","外穿长裤。"],["衬衫-长袖","衬衫/shirt + 长袖/long sleeve","严格只看长袖衬衫。"],["家居服-上装/裤装/套装","睡衣、家居服、homewear、loungewear、pajama、athome、lounge；再按裤/套装细分","成人女性居家服核心比较口径。"],["眼罩","眼罩、eye mask","独立小配件品类。"],["关联生活方式产品","袜、袖套、防晒、口罩、杯、抱枕、化妆包、床品、帽包、围巾、发夹、鞋等","生活方式延展观察，不作为核心服装主结论。"]],"sourceLinks":[["Hooos 淘宝/天猫公开页","https://tao.hooos.com/"],["MUJI 中国官网冬季内衣页","https://www.muji.com.cn/cn/net/feature/warmunderwear/"],["京东 MUJI 官方旗舰店","https://muji.jd.com/"],["Zara Home 中国官网女士睡衣","https://www.zarahome.cn/cn/%E6%9C%8D%E8%A3%9D-%E5%A5%B3%E5%A3%AB-%E7%9D%A1%E8%A1%A3-n1494"],["Zara Home Store Locator","https://www.zarahome.cn/cn/store-locator.html"],["Victoria's Secret 小红书主页","https://www.xiaohongshu.com/user/profile/5bf8d7c849b0c200017e10dd"],["MUJI 无印良品小红书主页","https://www.xiaohongshu.com/user/profile/60224d650000000001009198"],["ZARA HOME 小红书主页","https://www.xiaohongshu.com/user/profile/5eb523220000000001006886"]]}</script>
+  <script>
+    const data = JSON.parse(document.getElementById("payload").textContent);
+    const brands = ["全部", ...data.stats.map((row) => row.brand)];
+    const seasons = ["全部", "春季", "夏季", "秋季", "冬季", "四季/未判定"];
+    const state = { brand: "全部", season: "全部" };
+
+    const esc = (value) => String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+    const money = (value) => Number.isFinite(value) ? "¥" + Number(value).toLocaleString("zh-CN", { maximumFractionDigits: 2 }) : "未公开";
+    const short = (brand) => data.stats.find((row) => row.brand === brand)?.short || brand;
+    const match = (row, q) => !q || JSON.stringify(row).toLowerCase().includes(q.toLowerCase());
+    const brandOk = (row) => state.brand === "全部" || row.brand === state.brand;
+
+    function link(url, label) {
+      if (!url) return esc(label || "");
+      return `<a href="${esc(url)}" target="_blank" rel="noreferrer">${esc(label || url)}</a>`;
+    }
+
+    function renderSegments() {
+      document.querySelectorAll('[data-filter="brand"]').forEach((node) => {
+        node.innerHTML = brands.map((brand) => `
+          <button class="segment ${state.brand === brand ? "active" : ""}" data-brand="${esc(brand)}">${esc(brand === "全部" ? "全部品牌" : short(brand))}</button>
+        `).join("");
+      });
+      document.querySelectorAll('[data-filter="season"]').forEach((node) => {
+        node.innerHTML = seasons.map((season) => `
+          <button class="segment ${state.season === season ? "active" : ""}" data-season="${esc(season)}">${esc(season)}</button>
+        `).join("");
+      });
+      document.querySelectorAll("[data-brand]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.brand = button.dataset.brand;
+          renderAll();
+        });
+      });
+      document.querySelectorAll("[data-season]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.season = button.dataset.season;
+          renderAll();
+        });
+      });
+    }
+
+    function renderHero() {
+      const hero = document.getElementById("heroGallery");
+      const heroRows = data.stats.flatMap((stat) =>
+        data.topProducts.filter((row) => row.brand === stat.brand && row.imageUrl).slice(0, 3)
+      );
+      hero.innerHTML = heroRows
+        .map((row, index) => `
+          <a href="${esc(row.detailUrl)}" target="_blank" rel="noreferrer" style="animation-delay:${index * 45}ms">
+            <img src="${esc(row.imageUrl)}" alt="${esc(row.title)}" loading="${index < 3 ? "eager" : "lazy"}" />
+          </a>
+        `).join("");
+    }
+
+    function renderSummary() {
+      document.getElementById("brandStrip").innerHTML = data.stats.map((row) => `
+        <article class="brand-pane">
+          <h3>${esc(row.short)}</h3>
+          <div class="range">${money(row.minPrice)}-${money(row.maxPrice)}</div>
+          <p>样本 ${row.productCount} 个；最高信号品类：${esc(row.topCategory)}；小红书粉丝 ${esc(row.fans)}。</p>
+          ${link(row.topLink, row.topProduct || "查看代表商品")}
+        </article>
+      `).join("");
+    }
+
+    function renderChannels() {
+      const q = document.getElementById("channelSearch").value.trim();
+      const rows = data.channelRows
+        .filter((row) => state.brand === "全部" || row[0] === state.brand)
+        .filter((row) => match(row, q));
+      document.getElementById("channelGrid").innerHTML = rows.map((row) => `
+        <article class="channel">
+          <span class="pill">${esc(short(row[0]))}</span>
+          <h3>${esc(row[1])}</h3>
+          <p>${esc(row[2])}</p>
+          <p style="margin-top:12px"><span class="pill">置信度：${esc(row[4])}</span></p>
+        </article>
+      `).join("");
+    }
+
+    function renderPriceRows() {
+      const q = document.getElementById("priceSearch").value.trim();
+      const rows = data.priceBands.filter(brandOk).filter((row) => match(row, q));
+      document.getElementById("priceRows").innerHTML = rows.map((row) => `
+        <tr>
+          <td>${esc(short(row.brand))}</td>
+          <td>${esc(row.channel)}</td>
+          <td><span class="pill">${esc(row.category)}</span></td>
+          <td class="num">${esc(row.skuCount)}</td>
+          <td class="num">${money(row.minPrice)}</td>
+          <td class="num">${money(row.medianPrice)}</td>
+          <td class="num">${money(row.maxPrice)}</td>
+          <td>${esc(row.topMonthlySalesText || "未公开")}</td>
+          <td>${link(row.topProductLink, row.topProduct)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderTopGrid() {
+      const q = document.getElementById("topSearch").value.trim();
+      const rows = data.topProducts.filter(brandOk).filter((row) => match(row, q));
+      document.getElementById("topGrid").innerHTML = rows.map((row) => `
+        <a class="product" href="${esc(row.detailUrl || row.buyJumpUrl)}" target="_blank" rel="noreferrer">
+          <img src="${esc(row.imageUrl)}" alt="${esc(row.title)}" loading="lazy" />
+          <div class="body">
+            <span class="pill">${esc(row.shortBrand)} #${esc(row.rank)}</span>
+            <h3>${esc(row.title)}</h3>
+            <div class="meta">
+              <span class="pill">${esc(row.category)}</span>
+              <span class="pill">${esc(row.salesBasis)}</span>
+            </div>
+          </div>
+          <div class="price"><strong>${money(row.price)}</strong><span>${esc(row.salesText || "未公开")}</span></div>
+        </a>
+      `).join("");
+    }
+
+    function renderSeasonRows() {
+      const q = document.getElementById("seasonSearch").value.trim();
+      const rows = data.seasonRows
+        .filter(brandOk)
+        .filter((row) => state.season === "全部" || row.season === state.season)
+        .filter((row) => match(row, q));
+      document.getElementById("seasonRows").innerHTML = rows.map((row) => `
+        <tr>
+          <td>${esc(short(row.brand))}</td>
+          <td>${esc(row.season)}</td>
+          <td><span class="pill">${esc(row.category)}</span></td>
+          <td class="num">${esc(row.skuCount)}</td>
+          <td class="num">${money(row.minPrice)}</td>
+          <td class="num">${money(row.medianPrice)}</td>
+          <td class="num">${money(row.maxPrice)}</td>
+          <td>${esc(row.representativeProducts)}</td>
+          <td>${esc(row.note)}</td>
+        </tr>
+      `).join("");
+    }
+
+    function renderSignals() {
+      const rows = data.sepNovRows.filter(brandOk).slice(0, 42);
+      document.getElementById("signals").innerHTML = rows.map((row) => `
+        <div class="signal">
+          <div>
+            <span class="pill">${esc(short(row.brand))}</span>
+            <strong>${link(row.link, row.title)}</strong>
+          </div>
+          <span>${esc(row.dateOrSeason || "")} · ${esc(row.category || "")} · ${row.price ? money(row.price) : esc(row.interaction || row.monthlySalesText || "线索")}</span>
+        </div>
+      `).join("");
+    }
+
+    function renderRules() {
+      document.getElementById("rulesList").innerHTML = data.categoryRules.map((row) => `
+        <article class="rule">
+          <h3>${esc(row[0])}</h3>
+          <p>${esc(row[1])}</p>
+          <p>${esc(row[2])}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderSources() {
+      document.getElementById("sourceLinks").innerHTML = [
+        ['完整 Excel 工作簿', './VS_MUJI_ZaraHome_pricing_analysis_20260517.xlsx'],
+        ...data.sourceLinks,
+      ].map(([label, url]) => `<a href="${esc(url)}" target="_blank" rel="noreferrer">${esc(label)}</a>`).join("");
+    }
+
+    function renderAll() {
+      renderSegments();
+      renderChannels();
+      renderPriceRows();
+      renderTopGrid();
+      renderSeasonRows();
+      renderSignals();
+    }
+
+    ["channelSearch", "priceSearch", "topSearch", "seasonSearch"].forEach((id) => {
+      document.addEventListener("input", (event) => {
+        if (event.target.id === id) renderAll();
+      });
+    });
+
+    renderHero();
+    renderSummary();
+    renderRules();
+    renderSources();
+    renderAll();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+  </script>
+</body>
+</html>
