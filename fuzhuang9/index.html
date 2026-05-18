@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>全部核心 SKU 明细</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Local SKU browser</p>
+        <h1>全部核心 SKU 明细</h1>
+        <p>展示成人女性核心品类过滤后的全部 SKU/SPU，支持品牌、品类、价格、销量、图片状态和关键词筛选。</p>
+      </div>
+      <div class="header-meta">
+        <strong id="heroCount">—</strong>
+        <span>SKU/SPU</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="filters">
+        <label>品牌<select id="brandFilter"></select></label>
+        <label>品类<select id="categoryFilter"></select></label>
+        <label>价格状态<select id="priceFilter"><option>全部</option><option>有价格</option><option>缺价格</option></select></label>
+        <label>图片状态<select id="imageFilter"><option>全部</option><option>有本地图片</option><option>无本地图片</option></select></label>
+        <label class="search">关键词<input id="searchInput" type="search" placeholder="搜索标题、店铺、itemId、SKU摘要" /></label>
+      </section>
+
+      <section class="summary" id="summary"></section>
+
+      <section class="modebar">
+        <div class="segmented" role="tablist" aria-label="视图切换">
+          <button class="active" data-view="grid">图文</button>
+          <button data-view="table">表格</button>
+        </div>
+        <div class="pager">
+          <button id="prevPage" aria-label="上一页">‹</button>
+          <span id="pageInfo"></span>
+          <button id="nextPage" aria-label="下一页">›</button>
+        </div>
+      </section>
+
+      <section id="gridView" class="sku-grid"></section>
+
+      <section id="tableView" class="table-wrap" hidden>
+        <table id="skuTable"></table>
+      </section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
