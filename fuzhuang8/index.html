@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>核心品类 SKU 价格带与销量分析</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">12 brands / adult women core categories</p>
+        <h1>核心品类 SKU 价格带与销量分析</h1>
+        <p class="scope">
+          基于淘宝/天猫官方店铺核心 SKU 过滤结果，聚焦背心吊带、T恤、内裤、裤装、长袖衬衫、家居服和眼罩。
+        </p>
+      </div>
+      <nav class="top-actions" aria-label="页面操作">
+        <a href="./assets/核心品类SKU价格带与销量分析_20260518.xlsx" download>下载 Excel</a>
+        <a href="#top-products">查看 TOP10</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="筛选器">
+        <label>
+          品牌
+          <select id="brandFilter"></select>
+        </label>
+        <label>
+          品类
+          <select id="categoryFilter"></select>
+        </label>
+        <label class="search-label">
+          搜索商品
+          <input id="searchInput" type="search" placeholder="输入关键词、品牌或品类" />
+        </label>
+        <label class="toggle-line">
+          <input id="pricedOnly" type="checkbox" />
+          仅看有价格商品
+        </label>
+      </section>
+
+      <section class="kpis" id="kpis" aria-label="关键指标"></section>
+
+      <section class="section-grid">
+        <section class="panel coverage-panel">
+          <div class="section-title">
+            <p>Coverage</p>
+            <h2>数据覆盖</h2>
+          </div>
+          <div id="coverageList" class="coverage-list"></div>
+        </section>
+
+        <section class="panel notes-panel">
+          <div class="section-title">
+            <p>Boundary</p>
+            <h2>关键边界</h2>
+          </div>
+          <ul class="notes-list">
+            <li>Zara Home 当前只有标题和销量，价格、商品链接和图片为缺失。</li>
+            <li>Ubras、Almondrocks、gelato pique 价格覆盖偏低，价格带仅作方向性参考。</li>
+            <li>tbh、MUJI 价格完整，但当前销量字段缺失。</li>
+            <li>9/10/11 月精确上市月份未在 SKU 标题中命中，秋季用标题季节信号推断。</li>
+          </ul>
+        </section>
+      </section>
+
+      <section class="panel" id="price-band">
+        <div class="section-title row-title">
+          <div>
+            <p>Category → Brand</p>
+            <h2>品类价格带</h2>
+          </div>
+          <div class="category-tabs" id="categoryTabs" aria-label="品类快捷筛选"></div>
+        </div>
+        <div class="table-wrap">
+          <table id="priceBandTable"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="brand-category">
+        <div class="section-title">
+          <p>Best-selling category</p>
+          <h2>每个品牌销售量最高的产品品类</h2>
+        </div>
+        <div class="table-wrap">
+          <table id="topCategoryTable"></table>
+        </div>
+      </section>
+
+      <section class="panel" id="top-products">
+        <div class="section-title row-title">
+          <div>
+            <p>Top products</p>
+            <h2>品牌 TOP10 商品</h2>
+          </div>
+          <span id="topProductCount" class="muted"></span>
+        </div>
+        <div id="topProductsGrid" class="product-grid"></div>
+      </section>
+
+      <section class="section-grid">
+        <section class="panel">
+          <div class="section-title">
+            <p>Season</p>
+            <h2>春夏秋冬价格带</h2>
+          </div>
+          <div id="seasonView" class="season-view"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-title">
+            <p>Sep-Nov focus</p>
+            <h2>秋季重点 SKU</h2>
+          </div>
+          <div id="autumnList" class="autumn-list"></div>
+        </section>
+      </section>
+
+      <section class="panel" id="rules">
+        <div class="section-title">
+          <p>Taxonomy</p>
+          <h2>品类归类规则</h2>
+        </div>
+        <div class="rules-grid" id="rulesGrid"></div>
+      </section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
