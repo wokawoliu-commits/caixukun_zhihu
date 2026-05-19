@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MADEINAM 小红书人群与传播推广分析</title>
+  <style>
+    :root {
+      --ink: #111316;
+      --muted: #626a73;
+      --line: #dfe3e8;
+      --paper: #f7f5ef;
+      --white: #ffffff;
+      --denim: #174f8a;
+      --denim-deep: #102a43;
+      --sky: #d9e9f5;
+      --warm: #e7dfd0;
+      --risk: #8f2d26;
+      --ok: #1f6f54;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+    }
+    a { color: var(--denim); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 14px 32px;
+      border-bottom: 1px solid rgba(17, 19, 22, 0.1);
+      background: rgba(247, 245, 239, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .brand-mark { font-size: 13px; font-weight: 800; letter-spacing: 0; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; color: var(--muted); }
+    .hero {
+      min-height: 72svh;
+      display: grid;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
+      gap: 48px;
+      align-items: end;
+      padding: 64px 48px 56px;
+      background:
+        linear-gradient(120deg, rgba(16, 42, 67, 0.88), rgba(23, 79, 138, 0.62)),
+        url("assets/b9-26c9261e7f.png") center 35% / cover;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hero h1 {
+      margin: 10px 0 18px;
+      font-size: clamp(46px, 8vw, 108px);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid rgba(255,255,255,0.38);
+      padding: 5px 10px;
+      font-size: 12px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.88);
+    }
+    .hero-copy {
+      max-width: 640px;
+      font-size: clamp(18px, 2vw, 26px);
+      line-height: 1.38;
+      color: rgba(255,255,255,0.88);
+    }
+    .hero-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-self: stretch;
+      align-items: end;
+    }
+    .proof-item {
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.34);
+      color: rgba(255,255,255,0.84);
+      font-size: 13px;
+    }
+    .proof-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 28px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+    main { overflow: clip; }
+    section {
+      padding: 76px 48px;
+      border-bottom: 1px solid rgba(17, 19, 22, 0.1);
+    }
+    .section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(240px, 0.42fr) minmax(300px, 0.58fr);
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 34px;
+    }
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 54px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+    h3 { margin: 0 0 8px; line-height: 1.18; letter-spacing: 0; }
+    p { margin: 0 0 14px; }
+    .muted { color: var(--muted); }
+    .mini { color: var(--muted); font-size: 12px; }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .metric {
+      background: var(--white);
+      min-height: 150px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .metric strong { display: block; font-size: 30px; line-height: 1; color: var(--denim-deep); }
+    .metric span { display: block; font-weight: 750; margin-top: 10px; }
+    .metric small { color: var(--muted); }
+    .takeaways {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      margin-top: 34px;
+    }
+    .takeaway {
+      background: var(--white);
+      padding: 26px;
+    }
+    .takeaway b { color: var(--denim); }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .product {
+      background: var(--white);
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-image {
+      display: block;
+      aspect-ratio: 4 / 5;
+      background: var(--warm);
+      overflow: hidden;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 260ms ease, filter 260ms ease;
+    }
+    .product:hover img { transform: scale(1.035); filter: saturate(1.08); }
+    .product-body { padding: 18px; display: flex; flex: 1; flex-direction: column; }
+    .product-kicker { color: var(--denim); font-size: 12px; font-weight: 800; margin-bottom: 8px; }
+    .product p { font-size: 13px; }
+    .product span {
+      margin-top: auto;
+      color: var(--denim-deep);
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+      font-size: 14px;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 16px;
+    }
+    th {
+      position: sticky;
+      top: 48px;
+      background: #eef3f7;
+      color: var(--denim-deep);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      z-index: 2;
+    }
+    tr:last-child td { border-bottom: 0; }
+    .dense table { font-size: 13px; }
+    .band {
+      background: var(--denim-deep);
+      color: var(--white);
+    }
+    .band .muted { color: rgba(255,255,255,0.72); }
+    .band-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag-cloud span {
+      border: 1px solid rgba(255,255,255,0.24);
+      color: rgba(255,255,255,0.9);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 13px;
+    }
+    .risk-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .risk {
+      background: var(--white);
+      padding: 22px;
+    }
+    .risk strong { color: var(--risk); }
+    .footer {
+      padding: 34px 48px 54px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .reveal { animation: rise 620ms cubic-bezier(.2,.8,.2,1) both; }
+    .reveal:nth-child(2) { animation-delay: 80ms; }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @media (max-width: 1100px) {
+      .hero { grid-template-columns: 1fr; align-items: end; }
+      .hero-proof, .summary, .product-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-head, .band-grid { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (max-width: 720px) {
+      .nav { padding: 12px 18px; align-items: flex-start; }
+      .nav-links { display: none; }
+      .hero { min-height: 76svh; padding: 42px 22px 30px; }
+      .hero-proof, .summary, .takeaways, .product-grid, .risk-list { grid-template-columns: 1fr; }
+      section { padding: 52px 20px; }
+      .footer { padding: 28px 20px 42px; }
+      table { min-width: 760px; }
+      .proof-item strong { font-size: 23px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand-mark">MADEINAM XHS REPORT</div>
+    <div class="nav-links">
+      <a href="#summary">核心结论</a>
+      <a href="#products">核心产品</a>
+      <a href="#kol">KOL/KOC</a>
+      <a href="#discussion">用户讨论</a>
+      <a href="#channels">渠道线索</a>
+      <a href="#risks">风险建议</a>
+    </div>
+  </nav>
+  <header class="hero">
+    <div class="reveal">
+      <span class="eyebrow">老板汇报版 · 抓取日期 2026-05-19</span>
+      <h1>MADEINAM</h1>
+      <p class="hero-copy">以牛仔裤版型为商业核心，以主理人审美和 AM 女孩社群为传播核心的 Denim lifestyle 品牌。</p>
+    </div>
+    <div class="hero-proof reveal">
+      <div class="proof-item"><strong>229</strong>去重小红书笔记</div>
+      <div class="proof-item"><strong>37</strong>重点笔记详情</div>
+      <div class="proof-item"><strong>309</strong>评论/回复精读</div>
+    </div>
+  </header>
+  <main>
+    <section id="summary">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>核心结论</h2>
+          <p class="muted">结论按“可确认 / 可推断 / 需后台确认”区分。公开前台热度不能直接等同销量或 GMV。</p>
+        </div>
+        <div class="summary">
+          <div class="metric"><strong>42,451</strong><span>官方账号粉丝</span><small>MADEINAM 官方小红书</small></div>
+          <div class="metric"><strong>64,272</strong><span>官方获赞收藏</span><small>主页前台可见</small></div>
+          <div class="metric"><strong>208,581</strong><span>AKIKIYU 粉丝</span><small>高关联主理人账号</small></div>
+          <div class="metric"><strong>280,445</strong><span>张悦儿粉丝</span><small>高关联主理人账号</small></div>
+          <div class="metric"><strong>¥580-680</strong><span>核心价带</span><small>牛仔裤主价格带</small></div>
+        </div>
+        <div class="takeaways">
+          <div class="takeaway"><b>品牌定位：</b>不是单一牛仔裤品牌，而是牛仔裤 + 主理人审美 + AM 女孩社群 + 蓝房子线下事件的组合。</div>
+          <div class="takeaway"><b>最强公开热度单品：</b>B9 木工裤。淘宝前台“千人加购”，高于本次核验的其他核心裤型。</div>
+          <div class="takeaway"><b>最高讨论主题：</b>直播/选品信任和蓝房子主理人事件，高于单一产品参数讨论。</div>
+          <div class="takeaway"><b>最大经营风险：</b>预售发货、售后口径、价格与做工争议，会反噬主理人社群信任。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>核心产品与价格带</h2>
+          <p class="muted">所有产品图片均已下载为本地图片。产品热度来自小红书公开互动、淘宝前台文案和详情页提示。</p>
+        </div>
+        
+    <div class="product-grid">
+      
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1044368765875" target="_blank" rel="noreferrer" class="product-image" aria-label="B9 木工裤 商品页">
+            <img src="assets/b9-26c9261e7f.png" alt="B9 木工裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">B9 · ¥680</div>
+            <h3>B9 木工裤</h3>
+            <p class="muted">男友裤 / 工装口袋</p>
+            <p>淘宝详情页显示“千人加购”；官方小红书 B9 产品帖 68 赞 / 32 藏 / 8 评。</p>
+            <span>公开前台最热候选</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1045249832549" target="_blank" rel="noreferrer" class="product-image" aria-label="W3 巴黎女孩口袋裤 商品页">
+            <img src="assets/w3-cc87198ed0.jpg" alt="W3 巴黎女孩口袋裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">W3 · ¥680</div>
+            <h3>W3 巴黎女孩口袋裤</h3>
+            <p class="muted">高腰 / 前贴袋 / 阔腿</p>
+            <p>淘宝详情页预售 26 天内发货；关键词 W3 多次命中。</p>
+            <span>核心编码裤型</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1045267836105" target="_blank" rel="noreferrer" class="product-image" aria-label="ST11 破洞少年裤 商品页">
+            <img src="assets/st11-5ac46ce6dd.jpg" alt="ST11 破洞少年裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">ST11 · ¥680</div>
+            <h3>ST11 破洞少年裤</h3>
+            <p class="muted">中腰 / 破洞 / 宽松直筒</p>
+            <p>淘宝详情页“百人购买”；发货、避雷搜索中反复出现。</p>
+            <span>讨论高频款</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1038123983626" target="_blank" rel="noreferrer" class="product-image" aria-label="W4 三角插片阔腿裤 商品页">
+            <img src="assets/w4-9855f69038.webp" alt="W4 三角插片阔腿裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">W4 · ¥680</div>
+            <h3>W4 三角插片阔腿裤</h3>
+            <p class="muted">中高腰 / 侧插片 / 阔腿</p>
+            <p>淘宝详情页预售 24 天内发货。</p>
+            <span>核心阔腿线</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1048177790885" target="_blank" rel="noreferrer" class="product-image" aria-label="ST9 老钱轻薄纸片裤 商品页">
+            <img src="assets/st9-904cf814e7.png" alt="ST9 老钱轻薄纸片裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">ST9 · ¥680</div>
+            <h3>ST9 老钱轻薄纸片裤</h3>
+            <p class="muted">轻薄全棉 / 中腰直筒</p>
+            <p>淘宝详情页“百人购买”；官方产品帖 11 赞 / 3 藏。</p>
+            <span>通勤直筒款</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1049392787682" target="_blank" rel="noreferrer" class="product-image" aria-label="ST12 冰蓝直尺裤 商品页">
+            <img src="assets/st12-bb836fdb50.webp" alt="ST12 冰蓝直尺裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">ST12 · ¥680</div>
+            <h3>ST12 冰蓝直尺裤</h3>
+            <p class="muted">中腰 / 直筒微阔 / 浅蓝</p>
+            <p>淘宝详情页“近期热销”，预售 30 天内发货；官方新品帖。</p>
+            <span>近期新品热度</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1032943754095" target="_blank" rel="noreferrer" class="product-image" aria-label="ST10 纯白低腰直筒裤 商品页">
+            <img src="assets/st10-68d975b181.jpg" alt="ST10 纯白低腰直筒裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">ST10 · ¥680</div>
+            <h3>ST10 纯白低腰直筒裤</h3>
+            <p class="muted">低腰 / 直筒 / 清爽白</p>
+            <p>淘宝详情页“百人购买”。</p>
+            <span>夏季直筒款</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1034654980560" target="_blank" rel="noreferrer" class="product-image" aria-label="B8 深靛蓝弯刀裤 商品页">
+            <img src="assets/b8-969854ae0e.webp" alt="B8 深靛蓝弯刀裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">B8 · ¥680</div>
+            <h3>B8 深靛蓝弯刀裤</h3>
+            <p class="muted">深靛蓝 / 微弯刀 / 挺括全棉</p>
+            <p>淘宝详情页“百人购买”。</p>
+            <span>深色弯刀款</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1032264455473" target="_blank" rel="noreferrer" class="product-image" aria-label="SL4 挺缝线烟管裤 商品页">
+            <img src="assets/sl4-2c33243c7d.jpg" alt="SL4 挺缝线烟管裤">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">SL4 · ¥680-780</div>
+            <h3>SL4 挺缝线烟管裤</h3>
+            <p class="muted">烟管裤 / 弹力莱卡 / 牛仔西装</p>
+            <p>淘宝详情页“近期热销 / 即将售罄”。</p>
+            <span>套装与裤型组合</span>
+          </div>
+        </article>
+        <article class="product">
+          <a href="https://item.taobao.com/item.htm?id=1034692148443" target="_blank" rel="noreferrer" class="product-image" aria-label="免穿文胸吊带背心 商品页">
+            <img src="assets/top-069618ec37.jpg" alt="免穿文胸吊带背心">
+          </a>
+          <div class="product-body">
+            <div class="product-kicker">TOP · ¥280</div>
+            <h3>免穿文胸吊带背心</h3>
+            <p class="muted">带胸垫 / 多色 / 收腰背心</p>
+            <p>AKIKIYU 评论区被问内搭，回复指向“店铺里带胸垫的背心”。</p>
+            <span>牛仔外延单品</span>
+          </div>
+        </article>
+    </div>
+        <div style="height:28px"></div>
+        
+    <div class="table-wrap ">
+      <table>
+        <thead><tr><th>产品</th><th>定价</th><th>卖点</th><th>公开热度信号</th><th>来源</th></tr></thead>
+        <tbody>
+          <tr><td><strong>B9 木工裤</strong><br><span class="mini">B9</span></td><td>¥680</td><td>男友裤 / 工装口袋</td><td>淘宝详情页显示“千人加购”；官方小红书 B9 产品帖 68 赞 / 32 藏 / 8 评。</td><td><a href="https://item.taobao.com/item.htm?id=1044368765875" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>W3 巴黎女孩口袋裤</strong><br><span class="mini">W3</span></td><td>¥680</td><td>高腰 / 前贴袋 / 阔腿</td><td>淘宝详情页预售 26 天内发货；关键词 W3 多次命中。</td><td><a href="https://item.taobao.com/item.htm?id=1045249832549" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>ST11 破洞少年裤</strong><br><span class="mini">ST11</span></td><td>¥680</td><td>中腰 / 破洞 / 宽松直筒</td><td>淘宝详情页“百人购买”；发货、避雷搜索中反复出现。</td><td><a href="https://item.taobao.com/item.htm?id=1045267836105" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>W4 三角插片阔腿裤</strong><br><span class="mini">W4</span></td><td>¥680</td><td>中高腰 / 侧插片 / 阔腿</td><td>淘宝详情页预售 24 天内发货。</td><td><a href="https://item.taobao.com/item.htm?id=1038123983626" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>ST9 老钱轻薄纸片裤</strong><br><span class="mini">ST9</span></td><td>¥680</td><td>轻薄全棉 / 中腰直筒</td><td>淘宝详情页“百人购买”；官方产品帖 11 赞 / 3 藏。</td><td><a href="https://item.taobao.com/item.htm?id=1048177790885" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>ST12 冰蓝直尺裤</strong><br><span class="mini">ST12</span></td><td>¥680</td><td>中腰 / 直筒微阔 / 浅蓝</td><td>淘宝详情页“近期热销”，预售 30 天内发货；官方新品帖。</td><td><a href="https://item.taobao.com/item.htm?id=1049392787682" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>ST10 纯白低腰直筒裤</strong><br><span class="mini">ST10</span></td><td>¥680</td><td>低腰 / 直筒 / 清爽白</td><td>淘宝详情页“百人购买”。</td><td><a href="https://item.taobao.com/item.htm?id=1032943754095" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>B8 深靛蓝弯刀裤</strong><br><span class="mini">B8</span></td><td>¥680</td><td>深靛蓝 / 微弯刀 / 挺括全棉</td><td>淘宝详情页“百人购买”。</td><td><a href="https://item.taobao.com/item.htm?id=1034654980560" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>SL4 挺缝线烟管裤</strong><br><span class="mini">SL4</span></td><td>¥680-780</td><td>烟管裤 / 弹力莱卡 / 牛仔西装</td><td>淘宝详情页“近期热销 / 即将售罄”。</td><td><a href="https://item.taobao.com/item.htm?id=1032264455473" target="_blank" rel="noreferrer">商品页</a></td></tr><tr><td><strong>免穿文胸吊带背心</strong><br><span class="mini">TOP</span></td><td>¥280</td><td>带胸垫 / 多色 / 收腰背心</td><td>AKIKIYU 评论区被问内搭，回复指向“店铺里带胸垫的背心”。</td><td><a href="https://item.taobao.com/item.htm?id=1034692148443" target="_blank" rel="noreferrer">商品页</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+    </section>
+
+    <section id="kol">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>账号资产与 KOL/KOC</h2>
+          <p class="muted">MADEINAM 的传播不是单点达人投放，而是官方、矩阵、主理人、KOC 探店和社群素人的组合打法。</p>
+        </div>
+        
+    <div class="table-wrap dense">
+      <table>
+        <thead><tr><th>分层</th><th>账号</th><th>粉丝</th><th>账号资产</th><th>代表内容效果</th><th>传播作用</th></tr></thead>
+        <tbody>
+          <tr><td>官方</td><td>MADEINAM</td><td>42,451</td><td>获赞收藏 64,272</td><td>《限定掉落》2461 赞 / 205 藏 / 49 评 / 47 转</td><td>品牌信息、上新、快闪预约、限定说明</td></tr><tr><td>矩阵</td><td>MADEINAM灵感衣橱</td><td>2,202</td><td>获赞收藏 3,708</td><td>《Kids Denim》135 赞 / 18 评 / 37 转</td><td>素人试穿、AMmuse、亲子/快闪补充</td></tr><tr><td>主理人</td><td>AKIKIYU</td><td>208,581</td><td>获赞收藏 739,957</td><td>《这一刻，像在做梦一样》1301 赞 / 253 评 / 176 转</td><td>审美权威、线下召集、情感资产</td></tr><tr><td>主理人</td><td>张悦儿Masami</td><td>280,445</td><td>获赞收藏 1,095,212</td><td>《蓝房子。随笔。》1237 赞 / 224 评 / 120 转</td><td>生活方式、亲子、牛仔裤清单</td></tr><tr><td>生活方式</td><td>Hi！Seeya</td><td>143,485</td><td>获赞收藏 522,391</td><td>《耶！今天和@Shea是AM Girls！》569 赞 / 85 评</td><td>AM Girls 身份传播</td></tr><tr><td>生活方式</td><td>鸭鸭呀</td><td>60,672</td><td>获赞收藏 280,733</td><td>《今天是东湖路肯豆》500 赞 / 100 评 / 137 转</td><td>试穿购买、男裤/裤型询问</td></tr><tr><td>穿搭种草</td><td>比比</td><td>6,148</td><td>获赞收藏 50,912</td><td>《90s denim girl》823 赞 / 132 藏</td><td>强视觉种草</td></tr><tr><td>探店</td><td>虞氏小女探街</td><td>11,123</td><td>获赞收藏 153,257</td><td>蓝房子探店 57 赞 / 110 转</td><td>位置扩散、商业空间观察</td></tr><tr><td>探店</td><td>Jia在英伦</td><td>1,182</td><td>获赞收藏 46,555</td><td>快闪店笔记 47 赞 / 169 转</td><td>低粉高分享，承担打卡扩散</td></tr><tr><td>风险讨论</td><td>Candice可青很灵</td><td>2,414</td><td>获赞收藏 21,316</td><td>吴千语直播间笔记 993 赞 / 678 评 / 334 转</td><td>直播选品信任风险</td></tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="section-inner band-grid">
+        <div>
+          <h2>核心标签词</h2>
+          <p class="muted">品牌词、版型词、社群词和线下词共同构成搜索资产。</p>
+        </div>
+        <div class="tag-cloud">
+          <span>MADEINAM</span><span>MADEINAM牛仔裤</span><span>AM女孩</span><span>AKIKIYU</span><span>张悦儿Masami</span><span>马总</span><span>W3</span><span>ST11</span><span>B9</span><span>W4</span><span>ST9</span><span>ST12</span><span>蓝房子</span><span>东湖路</span><span>上海快闪</span><span>限定掉落</span><span>预约</span><span>发货</span><span>避雷</span><span>尺码</span><span>显瘦</span><span>男装</span><span>Kids Denim</span><span>周边</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="discussion">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>用户讨论洞察</h2>
+          <p class="muted">用户讨论最高频集中在购买/预约、快闪地址、版型显瘦、尺码，以及发货售后。负面样本不是主流声量，但对高信任社群杀伤力更强。</p>
+        </div>
+        
+    <div class="table-wrap ">
+      <table>
+        <thead><tr><th>问题</th><th>证据</th><th>判断</th></tr></thead>
+        <tbody>
+          <tr><td>直播/选品信任</td><td>Candice 可青《昨天在吴千语的直播间0消费》678 评论</td><td>直播渠道能放大成交，也会放大选品、价格与信任风险。</td></tr><tr><td>主理人事件</td><td>AKIKIYU《这一刻，像在做梦一样》253 评论；张悦儿《蓝房子。随笔。》224 评论</td><td>蓝房子事件里，情绪与人比单品参数更能驱动讨论。</td></tr><tr><td>购买/预约</td><td>309 条评论/回复样本中购买/抢购相关 40 条，快闪地址/预约 39 条</td><td>“怎么预约、线上能否买、主理人在不在、哪条裤子”是强购买意向。</td></tr><tr><td>版型与尺码</td><td>版型显瘦 33 条、尺码 10 条；多条评论问 B9、B7、ST 系列、XS/S 和身高版</td><td>尺码教育和不同身材试穿是转化关键。</td></tr><tr><td>发货售后</td><td>Ting、莊. 等负面样本集中在发货、退换、气味、做工与客服话术</td><td>履约风险会反噬主理人社群情绪。</td></tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+    </section>
+
+    <section id="channels">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>渠道与销售线索</h2>
+          <p class="muted">公开资料只能支持渠道角色判断，不能证明完整 GMV 排名。全渠道销量第一与渠道销量第一均需品牌后台确认。</p>
+        </div>
+        
+    <div class="table-wrap ">
+      <table>
+        <thead><tr><th>渠道</th><th>角色</th><th>公开线索</th><th>结论边界</th></tr></thead>
+        <tbody>
+          <tr><td>淘宝/官方店铺</td><td>成交与 SKU 展示</td><td>可见核心牛仔裤 580-680 元；店铺前台 4.8、好评率 98%、平均 3 天内发货；B9 千人加购。</td><td>可确认前台热度，不等同 GMV</td></tr><tr><td>小红书官方</td><td>品牌信息与上新承接</td><td>官方简介、产品帖、预约帖、限定掉落、空间指南。</td><td>种草/信息</td></tr><tr><td>主理人账号</td><td>人格化与社群召集</td><td>AKIKIYU、张悦儿高粉账号驱动蓝房子评论峰值。</td><td>破圈/信任</td></tr><tr><td>小程序</td><td>快闪预约与核销</td><td>官方评论回复“要预约，小程序约”；预约帖写“限时预约”。</td><td>线下转化</td></tr><tr><td>蓝房子快闪</td><td>线下体验与 UGC</td><td>2026.4.27-5.10 上海东湖路 30 号；男装、童装、周边、拍照机。</td><td>品牌资产</td></tr><tr><td>直播</td><td>转化与风险并存</td><td>主理人简介提直播售后通道；吴千语直播间讨论高。</td><td>需管控选品与售后</td></tr>
+        </tbody>
+      </table>
+    </div>
+      </div>
+    </section>
+
+    <section id="risks">
+      <div class="section-inner">
+        <div class="section-head">
+          <h2>风险与建议</h2>
+          <p class="muted">建议把官方号做成产品和履约知识库，主理人账号继续承接审美、情感和线下召集。</p>
+        </div>
+        <div class="risk-list">
+          <div class="risk"><strong>预售与发货周期</strong><p>淘宝详情页多款显示预售 20-30 天。建议置顶发货周期、退换规则、客服路径，避免“等太久”转为负面笔记。</p></div>
+          <div class="risk"><strong>价格与做工争议</strong><p>580-680 元牛仔裤需要更强的面料、工艺、版型、身高版本解释。用不同身材试穿降低决策成本。</p></div>
+          <div class="risk"><strong>线下限定焦虑</strong><p>明确哪些款只在快闪、哪些会补货、哪些可线上买；评论区统一回复口径。</p></div>
+          <div class="risk"><strong>直播选品信任</strong><p>直播能带成交，也会放大“网红滤镜”。高价打底、天然材质、起球等问题需要提前解释优缺点。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="section-inner">
+      数据口径：小红书 14 个搜索词文件、380 条原始结果、229 条去重笔记、37 条详情、309 条评论/回复、20 个账号主页；另核验淘宝前台 MADEINAM 核心 SKU 与商品详情页。<br>
+      本地数据目录：/Users/huangdong/Downloads/codex-xhs10/xhs_madeinam/。完整 Markdown 报告：/Users/huangdong/Downloads/codex-xhs10/madeinam_xhs_brand_report.md。
+    </div>
+  </footer>
+</body>
+</html>
