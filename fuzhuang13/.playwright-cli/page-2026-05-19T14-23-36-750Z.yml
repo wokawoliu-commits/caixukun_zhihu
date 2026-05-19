@@ -1,0 +1,483 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]: MADEINAM XHS REPORT
+    - generic [ref=e4]:
+      - link "核心结论" [ref=e5] [cursor=pointer]:
+        - /url: "#summary"
+      - link "核心产品" [ref=e6] [cursor=pointer]:
+        - /url: "#products"
+      - link "KOL/KOC" [ref=e7] [cursor=pointer]:
+        - /url: "#kol"
+      - link "用户讨论" [ref=e8] [cursor=pointer]:
+        - /url: "#discussion"
+      - link "渠道线索" [ref=e9] [cursor=pointer]:
+        - /url: "#channels"
+      - link "风险建议" [ref=e10] [cursor=pointer]:
+        - /url: "#risks"
+  - banner [ref=e11]:
+    - generic [ref=e12]:
+      - generic [ref=e13]: 老板汇报版 · 抓取日期 2026-05-19
+      - heading "MADEINAM" [level=1] [ref=e14]
+      - paragraph [ref=e15]: 以牛仔裤版型为商业核心，以主理人审美和 AM 女孩社群为传播核心的 Denim lifestyle 品牌。
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - strong [ref=e18]: "229"
+        - text: 去重小红书笔记
+      - generic [ref=e19]:
+        - strong [ref=e20]: "37"
+        - text: 重点笔记详情
+      - generic [ref=e21]:
+        - strong [ref=e22]: "309"
+        - text: 评论/回复精读
+  - main [ref=e23]:
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "核心结论" [level=2] [ref=e27]
+        - paragraph [ref=e28]: 结论按“可确认 / 可推断 / 需后台确认”区分。公开前台热度不能直接等同销量或 GMV。
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - strong [ref=e31]: 42,451
+          - generic [ref=e32]: 官方账号粉丝
+          - generic [ref=e33]: MADEINAM 官方小红书
+        - generic [ref=e34]:
+          - strong [ref=e35]: 64,272
+          - generic [ref=e36]: 官方获赞收藏
+          - generic [ref=e37]: 主页前台可见
+        - generic [ref=e38]:
+          - strong [ref=e39]: 208,581
+          - generic [ref=e40]: AKIKIYU 粉丝
+          - generic [ref=e41]: 高关联主理人账号
+        - generic [ref=e42]:
+          - strong [ref=e43]: 280,445
+          - generic [ref=e44]: 张悦儿粉丝
+          - generic [ref=e45]: 高关联主理人账号
+        - generic [ref=e46]:
+          - strong [ref=e47]: ¥580-680
+          - generic [ref=e48]: 核心价带
+          - generic [ref=e49]: 牛仔裤主价格带
+      - generic [ref=e50]:
+        - generic [ref=e51]: 品牌定位：不是单一牛仔裤品牌，而是牛仔裤 + 主理人审美 + AM 女孩社群 + 蓝房子线下事件的组合。
+        - generic [ref=e52]: 最强公开热度单品：B9 木工裤。淘宝前台“千人加购”，高于本次核验的其他核心裤型。
+        - generic [ref=e53]: 最高讨论主题：直播/选品信任和蓝房子主理人事件，高于单一产品参数讨论。
+        - generic [ref=e54]: 最大经营风险：预售发货、售后口径、价格与做工争议，会反噬主理人社群信任。
+    - generic [ref=e56]:
+      - generic [ref=e57]:
+        - heading "核心产品与价格带" [level=2] [ref=e58]
+        - paragraph [ref=e59]: 所有产品图片均已下载为本地图片。产品热度来自小红书公开互动、淘宝前台文案和详情页提示。
+      - generic [ref=e60]:
+        - article [ref=e61]:
+          - link "B9 木工裤 商品页" [ref=e62] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1044368765875
+            - img "B9 木工裤" [ref=e63]
+          - generic [ref=e64]:
+            - generic [ref=e65]: B9 · ¥680
+            - heading "B9 木工裤" [level=3] [ref=e66]
+            - paragraph [ref=e67]: 男友裤 / 工装口袋
+            - paragraph [ref=e68]: 淘宝详情页显示“千人加购”；官方小红书 B9 产品帖 68 赞 / 32 藏 / 8 评。
+            - generic [ref=e69]: 公开前台最热候选
+        - article [ref=e70]:
+          - link "W3 巴黎女孩口袋裤 商品页" [ref=e71] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1045249832549
+            - img "W3 巴黎女孩口袋裤" [ref=e72]
+          - generic [ref=e73]:
+            - generic [ref=e74]: W3 · ¥680
+            - heading "W3 巴黎女孩口袋裤" [level=3] [ref=e75]
+            - paragraph [ref=e76]: 高腰 / 前贴袋 / 阔腿
+            - paragraph [ref=e77]: 淘宝详情页预售 26 天内发货；关键词 W3 多次命中。
+            - generic [ref=e78]: 核心编码裤型
+        - article [ref=e79]:
+          - link "ST11 破洞少年裤 商品页" [ref=e80] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1045267836105
+            - img "ST11 破洞少年裤" [ref=e81]
+          - generic [ref=e82]:
+            - generic [ref=e83]: ST11 · ¥680
+            - heading "ST11 破洞少年裤" [level=3] [ref=e84]
+            - paragraph [ref=e85]: 中腰 / 破洞 / 宽松直筒
+            - paragraph [ref=e86]: 淘宝详情页“百人购买”；发货、避雷搜索中反复出现。
+            - generic [ref=e87]: 讨论高频款
+        - article [ref=e88]:
+          - link "W4 三角插片阔腿裤 商品页" [ref=e89] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1038123983626
+            - img "W4 三角插片阔腿裤" [ref=e90]
+          - generic [ref=e91]:
+            - generic [ref=e92]: W4 · ¥680
+            - heading "W4 三角插片阔腿裤" [level=3] [ref=e93]
+            - paragraph [ref=e94]: 中高腰 / 侧插片 / 阔腿
+            - paragraph [ref=e95]: 淘宝详情页预售 24 天内发货。
+            - generic [ref=e96]: 核心阔腿线
+        - article [ref=e97]:
+          - link "ST9 老钱轻薄纸片裤 商品页" [ref=e98] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1048177790885
+            - img "ST9 老钱轻薄纸片裤" [ref=e99]
+          - generic [ref=e100]:
+            - generic [ref=e101]: ST9 · ¥680
+            - heading "ST9 老钱轻薄纸片裤" [level=3] [ref=e102]
+            - paragraph [ref=e103]: 轻薄全棉 / 中腰直筒
+            - paragraph [ref=e104]: 淘宝详情页“百人购买”；官方产品帖 11 赞 / 3 藏。
+            - generic [ref=e105]: 通勤直筒款
+        - article [ref=e106]:
+          - link "ST12 冰蓝直尺裤 商品页" [ref=e107] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1049392787682
+            - img "ST12 冰蓝直尺裤" [ref=e108]
+          - generic [ref=e109]:
+            - generic [ref=e110]: ST12 · ¥680
+            - heading "ST12 冰蓝直尺裤" [level=3] [ref=e111]
+            - paragraph [ref=e112]: 中腰 / 直筒微阔 / 浅蓝
+            - paragraph [ref=e113]: 淘宝详情页“近期热销”，预售 30 天内发货；官方新品帖。
+            - generic [ref=e114]: 近期新品热度
+        - article [ref=e115]:
+          - link "ST10 纯白低腰直筒裤 商品页" [ref=e116] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1032943754095
+            - img "ST10 纯白低腰直筒裤" [ref=e117]
+          - generic [ref=e118]:
+            - generic [ref=e119]: ST10 · ¥680
+            - heading "ST10 纯白低腰直筒裤" [level=3] [ref=e120]
+            - paragraph [ref=e121]: 低腰 / 直筒 / 清爽白
+            - paragraph [ref=e122]: 淘宝详情页“百人购买”。
+            - generic [ref=e123]: 夏季直筒款
+        - article [ref=e124]:
+          - link "B8 深靛蓝弯刀裤 商品页" [ref=e125] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1034654980560
+            - img "B8 深靛蓝弯刀裤" [ref=e126]
+          - generic [ref=e127]:
+            - generic [ref=e128]: B8 · ¥680
+            - heading "B8 深靛蓝弯刀裤" [level=3] [ref=e129]
+            - paragraph [ref=e130]: 深靛蓝 / 微弯刀 / 挺括全棉
+            - paragraph [ref=e131]: 淘宝详情页“百人购买”。
+            - generic [ref=e132]: 深色弯刀款
+        - article [ref=e133]:
+          - link "SL4 挺缝线烟管裤 商品页" [ref=e134] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1032264455473
+            - img "SL4 挺缝线烟管裤" [ref=e135]
+          - generic [ref=e136]:
+            - generic [ref=e137]: SL4 · ¥680-780
+            - heading "SL4 挺缝线烟管裤" [level=3] [ref=e138]
+            - paragraph [ref=e139]: 烟管裤 / 弹力莱卡 / 牛仔西装
+            - paragraph [ref=e140]: 淘宝详情页“近期热销 / 即将售罄”。
+            - generic [ref=e141]: 套装与裤型组合
+        - article [ref=e142]:
+          - link "免穿文胸吊带背心 商品页" [ref=e143] [cursor=pointer]:
+            - /url: https://item.taobao.com/item.htm?id=1034692148443
+            - img "免穿文胸吊带背心" [ref=e144]
+          - generic [ref=e145]:
+            - generic [ref=e146]: TOP · ¥280
+            - heading "免穿文胸吊带背心" [level=3] [ref=e147]
+            - paragraph [ref=e148]: 带胸垫 / 多色 / 收腰背心
+            - paragraph [ref=e149]: AKIKIYU 评论区被问内搭，回复指向“店铺里带胸垫的背心”。
+            - generic [ref=e150]: 牛仔外延单品
+      - table [ref=e153]:
+        - rowgroup [ref=e154]:
+          - row "产品 定价 卖点 公开热度信号 来源" [ref=e155]:
+            - columnheader "产品" [ref=e156]
+            - columnheader "定价" [ref=e157]
+            - columnheader "卖点" [ref=e158]
+            - columnheader "公开热度信号" [ref=e159]
+            - columnheader "来源" [ref=e160]
+        - rowgroup [ref=e161]:
+          - row "B9 木工裤 B9 ¥680 男友裤 / 工装口袋 淘宝详情页显示“千人加购”；官方小红书 B9 产品帖 68 赞 / 32 藏 / 8 评。 商品页" [ref=e162]:
+            - cell "B9 木工裤 B9" [ref=e163]:
+              - strong [ref=e164]: B9 木工裤
+              - text: B9
+            - cell "¥680" [ref=e165]
+            - cell "男友裤 / 工装口袋" [ref=e166]
+            - cell "淘宝详情页显示“千人加购”；官方小红书 B9 产品帖 68 赞 / 32 藏 / 8 评。" [ref=e167]
+            - cell "商品页" [ref=e168]:
+              - link "商品页" [ref=e169] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1044368765875
+          - row "W3 巴黎女孩口袋裤 W3 ¥680 高腰 / 前贴袋 / 阔腿 淘宝详情页预售 26 天内发货；关键词 W3 多次命中。 商品页" [ref=e170]:
+            - cell "W3 巴黎女孩口袋裤 W3" [ref=e171]:
+              - strong [ref=e172]: W3 巴黎女孩口袋裤
+              - text: W3
+            - cell "¥680" [ref=e173]
+            - cell "高腰 / 前贴袋 / 阔腿" [ref=e174]
+            - cell "淘宝详情页预售 26 天内发货；关键词 W3 多次命中。" [ref=e175]
+            - cell "商品页" [ref=e176]:
+              - link "商品页" [ref=e177] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1045249832549
+          - row "ST11 破洞少年裤 ST11 ¥680 中腰 / 破洞 / 宽松直筒 淘宝详情页“百人购买”；发货、避雷搜索中反复出现。 商品页" [ref=e178]:
+            - cell "ST11 破洞少年裤 ST11" [ref=e179]:
+              - strong [ref=e180]: ST11 破洞少年裤
+              - text: ST11
+            - cell "¥680" [ref=e181]
+            - cell "中腰 / 破洞 / 宽松直筒" [ref=e182]
+            - cell "淘宝详情页“百人购买”；发货、避雷搜索中反复出现。" [ref=e183]
+            - cell "商品页" [ref=e184]:
+              - link "商品页" [ref=e185] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1045267836105
+          - row "W4 三角插片阔腿裤 W4 ¥680 中高腰 / 侧插片 / 阔腿 淘宝详情页预售 24 天内发货。 商品页" [ref=e186]:
+            - cell "W4 三角插片阔腿裤 W4" [ref=e187]:
+              - strong [ref=e188]: W4 三角插片阔腿裤
+              - text: W4
+            - cell "¥680" [ref=e189]
+            - cell "中高腰 / 侧插片 / 阔腿" [ref=e190]
+            - cell "淘宝详情页预售 24 天内发货。" [ref=e191]
+            - cell "商品页" [ref=e192]:
+              - link "商品页" [ref=e193] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1038123983626
+          - row "ST9 老钱轻薄纸片裤 ST9 ¥680 轻薄全棉 / 中腰直筒 淘宝详情页“百人购买”；官方产品帖 11 赞 / 3 藏。 商品页" [ref=e194]:
+            - cell "ST9 老钱轻薄纸片裤 ST9" [ref=e195]:
+              - strong [ref=e196]: ST9 老钱轻薄纸片裤
+              - text: ST9
+            - cell "¥680" [ref=e197]
+            - cell "轻薄全棉 / 中腰直筒" [ref=e198]
+            - cell "淘宝详情页“百人购买”；官方产品帖 11 赞 / 3 藏。" [ref=e199]
+            - cell "商品页" [ref=e200]:
+              - link "商品页" [ref=e201] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1048177790885
+          - row "ST12 冰蓝直尺裤 ST12 ¥680 中腰 / 直筒微阔 / 浅蓝 淘宝详情页“近期热销”，预售 30 天内发货；官方新品帖。 商品页" [ref=e202]:
+            - cell "ST12 冰蓝直尺裤 ST12" [ref=e203]:
+              - strong [ref=e204]: ST12 冰蓝直尺裤
+              - text: ST12
+            - cell "¥680" [ref=e205]
+            - cell "中腰 / 直筒微阔 / 浅蓝" [ref=e206]
+            - cell "淘宝详情页“近期热销”，预售 30 天内发货；官方新品帖。" [ref=e207]
+            - cell "商品页" [ref=e208]:
+              - link "商品页" [ref=e209] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1049392787682
+          - row "ST10 纯白低腰直筒裤 ST10 ¥680 低腰 / 直筒 / 清爽白 淘宝详情页“百人购买”。 商品页" [ref=e210]:
+            - cell "ST10 纯白低腰直筒裤 ST10" [ref=e211]:
+              - strong [ref=e212]: ST10 纯白低腰直筒裤
+              - text: ST10
+            - cell "¥680" [ref=e213]
+            - cell "低腰 / 直筒 / 清爽白" [ref=e214]
+            - cell "淘宝详情页“百人购买”。" [ref=e215]
+            - cell "商品页" [ref=e216]:
+              - link "商品页" [ref=e217] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1032943754095
+          - row "B8 深靛蓝弯刀裤 B8 ¥680 深靛蓝 / 微弯刀 / 挺括全棉 淘宝详情页“百人购买”。 商品页" [ref=e218]:
+            - cell "B8 深靛蓝弯刀裤 B8" [ref=e219]:
+              - strong [ref=e220]: B8 深靛蓝弯刀裤
+              - text: B8
+            - cell "¥680" [ref=e221]
+            - cell "深靛蓝 / 微弯刀 / 挺括全棉" [ref=e222]
+            - cell "淘宝详情页“百人购买”。" [ref=e223]
+            - cell "商品页" [ref=e224]:
+              - link "商品页" [ref=e225] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1034654980560
+          - row "SL4 挺缝线烟管裤 SL4 ¥680-780 烟管裤 / 弹力莱卡 / 牛仔西装 淘宝详情页“近期热销 / 即将售罄”。 商品页" [ref=e226]:
+            - cell "SL4 挺缝线烟管裤 SL4" [ref=e227]:
+              - strong [ref=e228]: SL4 挺缝线烟管裤
+              - text: SL4
+            - cell "¥680-780" [ref=e229]
+            - cell "烟管裤 / 弹力莱卡 / 牛仔西装" [ref=e230]
+            - cell "淘宝详情页“近期热销 / 即将售罄”。" [ref=e231]
+            - cell "商品页" [ref=e232]:
+              - link "商品页" [ref=e233] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1032264455473
+          - row "免穿文胸吊带背心 TOP ¥280 带胸垫 / 多色 / 收腰背心 AKIKIYU 评论区被问内搭，回复指向“店铺里带胸垫的背心”。 商品页" [ref=e234]:
+            - cell "免穿文胸吊带背心 TOP" [ref=e235]:
+              - strong [ref=e236]: 免穿文胸吊带背心
+              - text: TOP
+            - cell "¥280" [ref=e237]
+            - cell "带胸垫 / 多色 / 收腰背心" [ref=e238]
+            - cell "AKIKIYU 评论区被问内搭，回复指向“店铺里带胸垫的背心”。" [ref=e239]
+            - cell "商品页" [ref=e240]:
+              - link "商品页" [ref=e241] [cursor=pointer]:
+                - /url: https://item.taobao.com/item.htm?id=1034692148443
+    - generic [ref=e243]:
+      - generic [ref=e244]:
+        - heading "账号资产与 KOL/KOC" [level=2] [ref=e245]
+        - paragraph [ref=e246]: MADEINAM 的传播不是单点达人投放，而是官方、矩阵、主理人、KOC 探店和社群素人的组合打法。
+      - table [ref=e248]:
+        - rowgroup [ref=e249]:
+          - row "分层 账号 粉丝 账号资产 代表内容效果 传播作用" [ref=e250]:
+            - columnheader "分层" [ref=e251]
+            - columnheader "账号" [ref=e252]
+            - columnheader "粉丝" [ref=e253]
+            - columnheader "账号资产" [ref=e254]
+            - columnheader "代表内容效果" [ref=e255]
+            - columnheader "传播作用" [ref=e256]
+        - rowgroup [ref=e257]:
+          - row "官方 MADEINAM 42,451 获赞收藏 64,272 《限定掉落》2461 赞 / 205 藏 / 49 评 / 47 转 品牌信息、上新、快闪预约、限定说明" [ref=e258]:
+            - cell "官方" [ref=e259]
+            - cell "MADEINAM" [ref=e260]
+            - cell "42,451" [ref=e261]
+            - cell "获赞收藏 64,272" [ref=e262]
+            - cell "《限定掉落》2461 赞 / 205 藏 / 49 评 / 47 转" [ref=e263]
+            - cell "品牌信息、上新、快闪预约、限定说明" [ref=e264]
+          - row "矩阵 MADEINAM灵感衣橱 2,202 获赞收藏 3,708 《Kids Denim》135 赞 / 18 评 / 37 转 素人试穿、AMmuse、亲子/快闪补充" [ref=e265]:
+            - cell "矩阵" [ref=e266]
+            - cell "MADEINAM灵感衣橱" [ref=e267]
+            - cell "2,202" [ref=e268]
+            - cell "获赞收藏 3,708" [ref=e269]
+            - cell "《Kids Denim》135 赞 / 18 评 / 37 转" [ref=e270]
+            - cell "素人试穿、AMmuse、亲子/快闪补充" [ref=e271]
+          - row "主理人 AKIKIYU 208,581 获赞收藏 739,957 《这一刻，像在做梦一样》1301 赞 / 253 评 / 176 转 审美权威、线下召集、情感资产" [ref=e272]:
+            - cell "主理人" [ref=e273]
+            - cell "AKIKIYU" [ref=e274]
+            - cell "208,581" [ref=e275]
+            - cell "获赞收藏 739,957" [ref=e276]
+            - cell "《这一刻，像在做梦一样》1301 赞 / 253 评 / 176 转" [ref=e277]
+            - cell "审美权威、线下召集、情感资产" [ref=e278]
+          - row "主理人 张悦儿Masami 280,445 获赞收藏 1,095,212 《蓝房子。随笔。》1237 赞 / 224 评 / 120 转 生活方式、亲子、牛仔裤清单" [ref=e279]:
+            - cell "主理人" [ref=e280]
+            - cell "张悦儿Masami" [ref=e281]
+            - cell "280,445" [ref=e282]
+            - cell "获赞收藏 1,095,212" [ref=e283]
+            - cell "《蓝房子。随笔。》1237 赞 / 224 评 / 120 转" [ref=e284]
+            - cell "生活方式、亲子、牛仔裤清单" [ref=e285]
+          - row "生活方式 Hi！Seeya 143,485 获赞收藏 522,391 《耶！今天和@Shea是AM Girls！》569 赞 / 85 评 AM Girls 身份传播" [ref=e286]:
+            - cell "生活方式" [ref=e287]
+            - cell "Hi！Seeya" [ref=e288]
+            - cell "143,485" [ref=e289]
+            - cell "获赞收藏 522,391" [ref=e290]
+            - cell "《耶！今天和@Shea是AM Girls！》569 赞 / 85 评" [ref=e291]
+            - cell "AM Girls 身份传播" [ref=e292]
+          - row "生活方式 鸭鸭呀 60,672 获赞收藏 280,733 《今天是东湖路肯豆》500 赞 / 100 评 / 137 转 试穿购买、男裤/裤型询问" [ref=e293]:
+            - cell "生活方式" [ref=e294]
+            - cell "鸭鸭呀" [ref=e295]
+            - cell "60,672" [ref=e296]
+            - cell "获赞收藏 280,733" [ref=e297]
+            - cell "《今天是东湖路肯豆》500 赞 / 100 评 / 137 转" [ref=e298]
+            - cell "试穿购买、男裤/裤型询问" [ref=e299]
+          - row "穿搭种草 比比 6,148 获赞收藏 50,912 《90s denim girl》823 赞 / 132 藏 强视觉种草" [ref=e300]:
+            - cell "穿搭种草" [ref=e301]
+            - cell "比比" [ref=e302]
+            - cell "6,148" [ref=e303]
+            - cell "获赞收藏 50,912" [ref=e304]
+            - cell "《90s denim girl》823 赞 / 132 藏" [ref=e305]
+            - cell "强视觉种草" [ref=e306]
+          - row "探店 虞氏小女探街 11,123 获赞收藏 153,257 蓝房子探店 57 赞 / 110 转 位置扩散、商业空间观察" [ref=e307]:
+            - cell "探店" [ref=e308]
+            - cell "虞氏小女探街" [ref=e309]
+            - cell "11,123" [ref=e310]
+            - cell "获赞收藏 153,257" [ref=e311]
+            - cell "蓝房子探店 57 赞 / 110 转" [ref=e312]
+            - cell "位置扩散、商业空间观察" [ref=e313]
+          - row "探店 Jia在英伦 1,182 获赞收藏 46,555 快闪店笔记 47 赞 / 169 转 低粉高分享，承担打卡扩散" [ref=e314]:
+            - cell "探店" [ref=e315]
+            - cell "Jia在英伦" [ref=e316]
+            - cell "1,182" [ref=e317]
+            - cell "获赞收藏 46,555" [ref=e318]
+            - cell "快闪店笔记 47 赞 / 169 转" [ref=e319]
+            - cell "低粉高分享，承担打卡扩散" [ref=e320]
+          - row "风险讨论 Candice可青很灵 2,414 获赞收藏 21,316 吴千语直播间笔记 993 赞 / 678 评 / 334 转 直播选品信任风险" [ref=e321]:
+            - cell "风险讨论" [ref=e322]
+            - cell "Candice可青很灵" [ref=e323]
+            - cell "2,414" [ref=e324]
+            - cell "获赞收藏 21,316" [ref=e325]
+            - cell "吴千语直播间笔记 993 赞 / 678 评 / 334 转" [ref=e326]
+            - cell "直播选品信任风险" [ref=e327]
+    - generic [ref=e329]:
+      - generic [ref=e330]:
+        - heading "核心标签词" [level=2] [ref=e331]
+        - paragraph [ref=e332]: 品牌词、版型词、社群词和线下词共同构成搜索资产。
+      - generic [ref=e333]:
+        - generic [ref=e334]: MADEINAM
+        - generic [ref=e335]: MADEINAM牛仔裤
+        - generic [ref=e336]: AM女孩
+        - generic [ref=e337]: AKIKIYU
+        - generic [ref=e338]: 张悦儿Masami
+        - generic [ref=e339]: 马总
+        - generic [ref=e340]: W3
+        - generic [ref=e341]: ST11
+        - generic [ref=e342]: B9
+        - generic [ref=e343]: W4
+        - generic [ref=e344]: ST9
+        - generic [ref=e345]: ST12
+        - generic [ref=e346]: 蓝房子
+        - generic [ref=e347]: 东湖路
+        - generic [ref=e348]: 上海快闪
+        - generic [ref=e349]: 限定掉落
+        - generic [ref=e350]: 预约
+        - generic [ref=e351]: 发货
+        - generic [ref=e352]: 避雷
+        - generic [ref=e353]: 尺码
+        - generic [ref=e354]: 显瘦
+        - generic [ref=e355]: 男装
+        - generic [ref=e356]: Kids Denim
+        - generic [ref=e357]: 周边
+    - generic [ref=e359]:
+      - generic [ref=e360]:
+        - heading "用户讨论洞察" [level=2] [ref=e361]
+        - paragraph [ref=e362]: 用户讨论最高频集中在购买/预约、快闪地址、版型显瘦、尺码，以及发货售后。负面样本不是主流声量，但对高信任社群杀伤力更强。
+      - table [ref=e364]:
+        - rowgroup [ref=e365]:
+          - row "问题 证据 判断" [ref=e366]:
+            - columnheader "问题" [ref=e367]
+            - columnheader "证据" [ref=e368]
+            - columnheader "判断" [ref=e369]
+        - rowgroup [ref=e370]:
+          - row "直播/选品信任 Candice 可青《昨天在吴千语的直播间0消费》678 评论 直播渠道能放大成交，也会放大选品、价格与信任风险。" [ref=e371]:
+            - cell "直播/选品信任" [ref=e372]
+            - cell "Candice 可青《昨天在吴千语的直播间0消费》678 评论" [ref=e373]
+            - cell "直播渠道能放大成交，也会放大选品、价格与信任风险。" [ref=e374]
+          - row "主理人事件 AKIKIYU《这一刻，像在做梦一样》253 评论；张悦儿《蓝房子。随笔。》224 评论 蓝房子事件里，情绪与人比单品参数更能驱动讨论。" [ref=e375]:
+            - cell "主理人事件" [ref=e376]
+            - cell "AKIKIYU《这一刻，像在做梦一样》253 评论；张悦儿《蓝房子。随笔。》224 评论" [ref=e377]
+            - cell "蓝房子事件里，情绪与人比单品参数更能驱动讨论。" [ref=e378]
+          - row "购买/预约 309 条评论/回复样本中购买/抢购相关 40 条，快闪地址/预约 39 条 “怎么预约、线上能否买、主理人在不在、哪条裤子”是强购买意向。" [ref=e379]:
+            - cell "购买/预约" [ref=e380]
+            - cell "309 条评论/回复样本中购买/抢购相关 40 条，快闪地址/预约 39 条" [ref=e381]
+            - cell "“怎么预约、线上能否买、主理人在不在、哪条裤子”是强购买意向。" [ref=e382]
+          - row "版型与尺码 版型显瘦 33 条、尺码 10 条；多条评论问 B9、B7、ST 系列、XS/S 和身高版 尺码教育和不同身材试穿是转化关键。" [ref=e383]:
+            - cell "版型与尺码" [ref=e384]
+            - cell "版型显瘦 33 条、尺码 10 条；多条评论问 B9、B7、ST 系列、XS/S 和身高版" [ref=e385]
+            - cell "尺码教育和不同身材试穿是转化关键。" [ref=e386]
+          - row "发货售后 Ting、莊. 等负面样本集中在发货、退换、气味、做工与客服话术 履约风险会反噬主理人社群情绪。" [ref=e387]:
+            - cell "发货售后" [ref=e388]
+            - cell "Ting、莊. 等负面样本集中在发货、退换、气味、做工与客服话术" [ref=e389]
+            - cell "履约风险会反噬主理人社群情绪。" [ref=e390]
+    - generic [ref=e392]:
+      - generic [ref=e393]:
+        - heading "渠道与销售线索" [level=2] [ref=e394]
+        - paragraph [ref=e395]: 公开资料只能支持渠道角色判断，不能证明完整 GMV 排名。全渠道销量第一与渠道销量第一均需品牌后台确认。
+      - table [ref=e397]:
+        - rowgroup [ref=e398]:
+          - row "渠道 角色 公开线索 结论边界" [ref=e399]:
+            - columnheader "渠道" [ref=e400]
+            - columnheader "角色" [ref=e401]
+            - columnheader "公开线索" [ref=e402]
+            - columnheader "结论边界" [ref=e403]
+        - rowgroup [ref=e404]:
+          - row "淘宝/官方店铺 成交与 SKU 展示 可见核心牛仔裤 580-680 元；店铺前台 4.8、好评率 98%、平均 3 天内发货；B9 千人加购。 可确认前台热度，不等同 GMV" [ref=e405]:
+            - cell "淘宝/官方店铺" [ref=e406]
+            - cell "成交与 SKU 展示" [ref=e407]
+            - cell "可见核心牛仔裤 580-680 元；店铺前台 4.8、好评率 98%、平均 3 天内发货；B9 千人加购。" [ref=e408]
+            - cell "可确认前台热度，不等同 GMV" [ref=e409]
+          - row "小红书官方 品牌信息与上新承接 官方简介、产品帖、预约帖、限定掉落、空间指南。 种草/信息" [ref=e410]:
+            - cell "小红书官方" [ref=e411]
+            - cell "品牌信息与上新承接" [ref=e412]
+            - cell "官方简介、产品帖、预约帖、限定掉落、空间指南。" [ref=e413]
+            - cell "种草/信息" [ref=e414]
+          - row "主理人账号 人格化与社群召集 AKIKIYU、张悦儿高粉账号驱动蓝房子评论峰值。 破圈/信任" [ref=e415]:
+            - cell "主理人账号" [ref=e416]
+            - cell "人格化与社群召集" [ref=e417]
+            - cell "AKIKIYU、张悦儿高粉账号驱动蓝房子评论峰值。" [ref=e418]
+            - cell "破圈/信任" [ref=e419]
+          - row "小程序 快闪预约与核销 官方评论回复“要预约，小程序约”；预约帖写“限时预约”。 线下转化" [ref=e420]:
+            - cell "小程序" [ref=e421]
+            - cell "快闪预约与核销" [ref=e422]
+            - cell "官方评论回复“要预约，小程序约”；预约帖写“限时预约”。" [ref=e423]
+            - cell "线下转化" [ref=e424]
+          - row "蓝房子快闪 线下体验与 UGC 2026.4.27-5.10 上海东湖路 30 号；男装、童装、周边、拍照机。 品牌资产" [ref=e425]:
+            - cell "蓝房子快闪" [ref=e426]
+            - cell "线下体验与 UGC" [ref=e427]
+            - cell "2026.4.27-5.10 上海东湖路 30 号；男装、童装、周边、拍照机。" [ref=e428]
+            - cell "品牌资产" [ref=e429]
+          - row "直播 转化与风险并存 主理人简介提直播售后通道；吴千语直播间讨论高。 需管控选品与售后" [ref=e430]:
+            - cell "直播" [ref=e431]
+            - cell "转化与风险并存" [ref=e432]
+            - cell "主理人简介提直播售后通道；吴千语直播间讨论高。" [ref=e433]
+            - cell "需管控选品与售后" [ref=e434]
+    - generic [ref=e436]:
+      - generic [ref=e437]:
+        - heading "风险与建议" [level=2] [ref=e438]
+        - paragraph [ref=e439]: 建议把官方号做成产品和履约知识库，主理人账号继续承接审美、情感和线下召集。
+      - generic [ref=e440]:
+        - generic [ref=e441]:
+          - strong [ref=e442]: 预售与发货周期
+          - paragraph [ref=e443]: 淘宝详情页多款显示预售 20-30 天。建议置顶发货周期、退换规则、客服路径，避免“等太久”转为负面笔记。
+        - generic [ref=e444]:
+          - strong [ref=e445]: 价格与做工争议
+          - paragraph [ref=e446]: 580-680 元牛仔裤需要更强的面料、工艺、版型、身高版本解释。用不同身材试穿降低决策成本。
+        - generic [ref=e447]:
+          - strong [ref=e448]: 线下限定焦虑
+          - paragraph [ref=e449]: 明确哪些款只在快闪、哪些会补货、哪些可线上买；评论区统一回复口径。
+        - generic [ref=e450]:
+          - strong [ref=e451]: 直播选品信任
+          - paragraph [ref=e452]: 直播能带成交，也会放大“网红滤镜”。高价打底、天然材质、起球等问题需要提前解释优缺点。
+  - contentinfo [ref=e453]:
+    - generic [ref=e454]:
+      - text: 数据口径：小红书 14 个搜索词文件、380 条原始结果、229 条去重笔记、37 条详情、309 条评论/回复、20 个账号主页；另核验淘宝前台 MADEINAM 核心 SKU 与商品详情页。
+      - text: 本地数据目录：/Users/huangdong/Downloads/codex-xhs10/xhs_madeinam/。完整 Markdown 报告：/Users/huangdong/Downloads/codex-xhs10/madeinam_xhs_brand_report.md。
