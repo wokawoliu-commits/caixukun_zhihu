@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>季节价格带分析</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Seasonal price bands</p>
+        <h1>季节价格带分析</h1>
+        <p>按商品标题、系列词、SKU摘要和季节线索推断春夏秋冬，并把 9月、10月、11月拆开看秋季上新节奏。</p>
+      </div>
+      <div class="header-metrics">
+        <strong id="totalRows">—</strong>
+        <span>核心 SKU/SPU</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="filters" aria-label="筛选">
+        <label>季节<select id="seasonFilter"></select></label>
+        <label>9-11月<select id="monthFilter"></select></label>
+        <label>秋季线索<select id="signalFilter"></select></label>
+        <label>品牌<select id="brandFilter"></select></label>
+        <label>品类<select id="categoryFilter"></select></label>
+        <label>价格<select id="priceFilter"><option>全部</option><option>有价格</option><option>缺价格</option></select></label>
+        <label class="search">关键词<input id="searchInput" type="search" placeholder="标题、系列、SKU摘要、itemId" /></label>
+      </section>
+
+      <section class="method">
+        <div>
+          <span>口径</span>
+          <strong>月份是“上市节奏主题桶”，不是后台真实上架日</strong>
+        </div>
+        <p id="methodText"></p>
+      </section>
+
+      <section class="summary" id="summary"></section>
+
+      <section class="section-head">
+        <div>
+          <span>Four seasons</span>
+          <h2>四季价格带概览</h2>
+        </div>
+        <p>同一商品如果标题写“春夏秋”或“四季”，会同时进入多个季节桶。</p>
+      </section>
+      <section class="season-grid" id="seasonOverview"></section>
+
+      <section class="section-head">
+        <div>
+          <span>Sep to Nov</span>
+          <h2>9月、10月、11月单独分析</h2>
+        </div>
+        <p>9月偏早秋过渡和轻薄长裤，10月偏羊毛、针织、薄绒层搭，11月偏保暖和厚绒入冬款。</p>
+      </section>
+      <section class="month-grid" id="monthOverview"></section>
+
+      <section class="analysis-tabs">
+        <button class="active" data-mode="month">月份 × 品牌 × 品类</button>
+        <button data-mode="season">四季 × 品牌 × 品类</button>
+        <button data-mode="signal">秋季线索 × 品牌 × 品类</button>
+      </section>
+      <section class="table-wrap">
+        <table id="statsTable"></table>
+      </section>
+
+      <section class="section-head">
+        <div>
+          <span>Products</span>
+          <h2>当前筛选 SKU 明细</h2>
+        </div>
+        <p id="productNote"></p>
+      </section>
+      <section class="product-grid" id="productGrid"></section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
