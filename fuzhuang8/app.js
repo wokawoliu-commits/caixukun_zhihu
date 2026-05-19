@@ -78,6 +78,17 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;");
 }
 
+function productImage(row) {
+  if (row.localImageWebp || row.localImageAvif) {
+    return `<picture>
+      ${row.localImageAvif ? `<source srcset="${escapeHtml(row.localImageAvif)}" type="image/avif">` : ""}
+      ${row.localImageWebp ? `<source srcset="${escapeHtml(row.localImageWebp)}" type="image/webp">` : ""}
+      <img src="${escapeHtml(row.localImageWebp || row.localImageAvif)}" alt="${escapeHtml(row.title)}" loading="lazy">
+    </picture>`;
+  }
+  return `<div class="image-fallback">无图</div>`;
+}
+
 function matchesFilters(row) {
   if (state.brand !== "全部品牌" && row.brand !== state.brand) return false;
   if (state.category !== "全部品类" && row.category !== state.category) return false;
@@ -234,7 +245,7 @@ function renderTopProducts() {
     rows
       .map(
         (row) => `<article class="product fade-in">
-      ${row.imageUrl ? `<img src="${escapeHtml(row.imageUrl)}" alt="${escapeHtml(row.title)}" loading="lazy">` : `<div class="image-fallback">无图</div>`}
+      ${productImage(row)}
       <div>
         <h3>${row.topRank}. ${escapeHtml(row.title)}</h3>
         <div class="product-meta">
