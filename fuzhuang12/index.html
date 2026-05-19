@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PANE 小红书人群与传播推广分析报告</title>
+  <meta name="description" content="PANE 小红书人群、产品、渠道、KOL/KOC 与用户讨论分析报告。">
+  <style>
+:root{
+  --paper:#f7f3ec;
+  --paper-2:#fffdf8;
+  --ink:#191713;
+  --muted:#6d665b;
+  --line:rgba(25,23,19,.14);
+  --accent:#a9442f;
+  --olive:#526759;
+  --blue:#253f55;
+  --gold:#c99b45;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Noto Sans SC","Microsoft YaHei",Arial,sans-serif;line-height:1.72;letter-spacing:0;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+img{display:block;max-width:100%}
+.topbar{position:sticky;top:0;z-index:30;background:rgba(247,243,236,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.topbar-inner{max-width:1240px;margin:0 auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-weight:900;letter-spacing:.02em;color:var(--ink)}
+.nav{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.nav a{color:var(--muted);white-space:nowrap}
+.nav a:hover{color:var(--accent)}
+.hero{min-height:calc(100svh - 58px);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);align-items:center;gap:6vw;padding:74px 6vw 70px;border-bottom:1px solid var(--line);background:linear-gradient(125deg,#fffdf8 0%,#f7f3ec 58%,#ece4d7 100%);overflow:hidden}
+.eyebrow{font-size:13px;font-weight:850;color:var(--accent);text-transform:uppercase;letter-spacing:.12em}
+h1{font-size:clamp(48px,7vw,104px);line-height:.93;margin:20px 0 24px;max-width:900px;letter-spacing:0;color:var(--ink);overflow-wrap:anywhere}
+.lead{font-size:clamp(18px,2vw,25px);line-height:1.55;color:#3b352d;max-width:780px;margin:0}
+.hero-note{margin-top:28px;color:var(--muted);font-size:15px;max-width:760px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.button{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 18px;border:1px solid var(--ink);background:var(--ink);color:var(--paper-2);font-weight:800;border-radius:999px}
+.button.secondary{background:transparent;color:var(--ink)}
+.image-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start}
+.image-mosaic img{width:100%;aspect-ratio:1;object-fit:cover;background:#ebe4db;border:1px solid rgba(25,23,19,.08);box-shadow:0 20px 48px rgba(37,63,85,.12)}
+.image-mosaic img:nth-child(2){margin-top:38px}.image-mosaic img:nth-child(3){margin-top:-26px}.image-mosaic img:nth-child(5){margin-top:-30px}.image-mosaic img:nth-child(6){margin-top:20px}
+.metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.metric{background:var(--paper-2);padding:24px;text-align:center}
+.metric strong{display:block;font-size:clamp(26px,3vw,42px);line-height:1;color:var(--blue)}
+.metric span{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.layout{max-width:1240px;margin:0 auto;padding:72px 24px 96px;display:grid;grid-template-columns:260px minmax(0,1fr);gap:52px}
+.toc{position:sticky;top:86px;align-self:start;border-left:1px solid var(--line);padding-left:18px;color:var(--muted);font-size:14px}
+.toc strong{display:block;color:var(--ink);margin-bottom:12px}
+.toc a{display:block;color:var(--muted);padding:5px 0}
+.toc a:hover{color:var(--accent)}
+.report{min-width:0}
+.report h2{font-size:clamp(32px,4.3vw,60px);line-height:1.05;margin:72px 0 24px;color:var(--blue);letter-spacing:0;padding-top:12px;border-top:2px solid var(--ink)}
+.report h2:first-child{margin-top:0}
+.report h3{font-size:clamp(22px,2.4vw,32px);line-height:1.2;margin:44px 0 16px;color:var(--ink)}
+.report p{margin:12px 0;color:#2f2b25}
+.report ul,.report ol{padding-left:1.2em;margin:14px 0}
+.report li{margin:6px 0}
+.report code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:#eee5d9;padding:.12em .34em;border-radius:4px;font-size:.92em}
+.table-scroll{width:100%;max-width:100%;overflow-x:auto;margin:18px 0 34px;background:var(--paper-2);border:1px solid var(--line);box-shadow:0 12px 34px rgba(25,23,19,.035)}
+.report table{width:100%;min-width:720px;border-collapse:separate;border-spacing:0;margin:0;background:var(--paper-2);border:0;box-shadow:none;font-size:14px}
+.report th,.report td{padding:12px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:top}
+.report th:last-child,.report td:last-child{border-right:0}
+.report tr:last-child td{border-bottom:0}
+.report th{background:#ece4d7;text-align:left;color:var(--ink);font-weight:850;white-space:nowrap}
+.report tbody tr:nth-child(even) td{background:#fbf8f2}
+.report table:has(.table-product-image){min-width:980px}
+.report table:has(.table-product-image) th:nth-child(2),.report table:has(.table-product-image) td:nth-child(2){width:120px;text-align:center}
+.table-product-image{width:92px;height:92px;object-fit:cover;border-radius:8px;margin:0 auto;background:#ebe4db}
+.image-cell-link{display:inline-block}
+.report blockquote{border-left:4px solid var(--accent);margin:22px 0;padding:2px 0 2px 16px;color:var(--muted)}
+.status-tag{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:12px;font-weight:800;background:#fff}
+.footer{padding:44px 24px;background:var(--ink);color:var(--paper);font-size:14px}
+.footer-inner{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footer a{color:#f3c76f;font-weight:800}
+@media (max-width:1080px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .image-mosaic{grid-template-columns:repeat(3,1fr)}
+  .image-mosaic img{margin-top:0!important}
+  .metrics{grid-template-columns:repeat(3,1fr)}
+  .layout{grid-template-columns:1fr}
+  .toc{position:relative;top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-left:0;border-top:1px solid var(--line);padding:18px 0 0}
+}
+@media (max-width:720px){
+  .topbar-inner{align-items:flex-start;flex-direction:column}
+  .nav{display:none}
+  .hero{padding:48px 22px}
+  h1{font-size:50px}
+  .image-mosaic{grid-template-columns:1fr 1fr}
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .layout{padding:46px 16px}
+  .toc{grid-template-columns:1fr 1fr}
+  .report th,.report td{min-width:130px}
+}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#">PANE XHS REPORT</a>
+      <nav class="nav" aria-label="页面导航"><a href="#core">核心结论</a><a href="#answers">老板速答</a><a href="#position">定位人群</a><a href="#products">产品价格</a><a href="#strategy">传播策略</a><a href="#kol">KOL/KOC</a><a href="#comments">评论洞察</a><a href="#channels">渠道销售</a><a href="#sources">数据来源</a></nav>
+    </div>
+  </header>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Boss-ready brand analysis · 2026-05-19</div>
+      <h1>PANE 小红书人群与传播推广分析</h1>
+      <p class="lead">围绕产品、价格、销量线索、传播资源、KOL/KOC、标签主题与用户讨论，整理为可汇报、可追溯、可区分“可确认 / 可推断 / 需后台确认”的静态 HTML 报告。</p>
+      <p class="hero-note">图片已保存为本地文件；所有远程链接仅作为证据来源或原始产品图链接保留。</p>
+      <div class="hero-actions">
+        <a class="button" href="#answers">看老板速答</a>
+        <a class="button secondary" href="assets/data/pane_xhs_brand_report.md">查看 Markdown 原稿</a>
+      </div>
+    </div>
+    <div class="image-mosaic" aria-label="PANE 产品图"><img src="assets/images/pane-product-01.jpg" alt="PANE 产品图 1"><img src="assets/images/pane-product-02.jpg" alt="PANE 产品图 2"><img src="assets/images/pane-product-03.jpg" alt="PANE 产品图 3"><img src="assets/images/pane-product-04.jpg" alt="PANE 产品图 4"><img src="assets/images/pane-product-05.jpg" alt="PANE 产品图 5"><img src="assets/images/pane-product-06.jpg" alt="PANE 产品图 6"></div>
+  </section>
+  <section class="metrics"><div class="metric"><strong>300</strong><span>小红书原始搜索结果</span></div><div class="metric"><strong>187</strong><span>去重笔记样本</span></div><div class="metric"><strong>27</strong><span>详情页/评论精读</span></div><div class="metric"><strong>338</strong><span>主评论/子评论文本</span></div><div class="metric"><strong>4.33万</strong><span>PANE 官方粉丝</span></div><div class="metric"><strong>9.36万</strong><span>官方获赞收藏</span></div></section>
+  <main class="layout">
+    <aside class="toc">
+      <strong>报告导航</strong>
+      <a href="#core">核心结论</a><a href="#answers">老板速答</a><a href="#position">定位人群</a><a href="#products">产品价格</a><a href="#strategy">传播策略</a><a href="#kol">KOL/KOC</a><a href="#comments">评论洞察</a><a href="#channels">渠道销售</a><a href="#sources">数据来源</a>
+    </aside>
+    <article class="report"><p>调研日期：2026-05-19<br>品牌主页：小红书 <code>PANE</code>，小红书号 <code>9478471635</code><br>数据口径：小红书登录态前台抓取 + PANE 官网/天猫前台搜索 + 公开报道。小红书互动数、天猫搜索结果、官网价格均为抓取时前台可见信息，不等同于品牌后台 GMV 或全渠道销量。</p>
+<h2 id="core">1. 核心结论</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>结论</th>
+<th>判断等级</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PANE 更准确的定义是“中国独立鞋履品牌 / 独立品牌”，以复古运动鞋履为核心，正在向生活方式品牌延展。</td>
+<td>可确认</td>
+<td>品牌星球称其为 2022 年成立的本土服饰品牌，核心产品为鞋履；赢商网称其为独立品牌并指出“PANE 对自己的定位并非鞋履品牌，而是中国独立品牌”。</td>
+</tr>
+<tr>
+<td>一句话定位：以“复古日常主义”为核心的中国独立鞋履品牌，用薄底、德训/复古跑轮廓、克制设计和线下空间，提供城市通勤与日常穿搭的审美鞋履。</td>
+<td>可推断</td>
+<td>官网 About 写“timeless design, purposeful motion, authentic experience”；Laststyle/赢商网均提到复古日常主义、轻训 NO-GI、日常舒适和线下空间。</td>
+</tr>
+<tr>
+<td>当前传播和销售热度最高的产品线是轻训 / 轻训 NO-GI；但无法公开确认单一 SKU 为全渠道销量第一。</td>
+<td>可确认 + 需后台确认</td>
+<td>Laststyle称轻训为“品牌第一款爆品”，赢商网称轻训为标志性鞋款；小红书官方高互动近期集中在轻训 NO-GI 新色；天猫前台搜索多条轻训/轻训 NO-GI 排在前列。单 SKU GMV 需品牌后台确认。</td>
+</tr>
+<tr>
+<td>小红书传播不是单靠官方号，而是“低粉 KOC 真实试穿 + 鞋履/穿搭内容号 + 品牌科普 + 门店探店 + 竞品对比”的组合。</td>
+<td>可确认</td>
+<td>本次 10 组关键词抓取 300 条结果，去重 187 条；高互动 PANE 笔记多来自低粉 KOC，如 7水 17 粉、赢的YIPPY 47 粉、VSecond 50 粉。</td>
+</tr>
+<tr>
+<td>用户讨论度最高的是购买决策问题：好不好穿、尺码/女码、掉跟/不跟脚、和鬼冢虎/足下工业对比、价格与门店库存。</td>
+<td>可确认</td>
+<td>27 篇详情页/评论精读，评论样本含 338 条主/子评论；代表笔记 VSecond《鬼冢虎/pane/足下工业》181 评论，亚热带针叶林《想听PANE的真实评价》177 评论。</td>
+</tr>
+<tr>
+<td>可公开确认的最强销售渠道是天猫旗舰店，但无法证明其一定是完整全渠道 GMV 第一。</td>
+<td>可确认 + 需后台确认</td>
+<td>赢商网称 PANE 天猫旗舰店 2023 年 9 月开设至今已累积 29.3 万粉丝，并在 2025 年度破亿 GMV、成为复古德训鞋细分赛道第一；Laststyle称 2025 天猫双11设计师鞋靴榜第一。线下/官网/小程序 GMV 无公开对比。</td>
+</tr>
+</tbody></table></div>
+<h2 id="answers">2. 老板关心问题逐项回答</h2>
+<h3>2.1 核心产品：图片、定价、卖点、热度信号</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>产品线 / 核心款</th>
+<th>产品图</th>
+<th align="right">天猫前台价</th>
+<th align="right">官网美元价</th>
+<th>核心卖点</th>
+<th>热度信号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>轻训 NO-GI <code>Spice Blaze 香料火花</code></td>
+<td><a class="image-cell-link" href="https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/2216638288772/O1CN01SiJMBB2EfdI8hzorp_!!0-item_pic.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-01.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥840</td>
+<td align="right">$180 起</td>
+<td>德训轮廓；NO-GI 解构无传统内衬；油蜡皮/反毛皮；Ortholite 鞋垫、软木中底。</td>
+<td>天猫 <code>PANE</code> 搜索官方第 2 位；小红书多篇“轻训 NO-GI”讨论。</td>
+</tr>
+<tr>
+<td>轻训 NO-GI <code>Moonless Night 月黑之夜</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01hOQvbB2EfdQjXMFdH_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-02.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥849</td>
+<td align="right">$180</td>
+<td>编织皮革、黑色复古德训；男女同款尺码 35-45。</td>
+<td>官方笔记 115 赞/29 收藏/6 评论/73 分享。</td>
+</tr>
+<tr>
+<td>轻训 NO-GI <code>Mocha Mousse 摩卡慕斯</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN017l1fQK2EfdQjsncH3_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-03.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥849</td>
+<td align="right">$180</td>
+<td>编织棕色皮质、复古温度、网纱内里支撑。</td>
+<td>官方笔记 109 赞/43 收藏/7 评论/108 分享。</td>
+</tr>
+<tr>
+<td>轻训 NO-GI <code>Fudge 法奇</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01A6WIvQ2EfdQjdDYnZ_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-04.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥849</td>
+<td align="right">$185</td>
+<td>金属皮革 + 酒红皮革，视觉更强；官方标注 36-45 发售。</td>
+<td>官方笔记 91 赞/29 收藏/14 评论/79 分享；评论问“线上上架了吗”。</td>
+</tr>
+<tr>
+<td>轻训 <code>Balloon 蓝气球 / Pear Liqueur 梨子酒</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01Wu1tFv2EfdQjQFLmH_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-05.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥840-880</td>
+<td align="right">$175-180</td>
+<td>复古薄底德训，日常通勤、百搭。</td>
+<td>小红书“轻训”是高频系列词；Laststyle称轻训为第一款爆品。</td>
+</tr>
+<tr>
+<td>故途 / 故途60 <code>Sandstone / Snow Gravel / Blue Note</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01DJP6pZ2EfdQeu6AOn_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-06.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥820-880</td>
+<td align="right">$165-170</td>
+<td>早期马拉松鞋/阿甘鞋轮廓，复古跑感，线条轻盈。</td>
+<td>Laststyle称故途为品牌首个系列；天猫前台多条官方在售。</td>
+</tr>
+<tr>
+<td>拉格比 <code>Dark Calla Lily / Detective</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01nSVyLB2EfdQk43K2z_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-07.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥840</td>
+<td align="right">$170-175</td>
+<td>翻盖/球鞋复古感，随意优雅。</td>
+<td>Laststyle将 RUGBY 列为六大系列之一。</td>
+</tr>
+<tr>
+<td>湾岸 / 海岸 <code>Grey Goose / Dash Blue / Ashway / Lichen联名</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN010ovqjv2EfdQjnooen_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-08.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥820-860</td>
+<td align="right">$165-175</td>
+<td>Riviera Run，复古跑/阿甘鞋，轻便通勤。</td>
+<td>Laststyle称 RIVIERA RUN 为“海岸”；天猫商品名多写“湾岸”。</td>
+</tr>
+<tr>
+<td>风跃 <code>Bitumen / Mudwater / Panthera Onca / Talus / Plain</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01VMlTIY2EfdQjL7VS9_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-09.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥840-859</td>
+<td align="right">$175-180</td>
+<td>Crest Kick，户外/徒步/复古运动元素。</td>
+<td>用户在官方评论问“风跃豹纹38码啥时候上新”。</td>
+</tr>
+<tr>
+<td>轻影 / 空气芭蕾 <code>Still Form / Relevé / Quiet Core</code></td>
+<td><a class="image-cell-link" href="https://gw.alicdn.com/imgextra/O1CN01K3jbL52EfdQjsnLcg_!!2216638288772-0-picasso.jpg_580x580q90.jpg" target="_blank" rel="noreferrer"><img class="table-product-image" src="assets/images/pane-product-10.jpg" alt="PANE 产品图"></a></td>
+<td align="right">¥818-828</td>
+<td align="right">官网 Aria 系列</td>
+<td>芭蕾休闲鞋，绑带和轻便女鞋场景。</td>
+<td>withLaura《Effortless is the real luxury》413 赞/139 收藏/45 评论；官方近期多条轻影内容。</td>
+</tr>
+</tbody></table></div>
+<p>说明：国内定价取自 2026-05-19 天猫前台搜索 <code>PANE</code> / <code>PANE轻训</code>；美元价取自 PANE 全球官网/Shop App。赢商网概括“热销单品价格集中在 880-980 元”，前台搜索可见部分新款/常规款在 818-880 元，联名款到 940 元。</p>
+<h3>2.2 销售最多产品：已确认 / 可推断 / 需后台确认</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>层级</th>
+<th>结论</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>公开报道确认的销售成绩</td>
+<td>PANE 2025 年天猫成交破亿，复古德训鞋细分赛道第一；2025 双11位列设计师鞋靴榜第一。</td>
+<td>赢商网 2026-05-13；Laststyle 2026-01-12。</td>
+</tr>
+<tr>
+<td>公开报道确认的爆品/标志款</td>
+<td>轻训系列，尤其轻训 NO-GI，是品牌标志性/爆品线。</td>
+<td>Laststyle称“品牌第一款爆品——轻训系列”；赢商网称“轻训系列是品牌的标志性鞋款”。</td>
+</tr>
+<tr>
+<td>电商平台前台热度</td>
+<td>天猫前台搜索 <code>PANE</code> 前排多为微风轻训、轻训 NO-GI、轻影、故途；<code>PANE轻训</code> 搜索更集中于轻训/轻训 NO-GI。</td>
+<td>天猫前台抓取 44 个结果。</td>
+</tr>
+<tr>
+<td>小红书讨论热度</td>
+<td>轻训/轻训 NO-GI/德训鞋是最高频产品讨论；轻影/空气芭蕾为近期新增声量。</td>
+<td>官方高互动笔记集中轻训 NO-GI；KOC 高评内容多围绕德训/薄底/轻训。</td>
+</tr>
+<tr>
+<td>需品牌后台确认</td>
+<td>当前全渠道销量第一的具体 SKU、各渠道 GMV 排名、线下门店单店销量。</td>
+<td>前台无完整销量字段，不应推断为 GMV 第一。</td>
+</tr>
+</tbody></table></div>
+<h3>2.3 销量最高渠道：渠道判断与证据</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>渠道</th>
+<th>角色</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>天猫旗舰店</td>
+<td>主要成交阵地、官方电商、承接大促与搜索流量。</td>
+<td>可确认最强公开销售证据：赢商网称天猫旗舰店 2023 年 9 月开设，累积 29.3 万粉丝，2025 年度破亿 GMV；Laststyle称双11设计师鞋靴榜第一。</td>
+</tr>
+<tr>
+<td>官网 / Shopify 全球站</td>
+<td>海外订单、品牌形象、英文产品叙事、美元价。</td>
+<td>可确认有完整产品线与门店页面；不能确认中国区 GMV。</td>
+</tr>
+<tr>
+<td>小红书</td>
+<td>种草、试穿决策、评论答疑、线下引流。</td>
+<td>高分享/高评论集中于真实试穿、门店排队、竞品对比，不等同成交。</td>
+</tr>
+<tr>
+<td>线下门店</td>
+<td>试穿体验、目的地打卡、海外游客/“上海特产”传播、品牌资产。</td>
+<td>官网确认深圳湾、上海永源路、北京三里屯等门店；小红书高分享探店说明线下拉动强。</td>
+</tr>
+<tr>
+<td>买手店/集合店</td>
+<td>分销与圈层触达。</td>
+<td>小红书 <code>101FF - U</code> 笔记“PANE 轻训No-Gi 新色抵达”体现集合店上新，但销量不可确认。</td>
+</tr>
+</tbody></table></div>
+<p>结论：公开资料只能支持“天猫是最明确的主要销售阵地”，不足以证明完整全渠道 GMV 排名。若老板问“哪个渠道销量最高”，建议对外表述为：天猫旗舰店是目前唯一有公开破亿 GMV 与榜单第一证据的成交主渠道；线下是品牌资产和试穿转化的重要渠道，但单店/全渠道销售需品牌后台确认。</p>
+<h3>2.4 具体 KOL/KOC 名单与效果</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>分层</th>
+<th>账号</th>
+<th align="right">粉丝数</th>
+<th>代表笔记</th>
+<th align="right">单条互动</th>
+<th>传播作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>鞋履/穿搭达人</td>
+<td>一只小小韩</td>
+<td align="right">1.7 万</td>
+<td>《年度9双百搭通勤薄底鞋2.0》</td>
+<td align="right">1729 赞 / 892 收藏 / 40 评论 / 196 分享</td>
+<td>把 PANE 放入“通勤薄底鞋/德训鞋”合集，提供横向种草入口。</td>
+</tr>
+<tr>
+<td>鞋履/穿搭达人</td>
+<td>Allen Lee</td>
+<td align="right">3.75 万</td>
+<td>《Daily shoe｜9双百搭通勤休闲鞋款推荐》</td>
+<td align="right">693 赞 / 440 收藏 / 13 评论 / 149 分享</td>
+<td>男性/通勤鞋柜推荐，强化百搭与通勤场景。</td>
+</tr>
+<tr>
+<td>鞋履/穿搭达人</td>
+<td>withLaura</td>
+<td align="right">5.31 万</td>
+<td>《Effortless is the real luxury》</td>
+<td align="right">413 赞 / 139 收藏 / 45 评论 / 85 分享</td>
+<td>推动轻影/空气芭蕾进入松弛感、旅行、生活方式语境。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>7水</td>
+<td align="right">17</td>
+<td>《5.5的PANE上海TX淮海店 真成上海特产了？》</td>
+<td align="right">254 赞 / 118 收藏 / 125 评论 / 2125 分享</td>
+<td>高分享探店，放大“上海特产、老外排队、门店排队”。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>赢的YIPPY</td>
+<td align="right">47</td>
+<td>《最近很火的一个品牌！》</td>
+<td align="right">1139 赞 / 385 收藏 / 155 评论 / 713 分享</td>
+<td>低粉爆文，评论集中问“好穿吗/和鬼冢虎比”。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>VSecond</td>
+<td align="right">50</td>
+<td>《鬼冢虎/pane/足下工业》</td>
+<td align="right">495 赞 / 248 收藏 / 181 评论 / 117 分享</td>
+<td>最强购买决策内容之一，直接对比竞品，指出 PANE 好看柔软但部分配色掉跟。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>费嵩宇</td>
+<td align="right">5600</td>
+<td>《8开头的PANE…》</td>
+<td align="right">270 赞 / 74 收藏 / 116 评论 / 118 分享</td>
+<td>强化“800 多元、配件/开箱体验足”的价格感知。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>Audreyyy</td>
+<td align="right">77</td>
+<td>《Pane 是值得被供起来的鞋子》</td>
+<td align="right">76 赞 / 25 收藏 / 47 评论 / 54 分享</td>
+<td>尺码风险典型负面样本，官方在评论区回应女码40开发和售后。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>JoyBtq</td>
+<td align="right">158</td>
+<td>《PANE的怪码数》</td>
+<td align="right">6 赞 / 38 收藏 / 31 评论 / 5 分享</td>
+<td>尺码收藏效率高，说明购买前尺码疑虑强。</td>
+</tr>
+<tr>
+<td>KOC/真实消费者</td>
+<td>九月包包</td>
+<td align="right">9</td>
+<td>《pane到底好不好穿》</td>
+<td align="right">20 赞 / 10 收藏 / 120 评论 / 14 分享</td>
+<td>低互动但高评论，证明“好不好穿”是强讨论话题。</td>
+</tr>
+<tr>
+<td>探店账号</td>
+<td>池田真雄</td>
+<td align="right">42</td>
+<td>《今天去三里屯终于拔草了PANE》</td>
+<td align="right">69 赞 / 47 收藏 / 15 评论 / 139 分享</td>
+<td>北京三里屯试穿与购买决策；评论问价格、磨脚。</td>
+</tr>
+<tr>
+<td>探店/商业观察</td>
+<td>烦恼全吴</td>
+<td align="right">88</td>
+<td>《为什么电商品牌反而把实体店开成了打卡地》</td>
+<td align="right">76 赞 / 70 收藏 / 0 评论 / 62 分享</td>
+<td>把 PANE 门店归入电商品牌反向开店/打卡地逻辑。</td>
+</tr>
+<tr>
+<td>品牌科普号</td>
+<td>每天认识一个品牌</td>
+<td align="right">4 万</td>
+<td>《PANE 重构鞋履美学｜每天认识一个新品牌》</td>
+<td align="right">146 赞 / 89 收藏 / 10 评论 / 278 分享</td>
+<td>讲品牌来历、复古日常主义、产品线和品牌档案。</td>
+</tr>
+<tr>
+<td>品牌科普号</td>
+<td>不循BUXUN</td>
+<td align="right">7.22 万</td>
+<td>《从被问来自哪里到火遍街头PANE是什么来头？》</td>
+<td align="right">131 赞 / 66 收藏 / 41 评论 / 172 分享</td>
+<td>将创始人、高定男装背景、NO-GI 和 880 元价格讲清楚。</td>
+</tr>
+<tr>
+<td>官方/关联</td>
+<td>PANE</td>
+<td align="right">4.33 万</td>
+<td>官方轻训 NO-GI 新色、深圳旗舰店、SS26 成衣</td>
+<td align="right">最高可见近期单条 139 赞</td>
+<td>产品发布、视觉档案、发售渠道和尺码承接。</td>
+</tr>
+<tr>
+<td>官方/关联</td>
+<td>PANEroom</td>
+<td align="right">2400</td>
+<td>《PANE的建筑美学3.0》《时间的容器 Pt.01》</td>
+<td align="right">31 赞 / 3 收藏 / 6 评论 / 24 分享</td>
+<td>生活方式和空间内容，记录“PANE生活里的样子”。</td>
+</tr>
+<tr>
+<td>集合店/渠道</td>
+<td>101FF - U</td>
+<td align="right">87</td>
+<td>《PANE 轻训No-Gi 新色抵达》</td>
+<td align="right">44 赞 / 15 收藏 / 6 评论 / 50 分享</td>
+<td>分销渠道新品到店，评论问颜色和价格。</td>
+</tr>
+</tbody></table></div>
+<h3>2.5 核心标签词和传播主题</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>关键词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>品牌搜索词</td>
+<td>PANE、PANE鞋、pane鞋子、PANEroom、behave_as_mortals</td>
+</tr>
+<tr>
+<td>产品系列词</td>
+<td>轻训、轻训NO-GI、NO_GI、轻影、空气芭蕾、故途、故途60、拉格比、湾岸/海岸、步道、风跃、微风轻训</td>
+</tr>
+<tr>
+<td>鞋型/风格词</td>
+<td>德训鞋、复古德训鞋、复古运动鞋、薄底鞋、阿甘鞋、复古跑、芭蕾鞋、口袋芭蕾</td>
+</tr>
+<tr>
+<td>穿搭场景词</td>
+<td>通勤、百搭、男女同款、城市漫步、春夏穿搭、松弛感、上班通勤黑鞋</td>
+</tr>
+<tr>
+<td>竞品对比词</td>
+<td>鬼冢虎、足下工业、Adidas、WALSH、德训平替/替代</td>
+</tr>
+<tr>
+<td>线下门店词</td>
+<td>PANE上海TX淮海、PANE上海旗舰店、PANE深圳湾、PANE PLAZA、北京三里屯、广州阿那亚、杭州万象城、上海特产</td>
+</tr>
+<tr>
+<td>用户痛点词</td>
+<td>尺码、码数、偏小、偏大、掉跟、不跟脚、磨脚、压脚趾、足弓、断码、无货、发货、预售、女码40、价格</td>
+</tr>
+</tbody></table></div>
+<p>传播主题排序：</p>
+<ol>
+<li>最近很火的国产复古鞋 / 上海特产 / 老外排队。</li>
+<li>薄底鞋 / 德训鞋 / 鬼冢虎替代 / 足下工业对比。</li>
+<li>通勤穿搭 / 男女同款 / 百搭鞋 / 松弛感。</li>
+<li>门店试穿 / 线下空间 / PANEroom 建筑美学。</li>
+<li>尺码、掉跟、断码、发货、价格等购买决策问题。</li>
+</ol>
+<h3>2.6 用户讨论度最高的问题</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>问题</th>
+<th>代表证据</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>好不好穿 / 舒适度</td>
+<td>赢的YIPPY评论首问“好穿吗？和鬼冢虎相比哪个好穿啊？”；九月包包《pane到底好不好穿》120 评论。</td>
+<td>购买意向强，也是转化前最后一问。</td>
+</tr>
+<tr>
+<td>尺码/女码/偏大偏小</td>
+<td>Audreyyy 记录 39 挤脚、40 掉跟；JoyBtq称 39.5 挤、40 大一指；官方回应“女码40正在开发中”。</td>
+<td>高风险问题，影响退换货与口碑。</td>
+</tr>
+<tr>
+<td>掉跟/不跟脚</td>
+<td>VSecond 明确写“黄色和粉紫色明显掉跟”；评论出现“不跟脚、袜子会往下滑”。</td>
+<td>产品适配风险，尤其薄底德训/芭蕾鞋型。</td>
+</tr>
+<tr>
+<td>价格</td>
+<td>费嵩宇《8开头的PANE》评论出现 5/7 开头入手价讨论；集合店/探店评论问“多少钱”。</td>
+<td>用户接受 800-900 元，但会比较折扣和竞品。</td>
+</tr>
+<tr>
+<td>门店/断码/库存/发货</td>
+<td>7水上海 TX 排队笔记 2125 分享；潺潺Luna称新款网购要五月底发货、门店灰白无货只剩一双；官方新色评论问线上上架。</td>
+<td>强需求信号，也可能形成饥饿营销争议。</td>
+</tr>
+<tr>
+<td>竞品比较</td>
+<td>VSecond 同篇比较鬼冢虎/PANE/足下工业；搜索词 <code>PANE鬼冢虎</code>、<code>PANE德训鞋</code>均有高互动内容。</td>
+<td>是 PANE 种草的关键入口，应主动布局。</td>
+</tr>
+</tbody></table></div>
+<h2 id="position">3. 品牌定位与人群画像</h2>
+<h3>3.1 品牌定位</h3>
+<p>PANE 不是单纯的“德训鞋品牌”。更准确地说，它是以复古运动鞋履为核心的中国独立品牌，目前正在通过成衣、配饰、线下空间、PANEroom 内容把鞋履品牌升级为生活方式提案。</p>
+<p>核心差异化：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>差异点</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>复古但不做旧复刻</td>
+<td>品牌叙事回到 1950-70 年代现代跑鞋雏形期，但强调比例、轻盈和日常适配，而非大 Logo 或厚底潮鞋。</td>
+</tr>
+<tr>
+<td>薄底/德训/阿甘鞋的日常化</td>
+<td>用户把 PANE 放在德训鞋、薄底通勤鞋、鬼冢虎替代的语境中讨论。</td>
+</tr>
+<tr>
+<td>NO-GI 解构</td>
+<td>轻训 NO-GI 从柔术“无道服”概念出发，减去传统内衬，强调皮革与脚的直接贴合。</td>
+</tr>
+<tr>
+<td>设计师审美 + 诚意定价</td>
+<td>800-980 元价格带，评论中形成“国产鞋小一千但愿意买”的讨论。</td>
+</tr>
+<tr>
+<td>线下空间能力</td>
+<td>上海永源路、TX 淮海、北京三里屯、深圳湾等空间让品牌从“鞋”变成“目的地”。</td>
+</tr>
+</tbody></table></div>
+<h3>3.2 核心人群</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>画像</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>年龄</td>
+<td>可推断为 20-35 岁为主，覆盖大学后期、初入职场、都市通勤与潮流穿搭人群。</td>
+</tr>
+<tr>
+<td>城市</td>
+<td>一线/新一线城市浓度高：上海、北京、深圳、广州、杭州是门店和内容高频城市；上海 TX 淮海、三里屯、深圳湾万象城等商圈强相关。</td>
+</tr>
+<tr>
+<td>性别</td>
+<td>男女都有，产品标题多为男女同款；小红书女码、芭蕾鞋、男朋友抢鞋、男性通勤鞋柜均出现。比例需后台确认。</td>
+</tr>
+<tr>
+<td>消费能力</td>
+<td>中高消费力，能接受 800-1000 元国产设计鞋，但会比较折扣、材质和竞品。</td>
+</tr>
+<tr>
+<td>审美偏好</td>
+<td>复古、克制、薄底、低饱和色、德训/阿甘/芭蕾、松弛通勤、设计师感。</td>
+</tr>
+<tr>
+<td>鞋履需求</td>
+<td>通勤百搭、城市漫步、轻便、显脚小、男女同款、能替代鬼冢虎/德训鞋。</td>
+</tr>
+</tbody></table></div>
+<p>购买或关注动机：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>动机</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>替代鬼冢虎/常规德训鞋</td>
+<td>VSecond 直接比较鬼冢虎/PANE/足下工业；<code>PANE鬼冢虎</code> 搜索有高互动结果。</td>
+</tr>
+<tr>
+<td>颜值和配色</td>
+<td>多条评论称好看、配色在线；官方大量以配色名发布。</td>
+</tr>
+<tr>
+<td>价格相对可接受</td>
+<td>费嵩宇笔记标题“8开头的PANE”；赢商网称 PANE 重新校准用户对 880 元国产鞋的心理价位。</td>
+</tr>
+<tr>
+<td>门店试穿和打卡</td>
+<td>7水、池田真雄、PANEroom 建筑美学等内容推动线下引流。</td>
+</tr>
+<tr>
+<td>国产设计师/独立品牌心智</td>
+<td>科普号用“国产复古鞋”“中国独立品牌”“复古日常主义”讲品牌。</td>
+</tr>
+</tbody></table></div>
+<h2 id="products">4. 产品线、命名与价格带</h2>
+<p>PANE 的命名逻辑是“系列名 + 配色/主题名”，配色名大量来自自然、日常物、艺术与状态：月黑之夜、摩卡慕斯、香料火花、砂岩、沙漠咖啡、蓝调、潮汐、泥泞、碎岩、银币、原始样本、褪色全息等。它不像传统运动品牌用性能数字命名，而是用“档案感 + 生活诗意”强化审美记忆。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>系列</th>
+<th>英文 / 对应</th>
+<th align="right">价格带</th>
+<th>主要场景</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>轻训</td>
+<td>Light Training</td>
+<td align="right">¥840-880 / $175-180</td>
+<td>德训、薄底、日常通勤</td>
+<td>品牌第一款爆品/标志线。</td>
+</tr>
+<tr>
+<td>轻训 NO-GI</td>
+<td>Light Training NO-GI</td>
+<td align="right">¥840-880，联名 ¥940 / $180-190</td>
+<td>德训升级、软皮、直接贴合</td>
+<td>目前小红书讨论最高的产品线。</td>
+</tr>
+<tr>
+<td>故途 / 故途60</td>
+<td>Pace Nostalgia / Pace Nostalgia 60</td>
+<td align="right">¥820-880 / $165-170</td>
+<td>复古跑、阿甘鞋</td>
+<td>品牌首个系列，以早期马拉松鞋为灵感。</td>
+</tr>
+<tr>
+<td>拉格比</td>
+<td>Rugby</td>
+<td align="right">¥840 / $170-175</td>
+<td>翻盖复古、随意优雅</td>
+<td>Laststyle列为六大系列之一。</td>
+</tr>
+<tr>
+<td>湾岸 / 海岸</td>
+<td>Riviera Run</td>
+<td align="right">¥820-860 / $165-175</td>
+<td>复古跑、城市步行</td>
+<td>公开资料对中文名有“海岸/湾岸”两种写法。</td>
+</tr>
+<tr>
+<td>步道</td>
+<td>Aisle</td>
+<td align="right">未在本次天猫前 44 官方结果中确认</td>
+<td>城市步行/户外感</td>
+<td>Laststyle/赢商网列为历史/现有产品线，当前在售需后台确认。</td>
+</tr>
+<tr>
+<td>风跃</td>
+<td>Crest Kick</td>
+<td align="right">¥840-859 / $175-180</td>
+<td>复古户外、徒步感</td>
+<td>天猫前台风跃系列多款在售。</td>
+</tr>
+<tr>
+<td>微风轻训</td>
+<td>Zephyr Training</td>
+<td align="right">¥820-880 / $165-175</td>
+<td>口袋芭蕾德训、男女休闲</td>
+<td>天猫搜索前排较多。</td>
+</tr>
+<tr>
+<td>轻影</td>
+<td>Aria</td>
+<td align="right">¥818-828</td>
+<td>芭蕾休闲/女鞋</td>
+<td>2026 新款声量增加。</td>
+</tr>
+</tbody></table></div>
+<h2 id="strategy">5. 小红书传播策略</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>打法</th>
+<th>代表内容</th>
+<th>解决的问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>KOC 真实试穿</td>
+<td>赢的YIPPY、VSecond、Audreyyy、JoyBtq、Kenny</td>
+<td>降低“国产 800+ 鞋值不值”的不确定性，触发评论区问尺码/舒适度/竞品。</td>
+</tr>
+<tr>
+<td>鞋履/穿搭达人合集</td>
+<td>一只小小韩、Allen Lee、withLaura</td>
+<td>把 PANE 放入通勤薄底鞋、百搭鞋、松弛感穿搭，扩大非品牌搜索人群。</td>
+</tr>
+<tr>
+<td>品牌科普号</td>
+<td>每天认识一个品牌、不循BUXUN</td>
+<td>讲清品牌来历、创始背景、复古日常主义、为何火。</td>
+</tr>
+<tr>
+<td>门店探店</td>
+<td>7水、池田真雄、商业观察号、PANEroom</td>
+<td>导入线下试穿，制造“排队/上海特产/老外买”的社交货币。</td>
+</tr>
+<tr>
+<td>竞品对比</td>
+<td>VSecond、<code>PANE鬼冢虎</code> 相关搜索结果</td>
+<td>直接进入购买决策，回答“PANE vs 鬼冢虎/足下工业”。</td>
+</tr>
+<tr>
+<td>官方视觉档案</td>
+<td>PANE 官方、PANEroom</td>
+<td>建立品牌审美、产品发售、空间资产和生活方式氛围。</td>
+</tr>
+</tbody></table></div>
+<h2 id="kol">6. KOL/KOC 明细表</h2>
+<p>重点结论：PANE 的高效传播不依赖大粉博主。7水、赢的YIPPY、VSecond、JoyBtq、九月包包等账号粉丝极低，但评论和分享很高，说明平台用户对“真实评价 + 消费决策”高度敏感。</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>账号</th>
+<th>类型</th>
+<th align="right">粉丝数</th>
+<th>代表笔记</th>
+<th align="right">点赞</th>
+<th align="right">收藏</th>
+<th align="right">评论</th>
+<th align="right">分享</th>
+<th>传播贡献</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7水</td>
+<td>KOC/探店</td>
+<td align="right">17</td>
+<td>5.5的PANE上海TX淮海店 真成上海特产了？</td>
+<td align="right">254</td>
+<td align="right">118</td>
+<td align="right">125</td>
+<td align="right">2125</td>
+<td>最高分享，线下排队和“上海特产”破圈。</td>
+</tr>
+<tr>
+<td>赢的YIPPY</td>
+<td>KOC/种草</td>
+<td align="right">47</td>
+<td>最近很火的一个品牌！</td>
+<td align="right">1139</td>
+<td align="right">385</td>
+<td align="right">155</td>
+<td align="right">713</td>
+<td>低粉爆文，评论集中购买决策。</td>
+</tr>
+<tr>
+<td>VSecond</td>
+<td>KOC/测评</td>
+<td align="right">50</td>
+<td>鬼冢虎/pane/足下工业</td>
+<td align="right">495</td>
+<td align="right">248</td>
+<td align="right">181</td>
+<td align="right">117</td>
+<td>竞品对比最强样本。</td>
+</tr>
+<tr>
+<td>一只小小韩</td>
+<td>鞋履穿搭</td>
+<td align="right">1.7 万</td>
+<td>年度9双百搭通勤薄底鞋2.0</td>
+<td align="right">1729</td>
+<td align="right">892</td>
+<td align="right">40</td>
+<td align="right">196</td>
+<td>薄底鞋合集中给 PANE 背书。</td>
+</tr>
+<tr>
+<td>Allen Lee</td>
+<td>鞋履穿搭</td>
+<td align="right">3.75 万</td>
+<td>Daily shoe｜9双百搭通勤休闲鞋款推荐</td>
+<td align="right">693</td>
+<td align="right">440</td>
+<td align="right">13</td>
+<td align="right">149</td>
+<td>男性通勤鞋柜推荐。</td>
+</tr>
+<tr>
+<td>withLaura</td>
+<td>穿搭/生活方式</td>
+<td align="right">5.31 万</td>
+<td>Effortless is the real luxury</td>
+<td align="right">413</td>
+<td align="right">139</td>
+<td align="right">45</td>
+<td align="right">85</td>
+<td>轻影/空气芭蕾生活方式化。</td>
+</tr>
+<tr>
+<td>每天认识一个品牌</td>
+<td>品牌科普</td>
+<td align="right">4 万</td>
+<td>PANE 重构鞋履美学</td>
+<td align="right">146</td>
+<td align="right">89</td>
+<td align="right">10</td>
+<td align="right">278</td>
+<td>建立品牌档案。</td>
+</tr>
+<tr>
+<td>不循BUXUN</td>
+<td>品牌科普</td>
+<td align="right">7.22 万</td>
+<td>从被问来自哪里到火遍街头PANE是什么来头？</td>
+<td align="right">131</td>
+<td align="right">66</td>
+<td align="right">41</td>
+<td align="right">172</td>
+<td>讲清 NO-GI、创始人、价格和门店。</td>
+</tr>
+<tr>
+<td>费嵩宇</td>
+<td>KOC/开箱</td>
+<td align="right">5600</td>
+<td>8开头的PANE…</td>
+<td align="right">270</td>
+<td align="right">74</td>
+<td align="right">116</td>
+<td align="right">118</td>
+<td>价格与开箱仪式感。</td>
+</tr>
+<tr>
+<td>Audreyyy</td>
+<td>KOC/负面真实反馈</td>
+<td align="right">77</td>
+<td>Pane 是值得被供起来的鞋子</td>
+<td align="right">76</td>
+<td align="right">25</td>
+<td align="right">47</td>
+<td align="right">54</td>
+<td>尺码/退换货风险样本，官方下场回应。</td>
+</tr>
+<tr>
+<td>JoyBtq</td>
+<td>KOC/尺码</td>
+<td align="right">158</td>
+<td>PANE的怪码数</td>
+<td align="right">6</td>
+<td align="right">38</td>
+<td align="right">31</td>
+<td align="right">5</td>
+<td>收藏高于点赞，尺码决策价值强。</td>
+</tr>
+<tr>
+<td>九月包包</td>
+<td>KOC/提问</td>
+<td align="right">9</td>
+<td>pane到底好不好穿</td>
+<td align="right">20</td>
+<td align="right">10</td>
+<td align="right">120</td>
+<td align="right">14</td>
+<td>用提问激发真实反馈。</td>
+</tr>
+<tr>
+<td>池田真雄</td>
+<td>探店/消费</td>
+<td align="right">42</td>
+<td>今天去三里屯终于拔草了PANE</td>
+<td align="right">69</td>
+<td align="right">47</td>
+<td align="right">15</td>
+<td align="right">139</td>
+<td>三里屯线下引流。</td>
+</tr>
+<tr>
+<td>101FF - U</td>
+<td>集合店/渠道</td>
+<td align="right">87</td>
+<td>PANE 轻训No-Gi 新色抵达</td>
+<td align="right">44</td>
+<td align="right">15</td>
+<td align="right">6</td>
+<td align="right">50</td>
+<td>新品到店和分销渠道信号。</td>
+</tr>
+</tbody></table></div>
+<h2 id="comments">7. 用户评论与讨论洞察</h2>
+<h3>7.1 购买意向</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>评论/问题类型</th>
+<th>代表内容概括</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>问价格</td>
+<td>“多少钱这双”“绿色啥价格”“8开头/7开头/5开头”</td>
+<td>对 800+ 有认知，但会寻找折扣。</td>
+</tr>
+<tr>
+<td>问鞋型/款式</td>
+<td>“这是哪个款”“最推荐哪一双”</td>
+<td>需要官方和达人强化款式识别。</td>
+</tr>
+<tr>
+<td>问门店/上架</td>
+<td>“线上上架了吗”“没有上架啊”“白色只剩一双”</td>
+<td>库存稀缺带来行动力，也带来焦虑。</td>
+</tr>
+<tr>
+<td>问通勤/旅游</td>
+<td>“适合旅游日行2w步吗”“正常上下班不磨脚”</td>
+<td>购买场景非常明确。</td>
+</tr>
+</tbody></table></div>
+<h3>7.2 阻力与风险</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>阻力</th>
+<th>代表样本</th>
+<th>风险</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺码不稳定</td>
+<td>39.5 挤、40 大；女码 40 开发中；半码差异被吐槽。</td>
+<td>高退换货、高客服成本，影响复购。</td>
+</tr>
+<tr>
+<td>掉跟/不跟脚</td>
+<td>VSecond称部分配色明显掉跟；评论称袜子往下滑。</td>
+<td>薄底德训/芭蕾鞋适配风险。</td>
+</tr>
+<tr>
+<td>舒适度两极化</td>
+<td>有人称 25000 步没问题，也有人称硬、压脚趾、足弓无支撑。</td>
+<td>需要脚型分层推荐，不能只说“好穿”。</td>
+</tr>
+<tr>
+<td>断码/无货/预售</td>
+<td>新款网购要等月底、门店只剩一双、经典款曾断码。</td>
+<td>稀缺能种草，也会被解读为饥饿营销。</td>
+</tr>
+<tr>
+<td>产品/营销落差</td>
+<td>评论称“营销比产品好”；也有脱色、细节糙的反馈。</td>
+<td>品牌声量上升后，负面会被放大。</td>
+</tr>
+</tbody></table></div>
+<h3>7.3 品牌方可做的评论区动作</h3>
+<ol>
+<li>官方号增加“脚型/尺码选择指南”：窄脚、宽脚、高脚背、扁平足、女码 39-40、男码换算单独说明。</li>
+<li>每个核心系列固定一条“是否掉跟/如何选码/适合走路多久”的置顶笔记。</li>
+<li>门店笔记增加实时库存或可试穿范围，降低“跑空”和抢货负面。</li>
+<li>竞品对比可由第三方 KOC 做，官方负责补材料、结构、售后和选码。</li>
+</ol>
+<h2 id="channels">8. 渠道与销售线索</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>渠道</th>
+<th>可确认事实</th>
+<th>对传播/销售的作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>天猫旗舰店</td>
+<td>公开报道：2023 年 9 月开设，29.3 万粉丝，2025 年 GMV 破亿，复古德训鞋细分赛道第一。</td>
+<td>主要成交阵地、榜单背书、大促转化。</td>
+</tr>
+<tr>
+<td>全球官网</td>
+<td>官网在售 Men/Women 多条产品线，Light Training NO-GI $180-190，提供海外配送和门店信息。</td>
+<td>海外消费者承接、品牌形象、国际化。</td>
+</tr>
+<tr>
+<td>小红书</td>
+<td>官方 4.33 万粉、获赞收藏 9.36 万；PANEroom 2400 粉、获赞收藏 8500。</td>
+<td>种草、试穿反馈、门店引流、口碑沉淀。</td>
+</tr>
+<tr>
+<td>线下旗舰店</td>
+<td>官网列出深圳湾、上海永源路、北京三里屯等旗舰店；PANEroom/探店内容强化空间。</td>
+<td>试穿、打卡、品牌体验、海外游客。</td>
+</tr>
+<tr>
+<td>线下零售/快闪</td>
+<td>上海淮海、广州阿那亚、深圳前海、杭州等空间被公开报道提及。</td>
+<td>快速城市扩张和圈层触达。</td>
+</tr>
+<tr>
+<td>集合店/买手店</td>
+<td>小红书可见 101FF 等渠道上新笔记。</td>
+<td>局部城市/圈层分销，不可确认 GMV。</td>
+</tr>
+</tbody></table></div>
+<h2 id="risks">9. 风险与建议</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>风险</th>
+<th>说明</th>
+<th>建议</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>尺码与脚型适配风险</td>
+<td>当前评论区最影响购买决策，尤其女码、半码、掉跟。</td>
+<td>做系列级尺码表 + 脚型指南 + 评论区客服 SOP；邀请高评论 KOC 做脚型复测。</td>
+</tr>
+<tr>
+<td>“好看但不好走”口碑分化</td>
+<td>舒适度两极化会抵消高颜值种草。</td>
+<td>把“适合场景”讲细：通勤/短途/长走/宽脚/足弓支撑，不要统一宣传“暴走”。</td>
+</tr>
+<tr>
+<td>断码/排队带来的负面</td>
+<td>排队有传播价值，但跑空、预售和女码无货会形成阻力。</td>
+<td>门店库存/线上发售时间透明化，热门款预约试穿。</td>
+</tr>
+<tr>
+<td>价格敏感与竞品替代</td>
+<td>800-980 元价位需要持续解释材料、工艺和售后。</td>
+<td>强化“材料/工艺/鞋垫/软木中底/多鞋带/包装”的价值说明。</td>
+</tr>
+<tr>
+<td>官方号过度审美化</td>
+<td>官方视觉强，但用户最问的是尺码、价格、库存和脚感。</td>
+<td>主账号增加实用笔记；PANEroom 继续负责生活方式影像。</td>
+</tr>
+<tr>
+<td>仿品/低价店铺混杂</td>
+<td>天猫搜索出现非官方店铺低价 PANE 标题。</td>
+<td>官方笔记和天猫店铺显著提示正品渠道，防止用户误买。</td>
+</tr>
+</tbody></table></div>
+<h2 id="sources">10. 数据来源和样本口径</h2>
+<h3>10.1 小红书样本</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>数量 / 说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>官方主页</td>
+<td>PANE 官方主页 60 条前台笔记；PANEroom 60 条前台笔记。</td>
+</tr>
+<tr>
+<td>关键词搜索</td>
+<td>10 个关键词，每词 30 条，共 300 条原始结果。</td>
+</tr>
+<tr>
+<td>去重笔记</td>
+<td>187 条。</td>
+</tr>
+<tr>
+<td>详情页/评论精读</td>
+<td>27 篇成功详情页；评论样本含 338 条主评论/子评论文本。</td>
+</tr>
+<tr>
+<td>关键词</td>
+<td>PANE、PANE鞋、PANE轻训、PANE德训鞋、PANE鬼冢虎、PANE薄底鞋、PANE门店、PANEroom、PANE尺码、PANE掉跟。</td>
+</tr>
+<tr>
+<td>抓取时间</td>
+<td>2026-05-19 20:16-20:36 左右。</td>
+</tr>
+</tbody></table></div>
+<h3>10.2 小红书账号资产</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>账号</th>
+<th>小红书号/简介</th>
+<th align="right">粉丝</th>
+<th align="right">获赞收藏</th>
+<th>内容角色</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PANE</td>
+<td><code>9478471635</code>；“Behave as mortals 瞬逝、优雅、凡常。”；简介关联 <code>@PANEroom</code></td>
+<td align="right">4.33 万</td>
+<td align="right">9.36 万</td>
+<td>产品发布、发售、视觉档案、门店。</td>
+</tr>
+<tr>
+<td>PANEroom</td>
+<td><code>11520357771</code>；“记录@PANE生活里的样子”</td>
+<td align="right">2400</td>
+<td align="right">8500</td>
+<td>生活方式、空间、建筑美学、日常影像。</td>
+</tr>
+</tbody></table></div>
+<h3>10.3 公开资料</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>来源</th>
+<th>关键事实</th>
+<th>链接</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PANE 官网 About</td>
+<td>品牌自述：timeless design、purposeful motion、authentic experience；重视 enduring style、real comfort、detail/proportion/wearability。</td>
+<td><a href="https://paneshoes.com/pages/about">https://paneshoes.com/pages/about</a></td>
+</tr>
+<tr>
+<td>PANE 官网 Stores</td>
+<td>深圳湾、上海永源路、北京三里屯、上海淮海、广州阿那亚、深圳前海、杭州等门店/空间。</td>
+<td><a href="https://paneshoes.com/pages/stores-list">https://paneshoes.com/pages/stores-list</a></td>
+</tr>
+<tr>
+<td>PANE 官网产品页</td>
+<td>Light Training NO-GI $180；NO-GI 解构、油蜡皮/反毛皮、Ortholite、软木中底、轻量橡胶底。</td>
+<td><a href="https://paneshoes.com/products/pane-light-training-nogi-men-s-shoes-verse">https://paneshoes.com/products/pane-light-training-nogi-men-s-shoes-verse</a></td>
+</tr>
+<tr>
+<td>BrandStar</td>
+<td>PANE 成立于 2022 年，上海，本土服饰品牌；核心产品为鞋履，有故途、轻训、步道等系列。</td>
+<td><a href="https://www.brandstar.com.cn/navigation/3248">https://www.brandstar.com.cn/navigation/3248</a></td>
+</tr>
+<tr>
+<td>Laststyle</td>
+<td>线上超 13.7 万忠实用户；2025 天猫双11设计师鞋靴榜第一；列出轻训、故途、拉格比、海岸、步道、风跃六大系列；轻训为第一款爆品。</td>
+<td><a href="https://www.laststylebrand.com/article/463">https://www.laststylebrand.com/article/463</a></td>
+</tr>
+<tr>
+<td>赢商网</td>
+<td>2025 年天猫成交破亿，复古德训鞋细分赛道第一；天猫旗舰店 29.3 万粉；热销价格 880-980 元；线下北上广深布局。</td>
+<td><a href="https://m.winshang.com/news740127.html">https://m.winshang.com/news740127.html</a></td>
+</tr>
+<tr>
+<td>天猫前台搜索</td>
+<td><code>PANE</code> / <code>PANE轻训</code> 搜索可见官方店多款产品，价格 ¥818-940，常规鞋款多在 ¥820-880。</td>
+<td>本地抓取文件：<code>/Users/huangdong/Downloads/codex-xhs10/data_xhs/taobao_search_pane_tmall.json</code></td>
+</tr>
+</tbody></table></div>
+<h3>10.4 不能公开确认的内容</h3>
+<ol>
+<li>不能确认 PANE 当前全渠道销量第一 SKU。</li>
+<li>不能确认天猫、线下、官网、小程序之间的完整 GMV 排名。</li>
+<li>不能确认小红书内容是否全部为自然流量或商业合作，除非笔记明确标注。</li>
+<li>不能确认用户性别/年龄比例，只能从内容、评论和产品尺码进行推断。</li>
+<li>不能把小红书互动量、天猫搜索排序、官网售罄状态直接等同于销量。</li>
+</ol>
+</article>
+  </main>
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>Generated locally under /Users/huangdong/Downloads/github/caixukun_zhihu/fuzhuang12</span>
+      <a href="asset_manifest.json">asset_manifest.json</a>
+    </div>
+  </footer>
+</body>
+</html>
