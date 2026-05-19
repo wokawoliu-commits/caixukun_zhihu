@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+  <rect width="1200" height="900" fill="#f7f0df"/>
+  <path d="M230 535c110-155 280-240 520-255 110-7 187 8 248 42" fill="none" stroke="#52776c" stroke-width="8" stroke-linecap="round" opacity=".45"/>
+  <circle cx="655" cy="390" r="86" fill="#e6a62e" opacity=".88"/>
+  <g stroke="#171513" stroke-width="8" stroke-linecap="round" fill="none" opacity=".82">
+    <path d="M655 240v-80M655 620v-80M505 390h-80M885 390h-80M548 283l-58-58M820 552l-58-58M762 283l58-58M490 552l58-58"/>
+    <path d="M650 360c26 22 62 22 88 0"/>
+  </g>
+  <g fill="#e6a62e" stroke="#171513" stroke-width="5" opacity=".95">
+    <path d="M286 260l23 54 57 8-43 39 11 56-49-29-50 28 12-56-42-40 57-7z"/>
+    <path d="M920 195l15 34 37 5-28 25 7 36-32-19-33 18 8-36-27-26 37-4z"/>
+    <path d="M968 628l13 31 34 5-26 23 6 33-29-17-30 16 7-33-25-24 34-4z"/>
+  </g>
+  <text x="600" y="785" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'PingFang SC','Noto Sans SC',sans-serif" font-size="44" font-weight="700" fill="#171513">TikTok Storage Box</text>
+</svg>
