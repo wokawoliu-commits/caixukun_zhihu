@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-19T12:57:09.219Z",
+  "generatedAt": "2026-05-19T14:21:20.706Z",
   "source": "/Users/huangdong/Downloads/github/caixukun_zhihu/fuzhuang9/assets/data.json",
   "methodology": {
     "publishDateField": "现有SKU数据未提供结构化发布时间字段",
@@ -13,7 +13,7 @@
     "priceCoverage": "98.9%",
     "exactMonthCount": 0,
     "monthInferredCount": 1031,
-    "localImageCount": 1520
+    "localImageCount": 1521
   },
   "rows": [
     {
@@ -9151,10 +9151,10 @@
       "productUrl": "https://item.taobao.com/item.htm?id=767427213545",
       "itemId": "767427213545",
       "skuId": "5267584568763",
-      "localImage": "",
-      "localImageWebp": "",
-      "localImageAvif": "",
-      "imageDownloaded": false,
+      "localImage": "assets/images/webp/c6ac9a1fbaf4210a.webp",
+      "localImageWebp": "assets/images/webp/c6ac9a1fbaf4210a.webp",
+      "localImageAvif": "assets/images/avif/c6ac9a1fbaf4210a.avif",
+      "imageDownloaded": true,
       "hasRemoteImage": true,
       "skuSummary": "",
       "categoryBasis": "标题含T恤/tee/短袖上衣",
