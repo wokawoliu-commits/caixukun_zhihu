@@ -42,7 +42,10 @@ a {
   color: #f7f5ed;
   background:
     linear-gradient(90deg, rgba(13, 42, 37, 0.98), rgba(23, 63, 58, 0.88)),
-    url("https://gw.alicdn.com/imgextra/O1CN01pP6fcB1oLmFN7UwKU_!!2212809015209-0-picasso.jpg_580x580q90.jpg_.webp")
+    image-set(
+        url("assets/images/avif/1bbd466218c8f5a4.avif") type("image/avif"),
+        url("assets/images/webp/1bbd466218c8f5a4.webp") type("image/webp")
+      )
       center / cover;
 }
 
@@ -380,13 +383,22 @@ td.num {
   border-bottom: 1px solid var(--line);
 }
 
+.product picture,
 .product img,
 .image-fallback {
   width: 94px;
   height: 118px;
   border-radius: 6px;
-  object-fit: cover;
   background: var(--surface-2);
+}
+
+.product picture {
+  display: block;
+  overflow: hidden;
+}
+
+.product img {
+  object-fit: cover;
 }
 
 .image-fallback {
