@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>迪丽热巴微博图片记忆 Top 26｜本地图片证据版</title>
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --ink: #16201d;
+      --muted: #62706b;
+      --line: #d8e0dd;
+      --panel: #ffffff;
+      --accent: #d84246;
+      --accent-soft: #fff1f1;
+      --green: #1f7a68;
+      --shadow: 0 18px 50px rgba(24, 34, 30, 0.10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--bg); line-height: 1.55; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 480px);
+      min-height: 440px;
+      border-bottom: 1px solid var(--line);
+      background: #0f1513;
+      color: #fbfdfc;
+      overflow: hidden;
+    }
+    .hero-copy { padding: clamp(30px, 6vw, 78px); align-self: end; min-width: 0; }
+    .kicker { margin: 0 0 14px; color: #9dd7c8; font-size: 13px; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 900px; font-size: clamp(34px, 6vw, 76px); line-height: 1.02; letter-spacing: 0; overflow-wrap: anywhere; }
+    h1 span { display: block; }
+    .hero-copy p:not(.kicker) { max-width: 850px; margin: 22px 0 0; color: #d1ddd9; font-size: clamp(15px, 1.6vw, 19px); overflow-wrap: anywhere; }
+    .hero-image {
+      min-height: 440px;
+      background-size: cover;
+      background-position: center 28%;
+      transform: scale(1.02);
+      animation: settle 900ms ease-out both;
+      box-shadow: inset 34px 0 70px rgba(15,21,19,.28);
+    }
+    @keyframes settle { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1.02); } }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+    .summary div { min-height: 96px; padding: 22px clamp(18px, 3vw, 34px); background: var(--panel); }
+    .summary strong { display: block; font-size: clamp(27px, 4vw, 45px); line-height: 1; letter-spacing: 0; }
+    .summary span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 750; }
+    main { max-width: 1380px; margin: 0 auto; padding: clamp(22px, 4vw, 52px); }
+    .note { max-width: 1120px; margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+    .note strong { color: var(--ink); }
+    .list { display: grid; gap: 18px; }
+    .image-row {
+      display: grid;
+      grid-template-columns: 58px minmax(160px, 240px) minmax(180px, 240px) minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+      padding: 16px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 1px 0 rgba(23, 32, 29, 0.02);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      animation: rowIn 420ms ease both;
+      animation-delay: calc(min(var(--i, 0), 8) * 35ms);
+    }
+    .image-row:hover { transform: translateY(-2px); border-color: rgba(216, 66, 70, 0.32); box-shadow: var(--shadow); }
+    .image-row:nth-child(n) { --i: 1; }
+    .image-row:nth-child(2n) { --i: 2; }
+    .image-row:nth-child(3n) { --i: 3; }
+    @keyframes rowIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .rank { display: grid; place-items: start center; padding-top: 6px; color: var(--muted); font-weight: 900; font-size: 22px; }
+    .rank span { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #edf2f0; }
+    .image-wrap { display: block; min-height: 230px; border-radius: 6px; overflow: hidden; background: #e5ebe8; }
+    .image-wrap img { width: 100%; height: 100%; min-height: 230px; object-fit: contain; object-position: center; display: block; transition: transform 220ms ease; background: #f1f5f3; }
+    .image-row:hover .image-wrap img { transform: scale(1.025); }
+    .facts { display: flex; flex-direction: column; justify-content: center; gap: 11px; }
+    .likes { color: var(--accent); font-size: clamp(36px, 4.8vw, 58px); line-height: 0.94; font-weight: 920; letter-spacing: 0; }
+    .label { color: var(--muted); font-size: 13px; font-weight: 850; }
+    .split, .cluster { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .split span, .cluster span {
+      display: inline-flex;
+      min-height: 30px;
+      align-items: center;
+      padding: 5px 9px;
+      background: var(--accent-soft);
+      color: #912a2d;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .cluster span { background: #edf6f3; color: #1f6f5f; }
+    .cluster code { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+    .evidence { display: grid; gap: 10px; align-content: center; }
+    .evidence-item {
+      display: grid;
+      gap: 4px;
+      padding: 11px 13px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfdfc;
+      transition: border-color 160ms ease, background 160ms ease;
+    }
+    .evidence-item:hover { border-color: rgba(31, 122, 104, 0.38); background: #f5fbf9; }
+    .evidence-item span { color: var(--green); font-size: 12px; font-weight: 850; }
+    .evidence-item strong { color: var(--ink); font-size: 14px; line-height: 1.45; font-weight: 650; overflow-wrap: anywhere; }
+    .ids { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+    .ids code { max-width: 460px; overflow-wrap: anywhere; padding: 3px 6px; border-radius: 4px; background: #edf2f0; color: #384541; }
+    .ids a { margin-left: auto; color: var(--accent); font-weight: 850; }
+    footer { padding: 28px clamp(22px, 4vw, 52px) 48px; color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 340px; order: -1; box-shadow: inset 0 -70px 80px rgba(15,21,19,.24); }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .image-row { grid-template-columns: 48px minmax(0, 1fr); }
+      .image-wrap { grid-column: 2; min-height: 280px; }
+      .facts, .evidence { grid-column: 2; }
+      .rank span { width: 36px; height: 36px; font-size: 18px; }
+    }
+    @media (max-width: 560px) {
+      .hero-copy { padding: 26px 20px 34px; }
+      .kicker { font-size: 11px; overflow-wrap: anywhere; }
+      h1 { font-size: 34px; }
+      .summary { grid-template-columns: 1fr; }
+      main { padding: 20px 12px 32px; }
+      .image-row { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; padding: 12px; }
+      .image-wrap, .image-wrap img { min-height: 220px; }
+      .likes { font-size: 38px; }
+      .ids a { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="kicker">WEIBO VISUAL MEMORY · LOCAL IMAGE VERSION</p>
+      <h1><span>迪丽热巴微博图片记忆</span><span>Top 26</span></h1>
+      <p>按图片聚合热度：明确归因到单张图的主帖赞与评论赞计入统计，并已整理为本地可打开图片版本。</p>
+    </div>
+    <div class="hero-image" style="background-image: linear-gradient(90deg, rgba(14,18,18,0.03), rgba(14,18,18,0.40)), url(&quot;images/01_raw001_006Qht3Egy1icmhgfy1hyj32w63uw4qt.jpg?v=20260522v2&quot;);"></div>
+  </header>
+  <section class="summary">
+    <div><strong>11,074</strong><span>微博相关帖子</span></div>
+    <div><strong>5,030</strong><span>候选图片</span></div>
+    <div><strong>5,790</strong><span>评论证据</span></div>
+    <div><strong>26</strong><span>人物图入选</span></div>
+  </section>
+  <main>
+    <p class="note"><strong>统计说明：</strong>主帖只有明确关于一张图片时计入该图点赞；评论只有明确指向一张图片时计入评论点赞。文字图、视频、截图/非人物图已从最终候选中排除；本页图片均使用本地文件展示，微博原链仅作为溯源。</p>
+    <section class="list">
+      
+      <article class="image-row" id="rank-1">
+        <div class="rank"><span>1</span></div>
+        <a class="image-wrap" href="images/01_raw001_006Qht3Egy1icmhgfy1hyj32w63uw4qt.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 1 张本地图片">
+          <img src="images/01_raw001_006Qht3Egy1icmhgfy1hyj32w63uw4qt.jpg?v=20260522v2" alt="Top 1 迪丽热巴微博热门人物图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">53,501</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 45,683</span>
+            <span>评论 7,818</span>
+            <span>来源 1</span>
+            <span>原榜 #1</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>15 条评论证据</span>
+            <code>006Qht3Egy1icmhgfy1hyj32w63uw4qt</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292683849371367" target="_blank" rel="noreferrer">
+            <span>单图微博 · 45,683 赞</span>
+            <strong>迪丽热巴 美好悄然酝酿 静待纱影褪去，遇见姐姐 @Dear-迪丽热巴 的甜蜜时刻✨</strong>
+          </a>
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292683849371367" target="_blank" rel="noreferrer">
+            <span>单图视觉评论 · 4,616 赞</span>
+            <strong>想要这个发型，这个造型的抖</strong>
+          </a>
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292683849371367" target="_blank" rel="noreferrer">
+            <span>单图视觉评论 · 1,013 赞</span>
+            <strong>哇哦 太美了吧</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>006Qht3Egy1icmhgfy1hyj32w63uw4qt</code>
+            <a href="https://m.weibo.cn/detail/5292683849371367" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-2">
+        <div class="rank"><span>2</span></div>
+        <a class="image-wrap" href="images/02_raw003_006LMu8Ply1ha0tu0v7vpj30u01900uz.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 2 张本地图片">
+          <img src="images/02_raw003_006LMu8Ply1ha0tu0v7vpj30u01900uz.jpg?v=20260522v2" alt="Top 2 迪丽热巴微博热门人物图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">22,072</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 22,072</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #3</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>006LMu8Ply1ha0tu0v7vpj30u01900uz</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4857086871864866" target="_blank" rel="noreferrer">
+            <span>单图微博 · 22,072 赞</span>
+            <strong>这条💎💎 阿丝们，快交出你们手机里热巴的氛围感美照，帅所的相册时刻准备着收美图 #迪丽热巴公诉精英# dlrb #迪丽热巴安旎# 迪丽热巴安乐传|任安乐|帝梓元|迪丽热巴公诉精英|安旎 @Dear-迪丽热巴</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>006LMu8Ply1ha0tu0v7vpj30u01900uz</code>
+            <a href="https://m.weibo.cn/detail/4857086871864866" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-3">
+        <div class="rank"><span>3</span></div>
+        <a class="image-wrap" href="images/03_raw004_001NbstLly1hdz20eaqwoj60u0140k0902.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 3 张本地图片">
+          <img src="images/03_raw004_001NbstLly1hdz20eaqwoj60u0140k0902.jpg?v=20260522v2" alt="Top 3 迪丽热巴微博热门人物图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">21,435</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 21,435</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #4</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>001NbstLly1hdz20eaqwoj60u0140k0902</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4901669077256274" target="_blank" rel="noreferrer">
+            <span>单图微博 · 21,435 赞</span>
+            <strong>#迪丽热巴冰淇淋侧颜# 没有人能拒绝美味🍨，就像没有人能拒绝美神 @Dear-迪丽热巴 一样 ⁄(⁄ ⁄•⁄ω⁄•⁄ ⁄)⁄ 周一有云禾的美图看，又能维持👖50%的快乐了嘿嘿嘿嘿 另外50%快乐，移步酷家看会动的美神即可解锁🔓《与君初相识·恰似故人归》《三生三世十里桃花》《烈火如歌》《秦时丽人明月 ... 全文</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>001NbstLly1hdz20eaqwoj60u0140k0902</code>
+            <a href="https://m.weibo.cn/detail/4901669077256274" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-4">
+        <div class="rank"><span>4</span></div>
+        <a class="image-wrap" href="images/04_raw006_50083478gy1icx1hvnnf9j20tz10zqc7.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 4 张本地图片">
+          <img src="images/04_raw006_50083478gy1icx1hvnnf9j20tz10zqc7.jpg?v=20260522v2" alt="Top 4 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">19,026</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 19,026</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #6</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>50083478gy1icx1hvnnf9j20tz10zqc7</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5295993111185591" target="_blank" rel="noreferrer">
+            <span>单图微博 · 19,026 赞</span>
+            <strong>迪丽热巴 #迪丽热巴手臂上还有疫苗印# 迪丽热巴线下好美的状态，这生图也太生了吧，连她手臂上的疫苗印都能看见😂我和热巴的共同点➕1（cr.网络</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>50083478gy1icx1hvnnf9j20tz10zqc7</code>
+            <a href="https://m.weibo.cn/detail/5295993111185591" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-5">
+        <div class="rank"><span>5</span></div>
+        <a class="image-wrap" href="images/05_raw011_005IKLbYgy1h7oz43rziij30sg11j42d.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 5 张本地图片">
+          <img src="images/05_raw011_005IKLbYgy1h7oz43rziij30sg11j42d.jpg?v=20260522v2" alt="Top 5 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">7,661</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 7,661</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #11</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>005IKLbYgy1h7oz43rziij30sg11j42d</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4833663621793025" target="_blank" rel="noreferrer">
+            <span>单图微博 · 7,661 赞</span>
+            <strong>迪丽热巴</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>005IKLbYgy1h7oz43rziij30sg11j42d</code>
+            <a href="https://m.weibo.cn/detail/4833663621793025" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-6">
+        <div class="rank"><span>6</span></div>
+        <a class="image-wrap" href="images/06_raw014_aa0f5c8cgy1ibdm45egipj20u01407wh.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 6 张本地图片">
+          <img src="images/06_raw014_aa0f5c8cgy1ibdm45egipj20u01407wh.jpg?v=20260522v2" alt="Top 6 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">6,944</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 6,944</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #14</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>aa0f5c8cgy1ibdm45egipj20u01407wh</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5278619266977544" target="_blank" rel="noreferrer">
+            <span>单图微博 · 6,944 赞</span>
+            <strong>是生图也是神图 迪丽热巴DIOR活动女王归来！！！ #迪丽热巴迪奥活动直拍#</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>aa0f5c8cgy1ibdm45egipj20u01407wh</code>
+            <a href="https://m.weibo.cn/detail/5278619266977544" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-7">
+        <div class="rank"><span>7</span></div>
+        <a class="image-wrap" href="images/07_raw021_008cJSnQgy1icv1d2x8r2j30u010xjte.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 7 张本地图片">
+          <img src="images/07_raw021_008cJSnQgy1icv1d2x8r2j30u010xjte.jpg?v=20260522v2" alt="Top 7 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">5,513</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 5,513</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #21</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>008cJSnQgy1icv1d2x8r2j30u010xjte</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5295364832764034" target="_blank" rel="noreferrer">
+            <span>单图微博 · 5,513 赞</span>
+            <strong>迪丽热巴淡妆才是无人能敌，绝无仅有的通透宝宝肤质</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>008cJSnQgy1icv1d2x8r2j30u010xjte</code>
+            <a href="https://m.weibo.cn/detail/5295364832764034" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-8">
+        <div class="rank"><span>8</span></div>
+        <a class="image-wrap" href="images/08_raw023_70c0bd0ely1icpxhzvyydj21lw35s4hr.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 8 张本地图片">
+          <img src="images/08_raw023_70c0bd0ely1icpxhzvyydj21lw35s4hr.jpg?v=20260522v2" alt="Top 8 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">5,292</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 5,292</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #23</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>70c0bd0ely1icpxhzvyydj21lw35s4hr</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5293763907818079" target="_blank" rel="noreferrer">
+            <span>单图微博 · 5,292 赞</span>
+            <strong>投稿一张迪丽热巴 张俪</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>70c0bd0ely1icpxhzvyydj21lw35s4hr</code>
+            <a href="https://m.weibo.cn/detail/5293763907818079" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-9">
+        <div class="rank"><span>9</span></div>
+        <a class="image-wrap" href="images/09_raw029_aa0f5c8cgy1icixuj89vaj22bc38o7wm.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 9 张本地图片">
+          <img src="images/09_raw029_aa0f5c8cgy1icixuj89vaj22bc38o7wm.jpg?v=20260522v2" alt="Top 9 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">4,913</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 4,913</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #29</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>aa0f5c8cgy1icixuj89vaj22bc38o7wm</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5291572746783560" target="_blank" rel="noreferrer">
+            <span>单图微博 · 4,913 赞</span>
+            <strong>DIOR女王👸🏻</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>aa0f5c8cgy1icixuj89vaj22bc38o7wm</code>
+            <a href="https://m.weibo.cn/detail/5291572746783560" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-10">
+        <div class="rank"><span>10</span></div>
+        <a class="image-wrap" href="images/10_raw031_6d464471gy1ibddma2stlj21hc0u04bf.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 10 张本地图片">
+          <img src="images/10_raw031_6d464471gy1ibddma2stlj21hc0u04bf.jpg?v=20260522v2" alt="Top 10 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">4,805</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 4,805</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #31</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>6d464471gy1ibddma2stlj21hc0u04bf</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5278545024912514" target="_blank" rel="noreferrer">
+            <span>单图微博 · 4,805 赞</span>
+            <strong>热巴白日提灯神图，或者妖图 妖气凛然，正气不侵 #迪丽热巴贺思慕俯瞰众生的万灵之主#</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>6d464471gy1ibddma2stlj21hc0u04bf</code>
+            <a href="https://m.weibo.cn/detail/5278545024912514" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-11">
+        <div class="rank"><span>11</span></div>
+        <a class="image-wrap" href="images/11_raw032_007kOIRbly1i2n66z5578j30qo1dx42d.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 11 张本地图片">
+          <img src="images/11_raw032_007kOIRbly1i2n66z5578j30qo1dx42d.jpg?v=20260522v2" alt="Top 11 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">4,586</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 4,586</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #32</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>007kOIRbly1i2n66z5578j30qo1dx42d</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5180054885895298" target="_blank" rel="noreferrer">
+            <span>单图微博 · 4,586 赞</span>
+            <strong>迪丽热巴 求图源 这个神图到底谁拍的</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>007kOIRbly1i2n66z5578j30qo1dx42d</code>
+            <a href="https://m.weibo.cn/detail/5180054885895298" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-12">
+        <div class="rank"><span>12</span></div>
+        <a class="image-wrap" href="images/12_raw036_007vi9Jxgy1icpw1qp364j30j60sqwjb.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 12 张本地图片">
+          <img src="images/12_raw036_007vi9Jxgy1icpw1qp364j30j60sqwjb.jpg?v=20260522v2" alt="Top 12 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">4,227</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 4,227</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #36</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>007vi9Jxgy1icpw1qp364j30j60sqwjb</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5293751380478647" target="_blank" rel="noreferrer">
+            <span>单图微博 · 4,227 赞</span>
+            <strong>#迪丽热巴和素人合影# 这是素人？？还是明星？？怎么好像更好看。</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>007vi9Jxgy1icpw1qp364j30j60sqwjb</code>
+            <a href="https://m.weibo.cn/detail/5293751380478647" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-13">
+        <div class="rank"><span>13</span></div>
+        <a class="image-wrap" href="images/13_raw037_c3e8e973gy1icmq2rt1vej20j610qgnq.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 13 张本地图片">
+          <img src="images/13_raw037_c3e8e973gy1icmq2rt1vej20j610qgnq.jpg?v=20260522v2" alt="Top 13 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">4,212</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 4,212</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #37</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>c3e8e973gy1icmq2rt1vej20j610qgnq</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292758912992159" target="_blank" rel="noreferrer">
+            <span>单图微博 · 4,212 赞</span>
+            <strong>迪丽热巴今日迪奥活动火速被全球总监在ins第一时间发布并认领 #王亚飞 迪丽热巴#</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>c3e8e973gy1icmq2rt1vej20j610qgnq</code>
+            <a href="https://m.weibo.cn/detail/5292758912992159" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-14">
+        <div class="rank"><span>14</span></div>
+        <a class="image-wrap" href="images/14_raw039_6a91117dgy1icocdntdkzj20u013wjxj.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 14 张本地图片">
+          <img src="images/14_raw039_6a91117dgy1icocdntdkzj20u013wjxj.jpg?v=20260522v2" alt="Top 14 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,863</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,863</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #39</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>6a91117dgy1icocdntdkzj20u013wjxj</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5293328922312945" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,863 赞</span>
+            <strong>事情已经慢慢演变成 用以前的迪丽热巴来踩现在的她了…</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>6a91117dgy1icocdntdkzj20u013wjxj</code>
+            <a href="https://m.weibo.cn/detail/5293328922312945" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-15">
+        <div class="rank"><span>15</span></div>
+        <a class="image-wrap" href="images/15_raw041_aa0f5c8cgy1ics9ikmibvj20yw0k1juq.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 15 张本地图片">
+          <img src="images/15_raw041_aa0f5c8cgy1ics9ikmibvj20yw0k1juq.jpg?v=20260522v2" alt="Top 15 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,841</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,841</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #41</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>aa0f5c8cgy1ics9ikmibvj20yw0k1juq</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5294496336316890" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,841 赞</span>
+            <strong>迪丽热巴《长歌行》将于5月4日起在台湾地区纬来综合台重播，长歌厉害👍🏻</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>aa0f5c8cgy1ics9ikmibvj20yw0k1juq</code>
+            <a href="https://m.weibo.cn/detail/5294496336316890" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-16">
+        <div class="rank"><span>16</span></div>
+        <a class="image-wrap" href="images/16_raw042_006SZOn5ly1icso193f5hj30qo1dbag6.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 16 张本地图片">
+          <img src="images/16_raw042_006SZOn5ly1icso193f5hj30qo1dbag6.jpg?v=20260522v2" alt="Top 16 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,808</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,808</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #42</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>006SZOn5ly1icso193f5hj30qo1dbag6</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5294621930294491" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,808 赞</span>
+            <strong>温柔美丽的女朋友~~ @Dear-迪丽热巴</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>006SZOn5ly1icso193f5hj30qo1dbag6</code>
+            <a href="https://m.weibo.cn/detail/5294621930294491" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-17">
+        <div class="rank"><span>17</span></div>
+        <a class="image-wrap" href="images/17_raw048_970aaf68ly1icvfzwbcs7j21e00xcqul.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 17 张本地图片">
+          <img src="images/17_raw048_970aaf68ly1icvfzwbcs7j21e00xcqul.jpg?v=20260522v2" alt="Top 17 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,643</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,643</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #48</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>970aaf68ly1icvfzwbcs7j21e00xcqul</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5296935100744126" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,643 赞</span>
+            <strong>#中青网娱道早安# 青壤幽幽，勇者无畏。 ——《枭起青壤》 聂九罗（ @Dear-迪丽热巴 饰）炎拓（ @陈星旭--CHEN先生 饰）</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>970aaf68ly1icvfzwbcs7j21e00xcqul</code>
+            <a href="https://m.weibo.cn/detail/5296935100744126" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-18">
+        <div class="rank"><span>18</span></div>
+        <a class="image-wrap" href="images/18_raw049_00783IlEgy1icmljd46gaj32dc35sdzd.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 18 张本地图片">
+          <img src="images/18_raw049_00783IlEgy1icmljd46gaj32dc35sdzd.jpg?v=20260522v2" alt="Top 18 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,542</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,542</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #49</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>00783IlEgy1icmljd46gaj32dc35sdzd</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292719417332684" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,542 赞</span>
+            <strong>#33岁迪丽热巴状态# 少指指点点了 再怎么样我姐姐还是内娱神颜</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>00783IlEgy1icmljd46gaj32dc35sdzd</code>
+            <a href="https://m.weibo.cn/detail/5292719417332684" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-19">
+        <div class="rank"><span>19</span></div>
+        <a class="image-wrap" href="images/19_raw053_0089pV2Wgy1hcd5mztuzbj31521kwe1t.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 19 张本地图片">
+          <img src="images/19_raw053_0089pV2Wgy1hcd5mztuzbj31521kwe1t.jpg?v=20260522v2" alt="Top 19 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,436</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,436</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #53</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>0089pV2Wgy1hcd5mztuzbj31521kwe1t</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4883520328040556" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,436 赞</span>
+            <strong>#迪丽热巴复古美学花絮# 插播一个海洋公主迪迪巴 美神配大裙摆才是真理 #微博之夜神图#</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>0089pV2Wgy1hcd5mztuzbj31521kwe1t</code>
+            <a href="https://m.weibo.cn/detail/4883520328040556" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-20">
+        <div class="rank"><span>20</span></div>
+        <a class="image-wrap" href="images/20_raw059_006Lc4RZgy1icvnj60jmej30wg1czgru.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 20 张本地图片">
+          <img src="images/20_raw059_006Lc4RZgy1icvnj60jmej30wg1czgru.jpg?v=20260522v2" alt="Top 20 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,187</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,187</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #59</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>006Lc4RZgy1icvnj60jmej30wg1czgru</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5295557914657914" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,187 赞</span>
+            <strong>封面正确✅ 迪丽热巴永远的神！</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>006Lc4RZgy1icvnj60jmej30wg1czgru</code>
+            <a href="https://m.weibo.cn/detail/5295557914657914" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-21">
+        <div class="rank"><span>21</span></div>
+        <a class="image-wrap" href="images/21_raw064_008AMZE6gy1icmj2u4ilxj30gc0pywgt.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 21 张本地图片">
+          <img src="images/21_raw064_008AMZE6gy1icmj2u4ilxj30gc0pywgt.jpg?v=20260522v2" alt="Top 21 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,082</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,082</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #64</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>008AMZE6gy1icmj2u4ilxj30gc0pywgt</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5292698013532471" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,082 赞</span>
+            <strong>#王亚飞 迪丽热巴# 姐姐应该好好休息调整一下状态了 #33岁迪丽热巴状态#</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>008AMZE6gy1icmj2u4ilxj30gc0pywgt</code>
+            <a href="https://m.weibo.cn/detail/5292698013532471" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-22">
+        <div class="rank"><span>22</span></div>
+        <a class="image-wrap" href="images/22_raw065_6a91117dgy1icv7bvxm1ij20qo140n8i.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 22 张本地图片">
+          <img src="images/22_raw065_6a91117dgy1icv7bvxm1ij20qo140n8i.jpg?v=20260522v2" alt="Top 22 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">3,055</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 3,055</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #65</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>6a91117dgy1icv7bvxm1ij20qo140n8i</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5295501605340386" target="_blank" rel="noreferrer">
+            <span>单图微博 · 3,055 赞</span>
+            <strong>祝迪丽热巴出道13周年快乐 90后唯一金鹰视后 从青涩到王者，用实力把“流量”变成了“留量” 这13年，你真的好争气啊 巴粉永远爱你❗️</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>6a91117dgy1icv7bvxm1ij20qo140n8i</code>
+            <a href="https://m.weibo.cn/detail/5295501605340386" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-23">
+        <div class="rank"><span>23</span></div>
+        <a class="image-wrap" href="images/23_raw070_6a91117dgy1icu5qxrovdj20wr1enk2f.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 23 张本地图片">
+          <img src="images/23_raw070_6a91117dgy1icu5qxrovdj20wr1enk2f.jpg?v=20260522v2" alt="Top 23 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">2,851</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 2,851</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #70</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>6a91117dgy1icu5qxrovdj20wr1enk2f</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5295148411650287" target="_blank" rel="noreferrer">
+            <span>单图微博 · 2,851 赞</span>
+            <strong>wok，迪丽热巴这张图太惊艳了，完全是艺术品…</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>6a91117dgy1icu5qxrovdj20wr1enk2f</code>
+            <a href="https://m.weibo.cn/detail/5295148411650287" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-24">
+        <div class="rank"><span>24</span></div>
+        <a class="image-wrap" href="images/24_raw072_005GTf84gy1icsh4yvcd2j31400u0gpz.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 24 张本地图片">
+          <img src="images/24_raw072_005GTf84gy1icsh4yvcd2j31400u0gpz.jpg?v=20260522v2" alt="Top 24 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">2,845</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 2,845</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #72</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>005GTf84gy1icsh4yvcd2j31400u0gpz</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/5294562194491535" target="_blank" rel="noreferrer">
+            <span>单图微博 · 2,845 赞</span>
+            <strong>真爱降临了 迪丽热巴</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>005GTf84gy1icsh4yvcd2j31400u0gpz</code>
+            <a href="https://m.weibo.cn/detail/5294562194491535" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-25">
+        <div class="rank"><span>25</span></div>
+        <a class="image-wrap" href="images/25_raw075_c116c76ely1hcd5v961pkj20u0190qbv.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 25 张本地图片">
+          <img src="images/25_raw075_c116c76ely1hcd5v961pkj20u0190qbv.jpg?v=20260522v2" alt="Top 25 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">2,757</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 2,757</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #75</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>c116c76ely1hcd5v961pkj20u0190qbv</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4883522398980982" target="_blank" rel="noreferrer">
+            <span>单图微博 · 2,757 赞</span>
+            <strong>#微博之夜神图# 热巴的脸好小啊，没想到骨架也很小，以前看她工作室出的精修图我以为她身体骨架很大，没想到舞台上一站，骨架这么小（真人是比精修图好看）</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>c116c76ely1hcd5v961pkj20u0190qbv</code>
+            <a href="https://m.weibo.cn/detail/4883522398980982" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-26">
+        <div class="rank"><span>26</span></div>
+        <a class="image-wrap" href="images/26_raw079_007h9fwBgy1h2zky47q32j30u0140110.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 26 张本地图片">
+          <img src="images/26_raw079_007h9fwBgy1h2zky47q32j30u0140110.jpg?v=20260522v2" alt="Top 26 迪丽热巴微博热门人物图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">2,629</div>
+          <div class="label">按图片归因点赞</div>
+          <div class="split">
+            <span>主帖 2,629</span>
+            <span>评论 0</span>
+            <span>来源 1</span>
+            <span>原榜 #79</span>
+          </div>
+          <div class="cluster">
+            <span>本地可打开</span>
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>007h9fwBgy1h2zky47q32j30u0140110</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+          <a class="evidence-item" href="https://m.weibo.cn/detail/4777705024786679" target="_blank" rel="noreferrer">
+            <span>单图微博 · 2,629 赞</span>
+            <strong>迪丽热巴的脸从出道以来就没怎么变过，这些年出了不少美图，主要还是因为她不乱动脸，不会跟部分女艺人一样脸上一出点问题就想着去打针，她是天然原装脸，某些天天说热巴整容的还是省省吧</strong>
+          </a>
+          <div class="ids">
+            <span>代表图</span>
+            <code>007h9fwBgy1h2zky47q32j30u0140110</code>
+            <a href="https://m.weibo.cn/detail/4777705024786679" target="_blank" rel="noreferrer">打开微博来源</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer>参考版式：vibesaver.net/htt-weibo9/ · 数据来源：MediaCrawler 抓取与本地人工筛选 · 生成时间：2026-05-11</footer>
+</body>
+</html>
