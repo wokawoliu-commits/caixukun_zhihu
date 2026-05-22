@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>迪丽热巴微博人物图片记忆 Top 25｜视觉聚合</title>
+  <style>
+    :root {
+      --bg: #f4f7f6;
+      --ink: #16201d;
+      --muted: #62706b;
+      --line: #d8e0dd;
+      --panel: #ffffff;
+      --accent: #d84246;
+      --accent-soft: #fff1f1;
+      --green: #1f7a68;
+      --shadow: 0 18px 50px rgba(24, 34, 30, 0.10);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--bg); line-height: 1.55; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 480px); min-height: 440px; border-bottom: 1px solid var(--line); background: #0f1513; color: #fbfdfc; overflow: hidden; }
+    .hero-copy { padding: clamp(30px, 6vw, 78px); align-self: end; min-width: 0; }
+    .kicker { margin: 0 0 14px; color: #9dd7c8; font-size: 13px; font-weight: 850; letter-spacing: 0.08em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 900px; font-size: clamp(34px, 6vw, 76px); line-height: 1.02; letter-spacing: 0; overflow-wrap: anywhere; }
+    h1 span { display: block; }
+    .hero-copy p:not(.kicker) { max-width: 850px; margin: 22px 0 0; color: #d1ddd9; font-size: clamp(15px, 1.6vw, 19px); overflow-wrap: anywhere; }
+    .hero-image { min-height: 440px; background-size: cover; background-position: center 28%; transform: scale(1.02); animation: settle 900ms ease-out both; box-shadow: inset 34px 0 70px rgba(15,21,19,.28); }
+    @keyframes settle { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: scale(1.02); } }
+    .summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+    .summary div { min-height: 96px; padding: 22px clamp(18px, 3vw, 34px); background: var(--panel); }
+    .summary strong { display: block; font-size: clamp(27px, 4vw, 45px); line-height: 1; letter-spacing: 0; }
+    .summary span { display: block; margin-top: 8px; color: var(--muted); font-size: 13px; font-weight: 750; }
+    main { max-width: 1380px; margin: 0 auto; padding: clamp(22px, 4vw, 52px); }
+    .note { max-width: 1120px; margin: 0 0 28px; color: var(--muted); font-size: 14px; }
+    .note strong { color: var(--ink); }
+    .list { display: grid; gap: 18px; }
+    .image-row { display: grid; grid-template-columns: 58px minmax(160px, 240px) minmax(180px, 240px) minmax(0, 1fr); gap: 18px; align-items: stretch; padding: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 0 rgba(23, 32, 29, 0.02); transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
+    .image-row:hover { transform: translateY(-2px); border-color: rgba(216, 66, 70, 0.32); box-shadow: var(--shadow); }
+    .rank { display: grid; place-items: start center; padding-top: 6px; color: var(--muted); font-weight: 900; font-size: 22px; }
+    .rank span { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #edf2f0; }
+    .image-wrap { display: block; min-height: 230px; border-radius: 6px; overflow: hidden; background: #e5ebe8; }
+    .image-wrap img { width: 100%; height: 100%; min-height: 230px; object-fit: contain; object-position: center; display: block; transition: transform 220ms ease; background: #f1f5f3; }
+    .image-row:hover .image-wrap img { transform: scale(1.025); }
+    .facts { display: flex; flex-direction: column; justify-content: center; gap: 11px; }
+    .likes { color: var(--accent); font-size: clamp(36px, 4.8vw, 58px); line-height: 0.94; font-weight: 920; letter-spacing: 0; }
+    .label { color: var(--muted); font-size: 13px; font-weight: 850; }
+    .split, .cluster { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .split span, .cluster span { display: inline-flex; min-height: 30px; align-items: center; padding: 5px 9px; background: var(--accent-soft); color: #912a2d; border-radius: 999px; font-size: 12px; font-weight: 800; }
+    .cluster span { background: #edf6f3; color: #1f6f5f; }
+    .cluster code { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+    .evidence { display: grid; gap: 10px; align-content: center; }
+    .evidence-item { display: grid; gap: 4px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 6px; background: #fbfdfc; transition: border-color 160ms ease, background 160ms ease; }
+    .evidence-item:hover { border-color: rgba(31, 122, 104, 0.38); background: #f5fbf9; }
+    .evidence-item span { color: var(--green); font-size: 12px; font-weight: 850; }
+    .evidence-item strong { color: var(--ink); font-size: 14px; line-height: 1.45; font-weight: 650; overflow-wrap: anywhere; }
+    .ids { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; }
+    .ids code { max-width: 460px; overflow-wrap: anywhere; padding: 3px 6px; border-radius: 4px; background: #edf2f0; color: #384541; }
+    .ids a { margin-left: auto; color: var(--accent); font-weight: 850; }
+    footer { padding: 28px clamp(22px, 4vw, 52px) 48px; color: var(--muted); font-size: 12px; text-align: center; }
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-image { min-height: 340px; order: -1; box-shadow: inset 0 -70px 80px rgba(15,21,19,.24); }
+      .summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .image-row { grid-template-columns: 48px minmax(0, 1fr); }
+      .image-wrap { grid-column: 2; min-height: 280px; }
+      .facts, .evidence { grid-column: 2; }
+      .rank span { width: 36px; height: 36px; font-size: 18px; }
+    }
+    @media (max-width: 560px) {
+      .hero-copy { padding: 26px 20px 34px; }
+      .kicker { font-size: 11px; overflow-wrap: anywhere; }
+      h1 { font-size: 34px; }
+      .summary { grid-template-columns: 1fr; }
+      main { padding: 20px 12px 32px; }
+      .image-row { grid-template-columns: 42px minmax(0, 1fr); gap: 12px; padding: 12px; }
+      .image-wrap, .image-wrap img { min-height: 220px; }
+      .likes { font-size: 38px; }
+      .ids a { margin-left: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="kicker">WEIBO VISUAL CLUSTER · LOCAL IMAGE VERSION</p>
+      <h1><span>迪丽热巴微博人物图片记忆 Top 25</span><span>视觉聚合版</span></h1>
+      <p>基于图片本身计算视觉相似度，把同图重传、压缩和轻微裁切合并，再汇总同一视觉簇里的主帖赞与评论赞。</p>
+    </div>
+    <div class="hero-image" style="background-image: linear-gradient(90deg, rgba(14,18,18,0.03), rgba(14,18,18,0.40)), url(&quot;rank_images/001_001P0DUIgy1i5y5w79u6nj64ry6d9he702.jpg?v=20260522v2&quot;);"></div>
+  </header>
+  <section class="summary">
+    <div><strong>1,619</strong><span>有归因点赞图片</span></div>
+    <div><strong>25</strong><span>视觉聚合簇</span></div>
+    <div><strong>148</strong><span>被合并 pic_id</span></div>
+    <div><strong>25</strong><span>当前展示</span></div>
+  </section>
+  <main>
+    <p class="note"><strong>统计说明：</strong>这版不再把微博 pic_id 直接当作最终图片单位，而是先用 pHash/dHash/颜色直方图判断视觉近似，再把同一视觉簇下各 pic_id 的可归因点赞相加。多图微博仍遵守原规则：不能明确归因到单张图的整帖点赞不硬分摊。</p>
+    <section class="list">
+      
+      <article class="image-row" id="rank-1">
+        <div class="rank"><span>1</span></div>
+        <a class="image-wrap" href="rank_images/001_001P0DUIgy1i5y5w79u6nj64ry6d9he702.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 1 个视觉簇代表图">
+          <img src="rank_images/001_001P0DUIgy1i5y5w79u6nj64ry6d9he702.jpg?v=20260522v2" alt="Top 1 迪丽热巴微博视觉聚合图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">22,531,056</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 22,531,056</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #1</span>
+            <span>raw #1</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0001</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5217353580418105" target="_blank" rel="noreferrer">
+              <span>单图微博 · 22,531,056 赞 · raw #1</span>
+              <strong>感谢 @DIOR迪奥 创意总监Jonathan Anderson带来这么多精彩作品🤩，每一套LOOK都戳中我的心，期待下次再见！ #迪奥二零二六春夏秀#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>1</code>
+            <a href="https://m.weibo.cn/detail/5217353580418105" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-2">
+        <div class="rank"><span>2</span></div>
+        <a class="image-wrap" href="rank_images/003_001P0DUIly1ibutju8xiuj60wr10xtb802.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 2 个视觉簇代表图">
+          <img src="rank_images/003_001P0DUIly1ibutju8xiuj60wr10xtb802.jpg?v=20260522v2" alt="Top 2 迪丽热巴微博视觉聚合图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">1,060,895</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 1,060,895</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #3</span>
+            <span>raw #3</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0003</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5284012726946750" target="_blank" rel="noreferrer">
+              <span>单图微博 · 1,060,895 赞 · raw #3</span>
+              <strong>白日提灯剧版 #归墟5A级景区观光团# 贺small 0404 to do list： 1.救扶桑木 2.救人 3.上班打卡 4.听下属废话 5.削木头 #白日提灯#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>3</code>
+            <a href="https://m.weibo.cn/detail/5284012726946750" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-3">
+        <div class="rank"><span>3</span></div>
+        <a class="image-wrap" href="rank_images/004_002Po4pSly1ibo52q3m4cj64mo2bcnph02.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 3 个视觉簇代表图">
+          <img src="rank_images/004_002Po4pSly1ibo52q3m4cj64mo2bcnph02.jpg?v=20260522v2" alt="Top 3 迪丽热巴微博视觉聚合图片" loading="eager">
+        </a>
+        <div class="facts">
+          <div class="likes">666,317</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 666,317</span>
+            <span>评论 0</span>
+            <span>2 个 pic_id 合并</span>
+            <span>全局簇 #4</span>
+            <span>raw #4</span>
+          </div>
+          <div class="cluster">
+            <span>2 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0004</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5281918519093215" target="_blank" rel="noreferrer">
+              <span>单图微博 · 634,201 赞 · raw #4</span>
+              <strong>#白日提灯腾讯视频热度值破27000# 思胥万千一路相伴！感谢大家的喜爱与热烈支持～贺思慕 @Dear-迪丽热巴 段胥 @陈飞宇Arthur 的故事还在继续～ #白日提灯# 每晚18:00 @腾讯视频 独家热播，SVIP抢先看！</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5281912434461260" target="_blank" rel="noreferrer">
+              <span>单图微博 · 32,116 赞 · raw #41</span>
+              <strong>【就灯你了】恭喜 #白日提灯腾讯视频热度值破27000# 左看贺思慕 @Dear-迪丽热巴 段胥 @陈飞宇Arthur 萌！右看还是萌！思胥万千就这样背后抱萌翻所有人！ #白日提灯# 每晚18:00 @腾讯视频 独家热播，SVIP抢先看！</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>4, 41</code>
+            <a href="https://m.weibo.cn/detail/5281918519093215" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-4">
+        <div class="rank"><span>4</span></div>
+        <a class="image-wrap" href="rank_images/006_7211998agy1hxufdbatv6j215o1mc1kx.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 4 个视觉簇代表图">
+          <img src="rank_images/006_7211998agy1hxufdbatv6j215o1mc1kx.jpg?v=20260522v2" alt="Top 4 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">226,035</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 226,035</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #6</span>
+            <span>raw #6</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0006</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5125933316964977" target="_blank" rel="noreferrer">
+              <span>单图微博 · 226,035 赞 · raw #6</span>
+              <strong>璀璨翩至，华珠焕彩。﻿ #Mikimoto全球代言人迪丽热巴# @Dear-迪丽热巴 ﻿﻿，华丽演绎MIKIMOTO高级珠宝The Bows。耀目珠光续写洛可可风格的奢美畅想，斑斓宝石编织空灵飘逸的缎带造型，浪漫定格惊艳一瞬。 ﻿ #MIKIMOTO# ﻿ #MIKIMOTO高级珠宝# ﻿ #TheBows#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>6</code>
+            <a href="https://m.weibo.cn/detail/5125933316964977" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-5">
+        <div class="rank"><span>5</span></div>
+        <a class="image-wrap" href="rank_images/010_007846BMgy1i9qx3xmwkpj30qc0l4whn.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 5 个视觉簇代表图">
+          <img src="rank_images/010_007846BMgy1i9qx3xmwkpj30qc0l4whn.jpg?v=20260522v2" alt="Top 5 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">113,817</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 113,817</span>
+            <span>评论 0</span>
+            <span>5 个 pic_id 合并</span>
+            <span>全局簇 #10</span>
+            <span>raw #10</span>
+          </div>
+          <div class="cluster">
+            <span>5 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0010</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5260220650489368" target="_blank" rel="noreferrer">
+              <span>单图微博 · 84,844 赞 · raw #10</span>
+              <strong>微博之夜最后截止数据 总门票数前六家：梓渝 肖战 田栩宁 迪丽热巴 华晨宇 周深 #微博之夜#</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5254268468856019" target="_blank" rel="noreferrer">
+              <span>单图微博 · 17,657 赞 · raw #79</span>
+              <strong>微博之夜门票统计: 梓渝、肖战、田栩宁、迪丽热巴、华晨宇拿下总票数前五</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5260213859917564" target="_blank" rel="noreferrer">
+              <span>单图微博 · 8,811 赞 · raw #129</span>
+              <strong>微博之夜正式结束 恭喜梓渝拿下66张门票，全内娱TOP1🎉 我们取得这个成绩仅仅只用了半年！ 这两个月来大家辛苦了！未来一起给梓渝创造更多荣誉吧！</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>10, 79, 129, 664, 721</code>
+            <a href="https://m.weibo.cn/detail/5260220650489368" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-6">
+        <div class="rank"><span>6</span></div>
+        <a class="image-wrap" href="rank_images/011_001NbtLFly8hwlrjypfq5j60ku0u0qdp02.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 6 个视觉簇代表图">
+          <img src="rank_images/011_001NbtLFly8hwlrjypfq5j60ku0u0qdp02.jpg?v=20260522v2" alt="Top 6 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">90,237</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 90,237</span>
+            <span>评论 0</span>
+            <span>2 个 pic_id 合并</span>
+            <span>全局簇 #11</span>
+            <span>raw #11</span>
+          </div>
+          <div class="cluster">
+            <span>2 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0011</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5111907285729481" target="_blank" rel="noreferrer">
+              <span>单图微博 · 73,252 赞 · raw #11</span>
+              <strong>#微博之夜成就中心# 解锁播报📢恭喜「爱丽丝战队」解锁战队人数20万成就 #爱丽丝战队人数突破20万# 🎉用行动诠释热爱，每个人都不可或缺！戳&gt; 网页链接 加入战队，一起为荣耀而战赢盛典门票 迪丽热巴</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5113838047593770" target="_blank" rel="noreferrer">
+              <span>单图微博 · 16,985 赞 · raw #81</span>
+              <strong>#微博之夜成就中心# 解锁播报📢恭喜「爱丽丝战队」解锁战队集卡总数量达300万张成就 #爱丽丝战队集卡总数破300万张# 🎉齐心协力，所有目标皆可达成！戳&gt; 网页链接 加入战队，共筑荣耀赢盛典门票！ 迪丽热巴</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>11, 81</code>
+            <a href="https://m.weibo.cn/detail/5111907285729481" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-7">
+        <div class="rank"><span>7</span></div>
+        <a class="image-wrap" href="rank_images/014_7211998agy1hq8kym7pufj269a8iob2q.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 7 个视觉簇代表图">
+          <img src="rank_images/014_7211998agy1hq8kym7pufj269a8iob2q.jpg?v=20260522v2" alt="Top 7 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">66,607</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 66,607</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #14</span>
+            <span>raw #14</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0014</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5040424878868132" target="_blank" rel="noreferrer">
+              <span>单图微博 · 66,607 赞 · raw #14</span>
+              <strong>生而耀目，完满如斯。 #Mikimoto全球代言人迪丽热巴# @Dear-迪丽热巴 华美演绎Jeux de Rubans系列高级珠宝，悦启六月「珍珠月」。以细腻珠光为生命的璀璨投射万般注解，以美满与幸福为引，缔造属于六月的瑰丽颂歌。 #MIKIMOTO# #MIKIMOTO高级珠宝# #JeuxdeRubans#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>14</code>
+            <a href="https://m.weibo.cn/detail/5040424878868132" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-8">
+        <div class="rank"><span>8</span></div>
+        <a class="image-wrap" href="rank_images/021_006Qht3Ely1hw5j1oe4buj31jk2gw7wi.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 8 个视觉簇代表图">
+          <img src="rank_images/021_006Qht3Ely1hw5j1oe4buj31jk2gw7wi.jpg?v=20260522v2" alt="Top 8 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">52,508</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 52,508</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #22</span>
+            <span>raw #21</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0022</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5106711817619416" target="_blank" rel="noreferrer">
+              <span>单图微博 · 52,508 赞 · raw #21</span>
+              <strong>迪丽热巴 流光洒落，织就幻梦，与 @Dear-迪丽热巴 一起邂逅冬日美好氛围，十二月行程图已送达，快来接收吧～</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>21</code>
+            <a href="https://m.weibo.cn/detail/5106711817619416" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-9">
+        <div class="rank"><span>9</span></div>
+        <a class="image-wrap" href="rank_images/023_006Qht3Ely1huna5w4lxzj32lz3fc1l1.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 9 个视觉簇代表图">
+          <img src="rank_images/023_006Qht3Ely1huna5w4lxzj32lz3fc1l1.jpg?v=20260522v2" alt="Top 9 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">51,441</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 51,441</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #24</span>
+            <span>raw #23</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0024</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5089815420473345" target="_blank" rel="noreferrer">
+              <span>单图微博 · 51,441 赞 · raw #23</span>
+              <strong>迪丽热巴 藏在花后面的 @Dear-迪丽热巴 马上就来啦！</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>23</code>
+            <a href="https://m.weibo.cn/detail/5089815420473345" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-10">
+        <div class="rank"><span>10</span></div>
+        <a class="image-wrap" href="rank_images/032_053e8601ly1ic0pm74ncdj20n90u0agm.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 10 个视觉簇代表图">
+          <img src="rank_images/032_053e8601ly1ic0pm74ncdj20n90u0agm.jpg?v=20260522v2" alt="Top 10 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">48,184</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 48,184</span>
+            <span>评论 0</span>
+            <span>2 个 pic_id 合并</span>
+            <span>全局簇 #26</span>
+            <span>raw #32</span>
+          </div>
+          <div class="cluster">
+            <span>2 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0026</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5285858903066928" target="_blank" rel="noreferrer">
+              <span>单图微博 · 35,968 赞 · raw #32</span>
+              <strong>迪丽热巴陈飞宇白日提灯 28集开始无广萝卜了.... 这个算平播还是扑了呢 而且这是迪丽热巴最后一部待播剧了吧 .....</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5285889284773144" target="_blank" rel="noreferrer">
+              <span>单图微博 · 12,216 赞 · raw #103</span>
+              <strong>迪丽热巴、陈飞宇《白日提灯》最新集无广🥕</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>32, 103</code>
+            <a href="https://m.weibo.cn/detail/5285858903066928" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-11">
+        <div class="rank"><span>11</span></div>
+        <a class="image-wrap" href="rank_images/029_001VvpGXly1i87a93pwwfj62bc334u0y02.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 11 个视觉簇代表图">
+          <img src="rank_images/029_001VvpGXly1i87a93pwwfj62bc334u0y02.jpg?v=20260522v2" alt="Top 11 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">38,736</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 38,736</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #31</span>
+            <span>raw #29</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0031</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5242781905720007" target="_blank" rel="noreferrer">
+              <span>单图微博 · 38,736 赞 · raw #29</span>
+              <strong>#VOGUE年度最佳着装# #VOGUE年度最佳着装榜单# 只要 “有野心” ，她可以驾驭的红毯风格很难看到上限。 她是「VOGUE年度最佳红毯着装女明星」—— @Dear-迪丽热巴 。</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>29</code>
+            <a href="https://m.weibo.cn/detail/5242781905720007" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-12">
+        <div class="rank"><span>12</span></div>
+        <a class="image-wrap" href="rank_images/031_006Qht3Ely1hbs9oyijrzj315o223hdt.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 12 个视觉簇代表图">
+          <img src="rank_images/031_006Qht3Ely1hbs9oyijrzj315o223hdt.jpg?v=20260522v2" alt="Top 12 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">37,756</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 37,756</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #32</span>
+            <span>raw #31</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0032</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/4876972876103787" target="_blank" rel="noreferrer">
+              <span>单图微博 · 37,756 赞 · raw #31</span>
+              <strong>#鹅家春日剧会# 美好与春天同步绽放，这个三月也要和 #腾讯视频春日剧推官# 迪丽热巴一起为正义而战！愿你也能从《 #公诉精英# 》安旎身上获得向上的力量，展现属于你的绝对风采。花开春日，如「她」绽放。和 @Dear-迪丽热巴 一起上腾讯视频，尽享春日好时光。</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>31</code>
+            <a href="https://m.weibo.cn/detail/4876972876103787" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-13">
+        <div class="rank"><span>13</span></div>
+        <a class="image-wrap" href="rank_images/036_006q48Rkgy1i4qitgypm3j30u012e0yd.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 13 个视觉簇代表图">
+          <img src="rank_images/036_006q48Rkgy1i4qitgypm3j30u012e0yd.jpg?v=20260522v2" alt="Top 13 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">33,581</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 33,581</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #36</span>
+            <span>raw #36</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0036</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5203793987240175" target="_blank" rel="noreferrer">
+              <span>单图微博 · 33,581 赞 · raw #36</span>
+              <strong>迪丽热巴 // 这是最接近热巴现实的照片</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>36</code>
+            <a href="https://m.weibo.cn/detail/5203793987240175" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-14">
+        <div class="rank"><span>14</span></div>
+        <a class="image-wrap" href="rank_images/037_006Qht3Ely1iblasgsa9rj32p81ip7wl.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 14 个视觉簇代表图">
+          <img src="rank_images/037_006Qht3Ely1iblasgsa9rj32p81ip7wl.jpg?v=20260522v2" alt="Top 14 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">33,255</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 33,255</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #37</span>
+            <span>raw #37</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0037</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5281028021422358" target="_blank" rel="noreferrer">
+              <span>单图微博 · 33,255 赞 · raw #37</span>
+              <strong>迪丽热巴 📅 #贺思慕的五感体验卡# 追剧日历已送达🙌 提灯入世寻途，执领苍生万象。3月28日12:00，锁定 @腾讯视频 与灵主大人贺思慕 @Dear-迪丽热巴 共赴归墟 #白日提灯# #迪丽热巴贺思慕#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>37</code>
+            <a href="https://m.weibo.cn/detail/5281028021422358" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-15">
+        <div class="rank"><span>15</span></div>
+        <a class="image-wrap" href="rank_images/039_008rtIkXly1h5ndod07egj30u01hc7mg.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 15 个视觉簇代表图">
+          <img src="rank_images/039_008rtIkXly1h5ndod07egj30u01hc7mg.jpg?v=20260522v2" alt="Top 15 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">32,891</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 32,891</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #39</span>
+            <span>raw #39</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0039</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/4807937967787577" target="_blank" rel="noreferrer">
+              <span>单图微博 · 32,891 赞 · raw #39</span>
+              <strong>#央仔道晚安# 为了理想争取奋斗过，比从没尝试过就妥协要好。 ——《你是我的荣耀》乔晶晶（迪丽热巴 饰）</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>39</code>
+            <a href="https://m.weibo.cn/detail/4807937967787577" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-16">
+        <div class="rank"><span>16</span></div>
+        <a class="image-wrap" href="rank_images/042_008zcYLCgy1i4jadxo3ujj30u81hqago.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 16 个视觉簇代表图">
+          <img src="rank_images/042_008zcYLCgy1i4jadxo3ujj30u81hqago.jpg?v=20260522v2" alt="Top 16 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">31,024</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 31,024</span>
+            <span>评论 0</span>
+            <span>2 个 pic_id 合并</span>
+            <span>全局簇 #41</span>
+            <span>raw #42</span>
+          </div>
+          <div class="cluster">
+            <span>2 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0041</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5201406551132872" target="_blank" rel="noreferrer">
+              <span>单图微博 · 31,016 赞 · raw #42</span>
+              <strong>omg！红毯的神来了，迪丽热巴6b</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5201408170918730" target="_blank" rel="noreferrer">
+              <span>单图微博 · 8 赞 · raw #1363</span>
+              <strong>#迪丽热巴大光明盘发# 沃䒑 太惊喜了 #迪丽热巴# 一张路透图已经感受到强大的女王气场</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>42, 1363</code>
+            <a href="https://m.weibo.cn/detail/5201406551132872" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-17">
+        <div class="rank"><span>17</span></div>
+        <a class="image-wrap" href="rank_images/048_006Qht3Ely1ibqh7rcad2j383m4k27wp.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 17 个视觉簇代表图">
+          <img src="rank_images/048_006Qht3Ely1ibqh7rcad2j383m4k27wp.jpg?v=20260522v2" alt="Top 17 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">25,611</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 25,611</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #48</span>
+            <span>raw #48</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0048</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5282651151796177" target="_blank" rel="noreferrer">
+              <span>单图微博 · 25,611 赞 · raw #48</span>
+              <strong>迪丽热巴 🔥 #贺思慕的五感体验卡# 腾讯站内角色热度破1亿！提灯执剑守归墟，与贺思慕 @Dear-迪丽热巴 一同入局掌乾坤！每晚18:00继续锁定 @腾讯视频 一起来看 #白日提灯# #迪丽热巴贺思慕#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>48</code>
+            <a href="https://m.weibo.cn/detail/5282651151796177" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-18">
+        <div class="rank"><span>18</span></div>
+        <a class="image-wrap" href="rank_images/049_005K0mcMgy1i9ppvrdksuj30xs0dqju3.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 18 个视觉簇代表图">
+          <img src="rank_images/049_005K0mcMgy1i9ppvrdksuj30xs0dqju3.jpg?v=20260522v2" alt="Top 18 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">25,524</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 25,524</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #49</span>
+            <span>raw #49</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0049</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5259844263349126" target="_blank" rel="noreferrer">
+              <span>单图微博 · 25,524 赞 · raw #49</span>
+              <strong>迪丽热巴不参加微博之夜，对粉丝打击挺大的</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>49</code>
+            <a href="https://m.weibo.cn/detail/5259844263349126" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-19">
+        <div class="rank"><span>19</span></div>
+        <a class="image-wrap" href="rank_images/053_006Qht3Ely1ibnwcpiwaij32kl1g31ky.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 19 个视觉簇代表图">
+          <img src="rank_images/053_006Qht3Ely1ibnwcpiwaij32kl1g31ky.jpg?v=20260522v2" alt="Top 19 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">24,740</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 24,740</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #53</span>
+            <span>raw #53</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0053</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5281843251251791" target="_blank" rel="noreferrer">
+              <span>单图微博 · 24,740 赞 · raw #53</span>
+              <strong>迪丽热巴 🎉提灯破界，感人间冷暖。恭喜贺思慕 @Dear-迪丽热巴 微博演员影响力演员热度值开播首日破9300万！🔥今晚18:00准时来 @腾讯视频 看白日提灯📺 #贺思慕迪丽热巴# #微博演员影响力# #微博演员青云专项#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>53</code>
+            <a href="https://m.weibo.cn/detail/5281843251251791" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-20">
+        <div class="rank"><span>20</span></div>
+        <a class="image-wrap" href="rank_images/059_cbefb310gy1ibutw5sx3nj20s90sjdh0.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 20 个视觉簇代表图">
+          <img src="rank_images/059_cbefb310gy1ibutw5sx3nj20s90sjdh0.jpg?v=20260522v2" alt="Top 20 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">23,255</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 23,255</span>
+            <span>评论 0</span>
+            <span>2 个 pic_id 合并</span>
+            <span>全局簇 #56</span>
+            <span>raw #59</span>
+          </div>
+          <div class="cluster">
+            <span>2 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0056</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5284015355463760" target="_blank" rel="noreferrer">
+              <span>单图微博 · 22,700 赞 · raw #59</span>
+              <strong>白日提灯剧版 原来是老祖宗邀请我来归墟玩！！！！ @Dear-迪丽热巴</strong>
+            </a>
+
+            <a class="evidence-item" href="https://m.weibo.cn/detail/4909708102081261" target="_blank" rel="noreferrer">
+              <span>单图微博 · 555 赞 · raw #871</span>
+              <strong>#电视剧公诉# 我的评分： 阿拉公诉真的好看 咱就是说狗路过都会被卷进来怀疑是老A 以及想做安旎的小跟班，想享受旎姐给我撑腰的幸福感 #迪丽热巴安旎# 🌟亮点推荐： 全是亮点</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>59, 871</code>
+            <a href="https://m.weibo.cn/detail/5284015355463760" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-21">
+        <div class="rank"><span>21</span></div>
+        <a class="image-wrap" href="rank_images/064_006Qht3Ely1ibmuqt7dv0j32yo1o0npe.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 21 个视觉簇代表图">
+          <img src="rank_images/064_006Qht3Ely1ibmuqt7dv0j32yo1o0npe.jpg?v=20260522v2" alt="Top 21 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">21,410</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 21,410</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #63</span>
+            <span>raw #64</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0063</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5281515118527633" target="_blank" rel="noreferrer">
+              <span>单图微博 · 21,410 赞 · raw #64</span>
+              <strong>迪丽热巴 💪 #贺思慕的五感体验卡# 🎉腾讯站内剧集热度值破25000！以宿命为引赴约，与贺思慕 @Dear-迪丽热巴 共启五感之境。每晚18:00继续锁定 @腾讯视频 #白日提灯# #迪丽热巴贺思慕#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>64</code>
+            <a href="https://m.weibo.cn/detail/5281515118527633" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-22">
+        <div class="rank"><span>22</span></div>
+        <a class="image-wrap" href="rank_images/065_006LMu8Pgy1ha4ejhisrdg30dc0h4x6s.gif?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 22 个视觉簇代表图">
+          <img src="rank_images/065_006LMu8Pgy1ha4ejhisrdg30dc0h4x6s.gif?v=20260522v2" alt="Top 22 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">20,786</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 20,786</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #64</span>
+            <span>raw #65</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0064</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/4858207544279188" target="_blank" rel="noreferrer">
+              <span>单图微博 · 20,786 赞 · raw #65</span>
+              <strong>💎💎女星热°第一🥇要不要？ 没有人不想要吧 尽全力不留遗憾，给宝贝最好的☝🏻 迪丽热巴公诉精英|安旎|迪丽热巴安乐传|任安乐|帝梓元 @Dear-迪丽热巴 #迪丽热巴公诉精英# dlrb #迪丽热巴安旎#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>65</code>
+            <a href="https://m.weibo.cn/detail/4858207544279188" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-23">
+        <div class="rank"><span>23</span></div>
+        <a class="image-wrap" href="rank_images/070_d145ba25gy1h94qpnbq57j21hc0w0kjl.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 23 个视觉簇代表图">
+          <img src="rank_images/070_d145ba25gy1h94qpnbq57j21hc0w0kjl.jpg?v=20260522v2" alt="Top 23 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">19,633</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 19,633</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #69</span>
+            <span>raw #70</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0069</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/4847030567179856" target="_blank" rel="noreferrer">
+              <span>单图微博 · 19,633 赞 · raw #70</span>
+              <strong>【DILRABA&amp;ALICE 网站上线&amp;公测】 亲爱的 若提到我们 我能列举许多—— 比如书桌上是我誊写的 你曾随口说的话 比如摇椅边是我收藏的 你的剧场门票与胶卷 比如留声机里是我反复播放的 你偶尔的呢喃 “说来惭愧” “虽是亲手打理 但有些花朵我却叫不出名字” 就像好多时候 只记着你的事情 牛奶煮沸了也 ... 全文</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>70</code>
+            <a href="https://m.weibo.cn/detail/4847030567179856" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-24">
+        <div class="rank"><span>24</span></div>
+        <a class="image-wrap" href="rank_images/072_008qZRKlgy1i4jagrdnmbj323w35uhdt.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 24 个视觉簇代表图">
+          <img src="rank_images/072_008qZRKlgy1i4jagrdnmbj323w35uhdt.jpg?v=20260522v2" alt="Top 24 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">19,012</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 19,012</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #72</span>
+            <span>raw #72</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0072</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5201407210164903" target="_blank" rel="noreferrer">
+              <span>单图微博 · 19,012 赞 · raw #72</span>
+              <strong>迪丽热巴｜ #W年度光影盛典# 时隔 605 天的红毯造型来啦 ！解锁 Robert Wun ，身穿品牌 2025 秋冬高定系列礼服即将亮相今日 W 盛典红毯 ！恭迎我们玩转概念的美神登场 ！ #迪丽热巴605天没走红毯了#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>72</code>
+            <a href="https://m.weibo.cn/detail/5201407210164903" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+      <article class="image-row" id="rank-25">
+        <div class="rank"><span>25</span></div>
+        <a class="image-wrap" href="rank_images/075_006Qht3Ely1icgn58fzlmj382w494x6z.jpg?v=20260522v2" target="_blank" rel="noreferrer" aria-label="打开第 25 个视觉簇代表图">
+          <img src="rank_images/075_006Qht3Ely1icgn58fzlmj382w494x6z.jpg?v=20260522v2" alt="Top 25 迪丽热巴微博视觉聚合图片" loading="lazy">
+        </a>
+        <div class="facts">
+          <div class="likes">18,460</div>
+          <div class="label">视觉聚合后点赞</div>
+          <div class="split">
+            <span>主帖 18,460</span>
+            <span>评论 0</span>
+            <span>1 个 pic_id 合并</span>
+            <span>全局簇 #75</span>
+            <span>raw #75</span>
+          </div>
+          <div class="cluster">
+            <span>1 条主帖证据</span>
+            <span>0 条评论证据</span>
+            <code>vc0075</code>
+          </div>
+        </div>
+        <div class="evidence">
+          
+            <a class="evidence-item" href="https://m.weibo.cn/detail/5290853964972926" target="_blank" rel="noreferrer">
+              <span>单图微博 · 18,460 赞 · raw #75</span>
+              <strong>迪丽热巴 🌟 #贺思慕的五感体验卡# 贺思慕 @Dear-迪丽热巴 执灯引魂，生五感，破迷局，历生死羁绊，故事终章落定。 #迪丽热巴贺思慕# 将携温柔与赤诚继续奔赴烟火人间💫 #白日提灯今日收官#</strong>
+            </a>
+          <div class="ids">
+            <span>成员 raw rank</span>
+            <code>75</code>
+            <a href="https://m.weibo.cn/detail/5290853964972926" target="_blank" rel="noreferrer">打开代表来源</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer>参考版式：vibesaver.net/htt-weibo9/ · 数据来源：MediaCrawler 抓取、本地视觉聚合与人工人物图筛选 · 生成时间：2026-05-12 09:08:58</footer>
+</body>
+</html>
