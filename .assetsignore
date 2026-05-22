@@ -6,8 +6,4 @@
 wrangler.jsonc
 htt-weibo2/weibo_50k_hotlist_visual_filtered.csv
 htt-weibo5/weibo_50k_hotlist_visual_filtered.csv
-db-new2/data/image_failures.jsonl
-db-new2/data/images.json
-db-new2/data/images.jsonl
-db-new2/local-server.log
-db-new2/local-server.pid
+db-new2/
