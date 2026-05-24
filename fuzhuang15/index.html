@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>核心 SKU 明细 · 新分类策略</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">SKU browser · classification v2</p>
+        <h1>核心 SKU 明细 · 新分类策略</h1>
+        <p>形态优先、裙装剔除、家居服只承接未被具体形态命中的上装/裤装/套装。</p>
+      </div>
+      <div class="header-meta">
+        <strong id="heroCount">—</strong>
+        <span>SKU/SPU</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="filters">
+        <label>品牌<select id="brandFilter"></select></label>
+        <label>品类<select id="categoryFilter"></select></label>
+        <label>核心口径<select id="coreFilter"><option>全部</option><option>核心品类</option><option>非核心/剔除</option></select></label>
+        <label>价格状态<select id="priceFilter"><option>全部</option><option>有价格</option><option>缺价格</option></select></label>
+        <label>图片状态<select id="imageFilter"><option>全部</option><option>有本地图片</option><option>无本地图片</option></select></label>
+        <label class="search">关键词<input id="searchInput" type="search" placeholder="搜索标题、店铺、itemId、SKU摘要、分类依据" /></label>
+      </section>
+
+      <section class="summary" id="summary"></section>
+
+      <section class="modebar">
+        <div class="segmented" role="tablist" aria-label="视图切换">
+          <button class="active" data-view="grid">图文</button>
+          <button data-view="table">表格</button>
+        </div>
+        <div class="pager">
+          <span id="pageInfo"></span>
+        </div>
+      </section>
+
+      <section id="gridView" class="sku-grid"></section>
+
+      <section id="tableView" class="table-wrap" hidden>
+        <table id="skuTable"></table>
+      </section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
