@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>网页导航索引｜caixukun_zhihu</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f5f2;
+      --ink: #171717;
+      --muted: #666b73;
+      --line: #d9d9d2;
+      --paper: #ffffff;
+      --paper-soft: #faf9f5;
+      --accent: #a63d2f;
+      --accent-soft: #f3e4df;
+      --green: #226a58;
+      --shadow: 0 20px 60px rgba(20, 20, 20, 0.08);
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #fffdfa 0, var(--bg) 360px);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .page { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    header { padding: 52px 0 28px; border-bottom: 1px solid var(--line); }
+    .eyebrow { margin: 0 0 10px; color: var(--accent); font-size: 13px; font-weight: 700; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 920px; font-size: clamp(36px, 6vw, 76px); line-height: 1.02; letter-spacing: 0; }
+    .intro { max-width: 780px; margin: 18px 0 0; color: var(--muted); font-size: 18px; }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 28px 0 0; }
+    .stat { border-top: 1px solid var(--line); padding-top: 12px; }
+    .stat strong { display: block; font-size: 28px; line-height: 1; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .tools { position: sticky; top: 0; z-index: 5; padding: 14px 0; background: rgba(245,245,242,0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+    .tools-inner { display: grid; grid-template-columns: minmax(220px, 1fr) auto; gap: 14px; align-items: start; }
+    .search { width: 100%; height: 42px; border: 1px solid var(--line); border-radius: var(--radius); padding: 0 14px; background: var(--paper); color: var(--ink); font: inherit; }
+    .filters { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+    button { font: inherit; }
+    .filter { border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; background: var(--paper); color: #34373b; cursor: pointer; }
+    .filter span { margin-left: 4px; color: var(--muted); font-size: 12px; }
+    .filter.active { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+    main { padding: 28px 0 64px; }
+    .section-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin: 0 0 18px; }
+    .section-head h2 { margin: 0; font-size: 22px; }
+    .section-head p { margin: 0; color: var(--muted); font-size: 14px; }
+    .site-list { display: grid; gap: 10px; }
+    .site-row { display: grid; grid-template-columns: 54px minmax(0, 1fr) auto; gap: 18px; align-items: start; border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; background: rgba(255,255,255,0.82); box-shadow: var(--shadow); transition: transform 160ms ease, border-color 160ms ease, background 160ms ease; }
+    .site-row:hover { transform: translateY(-2px); border-color: #c8bdb6; background: #fff; }
+    .row-index { color: var(--accent); font-size: 13px; font-weight: 800; padding-top: 3px; }
+    .row-topline { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 6px; }
+    .category { border-radius: 999px; padding: 3px 8px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 700; }
+    .path { color: var(--muted); font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .row-main h2 { margin: 0 0 8px; font-size: 20px; line-height: 1.35; }
+    .row-main p { margin: 5px 0; color: #373a40; font-size: 14px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .tags span { border: 1px solid var(--line); border-radius: 999px; padding: 2px 8px; color: var(--muted); background: var(--paper-soft); font-size: 12px; }
+    .open { align-self: center; border-radius: 999px; padding: 8px 12px; background: var(--ink); color: #fff; font-size: 13px; text-decoration: none; white-space: nowrap; }
+    .empty { display: none; border: 1px dashed var(--line); border-radius: var(--radius); padding: 30px; color: var(--muted); text-align: center; background: var(--paper); }
+    footer { padding: 28px 0 46px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    @media (max-width: 820px) {
+      .page { width: min(100% - 24px, 1180px); }
+      header { padding-top: 34px; }
+      .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .tools { position: static; }
+      .tools-inner { grid-template-columns: 1fr; }
+      .filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 2px; }
+      .filter { flex: 0 0 auto; }
+      .site-row { grid-template-columns: 1fr; gap: 10px; padding: 16px; }
+      .row-index { display: none; }
+      .open { justify-self: start; }
+      .section-head { display: block; }
+    }
+    @media print {
+      body { background: #fff; }
+      .tools, .open { display: none; }
+      .site-row { box-shadow: none; break-inside: avoid; }
+      .page { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="page">
+      <p class="eyebrow">Repository Web Index</p>
+      <h1>caixukun_zhihu 网页导航索引</h1>
+      <p class="intro">汇总仓库内可直接打开的 HTML 页面。每条说明都包含“网页内容是什么”和“页面是用什么方式做出来的”，方便部署后快速找到对应报告。</p>
+      <div class="stats" aria-label="索引统计">
+        <div class="stat"><strong>80</strong><span>HTML 页面</span></div>
+        <div class="stat"><strong>10</strong><span>内容分类</span></div>
+        <div class="stat"><strong>30</strong><span>图片型页面</span></div>
+        <div class="stat"><strong>51</strong><span>交互型页面</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="tools">
+    <div class="page tools-inner">
+      <input class="search" id="search" type="search" placeholder="搜索标题、路径、分类或章节，例如：PANE、黄婷婷、图片、服装" autocomplete="off">
+      <div class="filters" aria-label="分类筛选">
+        <button class="filter active" data-filter="all">全部 <span>80</span></button>
+        <button class="filter" data-filter="迪丽热巴资料与图片">迪丽热巴资料与图片 <span>35</span></button>
+<button class="filter" data-filter="服装/品牌研究">服装/品牌研究 <span>15</span></button>
+<button class="filter" data-filter="黄婷婷内容资产">黄婷婷内容资产 <span>16</span></button>
+<button class="filter" data-filter="仓库首页/知乎热点">仓库首页/知乎热点 <span>1</span></button>
+<button class="filter" data-filter="睡衣/家居服品牌研究">睡衣/家居服品牌研究 <span>5</span></button>
+<button class="filter" data-filter="知乎/创作者资料">知乎/创作者资料 <span>1</span></button>
+<button class="filter" data-filter="肖宇梁调研">肖宇梁调研 <span>2</span></button>
+<button class="filter" data-filter="视觉文化/包装灵感">视觉文化/包装灵感 <span>1</span></button>
+<button class="filter" data-filter="直播物料/企划调研">直播物料/企划调研 <span>1</span></button>
+<button class="filter" data-filter="云旗×郝熠然记忆资产">云旗×郝熠然记忆资产 <span>3</span></button>
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+    <div class="section-head">
+      <h2>网页清单</h2>
+      <p id="result-count">共 80 个页面</p>
+    </div>
+    <div class="site-list" id="site-list">
+      
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴小红书热门图片 top 50 db/index.html 迪丽热巴资料与图片 迪丽热巴热门图片 top 50 来源小红书 url 点赞最多来源 来源小红书 url 点赞最多来源 来源小红书 url 点赞最多来源 来源小红书 url">
+        <div class="row-index">01</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db/index.html</span>
+          </div>
+          <h2><a href="../db/index.html">迪丽热巴小红书热门图片 Top 50</a></h2>
+          <p>内容上，这页围绕“迪丽热巴小红书热门图片 Top 50”展开，重点覆盖“迪丽热巴热门图片 Top 50”、“来源小红书 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 119.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>db</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db/index.html" aria-label="打开 迪丽热巴小红书热门图片 Top 50">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="00 总览 - 迪丽热巴人工资料档案 db-new1/00_总览.html 迪丽热巴资料与图片 00 总览 基础信息 一句话定位 核心标签 代表作品速览 商业与时尚速览 资料使用提醒">
+        <div class="row-index">02</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/00_总览.html</span>
+          </div>
+          <h2><a href="../db-new1/00_总览.html">00 总览 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“00 总览 - 迪丽热巴人工资料档案”展开，重点覆盖“基础信息”、“一句话定位”、“核心标签”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 8.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/00_总览.html" aria-label="打开 00 总览 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="01 人物时间线 - 迪丽热巴人工资料档案 db-new1/01_人物时间线.html 迪丽热巴资料与图片 01 人物时间线 成长与教育 事业主线 事业阶段划分 待核验清单">
+        <div class="row-index">03</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/01_人物时间线.html</span>
+          </div>
+          <h2><a href="../db-new1/01_人物时间线.html">01 人物时间线 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“01 人物时间线 - 迪丽热巴人工资料档案”展开，重点覆盖“成长与教育”、“事业主线”、“事业阶段划分”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 10.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/01_人物时间线.html" aria-label="打开 01 人物时间线 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="02 性格画像 - 迪丽热巴人工资料档案 db-new1/02_性格画像.html 迪丽热巴资料与图片 02 性格画像 画像摘要 证据组 1：幸运感与职业谦逊 证据组 2：压力处理与自我检讨 证据组 3：工作导向与角色意识 证据组 4：综艺中的自然与团队感 证据组 5：时尚场景的职业表现 可用人物画像标签">
+        <div class="row-index">04</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/02_性格画像.html</span>
+          </div>
+          <h2><a href="../db-new1/02_性格画像.html">02 性格画像 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“02 性格画像 - 迪丽热巴人工资料档案”展开，重点覆盖“画像摘要”、“证据组 1：幸运感与职业谦逊”、“证据组 2：压力处理与自我检讨”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 11.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/02_性格画像.html" aria-label="打开 02 性格画像 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="03 私服与时尚 - 迪丽热巴人工资料档案 db-new1/03_私服与时尚.html 迪丽热巴资料与图片 03 私服与时尚 风格摘要 造型分类法 红毯与高定线索 私服风格标签 单品记录建议 可写专题方向 重点来源">
+        <div class="row-index">05</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/03_私服与时尚.html</span>
+          </div>
+          <h2><a href="../db-new1/03_私服与时尚.html">03 私服与时尚 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“03 私服与时尚 - 迪丽热巴人工资料档案”展开，重点覆盖“风格摘要”、“造型分类法”、“红毯与高定线索”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 9.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/03_私服与时尚.html" aria-label="打开 03 私服与时尚 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="04 作品档案 - 迪丽热巴人工资料档案 db-new1/04_作品档案.html 迪丽热巴资料与图片 04 作品档案 电视剧/网络剧 电影 固定综艺/常驻节目 音乐/ost/单曲 广播剧/有声作品 作品检索关键词 待补充">
+        <div class="row-index">06</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/04_作品档案.html</span>
+          </div>
+          <h2><a href="../db-new1/04_作品档案.html">04 作品档案 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“04 作品档案 - 迪丽热巴人工资料档案”展开，重点覆盖“电视剧/网络剧”、“电影”、“固定综艺/常驻节目”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 12.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/04_作品档案.html" aria-label="打开 04 作品档案 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="05 商业代言 - 迪丽热巴人工资料档案 db-new1/05_商业代言.html 迪丽热巴资料与图片 05 商业代言 商务画像摘要 高奢/硬奢/国际品牌 2024-2026 消费品牌与国货线索 历史/风险合作 商业价值观察 月更核验清单 推荐字段">
+        <div class="row-index">07</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/05_商业代言.html</span>
+          </div>
+          <h2><a href="../db-new1/05_商业代言.html">05 商业代言 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“05 商业代言 - 迪丽热巴人工资料档案”展开，重点覆盖“商务画像摘要”、“高奢/硬奢/国际品牌”、“2024-2026 消费品牌与国货线索”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 10.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/05_商业代言.html" aria-label="打开 05 商业代言 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="06 奖项荣誉 - 迪丽热巴人工资料档案 db-new1/06_奖项荣誉.html 迪丽热巴资料与图片 06 奖项荣誉 主要影视奖项与提名 时尚、商业、榜单荣誉 公益/社会荣誉线索 使用建议 待复核">
+        <div class="row-index">08</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/06_奖项荣誉.html</span>
+          </div>
+          <h2><a href="../db-new1/06_奖项荣誉.html">06 奖项荣誉 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“06 奖项荣誉 - 迪丽热巴人工资料档案”展开，重点覆盖“主要影视奖项与提名”、“时尚、商业、榜单荣誉”、“公益/社会荣誉线索”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 10.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/06_奖项荣誉.html" aria-label="打开 06 奖项荣誉 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="07 来源索引 - 迪丽热巴人工资料档案 db-new1/07_来源索引.html 迪丽热巴资料与图片 07 来源索引 来源等级定义 来源清单 二次核验优先级 不纳入来源">
+        <div class="row-index">09</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/07_来源索引.html</span>
+          </div>
+          <h2><a href="../db-new1/07_来源索引.html">07 来源索引 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“07 来源索引 - 迪丽热巴人工资料档案”展开，重点覆盖“来源等级定义”、“来源清单”、“二次核验优先级”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 14.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/07_来源索引.html" aria-label="打开 07 来源索引 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案 db-new1/readme.html 迪丽热巴资料与图片 迪丽热巴人工资料档案知识库 档案目录 可信度等级 使用原则 月更节奏 当前限制">
+        <div class="row-index">10</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/README.html</span>
+          </div>
+          <h2><a href="../db-new1/README.html">迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案”展开，重点覆盖“档案目录”、“可信度等级”、“使用原则”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 7.1KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/README.html" aria-label="打开 迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴人工资料档案 db-new1/index.html 迪丽热巴资料与图片 迪丽热巴人工资料档案">
+        <div class="row-index">11</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/index.html</span>
+          </div>
+          <h2><a href="../db-new1/index.html">迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页是“迪丽热巴人工资料档案”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 3.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/index.html" aria-label="打开 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="月更记录 2026-05 - 迪丽热巴人工资料档案 db-new1/月更_月更记录_2026-05.html 迪丽热巴资料与图片 月更记录 2026-05 本月新增资料 需要复查的重点 本月修改过的文件 下月更新检查清单 待核验问题池">
+        <div class="row-index">12</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/月更_月更记录_2026-05.html</span>
+          </div>
+          <h2><a href="../db-new1/月更_月更记录_2026-05.html">月更记录 2026-05 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“月更记录 2026-05 - 迪丽热巴人工资料档案”展开，重点覆盖“本月新增资料”、“需要复查的重点”、“本月修改过的文件”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 6.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/月更_月更记录_2026-05.html" aria-label="打开 月更记录 2026-05 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="资料条目模板 - 迪丽热巴人工资料档案 db-new1/模板_资料条目模板.html 迪丽热巴资料与图片 资料条目模板 基础字段 来源字段 可信度字段 内容字段 入库处理">
+        <div class="row-index">13</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new1/模板_资料条目模板.html</span>
+          </div>
+          <h2><a href="../db-new1/模板_资料条目模板.html">资料条目模板 - 迪丽热巴人工资料档案</a></h2>
+          <p>内容上，这页围绕“资料条目模板 - 迪丽热巴人工资料档案”展开，重点覆盖“基础字段”、“来源字段”、“可信度字段”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 5.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new1/模板_资料条目模板.html" aria-label="打开 资料条目模板 - 迪丽热巴人工资料档案">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="00 总览 - 迪丽热巴人工资料档案 v2.0 db-new2/00_总览.html 迪丽热巴资料与图片 00 总览 基础信息 一句话定位 核心标签 代表作品速览 商业与时尚速览 资料使用提醒">
+        <div class="row-index">14</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/00_总览.html</span>
+          </div>
+          <h2><a href="../db-new2/00_总览.html">00 总览 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“00 总览 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“基础信息”、“一句话定位”、“核心标签”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 9.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/00_总览.html" aria-label="打开 00 总览 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="01 人物时间线 - 迪丽热巴人工资料档案 v2.0 db-new2/01_人物时间线.html 迪丽热巴资料与图片 01 人物时间线 成长与教育 事业主线 事业阶段划分 待核验清单">
+        <div class="row-index">15</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/01_人物时间线.html</span>
+          </div>
+          <h2><a href="../db-new2/01_人物时间线.html">01 人物时间线 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“01 人物时间线 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“成长与教育”、“事业主线”、“事业阶段划分”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 11.1KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/01_人物时间线.html" aria-label="打开 01 人物时间线 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="02 性格画像 - 迪丽热巴人工资料档案 v2.0 db-new2/02_性格画像.html 迪丽热巴资料与图片 02 性格画像 画像摘要 证据组 1：幸运感与职业谦逊 证据组 2：压力处理与自我检讨 证据组 3：工作导向与角色意识 证据组 4：综艺中的自然与团队感 证据组 5：时尚场景的职业表现 可用人物画像标签">
+        <div class="row-index">16</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/02_性格画像.html</span>
+          </div>
+          <h2><a href="../db-new2/02_性格画像.html">02 性格画像 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“02 性格画像 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“画像摘要”、“证据组 1：幸运感与职业谦逊”、“证据组 2：压力处理与自我检讨”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 11.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/02_性格画像.html" aria-label="打开 02 性格画像 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="03 私服与时尚 - 迪丽热巴人工资料档案 v2.0 db-new2/03_私服与时尚.html 迪丽热巴资料与图片 03 私服与时尚 v2 图片摘要 风格摘要 造型分类法 红毯与高定线索 私服风格标签 单品记录建议 可写专题方向">
+        <div class="row-index">17</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/03_私服与时尚.html</span>
+          </div>
+          <h2><a href="../db-new2/03_私服与时尚.html">03 私服与时尚 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“03 私服与时尚 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“v2 图片摘要”、“风格摘要”、“造型分类法”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 13.1KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/03_私服与时尚.html" aria-label="打开 03 私服与时尚 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="04 作品档案 - 迪丽热巴人工资料档案 v2.0 db-new2/04_作品档案.html 迪丽热巴资料与图片 04 作品档案 电视剧/网络剧 电影 固定综艺/常驻节目 音乐/ost/单曲 广播剧/有声作品 作品检索关键词 待补充">
+        <div class="row-index">18</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/04_作品档案.html</span>
+          </div>
+          <h2><a href="../db-new2/04_作品档案.html">04 作品档案 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“04 作品档案 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“电视剧/网络剧”、“电影”、“固定综艺/常驻节目”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 13.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/04_作品档案.html" aria-label="打开 04 作品档案 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="05 商业代言 - 迪丽热巴人工资料档案 v2.0 db-new2/05_商业代言.html 迪丽热巴资料与图片 05 商业代言 商务画像摘要 高奢/硬奢/国际品牌 2024-2026 消费品牌与国货线索 历史/风险合作 商业价值观察 月更核验清单 推荐字段">
+        <div class="row-index">19</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/05_商业代言.html</span>
+          </div>
+          <h2><a href="../db-new2/05_商业代言.html">05 商业代言 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“05 商业代言 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“商务画像摘要”、“高奢/硬奢/国际品牌”、“2024-2026 消费品牌与国货线索”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 10.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/05_商业代言.html" aria-label="打开 05 商业代言 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="06 奖项荣誉 - 迪丽热巴人工资料档案 v2.0 db-new2/06_奖项荣誉.html 迪丽热巴资料与图片 06 奖项荣誉 主要影视奖项与提名 时尚、商业、榜单荣誉 公益/社会荣誉线索 使用建议 待复核">
+        <div class="row-index">20</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/06_奖项荣誉.html</span>
+          </div>
+          <h2><a href="../db-new2/06_奖项荣誉.html">06 奖项荣誉 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“06 奖项荣誉 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“主要影视奖项与提名”、“时尚、商业、榜单荣誉”、“公益/社会荣誉线索”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 11.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/06_奖项荣誉.html" aria-label="打开 06 奖项荣誉 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="07 来源索引 - 迪丽热巴人工资料档案 v2.0 db-new2/07_来源索引.html 迪丽热巴资料与图片 07 来源索引 来源等级定义 来源清单 v2 图片来源索引 二次核验优先级 不纳入来源">
+        <div class="row-index">21</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/07_来源索引.html</span>
+          </div>
+          <h2><a href="../db-new2/07_来源索引.html">07 来源索引 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“07 来源索引 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“来源等级定义”、“来源清单”、“v2 图片来源索引”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 15.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/07_来源索引.html" aria-label="打开 07 来源索引 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="08 图片图库 - 迪丽热巴人工资料档案 v2.0 db-new2/08_图片图库.html 迪丽热巴资料与图片 08 图片图库 图库说明 分类概览 查看建议 本地路径 图库">
+        <div class="row-index">22</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/08_图片图库.html</span>
+          </div>
+          <h2><a href="../db-new2/08_图片图库.html">08 图片图库 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“08 图片图库 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“图库说明”、“分类概览”、“查看建议”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，引用了 1 张本地图片，页面约 10.1KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/08_图片图库.html" aria-label="打开 08 图片图库 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="09 图片采集记录 - 迪丽热巴人工资料档案 v2.0 db-new2/09_图片采集记录.html 迪丽热巴资料与图片 09 图片采集记录 本轮采集结果 已采集来源 待人工复核来源 5000 张扩容批次 50000 张本地扩容批次 过滤规则 后续补图方向">
+        <div class="row-index">23</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/09_图片采集记录.html</span>
+          </div>
+          <h2><a href="../db-new2/09_图片采集记录.html">09 图片采集记录 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“09 图片采集记录 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“本轮采集结果”、“已采集来源”、“待人工复核来源”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 10.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/09_图片采集记录.html" aria-label="打开 09 图片采集记录 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案 v2.0 db-new2/readme.html 迪丽热巴资料与图片 迪丽热巴人工资料档案知识库 档案目录 可信度等级 使用原则 v2.0 图片增强 月更节奏 当前限制">
+        <div class="row-index">24</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/README.html</span>
+          </div>
+          <h2><a href="../db-new2/README.html">迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“档案目录”、“可信度等级”、“使用原则”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 8.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/README.html" aria-label="打开 迪丽热巴人工资料档案知识库 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴人工资料档案 v2.0 db-new2/index.html 迪丽热巴资料与图片 迪丽热巴人工资料档案 v2.0">
+        <div class="row-index">25</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/index.html</span>
+          </div>
+          <h2><a href="../db-new2/index.html">迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页是“迪丽热巴人工资料档案 v2.0”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 3.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/index.html" aria-label="打开 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="月更记录 2026-05 - 迪丽热巴人工资料档案 v2.0 db-new2/月更_月更记录_2026-05.html 迪丽热巴资料与图片 月更记录 2026-05 本月新增资料 需要复查的重点 本月修改过的文件 下月更新检查清单 待核验问题池">
+        <div class="row-index">26</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/月更_月更记录_2026-05.html</span>
+          </div>
+          <h2><a href="../db-new2/月更_月更记录_2026-05.html">月更记录 2026-05 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“月更记录 2026-05 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“本月新增资料”、“需要复查的重点”、“本月修改过的文件”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 7.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/月更_月更记录_2026-05.html" aria-label="打开 月更记录 2026-05 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="资料条目模板 - 迪丽热巴人工资料档案 v2.0 db-new2/模板_资料条目模板.html 迪丽热巴资料与图片 资料条目模板 基础字段 来源字段 可信度字段 内容字段 入库处理">
+        <div class="row-index">27</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-new2/模板_资料条目模板.html</span>
+          </div>
+          <h2><a href="../db-new2/模板_资料条目模板.html">资料条目模板 - 迪丽热巴人工资料档案 v2.0</a></h2>
+          <p>内容上，这页围绕“资料条目模板 - 迪丽热巴人工资料档案 v2.0”展开，重点覆盖“基础字段”、“来源字段”、“可信度字段”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 6.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-new2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../db-new2/模板_资料条目模板.html" aria-label="打开 资料条目模板 - 迪丽热巴人工资料档案 v2.0">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博记忆资产热度榜 db-weibo/index.html 迪丽热巴资料与图片 迪丽热巴微博记忆资产热度榜 fakeme首位全球品牌代言与双向奔赴 dior迪奥甜品店/全球品牌大使/高定时尚记忆 幸运咖《相信就幸运》大片 爱丽丝与热巴的粉丝双向奔赴 乔晶晶与荣耀系记忆 放空时刻ccd/日常营业随拍 白日提灯贺思慕/万灵之主/女鬼鬼王记忆">
+        <div class="row-index">28</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibo/index.html</span>
+          </div>
+          <h2><a href="../db-weibo/index.html">迪丽热巴微博记忆资产热度榜</a></h2>
+          <p>内容上，这页围绕“迪丽热巴微博记忆资产热度榜”展开，重点覆盖“FAKEME首位全球品牌代言与双向奔赴”、“Dior迪奥甜品店/全球品牌大使/高定时尚记忆”、“幸运咖《相信就幸运》大片”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 198.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibo</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibo/index.html" aria-label="打开 迪丽热巴微博记忆资产热度榜">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版 db-weibo/strict.html 迪丽热巴资料与图片 迪丽热巴微博粉丝记忆资产热度榜 演员成长与角色群像评价 白日提灯贺思慕/女鬼鬼王记忆 爱丽丝与热巴的双向奔赴 乔晶晶与《你是我的荣耀》入坑记忆 嘻嘻迪/表情包/可爱梗 生日生贺与小小迪陪伴记忆 行走的油画/神女美貌出圈">
+        <div class="row-index">29</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibo/strict.html</span>
+          </div>
+          <h2><a href="../db-weibo/strict.html">迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版</a></h2>
+          <p>内容上，这页围绕“迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版”展开，重点覆盖“演员成长与角色群像评价”、“白日提灯贺思慕/女鬼鬼王记忆”、“爱丽丝与热巴的双向奔赴”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 203.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibo</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibo/strict.html" aria-label="打开 迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版 db-weibo2/index.html 迪丽热巴资料与图片 迪丽热巴微博粉丝记忆资产热度榜 演员成长与角色群像评价 白日提灯贺思慕/女鬼鬼王记忆 爱丽丝与热巴的双向奔赴 乔晶晶与《你是我的荣耀》入坑记忆 嘻嘻迪/表情包/可爱梗 生日生贺与小小迪陪伴记忆 行走的油画/神女美貌出圈">
+        <div class="row-index">30</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibo2/index.html</span>
+          </div>
+          <h2><a href="../db-weibo2/index.html">迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版</a></h2>
+          <p>内容上，这页围绕“迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版”展开，重点覆盖“演员成长与角色群像评价”、“白日提灯贺思慕/女鬼鬼王记忆”、“爱丽丝与热巴的双向奔赴”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 203.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibo2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibo2/index.html" aria-label="打开 迪丽热巴微博粉丝记忆资产热度榜｜严格筛选版">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博图片记忆 top 26｜本地图片证据版 db-weibotupian1/index.html 迪丽热巴资料与图片 迪丽热巴微博图片记忆 top 26">
+        <div class="row-index">31</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibotupian1/index.html</span>
+          </div>
+          <h2><a href="../db-weibotupian1/index.html">迪丽热巴微博图片记忆 Top 26｜本地图片证据版</a></h2>
+          <p>内容上，这页是“迪丽热巴微博图片记忆 Top 26｜本地图片证据版”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 26 张本地图片，页面约 51.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibotupian1</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibotupian1/index.html" aria-label="打开 迪丽热巴微博图片记忆 Top 26｜本地图片证据版">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博图片记忆 top 26｜本地图片证据版 db-weibotupian1/person_top_vibesaver.html 迪丽热巴资料与图片 迪丽热巴微博图片记忆 top 26">
+        <div class="row-index">32</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibotupian1/person_top_vibesaver.html</span>
+          </div>
+          <h2><a href="../db-weibotupian1/person_top_vibesaver.html">迪丽热巴微博图片记忆 Top 26｜本地图片证据版</a></h2>
+          <p>内容上，这页是“迪丽热巴微博图片记忆 Top 26｜本地图片证据版”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 26 张本地图片，页面约 51.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibotupian1</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibotupian1/person_top_vibesaver.html" aria-label="打开 迪丽热巴微博图片记忆 Top 26｜本地图片证据版">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博人物图片记忆 top 25｜视觉聚合 db-weibotupian2/index.html 迪丽热巴资料与图片 迪丽热巴微博人物图片记忆 top 25 视觉聚合版">
+        <div class="row-index">33</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibotupian2/index.html</span>
+          </div>
+          <h2><a href="../db-weibotupian2/index.html">迪丽热巴微博人物图片记忆 Top 25｜视觉聚合</a></h2>
+          <p>内容上，这页围绕“迪丽热巴微博人物图片记忆 Top 25｜视觉聚合”展开，重点覆盖“视觉聚合版”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 25 张本地图片，页面约 53.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibotupian2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibotupian2/index.html" aria-label="打开 迪丽热巴微博人物图片记忆 Top 25｜视觉聚合">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴微博人物图片记忆 top 25｜视觉聚合 db-weibotupian2/weibo_visual_clusters_person_v2.0.html 迪丽热巴资料与图片 迪丽热巴微博人物图片记忆 top 25 视觉聚合版">
+        <div class="row-index">34</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db-weibotupian2/weibo_visual_clusters_person_v2.0.html</span>
+          </div>
+          <h2><a href="../db-weibotupian2/weibo_visual_clusters_person_v2.0.html">迪丽热巴微博人物图片记忆 Top 25｜视觉聚合</a></h2>
+          <p>内容上，这页围绕“迪丽热巴微博人物图片记忆 Top 25｜视觉聚合”展开，重点覆盖“视觉聚合版”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 25 张本地图片，页面约 53.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>db-weibotupian2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db-weibotupian2/weibo_visual_clusters_person_v2.0.html" aria-label="打开 迪丽热巴微博人物图片记忆 Top 25｜视觉聚合">打开</a>
+      </article>
+      <article class="site-row" data-category="迪丽热巴资料与图片" data-search="迪丽热巴小红书记忆资产热度榜 db2/index.html 迪丽热巴资料与图片 迪丽热巴小红书记忆资产热度榜 红毯造型封神/红毯没有王法 原声台词/演技哭戏被低估 综艺搞笑体质：金靖/抽象美女/方言小能手 反差出圈：不听劝/神性/性张力/女娲感 舞台跳舞：新疆舞/春晚直拍/扫腿舞 宠粉和双向奔赴：选择/合照/礼物/爱丽丝 机场接机：收信/喊话/邓超饭撒">
+        <div class="row-index">35</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">迪丽热巴资料与图片</span>
+            <span class="path">db2/index.html</span>
+          </div>
+          <h2><a href="../db2/index.html">迪丽热巴小红书记忆资产热度榜</a></h2>
+          <p>内容上，这页围绕“迪丽热巴小红书记忆资产热度榜”展开，重点覆盖“红毯造型封神/红毯没有王法”、“原声台词/演技哭戏被低估”、“综艺搞笑体质：金靖/抽象美女/方言小能手”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 134.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>db2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../db2/index.html" aria-label="打开 迪丽热巴小红书记忆资产热度榜">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="小红书品牌人群与传播分析 fuzhuang1/index.html 服装/品牌研究 小红书品牌人群与传播分析 1. 核心结论 里性 livary mio pane madeinam 2. 账号与传播资产 3. 品牌定位及人群特征 里性 livary mio">
+        <div class="row-index">36</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang1/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang1/index.html">小红书品牌人群与传播分析</a></h2>
+          <p>内容上，这页围绕“小红书品牌人群与传播分析”展开，重点覆盖“1. 核心结论”、“里性 LIVARY MIO”、“PANE”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 26.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang1</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../fuzhuang1/index.html" aria-label="打开 小红书品牌人群与传播分析">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="季节价格带分析 fuzhuang10/index.html 服装/品牌研究 季节价格带分析 四季价格带概览 9月、10月、11月单独分析 当前筛选 sku 明细">
+        <div class="row-index">37</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang10/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang10/index.html">季节价格带分析</a></h2>
+          <p>内容上，这页围绕“季节价格带分析”展开，重点覆盖“四季价格带概览”、“9月、10月、11月单独分析”、“当前筛选 SKU 明细”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 3.1KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang10</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang10/index.html" aria-label="打开 季节价格带分析">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="btd 星星与太阳元素灵感调研 fuzhuang11/index.html 服装/品牌研究 星星指路，太阳留下温度。 参考图视觉 dna 文化意义与故事 太阳是国家气质，星星是路 太阳在运行，星群在守护 太阳有鸟，星星有桥 艺术关联作品 sol de miró / turespaña">
+        <div class="row-index">38</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang11/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang11/index.html">BtD 星星与太阳元素灵感调研</a></h2>
+          <p>内容上，这页围绕“BtD 星星与太阳元素灵感调研”展开，重点覆盖“星星指路，太阳留下温度。”、“参考图视觉 DNA”、“文化意义与故事”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 38 张本地图片，页面约 34.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang11</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang11/index.html" aria-label="打开 BtD 星星与太阳元素灵感调研">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="pane 小红书人群与传播推广分析报告 fuzhuang12/index.html 服装/品牌研究 pane 小红书人群与传播推广分析 1. 核心结论 2. 老板关心问题逐项回答 2.1 核心产品：图片、定价、卖点、热度信号 2.2 销售最多产品：已确认 / 可推断 / 需后台确认 2.3 销量最高渠道：渠道判断与证据 2.4 具体 kol/koc 名单与效果 2.5 核心标签词和传播主题">
+        <div class="row-index">39</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang12/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang12/index.html">PANE 小红书人群与传播推广分析报告</a></h2>
+          <p>内容上，这页围绕“PANE 小红书人群与传播推广分析报告”展开，重点覆盖“1. 核心结论”、“2. 老板关心问题逐项回答”、“2.1 核心产品：图片、定价、卖点、热度信号”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 16 张本地图片，页面约 50.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang12</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../fuzhuang12/index.html" aria-label="打开 PANE 小红书人群与传播推广分析报告">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="madeinam 小红书人群与传播推广分析 fuzhuang13/index.html 服装/品牌研究 madeinam 核心结论 核心产品与价格带 b9 木工裤 w3 巴黎女孩口袋裤 st11 破洞少年裤 w4 三角插片阔腿裤 st9 老钱轻薄纸片裤">
+        <div class="row-index">40</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang13/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang13/index.html">MADEINAM 小红书人群与传播推广分析</a></h2>
+          <p>内容上，这页围绕“MADEINAM 小红书人群与传播推广分析”展开，重点覆盖“核心结论”、“核心产品与价格带”、“B9 木工裤”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 10 张本地图片，页面约 29.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang13</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../fuzhuang13/index.html" aria-label="打开 MADEINAM 小红书人群与传播推广分析">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="服装品牌 sku 核对版 | fysea / one up / tbh fuzhuang14/index.html 服装/品牌研究 小红书 sku 图片核对版">
+        <div class="row-index">41</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang14/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang14/index.html">服装品牌 SKU 核对版 | Fysea / One up / tbh</a></h2>
+          <p>内容上，这页围绕“服装品牌 SKU 核对版 | Fysea / One up / tbh”展开，重点覆盖“小红书 SKU”、“图片核对版”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 966.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang14</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang14/index.html" aria-label="打开 服装品牌 SKU 核对版 | Fysea / One up / tbh">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="核心 sku 明细 · 新分类策略 fuzhuang15/index.html 服装/品牌研究 核心 sku 明细 · 新分类策略">
+        <div class="row-index">42</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang15/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang15/index.html">核心 SKU 明细 · 新分类策略</a></h2>
+          <p>内容上，这页是“核心 SKU 明细 · 新分类策略”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 2.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang15</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang15/index.html" aria-label="打开 核心 SKU 明细 · 新分类策略">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="btd 定价参考 | fysea / oneup / the blender fuzhuang2/index.html 服装/品牌研究 fysea / oneup / the blender 定价研究 结论先读 贴身吊带/美背内衣是成交核心 t 恤与弯刀裤形成两档价格 公开成交少，家居氛围强 品牌快照 fysea oneup">
+        <div class="row-index">43</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang2/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang2/index.html">BtD 定价参考 | Fysea / Oneup / THE BLENDER</a></h2>
+          <p>内容上，这页围绕“BtD 定价参考 | Fysea / Oneup / THE BLENDER”展开，重点覆盖“Fysea / Oneup / THE BLENDER 定价研究”、“结论先读”、“贴身吊带/美背内衣是成交核心”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 6 张本地图片，页面约 78.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang2/index.html" aria-label="打开 BtD 定价参考 | Fysea / Oneup / THE BLENDER">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="btd 定价参考 | tbh / ubras / almondrocks fuzhuang3/index.html 服装/品牌研究 家居服与关联生活方式定价参考 先看定价锚点，再看品牌差异 tbh家居 ubras almondrocks 核心品类价格带对比 分季节价格带 每品牌 top10 商品">
+        <div class="row-index">44</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang3/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang3/index.html">BtD 定价参考 | TBH / Ubras / Almondrocks</a></h2>
+          <p>内容上，这页围绕“BtD 定价参考 | TBH / Ubras / Almondrocks”展开，重点覆盖“家居服与关联生活方式定价参考”、“先看定价锚点，再看品牌差异”、“tbh家居”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 42 张本地图片，页面约 93.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang3</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang3/index.html" aria-label="打开 BtD 定价参考 | TBH / Ubras / Almondrocks">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="btd 定价参考 | gelato pique / aaad / twoi fuzhuang4/index.html 服装/品牌研究 gelato pique / aaad / twoi 商品定价与上新节奏 一眼看到可用结论 品类价格带对比 各品牌 top 商品 四季与秋季重点 商品明细筛选 数据来源与限制">
+        <div class="row-index">45</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang4/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang4/index.html">BtD 定价参考 | gelato pique / AAAD / TWOI</a></h2>
+          <p>内容上，这页围绕“BtD 定价参考 | gelato pique / AAAD / TWOI”展开，重点覆盖“gelato pique / AAAD / TWOI 商品定价与上新节奏”、“一眼看到可用结论”、“品类价格带对比”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 1359.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang4</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang4/index.html" aria-label="打开 BtD 定价参考 | gelato pique / AAAD / TWOI">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="btd 家居服定价参考 | victoria&#x27;s secret / muji / zara home fuzhuang5/index.html 服装/品牌研究 家居服价格带与上新节奏调研 品牌结论 渠道覆盖与限制 品类价格带对比 各品牌 top10 商品 季节价格带 9-11月上新重点 品类归类规则">
+        <div class="row-index">46</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang5/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang5/index.html">BtD 家居服定价参考 | Victoria&#x27;s Secret / MUJI / Zara Home</a></h2>
+          <p>内容上，这页围绕“BtD 家居服定价参考 | Victoria&#x27;s Secret / MUJI / Zara Home”展开，重点覆盖“家居服价格带与上新节奏调研”、“品牌结论”、“渠道覆盖与限制”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 126.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang5</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang5/index.html" aria-label="打开 BtD 家居服定价参考 | Victoria&#x27;s Secret / MUJI / Zara Home">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="里性 livary mio 小红书人群与传播推广分析 fuzhuang6/index.html 服装/品牌研究 里性 livary mio 老板最关心的六个问题，先给硬答案。 核心产品不是“基础内衣”，而是可被保存和复用的穿搭单品。 赴约 异想 琉璃 glaze 对白 花茎 stem">
+        <div class="row-index">47</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang6/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang6/index.html">里性 LIVARY MIO 小红书人群与传播推广分析</a></h2>
+          <p>内容上，这页围绕“里性 LIVARY MIO 小红书人群与传播推广分析”展开，重点覆盖“老板最关心的六个问题，先给硬答案。”、“核心产品不是“基础内衣”，而是可被保存和复用的穿搭单品。”、“赴约”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 9 张本地图片，页面约 33.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang6</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang6/index.html" aria-label="打开 里性 LIVARY MIO 小红书人群与传播推广分析">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="fysea 定价分析 | btd 家居服参考 fuzhuang7/index.html 服装/品牌研究 fysea 定价与上新节奏分析 核心结论 可用结论 使用边界 渠道与可信度 品类价格带 top10 商品/系列 四季价格带与上新节奏">
+        <div class="row-index">48</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang7/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang7/index.html">Fysea 定价分析 | BtD 家居服参考</a></h2>
+          <p>内容上，这页围绕“Fysea 定价分析 | BtD 家居服参考”展开，重点覆盖“Fysea 定价与上新节奏分析”、“核心结论”、“可用结论”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 14 张本地图片，页面约 42.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang7</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../fuzhuang7/index.html" aria-label="打开 Fysea 定价分析 | BtD 家居服参考">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="核心品类 sku 价格带与销量分析 fuzhuang8/index.html 服装/品牌研究 核心品类 sku 价格带与销量分析 数据覆盖 关键边界 品类价格带 每个品牌销售量最高的产品品类 品牌 top10 商品 春夏秋冬价格带 秋季重点 sku">
+        <div class="row-index">49</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang8/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang8/index.html">核心品类 SKU 价格带与销量分析</a></h2>
+          <p>内容上，这页围绕“核心品类 SKU 价格带与销量分析”展开，重点覆盖“数据覆盖”、“关键边界”、“品类价格带”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 4.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang8</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang8/index.html" aria-label="打开 核心品类 SKU 价格带与销量分析">打开</a>
+      </article>
+      <article class="site-row" data-category="服装/品牌研究" data-search="全部核心 sku 明细 fuzhuang9/index.html 服装/品牌研究 全部核心 sku 明细">
+        <div class="row-index">50</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">服装/品牌研究</span>
+            <span class="path">fuzhuang9/index.html</span>
+          </div>
+          <h2><a href="../fuzhuang9/index.html">全部核心 SKU 明细</a></h2>
+          <p>内容上，这页是“全部核心 SKU 明细”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 2.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>fuzhuang9</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../fuzhuang9/index.html" aria-label="打开 全部核心 SKU 明细">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷 x 51 零食策划前置信息简报 htt/index.html 黄婷婷内容资产 黄婷婷 x 51 零食策划前置信息简报 采集结果 数据概览 黄婷婷内容资产 51/黄五一趣事与可用梗 零食产品方向 核心卖点 口味建议">
+        <div class="row-index">51</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt/index.html</span>
+          </div>
+          <h2><a href="../htt/index.html">黄婷婷 x 51 零食策划前置信息简报</a></h2>
+          <p>内容上，这页围绕“黄婷婷 x 51 零食策划前置信息简报”展开，重点覆盖“采集结果”、“数据概览”、“黄婷婷内容资产”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，页面约 27.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt/index.html" aria-label="打开 黄婷婷 x 51 零食策划前置信息简报">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷口播 id 趣味素材参考 htt-new/index.html 黄婷婷内容资产 黄婷婷口播 id 趣味素材参考 小红书参考示例 语音文案成稿 零食魔术 demo 黄婷婷魔术样例动作拆解 开场饭撒 / 小梗 拍摄执行建议 来源与复核">
+        <div class="row-index">52</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-new/index.html</span>
+          </div>
+          <h2><a href="../htt-new/index.html">黄婷婷口播 ID 趣味素材参考</a></h2>
+          <p>内容上，这页围绕“黄婷婷口播 ID 趣味素材参考”展开，重点覆盖“小红书参考示例”、“语音文案成稿”、“零食魔术 Demo”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 1 张本地图片，页面约 15.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-new</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-new/index.html" aria-label="打开 黄婷婷口播 ID 趣味素材参考">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷口播 id 趣味素材参考 htt-new2/index.html 黄婷婷内容资产 黄婷婷口播 id 趣味素材参考 小红书参考示例 语音文案成稿 零食魔术 demo 黄婷婷魔术样例动作拆解 开场饭撒 / 小梗 拍摄执行建议 来源与复核">
+        <div class="row-index">53</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-new2/index.html</span>
+          </div>
+          <h2><a href="../htt-new2/index.html">黄婷婷口播 ID 趣味素材参考</a></h2>
+          <p>内容上，这页围绕“黄婷婷口播 ID 趣味素材参考”展开，重点覆盖“小红书参考示例”、“语音文案成稿”、“零食魔术 Demo”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 1 张本地图片，页面约 18.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-new2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-new2/index.html" aria-label="打开 黄婷婷口播 ID 趣味素材参考">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷口播 id 视频素材参考 htt-newdy/index.html 黄婷婷内容资产 黄婷婷口播 id 视频素材参考 结论先看 精选抖音示例 适配判断 姐姐感 + 轻轻管一下 专属叫醒 + 可设置铃声 动作要短，梗要轻 可直接录的语音文案">
+        <div class="row-index">54</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-newdy/index.html</span>
+          </div>
+          <h2><a href="../htt-newdy/index.html">黄婷婷口播 ID 视频素材参考</a></h2>
+          <p>内容上，这页围绕“黄婷婷口播 ID 视频素材参考”展开，重点覆盖“结论先看”、“精选抖音示例”、“适配判断”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 11 张本地图片，页面约 29.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-newdy</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../htt-newdy/index.html" aria-label="打开 黄婷婷口播 ID 视频素材参考">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博热门人物图片 top 37 htt-weibo/index.html 黄婷婷内容资产 黄婷婷微博热门人物图片 top 37 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url">
+        <div class="row-index">55</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo/index.html">黄婷婷微博热门人物图片 Top 37</a></h2>
+          <p>内容上，这页围绕“黄婷婷微博热门人物图片 Top 37”展开，重点覆盖“来源微博 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 37 张本地图片，页面约 95.5KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo/index.html" aria-label="打开 黄婷婷微博热门人物图片 Top 37">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博评论图片 only top 22 htt-weibo1/index.html 黄婷婷内容资产 黄婷婷微博评论图片 only top 22 发图评论 来源微博 url 发图评论 来源微博 url 发图评论 来源微博 url 发图评论">
+        <div class="row-index">56</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo1/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo1/index.html">黄婷婷微博评论图片 Only Top 22</a></h2>
+          <p>内容上，这页围绕“黄婷婷微博评论图片 Only Top 22”展开，重点覆盖“发图评论”、“来源微博 URL”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 22 张本地图片，页面约 49.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo1</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo1/index.html" aria-label="打开 黄婷婷微博评论图片 Only Top 22">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博热门图片 top 50｜5w扩容版 htt-weibo2/index.html 黄婷婷内容资产 黄婷婷微博热门图片 top 50 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url">
+        <div class="row-index">57</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo2/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo2/index.html">黄婷婷微博热门图片 Top 50｜5w扩容版</a></h2>
+          <p>内容上，这页围绕“黄婷婷微博热门图片 Top 50｜5w扩容版”展开，重点覆盖“来源微博 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 115.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo2/index.html" aria-label="打开 黄婷婷微博热门图片 Top 50｜5w扩容版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博热门图片 top 50｜5w扩容版 htt-weibo5/index.html 黄婷婷内容资产 黄婷婷微博热门图片 top 50 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url">
+        <div class="row-index">58</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo5/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo5/index.html">黄婷婷微博热门图片 Top 50｜5w扩容版</a></h2>
+          <p>内容上，这页围绕“黄婷婷微博热门图片 Top 50｜5w扩容版”展开，重点覆盖“来源微博 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 115.7KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo5</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo5/index.html" aria-label="打开 黄婷婷微博热门图片 Top 50｜5w扩容版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博图片记忆 top 50｜严格筛选版 htt-weibo6/index.html 黄婷婷内容资产 黄婷婷微博图片记忆 top 50 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url 点赞最多来源 来源微博 url">
+        <div class="row-index">59</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo6/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo6/index.html">黄婷婷微博图片记忆 Top 50｜严格筛选版</a></h2>
+          <p>内容上，这页围绕“黄婷婷微博图片记忆 Top 50｜严格筛选版”展开，重点覆盖“来源微博 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 109.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo6</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo6/index.html" aria-label="打开 黄婷婷微博图片记忆 Top 50｜严格筛选版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博图片记忆 top 50｜视觉聚合质量版 htt-weibo7/index.html 黄婷婷内容资产 黄婷婷微博图片记忆 top 50">
+        <div class="row-index">60</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo7/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo7/index.html">黄婷婷微博图片记忆 Top 50｜视觉聚合质量版</a></h2>
+          <p>内容上，这页是“黄婷婷微博图片记忆 Top 50｜视觉聚合质量版”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 87.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo7</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo7/index.html" aria-label="打开 黄婷婷微博图片记忆 Top 50｜视觉聚合质量版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博图片记忆 top 50｜视觉聚合 1w 质量版 htt-weibo8/index.html 黄婷婷内容资产 黄婷婷微博图片记忆 top 50">
+        <div class="row-index">61</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo8/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo8/index.html">黄婷婷微博图片记忆 Top 50｜视觉聚合 1w 质量版</a></h2>
+          <p>内容上，这页是“黄婷婷微博图片记忆 Top 50｜视觉聚合 1w 质量版”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 92.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo8</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo8/index.html" aria-label="打开 黄婷婷微博图片记忆 Top 50｜视觉聚合 1w 质量版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷微博图片记忆 top 50｜视觉聚合 9w 质量版 htt-weibo9/index.html 黄婷婷内容资产 黄婷婷微博图片记忆 top 50">
+        <div class="row-index">62</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt-weibo9/index.html</span>
+          </div>
+          <h2><a href="../htt-weibo9/index.html">黄婷婷微博图片记忆 Top 50｜视觉聚合 9w 质量版</a></h2>
+          <p>内容上，这页是“黄婷婷微博图片记忆 Top 50｜视觉聚合 9w 质量版”的入口或专题页，用来集中呈现该目录下的核心内容。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 99.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt-weibo9</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt-weibo9/index.html" aria-label="打开 黄婷婷微博图片记忆 Top 50｜视觉聚合 9w 质量版">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷小红书记忆资产热度榜 htt2/index.html 黄婷婷内容资产 黄婷婷小红书记忆资产热度榜 日常生活感：vlog、胶片、收工、夜跑 早期神图/笑颜一番/白月光审美 演员重启：年龄不定义、普通演员处境、被看见 饭搭子生活场景：有空一起吃饭吧、吃饭拍照姿势 舞台考古：失恋阵线联盟直拍、公演、总选记忆 冷知识/萌点：方便面鸭汤、断眉、数学、纸飞机 51/黄五一：猫片、吃醋、人机小猫、不要告诉五一">
+        <div class="row-index">63</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt2/index.html</span>
+          </div>
+          <h2><a href="../htt2/index.html">黄婷婷小红书记忆资产热度榜</a></h2>
+          <p>内容上，这页围绕“黄婷婷小红书记忆资产热度榜”展开，重点覆盖“日常生活感：Vlog、胶片、收工、夜跑”、“早期神图/笑颜一番/白月光审美”、“演员重启：年龄不定义、普通演员处境、被看见”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 90 张本地图片，页面约 127.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt2/index.html" aria-label="打开 黄婷婷小红书记忆资产热度榜">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="求此女所有冷知识和萌点｜评论汇总 htt3/index.html 黄婷婷内容资产 求此女所有冷知识和萌点 评论汇总 主题热度榜 冷知识与反差萌 节目趣事记忆点 生活感照片补档 真诚、温柔与照顾人 考古路线与资料入口">
+        <div class="row-index">64</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">htt3/index.html</span>
+          </div>
+          <h2><a href="../htt3/index.html">求此女所有冷知识和萌点｜评论汇总</a></h2>
+          <p>内容上，这页围绕“求此女所有冷知识和萌点｜评论汇总”展开，重点覆盖“主题热度榜”、“冷知识与反差萌”、“节目趣事记忆点”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 5 张本地图片，页面约 64.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>htt3</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../htt3/index.html" aria-label="打开 求此女所有冷知识和萌点｜评论汇总">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷小红书热门图片 top 50 httdy1/index.html 黄婷婷内容资产 黄婷婷热门图片 top 50 来源小红书 url 点赞最多来源 来源小红书 url 点赞最多来源 来源小红书 url 点赞最多来源 来源小红书 url">
+        <div class="row-index">65</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">httdy1/index.html</span>
+          </div>
+          <h2><a href="../httdy1/index.html">黄婷婷小红书热门图片 Top 50</a></h2>
+          <p>内容上，这页围绕“黄婷婷小红书热门图片 Top 50”展开，重点覆盖“黄婷婷热门图片 Top 50”、“来源小红书 URL”、“点赞最多来源”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 50 张本地图片，页面约 119.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>httdy1</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../httdy1/index.html" aria-label="打开 黄婷婷小红书热门图片 Top 50">打开</a>
+      </article>
+      <article class="site-row" data-category="黄婷婷内容资产" data-search="黄婷婷小红书记忆资产热度榜 httdy2/index.html 黄婷婷内容资产 黄婷婷小红书记忆资产热度榜 日常生活感：vlog、胶片、收工、夜跑 早期神图/笑颜一番/白月光审美 演员重启：年龄不定义、普通演员处境、被看见 饭搭子生活场景：有空一起吃饭吧、吃饭拍照姿势 舞台考古：失恋阵线联盟直拍、公演、总选记忆 冷知识/萌点：方便面鸭汤、断眉、数学、纸飞机 51/黄五一：猫片、吃醋、人机小猫、不要告诉五一">
+        <div class="row-index">66</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">黄婷婷内容资产</span>
+            <span class="path">httdy2/index.html</span>
+          </div>
+          <h2><a href="../httdy2/index.html">黄婷婷小红书记忆资产热度榜</a></h2>
+          <p>内容上，这页围绕“黄婷婷小红书记忆资产热度榜”展开，重点覆盖“日常生活感：Vlog、胶片、收工、夜跑”、“早期神图/笑颜一番/白月光审美”、“演员重启：年龄不定义、普通演员处境、被看见”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 90 张本地图片，页面约 117.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>httdy2</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../httdy2/index.html" aria-label="打开 黄婷婷小红书记忆资产热度榜">打开</a>
+      </article>
+      <article class="site-row" data-category="仓库首页/知乎热点" data-search="蔡徐坤近一年知乎热点梳理 index.html 仓库首页/知乎热点 蔡徐坤近一年 知乎热点梳理 核心结论 月度热度趋势 热点演化路径 热点 1：《deadman》带来的音乐口碑回暖 热点 2：hopico 采访引发的衍生争议 热点 3：两岸活动与复出路径的深层博弈">
+        <div class="row-index">67</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">仓库首页/知乎热点</span>
+            <span class="path">index.html</span>
+          </div>
+          <h2><a href="../index.html">蔡徐坤近一年知乎热点梳理</a></h2>
+          <p>内容上，这页围绕“蔡徐坤近一年知乎热点梳理”展开，重点覆盖“核心结论”、“月度热度趋势”、“热点演化路径”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 22.9KB，适合直接静态部署。</p>
+          <div class="tags"><span>root</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../index.html" aria-label="打开 蔡徐坤近一年知乎热点梳理">打开</a>
+      </article>
+      <article class="site-row" data-category="睡衣/家居服品牌研究" data-search="x brand perception report suri/index.html 睡衣/家居服品牌研究 x brand perception report x brand perception report 1. 账号核对与常见写法 2. 总表 3. 逐品牌分析 3.1 off hour 3.2 snappy cuddle 3.3 sleeper">
+        <div class="row-index">68</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">睡衣/家居服品牌研究</span>
+            <span class="path">suri/index.html</span>
+          </div>
+          <h2><a href="../suri/index.html">X Brand Perception Report</a></h2>
+          <p>内容上，这页围绕“X Brand Perception Report”展开，重点覆盖“1. 账号核对与常见写法”、“2. 总表”、“3. 逐品牌分析”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 43.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>suri</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../suri/index.html" aria-label="打开 X Brand Perception Report">打开</a>
+      </article>
+      <article class="site-row" data-category="睡衣/家居服品牌研究" data-search="小红书品牌社媒研究：睡衣/家居服品牌在中国用户侧的真实感知 suri2/index.html 睡衣/家居服品牌研究 research contents 小红书品牌社媒研究：睡衣/家居服品牌在中国用户侧的真实感知 what is inside 先看结论，再进入逐品牌细节。 covered brands 1. 总结页 ¶ 2. 分品牌分析">
+        <div class="row-index">69</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">睡衣/家居服品牌研究</span>
+            <span class="path">suri2/index.html</span>
+          </div>
+          <h2><a href="../suri2/index.html">小红书品牌社媒研究：睡衣/家居服品牌在中国用户侧的真实感知</a></h2>
+          <p>内容上，这页围绕“小红书品牌社媒研究：睡衣/家居服品牌在中国用户侧的真实感知”展开，重点覆盖“Research Contents”、“What is inside”、“先看结论，再进入逐品牌细节。”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 100.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>suri2</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../suri2/index.html" aria-label="打开 小红书品牌社媒研究：睡衣/家居服品牌在中国用户侧的真实感知">打开</a>
+      </article>
+      <article class="site-row" data-category="睡衣/家居服品牌研究" data-search="instagram 品牌社媒感知调研 suri3/index.html 睡衣/家居服品牌研究 instagram 品牌社媒感知调研 方法与限制 # 0. 账号确认、常见写法与关键词 # 1. 总表 # 2. 逐品牌分析">
+        <div class="row-index">70</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">睡衣/家居服品牌研究</span>
+            <span class="path">suri3/index.html</span>
+          </div>
+          <h2><a href="../suri3/index.html">Instagram 品牌社媒感知调研</a></h2>
+          <p>内容上，这页围绕“Instagram 品牌社媒感知调研”展开，重点覆盖“方法与限制”、“0. 账号确认、常见写法与关键词”、“1. 总表”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 52.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>suri3</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../suri3/index.html" aria-label="打开 Instagram 品牌社媒感知调研">打开</a>
+      </article>
+      <article class="site-row" data-category="睡衣/家居服品牌研究" data-search="sleeper instagram 真实用户反馈研究 suri4/index.html 睡衣/家居服品牌研究 sleeper instagram 真实用户反馈研究 一、研究概览 # 二、用户感受到的亮点 # 1. sleeper 最强的用户心智不是“睡衣”，而是婚礼前后和庆典场景中的浪漫 occasionwear # 2. 用户非常买单它“在家和出门之间”的模糊边界">
+        <div class="row-index">71</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">睡衣/家居服品牌研究</span>
+            <span class="path">suri4/index.html</span>
+          </div>
+          <h2><a href="../suri4/index.html">Sleeper Instagram 真实用户反馈研究</a></h2>
+          <p>内容上，这页围绕“Sleeper Instagram 真实用户反馈研究”展开，重点覆盖“一、研究概览”、“二、用户感受到的亮点”、“1. Sleeper 最强的用户心智不是“睡衣”，而是婚礼前后和庆典场景中的浪漫 occasionwear”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 31.4KB，适合直接静态部署。</p>
+          <div class="tags"><span>suri4</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../suri4/index.html" aria-label="打开 Sleeper Instagram 真实用户反馈研究">打开</a>
+      </article>
+      <article class="site-row" data-category="睡衣/家居服品牌研究" data-search="sleeper instagram 真实用户反馈研究 suri5/index.html 睡衣/家居服品牌研究 sleeper instagram 真实用户反馈研究 一、研究概览 # 二、用户感受到的亮点 # 1. 用户最喜欢的是：sleeper 不是“睡衣”，而是浪漫场合与身份感的 occasionwear # 2. 用户很喜欢它“在家和出门之间”的边界感模糊">
+        <div class="row-index">72</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">睡衣/家居服品牌研究</span>
+            <span class="path">suri5/index.html</span>
+          </div>
+          <h2><a href="../suri5/index.html">Sleeper Instagram 真实用户反馈研究</a></h2>
+          <p>内容上，这页围绕“Sleeper Instagram 真实用户反馈研究”展开，重点覆盖“一、研究概览”、“二、用户感受到的亮点”、“1. 用户最喜欢的是：Sleeper 不是“睡衣”，而是浪漫场合与身份感的 occasionwear”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 33.2KB，适合直接静态部署。</p>
+          <div class="tags"><span>suri5</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../suri5/index.html" aria-label="打开 Sleeper Instagram 真实用户反馈研究">打开</a>
+      </article>
+      <article class="site-row" data-category="知乎/创作者资料" data-search="知乎知识类 up 主推荐汇总 up-zhihu/index.html 知乎/创作者资料 知乎知识类 up 主推荐汇总 领域分布 up 主列表">
+        <div class="row-index">73</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">知乎/创作者资料</span>
+            <span class="path">up-zhihu/index.html</span>
+          </div>
+          <h2><a href="../up-zhihu/index.html">知乎知识类 UP 主推荐汇总</a></h2>
+          <p>内容上，这页围绕“知乎知识类 UP 主推荐汇总”展开，重点覆盖“领域分布”、“UP 主列表”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式拆到外部 CSS，页面约 3.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>up-zhihu</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../up-zhihu/index.html" aria-label="打开 知乎知识类 UP 主推荐汇总">打开</a>
+      </article>
+      <article class="site-row" data-category="肖宇梁调研" data-search="肖宇梁访谈节目与概念企划调研报告 xiao1/index.html 肖宇梁调研 肖宇梁访谈节目与概念企划调研报告 主线 最强素材 最高风险 肖宇梁访谈节目与概念企划调研报告 0. 数据口径与证据 1. 明星人设与故事素材 1.1 五个核心人设标签">
+        <div class="row-index">74</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">肖宇梁调研</span>
+            <span class="path">xiao1/index.html</span>
+          </div>
+          <h2><a href="../xiao1/index.html">肖宇梁访谈节目与概念企划调研报告</a></h2>
+          <p>内容上，这页围绕“肖宇梁访谈节目与概念企划调研报告”展开，重点覆盖“主线”、“最强素材”、“最高风险”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 47.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>xiao1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../xiao1/index.html" aria-label="打开 肖宇梁访谈节目与概念企划调研报告">打开</a>
+      </article>
+      <article class="site-row" data-category="肖宇梁调研" data-search="肖宇梁访谈节目与概念企划调研报告 xiao1/xiao_yuliang_research_20260515.html 肖宇梁调研 肖宇梁访谈节目与概念企划调研报告 主线 最强素材 最高风险 肖宇梁访谈节目与概念企划调研报告 0. 数据口径与证据 1. 明星人设与故事素材 1.1 五个核心人设标签">
+        <div class="row-index">75</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">肖宇梁调研</span>
+            <span class="path">xiao1/xiao_yuliang_research_20260515.html</span>
+          </div>
+          <h2><a href="../xiao1/xiao_yuliang_research_20260515.html">肖宇梁访谈节目与概念企划调研报告</a></h2>
+          <p>内容上，这页围绕“肖宇梁访谈节目与概念企划调研报告”展开，重点覆盖“主线”、“最强素材”、“最高风险”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 47.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>xiao1</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../xiao1/xiao_yuliang_research_20260515.html" aria-label="打开 肖宇梁访谈节目与概念企划调研报告">打开</a>
+      </article>
+      <article class="site-row" data-category="视觉文化/包装灵感" data-search="新疆视觉文化资产 | snackpaper xj/index.html 视觉文化/包装灵感 新疆视觉文化资产 最适合包装的不是整套服饰，而是被抽象后的纹样秩序。 从文化出处到包装位置 艾德莱斯色带 / 流水感纹样 巴旦木纹 热瓦甫 / 梳子 / 耳坠 / 流苏 朵帕石榴花 / 桃花 / 巴旦木花 维吾尔刺绣花卉 / 几何边饰">
+        <div class="row-index">76</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">视觉文化/包装灵感</span>
+            <span class="path">xj/index.html</span>
+          </div>
+          <h2><a href="../xj/index.html">新疆视觉文化资产 | snackpaper</a></h2>
+          <p>内容上，这页围绕“新疆视觉文化资产 | snackpaper”展开，重点覆盖“最适合包装的不是整套服饰，而是被抽象后的纹样秩序。”、“从文化出处到包装位置”、“艾德莱斯色带 / 流水感纹样”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，引用了 5 张本地图片，页面约 42.0KB，适合直接静态部署。</p>
+          <div class="tags"><span>xj</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../xj/index.html" aria-label="打开 新疆视觉文化资产 | snackpaper">打开</a>
+      </article>
+      <article class="site-row" data-category="直播物料/企划调研" data-search="鞠婧祎直播互动物料 / diy / 礼物包装形式调研 yifan/index.html 直播物料/企划调研 鞠婧祎直播互动物料 / diy / 礼物包装形式调研 鞠婧祎直播互动物料 / diy / 礼物包装形式调研 方法说明 第一部分：小红书调研结论 1. 小红书上这类内容常见的高讨论点是什么 2. 用户 / 观众最容易被什么吸引 3. 哪些形式容易被吐槽“无聊 / 廉价 / 不适合直播” 4. 从直播镜头和互动节奏看，哪些形式最适合主播现场做">
+        <div class="row-index">77</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">直播物料/企划调研</span>
+            <span class="path">yifan/index.html</span>
+          </div>
+          <h2><a href="../yifan/index.html">鞠婧祎直播互动物料 / DIY / 礼物包装形式调研</a></h2>
+          <p>内容上，这页围绕“鞠婧祎直播互动物料 / DIY / 礼物包装形式调研”展开，重点覆盖“方法说明”、“第一部分：小红书调研结论”、“1. 小红书上这类内容常见的高讨论点是什么”等模块。</p>
+          <p>制作方式上，用原生 JavaScript 做筛选、跳转或页面交互，样式以内联 CSS 打包，页面约 48.6KB，适合直接静态部署。</p>
+          <div class="tags"><span>yifan</span><span>JavaScript 交互</span></div>
+        </div>
+        <a class="open" href="../yifan/index.html" aria-label="打开 鞠婧祎直播互动物料 / DIY / 礼物包装形式调研">打开</a>
+      </article>
+      <article class="site-row" data-category="云旗×郝熠然记忆资产" data-search="云旗×郝熠然微博粉丝记忆资产｜严格筛选版 yunyi-weibo/index.html 云旗×郝熠然记忆资产 云旗×郝熠然微博粉丝记忆点热度榜 热门记忆点总览 不拆承诺与1.4定海神针 小星河与引力场守护 星河宇宙与引力文案 旗熠青海与应援色 角色作品入坑与真诚努力 演唱会奔赴与巡演回忆">
+        <div class="row-index">78</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">云旗×郝熠然记忆资产</span>
+            <span class="path">yunyi-weibo/index.html</span>
+          </div>
+          <h2><a href="../yunyi-weibo/index.html">云旗×郝熠然微博粉丝记忆资产｜严格筛选版</a></h2>
+          <p>内容上，这页围绕“云旗×郝熠然微博粉丝记忆资产｜严格筛选版”展开，重点覆盖“云旗×郝熠然微博粉丝记忆点热度榜”、“热门记忆点总览”、“不拆承诺与1.4定海神针”等模块。</p>
+          <p>制作方式上，用 React/JavaScript 组织交互，样式以内联 CSS 打包，页面约 126.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>yunyi-weibo</span><span>React/JS</span></div>
+        </div>
+        <a class="open" href="../yunyi-weibo/index.html" aria-label="打开 云旗×郝熠然微博粉丝记忆资产｜严格筛选版">打开</a>
+      </article>
+      <article class="site-row" data-category="云旗×郝熠然记忆资产" data-search="云旗×郝熠然微博粉丝记忆资产｜严格筛选版 yunyi-weibo/yunyi_memory_report.html 云旗×郝熠然记忆资产 云旗×郝熠然微博粉丝记忆点热度榜 热门记忆点总览 不拆承诺与1.4定海神针 小星河与引力场守护 星河宇宙与引力文案 旗熠青海与应援色 角色作品入坑与真诚努力 演唱会奔赴与巡演回忆">
+        <div class="row-index">79</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">云旗×郝熠然记忆资产</span>
+            <span class="path">yunyi-weibo/yunyi_memory_report.html</span>
+          </div>
+          <h2><a href="../yunyi-weibo/yunyi_memory_report.html">云旗×郝熠然微博粉丝记忆资产｜严格筛选版</a></h2>
+          <p>内容上，这页围绕“云旗×郝熠然微博粉丝记忆资产｜严格筛选版”展开，重点覆盖“云旗×郝熠然微博粉丝记忆点热度榜”、“热门记忆点总览”、“不拆承诺与1.4定海神针”等模块。</p>
+          <p>制作方式上，用 React/JavaScript 组织交互，样式以内联 CSS 打包，页面约 126.3KB，适合直接静态部署。</p>
+          <div class="tags"><span>yunyi-weibo</span><span>React/JS</span></div>
+        </div>
+        <a class="open" href="../yunyi-weibo/yunyi_memory_report.html" aria-label="打开 云旗×郝熠然微博粉丝记忆资产｜严格筛选版">打开</a>
+      </article>
+      <article class="site-row" data-category="云旗×郝熠然记忆资产" data-search="云旗 × 郝熠然小红书记忆资产热度榜 yunyi-xhs/index.html 云旗×郝熠然记忆资产 云旗 × 郝熠然小红书记忆资产热度榜 云熠小世界/官方物料 一周年/相见/想念 红发/红秀/新造型 演唱会/彼岸/澳门香港曼谷场 吾岸/角色与剧集记忆 星河姐/小星河的爱拿得出手 不拆/不拆2.0">
+        <div class="row-index">80</div>
+        <div class="row-main">
+          <div class="row-topline">
+            <span class="category">云旗×郝熠然记忆资产</span>
+            <span class="path">yunyi-xhs/index.html</span>
+          </div>
+          <h2><a href="../yunyi-xhs/index.html">云旗 × 郝熠然小红书记忆资产热度榜</a></h2>
+          <p>内容上，这页围绕“云旗 × 郝熠然小红书记忆资产热度榜”展开，重点覆盖“云熠小世界/官方物料”、“一周年/相见/想念”、“红发/红秀/新造型”等模块。</p>
+          <p>制作方式上，以静态 HTML 为主体，样式以内联 CSS 打包，引用了 72 张本地图片，页面约 72.8KB，适合直接静态部署。</p>
+          <div class="tags"><span>yunyi-xhs</span><span>内联 CSS</span></div>
+        </div>
+        <a class="open" href="../yunyi-xhs/index.html" aria-label="打开 云旗 × 郝熠然小红书记忆资产热度榜">打开</a>
+      </article>
+    </div>
+    <div class="empty" id="empty">没有匹配的页面。换一个关键词试试。</div>
+  </main>
+
+  <footer>
+    <div class="page">生成日期：2026-05-24。导航页位于 <code>dict/index.html</code>，所有链接均使用相对路径指向仓库内页面。</div>
+  </footer>
+
+  <script>
+    const rows = Array.from(document.querySelectorAll('.site-row'));
+    const search = document.getElementById('search');
+    const buttons = Array.from(document.querySelectorAll('.filter'));
+    const count = document.getElementById('result-count');
+    const empty = document.getElementById('empty');
+    let active = 'all';
+
+    function applyFilters() {
+      const q = search.value.trim().toLowerCase();
+      let visible = 0;
+      rows.forEach(row => {
+        const inCategory = active === 'all' || row.dataset.category === active;
+        const inSearch = !q || row.dataset.search.includes(q);
+        const show = inCategory && inSearch;
+        row.style.display = show ? '' : 'none';
+        if (show) visible += 1;
+      });
+      count.textContent = `显示 ${visible} / ${rows.length} 个页面`;
+      empty.style.display = visible ? 'none' : 'block';
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        active = btn.dataset.filter;
+        buttons.forEach(b => b.classList.toggle('active', b === btn));
+        applyFilters();
+      });
+    });
+    search.addEventListener('input', applyFilters);
+  </script>
+</body>
+</html>

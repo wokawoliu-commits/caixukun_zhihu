@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>品牌内产品线与价格带分析</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Taobao MCP full SKU · brand-native taxonomy</p>
+        <h1>品牌内产品线与价格带分析</h1>
+        <p>以全量 SKU 为底表，逐品牌使用各自的产品命名逻辑归类，不做跨品牌统一品类比较。</p>
+      </div>
+      <div class="source-note">
+        <span id="generatedAt">—</span>
+        <strong id="totalRows">—</strong>
+        <small>去重 SKU/SPU</small>
+      </div>
+    </header>
+
+    <main>
+      <section class="control-panel">
+        <label>品牌<select id="brandFilter"></select></label>
+        <p>切换品牌查看各自的产品线、主力价格带、价格覆盖率和销量/付款字段靠前商品。</p>
+      </section>
+
+      <section class="summary-grid" id="summaryGrid"></section>
+      <nav class="brand-nav" id="brandNav"></nav>
+      <section id="brandSections" class="brand-sections"></section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
