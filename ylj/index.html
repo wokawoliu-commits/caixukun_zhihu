@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>叶麒圣私人物件策划判断</title>
+  <style>
+    :root {
+      --ink: #181512;
+      --muted: #69645d;
+      --line: #dfdbd3;
+      --paper: #faf9f5;
+      --white: #ffffff;
+      --accent: #a33226;
+      --accent-soft: #f4d9d2;
+      --sage: #70836f;
+      --sage-soft: #e4ebe3;
+      --gold: #b78336;
+      --shadow: 0 20px 60px rgba(34, 29, 22, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 20;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    .hero {
+      min-height: 88svh;
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) minmax(0, 1180px) minmax(24px, 1fr);
+      align-items: stretch;
+      background:
+        linear-gradient(90deg, rgba(250, 249, 245, 0.97) 0%, rgba(250, 249, 245, 0.9) 44%, rgba(250, 249, 245, 0.2) 100%),
+        radial-gradient(circle at 86% 18%, rgba(163, 50, 38, 0.16), transparent 30%),
+        var(--paper);
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(320px, 0.72fr);
+      gap: clamp(32px, 7vw, 96px);
+      align-items: center;
+      padding: 52px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 720px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(39px, 6vw, 78px);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .hero-copy {
+      margin: 26px 0 0;
+      max-width: 610px;
+      color: #403b35;
+      font-size: clamp(18px, 2.3vw, 25px);
+      line-height: 1.55;
+    }
+
+    .hero-result {
+      margin-top: 38px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      padding: 14px 18px;
+      border: 1px solid rgba(163, 50, 38, 0.26);
+      background: rgba(255, 255, 255, 0.62);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-result strong {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .hero-visual {
+      position: relative;
+      align-self: center;
+      min-height: 560px;
+      border-left: 1px solid var(--line);
+      padding-left: clamp(18px, 3vw, 38px);
+      animation: rise 900ms ease both;
+    }
+
+    .photo-stack {
+      position: relative;
+      height: 560px;
+    }
+
+    .photo-frame {
+      position: absolute;
+      overflow: hidden;
+      background: #e9e2d8;
+      box-shadow: var(--shadow);
+      transition: transform 240ms ease, filter 240ms ease;
+    }
+
+    .photo-frame:hover {
+      transform: translateY(-6px) rotate(0deg);
+      filter: saturate(1.08);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-frame.primary {
+      inset: 24px 0 90px 58px;
+      transform: rotate(1.6deg);
+    }
+
+    .photo-frame.secondary {
+      left: 0;
+      bottom: 16px;
+      width: 58%;
+      height: 240px;
+      transform: rotate(-3deg);
+    }
+
+    .photo-frame.tertiary {
+      right: 18px;
+      top: 0;
+      width: 40%;
+      height: 190px;
+      transform: rotate(4deg);
+    }
+
+    .image-note {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: min(320px, 80%);
+      padding: 14px 16px;
+      color: #433d36;
+      background: rgba(250, 249, 245, 0.92);
+      border: 1px solid var(--line);
+      font-size: 13px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) minmax(0, 1180px) minmax(24px, 1fr);
+      background: rgba(250, 249, 245, 0.9);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      grid-column: 2;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      overflow-x: auto;
+    }
+
+    .nav-title {
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: nowrap;
+      max-width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav a {
+      padding: 8px 11px;
+      color: #4e4943;
+      border: 1px solid transparent;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: border-color 180ms ease, color 180ms ease, background 180ms ease;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--accent);
+      border-color: rgba(163, 50, 38, 0.24);
+      background: rgba(244, 217, 210, 0.48);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) minmax(0, 1180px) minmax(24px, 1fr);
+    }
+
+    section {
+      grid-column: 2;
+      padding: clamp(58px, 8vw, 104px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      max-width: 820px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(32px, 5vw, 62px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 760px;
+      margin: 22px 0 0;
+      color: #47413b;
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 42px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .metric {
+      min-height: 150px;
+      padding: 22px;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric .value {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(36px, 6vw, 58px);
+      line-height: 1;
+      color: var(--accent);
+    }
+
+    .metric .label {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .reason-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.25fr;
+      gap: clamp(28px, 6vw, 72px);
+      align-items: start;
+      margin-top: 46px;
+    }
+
+    .verdict {
+      position: sticky;
+      top: 84px;
+      padding: 28px 0;
+      border-top: 2px solid var(--accent);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .verdict-label {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .verdict-name {
+      margin: 12px 0;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.04;
+      color: var(--accent);
+    }
+
+    .verdict p {
+      margin: 0;
+      color: #433d36;
+      font-size: 17px;
+    }
+
+    .basis-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .basis-item {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 22px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .basis-item:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .basis-item strong {
+      color: var(--accent);
+      font-size: 15px;
+    }
+
+    .basis-item p {
+      margin: 0;
+      color: #423d37;
+    }
+
+    .evidence-band {
+      grid-column: 1 / -1;
+      margin-top: 48px;
+      padding: clamp(28px, 4vw, 48px);
+      background: #221d18;
+      color: #f8f1e7;
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+      gap: clamp(24px, 5vw, 64px);
+    }
+
+    .evidence-band h3 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 46px);
+      line-height: 1.08;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      letter-spacing: 0;
+    }
+
+    .evidence-band p {
+      margin: 18px 0 0;
+      color: #d8d0c6;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .evidence-row {
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(248, 241, 231, 0.18);
+    }
+
+    .evidence-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .evidence-row .source {
+      color: #c9a16d;
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .evidence-row p {
+      margin: 5px 0 0;
+      color: #fff9f0;
+    }
+
+    .matrix {
+      width: 100%;
+      margin-top: 42px;
+      border-collapse: collapse;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .matrix th,
+    .matrix td {
+      padding: 18px 16px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .matrix th {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+      background: #f1eee8;
+    }
+
+    .matrix tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .score {
+      display: inline-flex;
+      min-width: 72px;
+      justify-content: center;
+      padding: 4px 9px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid rgba(163, 50, 38, 0.22);
+      font-weight: 760;
+    }
+
+    .score.alt {
+      color: #4f674e;
+      background: var(--sage-soft);
+      border-color: rgba(112, 131, 111, 0.28);
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .quote {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .quote:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .quote .tag {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 760;
+    }
+
+    .quote p {
+      margin: 12px 0 0;
+      font-size: 17px;
+    }
+
+    .quote small {
+      display: block;
+      margin-top: 18px;
+      color: var(--muted);
+    }
+
+    .translation {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      margin-top: 42px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .translation-block {
+      padding: clamp(24px, 4vw, 38px);
+      background: var(--white);
+      min-height: 240px;
+    }
+
+    .translation-block h3 {
+      margin: 0 0 14px;
+      font-size: 21px;
+    }
+
+    .translation-block p,
+    .translation-block li {
+      color: #49433c;
+    }
+
+    .translation-block ul {
+      margin: 12px 0 0;
+      padding-left: 1.2em;
+    }
+
+    .line-copy {
+      margin-top: 44px;
+      padding: clamp(26px, 5vw, 50px) 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .line-copy p {
+      margin: 0;
+      max-width: 980px;
+      font-family: Georgia, "Times New Roman", "Songti SC", serif;
+      font-size: clamp(28px, 4.7vw, 58px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .source-note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      grid-column: 1 / -1;
+      padding: 28px 24px 34px;
+      color: #665f57;
+      text-align: center;
+      font-size: 13px;
+      background: #ece8df;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner,
+      .reason-grid,
+      .evidence-band,
+      .translation {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding: 42px 0 0;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 26px 0 0;
+      }
+
+      .photo-stack {
+        height: 420px;
+      }
+
+      .photo-frame.primary {
+        inset: 16px 0 70px 36px;
+      }
+
+      .metrics,
+      .quote-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .verdict {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .basis-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .metrics,
+      .quote-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .metric {
+        min-height: 118px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">Xiaohongshu research · May 25, 2026</p>
+        <h1><span>叶麒圣的代表性</span><span>私人物件，</span><span>建议选包。</span></h1>
+        <p class="hero-copy">不是因为它最抢眼，而是因为粉丝已经用它读出了一个稳定的人：实用、会买、能装下生活，也能装下一个去剧场的日子。</p>
+        <div class="hero-result">
+          <span>推荐物件</span>
+          <strong>大容量斜挎包 / 报童包</strong>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="小红书搜索结果封面缩略图">
+        <div class="photo-stack">
+          <figure class="photo-frame primary">
+            <img src="https://sns-webpic-qc.xhscdn.com/202605251445/5d8b355d779651680ca50eff88557392/1040g2sg31et17bs06odg5nkjt1tg85e5b86qocg!nc_n_webp_mw_1" alt="叶哥同款包包大测评封面">
+          </figure>
+          <figure class="photo-frame secondary">
+            <img src="https://sns-webpic-qc.xhscdn.com/202605251447/ba5f0cc3273dc3ddad6dcc6f388fc240/1040g2sg31esm87226adg5pj4f8n2uaj7uqesaqg!nc_n_webp_mw_1" alt="yeg同款包测评封面">
+          </figure>
+          <figure class="photo-frame tertiary">
+            <img src="https://sns-webpic-qc.xhscdn.com/202605251448/4af52d1d8d02e1f5138c1d8bd773a267/1040g2sg31tqhqqm678905ngb3eo08sh33ks6aig!nc_n_webp_mw_1" alt="六年玻璃杯封面">
+          </figure>
+          <div class="image-note">封面图来自本次小红书搜索结果缩略图，仅用于内部策划判断；核心依据来自笔记正文与评论语义。</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="nav-title">叶麒圣私人物件策划判断</div>
+      <div class="nav-links">
+        <a href="#scope">采集口径</a>
+        <a href="#basis">选择依据</a>
+        <a href="#matrix">候选对比</a>
+        <a href="#fan">粉丝理解</a>
+        <a href="#translation">策划转译</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="scope" class="reveal">
+      <p class="section-kicker">Research Scope</p>
+      <h2>这不是单条笔记判断，而是一组粉丝语义的交叉验证。</h2>
+      <p class="lead">本轮围绕“叶麒圣 + 同款 / 私人物件 / 包 / 杯子 / 五金 / 手机壳”等关键词做搜索，并打开代表笔记详情与评论，比较物件是否具备粉丝共识、人格映射、可参与性和策划延展。</p>
+
+      <div class="metrics">
+        <div class="metric">
+          <div class="value">19</div>
+          <div class="label">组搜索关键词</div>
+        </div>
+        <div class="metric">
+          <div class="value">8</div>
+          <div class="label">条代表笔记详情</div>
+        </div>
+        <div class="metric">
+          <div class="value">51</div>
+          <div class="label">条首层评论样本</div>
+        </div>
+        <div class="metric">
+          <div class="value">4</div>
+          <div class="label">类核心候选物件</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="basis" class="reveal">
+      <p class="section-kicker">Decision Basis</p>
+      <h2>为什么是包：它同时满足“私人”“粉丝可读”“策划可落地”。</h2>
+      <p class="lead">杯子更私人，五金更精致，手机壳更可爱；但包最能把叶麒圣的日常选择、粉丝的追随动作和剧场生活连接起来。</p>
+
+      <div class="reason-grid">
+        <aside class="verdict">
+          <div class="verdict-label">最终判断</div>
+          <div class="verdict-name">大容量斜挎包</div>
+          <p>它的意义不是“明星同款”，而是一个粉丝已经自发命名出来的人格入口：实用主义者、勤俭持家、物美价廉、有眼光。</p>
+        </aside>
+
+        <div class="basis-list">
+          <div class="basis-item">
+            <strong>共识浓度</strong>
+            <p>“包”方向连续出现测评、求链接、同款开箱、实际装载清单，讨论不止停留在外观，而是反复验证好不好用。</p>
+          </div>
+          <div class="basis-item">
+            <strong>人格映射</strong>
+            <p>粉丝把包和“实用主义”“勤俭持家”“百元不到但能装”绑定，已经从物品评价转向对艺人生活方式的理解。</p>
+          </div>
+          <div class="basis-item">
+            <strong>场景连接</strong>
+            <p>它自然进入“上班后去剧场”的路线：票夹、望远镜、水杯、相机、签名笔、玩偶都能被装进同一个物件里。</p>
+          </div>
+          <div class="basis-item">
+            <strong>粉丝参与</strong>
+            <p>包的价格与功能让粉丝容易拥有、复刻、测评和再创作，能从艺人私人物件延展为粉丝自己的观演装备。</p>
+          </div>
+          <div class="basis-item">
+            <strong>叙事稳定</strong>
+            <p>它既能讲“叶麒圣本人怎么选东西”，也能讲“粉丝为什么会因此更喜欢他”，比单纯造型物件更厚。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-band">
+        <div>
+          <h3>证据链的核心，不是数量最大，而是语义最完整。</h3>
+          <p>五金的互动数据最高，但更偏审美与价格惊讶；杯子很私人，但样本较窄。包同时拥有多个笔记、明确使用场景、粉丝复测行为和人格标签。</p>
+        </div>
+        <div class="evidence-list">
+          <div class="evidence-row">
+            <div class="source">包包测评笔记</div>
+            <p>高频关键词集中在“超大、结实、真买得起、能装、很轻、分格、物美价廉”。</p>
+          </div>
+          <div class="evidence-row">
+            <div class="source">粉丝实际装载</div>
+            <p>有人把相机、镜头、望远镜、伞、充电宝、剧票相关物品都放进去，还认为空间仍有余量。</p>
+          </div>
+          <div class="evidence-row">
+            <div class="source">人格评价</div>
+            <p>笔记标题与评论直接把包指向“实用主义者”“勤俭持家”“配件眼光好”。</p>
+          </div>
+          <div class="evidence-row">
+            <div class="source">策划可用性</div>
+            <p>它能承接“一个人出门带什么”，也能承接“一个粉丝去看他要带什么”。这就是物件叙事的桥。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="matrix" class="reveal">
+      <p class="section-kicker">Candidate Matrix</p>
+      <h2>候选物件对比：包胜在“可被粉丝生活化”。</h2>
+      <p class="lead">评分不是绝对热度，而是以策划目标为准：能不能代表艺人、能不能被粉丝解释、能不能落到内容执行。</p>
+
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>物件候选</th>
+            <th>粉丝理解</th>
+            <th>优势</th>
+            <th>限制</th>
+            <th>策划适配</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>大容量斜挎包</strong></td>
+            <td>实用、能装、便宜好用、会买、勤俭持家。</td>
+            <td>多条测评互相印证，粉丝能买、能背、能复刻。</td>
+            <td>需要避免做成单纯带货。</td>
+            <td><span class="score">主物件</span></td>
+          </tr>
+          <tr>
+            <td><strong>六年玻璃杯</strong></td>
+            <td>用很久、干净、稳定、像护身符。</td>
+            <td>私密感强，时间线动人。</td>
+            <td>讨论样本较窄，视觉辨识度弱于包。</td>
+            <td><span class="score alt">情绪副线</span></td>
+          </tr>
+          <tr>
+            <td><strong>五金 / 银饰</strong></td>
+            <td>精致、亮晶晶、讲究、富贵小狐。</td>
+            <td>互动高，审美标签鲜明。</td>
+            <td>价格与距离感较强，更像造型研究。</td>
+            <td><span class="score alt">视觉辅助</span></td>
+          </tr>
+          <tr>
+            <td><strong>手机壳</strong></td>
+            <td>可爱、航天梦、萌感、用了好一段时间。</td>
+            <td>轻巧，适合粉丝同款梗。</td>
+            <td>语义偏浅，更多是“萌”和“想 get”。</td>
+            <td><span class="score alt">轻量彩蛋</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="fan" class="reveal">
+      <p class="section-kicker">Fan Reading</p>
+      <h2>粉丝真正读到的，是“一个可靠的人如何选择日用品”。</h2>
+      <p class="lead">包的讨论里，粉丝很少只说“好看”。他们在意容量、重量、肩带、分格、价格，也会把这些细节转译成对叶麒圣本人的判断。</p>
+
+      <div class="quote-grid">
+        <div class="quote">
+          <div class="tag">功能验证</div>
+          <p>相机、望远镜、伞、充电宝、剧票相关物品都能放进去，粉丝是在用真实负载测试它。</p>
+          <small>来自“yeg同款包测评”等笔记</small>
+        </div>
+        <div class="quote">
+          <div class="tag">性格归因</div>
+          <p>“实用主义者”“勤俭持家”“物美价廉的眼光”这类表达，把包变成了艺人性格的证据。</p>
+          <small>来自包类笔记标题与评论</small>
+        </div>
+        <div class="quote">
+          <div class="tag">粉丝生活</div>
+          <p>上班、去剧场、带水杯、带票夹、带玩偶，这个包能把粉丝的一天和他的日常选择接上。</p>
+          <small>来自“好会买好勤俭持家”笔记</small>
+        </div>
+      </div>
+
+      <div class="line-copy">
+        <p>策划上可以把它讲成：他选择的不是最贵的东西，而是最能装下生活的东西。</p>
+      </div>
+    </section>
+
+    <section id="translation" class="reveal">
+      <p class="section-kicker">Creative Translation</p>
+      <h2>把物件从“同款”转成“人格入口”。</h2>
+      <p class="lead">执行时不要把重点放在品牌型号或购买链接，而要让包成为理解叶麒圣的入口：他如何出门、如何准备、如何在便宜实用和审美之间做选择。</p>
+
+      <div class="translation">
+        <div class="translation-block">
+          <h3>主叙事</h3>
+          <p>“一个能装下生活的包。”从叶麒圣自己的开包检查出发，延展到粉丝的剧场日常：包里装的不是杂物，而是一个人去见作品、见舞台、见他的准备。</p>
+        </div>
+        <div class="translation-block">
+          <h3>内容结构</h3>
+          <ul>
+            <li>开头：粉丝为什么注意到这个包。</li>
+            <li>中段：它到底能装什么，为什么被说实用。</li>
+            <li>转折：粉丝如何从“包”读到“人”。</li>
+            <li>结尾：把六年玻璃杯作为安静彩蛋，补足长期陪伴感。</li>
+          </ul>
+        </div>
+        <div class="translation-block">
+          <h3>关键词</h3>
+          <p>实用主义、百元不到、能装、剧场出门、物美价廉、生活感、稳定可靠、叶哥的眼光。</p>
+        </div>
+        <div class="translation-block">
+          <h3>避雷点</h3>
+          <p>避免变成“明星同款购买攻略”。这次策划要讲粉丝心里的理解，不是推荐商品；品牌型号可以弱化，物件意义要前置。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <p class="section-kicker">Final Recommendation</p>
+      <h2>推荐表达</h2>
+      <p class="lead">如果只留一句策划判断，可以这样说：</p>
+      <div class="line-copy">
+        <p>在粉丝心里，这只包代表的不是“叶麒圣同款”，而是他身上一种很具体的生活感：不虚张，能承重，价格朴素，但真的好用。</p>
+      </div>
+      <p class="source-note">数据来源：本地小红书搜索与笔记详情抓取结果，采集日期 2026-05-25。原始 JSON 位于 /Users/huangdong/Downloads/codex-xhs14。</p>
+    </section>
+
+    <div class="footer">叶麒圣私人物件策划判断 · HTML report</div>
+  </main>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const links = Array.from(document.querySelectorAll(".nav a"));
+    const sections = links
+      .map((link) => document.querySelector(link.getAttribute("href")))
+      .filter(Boolean);
+
+    function updateProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? window.scrollY / scrollable : 0;
+      progress.style.width = `${Math.min(1, Math.max(0, ratio)) * 100}%`;
+
+      let activeId = "";
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= 120) activeId = section.id;
+      }
+
+      links.forEach((link) => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${activeId}`);
+      });
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>
