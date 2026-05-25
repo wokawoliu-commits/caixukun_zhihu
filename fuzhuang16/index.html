@@ -32,6 +32,27 @@
       <section id="brandSections" class="brand-sections"></section>
     </main>
 
+    <section class="modal" id="skuModal" hidden aria-labelledby="modalTitle" role="dialog" aria-modal="true">
+      <button class="modal-backdrop" id="modalBackdrop" aria-label="关闭"></button>
+      <div class="modal-panel">
+        <header class="modal-head">
+          <div>
+            <p class="eyebrow">SKU detail</p>
+            <h2 id="modalTitle">品类 SKU 明细</h2>
+            <p id="modalMeta">—</p>
+          </div>
+          <button class="modal-close" id="modalClose" aria-label="关闭">×</button>
+        </header>
+        <div class="modal-tools">
+          <input id="modalSearch" type="search" placeholder="在该品类内搜索标题、itemId、SKU摘要" />
+          <span id="modalCount">—</span>
+        </div>
+        <div class="modal-table-wrap">
+          <table id="skuDetailTable"></table>
+        </div>
+      </div>
+    </section>
+
     <script src="./assets/data.js"></script>
     <script src="./app.js"></script>
   </body>
