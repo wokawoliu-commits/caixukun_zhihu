@@ -1,0 +1,1195 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>日本零食 x 明星/IP 联名 CEO 视觉简报</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171615;
+      --muted: #625c55;
+      --paper: #f6f1e8;
+      --surface: #fffdf8;
+      --line: rgba(23, 22, 21, 0.14);
+      --red: #df1f2d;
+      --blue: #1745a8;
+      --gold: #f3b51b;
+      --pink: #f7a7bf;
+      --green: #006a4e;
+      --max: 1180px;
+      --radius: 8px;
+      --shadow: 0 24px 70px rgba(23, 22, 21, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", Arial, sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: rgba(223, 31, 45, 0.55);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    .topbar {
+      position: fixed;
+      z-index: 20;
+      inset: 0 0 auto;
+      min-height: 58px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 28px;
+      color: #fff;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0));
+      pointer-events: none;
+    }
+
+    .topbar span {
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.24);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 94svh;
+      display: grid;
+      align-items: end;
+      isolation: isolate;
+      overflow: hidden;
+      color: #fff;
+      background: #160f10;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.54) 36%, rgba(0, 0, 0, 0.1) 78%),
+        url("assets/pocky-streetfighter-hero.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.04);
+      animation: heroSettle 1200ms ease-out both;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      z-index: -1;
+      height: 32%;
+      background: linear-gradient(to bottom, rgba(22, 15, 16, 0), var(--paper));
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      padding: 108px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: #ffd86d;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 3px;
+      background: var(--gold);
+    }
+
+    h1 {
+      width: 100%;
+      max-width: 860px;
+      font-size: clamp(44px, 7vw, 88px);
+      line-height: 1;
+      font-weight: 950;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .title-line + .title-line::before {
+      content: " ";
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 640px;
+      margin-top: 24px;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(17px, 2vw, 22px);
+      font-weight: 560;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      max-width: 1000px;
+      margin-top: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.24);
+    }
+
+    .metric {
+      min-height: 122px;
+      padding: 22px 18px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 9px;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .metric span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      padding: 92px 0;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.5fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 42px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .kicker {
+      margin-bottom: 10px;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(32px, 4.8vw, 62px);
+      line-height: 1.04;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      font-weight: 560;
+    }
+
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .thesis {
+      min-height: 262px;
+      display: grid;
+      align-content: space-between;
+      padding: 30px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 34px rgba(23, 22, 21, 0.07);
+    }
+
+    .thesis-num {
+      color: var(--red);
+      font-size: 15px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+    }
+
+    .thesis h3 {
+      margin-top: 44px;
+      font-size: clamp(24px, 2.4vw, 34px);
+      line-height: 1.1;
+      font-weight: 950;
+    }
+
+    .thesis p {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 560;
+    }
+
+    .case-stack {
+      display: grid;
+      gap: 26px;
+    }
+
+    .case {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.96fr) minmax(0, 1.04fr);
+      min-height: 420px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .case:nth-child(even) {
+      grid-template-columns: minmax(0, 1.04fr) minmax(320px, 0.96fr);
+    }
+
+    .case:nth-child(even) .case-media {
+      order: 2;
+    }
+
+    .case-media {
+      position: relative;
+      min-height: 420px;
+      background: #e9e1d7;
+    }
+
+    .case-media.contain img {
+      object-fit: contain;
+      padding: 24px;
+      background: #fffdf8;
+    }
+
+    .case-media figcaption {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      padding: 10px 12px;
+      color: rgba(255, 255, 255, 0.94);
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      backdrop-filter: blur(10px);
+    }
+
+    .case-body {
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      padding: clamp(32px, 5vw, 58px);
+    }
+
+    .case-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      align-items: baseline;
+    }
+
+    .case-title h3 {
+      font-size: clamp(30px, 4.2vw, 52px);
+      line-height: 1.03;
+      font-weight: 950;
+    }
+
+    .case-title span {
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+    }
+
+    .case-points {
+      display: grid;
+      gap: 16px;
+    }
+
+    .point {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr);
+      gap: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+    }
+
+    .point b {
+      color: var(--green);
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .point p {
+      color: #3b3732;
+      font-size: 16px;
+      font-weight: 560;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #302d29;
+      background: #fff9ef;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .matrix {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 16px 44px rgba(23, 22, 21, 0.08);
+    }
+
+    table {
+      width: 100%;
+      min-width: 920px;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th,
+    td {
+      padding: 20px 18px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      color: #2c2925;
+      background: #fff1b8;
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    td {
+      color: #3d3934;
+      font-size: 15px;
+      font-weight: 560;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    td strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-size: 16px;
+      font-weight: 950;
+    }
+
+    .playbook {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .playbook-photo {
+      position: sticky;
+      top: 72px;
+      height: 640px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #fff;
+    }
+
+    .playbook-list {
+      display: grid;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .playbook-item {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 28px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .playbook-item:last-child {
+      border-bottom: 0;
+    }
+
+    .playbook-item em {
+      color: var(--red);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 950;
+    }
+
+    .playbook-item h3 {
+      margin-bottom: 8px;
+      font-size: clamp(22px, 2vw, 31px);
+      line-height: 1.14;
+    }
+
+    .playbook-item p {
+      color: var(--muted);
+      font-size: 16px;
+      font-weight: 560;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 20px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 123px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: var(--line);
+    }
+
+    .time-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 106px minmax(0, 1fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .time-row::before {
+      content: "";
+      position: absolute;
+      left: 116px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 6px var(--paper);
+    }
+
+    .time-date {
+      color: var(--red);
+      font-size: 14px;
+      font-weight: 950;
+      letter-spacing: 0.06em;
+    }
+
+    .time-card {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .time-card h3 {
+      margin-bottom: 6px;
+      font-size: 21px;
+    }
+
+    .time-card p {
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 560;
+    }
+
+    .decision {
+      color: #fff;
+      background: #181311;
+    }
+
+    .decision .section-head {
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .decision .lead {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .decision .kicker {
+      color: var(--gold);
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .decision-block {
+      min-height: 360px;
+      display: grid;
+      align-content: start;
+      gap: 18px;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .decision-block h3 {
+      font-size: 26px;
+      line-height: 1.12;
+    }
+
+    .decision-block ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding-left: 20px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 15px;
+      font-weight: 560;
+    }
+
+    .decision-block li::marker {
+      color: var(--gold);
+    }
+
+    .source-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 28px;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list li {
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 560;
+    }
+
+    .footer-note {
+      margin-top: 32px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes heroSettle {
+      from {
+        transform: scale(1.1);
+        filter: saturate(0.86);
+      }
+
+      to {
+        transform: scale(1.04);
+        filter: saturate(1);
+      }
+    }
+
+    @media (max-width: 920px) {
+      .topbar {
+        padding: 0 18px;
+      }
+
+      .hero {
+        min-height: 92svh;
+      }
+
+      .hero-inner,
+      .wrap {
+        width: calc(100vw - 32px);
+        max-width: var(--max);
+      }
+
+      .hero-metrics,
+      .thesis-grid,
+      .section-head,
+      .playbook,
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metric:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .case,
+      .case:nth-child(even) {
+        grid-template-columns: 1fr;
+      }
+
+      .case:nth-child(even) .case-media {
+        order: 0;
+      }
+
+      .case-media {
+        min-height: 320px;
+      }
+
+      .playbook-photo {
+        position: relative;
+        top: auto;
+        height: 420px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      section {
+        padding: 66px 0;
+      }
+
+      .topbar span:last-child {
+        display: none;
+      }
+
+      .hero::before {
+        background-image:
+          linear-gradient(180deg, rgba(0, 0, 0, 0.76), rgba(0, 0, 0, 0.38) 48%, rgba(0, 0, 0, 0.78)),
+          url("assets/pocky-streetfighter-hero.jpg");
+        background-position: center;
+      }
+
+      .hero-inner {
+        padding: 86px 0 44px;
+      }
+
+      h1 {
+        max-width: 100%;
+        font-size: 38px;
+        line-height: 1.04;
+      }
+
+      .title-line {
+        display: block;
+      }
+
+      .title-line + .title-line::before {
+        content: "";
+      }
+
+      .hero-copy {
+        max-width: 100%;
+        margin-top: 18px;
+        font-size: 16px;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(5, 136px);
+        max-width: 100%;
+        margin-top: 28px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+      }
+
+      .metric,
+      .metric:last-child {
+        min-height: 104px;
+        padding: 17px 16px;
+        grid-column: auto;
+        scroll-snap-align: start;
+      }
+
+      .metric strong {
+        font-size: 28px;
+      }
+
+      .thesis {
+        min-height: 220px;
+        padding: 24px;
+      }
+
+      .case-body {
+        padding: 28px 22px;
+      }
+
+      .point,
+      .playbook-item,
+      .time-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .timeline::before,
+      .time-row::before {
+        display: none;
+      }
+
+      .source-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero::before,
+      .reveal {
+        animation: none;
+        transition: none;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="报告导航">
+    <span>CEO Visual Brief</span>
+    <span>日本零食 x 明星/IP 联名</span>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Japan snack collaboration</div>
+      <h1><span class="title-line">日本零食 x</span><span class="title-line">明星/IP 联名</span><span class="title-line">CEO 视觉简报</span></h1>
+      <p class="hero-copy">核心判断：日本零食联名的强项不是单纯贴角色，而是把“包装收藏、玩法入口、周年纪念、限量周边”做成一套可运营系统。</p>
+      <div class="hero-metrics" aria-label="关键数字">
+        <div class="metric"><strong>4</strong><span>重点案例：游戏、国民角色、动漫、长销品牌</span></div>
+        <div class="metric"><strong>36</strong><span>Hello Kitty 可拉熊饼干图案总量</span></div>
+        <div class="metric"><strong>300</strong><span>进击的巨人每款巨型包装限定套数</span></div>
+        <div class="metric"><strong>3+5</strong><span>推しの子 Alfort 外盒与小包图案体系</span></div>
+        <div class="metric"><strong>450万+</strong><span>Pocky K.O. 活动视频观看量级</span></div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Executive takeaways</div>
+            <h2>CEO 先看三条结论</h2>
+          </div>
+          <p class="lead">这些日本案例更适合用来学习“包装怎么变成活动入口”。产品本身没有离开零食货架，但购买理由被扩展到游戏挑战、周年纪念和粉丝收藏。</p>
+        </div>
+
+        <div class="thesis-grid">
+          <article class="thesis reveal">
+            <div class="thesis-num">01</div>
+            <div>
+              <h3>包装要带任务</h3>
+              <p>Pocky x 街霸不是只有限定盒，包装背后连接小游戏和密码，消费者买完仍有下一步动作。</p>
+            </div>
+          </article>
+          <article class="thesis reveal">
+            <div class="thesis-num">02</div>
+            <div>
+              <h3>周年是放大器</h3>
+              <p>可拉熊 40 周年遇上 Hello Kitty 50 周年，两个成熟 IP 用纪念节点降低解释成本，包装天然有新闻性。</p>
+            </div>
+          </article>
+          <article class="thesis reveal">
+            <div class="thesis-num">03</div>
+            <div>
+              <h3>限量要有证据</h3>
+              <p>进击的巨人每款 300 套、Alfort 多封面与随机小包，都让粉丝能感知稀缺，才会推动晒单和抢购。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Visual cases</div>
+            <h2>四个最值得看的包装案例</h2>
+          </div>
+          <p class="lead">以下按“包装识别度、玩法闭环、收藏价值、CEO 可复制性”重排原 PDF 内容，并补充本地化产品图。</p>
+        </div>
+
+        <div class="case-stack">
+          <article class="case reveal">
+            <figure class="case-media">
+              <img src="assets/pocky-streetfighter-hero.jpg" alt="Pocky 与 Street Fighter II 联名活动主视觉">
+              <figcaption>图片来源：PR TIMES / Ezaki Glico 供图</figcaption>
+            </figure>
+            <div class="case-body">
+              <div class="case-title">
+                <h3>Pocky x Street Fighter II</h3>
+                <span>2022.11</span>
+              </div>
+              <div class="case-points">
+                <div class="point"><b>视觉</b><p>经典红盒与街霸角色同框，游戏玩家能立刻识别联名主题。</p></div>
+                <div class="point"><b>机制</b><p>买限定包装后输入密码进入 Street Fighter II Pocky Edition，体力条与 Pocky 黄金比例绑定。</p></div>
+                <div class="point"><b>启发</b><p>游戏化不是额外做活动页，而是让包装成为游戏入口，形成购买、游玩、分享的链路。</p></div>
+              </div>
+              <div class="tags"><span class="tag">游戏互动</span><span class="tag">包装密码</span><span class="tag">KOL 实况</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <figure class="case-media">
+              <img src="assets/koala-hello-kitty.jpg" alt="可拉熊饼干与 Hello Kitty 苹果派风味联名包装">
+              <figcaption>图片来源：Sanrio 官方新闻</figcaption>
+            </figure>
+            <div class="case-body">
+              <div class="case-title">
+                <h3>Koala's March x Hello Kitty</h3>
+                <span>2024.03</span>
+              </div>
+              <div class="case-points">
+                <div class="point"><b>视觉</b><p>苹果派风味、Kitty 蝴蝶结、可拉熊角色互相模仿，包装具备强货架辨识度。</p></div>
+                <div class="point"><b>机制</b><p>10 种联名饼干图案加 26 个英文字母图案，轻量但有收集感。</p></div>
+                <div class="point"><b>启发</b><p>国民角色适合做低门槛大铺货，重点不是高价礼盒，而是让家庭和女性消费者随手带走。</p></div>
+              </div>
+              <div class="tags"><span class="tag">双周年</span><span class="tag">可爱包装</span><span class="tag">图案收集</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <figure class="case-media">
+              <img src="assets/koala-attack-on-titan.jpg" alt="进击的巨人与可拉熊饼干巨型包装联名">
+              <figcaption>图片来源：TV 动画《进击的巨人》官网</figcaption>
+            </figure>
+            <div class="case-body">
+              <div class="case-title">
+                <h3>Koala's March x Attack on Titan</h3>
+                <span>2023.11 / 2024.02</span>
+              </div>
+              <div class="case-points">
+                <div class="point"><b>视觉</b><p>约 30cm 巨型包装把普通饼干变成陈列物和周边，角色主题比常规小盒更适合晒单。</p></div>
+                <div class="point"><b>机制</b><p>9 种巨人包装，每款 300 套，含艾伦和利威尔主题杯垫，强化限量证据。</p></div>
+                <div class="point"><b>启发</b><p>重粉丝 IP 适合做少量高话题商品，目标是社媒声量和品牌年轻化，不一定追求全渠道销量。</p></div>
+              </div>
+              <div class="tags"><span class="tag">巨型包装</span><span class="tag">限量 300</span><span class="tag">角色周边</span></div>
+            </div>
+          </article>
+
+          <article class="case reveal">
+            <figure class="case-media contain">
+              <img src="assets/bourbon-oshi-no-ko.jpg" alt="Bourbon Alfort 与推しの子联名包装">
+              <figcaption>图片来源：Bourbon 官方新闻</figcaption>
+            </figure>
+            <div class="case-body">
+              <div class="case-title">
+                <h3>Bourbon Alfort x 推しの子</h3>
+                <span>2024.09</span>
+              </div>
+              <div class="case-points">
+                <div class="point"><b>视觉</b><p>长销巧克力饼干保留品牌识别，同时在外盒和小包上放入热门动漫角色，兼顾老客和粉丝。</p></div>
+                <div class="point"><b>机制</b><p>每个商品外装 3 种设计，个包装 5 种图案，适合便利店陈列和开袋分享。</p></div>
+                <div class="point"><b>启发</b><p>老品牌焕新可以用“系列组合”而非单品，多个 SKU 同步换装更容易形成货架面。</p></div>
+              </div>
+              <div class="tags"><span class="tag">热门动漫</span><span class="tag">系列组合</span><span class="tag">小包图案</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Portfolio matrix</div>
+            <h2>四类打法的商业差异</h2>
+          </div>
+          <p class="lead">日本案例的可复制价值在于分层：游戏 IP 做互动，国民角色做铺货，重粉丝动漫做限量，长销品牌做焕新。</p>
+        </div>
+
+        <div class="matrix reveal">
+          <table>
+            <thead>
+              <tr>
+                <th>联名类型</th>
+                <th>适合目标</th>
+                <th>包装核心</th>
+                <th>购买触发</th>
+                <th>CEO 关注点</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>游戏 IP</strong>Pocky x Street Fighter II</td>
+                <td>年轻玩家、互动传播、品牌活化</td>
+                <td>角色主视觉、包装密码、游戏入口</td>
+                <td>挑战玩法、KOL 实况、社交截图</td>
+                <td>开发成本、活动时效、作弊机制、游戏体验是否足够轻</td>
+              </tr>
+              <tr>
+                <td><strong>国民角色</strong>Koala's March x Hello Kitty</td>
+                <td>大众铺货、家庭消费、女性用户</td>
+                <td>可爱插画、周年元素、口味联想</td>
+                <td>随手购、礼赠、图案收集</td>
+                <td>产量分配、陈列统一、授权范围、是否过度儿童化</td>
+              </tr>
+              <tr>
+                <td><strong>重粉丝动漫</strong>Attack on Titan</td>
+                <td>声量爆发、粉丝抢购、限量周边</td>
+                <td>巨型包装、角色套系、附赠杯垫</td>
+                <td>限定数量、角色偏好、晒图价值</td>
+                <td>热门角色库存、售罄后的舆情、粉丝圈层是否够大</td>
+              </tr>
+              <tr>
+                <td><strong>长销品牌焕新</strong>Alfort x 推しの子</td>
+                <td>老品新鲜度、货架面扩大、便利店转化</td>
+                <td>外盒多封面、小包多图案、系列统一</td>
+                <td>角色收集、开袋分享、季节陈列</td>
+                <td>IP 热度窗口、包装成本、 SKU 协同、二次补货节奏</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Packaging playbook</div>
+            <h2>包装设计的五个转化装置</h2>
+          </div>
+          <p class="lead">面向 CEO 的判断标准很简单：这款包装能不能让消费者拍照、分享、复购、集齐，并且愿意为它多走一步。</p>
+        </div>
+
+        <div class="playbook">
+          <figure class="playbook-photo reveal">
+            <img src="assets/koala-hello-kitty.jpg" alt="Hello Kitty 和可拉熊联名包装视觉">
+          </figure>
+          <div class="playbook-list">
+            <article class="playbook-item reveal">
+              <em>01</em>
+              <div>
+                <h3>让包装正面承担主视觉</h3>
+                <p>消费者先看到的是货架，不是活动页。IP 名称、角色、颜色必须在包装正面形成第一眼识别。</p>
+              </div>
+            </article>
+            <article class="playbook-item reveal">
+              <em>02</em>
+              <div>
+                <h3>把口味变成故事的一部分</h3>
+                <p>Hello Kitty 的苹果派风味比普通巧克力更容易被记住，因为口味、角色和包装画面相互支撑。</p>
+              </div>
+            </article>
+            <article class="playbook-item reveal">
+              <em>03</em>
+              <div>
+                <h3>设计可见的收集阶梯</h3>
+                <p>3 种外盒、5 种小包、36 种饼干图案、9 种巨型包装，这些数字会让粉丝知道自己为什么要再买一次。</p>
+              </div>
+            </article>
+            <article class="playbook-item reveal">
+              <em>04</em>
+              <div>
+                <h3>让包装连接下一步动作</h3>
+                <p>Pocky K.O. 的密码和游戏入口让包装变成媒体，不只是容器。适合复制到 AR、抽奖、小游戏和会员权益。</p>
+              </div>
+            </article>
+            <article class="playbook-item reveal">
+              <em>05</em>
+              <div>
+                <h3>用限量数量管理预期</h3>
+                <p>限量需要清晰数字和渠道规则。模糊限量容易引发质疑，明确限量更适合形成抢购证据和复盘指标。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Timeline</div>
+            <h2>关键案例时间线</h2>
+          </div>
+          <p class="lead">从游戏化到周年联名，再到动漫限量和长销品牌焕新，日本零食联名逐渐从“好看包装”变为“可参与商品”。</p>
+        </div>
+
+        <div class="timeline">
+          <div class="time-row reveal">
+            <div class="time-date">2022.11</div>
+            <div class="time-card"><h3>Pocky x Street Fighter II</h3><p>限定包装连接原创小游戏，Pocky 黄金比例被转译为游戏胜利机制。</p></div>
+          </div>
+          <div class="time-row reveal">
+            <div class="time-date">2023.11</div>
+            <div class="time-card"><h3>可拉熊 x 进击的巨人首波联名</h3><p>角色主题图案和粉丝情怀先行，为 2024 巨型包装预热。</p></div>
+          </div>
+          <div class="time-row reveal">
+            <div class="time-date">2024.02</div>
+            <div class="time-card"><h3>进击的巨人巨型可拉熊</h3><p>约 30cm 巨型包装上线，每款 300 套，并附角色杯垫。</p></div>
+          </div>
+          <div class="time-row reveal">
+            <div class="time-date">2024.03</div>
+            <div class="time-card"><h3>Hello Kitty 苹果派风味可拉熊</h3><p>可拉熊 40 周年和 Hello Kitty 50 周年叠加，形成大众消费场景。</p></div>
+          </div>
+          <div class="time-row reveal">
+            <div class="time-date">2024.09</div>
+            <div class="time-card"><h3>Bourbon Alfort x 推しの子</h3><p>热门动漫进入长销巧克力饼干系列，多外盒和多小包强化收集。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">CEO action board</div>
+            <h2>下一次联名建议这样立项</h2>
+          </div>
+          <p class="lead">先定义增长目标，再选择 IP 类型。不同 IP 的授权费、包装投入、库存风险和传播窗口完全不同。</p>
+        </div>
+
+        <div class="decision-grid">
+          <article class="decision-block reveal">
+            <h3>1. 选 IP 前先定任务</h3>
+            <ul>
+              <li>要声量和互动，优先游戏 IP 或热门动漫。</li>
+              <li>要铺货和家庭消费，优先国民角色和可爱系包装。</li>
+              <li>要焕新老品，优先多 SKU 系列换装，而不是单款孤立联名。</li>
+            </ul>
+          </article>
+          <article class="decision-block reveal">
+            <h3>2. 包装必须自带复购理由</h3>
+            <ul>
+              <li>至少有外盒、内袋、赠品或权益中的两层收集机制。</li>
+              <li>明确图案数量和限量数量，让用户知道“集齐”的边界。</li>
+              <li>在便利店和电商页保持同一套主视觉，提高记忆效率。</li>
+            </ul>
+          </article>
+          <article class="decision-block reveal">
+            <h3>3. 风险要提前量化</h3>
+            <ul>
+              <li>版权确认、肖像露出、角色排序、包装审稿要预留时间。</li>
+              <li>限量款需要提前设定补货规则和售罄后的沟通口径。</li>
+              <li>复盘指标建议看售罄率、社媒晒单量、二手溢价和搜索指数。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="kicker">Sources</div>
+            <h2>资料与图片来源</h2>
+          </div>
+          <p class="lead">本 HTML 基于原 PDF 内容重构，并下载公开页面中的产品图到本地 assets 目录。正式外发前建议再次确认图片授权范围。</p>
+        </div>
+        <ul class="source-list reveal">
+          <li><a href="执行摘要.pdf">原始 PDF：执行摘要</a></li>
+          <li><a href="https://prtimes.jp/main/html/rd/p/000000334.000001124.html" target="_blank" rel="noreferrer">PR TIMES：Pocky x Street Fighter II 联名活动</a></li>
+          <li><a href="https://www.oneclub.org/awards/theoneshow/-award/36554/pocky-ko/" target="_blank" rel="noreferrer">The One Show：Pocky K.O. 奖项记录</a></li>
+          <li><a href="https://www.sanrio.co.jp/news/goods/kt-koala-march-20240319/" target="_blank" rel="noreferrer">Sanrio：Hello Kitty x Koala's March</a></li>
+          <li><a href="https://shingeki.tv/news/archives/8284" target="_blank" rel="noreferrer">进击的巨人官网：巨型可拉熊联名</a></li>
+          <li><a href="https://www.bourbon.co.jp/news/detail/20240829092417.html" target="_blank" rel="noreferrer">Bourbon：推しの子 Alfort 联名</a></li>
+          <li><a href="https://charalab.com/100123/" target="_blank" rel="noreferrer">Charalab：进击的巨人可拉熊报道</a></li>
+          <li><a href="https://ipfield.net/ip-column/sweets/" target="_blank" rel="noreferrer">IPField：零食与动漫 IP 联名案例集</a></li>
+        </ul>
+        <p class="footer-note">制作日期：2026-05-26。所有图片均为本地文件引用，页面可离线打开。</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    reveals.forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
