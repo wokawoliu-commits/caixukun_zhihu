@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>小学二年级数学教材改写 - 知乎线索索引</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Zhihu research index</p>
+        <h1>小学二年级数学教材改写线索</h1>
+      </div>
+      <nav class="actions" aria-label="资料链接">
+        <a href="./data/zhihu_math_textbook_results.xlsx">完整结果表</a>
+        <a href="./data/zhihu_math_textbook_queries.txt">关键词清单</a>
+      </nav>
+    </header>
+
+    <main class="shell">
+      <aside class="rail" aria-label="筛选与摘要">
+        <section class="panel summary-panel">
+          <p class="label">检索范围</p>
+          <div class="metric-grid">
+            <div>
+              <strong>476</strong>
+              <span>去重结果</span>
+            </div>
+            <div>
+              <strong>26</strong>
+              <span>搜索词</span>
+            </div>
+            <div>
+              <strong>20</strong>
+              <span>精读回答</span>
+            </div>
+            <div>
+              <strong>8</strong>
+              <span>二年级直搜命中</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <label class="label" for="searchInput">检索</label>
+          <input id="searchInput" class="search" type="search" placeholder="输入：算理、情境、防自学..." />
+        </section>
+
+        <section class="panel">
+          <p class="label">主题</p>
+          <div class="filter-list" id="filters"></div>
+        </section>
+
+        <section class="panel note">
+          <p class="label">直接结论</p>
+          <p>知乎上几乎没有高质量内容直接讨论“人教版二年级上册数学课本改写”。可用材料主要来自教材易学性、知识编排、低年级数学方法和作业设计等相邻讨论。</p>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <section class="insight-strip" aria-label="核心洞察">
+          <div>
+            <p class="label">最强诉求</p>
+            <h2>让孩子自己能看懂、能操作、能迁移。</h2>
+          </div>
+          <div class="signal-map" aria-label="主题强度图">
+            <span style="--h: 88%"><b>自学</b></span>
+            <span style="--h: 72%"><b>算理</b></span>
+            <span style="--h: 66%"><b>情境</b></span>
+            <span style="--h: 58%"><b>练习</b></span>
+            <span style="--h: 42%"><b>插图</b></span>
+          </div>
+        </section>
+
+        <section class="takeaways">
+          <h2>策划可用结论</h2>
+          <div class="takeaway-grid">
+            <article>
+              <span>01</span>
+              <p>不是只把课本“变有趣”，而是补上从情境到算理、从例题到练习的中间台阶。</p>
+            </article>
+            <article>
+              <span>02</span>
+              <p>低年级尤其需要实物操作、图形化表达和口算熟练度三条线并行。</p>
+            </article>
+            <article>
+              <span>03</span>
+              <p>生活化场景要足够普适，避免只对城市家庭或资源丰富学校友好。</p>
+            </article>
+            <article>
+              <span>04</span>
+              <p>改写方案可以定位为“学生版学习书”，而不是教师教案或练习册。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="results-head">
+          <div>
+            <p class="label">证据条目</p>
+            <h2 id="resultTitle">全部线索</h2>
+          </div>
+          <p id="resultCount" class="count"></p>
+        </section>
+
+        <section id="results" class="results" aria-live="polite"></section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
