@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>二年级数学教材 AI 改写方案</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">人教版二年级上册 · 改写策划</p>
+        <h1>把课本改成孩子能翻译的数学故事</h1>
+        <p class="lead">基于二年级孩子“会算但不会读题、会背但不懂意义”的真实痛点，重写为故事化、实物化、画图化、分步翻译的学习材料。</p>
+        <div class="hero-actions" aria-label="页面快捷入口">
+          <a class="button primary" href="#units">查看单元路线</a>
+          <a class="button secondary" href="#sample">看样章结构</a>
+        </div>
+      </div>
+
+      <div class="translation-map" aria-label="改写路径示意">
+        <div class="map-node node-story">
+          <span>故事</span>
+          <strong>发生了什么</strong>
+        </div>
+        <div class="map-line"></div>
+        <div class="map-node node-object">
+          <span>实物</span>
+          <strong>摆一摆量一量</strong>
+        </div>
+        <div class="map-line"></div>
+        <div class="map-node node-draw">
+          <span>图示</span>
+          <strong>圈图线段图钟面图</strong>
+        </div>
+        <div class="map-line"></div>
+        <div class="map-node node-math">
+          <span>算式</span>
+          <strong>说清为什么</strong>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <aside class="side-nav" aria-label="章节导航">
+      <a href="#position">定位</a>
+      <a href="#pain">真实痛点</a>
+      <a href="#principles">改写原则</a>
+      <a href="#units">单元路线</a>
+      <a href="#sample">样章</a>
+      <a href="#workflow">AI 工作流</a>
+      <a href="#pilot">第一版产物</a>
+      <a href="#sources">知乎线索</a>
+    </aside>
+
+    <div class="content">
+      <section class="section intro" id="position">
+        <div class="section-kicker">01 · 定位</div>
+        <h2>不是把教材讲得更热闹，而是把题意翻译过程显性化</h2>
+        <p>这版改写的核心目标，是把二年级数学从“看图列式、背口诀、做练习”改成“从真实事情里发现数量关系”。孩子先理解发生了什么，再动手操作，再画图，最后列式。</p>
+        <div class="statement">
+          <span>核心命题</span>
+          <strong>每一道题都先回答“谁、有什么数量、发生了什么变化、要求什么”。</strong>
+        </div>
+      </section>
+
+      <section class="section" id="pain">
+        <div class="section-kicker">02 · 真实痛点</div>
+        <h2>二年级孩子卡住的地方，往往不在计算</h2>
+        <div class="pain-grid">
+          <article>
+            <span>痛点 A</span>
+            <h3>会算，不会把题意变成算式</h3>
+            <p>纯计算能做，一碰到“比、多、少、还剩、够不够”就不知道该加还是减。</p>
+          </article>
+          <article>
+            <span>痛点 B</span>
+            <h3>会背口诀，不懂“几个几”</h3>
+            <p>口诀记住了，但不知道乘法来自相同加数连加，遇到实际问题容易套错。</p>
+          </article>
+          <article>
+            <span>痛点 C</span>
+            <h3>符号没有动作感</h3>
+            <p>加号、减号、乘号、除号只是符号，孩子还没把它们和“合起来、拿走、重复、平均分”连接起来。</p>
+          </article>
+          <article>
+            <span>痛点 D</span>
+            <h3>抽象概念缺少身体经验</h3>
+            <p>长度、角、时间、观察方向都需要看得见、摸得到、能移动的经验来支撑。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="principles">
+        <div class="section-kicker">03 · 改写原则</div>
+        <h2>每一课固定改成 5 个学习动作</h2>
+        <ol class="principle-list">
+          <li>
+            <strong>今天发生了什么</strong>
+            <p>用排队、坐车、分糖、量桌子、买文具、看钟表等熟悉场景开场。</p>
+          </li>
+          <li>
+            <strong>用手做一做</strong>
+            <p>让孩子先摆、量、圈、分、转，尽量使用铅笔、橡皮、积木、贴纸、尺子和钟表模型。</p>
+          </li>
+          <li>
+            <strong>把故事翻译成数学</strong>
+            <p>固定训练“谁在做事、有什么数量、发生了什么变化、要求什么”。</p>
+          </li>
+          <li>
+            <strong>画图帮我想</strong>
+            <p>优先使用线段图、圈图、数组图、座位图、钟面图，再进入算式。</p>
+          </li>
+          <li>
+            <strong>说出今天学会的一句话</strong>
+            <p>用儿童语言总结概念，例如“乘法就是几个相同的数连加”。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section units-section" id="units">
+        <div class="section-heading">
+          <div>
+            <div class="section-kicker">04 · 单元路线</div>
+            <h2>按教材目录落地到每个单元</h2>
+          </div>
+          <label class="search-box">
+            <span>搜索</span>
+            <input id="unitSearch" type="search" placeholder="输入：乘法、时间、应用题、长度">
+          </label>
+        </div>
+
+        <div class="unit-count" aria-live="polite"><strong id="unitCount">9</strong> 个单元策略</div>
+
+        <div class="unit-list" id="unitList">
+          <article class="unit-item" data-keywords="长度 单位 厘米 米 测量 量感">
+            <div class="unit-index">1</div>
+            <div>
+              <h3>长度单位</h3>
+              <p><strong>改写场景：</strong>班级小小装修队，给书桌、黑板、跳绳、门口地垫量尺寸。</p>
+              <p><strong>关键转换：</strong>先用手掌、铅笔、脚步测量同一物体，发现结果不同，再引出厘米和米。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="100以内 加法 减法 应用题 比多比少 够不够 题意">
+            <div class="unit-index">2</div>
+            <div>
+              <h3>100 以内的加法和减法（二）</h3>
+              <p><strong>改写场景：</strong>博物馆参观日，围绕人数、座位、门票、纪念品设计问题。</p>
+              <p><strong>关键转换：</strong>把“一共有、还剩、相差、够不够、连续变化”拆成不同的题意翻译模板。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="角 初步认识 开口 边长 动态">
+            <div class="unit-index">3</div>
+            <div>
+              <h3>角的初步认识</h3>
+              <p><strong>改写场景：</strong>扇子、剪刀、钟表、门，从“打开的大小”理解角。</p>
+              <p><strong>关键转换：</strong>用两支铅笔和纸条做活动角，反复比较“开口”和“边长”。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="表内乘法 一 乘法 口诀 几个几 游乐园">
+            <div class="unit-index">4</div>
+            <div>
+              <h3>表内乘法（一）</h3>
+              <p><strong>改写场景：</strong>游乐园排座位，小火车、旋转木马、飞椅都能产生“几个几”。</p>
+              <p><strong>关键转换：</strong>摆出来、说出来、加出来、写出来、讲出来，口诀只作为提速工具。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="观察物体 视角 前后左右 照片">
+            <div class="unit-index">5</div>
+            <div>
+              <h3>观察物体（一）</h3>
+              <p><strong>改写场景：</strong>小侦探找照片，从不同方向给玩具熊、水杯、小车拍照。</p>
+              <p><strong>关键转换：</strong>固定动作是“站到那个人的位置，再想他看到哪一面”。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="表内乘法 二 6 7 8 9 口诀 结构记忆">
+            <div class="unit-index">6</div>
+            <div>
+              <h3>表内乘法（二）</h3>
+              <p><strong>改写场景：</strong>口诀地图，把 6-9 的口诀放进数组、座位、物品摆放里。</p>
+              <p><strong>关键转换：</strong>用结构记忆代替硬背，例如 7×8 可以想 5×8+2×8。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="量一量 比一比 估测 实测 身体尺">
+            <div class="unit-index">7</div>
+            <div>
+              <h3>量一量，比一比</h3>
+              <p><strong>改写场景：</strong>我的身体尺和教室寻宝，先估测再实测。</p>
+              <p><strong>关键转换：</strong>建立参照物，一拃、一步、课桌宽度都可以变成量感锚点。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="认识时间 钟表 时间线 几时几分">
+            <div class="unit-index">8</div>
+            <div>
+              <h3>认识时间</h3>
+              <p><strong>改写场景：</strong>二年级的一天，起床、上学、课间、午饭、放学、睡觉。</p>
+              <p><strong>关键转换：</strong>把钟面和时间线放在一起，理解“过了多久”和“还差几分”。</p>
+            </div>
+          </article>
+
+          <article class="unit-item" data-keywords="数学广角 搭配 不重复 不遗漏 早餐 衣服 路线">
+            <div class="unit-index">9</div>
+            <div>
+              <h3>数学广角 - 搭配（一）</h3>
+              <p><strong>改写场景：</strong>早餐搭配、衣服搭配、路线搭配。</p>
+              <p><strong>关键转换：</strong>先固定一个，再换另一个，用有顺序的列表避免重复和遗漏。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section sample-section" id="sample">
+        <div class="section-kicker">05 · 样章结构</div>
+        <h2>以“表内乘法（一）”为样章</h2>
+        <p>样章不从口诀开始，而从游乐园小火车开始。孩子先看到 4 节车厢，每节坐 2 人，再把这个画面翻译成“4 个 2”。</p>
+
+        <div class="sample-tabs" role="tablist" aria-label="样章视角">
+          <button class="sample-tab active" type="button" role="tab" aria-selected="true" data-panel="student">学生版</button>
+          <button class="sample-tab" type="button" role="tab" aria-selected="false" data-panel="parent">家长陪学版</button>
+          <button class="sample-tab" type="button" role="tab" aria-selected="false" data-panel="teacher">教师提示版</button>
+        </div>
+
+        <div class="sample-panel active" id="panel-student" role="tabpanel">
+          <ol class="timeline">
+            <li><strong>看一看：</strong>小火车有 4 节车厢，每节车厢坐 2 个小朋友。</li>
+            <li><strong>圈一圈：</strong>把每节车厢里的 2 个人圈成一组。</li>
+            <li><strong>说一说：</strong>这是 4 个 2。</li>
+            <li><strong>写一写：</strong>2+2+2+2=8，也可以写成 4×2=8。</li>
+            <li><strong>讲一讲：</strong>4×2 表示 4 个 2 相加。</li>
+          </ol>
+        </div>
+
+        <div class="sample-panel" id="panel-parent" role="tabpanel" hidden>
+          <ol class="timeline">
+            <li><strong>先问图意：</strong>不要急着问算式，先问“有几组，每组几个”。</li>
+            <li><strong>允许数一数：</strong>孩子先用数数确认答案，再过渡到连加和乘法。</li>
+            <li><strong>少讲术语：</strong>把“相同加数”说成“每组一样多”。</li>
+            <li><strong>防止硬套：</strong>如果每组数量不一样，暂时不能直接用乘法。</li>
+          </ol>
+        </div>
+
+        <div class="sample-panel" id="panel-teacher" role="tabpanel" hidden>
+          <ol class="timeline">
+            <li><strong>导入：</strong>用座位、车厢、队列制造“相同组”的稳定画面。</li>
+            <li><strong>板书：</strong>图、几个几、连加、乘法四列表达同步出现。</li>
+            <li><strong>追问：</strong>“为什么不是 4+2？”引导学生说出乘法意义。</li>
+            <li><strong>评价：</strong>看学生能否用完整句解释算式，而不只看答案。</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section" id="workflow">
+        <div class="section-kicker">06 · AI 工作流</div>
+        <h2>从扫描教材到可试读样章</h2>
+        <div class="workflow">
+          <div><span>1</span><strong>切分单元</strong><p>按目录建立“知识点、页码、题型、原教材目标”表。</p></div>
+          <div><span>2</span><strong>识别目标</strong><p>区分概念、例题、练习、数学文化、整理复习。</p></div>
+          <div><span>3</span><strong>原创改写</strong><p>保留知识目标，换成生活故事、操作任务和分步提问。</p></div>
+          <div><span>4</span><strong>三版输出</strong><p>生成学生版、家长陪学版、教师提示版。</p></div>
+          <div><span>5</span><strong>人工校审</strong><p>检查超纲、歧义、题量、阅读难度和数学准确性。</p></div>
+        </div>
+
+        <div class="prompt-box">
+          <div>
+            <span>可复用提示词骨架</span>
+            <p id="promptText">请基于二年级学生从具象思维到抽象思维过渡的特点，将本课改写为：故事导入、实物操作、题意翻译、图示表达、算式解释、易错提醒、三层练习。保留原知识目标，不复制原教材文字。</p>
+          </div>
+          <button class="button secondary" type="button" id="copyPrompt">复制提示词</button>
+        </div>
+      </section>
+
+      <section class="section" id="pilot">
+        <div class="section-kicker">07 · 第一版产物</div>
+        <h2>先做样章包，不急着整本重写</h2>
+        <div class="pilot-grid">
+          <div>
+            <strong>优先单元</strong>
+            <p>100 以内加减法（二）、表内乘法（一）、认识时间。</p>
+          </div>
+          <div>
+            <strong>每单元范围</strong>
+            <p>先改写 2-3 课，覆盖概念、例题、练习和易错点。</p>
+          </div>
+          <div>
+            <strong>每课产物</strong>
+            <p>学生阅读页、动手活动页、题意翻译页、练习页、家长讲解卡。</p>
+          </div>
+          <div>
+            <strong>验证方式</strong>
+            <p>拿给真实二年级孩子试读，看是否能说出“为什么这样列式”。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="section-kicker">08 · 知乎线索</div>
+        <h2>本方案主要参考的讨论方向</h2>
+        <ul class="source-list">
+          <li><a href="https://zhuanlan.zhihu.com/p/1952276821954499027" target="_blank" rel="noreferrer">Learn Your Way，Google 推出的 AI 个性化学习工具</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/1953431334283384329" target="_blank" rel="noreferrer">传统教科书要被淘汰了？谷歌正用 AI 让每个学生都有私人订制课本</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/1975916201269027551" target="_blank" rel="noreferrer">教科书的「防自学机制」，被 AI 打破了</a></li>
+          <li><a href="https://zhuanlan.zhihu.com/p/1931634184151086037" target="_blank" rel="noreferrer">AI 驱动下的小学数学“情境-探究-反思”教学研究</a></li>
+          <li><a href="https://www.zhihu.com/question/1917330556162642120/answer/2038255438924362458" target="_blank" rel="noreferrer">孩子二年级，理解不了数学题的题意怎么办?</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <button class="print-button" type="button" id="printPage">打印</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
