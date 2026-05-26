@@ -1,0 +1,1047 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>北京小学二年级内容/IP兴趣 - 参考答案概述版</title>
+  <link rel="icon" href="data:,">
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --surface: #fffdf8;
+      --ink: #20282b;
+      --muted: #687477;
+      --line: #ddd6c8;
+      --line-strong: #c3b9a8;
+      --accent: #0f766e;
+      --accent-2: #a84f3d;
+      --accent-3: #315f8a;
+      --soft: #e3f0ec;
+      --soft-2: #f5e8df;
+      --radius: 8px;
+      --shadow: 0 22px 52px rgba(43, 37, 27, 0.08);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(90deg, rgba(32, 40, 43, 0.035) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(32, 40, 43, 0.035) 1px, transparent 1px),
+        var(--bg);
+      background-size: 32px 32px;
+      color: var(--ink);
+      line-height: 1.62;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) minmax(0, 1180px) minmax(24px, 1fr);
+      min-height: 66svh;
+      padding: 52px 0 58px;
+      border-bottom: 1px solid var(--line);
+      background:
+        linear-gradient(110deg, rgba(15, 118, 110, 0.14), transparent 40%),
+        linear-gradient(300deg, rgba(168, 79, 61, 0.13), transparent 42%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -90px auto;
+      width: min(560px, 56vw);
+      height: 320px;
+      background: repeating-linear-gradient(135deg, rgba(32, 40, 43, 0.08) 0 1px, transparent 1px 15px);
+      transform: rotate(-4deg);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      grid-column: 2;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      align-items: end;
+      gap: 54px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 780;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 850px;
+      font-size: clamp(42px, 6.4vw, 88px);
+      line-height: 1;
+      letter-spacing: 0;
+      font-weight: 880;
+    }
+
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 760px;
+      color: #3f4a4d;
+      font-size: clamp(17px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 15px;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+      font-weight: 720;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: var(--accent);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .button.secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--line-strong);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      background: var(--surface);
+      border-color: var(--ink);
+    }
+
+    .brief {
+      border: 1px solid var(--line);
+      background: rgba(255, 253, 248, 0.86);
+      box-shadow: var(--shadow);
+    }
+
+    .brief-row {
+      padding: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brief-row:last-child {
+      border-bottom: 0;
+    }
+
+    .brief-row strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 24px;
+      line-height: 1.12;
+    }
+
+    .brief-row span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 42px 28px 78px;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: minmax(240px, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 0;
+      margin-bottom: 26px;
+      background: linear-gradient(180deg, rgba(247, 245, 239, 0.98), rgba(247, 245, 239, 0.92) 72%, rgba(247, 245, 239, 0));
+      backdrop-filter: blur(10px);
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 14px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.94);
+    }
+
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .filter {
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.84);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 14px;
+      transition: transform 160ms ease, background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    .filter:hover,
+    .filter:focus-visible,
+    .filter.active {
+      transform: translateY(-1px);
+      background: var(--ink);
+      color: #fff;
+      border-color: var(--ink);
+      outline: none;
+    }
+
+    .section {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 36px;
+      padding: 42px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section:first-of-type {
+      border-top: 0;
+      padding-top: 14px;
+    }
+
+    .section-side {
+      position: sticky;
+      top: 92px;
+      align-self: start;
+    }
+
+    .kicker {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 780;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(25px, 3vw, 38px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .section-note {
+      margin: 15px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .synthesis {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .takeaway {
+      min-height: 190px;
+      padding: 24px;
+      background: var(--surface);
+    }
+
+    .takeaway strong {
+      display: block;
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .takeaway p {
+      margin: 0;
+      color: #455053;
+      font-size: 15px;
+    }
+
+    .digest-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .digest {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 128px;
+      gap: 24px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 253, 248, 0.88);
+      box-shadow: 0 10px 26px rgba(43, 37, 27, 0.04);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 520ms ease forwards;
+    }
+
+    .digest.hidden {
+      display: none;
+    }
+
+    .digest-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .badge.warn {
+      background: var(--soft-2);
+      color: var(--accent-2);
+    }
+
+    .badge.blue {
+      background: #e5eef4;
+      color: var(--accent-3);
+    }
+
+    .digest h3 {
+      margin: 0 0 12px;
+      font-size: clamp(18px, 2vw, 23px);
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .digest h3 a {
+      border-bottom: 1px solid transparent;
+      transition: color 160ms ease, border-color 160ms ease;
+    }
+
+    .digest h3 a:hover,
+    .digest h3 a:focus-visible {
+      color: var(--accent);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .summary-block {
+      padding-top: 13px;
+      border-top: 1px solid var(--line);
+    }
+
+    .summary-block strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .summary-block p {
+      margin: 0;
+      color: #3f4a4d;
+      font-size: 15px;
+    }
+
+    .side-score {
+      align-self: start;
+      padding: 12px 0 0 14px;
+      border-left: 3px solid var(--accent);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .side-score strong {
+      display: block;
+      color: var(--ink);
+      font-size: 19px;
+      line-height: 1.1;
+    }
+
+    .empty {
+      display: none;
+      padding: 34px 0;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .empty.visible {
+      display: block;
+    }
+
+    .files {
+      display: grid;
+      gap: 10px;
+    }
+
+    .file-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: #465155;
+      transition: color 160ms ease;
+    }
+
+    .file-link:hover,
+    .file-link:focus-visible {
+      color: var(--accent);
+      outline: none;
+    }
+
+    .file-link span:first-child {
+      color: var(--ink);
+      font-weight: 740;
+    }
+
+    .footer {
+      padding-top: 28px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .digest {
+        opacity: 1;
+        transform: none;
+        animation: none;
+      }
+
+      .button,
+      .filter,
+      .digest h3 a,
+      .file-link {
+        transition: none;
+      }
+    }
+
+    @media (max-width: 960px) {
+      .hero-inner,
+      .toolbar,
+      .section,
+      .synthesis,
+      .summary-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brief {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .brief-row:nth-child(2n + 1) {
+        border-right: 1px solid var(--line);
+      }
+
+      .section-side {
+        position: static;
+      }
+
+      .filters {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        grid-template-columns: 20px minmax(0, 1fr) 20px;
+        padding: 34px 0 42px;
+      }
+
+      .main {
+        padding: 28px 20px 52px;
+      }
+
+      .brief,
+      .digest,
+      .file-link,
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .brief-row {
+        border-right: 0 !important;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .toolbar {
+        position: static;
+      }
+
+      .side-score {
+        text-align: left;
+        border-left-color: var(--accent-2);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">参考答案概述版 · 不改动原看板</p>
+        <h1>不点开链接，也能先读懂答案</h1>
+        <p class="hero-copy">把 26 条知乎参考答案压缩成可浏览摘要：每条保留原文入口，同时给出答案概述、内容启发和适用方向。</p>
+        <div class="hero-actions">
+          <a class="button" href="#digest">查看答案概述</a>
+          <a class="button secondary" href="beijing-grade2-report.html">返回线索看板</a>
+          <a class="button secondary" href="beijing-grade2-relevant-links.md">查看链接清单</a>
+        </div>
+      </div>
+      <div class="brief" aria-label="页面说明">
+        <div class="brief-row">
+          <strong>26</strong>
+          <span>条参考答案已聚合摘要</span>
+        </div>
+        <div class="brief-row">
+          <strong>5</strong>
+          <span>类线索：流行兴趣、内容方法、IP社交、阅读科普、北京本地</span>
+        </div>
+        <div class="brief-row">
+          <strong>2</strong>
+          <span>层阅读：先看综合判断，再看单条答案</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main" id="digest">
+    <div class="toolbar" aria-label="筛选工具">
+      <label class="search" for="searchInput">
+        <input id="searchInput" type="search" placeholder="搜索：卡片、漫画、科普、课堂、北京、博物馆...">
+      </label>
+      <div class="filters" aria-label="分类筛选">
+        <button class="filter active" type="button" data-filter="all">全部</button>
+        <button class="filter" type="button" data-filter="trend">流行兴趣</button>
+        <button class="filter" type="button" data-filter="method">内容方法</button>
+        <button class="filter" type="button" data-filter="ip">IP社交</button>
+        <button class="filter" type="button" data-filter="reading">阅读科普</button>
+        <button class="filter" type="button" data-filter="beijing">北京本地</button>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-side">
+        <p class="kicker">Aggregated view</p>
+        <h2>综合概述</h2>
+        <p class="section-note">从所有参考答案里抽出的共性，供内容团队快速判断方向。</p>
+      </div>
+      <div class="synthesis">
+        <div class="takeaway">
+          <strong>社交货币比单纯“好玩”更重要</strong>
+          <p>卡片、烟卡、IP联名、热梗和热门歌曲都不是孤立娱乐，它们帮孩子进入同伴话题，展示稀缺物，获得被看见的感觉。</p>
+        </div>
+        <div class="takeaway">
+          <strong>低年级更吃“图像 + 幽默 + 任务”</strong>
+          <p>漫画、脑筋急转弯、奇葩科普问答、课堂小游戏和可操作公开课反复出现。内容要能看、能笑、能动手、能复述。</p>
+        </div>
+        <div class="takeaway">
+          <strong>IP可以借势，但价值观要筛选</strong>
+          <p>奥特曼、米小圈、斗罗、叶罗丽、哪吒周边等都能带来兴趣和话题，但答案里也多次提醒沉迷、低俗、暴力或价值观争议。</p>
+        </div>
+        <div class="takeaway">
+          <strong>北京内容适合做成场景任务</strong>
+          <p>博物馆、故宫、传统文化、城市资源不是天然吸引二年级孩子。更可行的方式是“找怪兽、做角色、解谜、动手体验、连接生活经验”。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-side">
+        <p class="kicker">Answer digest</p>
+        <h2>参考答案摘要</h2>
+        <p class="section-note">每条都保留知乎原文链接，但这里已经能看到答案主要意思。</p>
+      </div>
+      <div>
+        <div class="digest-list" id="digestList"></div>
+        <p class="empty" id="emptyState">没有匹配的答案摘要。换个词试试，比如“社交”“课堂”“漫画”“故宫”。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-side">
+        <p class="kicker">Files</p>
+        <h2>相关文件</h2>
+        <p class="section-note">新页面独立生成，没有改动之前的线索看板。</p>
+      </div>
+      <div class="files">
+        <a class="file-link" href="beijing-grade2-report.html"><span>上一版线索看板</span><span>分类、搜索、原始文件入口</span></a>
+        <a class="file-link" href="beijing-grade2-relevant-links.md"><span>Markdown 链接清单</span><span>26 条来源</span></a>
+        <a class="file-link" href="beijing-grade2-tight-results.xlsx"><span>窄搜 Excel</span><span>1283 条去重答案</span></a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>说明：本页为摘要和归纳，不替代原答案全文；用于快速理解参考网页内容，具体表述、评论和上下文仍建议回到知乎原文核对。</p>
+    </footer>
+  </main>
+
+  <script>
+    const categoryLabels = {
+      trend: "流行兴趣",
+      method: "内容方法",
+      ip: "IP社交",
+      reading: "阅读科普",
+      beijing: "北京本地"
+    };
+
+    const rows = [
+      {
+        category: "trend",
+        title: "低年级小学生现在流行玩什么？",
+        url: "https://www.zhihu.com/question/309919049/answer/1679997663",
+        meta: "育儿成长法 · 7 赞",
+        summary: "回答来自二年级男孩家长样本：男孩圈里流行卡片，尤其带角色名和稀有度的卡；玩法包括比强弱、赢别人的卡、摔卡，也会联机打游戏。女孩样本里提到跳皮筋。作者强调地方和时间差异很大。",
+        insight: "内容可借鉴“收集、稀有、对战、交换、同伴展示”机制；做北京二年级内容时，最好按班级/学校小样本继续验证。",
+        tags: ["卡片", "稀有", "联机游戏", "同伴圈层"],
+        priority: "优先看",
+        badge: "blue"
+      },
+      {
+        category: "trend",
+        title: "现在的中小学生流行玩什么玩具、游戏？",
+        url: "https://www.zhihu.com/question/633367808/answer/3321428336",
+        meta: "卷不S就往S里卷 · 14 赞",
+        summary: "答案汇总了同事孩子反馈：玩具包括咕卡、手账、盲盒、奶油胶、火漆印、收集卡、手串、捏捏乐、3D拼图、洞洞乐、超轻黏土、安静书；游戏包括王者、斗罗、吃鸡，原神和崩铁也有但没那么普遍。",
+        insight: "适合做“兴趣素材池”，但年龄层偏中小学生混合；二年级使用时要筛掉过龄游戏和不适合校园的消费品。",
+        tags: ["玩具清单", "收集卡", "手作", "游戏"],
+        priority: "素材池",
+        badge: "blue"
+      },
+      {
+        category: "trend",
+        title: "现在的小学生都喜欢些什么？",
+        url: "https://www.zhihu.com/question/265620608/answer/308043100",
+        meta: "羊叽喳 · 15 赞",
+        summary: "答主从实习带四年级孩子的经验出发，提到迷你积木、史莱姆、美少女图像书画册、绘画工具、科学动手玩具和手抄报工具等。孩子会比较同伴之间的奖品差异，也会把史莱姆这类玩具当成“减压”。",
+        insight: "对内容团队的启发是：奖励物和小道具要可展示、可比较、可动手；但史莱姆等要关注安全和学校管理限制。",
+        tags: ["迷你积木", "绘画", "动手玩具", "奖励"],
+        priority: "补充样本",
+        badge: "blue"
+      },
+      {
+        category: "trend",
+        title: "一二年级孩子喜欢什么动漫人物？",
+        url: "https://www.zhihu.com/question/324777841/answer/770333006",
+        meta: "绯色记忆 · 1 赞",
+        summary: "答案很短，列出佩奇、小马宝莉、汪汪队、海底小纵队、孙悟空、奥特曼、复仇者联盟和迪士尼公主等。",
+        insight: "可作为 IP 候选词表，不适合作最终判断；需要结合北京二年级样本继续看哪些仍然在流行。",
+        tags: ["动漫人物", "奥特曼", "汪汪队", "迪士尼"],
+        priority: "候选词",
+        badge: "blue"
+      },
+      {
+        category: "trend",
+        title: "二年级男孩喜欢什么玩具？",
+        url: "https://www.zhihu.com/question/266466132/answer/335080753",
+        meta: "咕噜 · 2 赞",
+        summary: "答案列出车模、奇趣蛋、便宜成摞的卡、奥特曼面具、奥特曼手游、电脑平板手机、迷你世界/我的世界、玻璃球、木制拼图模型等。",
+        insight: "和其他答案相互印证：低年级男孩样本里“奥特曼 + 卡 + 模型/拼装 + 沙盒游戏”反复出现。",
+        tags: ["男孩样本", "奥特曼", "拼图模型", "我的世界"],
+        priority: "补充样本",
+        badge: "blue"
+      },
+      {
+        category: "method",
+        title: "给小学生上一堂趣味语文课，讲什么内容？",
+        url: "https://www.zhihu.com/question/469607900/answer/1976650578",
+        meta: "老猫 · 13 赞",
+        summary: "答主建议用换字游戏切入，比如从“推敲”典故延展，让孩子替换一个字并拓展含义；也可以做编故事游戏，把时间、地点、人物分组随机组合。",
+        insight: "适合转成低年级内容模板：给孩子一个可操作的小规则，让他们产出自己的词句或故事，而不是只听知识讲解。",
+        tags: ["趣味语文", "换字游戏", "编故事", "互动"],
+        priority: "可直接改造",
+        badge: ""
+      },
+      {
+        category: "method",
+        title: "二年级公开课内容不限，讲什么？",
+        url: "https://www.zhihu.com/question/282365984/answer/425442931",
+        meta: "秋叶落地 · 3 赞",
+        summary: "回答建议讲家长自己职业领域或日常接触的课外知识，比如防龋、牙菌斑实验、急救、火灾溺水预防等。关键是切一个细节，用孩子能接受的轻松语言，并安排互动和操作。",
+        insight: "北京内容可以从“城市职业/真实生活技能”切入：牙医、消防、地铁、博物馆修复、气象等都能做成小实验或小任务。",
+        tags: ["公开课", "职业知识", "动手操作", "生活技能"],
+        priority: "可直接改造",
+        badge: ""
+      },
+      {
+        category: "method",
+        title: "二年级语文课怎么上得有趣？",
+        url: "https://www.zhihu.com/question/50398096/answer/124762088",
+        meta: "粉红居居 · 3 赞",
+        summary: "答主认为低年级课堂首先要有清楚纪律规则，其次用识字小游戏、小组加分比赛、小奖励和表现好后播放短视频等方式维持兴趣。",
+        insight: "内容产品不能只追求好玩，还要有规则、反馈和奖励；二年级尤其需要“哄”和“边界”同时存在。",
+        tags: ["课堂纪律", "识字游戏", "积分", "奖励"],
+        priority: "方法参考",
+        badge: ""
+      },
+      {
+        category: "method",
+        title: "和小学生一起玩的课堂小游戏",
+        url: "https://www.zhihu.com/question/63858785/answer/515226300",
+        meta: "陈光荣 · 487 赞",
+        summary: "高赞答案给出一串可落地游戏：击鼓传花、萝卜蹲、谁是凤凰、买菜凑数、抢椅子、你画我猜、你划我猜、谜语、新闻小插播、绕口令比赛、小老师、分组星星奖励等。",
+        insight: "这是最适合拆成“活动库”的答案。内容团队可以把每个游戏绑定语文、数学、科普或北京文化知识点。",
+        tags: ["课堂游戏", "活动库", "分组", "奖励"],
+        priority: "优先看",
+        badge: ""
+      },
+      {
+        category: "method",
+        title: "活跃课堂又帮助学习的游戏",
+        url: "https://www.zhihu.com/question/61939883/answer/1501103998",
+        meta: "凹凹 · 107 赞",
+        summary: "答案列出成语接龙、反义词游戏、嘴巴手指不一样、二十四点、击鼓传花、不差钱等，重点是把游戏和语文、数学、反应能力连接起来。",
+        insight: "适合设计“知识点小游戏”：每个内容单元都配一个低门槛玩法，确保孩子不是被动听，而是马上参与。",
+        tags: ["成语接龙", "反义词", "二十四点", "学习游戏"],
+        priority: "可直接改造",
+        badge: ""
+      },
+      {
+        category: "ip",
+        title: "奥特曼卡牌为什么受小学生喜欢？",
+        url: "https://www.zhihu.com/question/544937336/answer/2589602372",
+        meta: "宅某 · 4114 赞",
+        summary: "答主反驳“只看物料成本”的说法，指出卡牌背后有版权、研发、渠道等成本；更重要的是，孩子的兴趣不该被家长轻易贬低，成年人愿意为自己的兴趣消费，孩子也有自己的兴趣和话语权。",
+        insight: "不要把孩子喜欢的东西简单归为“没营养”。内容/IP设计要尊重孩子的自主兴趣，再把价值导向嵌进去。",
+        tags: ["奥特曼", "卡牌", "兴趣尊重", "IP"],
+        priority: "优先看",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "烟卡为什么会在小学生中流行？",
+        url: "https://www.zhihu.com/question/654701657/answer/3610939248",
+        meta: "诸葛毛豆 · 6559 赞",
+        summary: "答案用一个故事展示烟卡圈层的复杂规则：真假、气味、稀缺、鉴别标准、领头孩子的话语权，以及被认可或排斥带来的情绪冲击。",
+        insight: "这是“儿童社交货币”的典型案例。可借鉴规则感、稀缺感、鉴别感，但不应借鉴烟草符号本身。",
+        tags: ["烟卡", "稀缺", "规则", "地位"],
+        priority: "解释力强",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "热梗为什么会成为小学生社交密码？",
+        url: "https://www.zhihu.com/question/2037179644500256408/answer/2038227571503009912",
+        meta: "红护 · 1151 赞",
+        summary: "答主认为很多小学生传播梗未必理解含义，更多是觉得酷、爽、能表现自己。家长不必只焦虑，应通过陪伴、交流和更有魅力的语言系统来替代低质梗。",
+        insight: "内容团队可以创造更健康、更好玩、更容易复述的语言系统，让孩子有新的表达材料。",
+        tags: ["热梗", "社交密码", "语言系统", "复述"],
+        priority: "优先看",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "小学生为什么迷上海龟汤？",
+        url: "https://www.zhihu.com/question/1928105118802346802/answer/1928444624592176490",
+        meta: "徐芃老师 · 196 赞",
+        summary: "答案解释海龟汤是情境猜谜/微型剧本杀：给出谜面，通过提问推理出谜底。它锻炼逻辑，也有惊险刺激的吸引力，但市面上部分黑汤、红汤含血腥暴力元素，需要筛选和引导。",
+        insight: "适合借鉴“情境谜题 + 提问推理”玩法，做成清汤版北京文化、科学或生活安全谜题。",
+        tags: ["海龟汤", "推理", "情境谜题", "风险筛选"],
+        priority: "玩法参考",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "小学生为什么喜欢《孤勇者》？",
+        url: "https://www.zhihu.com/question/525836177/answer/2548887882",
+        meta: "程墨Morgan · 3129 赞",
+        summary: "答主问了自己的孩子，孩子给出的理由不是励志或游戏背景，而是旋律好听、好玩，并且容易被魔改成孩子圈层里的版本。",
+        insight: "低年级传播不一定靠宏大意义，可能靠节奏、押韵、魔改空间和同伴传唱。",
+        tags: ["歌曲", "魔改", "传唱", "好玩"],
+        priority: "解释力强",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "《米小圈上学记》争议说明了什么？",
+        url: "https://www.zhihu.com/question/472064954/answer/2006161521",
+        meta: "艾伦小星 · 573 赞",
+        summary: "答主强烈批评米小圈的价值观，认为其迎合孩子对调皮、搞笑、对抗老师家长的兴趣，可能让孩子只读轻松情节类内容，不愿读科普和更丰富的书。",
+        insight: "它反向证明“校园、搞笑、漫画、低门槛情节”很吸引低年级，但内容团队必须处理好价值观和阅读延展。",
+        tags: ["米小圈", "校园搞笑", "价值观", "桥梁阅读"],
+        priority: "风险提醒",
+        badge: "warn"
+      },
+      {
+        category: "ip",
+        title: "IP联名和集卡式文具为何成社交货币？",
+        url: "https://www.zhihu.com/question/1918094499416105564/answer/1919057627670901700",
+        meta: "两个女儿的妈妈 · 39 赞",
+        summary: "答主认为卡片、书包、挂饰、电影周边不只是物品，而是社交桥梁。孩子想拥有它们，是为了理解同伴讨论、进入圈子、交换故事和找到共同爱好。",
+        insight: "内容/IP产品可以设计“可分享的小物、徽章、任务卡、角色卡”，但要控制消费和攀比。",
+        tags: ["社交货币", "IP联名", "周边", "同伴交流"],
+        priority: "产品启发",
+        badge: "warn"
+      },
+      {
+        category: "reading",
+        title: "二年级孩子天天喜欢看漫画怎么办？",
+        url: "https://www.zhihu.com/question/391934827/answer/1206546969",
+        meta: "书海相遇 · 16 赞",
+        summary: "答主认为漫画也是阅读，图像、幽默语言和轻松难度符合低年级特点；漫画也是孩子交朋友的共同话题。建议不要强制禁止，而是约定时间、提供健康漫画，再逐步拓展到文字书。",
+        insight: "内容可以从图像和幽默切入，再设计桥接路径：漫画页、任务页、短文字、延展阅读。",
+        tags: ["漫画", "读图", "幽默", "桥接阅读"],
+        priority: "优先看",
+        badge: ""
+      },
+      {
+        category: "reading",
+        title: "二年级阅读书籍怎么推荐？",
+        url: "https://www.zhihu.com/question/1939625857531479661/answer/1940753324040257975",
+        meta: "Cecilia · 51 赞",
+        summary: "答案从北京海淀小学阅读生态讲起：假期书单、数学绘本、经典名著、班级阅读角、图书馆开放、校园小作家计划等。核心观点是，光买书不能让孩子爱上阅读。",
+        insight: "阅读内容要配套场景和任务：班级展示、人物关系图、思维导图、读后表达、孩子自己的故事创作。",
+        tags: ["书单", "阅读生态", "任务", "表达"],
+        priority: "北京样本",
+        badge: ""
+      },
+      {
+        category: "reading",
+        title: "低年级科普书该怎么选？",
+        url: "https://www.zhihu.com/question/24364988/answer/1939617132",
+        meta: "牛正蓝 · 180 赞",
+        summary: "答主强调事实性知识是分析和理解新概念的基础。低年级适合用图文并茂、情境化、包含互动游戏和真实案例的科普书建立背景知识。",
+        insight: "科普内容不应只讲结论，要用孩子熟悉的真实情境、图像、案例和互动问题帮助他们建立背景知识。",
+        tags: ["科普书", "背景知识", "图文", "情境"],
+        priority: "内容基准",
+        badge: ""
+      },
+      {
+        category: "reading",
+        title: "给小学生讲有意思的科普知识",
+        url: "https://www.zhihu.com/question/297727430/answer/3294988430",
+        meta: "公子兮 · 119 赞",
+        summary: "答主推荐“奇葩问题 + 严谨回答”的问答体科普：问题脑洞大，语言轻松，插画幽默，同时保留科学原理和知识加油站。",
+        insight: "很适合做短视频/短文栏目：先抛一个离奇问题，再用严谨但轻松的方式解释。",
+        tags: ["脑洞科普", "问答体", "插画", "知识加油站"],
+        priority: "栏目模板",
+        badge: ""
+      },
+      {
+        category: "reading",
+        title: "适合孩子看的科普视频",
+        url: "https://www.zhihu.com/question/265629957/answer/1246228396",
+        meta: "小码王在线少儿编程 · 149 赞",
+        summary: "答案推荐 TED-Ed/B站翻译类动画科普，用小学生能理解的动画方式讲历史、科学和学科入门知识，并用具体故事激发求知欲。",
+        insight: "视频内容可以用动画、故事和跨学科问题降低门槛；二年级使用时要进一步简化语言和时长。",
+        tags: ["科普视频", "动画", "学科入门", "故事"],
+        priority: "视频形态",
+        badge: ""
+      },
+      {
+        category: "beijing",
+        title: "北京适合孩子玩的博物馆",
+        url: "https://www.zhihu.com/question/324483357/answer/686341503",
+        meta: "萌马童游 · 928 赞",
+        summary: "答案系统梳理北京博物馆亲子攻略，按馆藏、展陈、设施和亲子指数评级。重点提到故宫、国博等，并强调“孩子玩什么”：打怪兽、专题展、小游戏、文创、社教活动、角色扮演。",
+        insight: "北京博物馆内容不应只是路线清单，要把每个场馆变成任务：找神兽、做角色、看一件镇馆之宝、完成一个小挑战。",
+        tags: ["博物馆", "故宫", "国博", "亲子任务"],
+        priority: "优先看",
+        badge: "blue"
+      },
+      {
+        category: "beijing",
+        title: "小学生对北京传统文化感兴趣，去哪看？",
+        url: "https://www.zhihu.com/question/610470588/answer/3136158966",
+        meta: "公子兮 · 57 赞",
+        summary: "答主把北京传统文化分成皇家文化、士大夫文化、市井文化、宗教文化和饮食文化，推荐故宫、颐和园、十三陵、国子监、琉璃厂等，并强调不要走马观花，要慢慢寻觅。",
+        insight: "适合把北京文化拆成主题地图：皇城、科举、胡同、庙宇、老字号，每个主题配一个孩子能完成的问题。",
+        tags: ["传统文化", "故宫", "国子监", "主题地图"],
+        priority: "主题参考",
+        badge: "blue"
+      },
+      {
+        category: "beijing",
+        title: "北京带孩子去哪，不浪费城市资源？",
+        url: "https://www.zhihu.com/question/273531240/answer/2737236726",
+        meta: "牵线汪 · 52 赞",
+        summary: "答案按动物、植物、儿童乐园、公园、京郊、温泉、亲子餐厅列出大量北京遛娃地点，如动物园、国家植物园、奥森、颐和园、圆明园、古北水镇等。",
+        insight: "这是资源地图入口。内容团队可按“自然、城市、历史、运动、休闲”建素材库，再筛二年级适配场景。",
+        tags: ["资源地图", "公园", "京郊", "亲子活动"],
+        priority: "素材库",
+        badge: "blue"
+      },
+      {
+        category: "beijing",
+        title: "如何用孩子喜欢的方式陪逛博物馆？",
+        url: "https://www.zhihu.com/question/655227261/answer/3494792058",
+        meta: "情感博士 · 68 赞",
+        summary: "答主讲孩子喜欢博物馆里的风谷机，因为它连接了真实生活、可操作感和家长讲述的过去经验。孩子不是抽象地喜欢展品，而是被能理解、能想象、能动手联想的东西吸引。",
+        insight: "北京本地内容要把展品变成故事和体验：它怎么用、谁用过、声音是什么、能解决什么问题。",
+        tags: ["博物馆", "展品故事", "生活经验", "可操作"],
+        priority: "方法参考",
+        badge: "blue"
+      }
+    ];
+
+    const digestList = document.querySelector("#digestList");
+    const searchInput = document.querySelector("#searchInput");
+    const filterButtons = Array.from(document.querySelectorAll(".filter"));
+    const emptyState = document.querySelector("#emptyState");
+    let activeFilter = "all";
+
+    function badgeClass(row) {
+      return row.badge ? `badge ${row.badge}` : "badge";
+    }
+
+    function renderRows() {
+      digestList.innerHTML = rows.map((row, index) => `
+        <article class="digest" data-category="${row.category}" data-index="${index}" data-search="${[
+          row.title,
+          row.meta,
+          row.summary,
+          row.insight,
+          row.tags.join(" "),
+          categoryLabels[row.category],
+          row.priority
+        ].join(" ").replace(/"/g, "&quot;")}">
+          <div>
+            <div class="digest-header">
+              <span class="${badgeClass(row)}">${categoryLabels[row.category]}</span>
+              <span class="badge blue">${row.priority}</span>
+              <span class="meta">${row.meta}</span>
+            </div>
+            <h3><a href="${row.url}" target="_blank" rel="noreferrer">${row.title}</a></h3>
+            <div class="summary-grid">
+              <div class="summary-block">
+                <strong>答案概述</strong>
+                <p>${row.summary}</p>
+              </div>
+              <div class="summary-block">
+                <strong>对内容团队的启发</strong>
+                <p>${row.insight}</p>
+              </div>
+            </div>
+          </div>
+          <div class="side-score">
+            <strong>${String(index + 1).padStart(2, "0")}</strong>
+            <span>${row.tags.slice(0, 3).join(" / ")}</span>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    function normalize(value) {
+      return value.trim().toLowerCase();
+    }
+
+    function applyFilters() {
+      const query = normalize(searchInput.value);
+      let visibleCount = 0;
+
+      document.querySelectorAll(".digest").forEach((item) => {
+        const categoryMatch = activeFilter === "all" || item.dataset.category === activeFilter;
+        const queryMatch = !query || normalize(item.dataset.search || item.textContent).includes(query);
+        const visible = categoryMatch && queryMatch;
+        item.classList.toggle("hidden", !visible);
+        if (visible) visibleCount += 1;
+      });
+
+      emptyState.classList.toggle("visible", visibleCount === 0);
+    }
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activeFilter = button.dataset.filter;
+        filterButtons.forEach((item) => item.classList.toggle("active", item === button));
+        applyFilters();
+      });
+    });
+
+    searchInput.addEventListener("input", applyFilters);
+
+    renderRows();
+    applyFilters();
+  </script>
+</body>
+</html>
