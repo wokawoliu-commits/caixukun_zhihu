@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>核心品类价格带 · fuzhuang15 分类口径</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Price bands · classification v2</p>
+        <h1>核心品类价格带</h1>
+        <p>基于 fuzhuang15 的分类口径，按品类拆到品牌，查看核心 SKU 的价格分布。</p>
+      </div>
+      <div class="header-meta">
+        <strong id="corePricedRows">—</strong>
+        <span>有价核心 SKU</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="filters">
+        <label>品类<select id="categoryFilter"></select></label>
+        <label>品牌<select id="brandFilter"></select></label>
+        <label class="search">关键词<input id="searchInput" type="search" placeholder="搜索品类或品牌" /></label>
+      </section>
+
+      <section class="summary" id="summary"></section>
+      <nav class="category-nav" id="categoryNav"></nav>
+      <section class="category-list" id="categoryList"></section>
+    </main>
+
+    <script src="./assets/data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
