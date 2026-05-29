@@ -1,0 +1,1410 @@
+{
+  "generatedAt": "2026-05-29T23:47:20.280Z",
+  "totalItems": 2939,
+  "remoteCoverUrls": 2939,
+  "downloaded": 2352,
+  "reused": 0,
+  "failed": 587,
+  "failures": [
+    {
+      "id": "32269eef-157c-44b2-a807-fb1dfe2cf759",
+      "artist": "INANNA NAMMU",
+      "title": "AFTER THE SILENCE",
+      "url": "https://coverartarchive.org/release-group/91320906-ce11-4aa3-ab15-8113e9b5bd57/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "272c0c6f-b6d1-4da2-94a0-c137f4099c79",
+      "artist": "Danilo B.",
+      "title": "Ryan",
+      "url": "https://coverartarchive.org/release-group/704b0fe5-38c5-4b2f-b77e-b0a65e515d73/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "69ab211a-18cf-41f4-b23d-569ab6a28ff3",
+      "artist": "Owen Ni",
+      "title": "Etherea",
+      "url": "https://coverartarchive.org/release-group/b2cb7819-f194-41f9-9888-f6e49b5e8ee3/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "4ce0cf11-41f8-4106-8bba-5f3a4c743ee7",
+      "artist": "Oath of the Raven King",
+      "title": "Paw Tales",
+      "url": "https://coverartarchive.org/release-group/0a1e066e-6ab6-408a-8abd-46da05d89ecc/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "7c36d044-311e-4083-b1f6-008373ef7f5b",
+      "artist": "Biroid magic",
+      "title": "Vlad the Romancer",
+      "url": "https://coverartarchive.org/release-group/6c04986b-ba98-42fe-a806-8c0a32c18674/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "8d06c7ad-1d94-4a5f-84bd-17384e9c2d3a",
+      "artist": "Mylo Syner",
+      "title": "Close the door... and the window.",
+      "url": "https://coverartarchive.org/release-group/88146572-41a4-4135-bd8d-d24ceea43a21/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "2129ac82-b23a-4487-9deb-5e9841d007aa",
+      "artist": "YM (Yeasted Malt)",
+      "title": "Tuunbaq",
+      "url": "https://coverartarchive.org/release-group/602676b1-0939-40eb-8253-b832eac9fd1c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a4b75ef0-1cdb-468c-80a2-7c42b713ec4a",
+      "artist": "Maria kardashian",
+      "title": "X-RATED BARBIE",
+      "url": "https://coverartarchive.org/release-group/871b39fc-fef1-46cc-aad9-f88c2f281483/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "97838876-2a38-4add-9e88-74be100981e7",
+      "artist": "Peppa Pig",
+      "title": "Folge 60: Die Dinosaurier-Party!",
+      "url": "https://coverartarchive.org/release-group/ab4f3d14-9764-4ae4-8def-da265cbc7e4f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "936f024a-ffaf-487c-a8cf-25f985ab444c",
+      "artist": "Thorsten French",
+      "title": "Word Sound Power - The Remix Album",
+      "url": "https://coverartarchive.org/release-group/20b7d51b-9961-4712-9903-c26c5bab2321/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "00b33816-f889-4c6f-b117-d041118c1348",
+      "artist": "Bradford Reed",
+      "title": "The Cloud Trap",
+      "url": "https://coverartarchive.org/release-group/05daddbd-bb1e-43ed-a11c-43af85239f03/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5817cb4b-2296-4ab9-87b0-ac6e88e7fca7",
+      "artist": "ClockworkConnor",
+      "title": "Immortal Frame",
+      "url": "https://coverartarchive.org/release-group/57caa8ba-250e-4d22-a9a0-21d2545a6970/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "687d9a9b-3780-4b95-b378-4ce3dc74aa9d",
+      "artist": "sometimes jah",
+      "title": "Sometimes",
+      "url": "https://coverartarchive.org/release-group/10724b92-5540-483c-beb2-41b1f3843965/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "d21eeaaf-7272-47f2-ac11-f4ebf01da97a",
+      "artist": "Billy Boolee",
+      "title": "REDACTIONS",
+      "url": "https://coverartarchive.org/release-group/26b502c1-8a3a-4c81-8b4f-8e663adcb8fb/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "75ac54d1-6481-4a74-8920-baaeabbc0931",
+      "artist": "<REGRETFUL_LOVER>",
+      "title": "万が一、何かがうまくいかなくなっても、私がいつもあなたを愛していることだけは忘れないで。",
+      "url": "https://coverartarchive.org/release-group/1de1d341-bc6d-4619-b621-16368366bf94/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "789a07b1-cd23-41c8-b94a-1b26327ee9f0",
+      "artist": "Polaris Experience",
+      "title": "Drifting Through Voids",
+      "url": "https://coverartarchive.org/release-group/d8db4809-d944-46c1-ae7f-77b395efb45b/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "6e7ce788-c07a-493f-acea-dabf3f754015",
+      "artist": "darkwound",
+      "title": "sacrament of hate",
+      "url": "https://coverartarchive.org/release-group/8bfa17b3-02cd-4899-8004-a8cb65d59f75/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "d98c94ac-81b8-44b1-b938-99cc0269b1f5",
+      "artist": "Daniel Sörlöv",
+      "title": "Underbara psalmer",
+      "url": "https://coverartarchive.org/release-group/4e0b0e14-fedf-49b2-a037-19a1d54c2db0/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "860973bc-b137-4a73-870a-83cc95badc3d",
+      "artist": "Mori Blanck",
+      "title": "Black Lake",
+      "url": "https://coverartarchive.org/release-group/7e8c2673-8c8e-4f31-8f6f-c5353af4e8d5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e7f7627a-e9ff-434f-915a-b223f28add4d",
+      "artist": "slowblink",
+      "title": "this child",
+      "url": "https://coverartarchive.org/release-group/bd7dc08b-736a-418c-827c-bbffecb06cdf/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "727ad7c9-0496-4230-aef4-b6bbd7603f7a",
+      "artist": "Casadilego",
+      "title": "Silenzio (tutto di me)",
+      "url": "https://coverartarchive.org/release-group/bc0428f7-15b8-4d61-950c-9194d173600b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "bb028b81-4905-4ce3-82ae-8d029a2c7004",
+      "artist": "Dave Stryker",
+      "title": "Blue Fire - The Van Gelder Session",
+      "url": "https://coverartarchive.org/release-group/a75b4e56-55ec-4fcd-8965-c734d587d61a/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "17b1b327-7f8f-44d1-a515-c91fa9f51a9c",
+      "artist": "awenydd",
+      "title": "Caressing the Avalanche of Time",
+      "url": "https://coverartarchive.org/release-group/198e2d62-96f4-4840-9de9-e630483e7719/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "90473530-09a1-4b97-8b38-43e9d1285210",
+      "artist": "Liane Schneider",
+      "title": "Conni sagt Stopp! / Ein Tag in der Schule",
+      "url": "https://coverartarchive.org/release-group/21860c8b-9935-4395-a8a8-053b0bb11b8b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "f59eca0b-3e33-4d1c-b273-5fb4bb4f22d2",
+      "artist": "Linnea Henriksson",
+      "title": "Du & jag & mera tid",
+      "url": "https://coverartarchive.org/release-group/6d48af1a-8d9e-4435-8182-3e06952a93f0/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "9f47db7e-227c-415a-b824-cded83ee68f2",
+      "artist": "Nunca Mates o Mandarim",
+      "title": "Bola de Bilhar",
+      "url": "https://coverartarchive.org/release-group/facdecd5-6d8b-46b1-a704-4d907c181f4e/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ee43ae49-c6df-4c3b-b6dd-e451e9465297",
+      "artist": "Pecos & the Rooftops",
+      "title": "From Me To You",
+      "url": "https://coverartarchive.org/release-group/e1735054-7dba-4938-8f49-8672f4fca6f5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "2f5ccfcc-664f-4052-87d3-5f6ae3e19d3c",
+      "artist": "Peppa Pig",
+      "title": "Folge 61: Ein Tag bei Dr. Hamster",
+      "url": "https://coverartarchive.org/release-group/02a06a67-36b8-41de-ad58-1352eea3a2b4/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "c0c3c017-f53b-4e65-a262-183f0febaa11",
+      "artist": "CHUU",
+      "title": "XO, My Cyberlove",
+      "url": "https://coverartarchive.org/release-group/04341117-f1d6-44e3-a65d-4cd7718b028a/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "4edf661f-0aa0-4af0-98d5-0e5550b70d67",
+      "artist": "taja",
+      "title": "discard every ounce of who i am",
+      "url": "https://coverartarchive.org/release-group/1d5bb3f3-07f9-485f-8f91-8a012bc76a18/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "24ab5fbf-255e-445a-b68a-b7c5a4a36a87",
+      "artist": "SYRA_404",
+      "title": "REMIX.EXE",
+      "url": "https://coverartarchive.org/release-group/34ef3986-03dc-432c-93d5-189b2861bfe4/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "d4b2c487-541e-492b-a2d0-1075a3733a79",
+      "artist": "Windup Space",
+      "title": "Nonbeliever",
+      "url": "https://coverartarchive.org/release-group/4f0cf3c1-795a-47b0-8ac3-75fd857c6134/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3c304a51-5521-4411-9dab-47d060fef808",
+      "artist": "MerzbowBastard Noise",
+      "title": "Brick Wall Evolution",
+      "url": "https://coverartarchive.org/release-group/4a302f51-44cb-40eb-a7b5-873a3a9308ba/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "1009b45d-0d83-491a-9185-27d4a6d4b7db",
+      "artist": "DJ Mitsu The Beats",
+      "title": "Level One Instrumental",
+      "url": "https://coverartarchive.org/release-group/0e81ea88-2c97-44a0-9c8f-4d294df7fb0a/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fef506fd-1d55-405f-8d0a-5d7afcbc0cf9",
+      "artist": "Aroma Fancy",
+      "title": "AROMA DROPS 〜7色の香り〜",
+      "url": "https://coverartarchive.org/release-group/5166195b-ecc0-4f4c-8982-e2167e8def10/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "2e7bd7a4-b9d6-4ab8-8362-ed198d085b9c",
+      "artist": "Dissecting Table",
+      "title": "Lustral Sounds",
+      "url": "https://coverartarchive.org/release-group/872db7ae-d2b4-4d61-92f1-c4e74e3e64cc/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "1fff179d-5252-4f12-bca1-3c59fa7a809d",
+      "artist": "Dissecting Table",
+      "title": "Debugging",
+      "url": "https://coverartarchive.org/release-group/cc6c09f6-4993-4ac2-a846-c52be2523e97/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3ebec006-b159-4b53-a771-0a122cbca69b",
+      "artist": "Ethan Marc Band",
+      "title": "Stay This Way",
+      "url": "https://coverartarchive.org/release-group/0149ee1a-9d7f-4cf8-ac97-496f68ee061d/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ec26acbe-366b-409f-a92f-30e06aadf490",
+      "artist": "花譜理芽",
+      "title": "花譜×理芽 TWO-MAN LIVE「Singularity Live Vol. 3」",
+      "url": "https://coverartarchive.org/release-group/ec3e89b6-c585-4bb6-82a6-f87e4558206f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3c272d46-a673-4a08-8a52-4004d1a2c4bb",
+      "artist": "Chris Paulinson",
+      "title": "The Songs of the Broken and Forgotten",
+      "url": "https://coverartarchive.org/release-group/2ec55204-ddeb-4bab-a27f-96e535da1ce0/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "446768bb-a0a7-4fa8-8ade-f70cf5a661e3",
+      "artist": "Koday Jackson",
+      "title": "Life Underwater",
+      "url": "https://coverartarchive.org/release-group/feb84569-3778-44b8-b87c-b6566c9c80ae/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b1b8d64b-f9e3-451b-82e3-fb88cbc5a9a5",
+      "artist": "Lylantz",
+      "title": "Confessions from a Dark Angel",
+      "url": "https://coverartarchive.org/release-group/c9db881d-ce67-4003-9413-71c220a46090/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fd22aab5-389c-4d11-953f-268e3c993479",
+      "artist": "Rainy。",
+      "title": "Rainy。and",
+      "url": "https://coverartarchive.org/release-group/3ff289e3-a91b-40f7-8189-c16a18cb0db6/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fe720f38-aa94-447c-87bc-d7fefa341e8c",
+      "artist": "Vampire Valentine",
+      "title": "Dry Remains",
+      "url": "https://coverartarchive.org/release-group/607058ae-fe0a-4c0d-9505-1677b6b98ebe/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b39d8a0e-a972-4bd0-896b-755cee9da240",
+      "artist": "千葉“naotyu‐”直樹",
+      "title": "プリズム輪舞曲 (Soundtrack from the Netflix Series)",
+      "url": "https://coverartarchive.org/release-group/4bf9f877-bcd5-4666-829f-97a60a437328/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "7399d948-975a-4ec3-baec-590284678c63",
+      "artist": "Hobberz.wav",
+      "title": "Outcast",
+      "url": "https://coverartarchive.org/release-group/306a8729-5fad-492c-8fc6-2f0f6eee8b7a/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6d096fa7-ad66-4f86-bb2a-4a02a5eb04de",
+      "artist": "Holy Dragons",
+      "title": "Guardians of Time, Part I",
+      "url": "https://coverartarchive.org/release-group/99d5b1ee-6d35-44b6-9dff-1f4928bcc964/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "86479ec1-403c-4d47-a826-ff483bdde645",
+      "artist": "John Coltrane",
+      "title": "Essential",
+      "url": "https://coverartarchive.org/release-group/af22e8a0-c6ae-489c-9a69-130050ecf45b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ae89a834-7996-47a8-9fbd-3af739302fbe",
+      "artist": "Jussi Lampela Ensemble",
+      "title": "Common Ground",
+      "url": "https://coverartarchive.org/release-group/9f914078-b4ce-4592-97d1-f71f5f7669c4/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fbc731e7-76aa-451f-a86e-d3c66fe18253",
+      "artist": "Mark The Red",
+      "title": "ARROGANZA MERIDIONALE",
+      "url": "https://coverartarchive.org/release-group/6ec7ef35-67f2-46b1-a2c0-6046be3fc9ca/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "d2cb9c34-81a9-4821-9426-720f9d80ad3d",
+      "artist": "Matti Johannes Koivu",
+      "title": "Pojanpoika",
+      "url": "https://coverartarchive.org/release-group/88f113eb-068f-47b8-afc1-bd15f4dc8ac2/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "d8065885-a1ad-4477-8121-740fd797f8ed",
+      "artist": "Ai/mB",
+      "title": "The Oracle Tree",
+      "url": "https://coverartarchive.org/release-group/fa0101fa-89d0-4ada-8aff-6de187678364/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "ae995e20-db58-4366-858f-5a2ff7030dfc",
+      "artist": "Melton Woods",
+      "title": "Fires",
+      "url": "https://coverartarchive.org/release-group/ddd23d23-447b-49c2-8b7b-ceabdca7b5a3/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "595b3637-4327-4050-a6b7-0f12daaeed36",
+      "artist": "Oakdale Drive",
+      "title": "The Skylight Inn",
+      "url": "https://coverartarchive.org/release-group/827251e4-6ce5-4b65-b5de-bced47077399/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "45c67be6-2b5c-43a4-bd01-0a5f66e376ff",
+      "artist": "Pedro Abrunhosa",
+      "title": "Inverbo",
+      "url": "https://coverartarchive.org/release-group/3be1469f-2c9d-456a-92c4-8e1219ba9e2c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "f69b0577-3696-49c5-b5cd-94b8c54802c2",
+      "artist": "Signe Svendsen",
+      "title": "Alt Det Vi Gør For Ikke At Dø",
+      "url": "https://coverartarchive.org/release-group/7a3736e8-59e8-48e4-9b0e-2938ae96b3be/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e5a8da68-cd79-4e6f-8b5e-932751b2833d",
+      "artist": "The Stripp",
+      "title": "Life Imitates Art",
+      "url": "https://coverartarchive.org/release-group/5a2a86dd-9d34-49ae-8ed7-1c0442081daa/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3ad67c8c-bff9-48cf-a70d-f0005f6b84d0",
+      "artist": "Thorsten French",
+      "title": "World Wide Flex - Remix Album",
+      "url": "https://coverartarchive.org/release-group/02786f03-8c1e-4ab9-a6d5-d6a440638c50/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e969616c-357e-43d0-96b7-c737e6945c20",
+      "artist": "Ty Fletcher",
+      "title": "Changes",
+      "url": "https://coverartarchive.org/release-group/24adfa79-1965-42b1-b6dd-7f9eae1bd7c7/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "8e73cac5-65b8-4e23-938a-4539da4887df",
+      "artist": "Medium",
+      "title": "Død eller dop",
+      "url": "https://coverartarchive.org/release-group/b0c65fe8-6f12-4072-972b-8862a852b002/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "13828ee0-274b-4bb3-8822-d07b191d7a6a",
+      "artist": "The Flower Kings",
+      "title": "Live in Stockholm 2025",
+      "url": "https://coverartarchive.org/release-group/8f0d4396-adf3-4e79-a9c8-399617d7a45e/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "8b77a789-dba6-4a31-86f3-80d7cda2d32e",
+      "artist": "The Atomic Orchestra",
+      "title": "Live Live Live",
+      "url": "https://coverartarchive.org/release-group/4b898d52-bea6-429b-974b-24f54a026129/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3c8cf5ad-e194-47c6-8b11-580570a564a3",
+      "artist": "i didn't water my orchids last week",
+      "title": "born clean",
+      "url": "https://coverartarchive.org/release-group/85ce3338-5842-44c9-a79f-f63230618d8e/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "4c6418fd-a6e6-4acc-a6a8-4e93d7ac5de8",
+      "artist": "Schiller",
+      "title": "Euphoria",
+      "url": "https://coverartarchive.org/release-group/73339ece-221a-46dc-8039-6aa333db4c43/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "37e4f956-2c39-45a9-b638-b65c9580927b",
+      "artist": "REiNa",
+      "title": "Orbital Theory",
+      "url": "https://coverartarchive.org/release-group/04a403a2-d2ef-4d4d-a506-21bbb8a36e5f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "4de01d04-4d76-4cab-a74d-c99187274008",
+      "artist": "Various Artists",
+      "title": "Secret Weapons, Part 17",
+      "url": "https://coverartarchive.org/release-group/a513d1f2-8772-4d4a-b98a-ee325115064e/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "846ab94d-fe9c-46cf-a208-300f736190b5",
+      "artist": "Samm Henshaw",
+      "title": "It Could Be Worse",
+      "url": "https://coverartarchive.org/release-group/34af4b95-654c-4fcf-a880-8c915ce1282a/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "4dd6dd9c-1732-4bfb-bf69-02ea6184fe85",
+      "artist": "E‪kvitkar",
+      "title": "ब्रह्मण की छाया (Brahman's Shadow)",
+      "url": "https://coverartarchive.org/release-group/dd59799c-728b-43c5-af42-030512b26562/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "23498b0d-1f9a-42e8-9022-d9b86e6d0e3e",
+      "artist": "pinkicelolly",
+      "title": "VOICES",
+      "url": "https://coverartarchive.org/release-group/1fc869c0-3176-45c2-b1da-89f6da53f514/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "671ffafc-fa69-49ec-b418-6a0457d7d575",
+      "artist": "あおぎり高校",
+      "title": "あおバム",
+      "url": "https://coverartarchive.org/release-group/dbe5ea4d-5b61-466a-8a33-e11413c99fed/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "9eb4c92b-a10d-4bb1-819c-9f451eb8b8a2",
+      "artist": "Beatrice van der Poel",
+      "title": "Na De Stilte",
+      "url": "https://coverartarchive.org/release-group/fd2d87b9-3ee4-46cb-a8f2-6613d5705366/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "937fc6a9-576a-45cd-a2fc-945b7f5c5978",
+      "artist": "Fireborn",
+      "title": "Dreamcatcher",
+      "url": "https://coverartarchive.org/release-group/9cd89329-1e8e-43b4-99cd-d30fd665f505/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "686344f7-534f-4018-b0ea-74c9539fd242",
+      "artist": "Fractal",
+      "title": "Hide In The Light",
+      "url": "https://coverartarchive.org/release-group/a068d8b7-c158-4e0c-9110-a916e896a42b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "41fd6082-c023-4225-884c-a4484a6088ea",
+      "artist": "HOYO-MiX",
+      "title": "Genshin Impact - The Stellar Moments, Vol. 6",
+      "url": "https://coverartarchive.org/release-group/5662f32f-a1a9-47f7-a462-a0a5ae97ee13/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "1f7b96d6-e6b0-4e25-a5f9-4ceccc42f1dd",
+      "artist": "Bertolf & Nomden",
+      "title": "All Good Things",
+      "url": "https://coverartarchive.org/release-group/8bef34cb-5434-4211-856d-bb99cf5ed35e/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "54b6d79b-cc21-49c7-91a5-53b6f2676df0",
+      "artist": "Bonerama",
+      "title": "So Much Love",
+      "url": "https://coverartarchive.org/release-group/a5efcc8b-0a9c-490b-88d9-29aec92b4546/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b3f76b17-1744-4fd0-993e-8f86bd5e9d39",
+      "artist": "David Reichelt",
+      "title": "Die Drei ??? Toteninsel (Original Motion Picture Soundtrack)",
+      "url": "https://coverartarchive.org/release-group/a0866504-bdbe-4c9a-ad3e-af67f2978015/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6bfb1f71-8a0a-4a48-86b0-2e1c6d030e81",
+      "artist": "Jamie O’Neal",
+      "title": "Gypsum",
+      "url": "https://coverartarchive.org/release-group/f979b1c9-5e94-4d1f-9519-3c92c9ff0809/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e90981f7-435e-445a-8add-26cd5793ea75",
+      "artist": "Dilezenn",
+      "title": "Clivage",
+      "url": "https://coverartarchive.org/release-group/210b65b3-a034-487c-866b-686368944b39/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "4621ab9d-3ea0-4670-b4cd-ba01cf72723b",
+      "artist": "Marc Benham",
+      "title": "Tricératops",
+      "url": "https://coverartarchive.org/release-group/d6df5c3e-0d39-4a75-abab-6abce3b457dd/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6d45f24a-dc95-4320-a74a-103f664c6539",
+      "artist": "Barbarian",
+      "title": "Reek of God",
+      "url": "https://coverartarchive.org/release-group/1e2ebb18-4bf9-4121-a62c-9154ff4bd67c/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "d4b59b15-364f-4bf9-a184-533958058405",
+      "artist": "Nitrik",
+      "title": "Profeetta",
+      "url": "https://coverartarchive.org/release-group/37216485-5add-4e1a-8557-595f191aac4f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "1faf10e3-1105-43ff-9c98-73ef5b1b334c",
+      "artist": "Rocking Chair",
+      "title": "High on The Horse",
+      "url": "https://coverartarchive.org/release-group/910ba6c8-f583-4169-a710-6677abaf8031/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "28267410-3f95-45dc-90da-abcbfbf132ea",
+      "artist": "Goldfinger",
+      "title": "Nine Lives",
+      "url": "https://coverartarchive.org/release-group/2263eeb8-f069-4270-9a20-1625aefabc28/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "fc5b6814-322c-4cc2-96cc-8c426d3056a4",
+      "artist": "如月千早今井麻美",
+      "title": "如月千早武道館単独公演「OathONE」会場オリジナルCD",
+      "url": "https://coverartarchive.org/release-group/86dd6111-37e8-4597-9e16-148ddb8ddf85/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a8e0f05c-2c59-483b-a2ff-a24e73f0f035",
+      "artist": "Various Artists",
+      "title": "DWAM",
+      "url": "https://coverartarchive.org/release-group/3188a317-2a2b-4347-ae70-365c03940326/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e1c973c8-1c3d-4f8b-8af3-e76e4d5e8952",
+      "artist": "Boundary Operator",
+      "title": "Engulfing You",
+      "url": "https://coverartarchive.org/release-group/a8975f25-d96c-492b-ba22-8c2653215b51/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fe81e606-20fd-4d18-ad45-e4e6eefcd4b1",
+      "artist": "loserdub",
+      "title": "FeedBack Loop",
+      "url": "https://coverartarchive.org/release-group/c0226f32-37c2-4df9-997e-7d2c8d60b0ae/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "644e0c2c-8a65-4e63-8c86-aa1629e5ec30",
+      "artist": "Rasgregi",
+      "title": "Rastaman Chants",
+      "url": "https://coverartarchive.org/release-group/2e56994f-acc0-4df4-9c46-8d6b00538aae/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "350be813-f0de-4669-b851-0cc6b82c9869",
+      "artist": "TEMPESTVATHOKIJA",
+      "title": "TEMPEST/VATHOKIJA Demo",
+      "url": "https://coverartarchive.org/release-group/11574dff-c84f-4062-8ac3-6f9a23cb30a5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0b8522f7-d29e-4d19-9747-af69c38d9132",
+      "artist": "Thorsten French",
+      "title": "Word Sound Power - Official Album Mega-Mix",
+      "url": "https://coverartarchive.org/release-group/2a93c323-6905-43c1-876e-a5b6678827cb/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "308d9749-2f72-4893-8d86-67f972b862c4",
+      "artist": "Various Artists",
+      "title": "Our Atmosphere",
+      "url": "https://coverartarchive.org/release-group/34a01a37-4e9d-40f8-b3b3-93b8c0eb2b6c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "64e6758b-571c-4ba4-a116-ea204937cc81",
+      "artist": "Overcast Harbor",
+      "title": "Now With Words",
+      "url": "https://coverartarchive.org/release-group/41930d06-847a-4ae5-8457-587f8d34bd14/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "06ba335e-53cc-485d-a87d-c8918406f7de",
+      "artist": "木村秀彬",
+      "title": "大河ドラマ 豊臣兄弟! オリジナル・サウンドトラック Vol.1",
+      "url": "https://coverartarchive.org/release-group/c610e629-97e5-40ca-9e40-2474a406c7e2/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fb87bbf3-2634-4516-bd4a-40c22b6e6525",
+      "artist": "Rioter",
+      "title": "Legalized Mind Control",
+      "url": "https://coverartarchive.org/release-group/8b8b220a-b58b-4b66-b8a1-44a9948d5580/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5fcdcf34-02da-4154-bab6-c60fe63a5cd1",
+      "artist": "Backcraft",
+      "title": "Faster Than You Run",
+      "url": "https://coverartarchive.org/release-group/9ae98d46-24e2-4191-aafd-c093afa258c6/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e0fd6f65-798a-44e1-9254-c75aa1a93d00",
+      "artist": "Andrei Nikolsky",
+      "title": "Nikolsky, Andrei",
+      "url": "https://coverartarchive.org/release-group/95bd2dc8-6c76-4e8e-b39e-e7230c520782/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0c643b15-ac14-4454-9335-593d807780ac",
+      "artist": "椎名豪",
+      "title": "CODE VEIN II サウンドトラック",
+      "url": "https://coverartarchive.org/release-group/24f36a70-ce4e-4d5e-afce-05731ce0b43f/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "cf559cae-fd8c-4ef6-8056-64daef438257",
+      "artist": "Chiloo",
+      "title": "Tout finit par s'arranger",
+      "url": "https://coverartarchive.org/release-group/38b555e2-f7ad-4490-9b11-338561f7565d/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "7eea68fc-a798-42be-a8e2-be9d33c411fc",
+      "artist": "Various Artists",
+      "title": "キミとアイドルプリキュア♪ ボーカルベスト ～Only you～",
+      "url": "https://coverartarchive.org/release-group/240eaf6a-53b6-45d1-ac02-7482e99940a3/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "3aefdf30-33b4-4a26-8e96-1f15bda393c2",
+      "artist": "Gour",
+      "title": "Tumultes",
+      "url": "https://coverartarchive.org/release-group/79448da2-480d-43fe-94db-5ff05d9d9d06/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "acf2a317-1d90-49b2-9a1b-8348134d2a32",
+      "artist": "Kuvat",
+      "title": "Hanskat hukassa",
+      "url": "https://coverartarchive.org/release-group/9590d4a5-d2e4-45b6-868c-ea08efa55993/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b0cd8c61-6a95-4dca-81e5-3884a3a8a413",
+      "artist": "Uriah Heep",
+      "title": "Demons and Wizards",
+      "url": "https://coverartarchive.org/release-group/19f95cb8-6ffc-307f-a474-369103dd1b82/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "c53224c9-a8ff-4ee4-bd41-29a7edee4119",
+      "artist": "Rafael Pacha",
+      "title": "Not Normal After Music",
+      "url": "https://coverartarchive.org/release-group/0d4f1925-bdef-4195-a137-933405bc74b4/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0e572b6d-7dfa-4647-85b3-3fbcb929e94f",
+      "artist": "Soma Twin",
+      "title": "Next Stop: Hyperspace",
+      "url": "https://coverartarchive.org/release-group/3392ac52-62b0-4ced-a144-5a26c5a6e6c1/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5b43139d-f87c-45f3-8ae6-6ded25b99ea8",
+      "artist": "Steve Poltz",
+      "title": "JoyRide",
+      "url": "https://coverartarchive.org/release-group/2a41408c-553c-4ad7-b154-bb2b9797999b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "538d2a94-b61c-4735-b787-e2b44a951ed9",
+      "artist": "The Rounder Circle",
+      "title": "California Bound",
+      "url": "https://coverartarchive.org/release-group/86e17daf-9893-4ace-89b5-663acf179a5f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fd172950-129d-4603-83a1-2314d8101c6e",
+      "artist": "Marta Del Grandi",
+      "title": "Dream Life",
+      "url": "https://coverartarchive.org/release-group/9c14353c-bd9f-4917-bf76-314ec3adaefe/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "f60eea96-806f-48fb-8c2f-dc31098a8b3c",
+      "artist": "Thibault Cauvin",
+      "title": "Alter Ego",
+      "url": "https://coverartarchive.org/release-group/2392dddb-a29e-4fed-8563-b323f94403c9/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0135d051-bc59-4160-8595-3e80dcc26747",
+      "artist": "Titus Maz",
+      "title": "Midnight Station",
+      "url": "https://coverartarchive.org/release-group/fda1bbce-ebdc-47f4-8681-ecb1ef269642/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ef23f03a-473c-48ea-82f7-d5ddaea39543",
+      "artist": "Palle Mikkelborg",
+      "title": "Light",
+      "url": "https://coverartarchive.org/release-group/d2cf39ab-ef30-476e-870c-dd58ec0e42c3/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "948d4acc-1174-4613-91b5-6a76cc20f953",
+      "artist": "Floki",
+      "title": "Totengräber",
+      "url": "https://coverartarchive.org/release-group/711f6943-9f2d-45ae-a4f8-bf8318e437bc/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6eb5a0eb-d39c-41dc-8ecb-b4ca4aec38ad",
+      "artist": "Jess Kenn",
+      "title": "For Love of a Scone",
+      "url": "https://coverartarchive.org/release-group/4b630d74-56c2-4a49-b4d6-67b5a19a3f89/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "cfdf545f-96d6-4325-bc74-c09fb0ce553b",
+      "artist": "Heart of Vorin",
+      "title": "The Highest Mountain",
+      "url": "https://coverartarchive.org/release-group/29be62d1-475e-4d97-86b3-da66e1a41fac/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3f3815f6-8020-436e-bf1f-30d15689ae52",
+      "artist": "Ominess",
+      "title": "Ominess",
+      "url": "https://coverartarchive.org/release-group/61ea3df6-8a5e-45d4-ad47-d339ea3e7981/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "bd0f1957-f130-4444-a51f-3ca09336fa1d",
+      "artist": "Der Butterwegge",
+      "title": "Liebe&Revolte",
+      "url": "https://coverartarchive.org/release-group/4b373b2b-df87-4fa4-9bde-972b848db808/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "80011e44-c63e-458a-bf1c-bcfaeb7dfa6e",
+      "artist": "R cord",
+      "title": "Distant Pressure",
+      "url": "https://coverartarchive.org/release-group/95c61054-8d3c-413d-bff4-77b9d817c0d8/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "a16e3d2b-6788-4539-8b8c-3d112b209057",
+      "artist": "Pavla Roubíčková Franců",
+      "title": "12 Fantazií pro sólové housle",
+      "url": "https://coverartarchive.org/release-group/4793f3e5-4a31-46c1-b634-973c72e82294/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3869b788-8c46-4fe1-a1eb-28594a80b78e",
+      "artist": "Various Artists",
+      "title": "Up The Junction",
+      "url": "https://coverartarchive.org/release-group/8c6ebdae-0b19-484d-9bd4-85ec556066c5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "64ebe18b-5b78-46ec-8205-a3b0f1d5ebec",
+      "artist": "Luke Sonnenglanz",
+      "title": "moral hoch zwei (remastered)",
+      "url": "https://coverartarchive.org/release-group/89a9adec-1143-422e-905c-35032c8bfda9/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5a9aa46e-128c-4c93-9584-325f0bdafd82",
+      "artist": "とんでもはっぷん！",
+      "title": "とんでも∞ミニッツ",
+      "url": "https://coverartarchive.org/release-group/804352d3-d6e2-4830-b5d6-9de71b2221d2/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "c2f589bf-30b2-4c14-8c44-37a8930ea1e2",
+      "artist": "Synthwave Hydromancer",
+      "title": "Oscilloscope not Included",
+      "url": "https://coverartarchive.org/release-group/4cb6023c-02bf-4855-bc55-dcf1e1d5711c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5b7a3c2b-b58f-463b-8e05-fc4324cc0ccb",
+      "artist": "Thorsten French",
+      "title": "Warrior at Sunshine - Remix Album",
+      "url": "https://coverartarchive.org/release-group/ec33b601-54b4-47a8-960b-4d4d50868129/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "c3c44fe7-7752-4e5d-8d9c-1e66839e4fc8",
+      "artist": "David J H Aston",
+      "title": "26 Degrees",
+      "url": "https://coverartarchive.org/release-group/de005216-3302-481e-a7d5-675b00f6f09b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0dc2506b-3cdc-4eca-9a8c-efb26bd4e7d4",
+      "artist": "MANIERISME",
+      "title": "フローリア(Remastered)",
+      "url": "https://coverartarchive.org/release-group/1c24265f-6d08-485a-ae50-b22b6982e6b7/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "656a6d73-dc7f-433f-aa82-7bff03a1668a",
+      "artist": "The Bolton Brothers",
+      "title": "Ol' Time Church",
+      "url": "https://coverartarchive.org/release-group/7082799d-ce5c-4800-a129-edde7fa134cf/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a7f90345-f038-4785-affc-bc729b8d4bee",
+      "artist": "Maria Schneider Orchestra",
+      "title": "American Crow",
+      "url": "https://coverartarchive.org/release-group/fc1a2b12-4b44-4ef3-b528-95e986a560d5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e2dfdb59-f122-4942-9706-89df701e020c",
+      "artist": "得田真裕",
+      "title": "TVアニメ「永久のユウグレ」オリジナル・サウンドトラック",
+      "url": "https://coverartarchive.org/release-group/1c4623b8-7f35-4762-825d-217b907fa357/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "abba153a-eee4-498e-a35d-ef0eb11855cf",
+      "artist": "Frou Frou",
+      "title": "Details",
+      "url": "https://coverartarchive.org/release-group/47e0eed4-509c-39db-9424-a7f0a405a096/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "c3471c8f-e761-4c9a-8dd4-ed6e3f2e33f1",
+      "artist": "AR8",
+      "title": "AR8 - Euphoria",
+      "url": "https://coverartarchive.org/release-group/dc9d9319-0d9b-4b23-97bf-a9e61a44926c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a659d23a-864e-4861-afab-6c55cbdeaea8",
+      "artist": "Boundary Operator",
+      "title": "Devilish",
+      "url": "https://coverartarchive.org/release-group/e669210f-0c7e-4677-bcff-7fecd0967fec/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3b4ee6f9-085d-47b7-b540-e3f3423dc52f",
+      "artist": "Graham DunningDJ Food",
+      "title": "E-x-t-e-n-d-e-d Turntablism Vol.1",
+      "url": "https://coverartarchive.org/release-group/780627ab-aa23-48b4-9fbe-c9037f649ff0/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e586dca7-fdf4-4459-bf69-cf07d00ae2ff",
+      "artist": "Incómodo",
+      "title": "Incómodo V: El Fin del Camino",
+      "url": "https://coverartarchive.org/release-group/e45743b1-445b-4782-a6bd-5e82efd241cd/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0f93c514-43af-4ec7-886c-913fb6e3bb72",
+      "artist": "2m8o",
+      "title": "Popcorn Ceilings",
+      "url": "https://coverartarchive.org/release-group/f6895ce3-dff9-4373-a5bb-ed89279f470f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e89cefcd-99f5-4dc7-82bd-9230b4d808d7",
+      "artist": "Box Factory",
+      "title": "First Friday #2",
+      "url": "https://coverartarchive.org/release-group/155e78e8-a437-483f-9f67-11e773b08c2c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "dd750698-f92d-479f-8c86-241b1533cd8b",
+      "artist": "Gull Boy",
+      "title": "Hard Terrain",
+      "url": "https://coverartarchive.org/release-group/b124b7db-f546-4f05-975a-da708bb2f8fe/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "8a9692ca-90ba-47fd-92c8-5c079ab65d6c",
+      "artist": "Isaern",
+      "title": "Isærn",
+      "url": "https://coverartarchive.org/release-group/a8b4c2a8-c19c-4b32-83f0-96b4f7235f4d/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "891c7042-5c0e-4b74-b4cf-607f7f9af420",
+      "artist": "Casket Crawlers",
+      "title": "Open Casket Funeral",
+      "url": "https://coverartarchive.org/release-group/74ecbd61-9192-4a9e-9d4f-79ef23c78990/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "8804e99b-4ff7-4e1c-95a5-79ac6cca2191",
+      "artist": "Kwiat Jabłoni",
+      "title": "Przesilenie",
+      "url": "https://coverartarchive.org/release-group/b3c22c3f-1e46-4265-9101-ee5daf35eb3f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "1c182cda-83f7-442d-b245-b5d0f38b646b",
+      "artist": "Killdozer",
+      "title": "Merciless Violence",
+      "url": "https://coverartarchive.org/release-group/1c7648ec-c876-46b4-85b1-35d457224f7f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fe496add-9700-4559-8546-111412111913",
+      "artist": "Mossgiver",
+      "title": "Renewer",
+      "url": "https://coverartarchive.org/release-group/870419ec-7607-4b74-a734-079ebb2e8f5f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a56677df-f102-4bd5-8661-7e338362cd5c",
+      "artist": "John Craigie",
+      "title": "I Swam Here",
+      "url": "https://coverartarchive.org/release-group/36ececb5-2aed-4e7c-a1c2-5750046c49de/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "83edc9b6-17fe-480a-a9d7-817e985e8e61",
+      "artist": "Savage",
+      "title": "Eternity",
+      "url": "https://coverartarchive.org/release-group/6aec6db2-c115-4c51-a1de-50baf3ef9af5/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "8afc8447-908d-4d69-aae7-50aa33d4ad35",
+      "artist": "Nick Jonas",
+      "title": "Sunday Best",
+      "url": "https://coverartarchive.org/release-group/2d76f373-8b1e-4af7-9974-468bfb9f3655/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "ab105b67-7d4e-41b8-94bf-694eb2e8be5d",
+      "artist": "RAViDAVi",
+      "title": "SCALE",
+      "url": "https://coverartarchive.org/release-group/0e6a06e0-dbb8-4691-bf66-a164b3fa868f/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "765c3df1-5977-4e92-bb23-58db223865bd",
+      "artist": "Elko BlijweertAnla Courtis",
+      "title": "Buenos Antwerp",
+      "url": "https://coverartarchive.org/release-group/af533f31-444b-4b3c-9d42-c48b58a6dd8b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b02ac3d3-40c9-4574-bf09-5573f0f7fef5",
+      "artist": "Derairaise",
+      "title": "Gran Premio",
+      "url": "https://coverartarchive.org/release-group/7cc18aff-f8dd-468f-8c2f-3504aceb48b6/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "22c34b11-fdbb-4196-9bc6-d8f0c76f338b",
+      "artist": "Sightseeing Crew",
+      "title": "Muffled Ears, the World Sounds Bad Quality",
+      "url": "https://coverartarchive.org/release-group/69a948ab-2e55-4b53-87fc-eaae6b744288/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "74c2a15e-4d14-4a70-bd6d-4a19140b0f99",
+      "artist": "wariakama",
+      "title": "Die alone",
+      "url": "https://coverartarchive.org/release-group/ce8a543f-78b8-453b-9cd5-ee1b48376d34/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "452c0903-0c2f-4b4b-a329-f065aca25fd7",
+      "artist": "wariakama",
+      "title": "Die alone",
+      "url": "https://coverartarchive.org/release-group/14bde256-3445-49a2-a9a1-771647aea129/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "4d4c5c4f-e539-4a67-af65-20f5ff8bfaad",
+      "artist": "Dissecting Table",
+      "title": "Reverse Approach",
+      "url": "https://coverartarchive.org/release-group/aaea52e5-f2c7-4d72-8ac7-12f47baf101f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "0789b07d-4ca7-4039-be03-b5f84dcf397e",
+      "artist": "Lost Anchor",
+      "title": "Turning Tide",
+      "url": "https://coverartarchive.org/release-group/560b30f7-ce72-4c9b-b8fb-391a12fb1658/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e59b6474-a797-45ad-a13e-48c6defc8a0c",
+      "artist": "M.B.",
+      "title": "The Plain Truth",
+      "url": "https://coverartarchive.org/release-group/2ac47645-62eb-4e6a-869a-40bdd1f6dfda/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "3e89db86-0a28-41ee-b091-9e9213a37cd0",
+      "artist": "Thorsten French",
+      "title": "Mi Glad Yuh Deh Yah",
+      "url": "https://coverartarchive.org/release-group/ee0f7c75-591c-4d96-88b6-1376a0cb557e/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "2a70cd08-4dee-486b-b2ca-8c9cd0234254",
+      "artist": "Brevin Kim",
+      "title": "BOYBAND",
+      "url": "https://coverartarchive.org/release-group/d39bae0c-3583-4051-93f3-136033cfa7d4/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e3fe740c-5e50-4986-87db-604165ddd45b",
+      "artist": "出羽良彰",
+      "title": "TVアニメ『地獄楽』第二期オリジナル・サウンドトラック",
+      "url": "https://coverartarchive.org/release-group/67a97317-cd6e-47b3-8286-461d3e08ac5e/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "e71715af-f437-423d-9f7c-46521b6112b3",
+      "artist": "Don Melody Club",
+      "title": "Klassiek gedonder",
+      "url": "https://coverartarchive.org/release-group/b6c23de0-cd8e-4117-b907-1c94838e09be/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ac49f386-e785-40f5-9c3a-a998d3b845ed",
+      "artist": "DYSTINCT",
+      "title": "Red Bull Symphonic Live",
+      "url": "https://coverartarchive.org/release-group/6d3005c9-dc0f-4e33-af4d-870f0878cf9c/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "72d1435f-797b-4910-8b11-8192af8de141",
+      "artist": "今井美樹",
+      "title": "smile",
+      "url": "https://coverartarchive.org/release-group/1cfa30ec-6f68-43bd-8b29-47852c671527/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "efc8ad25-2189-425f-99c9-ad223e3d2152",
+      "artist": "King Virus One",
+      "title": "Eden",
+      "url": "https://coverartarchive.org/release-group/f1eb94f7-be89-4cfa-ba3e-2e839d90e22d/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "bbf74791-bf77-4f55-b0b1-b8ce7d7c1e19",
+      "artist": "Kissa",
+      "title": "I Hate Music",
+      "url": "https://coverartarchive.org/release-group/c774e9d0-242f-4021-873f-2a7f8da2db50/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "57addbfd-989b-4bd4-8228-c5fd14a153be",
+      "artist": "Løse",
+      "title": "Løse",
+      "url": "https://coverartarchive.org/release-group/ebffbf0f-c8fe-4232-beb3-8a1c92f55d06/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "c88daec6-8795-4544-a96e-c56836cbb258",
+      "artist": "Mattiu",
+      "title": "Aura",
+      "url": "https://coverartarchive.org/release-group/bd4eb699-5165-4be7-9f13-8a11779c9fcd/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "12ccb16c-d860-4d25-874d-9ed16e2bfe8d",
+      "artist": "Micah McCaw",
+      "title": "Holly Street",
+      "url": "https://coverartarchive.org/release-group/fdb0d3a2-2135-48df-8f7f-5bd950d08387/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "1a92857c-fb51-44b9-9042-3e8988a691c6",
+      "artist": "Noise Sculptor",
+      "title": "Tenebris Iris",
+      "url": "https://coverartarchive.org/release-group/4d83fea7-5241-483d-b547-88bda2bf5f61/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "c1b0226b-6109-4b1a-81a2-35af27413717",
+      "artist": "Bob Reynolds",
+      "title": "Eddie Told Me So",
+      "url": "https://coverartarchive.org/release-group/0dd6d7d9-bb94-49f8-9d99-8295b9320bf6/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "1556d13d-c8e7-4a8f-a441-a92c4485162f",
+      "artist": "Paul Jarret",
+      "title": "Tilia",
+      "url": "https://coverartarchive.org/release-group/46643476-487d-4204-85a9-5c5a31daea27/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "14a203d6-fb2c-4f64-95a3-f12f24c05320",
+      "artist": "Retratos de heroína",
+      "title": "Magical Chronicles: From 2021 to 2025",
+      "url": "https://coverartarchive.org/release-group/5d62cba0-2025-4d63-82ac-e825391287b4/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "65481bd9-ec47-449c-84b9-cc567c3a164d",
+      "artist": "Ravi Ramsahye Prototype",
+      "title": "Sunglint",
+      "url": "https://coverartarchive.org/release-group/1635ead3-c011-4ea6-832c-aad31bd4ac98/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "444891f5-a27a-4c06-af78-7d82f8a78afa",
+      "artist": "Wigwam",
+      "title": "Live in Denmark 1976",
+      "url": "https://coverartarchive.org/release-group/830419ec-745e-4eb2-acd4-2c6ced8285e9/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "f2602426-ce2a-42b2-b46b-a7c0d01d1c63",
+      "artist": "Maestro Mojjo",
+      "title": "Homesick",
+      "url": "https://coverartarchive.org/release-group/e3713a0d-84fe-4753-87e7-363f85c8feb8/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "d0f6bb89-c0da-4fe0-b061-7f16bce69a28",
+      "artist": "Fallen Flowers",
+      "title": "Fallen Flowers",
+      "url": "https://coverartarchive.org/release-group/dd84ba04-1fd1-4447-93eb-3ede221dae00/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "613664e4-b4a9-4c28-88ac-70bb69d93167",
+      "artist": "Micetones",
+      "title": "Fragment of times",
+      "url": "https://coverartarchive.org/release-group/6e6964f8-f128-46fb-99ab-c0861e72cfce/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "ffea98ab-59b8-4f44-89a5-2b3e431d7e2a",
+      "artist": "Crescendo",
+      "title": "PURGATORY",
+      "url": "https://coverartarchive.org/release-group/2a8e707a-78cd-4d42-9a07-d6bc59a86a92/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "789310f7-27f5-47dc-9f98-44d76d9cfc71",
+      "artist": "Thorsten French",
+      "title": "Not Your AI Remix Album",
+      "url": "https://coverartarchive.org/release-group/d3ec6d19-e78d-46c8-94d2-42e9ddf5379d/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6613fb66-d7c1-45d9-a332-24ff7caef31b",
+      "artist": "Captain Wilberforce",
+      "title": "Another World. Another life. Another time.",
+      "url": "https://coverartarchive.org/release-group/3bcbf913-0673-4f3b-b7dc-7b0bf95597a8/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "4a775b6d-91c6-471c-84b8-f711dafb107f",
+      "artist": "Terry Allan",
+      "title": "Lyrical Insanity, Volume 1",
+      "url": "https://coverartarchive.org/release-group/561942af-ee72-4e69-ba8e-2dafc6a499e3/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "897cd810-40f7-4d04-8d28-98ce56cb8ae0",
+      "artist": "Sonic Area",
+      "title": "And Shadow",
+      "url": "https://coverartarchive.org/release-group/6637938a-cf8c-407e-80c0-46aa7f4fa58b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "fada86ed-8744-46ff-8621-06b93e89105f",
+      "artist": "Boundary Operator",
+      "title": "OWN IT",
+      "url": "https://coverartarchive.org/release-group/089c702d-1a44-4ee9-868e-bb2f595f8cf9/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "a8a33cc3-a641-467f-af9c-c93d530b5c9b",
+      "artist": "C-ZON",
+      "title": "Apocalypse Pop",
+      "url": "https://coverartarchive.org/release-group/ba5f85b8-aa6f-410f-93cf-e09e416b2bc6/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "c766a43d-d032-46d1-bd7c-8dc9e96053b2",
+      "artist": "hammon",
+      "title": "Hammon Cinematic Universe",
+      "url": "https://coverartarchive.org/release-group/8041cdb3-e769-4d88-b128-891153e56299/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "f957f001-921e-4afc-8a51-49bbe8de3cfd",
+      "artist": "la scène 裸身",
+      "title": "不体失創造",
+      "url": "https://coverartarchive.org/release-group/769f980f-cda2-43d4-b99d-6bd0d1f7a188/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "f17dda67-df32-493e-94c0-6c4c710d72f5",
+      "artist": "underground Ufo's",
+      "title": "Forteresse",
+      "url": "https://coverartarchive.org/release-group/ffdc51e1-b7e6-43f2-9e0a-7bf6556f7f27/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "b287a273-8517-4817-a24b-96e4f4820fa5",
+      "artist": "Ashes at Last",
+      "title": "All in the Name of Entertainment",
+      "url": "https://coverartarchive.org/release-group/90c23ebf-4de2-4607-977c-7259d76c748a/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "cb749736-8064-4082-8a0d-74ea5ea6b16a",
+      "artist": "Emily TruckenbrodAmy I-Lin Cheng",
+      "title": "In Her Voice ~ Art Song Settings of Women Poets",
+      "url": "https://coverartarchive.org/release-group/afcb9fc0-cb87-4dde-b8be-5d6b7c09dd6f/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "636d4a01-b892-48da-96ed-f7703d6be776",
+      "artist": "MT Gemini",
+      "title": "Hawk Deh Near",
+      "url": "https://coverartarchive.org/release-group/56475b0b-3000-45c2-abe1-5e7c75c3c1fa/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "5cbb98f0-e6e4-4509-add8-362a135ee1d6",
+      "artist": "MR JUSTREAL",
+      "title": "THE PINNACLE",
+      "url": "https://coverartarchive.org/release-group/60fd1e10-3bb7-413f-aadf-4e0ad7465606/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "425a4cb2-e17b-478d-b872-922642bc02f5",
+      "artist": "Sara Renar",
+      "title": "Nježne riječi",
+      "url": "https://coverartarchive.org/release-group/80bc0d64-20ba-4422-ad60-6cc49a616ab0/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "47da6b97-1176-4437-a60a-214288bdb03e",
+      "artist": "Hilary Duff",
+      "title": "luck… or something",
+      "url": "https://coverartarchive.org/release-group/11e98a72-192f-4409-aab8-76c44b080039/front-250",
+      "error": "fetch failed"
+    },
+    {
+      "id": "788480b0-3017-4800-9f91-a18431401a59",
+      "artist": "The Legendary Trainhoppers",
+      "title": "A Conspiracy of Ravens",
+      "url": "https://coverartarchive.org/release-group/c3a262af-e379-4c42-9723-43daec4a1ee6/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "675f06f8-7def-42f5-a412-8da096db3585",
+      "artist": "VaccaInoki",
+      "title": "Fondazione Strada",
+      "url": "https://coverartarchive.org/release-group/d3b6a8ba-4f16-4613-8f1d-a6520c6ecc74/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "6e6e4c3e-3f7f-44bd-a09a-c1db5fea756d",
+      "artist": "Songleikr",
+      "title": "Fuglefolk",
+      "url": "https://coverartarchive.org/release-group/ef75313b-f43f-4fb8-b28f-ac71e85473ee/front-250",
+      "error": "500 Internal Server Error"
+    },
+    {
+      "id": "ce12be4c-81f8-4a25-b4db-a84d534f5651",
+      "artist": "高橋洋子",
+      "title": "「残酷な天使のテーゼ」EVANGELION 30th Anniversary Edition LP",
+      "url": "https://coverartarchive.org/release-group/390e7ada-4a53-488a-b4b6-f06c6b6eb343/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "cc420b63-dc7d-4dce-868d-3061a92906b8",
+      "artist": "高橋洋子",
+      "title": "「魂のルフラン」EVANGELION 30th Anniversary Edition LP",
+      "url": "https://coverartarchive.org/release-group/ba2e7864-b252-4d61-9601-381f103c26ec/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "e2d8afd8-966f-450f-9e8e-48f296fb2927",
+      "artist": "Die Tüdelband",
+      "title": "Foffteihn",
+      "url": "https://coverartarchive.org/release-group/664f566a-bc6c-4488-b8b2-552e59c6ca2b/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "76434458-97e1-47bf-b8ba-4c39532ae429",
+      "artist": "floss crack",
+      "title": "flash back",
+      "url": "https://coverartarchive.org/release-group/81697c7b-206e-4da5-9afd-4c40beccea34/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "04a32730-5174-444e-a8fc-a5d3b4ad894e",
+      "artist": "Bandai Namco Game Music",
+      "title": "RIDGE RACER 2 オリジナルサウンドトラック",
+      "url": "https://coverartarchive.org/release-group/c346035e-ca1a-4c07-bbd7-6a00607ebe67/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "eaf3497b-b0cf-4ccb-810c-009f7b80b807",
+      "artist": "Czyszy",
+      "title": "Aftermoon",
+      "url": "https://coverartarchive.org/release-group/cdf0b93a-2219-460e-91df-02ddd43d6ecc/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "9c02a213-01dc-4f45-aec4-ec8968f23047",
+      "artist": "KOKIA",
+      "title": "LAYERS ～lights and shadows～ 森羅万象",
+      "url": "https://coverartarchive.org/release-group/c65809a1-99b4-4bfc-aef2-3d4e97261b42/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    },
+    {
+      "id": "47168177-7107-4a79-bc21-cebeb8642207",
+      "artist": "大森元貴",
+      "title": "OITOMA",
+      "url": "https://coverartarchive.org/release-group/6f09fd57-977a-4792-8faf-ae972d922610/front-250",
+      "error": "404 NOT FOUND text/html; charset=utf-8"
+    }
+  ]
+}
