@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="680" viewBox="0 0 900 680">
+  <rect width="900" height="680" fill="#f2eee9"/>
+  <circle cx="450" cy="250" r="130" fill="#b83245" opacity=".9"/>
+  <circle cx="450" cy="282" r="76" fill="#fff7ef"/>
+  <circle cx="414" cy="248" r="16" fill="#1c1d22"/>
+  <circle cx="486" cy="248" r="16" fill="#1c1d22"/>
+  <text x="450" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1c1d22">Sunnies x Monchhichi</text>
+  <text x="450" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#646b78">眼镜/配件</text>
+</svg>
