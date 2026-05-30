@@ -1,0 +1,2921 @@
+{
+  "generatedAt": "2026-05-30T10:39:20.317Z",
+  "asOfDate": "2026-05-30",
+  "rangeStart": "2026-01-01",
+  "rangeEnd": "2026-07-31",
+  "sourcePriority": [
+    "official",
+    "kpopofficial",
+    "kpopschedule",
+    "cover_art_archive",
+    "xiaohongshu"
+  ],
+  "selection": {
+    "releasedLimit": 50,
+    "upcomingLimit": 30,
+    "totalTargets": 80
+  },
+  "items": [
+    {
+      "releaseGroupId": "21159e3f-172e-43f6-aa7d-8e06a81fea49",
+      "releaseId": "8c0e8294-93f0-45d4-a98f-e9a37060de4a",
+      "title": "ARIRANG",
+      "artist": "BTS",
+      "releaseDate": "2026-03-20",
+      "bucket": "released_top",
+      "rank": 1,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-cover_art_archive-9b488834ca54.jpg",
+      "images": [
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:1:9b488834ca54",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-cover_art_archive-9b488834ca54.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/21159e3f-172e-43f6-aa7d-8e06a81fea49",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "BTS《ARIRANG》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/21159e3f-172e-43f6-aa7d-8e06a81fea49",
+          "title": "ARIRANG",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "c0420634-f27d-4d43-a07d-a8d6dafc83a4",
+      "releaseId": "86fee800-97a3-41c6-8234-9ca840e8faab",
+      "title": "Empty Hands",
+      "artist": "Poppy",
+      "releaseDate": "2026-01-23",
+      "bucket": "released_top",
+      "rank": 2,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/c0420634-f27d-4d43-a07d-a8d6dafc83a4/01-cover_art_archive-905734211d96.jpg",
+      "images": [
+        {
+          "id": "c0420634-f27d-4d43-a07d-a8d6dafc83a4:1:905734211d96",
+          "localUrl": "visuals/2026/released_top/c0420634-f27d-4d43-a07d-a8d6dafc83a4/01-cover_art_archive-905734211d96.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/c0420634-f27d-4d43-a07d-a8d6dafc83a4",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Poppy《Empty Hands》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/c0420634-f27d-4d43-a07d-a8d6dafc83a4",
+          "title": "Empty Hands",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "17a40f1c-6fef-4402-8700-921ee050730d",
+      "releaseId": "a3601409-f62c-4ed4-bbfc-c06b36e7bd36",
+      "title": "Le coeur au vent",
+      "artist": "HK",
+      "releaseDate": "2026-05-15",
+      "bucket": "released_top",
+      "rank": 3,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/17a40f1c-6fef-4402-8700-921ee050730d/01-cover_art_archive-e40501bb07b2.jpg",
+      "images": [
+        {
+          "id": "17a40f1c-6fef-4402-8700-921ee050730d:1:e40501bb07b2",
+          "localUrl": "visuals/2026/released_top/17a40f1c-6fef-4402-8700-921ee050730d/01-cover_art_archive-e40501bb07b2.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/17a40f1c-6fef-4402-8700-921ee050730d",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "HK《Le coeur au vent》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/17a40f1c-6fef-4402-8700-921ee050730d",
+          "title": "Le coeur au vent",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "739303f4-2431-4d33-95a6-febe78924d66",
+      "releaseId": "4c6b0bb0-b69e-4b26-836a-22de59c37499",
+      "title": "MEI.01",
+      "artist": "MEI",
+      "releaseDate": "2026-04-15",
+      "bucket": "released_top",
+      "rank": 4,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "863a205e-07c3-3930-8561-a23045719466",
+      "releaseId": "45ff7ace-8ed5-4c59-8b7d-2bc503de2986",
+      "title": "Nursery Cryme",
+      "artist": "Genesis",
+      "releaseDate": "2026-01-19",
+      "bucket": "released_top",
+      "rank": 5,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "319029e5-8254-4411-9595-c066c0841aac",
+      "releaseId": "0867da1f-2573-49d7-b9cc-ea7aad547647",
+      "title": "Ferrum Sidereum",
+      "artist": "Zu",
+      "releaseDate": "2026-01-09",
+      "bucket": "released_top",
+      "rank": 6,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/319029e5-8254-4411-9595-c066c0841aac/01-cover_art_archive-be0a0cd5a6af.jpg",
+      "images": [
+        {
+          "id": "319029e5-8254-4411-9595-c066c0841aac:1:be0a0cd5a6af",
+          "localUrl": "visuals/2026/released_top/319029e5-8254-4411-9595-c066c0841aac/01-cover_art_archive-be0a0cd5a6af.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/319029e5-8254-4411-9595-c066c0841aac",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Zu《Ferrum Sidereum》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/319029e5-8254-4411-9595-c066c0841aac",
+          "title": "Ferrum Sidereum",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "93af8d42-5f2d-46f9-be2a-bbd48388502e",
+      "releaseId": "ca02111f-917f-4110-ac40-69e2bcc30efa",
+      "title": "Live in Köln 1976 – Kölner Sporthalle 25.9.1976",
+      "artist": "Rainbow",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 7,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/93af8d42-5f2d-46f9-be2a-bbd48388502e/01-cover_art_archive-b8bcf79b3956.jpg",
+      "images": [
+        {
+          "id": "93af8d42-5f2d-46f9-be2a-bbd48388502e:1:b8bcf79b3956",
+          "localUrl": "visuals/2026/released_top/93af8d42-5f2d-46f9-be2a-bbd48388502e/01-cover_art_archive-b8bcf79b3956.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/93af8d42-5f2d-46f9-be2a-bbd48388502e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Rainbow《Live in Köln 1976 – Kölner Sporthalle 25.9.1976》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/93af8d42-5f2d-46f9-be2a-bbd48388502e",
+          "title": "Live in Köln 1976 – Kölner Sporthalle 25.9.1976",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "bb241e08-a2ed-4fdf-b8a3-0b4b5a0d331e",
+      "releaseId": "bc42788a-f71d-4582-934a-9ae42a6149ad",
+      "title": "Heartbeat City Live",
+      "artist": "The Cars",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 8,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "475af630-84df-3243-9888-c03c67d54d1a",
+      "releaseId": "9da07d86-77b9-4bcb-a642-b98a7fd1a966",
+      "title": "A Quick One",
+      "artist": "The Who",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 9,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/475af630-84df-3243-9888-c03c67d54d1a/01-cover_art_archive-d55ce2a23cc7.jpg",
+      "images": [
+        {
+          "id": "475af630-84df-3243-9888-c03c67d54d1a:1:d55ce2a23cc7",
+          "localUrl": "visuals/2026/released_top/475af630-84df-3243-9888-c03c67d54d1a/01-cover_art_archive-d55ce2a23cc7.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/475af630-84df-3243-9888-c03c67d54d1a",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "The Who《A Quick One》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/475af630-84df-3243-9888-c03c67d54d1a",
+          "title": "A Quick One",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "0f774e8c-b319-4ed1-80a6-deda396f2b8c",
+      "releaseId": "29ce214f-0b72-4ec8-b2f3-9fa82d1e2cc6",
+      "title": "Tales From Topographic Tours",
+      "artist": "Yes",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 10,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/0f774e8c-b319-4ed1-80a6-deda396f2b8c/01-cover_art_archive-fd309e6c4161.jpg",
+      "images": [
+        {
+          "id": "0f774e8c-b319-4ed1-80a6-deda396f2b8c:1:fd309e6c4161",
+          "localUrl": "visuals/2026/released_top/0f774e8c-b319-4ed1-80a6-deda396f2b8c/01-cover_art_archive-fd309e6c4161.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/0f774e8c-b319-4ed1-80a6-deda396f2b8c",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Yes《Tales From Topographic Tours》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/0f774e8c-b319-4ed1-80a6-deda396f2b8c",
+          "title": "Tales From Topographic Tours",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
+      "releaseId": "e883eebb-eb5c-4e21-a481-3c9125e13eb6",
+      "title": "Genesis",
+      "artist": "Genesis",
+      "releaseDate": "2026-04-15",
+      "bucket": "released_top",
+      "rank": 11,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411/01-cover_art_archive-865fd653093c.jpg",
+      "images": [
+        {
+          "id": "48bb31b2-1b07-38ec-9ef2-3bb52c1f9411:1:865fd653093c",
+          "localUrl": "visuals/2026/released_top/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411/01-cover_art_archive-865fd653093c.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Genesis《Genesis》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
+          "title": "Genesis",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "2b9397d6-5fb5-4d57-ace7-38a454a30a39",
+      "releaseId": "536d60dd-214d-45d0-8c72-dd7ca92a4f76",
+      "title": "Scream Until It's Beautiful",
+      "artist": "WASTE",
+      "releaseDate": "2026-03-06",
+      "bucket": "released_top",
+      "rank": 12,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/2b9397d6-5fb5-4d57-ace7-38a454a30a39/01-cover_art_archive-a4a245d41260.jpg",
+      "images": [
+        {
+          "id": "2b9397d6-5fb5-4d57-ace7-38a454a30a39:1:a4a245d41260",
+          "localUrl": "visuals/2026/released_top/2b9397d6-5fb5-4d57-ace7-38a454a30a39/01-cover_art_archive-a4a245d41260.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/2b9397d6-5fb5-4d57-ace7-38a454a30a39",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "WASTE《Scream Until It's Beautiful》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/2b9397d6-5fb5-4d57-ace7-38a454a30a39",
+          "title": "Scream Until It's Beautiful",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "4af5f982-f3b6-4fd4-a3b5-b029684c3fff",
+      "releaseId": "5cd32376-a42e-45ff-83d6-ea6c9f797fd7",
+      "title": "Coming Up at the BBC",
+      "artist": "Suede",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 13,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/4af5f982-f3b6-4fd4-a3b5-b029684c3fff/01-cover_art_archive-8fe69d9b284d.jpg",
+      "images": [
+        {
+          "id": "4af5f982-f3b6-4fd4-a3b5-b029684c3fff:1:8fe69d9b284d",
+          "localUrl": "visuals/2026/released_top/4af5f982-f3b6-4fd4-a3b5-b029684c3fff/01-cover_art_archive-8fe69d9b284d.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/4af5f982-f3b6-4fd4-a3b5-b029684c3fff",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Suede《Coming Up at the BBC》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/4af5f982-f3b6-4fd4-a3b5-b029684c3fff",
+          "title": "Coming Up at the BBC",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "9b191575-fa1f-3531-bff5-121782318972",
+      "releaseId": "d6c20c4e-89dc-4107-9e2b-d3873e9c3996",
+      "title": "Quadrophenia",
+      "artist": "The Who",
+      "releaseDate": "2026-02-27",
+      "bucket": "released_top",
+      "rank": 14,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/9b191575-fa1f-3531-bff5-121782318972/01-cover_art_archive-048ae2891405.jpg",
+      "images": [
+        {
+          "id": "9b191575-fa1f-3531-bff5-121782318972:1:048ae2891405",
+          "localUrl": "visuals/2026/released_top/9b191575-fa1f-3531-bff5-121782318972/01-cover_art_archive-048ae2891405.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/9b191575-fa1f-3531-bff5-121782318972",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "The Who《Quadrophenia》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/9b191575-fa1f-3531-bff5-121782318972",
+          "title": "Quadrophenia",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "94862bd6-6a24-3774-b136-860059c6376e",
+      "releaseId": "5c4d7a04-706b-4b2b-ab5a-a20bb2c9b9dc",
+      "title": "Tales From Topographic Oceans",
+      "artist": "Yes",
+      "releaseDate": "2026-02-06",
+      "bucket": "released_top",
+      "rank": 15,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/94862bd6-6a24-3774-b136-860059c6376e/01-cover_art_archive-79303e761c6e.jpg",
+      "images": [
+        {
+          "id": "94862bd6-6a24-3774-b136-860059c6376e:1:79303e761c6e",
+          "localUrl": "visuals/2026/released_top/94862bd6-6a24-3774-b136-860059c6376e/01-cover_art_archive-79303e761c6e.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/94862bd6-6a24-3774-b136-860059c6376e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Yes《Tales From Topographic Oceans》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/94862bd6-6a24-3774-b136-860059c6376e",
+          "title": "Tales From Topographic Oceans",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "35eae658-4243-4bf5-91d6-5a391bbb3699",
+      "releaseId": "13511198-3853-41af-8dda-f393af117f27",
+      "title": "The Art of Loving",
+      "artist": "Olivia Dean",
+      "releaseDate": "2026-01-23",
+      "bucket": "released_top",
+      "rank": 16,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-cover_art_archive-2902b63d59af.jpg",
+      "images": [
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:1:2902b63d59af",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-cover_art_archive-2902b63d59af.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/35eae658-4243-4bf5-91d6-5a391bbb3699",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Olivia Dean《The Art of Loving》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/35eae658-4243-4bf5-91d6-5a391bbb3699",
+          "title": "The Art of Loving",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "bec30368-d532-497d-a417-819f991ed3fe",
+      "releaseId": "54dcc2f7-da6f-4695-b265-574e6905dc36",
+      "title": "Live at Eden Project 25/07/2023",
+      "artist": "The Who",
+      "releaseDate": "2026-05-29",
+      "bucket": "released_top",
+      "rank": 17,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca",
+      "releaseId": "694070c4-c899-4631-a628-58d6a9364de4",
+      "title": "REVIVE+",
+      "artist": "IVE",
+      "releaseDate": "2026-02-23",
+      "bucket": "released_top",
+      "rank": 18,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-cover_art_archive-941fd404563f.jpg",
+      "images": [
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:1:941fd404563f",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-cover_art_archive-941fd404563f.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/5a37b657-9f1d-4bce-b85f-9b1f5b72feca",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "IVE《REVIVE+》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/5a37b657-9f1d-4bce-b85f-9b1f5b72feca",
+          "title": "REVIVE+",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "ae1ff272-3682-4e39-8f9b-2a9eb30eddc3",
+      "releaseId": "c2414068-184f-4ef5-b88b-591a43d1eae8",
+      "title": "THIS MUSIC MAY CONTAIN HOPE.",
+      "artist": "RAYE",
+      "releaseDate": "2026-03-27",
+      "bucket": "released_top",
+      "rank": 19,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3/01-cover_art_archive-32d95aee893d.jpg",
+      "images": [
+        {
+          "id": "ae1ff272-3682-4e39-8f9b-2a9eb30eddc3:1:32d95aee893d",
+          "localUrl": "visuals/2026/released_top/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3/01-cover_art_archive-32d95aee893d.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "RAYE《THIS MUSIC MAY CONTAIN HOPE.》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3",
+          "title": "THIS MUSIC MAY CONTAIN HOPE.",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "bb2c2b87-da99-401f-89fe-64860e65264b",
+      "releaseId": "e0c15b30-363f-414c-9eac-8d76613a6cd9",
+      "title": "Antidepressants (demos)",
+      "artist": "Suede",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 20,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/bb2c2b87-da99-401f-89fe-64860e65264b/01-cover_art_archive-4124c4816165.jpg",
+      "images": [
+        {
+          "id": "bb2c2b87-da99-401f-89fe-64860e65264b:1:4124c4816165",
+          "localUrl": "visuals/2026/released_top/bb2c2b87-da99-401f-89fe-64860e65264b/01-cover_art_archive-4124c4816165.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/bb2c2b87-da99-401f-89fe-64860e65264b",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Suede《Antidepressants (demos)》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/bb2c2b87-da99-401f-89fe-64860e65264b",
+          "title": "Antidepressants (demos)",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "79750af5-bfd0-417c-acaa-49edb6a47a7f",
+      "releaseId": "ab675adb-8959-49c5-8358-b359905153e7",
+      "title": "With the End Comes Silence",
+      "artist": "Assignment",
+      "releaseDate": "2026-03-20",
+      "bucket": "released_top",
+      "rank": 21,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "a868464a-2e60-484b-bacd-aaeaee71284e",
+      "releaseId": "65bd14ae-51ea-460f-9d80-13f223dd62b7",
+      "title": "The Romantic",
+      "artist": "Bruno Mars",
+      "releaseDate": "2026-02-27",
+      "bucket": "released_top",
+      "rank": 22,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/a868464a-2e60-484b-bacd-aaeaee71284e/01-cover_art_archive-2167028d8064.jpg",
+      "images": [
+        {
+          "id": "a868464a-2e60-484b-bacd-aaeaee71284e:1:2167028d8064",
+          "localUrl": "visuals/2026/released_top/a868464a-2e60-484b-bacd-aaeaee71284e/01-cover_art_archive-2167028d8064.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/a868464a-2e60-484b-bacd-aaeaee71284e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Bruno Mars《The Romantic》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/a868464a-2e60-484b-bacd-aaeaee71284e",
+          "title": "The Romantic",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "8676b232-108c-4229-be09-f1b09b0ec5f6",
+      "releaseId": "e3213ae0-a248-4b83-9fe8-cbf3e309bcac",
+      "title": "Kiss All the Time. Disco, Occasionally.",
+      "artist": "Harry Styles",
+      "releaseDate": "2026-03-06",
+      "bucket": "released_top",
+      "rank": 23,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/8676b232-108c-4229-be09-f1b09b0ec5f6/01-cover_art_archive-ee3ba6488092.jpg",
+      "images": [
+        {
+          "id": "8676b232-108c-4229-be09-f1b09b0ec5f6:1:ee3ba6488092",
+          "localUrl": "visuals/2026/released_top/8676b232-108c-4229-be09-f1b09b0ec5f6/01-cover_art_archive-ee3ba6488092.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/8676b232-108c-4229-be09-f1b09b0ec5f6",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Harry Styles《Kiss All the Time. Disco, Occasionally.》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/8676b232-108c-4229-be09-f1b09b0ec5f6",
+          "title": "Kiss All the Time. Disco, Occasionally.",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "c734eab6-7ea3-36e6-a921-0e2e95e148d0",
+      "releaseId": "7236d042-5a2a-4cf4-9812-b2f8562f915b",
+      "title": "Black Rain: Original Motion Picture Soundtrack",
+      "artist": "Hans Zimmer",
+      "releaseDate": "2026-04",
+      "bucket": "released_top",
+      "rank": 24,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "746c577a-4bdc-4a00-bc95-c5da3546e786",
+      "releaseId": "ac1bb4a1-a176-4d18-889c-7ab851f90182",
+      "title": "Fancy Some More?",
+      "artist": "PinkPantheress",
+      "releaseDate": "2026-02-27",
+      "bucket": "released_top",
+      "rank": 25,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/746c577a-4bdc-4a00-bc95-c5da3546e786/01-cover_art_archive-60123f827b19.jpg",
+      "images": [
+        {
+          "id": "746c577a-4bdc-4a00-bc95-c5da3546e786:1:60123f827b19",
+          "localUrl": "visuals/2026/released_top/746c577a-4bdc-4a00-bc95-c5da3546e786/01-cover_art_archive-60123f827b19.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/746c577a-4bdc-4a00-bc95-c5da3546e786",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "PinkPantheress《Fancy Some More?》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/746c577a-4bdc-4a00-bc95-c5da3546e786",
+          "title": "Fancy Some More?",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "fc5cb1fc-d824-3128-bcc9-77572517a503",
+      "releaseId": "10d4cf71-7dad-470a-9099-235acae0bd5e",
+      "title": "The Confessions Tour",
+      "artist": "Madonna",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 26,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/fc5cb1fc-d824-3128-bcc9-77572517a503/01-cover_art_archive-84d8fda4bcfe.jpg",
+      "images": [
+        {
+          "id": "fc5cb1fc-d824-3128-bcc9-77572517a503:1:84d8fda4bcfe",
+          "localUrl": "visuals/2026/released_top/fc5cb1fc-d824-3128-bcc9-77572517a503/01-cover_art_archive-84d8fda4bcfe.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/fc5cb1fc-d824-3128-bcc9-77572517a503",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Madonna《The Confessions Tour》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/fc5cb1fc-d824-3128-bcc9-77572517a503",
+          "title": "The Confessions Tour",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "14f83b04-2b9e-4974-9169-476f26475be3",
+      "releaseId": "4dcd0a13-9a47-480a-b7c6-6a73cc3e035f",
+      "title": "Hurry Up Tomorrow",
+      "artist": "The Weeknd",
+      "releaseDate": "2026-04-29",
+      "bucket": "released_top",
+      "rank": 27,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "42c5c9a4-02aa-4f45-aec5-3078ed2cb79a",
+      "releaseId": "8b5f3876-f65f-4aad-9e7b-ff9d6b6197fe",
+      "title": "Collaborations",
+      "artist": "Bruno Mars",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 28,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "cfaad5aa-3381-4945-8dbc-3a2997acf820",
+      "releaseId": "03dd5840-6108-4e62-b1bb-52278a7cd567",
+      "title": "Sojourn",
+      "artist": "CAVS",
+      "releaseDate": "2026-04-24",
+      "bucket": "released_top",
+      "rank": 29,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/cfaad5aa-3381-4945-8dbc-3a2997acf820/01-cover_art_archive-56bb7689c7e8.jpg",
+      "images": [
+        {
+          "id": "cfaad5aa-3381-4945-8dbc-3a2997acf820:1:56bb7689c7e8",
+          "localUrl": "visuals/2026/released_top/cfaad5aa-3381-4945-8dbc-3a2997acf820/01-cover_art_archive-56bb7689c7e8.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/cfaad5aa-3381-4945-8dbc-3a2997acf820",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "CAVS《Sojourn》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/cfaad5aa-3381-4945-8dbc-3a2997acf820",
+          "title": "Sojourn",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "38339050-b4bb-4a6e-bab3-d2d0d90fe9b3",
+      "releaseId": "f907521d-cb5c-4c70-93cc-a37306dbfc08",
+      "title": "Up Here",
+      "artist": "Bluey",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 30,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3/01-cover_art_archive-bb59bc481465.jpg",
+      "images": [
+        {
+          "id": "38339050-b4bb-4a6e-bab3-d2d0d90fe9b3:1:bb59bc481465",
+          "localUrl": "visuals/2026/released_top/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3/01-cover_art_archive-bb59bc481465.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Bluey《Up Here》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3",
+          "title": "Up Here",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "380ae97c-1f75-46d9-a69a-9bbef4e7e970",
+      "releaseId": "72ec8e05-52da-4143-bdc5-0e8c1acf9234",
+      "title": "Toy With Me",
+      "artist": "Meghan Trainor",
+      "releaseDate": "2026-04-24",
+      "bucket": "released_top",
+      "rank": 31,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/380ae97c-1f75-46d9-a69a-9bbef4e7e970/01-cover_art_archive-c2537679b479.jpg",
+      "images": [
+        {
+          "id": "380ae97c-1f75-46d9-a69a-9bbef4e7e970:1:c2537679b479",
+          "localUrl": "visuals/2026/released_top/380ae97c-1f75-46d9-a69a-9bbef4e7e970/01-cover_art_archive-c2537679b479.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/380ae97c-1f75-46d9-a69a-9bbef4e7e970",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Meghan Trainor《Toy With Me》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/380ae97c-1f75-46d9-a69a-9bbef4e7e970",
+          "title": "Toy With Me",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "dfd582da-ab2e-4009-9365-405bf1ad2c49",
+      "releaseId": "843e4174-9f3d-4190-b403-7de1bae0767b",
+      "title": "Dangerous Woman",
+      "artist": "Ariana Grande",
+      "releaseDate": "2026-05-29",
+      "bucket": "released_top",
+      "rank": 32,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/dfd582da-ab2e-4009-9365-405bf1ad2c49/01-cover_art_archive-681b98442ae8.jpg",
+      "images": [
+        {
+          "id": "dfd582da-ab2e-4009-9365-405bf1ad2c49:1:681b98442ae8",
+          "localUrl": "visuals/2026/released_top/dfd582da-ab2e-4009-9365-405bf1ad2c49/01-cover_art_archive-681b98442ae8.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/dfd582da-ab2e-4009-9365-405bf1ad2c49",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Ariana Grande《Dangerous Woman》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/dfd582da-ab2e-4009-9365-405bf1ad2c49",
+          "title": "Dangerous Woman",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "51dd6e33-7307-3c25-9356-8f45227234cf",
+      "releaseId": "e4ef0aaf-e5f7-457c-9426-5665c465ad8d",
+      "title": "Carly Simon",
+      "artist": "Carly Simon",
+      "releaseDate": "2026-05",
+      "bucket": "released_top",
+      "rank": 33,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/51dd6e33-7307-3c25-9356-8f45227234cf/01-cover_art_archive-135438b47cee.jpg",
+      "images": [
+        {
+          "id": "51dd6e33-7307-3c25-9356-8f45227234cf:1:135438b47cee",
+          "localUrl": "visuals/2026/released_top/51dd6e33-7307-3c25-9356-8f45227234cf/01-cover_art_archive-135438b47cee.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/51dd6e33-7307-3c25-9356-8f45227234cf",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Carly Simon《Carly Simon》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/51dd6e33-7307-3c25-9356-8f45227234cf",
+          "title": "Carly Simon",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "a67dca90-8cf1-4395-b8c1-67fa4ea698d8",
+      "releaseId": "d3be19dc-8be1-44eb-b481-e0ea0b18b2fe",
+      "title": "Somebody Tried to Sell Me a Bridge",
+      "artist": "Van Morrison",
+      "releaseDate": "2026-01-23",
+      "bucket": "released_top",
+      "rank": 34,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/a67dca90-8cf1-4395-b8c1-67fa4ea698d8/01-cover_art_archive-907d485fb87b.jpg",
+      "images": [
+        {
+          "id": "a67dca90-8cf1-4395-b8c1-67fa4ea698d8:1:907d485fb87b",
+          "localUrl": "visuals/2026/released_top/a67dca90-8cf1-4395-b8c1-67fa4ea698d8/01-cover_art_archive-907d485fb87b.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/a67dca90-8cf1-4395-b8c1-67fa4ea698d8",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Van Morrison《Somebody Tried to Sell Me a Bridge》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/a67dca90-8cf1-4395-b8c1-67fa4ea698d8",
+          "title": "Somebody Tried to Sell Me a Bridge",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "c73cd5dc-6792-4226-9949-60819a270d30",
+      "releaseId": "cfb7ac7a-fbb9-4596-a344-ca1468ead234",
+      "title": "Free·Man",
+      "artist": "Freeman",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 35,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/c73cd5dc-6792-4226-9949-60819a270d30/01-cover_art_archive-8748bf0e6ad6.jpg",
+      "images": [
+        {
+          "id": "c73cd5dc-6792-4226-9949-60819a270d30:1:8748bf0e6ad6",
+          "localUrl": "visuals/2026/released_top/c73cd5dc-6792-4226-9949-60819a270d30/01-cover_art_archive-8748bf0e6ad6.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/c73cd5dc-6792-4226-9949-60819a270d30",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Freeman《Free·Man》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/c73cd5dc-6792-4226-9949-60819a270d30",
+          "title": "Free·Man",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "cec81633-5419-4f92-b0ac-6e9c508a042f",
+      "releaseId": "ed96dfb2-eb1d-475d-8a70-fb20c01f8aec",
+      "title": "U",
+      "artist": "underscores",
+      "releaseDate": "2026-05-15",
+      "bucket": "released_top",
+      "rank": 36,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/cec81633-5419-4f92-b0ac-6e9c508a042f/01-cover_art_archive-bc7a5420f7a2.jpg",
+      "images": [
+        {
+          "id": "cec81633-5419-4f92-b0ac-6e9c508a042f:1:bc7a5420f7a2",
+          "localUrl": "visuals/2026/released_top/cec81633-5419-4f92-b0ac-6e9c508a042f/01-cover_art_archive-bc7a5420f7a2.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/cec81633-5419-4f92-b0ac-6e9c508a042f",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "underscores《U》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/cec81633-5419-4f92-b0ac-6e9c508a042f",
+          "title": "U",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "fe1afd65-1f02-4a1d-a322-d91a69eca15e",
+      "releaseId": "d3a23a24-5f6c-44c2-a2c0-e78bed06f1c6",
+      "title": "Mine de rien",
+      "artist": "Volo",
+      "releaseDate": "2026-03-20",
+      "bucket": "released_top",
+      "rank": 37,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/fe1afd65-1f02-4a1d-a322-d91a69eca15e/01-cover_art_archive-c971b73dd9bb.jpg",
+      "images": [
+        {
+          "id": "fe1afd65-1f02-4a1d-a322-d91a69eca15e:1:c971b73dd9bb",
+          "localUrl": "visuals/2026/released_top/fe1afd65-1f02-4a1d-a322-d91a69eca15e/01-cover_art_archive-c971b73dd9bb.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/fe1afd65-1f02-4a1d-a322-d91a69eca15e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Volo《Mine de rien》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/fe1afd65-1f02-4a1d-a322-d91a69eca15e",
+          "title": "Mine de rien",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "97c449fb-4e5a-4e3c-a303-6f826d128493",
+      "releaseId": "48aa1a24-de0d-4a27-9b4b-e492e7b8f995",
+      "title": "Negen Levens",
+      "artist": "Camille",
+      "releaseDate": "2026-05-22",
+      "bucket": "released_top",
+      "rank": 38,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/97c449fb-4e5a-4e3c-a303-6f826d128493/01-cover_art_archive-7ba56f6d506e.jpg",
+      "images": [
+        {
+          "id": "97c449fb-4e5a-4e3c-a303-6f826d128493:1:7ba56f6d506e",
+          "localUrl": "visuals/2026/released_top/97c449fb-4e5a-4e3c-a303-6f826d128493/01-cover_art_archive-7ba56f6d506e.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/97c449fb-4e5a-4e3c-a303-6f826d128493",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Camille《Negen Levens》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/97c449fb-4e5a-4e3c-a303-6f826d128493",
+          "title": "Negen Levens",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "8df9d9c1-bed1-480c-80f5-766323e122dc",
+      "releaseId": "d33adc0b-6dd4-4ad6-9667-7e94e8699056",
+      "title": "Another Country",
+      "artist": "Cindy",
+      "releaseDate": "2026-05-01",
+      "bucket": "released_top",
+      "rank": 39,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/8df9d9c1-bed1-480c-80f5-766323e122dc/01-cover_art_archive-686bb98cddef.jpg",
+      "images": [
+        {
+          "id": "8df9d9c1-bed1-480c-80f5-766323e122dc:1:686bb98cddef",
+          "localUrl": "visuals/2026/released_top/8df9d9c1-bed1-480c-80f5-766323e122dc/01-cover_art_archive-686bb98cddef.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/8df9d9c1-bed1-480c-80f5-766323e122dc",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Cindy《Another Country》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/8df9d9c1-bed1-480c-80f5-766323e122dc",
+          "title": "Another Country",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "302caf43-77a0-4382-86ef-89ead49766ca",
+      "releaseId": "0690e60f-c794-4449-9d5b-8fa0ac287ba1",
+      "title": "Flower of Life",
+      "artist": "System 7",
+      "releaseDate": "2026-04-17",
+      "bucket": "released_top",
+      "rank": 40,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "2f1c1e4c-6850-43a5-b818-634f996445b8",
+      "releaseId": "243e207c-f1ff-4730-889c-15f34dde9b0d",
+      "title": "Goliath",
+      "artist": "Exodus",
+      "releaseDate": "2026-03-20",
+      "bucket": "released_top",
+      "rank": 41,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-cover_art_archive-6286b6b79537.jpg",
+      "images": [
+        {
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:1:6286b6b79537",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-cover_art_archive-6286b6b79537.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/2f1c1e4c-6850-43a5-b818-634f996445b8",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Exodus《Goliath》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/2f1c1e4c-6850-43a5-b818-634f996445b8",
+          "title": "Goliath",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "5351a021-c5cf-4642-999c-bbfc6d98212c",
+      "releaseId": "9f58c975-9a0e-4dc1-82a8-a95e92036bd8",
+      "title": "To Whom This May Concern",
+      "artist": "Jill Scott",
+      "releaseDate": "2026-02-13",
+      "bucket": "released_top",
+      "rank": 42,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/5351a021-c5cf-4642-999c-bbfc6d98212c/01-cover_art_archive-8fe8d31791b1.jpg",
+      "images": [
+        {
+          "id": "5351a021-c5cf-4642-999c-bbfc6d98212c:1:8fe8d31791b1",
+          "localUrl": "visuals/2026/released_top/5351a021-c5cf-4642-999c-bbfc6d98212c/01-cover_art_archive-8fe8d31791b1.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/5351a021-c5cf-4642-999c-bbfc6d98212c",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Jill Scott《To Whom This May Concern》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/5351a021-c5cf-4642-999c-bbfc6d98212c",
+          "title": "To Whom This May Concern",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "d79d2651-a4f6-30df-8262-874f08cfe94b",
+      "releaseId": "73c1d9d9-c081-497b-a1b3-ac4eaaae33a7",
+      "title": "Flying Teapot: Radio Gnome Invisible, Part 1",
+      "artist": "Gong",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 43,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/d79d2651-a4f6-30df-8262-874f08cfe94b/01-cover_art_archive-17f9a1b68a88.jpg",
+      "images": [
+        {
+          "id": "d79d2651-a4f6-30df-8262-874f08cfe94b:1:17f9a1b68a88",
+          "localUrl": "visuals/2026/released_top/d79d2651-a4f6-30df-8262-874f08cfe94b/01-cover_art_archive-17f9a1b68a88.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/d79d2651-a4f6-30df-8262-874f08cfe94b",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Gong《Flying Teapot: Radio Gnome Invisible, Part 1》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/d79d2651-a4f6-30df-8262-874f08cfe94b",
+          "title": "Flying Teapot: Radio Gnome Invisible, Part 1",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "4da9c492-078e-3779-8b64-a00bfd8f6b68",
+      "releaseId": "c30b4405-cd73-4530-b1e5-3b6b92601ae6",
+      "title": "Here Come The Tears",
+      "artist": "The Tears",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 44,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/4da9c492-078e-3779-8b64-a00bfd8f6b68/01-cover_art_archive-f4c6a3e39d67.jpg",
+      "images": [
+        {
+          "id": "4da9c492-078e-3779-8b64-a00bfd8f6b68:1:f4c6a3e39d67",
+          "localUrl": "visuals/2026/released_top/4da9c492-078e-3779-8b64-a00bfd8f6b68/01-cover_art_archive-f4c6a3e39d67.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/4da9c492-078e-3779-8b64-a00bfd8f6b68",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "The Tears《Here Come The Tears》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/4da9c492-078e-3779-8b64-a00bfd8f6b68",
+          "title": "Here Come The Tears",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "cd80d129-cb28-4e70-b4c2-b4ac052cb90e",
+      "releaseId": "26b07924-7d3e-4234-a83c-eba59549cd4e",
+      "title": "Distracted",
+      "artist": "Thundercat",
+      "releaseDate": "2026-04-03",
+      "bucket": "released_top",
+      "rank": 45,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/cd80d129-cb28-4e70-b4c2-b4ac052cb90e/01-cover_art_archive-6f821e195f51.jpg",
+      "images": [
+        {
+          "id": "cd80d129-cb28-4e70-b4c2-b4ac052cb90e:1:6f821e195f51",
+          "localUrl": "visuals/2026/released_top/cd80d129-cb28-4e70-b4c2-b4ac052cb90e/01-cover_art_archive-6f821e195f51.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/cd80d129-cb28-4e70-b4c2-b4ac052cb90e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Thundercat《Distracted》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/cd80d129-cb28-4e70-b4c2-b4ac052cb90e",
+          "title": "Distracted",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "672b0b19-7438-4fab-8f8e-78f0330c9cd1",
+      "releaseId": "38fd41dd-b56d-4e74-8073-60e80704f67e",
+      "title": "Trixies",
+      "artist": "Squeeze",
+      "releaseDate": "2026-03-06",
+      "bucket": "released_top",
+      "rank": 46,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/672b0b19-7438-4fab-8f8e-78f0330c9cd1/01-cover_art_archive-319a7c6722b2.jpg",
+      "images": [
+        {
+          "id": "672b0b19-7438-4fab-8f8e-78f0330c9cd1:1:319a7c6722b2",
+          "localUrl": "visuals/2026/released_top/672b0b19-7438-4fab-8f8e-78f0330c9cd1/01-cover_art_archive-319a7c6722b2.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/672b0b19-7438-4fab-8f8e-78f0330c9cd1",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Squeeze《Trixies》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/672b0b19-7438-4fab-8f8e-78f0330c9cd1",
+          "title": "Trixies",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "77227490-12f9-3cf9-ae74-196f66c02403",
+      "releaseId": "9d0dbd0a-a85a-470e-b940-abcaebaed368",
+      "title": "Play",
+      "artist": "Squeeze",
+      "releaseDate": "2026-01-23",
+      "bucket": "released_top",
+      "rank": 47,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/77227490-12f9-3cf9-ae74-196f66c02403/01-cover_art_archive-f2f9c1f7560b.jpg",
+      "images": [
+        {
+          "id": "77227490-12f9-3cf9-ae74-196f66c02403:1:f2f9c1f7560b",
+          "localUrl": "visuals/2026/released_top/77227490-12f9-3cf9-ae74-196f66c02403/01-cover_art_archive-f2f9c1f7560b.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/77227490-12f9-3cf9-ae74-196f66c02403",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Squeeze《Play》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/77227490-12f9-3cf9-ae74-196f66c02403",
+          "title": "Play",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "b31d2813-7259-4929-aac0-ebf4f4544e8f",
+      "releaseId": "1283cdcb-690a-4946-b9a7-a883438d44ba",
+      "title": "Strange Days 1967: A Work in Progress, Part 2",
+      "artist": "The Doors",
+      "releaseDate": "2026-04-18",
+      "bucket": "released_top",
+      "rank": 48,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "5d8cec42-b57c-4574-a9ec-6cc367202bae",
+      "releaseId": "b6583451-b344-4c69-a337-b3c6e22c4ad5",
+      "title": "Mirror Touch",
+      "artist": "Volumes",
+      "releaseDate": "2026-02-27",
+      "bucket": "released_top",
+      "rank": 49,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/5d8cec42-b57c-4574-a9ec-6cc367202bae/01-cover_art_archive-6b07d57139b4.jpg",
+      "images": [
+        {
+          "id": "5d8cec42-b57c-4574-a9ec-6cc367202bae:1:6b07d57139b4",
+          "localUrl": "visuals/2026/released_top/5d8cec42-b57c-4574-a9ec-6cc367202bae/01-cover_art_archive-6b07d57139b4.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/5d8cec42-b57c-4574-a9ec-6cc367202bae",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Volumes《Mirror Touch》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/5d8cec42-b57c-4574-a9ec-6cc367202bae",
+          "title": "Mirror Touch",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf",
+      "releaseId": "53a1d493-8fc3-4989-b734-e4453e711d80",
+      "title": "THE CORE - 核",
+      "artist": "XG",
+      "releaseDate": "2026-01-23",
+      "bucket": "released_top",
+      "rank": 50,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-cover_art_archive-9ea48acf4659.jpg",
+      "images": [
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:1:9ea48acf4659",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-cover_art_archive-9ea48acf4659.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "XG《THE CORE - 核》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf",
+          "title": "THE CORE - 核",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-aaeaeea9",
+      "releaseId": "kpopofficial-aaeaeea9",
+      "title": "NEW WAV",
+      "artist": "TREASURE",
+      "releaseDate": "2026-06-01",
+      "bucket": "upcoming_top",
+      "rank": 1,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-aaeaeea9/01-kpopofficial-2b0599072524.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-aaeaeea9:1:2b0599072524",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-aaeaeea9/01-kpopofficial-2b0599072524.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/treasure-new-wav/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "TREASURE《NEW WAV》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/treasure-new-wav/",
+          "title": "NEW WAV",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "a4a9f934-7006-46d8-8f21-960ed80eba29",
+      "releaseId": "c5ca07b2-cf45-4078-b9cd-e75b26147764",
+      "title": "Terrestrials",
+      "artist": "Pond",
+      "releaseDate": "2026-06-19",
+      "bucket": "upcoming_top",
+      "rank": 2,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/a4a9f934-7006-46d8-8f21-960ed80eba29/01-cover_art_archive-55636ea759ab.jpg",
+      "images": [
+        {
+          "id": "a4a9f934-7006-46d8-8f21-960ed80eba29:1:55636ea759ab",
+          "localUrl": "visuals/2026/upcoming_top/a4a9f934-7006-46d8-8f21-960ed80eba29/01-cover_art_archive-55636ea759ab.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/a4a9f934-7006-46d8-8f21-960ed80eba29",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Pond《Terrestrials》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/a4a9f934-7006-46d8-8f21-960ed80eba29",
+          "title": "Terrestrials",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "2dc4dae6-3475-4217-9e9f-06d3f0c763b4",
+      "releaseId": "db68504d-5674-4709-89d5-0315b1fc9ac3",
+      "title": "CONFESSIONS II",
+      "artist": "Madonna",
+      "releaseDate": "2026-07-03",
+      "bucket": "upcoming_top",
+      "rank": 3,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/2dc4dae6-3475-4217-9e9f-06d3f0c763b4/01-cover_art_archive-1232f6352315.jpg",
+      "images": [
+        {
+          "id": "2dc4dae6-3475-4217-9e9f-06d3f0c763b4:1:1232f6352315",
+          "localUrl": "visuals/2026/upcoming_top/2dc4dae6-3475-4217-9e9f-06d3f0c763b4/01-cover_art_archive-1232f6352315.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/2dc4dae6-3475-4217-9e9f-06d3f0c763b4",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Madonna《CONFESSIONS II》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/2dc4dae6-3475-4217-9e9f-06d3f0c763b4",
+          "title": "CONFESSIONS II",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "7dffeca3-420b-4095-abf4-f2e1ab61be35",
+      "releaseId": "66f96b82-4cf1-41a7-82b1-ee075a91952b",
+      "title": "The Wow! Signal",
+      "artist": "Muse",
+      "releaseDate": "2026-06-26",
+      "bucket": "upcoming_top",
+      "rank": 4,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/7dffeca3-420b-4095-abf4-f2e1ab61be35/01-cover_art_archive-87a41828a17e.jpg",
+      "images": [
+        {
+          "id": "7dffeca3-420b-4095-abf4-f2e1ab61be35:1:87a41828a17e",
+          "localUrl": "visuals/2026/upcoming_top/7dffeca3-420b-4095-abf4-f2e1ab61be35/01-cover_art_archive-87a41828a17e.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/7dffeca3-420b-4095-abf4-f2e1ab61be35",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Muse《The Wow! Signal》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/7dffeca3-420b-4095-abf4-f2e1ab61be35",
+          "title": "The Wow! Signal",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "4c4eee61-da1e-4115-8eb9-07e5b671fefe",
+      "releaseId": "a2b4269a-ba03-412c-a2e1-5f2a565d10c1",
+      "title": "you seem pretty sad for a girl so in love",
+      "artist": "Olivia Rodrigo",
+      "releaseDate": "2026-06-12",
+      "bucket": "upcoming_top",
+      "rank": 5,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/4c4eee61-da1e-4115-8eb9-07e5b671fefe/01-cover_art_archive-152108de4b5a.jpg",
+      "images": [
+        {
+          "id": "4c4eee61-da1e-4115-8eb9-07e5b671fefe:1:152108de4b5a",
+          "localUrl": "visuals/2026/upcoming_top/4c4eee61-da1e-4115-8eb9-07e5b671fefe/01-cover_art_archive-152108de4b5a.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/4c4eee61-da1e-4115-8eb9-07e5b671fefe",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Olivia Rodrigo《you seem pretty sad for a girl so in love》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/4c4eee61-da1e-4115-8eb9-07e5b671fefe",
+          "title": "you seem pretty sad for a girl so in love",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "2b8f453f-ffd6-4860-8742-7cff1c2feae3",
+      "releaseId": "32386766-a3dd-4eaa-b0b3-4a97e69f932f",
+      "title": "petal",
+      "artist": "Ariana Grande",
+      "releaseDate": "2026-07-31",
+      "bucket": "upcoming_top",
+      "rank": 6,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-3c76adb4",
+      "releaseId": "kpopofficial-3c76adb4",
+      "title": "Imperfect-I’mperfect",
+      "artist": "FIFTY FIFTY",
+      "releaseDate": "2026-06-01",
+      "bucket": "upcoming_top",
+      "rank": 7,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/01-kpopofficial-8622a00d8bbd.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-3c76adb4:1:8622a00d8bbd",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/01-kpopofficial-8622a00d8bbd.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/fifty-fifty-imperfect-imperfect/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/fifty-fifty-imperfect-imperfect/",
+          "title": "Imperfect-I’mperfect",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "b9df3445-4699-4221-9994-734c1c912468",
+      "releaseId": "3a945ca2-d10d-435b-9294-8b36683336cc",
+      "title": "Reality Awaits",
+      "artist": "The Strokes",
+      "releaseDate": "2026-06-26",
+      "bucket": "upcoming_top",
+      "rank": 8,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/b9df3445-4699-4221-9994-734c1c912468/01-cover_art_archive-c1d54db9f3fd.jpg",
+      "images": [
+        {
+          "id": "b9df3445-4699-4221-9994-734c1c912468:1:c1d54db9f3fd",
+          "localUrl": "visuals/2026/upcoming_top/b9df3445-4699-4221-9994-734c1c912468/01-cover_art_archive-c1d54db9f3fd.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/b9df3445-4699-4221-9994-734c1c912468",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "The Strokes《Reality Awaits》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/b9df3445-4699-4221-9994-734c1c912468",
+          "title": "Reality Awaits",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-d2d307c5",
+      "releaseId": "kpopofficial-d2d307c5",
+      "title": "GOLDEN HOUR : Part.5",
+      "artist": "ATEEZ",
+      "releaseDate": "2026-06-26",
+      "bucket": "upcoming_top",
+      "rank": 9,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-d2d307c5/01-kpopofficial-34e6610c83c0.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-d2d307c5:1:34e6610c83c0",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-d2d307c5/01-kpopofficial-34e6610c83c0.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/ateez-golden-hour-part5/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "ATEEZ《GOLDEN HOUR : Part.5》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/ateez-golden-hour-part5/",
+          "title": "GOLDEN HOUR : Part.5",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-8f558a0c",
+      "releaseId": "kpopofficial-8f558a0c",
+      "title": "ASSEMBLE26 LOVE&POP pt.1",
+      "artist": "tripleS",
+      "releaseDate": "2026-06-01",
+      "bucket": "upcoming_top",
+      "rank": 10,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-8f558a0c/01-kpopofficial-24152b711599.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-8f558a0c:1:24152b711599",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-8f558a0c/01-kpopofficial-24152b711599.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/triples-assemble26-love-pop-pt-1/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "tripleS《ASSEMBLE26 LOVE&POP pt.1》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/triples-assemble26-love-pop-pt-1/",
+          "title": "ASSEMBLE26 LOVE&POP pt.1",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "db49226b-0ab0-489a-82a5-84f57961798b",
+      "releaseId": "61885a22-85b3-4720-8afb-3d4db4c3634d",
+      "title": "Happy Thought School",
+      "artist": "Zoon",
+      "releaseDate": "2026-06-19",
+      "bucket": "upcoming_top",
+      "rank": 11,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/db49226b-0ab0-489a-82a5-84f57961798b/01-cover_art_archive-ac34c36ff799.jpg",
+      "images": [
+        {
+          "id": "db49226b-0ab0-489a-82a5-84f57961798b:1:ac34c36ff799",
+          "localUrl": "visuals/2026/upcoming_top/db49226b-0ab0-489a-82a5-84f57961798b/01-cover_art_archive-ac34c36ff799.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/db49226b-0ab0-489a-82a5-84f57961798b",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Zoon《Happy Thought School》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/db49226b-0ab0-489a-82a5-84f57961798b",
+          "title": "Happy Thought School",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "de4a7faf-f723-4c5f-b7c3-abea91faeda8",
+      "releaseId": "506219cc-5296-4305-8579-0aff1ff146c3",
+      "title": "ULTRA",
+      "artist": "Six Sex",
+      "releaseDate": "2026-06-06",
+      "bucket": "upcoming_top",
+      "rank": 12,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/de4a7faf-f723-4c5f-b7c3-abea91faeda8/01-cover_art_archive-4d4e9a62c8dc.jpg",
+      "images": [
+        {
+          "id": "de4a7faf-f723-4c5f-b7c3-abea91faeda8:1:4d4e9a62c8dc",
+          "localUrl": "visuals/2026/upcoming_top/de4a7faf-f723-4c5f-b7c3-abea91faeda8/01-cover_art_archive-4d4e9a62c8dc.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/de4a7faf-f723-4c5f-b7c3-abea91faeda8",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Six Sex《ULTRA》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/de4a7faf-f723-4c5f-b7c3-abea91faeda8",
+          "title": "ULTRA",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "74fffc36-a761-4592-b56a-9d52f5ad92fc",
+      "releaseId": "88522bcd-535e-4374-85fe-dbab0b69b6c7",
+      "title": "SMILE",
+      "artist": "Madsen",
+      "releaseDate": "2026-06-05",
+      "bucket": "upcoming_top",
+      "rank": 13,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/74fffc36-a761-4592-b56a-9d52f5ad92fc/01-cover_art_archive-c931a5c26af5.jpg",
+      "images": [
+        {
+          "id": "74fffc36-a761-4592-b56a-9d52f5ad92fc:1:c931a5c26af5",
+          "localUrl": "visuals/2026/upcoming_top/74fffc36-a761-4592-b56a-9d52f5ad92fc/01-cover_art_archive-c931a5c26af5.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/74fffc36-a761-4592-b56a-9d52f5ad92fc",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Madsen《SMILE》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/74fffc36-a761-4592-b56a-9d52f5ad92fc",
+          "title": "SMILE",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e",
+      "releaseId": "86c6ac10-bdfa-4e9c-8da4-fbfd666b7309",
+      "title": "Pain Gain",
+      "artist": "Pain Gain",
+      "releaseDate": "2026-07-10",
+      "bucket": "upcoming_top",
+      "rank": 14,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e/01-cover_art_archive-685899920640.jpg",
+      "images": [
+        {
+          "id": "b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e:1:685899920640",
+          "localUrl": "visuals/2026/upcoming_top/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e/01-cover_art_archive-685899920640.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Pain Gain《Pain Gain》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e",
+          "title": "Pain Gain",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "3a11deea-98b9-48a2-b844-2c859e5904ba",
+      "releaseId": "61b1240b-4469-438b-b876-30da9c27bef3",
+      "title": "Dinner Party",
+      "artist": "Niall Horan",
+      "releaseDate": "2026-06-05",
+      "bucket": "upcoming_top",
+      "rank": 15,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/3a11deea-98b9-48a2-b844-2c859e5904ba/01-cover_art_archive-09768dff6c82.jpg",
+      "images": [
+        {
+          "id": "3a11deea-98b9-48a2-b844-2c859e5904ba:1:09768dff6c82",
+          "localUrl": "visuals/2026/upcoming_top/3a11deea-98b9-48a2-b844-2c859e5904ba/01-cover_art_archive-09768dff6c82.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/3a11deea-98b9-48a2-b844-2c859e5904ba",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Niall Horan《Dinner Party》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/3a11deea-98b9-48a2-b844-2c859e5904ba",
+          "title": "Dinner Party",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6",
+      "releaseId": "8559e1ab-7987-4d6b-8f35-02d101750b45",
+      "title": "Fire From the Hip",
+      "artist": "Finn Wolfhard",
+      "releaseDate": "2026-07-10",
+      "bucket": "upcoming_top",
+      "rank": 16,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6/01-cover_art_archive-a87c14931203.jpg",
+      "images": [
+        {
+          "id": "09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6:1:a87c14931203",
+          "localUrl": "visuals/2026/upcoming_top/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6/01-cover_art_archive-a87c14931203.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Finn Wolfhard《Fire From the Hip》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6",
+          "title": "Fire From the Hip",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-32ce39bb",
+      "releaseId": "kpopofficial-32ce39bb",
+      "title": "II",
+      "artist": "RIIZE",
+      "releaseDate": "2026-06-15",
+      "bucket": "upcoming_top",
+      "rank": 17,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-32ce39bb/01-kpopofficial-ad43f5b4557b.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-32ce39bb:1:ad43f5b4557b",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-32ce39bb/01-kpopofficial-ad43f5b4557b.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/riize-mini-album-ii/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "RIIZE《II》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/riize-mini-album-ii/",
+          "title": "II",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "6c7fe306-6a28-4fa7-970c-f465019ec8eb",
+      "releaseId": "16c5b200-f28b-4ae2-bbc1-7232a8a7ea73",
+      "title": "The Plot in You",
+      "artist": "The Plot in You",
+      "releaseDate": "2026-07-10",
+      "bucket": "upcoming_top",
+      "rank": 18,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/6c7fe306-6a28-4fa7-970c-f465019ec8eb/01-cover_art_archive-002707961ddf.jpg",
+      "images": [
+        {
+          "id": "6c7fe306-6a28-4fa7-970c-f465019ec8eb:1:002707961ddf",
+          "localUrl": "visuals/2026/upcoming_top/6c7fe306-6a28-4fa7-970c-f465019ec8eb/01-cover_art_archive-002707961ddf.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/6c7fe306-6a28-4fa7-970c-f465019ec8eb",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "The Plot in You《The Plot in You》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/6c7fe306-6a28-4fa7-970c-f465019ec8eb",
+          "title": "The Plot in You",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "de928b96-183b-4c3f-926d-9ea2c67695e3",
+      "releaseId": "a70b23a2-d214-4de6-8a93-3bc00f541cc9",
+      "title": "Bring On The Psychics",
+      "artist": "Quicksand",
+      "releaseDate": "2026-07-17",
+      "bucket": "upcoming_top",
+      "rank": 19,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/de928b96-183b-4c3f-926d-9ea2c67695e3/01-cover_art_archive-974b9595cb5d.jpg",
+      "images": [
+        {
+          "id": "de928b96-183b-4c3f-926d-9ea2c67695e3:1:974b9595cb5d",
+          "localUrl": "visuals/2026/upcoming_top/de928b96-183b-4c3f-926d-9ea2c67695e3/01-cover_art_archive-974b9595cb5d.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/de928b96-183b-4c3f-926d-9ea2c67695e3",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Quicksand《Bring On The Psychics》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/de928b96-183b-4c3f-926d-9ea2c67695e3",
+          "title": "Bring On The Psychics",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-c9adbc07",
+      "releaseId": "kpopofficial-c9adbc07",
+      "title": "HOME",
+      "artist": "BOYNEXTDOOR",
+      "releaseDate": "2026-06-08",
+      "bucket": "upcoming_top",
+      "rank": 20,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-c9adbc07/01-kpopofficial-73bbecc4da67.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-c9adbc07:1:73bbecc4da67",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-c9adbc07/01-kpopofficial-73bbecc4da67.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/boynextdoor-home/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "BOYNEXTDOOR《HOME》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/boynextdoor-home/",
+          "title": "HOME",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-011e5f20",
+      "releaseId": "kpopofficial-011e5f20",
+      "title": "Atmos",
+      "artist": "SHINee",
+      "releaseDate": "2026-06-01",
+      "bucket": "upcoming_top",
+      "rank": 21,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-011e5f20/01-kpopofficial-8a067ead55ea.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-011e5f20:1:8a067ead55ea",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-011e5f20/01-kpopofficial-8a067ead55ea.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/shinee-atmos/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "SHINee《Atmos》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/shinee-atmos/",
+          "title": "Atmos",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "98b7365b-a6d7-47a9-a15a-5de1d549fda2",
+      "releaseId": "7b0b48ec-c899-4699-91e2-3d1aeb85be1c",
+      "title": "This Too Shall Pass",
+      "artist": "Red Kite",
+      "releaseDate": "2026-06-19",
+      "bucket": "upcoming_top",
+      "rank": 22,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/98b7365b-a6d7-47a9-a15a-5de1d549fda2/01-cover_art_archive-9dfc8ae5c0b9.jpg",
+      "images": [
+        {
+          "id": "98b7365b-a6d7-47a9-a15a-5de1d549fda2:1:9dfc8ae5c0b9",
+          "localUrl": "visuals/2026/upcoming_top/98b7365b-a6d7-47a9-a15a-5de1d549fda2/01-cover_art_archive-9dfc8ae5c0b9.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/98b7365b-a6d7-47a9-a15a-5de1d549fda2",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Red Kite《This Too Shall Pass》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/98b7365b-a6d7-47a9-a15a-5de1d549fda2",
+          "title": "This Too Shall Pass",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-075293a4",
+      "releaseId": "kpopofficial-075293a4",
+      "title": "ONF:MY SELF",
+      "artist": "ONF",
+      "releaseDate": "2026-06-17",
+      "bucket": "upcoming_top",
+      "rank": 23,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-075293a4/01-kpopofficial-f36322122d4a.png",
+      "images": [
+        {
+          "id": "kpopofficial-075293a4:1:f36322122d4a",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-075293a4/01-kpopofficial-f36322122d4a.png",
+          "sourceUrl": "https://kpopofficial.com/album/onf-onf-my-self/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "ONF《ONF:MY SELF》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/onf-onf-my-self/",
+          "title": "ONF:MY SELF",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "86265999-c4da-44fc-8323-cdff283acc2c",
+      "releaseId": "cfaf5801-96a8-48c4-a22e-119907345f8b",
+      "title": "The Hymns",
+      "artist": "CeCe Winans",
+      "releaseDate": "2026-06-05",
+      "bucket": "upcoming_top",
+      "rank": 24,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/86265999-c4da-44fc-8323-cdff283acc2c/01-cover_art_archive-a4e049477eb7.jpg",
+      "images": [
+        {
+          "id": "86265999-c4da-44fc-8323-cdff283acc2c:1:a4e049477eb7",
+          "localUrl": "visuals/2026/upcoming_top/86265999-c4da-44fc-8323-cdff283acc2c/01-cover_art_archive-a4e049477eb7.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/86265999-c4da-44fc-8323-cdff283acc2c",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "CeCe Winans《The Hymns》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/86265999-c4da-44fc-8323-cdff283acc2c",
+          "title": "The Hymns",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "d0251bcf-883f-47ff-aa7b-d8dfe07a87d0",
+      "releaseId": "0eb0da46-ac59-4ad8-befc-2c0e45dfe883",
+      "title": "What a Time",
+      "artist": "Barry Manilow",
+      "releaseDate": "2026-06-05",
+      "bucket": "upcoming_top",
+      "rank": 25,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0/01-cover_art_archive-1364d43ff4f5.jpg",
+      "images": [
+        {
+          "id": "d0251bcf-883f-47ff-aa7b-d8dfe07a87d0:1:1364d43ff4f5",
+          "localUrl": "visuals/2026/upcoming_top/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0/01-cover_art_archive-1364d43ff4f5.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Barry Manilow《What a Time》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0",
+          "title": "What a Time",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "2dab6b56-a959-4c82-8dfb-25a1babae626",
+      "releaseId": "8a80ed4c-5f3b-4bb8-95e6-29f9c8c7dcde",
+      "title": "Schwarze Tränen",
+      "artist": "Hypnotize",
+      "releaseDate": "2026-06-05",
+      "bucket": "upcoming_top",
+      "rank": 26,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "kpopofficial-5dd76e13",
+      "releaseId": "kpopofficial-5dd76e13",
+      "title": "BITE NOW",
+      "artist": "MEOVV",
+      "releaseDate": "2026-06-01",
+      "bucket": "upcoming_top",
+      "rank": 27,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-5dd76e13/01-kpopofficial-2cc08d7b5eb0.jpg",
+      "images": [
+        {
+          "id": "kpopofficial-5dd76e13:1:2cc08d7b5eb0",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-5dd76e13/01-kpopofficial-2cc08d7b5eb0.jpg",
+          "sourceUrl": "https://kpopofficial.com/album/meovv-bite-now/",
+          "sourceName": "KpopOfficial",
+          "sourceType": "kpopofficial",
+          "width": null,
+          "height": null,
+          "alt": "MEOVV《BITE NOW》预告图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "kpopofficial",
+          "name": "KpopOfficial",
+          "url": "https://kpopofficial.com/album/meovv-bite-now/",
+          "title": "BITE NOW",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 72,
+          "priority": 2
+        }
+      ],
+      "confidence": 72,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "a45fa107-0b0f-4146-91ed-c78336c054ac",
+      "releaseId": "f9a57111-029a-40ea-b80d-66316c0bb1e8",
+      "title": "The Devil Wears Prada 2: Music from the Motion Picture",
+      "artist": "Various Artists",
+      "releaseDate": "2026-07-31",
+      "bucket": "upcoming_top",
+      "rank": 28,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/a45fa107-0b0f-4146-91ed-c78336c054ac/01-cover_art_archive-2f20da3fb6d3.jpg",
+      "images": [
+        {
+          "id": "a45fa107-0b0f-4146-91ed-c78336c054ac:1:2f20da3fb6d3",
+          "localUrl": "visuals/2026/upcoming_top/a45fa107-0b0f-4146-91ed-c78336c054ac/01-cover_art_archive-2f20da3fb6d3.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/a45fa107-0b0f-4146-91ed-c78336c054ac",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Various Artists《The Devil Wears Prada 2: Music from the Motion Picture》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/a45fa107-0b0f-4146-91ed-c78336c054ac",
+          "title": "The Devil Wears Prada 2: Music from the Motion Picture",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "5446c39c-2b80-43ff-b365-55f1dd51d2a3",
+      "releaseId": "8946a459-ded6-42e6-88ec-2777f1764858",
+      "title": "twice upon a time",
+      "artist": "harmoe",
+      "releaseDate": "2026-07-22",
+      "bucket": "upcoming_top",
+      "rank": 29,
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [],
+      "confidence": 0,
+      "reviewed": false
+    },
+    {
+      "releaseGroupId": "07feb5f6-833a-49bc-a3c4-34ae74dac42c",
+      "releaseId": "72db2892-372f-4a56-8cd5-174065528a58",
+      "title": "YEARNALISM",
+      "artist": "Baby Rose",
+      "releaseDate": "2026-07-10",
+      "bucket": "upcoming_top",
+      "rank": 30,
+      "status": "cover_only",
+      "heroImageUrl": "visuals/2026/upcoming_top/07feb5f6-833a-49bc-a3c4-34ae74dac42c/01-cover_art_archive-2036e11eee52.jpg",
+      "images": [
+        {
+          "id": "07feb5f6-833a-49bc-a3c4-34ae74dac42c:1:2036e11eee52",
+          "localUrl": "visuals/2026/upcoming_top/07feb5f6-833a-49bc-a3c4-34ae74dac42c/01-cover_art_archive-2036e11eee52.jpg",
+          "sourceUrl": "https://coverartarchive.org/release-group/07feb5f6-833a-49bc-a3c4-34ae74dac42c",
+          "sourceName": "Cover Art Archive",
+          "sourceType": "cover_art_archive",
+          "width": null,
+          "height": null,
+          "alt": "Baby Rose《YEARNALISM》封面图",
+          "order": 1
+        }
+      ],
+      "conceptDescription": null,
+      "visualSummary": null,
+      "sources": [
+        {
+          "type": "cover_art_archive",
+          "name": "Cover Art Archive",
+          "url": "https://coverartarchive.org/release-group/07feb5f6-833a-49bc-a3c4-34ae74dac42c",
+          "title": "YEARNALISM",
+          "description": null,
+          "imageCount": 1,
+          "confidence": 58,
+          "priority": 4
+        }
+      ],
+      "confidence": 58,
+      "reviewed": false
+    }
+  ]
+}
