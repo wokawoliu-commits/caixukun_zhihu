@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-05-30T10:39:20.317Z",
+  "generatedAt": "2026-05-30T12:26:22.481Z",
   "asOfDate": "2026-05-30",
   "rangeStart": "2026-01-01",
   "rangeEnd": "2026-07-31",
   "sourcePriority": [
     "official",
+    "official_site",
+    "official_social",
+    "official_video",
     "kpopofficial",
     "kpopschedule",
+    "kpopping",
+    "media",
+    "google_image_search",
     "cover_art_archive",
     "xiaohongshu"
   ],
@@ -24,36 +30,156 @@
       "releaseDate": "2026-03-20",
       "bucket": "released_top",
       "rank": 1,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-cover_art_archive-9b488834ca54.jpg",
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-xiaohongshu-052aa095da3d.webp",
       "images": [
         {
-          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:1:9b488834ca54",
-          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-cover_art_archive-9b488834ca54.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/21159e3f-172e-43f6-aa7d-8e06a81fea49",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "BTS《ARIRANG》封面图",
-          "order": 1
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:1:052aa095da3d",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/01-xiaohongshu-052aa095da3d.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2000,
+          "height": 3000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 1，匹配置信度 89",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:2:386ee18dc7dc",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/02-xiaohongshu-386ee18dc7dc.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2000,
+          "height": 3000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 2，匹配置信度 89",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:3:6a95994026d1",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/03-xiaohongshu-6a95994026d1.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 3，匹配置信度 89",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:4:309f9ac80524",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/04-xiaohongshu-309f9ac80524.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 4，匹配置信度 89",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:5:00936a9562f6",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/05-xiaohongshu-00936a9562f6.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 5，匹配置信度 89",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:6:9b74650bebaf",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/06-xiaohongshu-9b74650bebaf.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 6，匹配置信度 89",
+          "order": 6,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:7:8502eb364fb0",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/07-xiaohongshu-8502eb364fb0.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 7，匹配置信度 89",
+          "order": 7,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:8:0224294e72af",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/08-xiaohongshu-0224294e72af.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2000,
+          "height": 3000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 8，匹配置信度 89",
+          "order": 8,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "21159e3f-172e-43f6-aa7d-8e06a81fea49:9:b49ae0348b51",
+          "localUrl": "visuals/2026/released_top/21159e3f-172e-43f6-aa7d-8e06a81fea49/09-xiaohongshu-b49ae0348b51.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · seven.",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3000,
+          "height": 2000,
+          "alt": "BTS《ARIRANG》小红书视觉候选图 9，匹配置信度 89",
+          "order": 9,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "#BTS[话题]#",
+      "visualSummary": "小红书候选图文《BTS ARIRANG Album Photoshoot Sketch》收录 9 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/21159e3f-172e-43f6-aa7d-8e06a81fea49",
-          "title": "ARIRANG",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
+          "type": "xiaohongshu",
+          "name": "小红书 · seven.",
+          "url": "https://www.xiaohongshu.com/explore/69bfd4470000000021006642?xsec_token=ABN5VLF_WyavfXs8j8LIG2U7q7B3HQ2pZ5AgJPoRw532Y%3D&xsec_source=pc_search",
+          "title": "BTS ARIRANG Album Photoshoot Sketch",
+          "description": "#BTS[话题]#",
+          "imageCount": 9,
+          "confidence": 100,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 58,
+      "visualImageCount": 0,
+      "candidateImageCount": 9,
+      "coverFallbackImageCount": 0,
+      "confidence": 100,
       "reviewed": false
     },
     {
@@ -64,36 +190,16 @@
       "releaseDate": "2026-01-23",
       "bucket": "released_top",
       "rank": 2,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/c0420634-f27d-4d43-a07d-a8d6dafc83a4/01-cover_art_archive-905734211d96.jpg",
-      "images": [
-        {
-          "id": "c0420634-f27d-4d43-a07d-a8d6dafc83a4:1:905734211d96",
-          "localUrl": "visuals/2026/released_top/c0420634-f27d-4d43-a07d-a8d6dafc83a4/01-cover_art_archive-905734211d96.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/c0420634-f27d-4d43-a07d-a8d6dafc83a4",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Poppy《Empty Hands》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/c0420634-f27d-4d43-a07d-a8d6dafc83a4",
-          "title": "Empty Hands",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -104,36 +210,16 @@
       "releaseDate": "2026-05-15",
       "bucket": "released_top",
       "rank": 3,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/17a40f1c-6fef-4402-8700-921ee050730d/01-cover_art_archive-e40501bb07b2.jpg",
-      "images": [
-        {
-          "id": "17a40f1c-6fef-4402-8700-921ee050730d:1:e40501bb07b2",
-          "localUrl": "visuals/2026/released_top/17a40f1c-6fef-4402-8700-921ee050730d/01-cover_art_archive-e40501bb07b2.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/17a40f1c-6fef-4402-8700-921ee050730d",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "HK《Le coeur au vent》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/17a40f1c-6fef-4402-8700-921ee050730d",
-          "title": "Le coeur au vent",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -144,13 +230,44 @@
       "releaseDate": "2026-04-15",
       "bucket": "released_top",
       "rank": 4,
-      "status": "none",
-      "heroImageUrl": null,
-      "images": [],
-      "conceptDescription": null,
-      "visualSummary": null,
-      "sources": [],
-      "confidence": 0,
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/739303f4-2431-4d33-95a6-febe78924d66/01-xiaohongshu-2769ad799daa.webp",
+      "images": [
+        {
+          "id": "739303f4-2431-4d33-95a6-febe78924d66:1:2769ad799daa",
+          "localUrl": "visuals/2026/released_top/739303f4-2431-4d33-95a6-febe78924d66/01-xiaohongshu-2769ad799daa.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69f5f4b10000000037036dc9?xsec_token=ABbdqksAhsjVT4tERQjyBPBl2_zraOmKUnT5w5q1TE2bg%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 乌龟拉面汤",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3648,
+          "height": 2736,
+          "alt": "MEI《MEI.01》小红书视觉候选图 1，匹配置信度 42",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        }
+      ],
+      "conceptDescription": "【\"memores nominis mei\" 】 “请记住我的名字” 前两天收拾柜子的时候，把它们摆到一起的时候突然开始感慨，真的是巧思无限，也刚好是最喜欢的三次回归，很想念魔法少年概念[完啦R] #专辑[话题]# #TXT[话题]#",
+      "visualSummary": "小红书候选图文《最伟大的专辑设计》收录 1 张视觉图，需人工复核版权与匹配度。",
+      "sources": [
+        {
+          "type": "xiaohongshu",
+          "name": "小红书 · 乌龟拉面汤",
+          "url": "https://www.xiaohongshu.com/explore/69f5f4b10000000037036dc9?xsec_token=ABbdqksAhsjVT4tERQjyBPBl2_zraOmKUnT5w5q1TE2bg%3D&xsec_source=pc_search",
+          "title": "最伟大的专辑设计",
+          "description": "【\"memores nominis mei\" 】 “请记住我的名字” 前两天收拾柜子的时候，把它们摆到一起的时候突然开始感慨，真的是巧思无限，也刚好是最喜欢的三次回归，很想念魔法少年概念[完啦R] #专辑[话题]# #TXT[话题]#",
+          "imageCount": 1,
+          "confidence": 57,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        }
+      ],
+      "visualImageCount": 0,
+      "candidateImageCount": 1,
+      "coverFallbackImageCount": 0,
+      "confidence": 57,
       "reviewed": false
     },
     {
@@ -167,6 +284,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -178,36 +298,16 @@
       "releaseDate": "2026-01-09",
       "bucket": "released_top",
       "rank": 6,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/319029e5-8254-4411-9595-c066c0841aac/01-cover_art_archive-be0a0cd5a6af.jpg",
-      "images": [
-        {
-          "id": "319029e5-8254-4411-9595-c066c0841aac:1:be0a0cd5a6af",
-          "localUrl": "visuals/2026/released_top/319029e5-8254-4411-9595-c066c0841aac/01-cover_art_archive-be0a0cd5a6af.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/319029e5-8254-4411-9595-c066c0841aac",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Zu《Ferrum Sidereum》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/319029e5-8254-4411-9595-c066c0841aac",
-          "title": "Ferrum Sidereum",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -218,36 +318,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 7,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/93af8d42-5f2d-46f9-be2a-bbd48388502e/01-cover_art_archive-b8bcf79b3956.jpg",
-      "images": [
-        {
-          "id": "93af8d42-5f2d-46f9-be2a-bbd48388502e:1:b8bcf79b3956",
-          "localUrl": "visuals/2026/released_top/93af8d42-5f2d-46f9-be2a-bbd48388502e/01-cover_art_archive-b8bcf79b3956.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/93af8d42-5f2d-46f9-be2a-bbd48388502e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Rainbow《Live in Köln 1976 – Kölner Sporthalle 25.9.1976》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/93af8d42-5f2d-46f9-be2a-bbd48388502e",
-          "title": "Live in Köln 1976 – Kölner Sporthalle 25.9.1976",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -264,6 +344,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -275,36 +358,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 9,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/475af630-84df-3243-9888-c03c67d54d1a/01-cover_art_archive-d55ce2a23cc7.jpg",
-      "images": [
-        {
-          "id": "475af630-84df-3243-9888-c03c67d54d1a:1:d55ce2a23cc7",
-          "localUrl": "visuals/2026/released_top/475af630-84df-3243-9888-c03c67d54d1a/01-cover_art_archive-d55ce2a23cc7.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/475af630-84df-3243-9888-c03c67d54d1a",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "The Who《A Quick One》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/475af630-84df-3243-9888-c03c67d54d1a",
-          "title": "A Quick One",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -315,36 +378,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 10,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/0f774e8c-b319-4ed1-80a6-deda396f2b8c/01-cover_art_archive-fd309e6c4161.jpg",
-      "images": [
-        {
-          "id": "0f774e8c-b319-4ed1-80a6-deda396f2b8c:1:fd309e6c4161",
-          "localUrl": "visuals/2026/released_top/0f774e8c-b319-4ed1-80a6-deda396f2b8c/01-cover_art_archive-fd309e6c4161.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/0f774e8c-b319-4ed1-80a6-deda396f2b8c",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Yes《Tales From Topographic Tours》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/0f774e8c-b319-4ed1-80a6-deda396f2b8c",
-          "title": "Tales From Topographic Tours",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -355,36 +398,16 @@
       "releaseDate": "2026-04-15",
       "bucket": "released_top",
       "rank": 11,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411/01-cover_art_archive-865fd653093c.jpg",
-      "images": [
-        {
-          "id": "48bb31b2-1b07-38ec-9ef2-3bb52c1f9411:1:865fd653093c",
-          "localUrl": "visuals/2026/released_top/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411/01-cover_art_archive-865fd653093c.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Genesis《Genesis》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/48bb31b2-1b07-38ec-9ef2-3bb52c1f9411",
-          "title": "Genesis",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -395,36 +418,16 @@
       "releaseDate": "2026-03-06",
       "bucket": "released_top",
       "rank": 12,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/2b9397d6-5fb5-4d57-ace7-38a454a30a39/01-cover_art_archive-a4a245d41260.jpg",
-      "images": [
-        {
-          "id": "2b9397d6-5fb5-4d57-ace7-38a454a30a39:1:a4a245d41260",
-          "localUrl": "visuals/2026/released_top/2b9397d6-5fb5-4d57-ace7-38a454a30a39/01-cover_art_archive-a4a245d41260.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/2b9397d6-5fb5-4d57-ace7-38a454a30a39",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "WASTE《Scream Until It's Beautiful》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/2b9397d6-5fb5-4d57-ace7-38a454a30a39",
-          "title": "Scream Until It's Beautiful",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -435,36 +438,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 13,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/4af5f982-f3b6-4fd4-a3b5-b029684c3fff/01-cover_art_archive-8fe69d9b284d.jpg",
-      "images": [
-        {
-          "id": "4af5f982-f3b6-4fd4-a3b5-b029684c3fff:1:8fe69d9b284d",
-          "localUrl": "visuals/2026/released_top/4af5f982-f3b6-4fd4-a3b5-b029684c3fff/01-cover_art_archive-8fe69d9b284d.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/4af5f982-f3b6-4fd4-a3b5-b029684c3fff",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Suede《Coming Up at the BBC》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/4af5f982-f3b6-4fd4-a3b5-b029684c3fff",
-          "title": "Coming Up at the BBC",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -475,36 +458,16 @@
       "releaseDate": "2026-02-27",
       "bucket": "released_top",
       "rank": 14,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/9b191575-fa1f-3531-bff5-121782318972/01-cover_art_archive-048ae2891405.jpg",
-      "images": [
-        {
-          "id": "9b191575-fa1f-3531-bff5-121782318972:1:048ae2891405",
-          "localUrl": "visuals/2026/released_top/9b191575-fa1f-3531-bff5-121782318972/01-cover_art_archive-048ae2891405.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/9b191575-fa1f-3531-bff5-121782318972",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "The Who《Quadrophenia》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/9b191575-fa1f-3531-bff5-121782318972",
-          "title": "Quadrophenia",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -515,36 +478,16 @@
       "releaseDate": "2026-02-06",
       "bucket": "released_top",
       "rank": 15,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/94862bd6-6a24-3774-b136-860059c6376e/01-cover_art_archive-79303e761c6e.jpg",
-      "images": [
-        {
-          "id": "94862bd6-6a24-3774-b136-860059c6376e:1:79303e761c6e",
-          "localUrl": "visuals/2026/released_top/94862bd6-6a24-3774-b136-860059c6376e/01-cover_art_archive-79303e761c6e.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/94862bd6-6a24-3774-b136-860059c6376e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Yes《Tales From Topographic Oceans》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/94862bd6-6a24-3774-b136-860059c6376e",
-          "title": "Tales From Topographic Oceans",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -555,36 +498,114 @@
       "releaseDate": "2026-01-23",
       "bucket": "released_top",
       "rank": 16,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-cover_art_archive-2902b63d59af.jpg",
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-xiaohongshu-50f01902c1b7.webp",
       "images": [
         {
-          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:1:2902b63d59af",
-          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-cover_art_archive-2902b63d59af.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/35eae658-4243-4bf5-91d6-5a391bbb3699",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Olivia Dean《The Art of Loving》封面图",
-          "order": 1
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:1:50f01902c1b7",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/01-xiaohongshu-50f01902c1b7.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3024,
+          "height": 4032,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 1，匹配置信度 69",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:2:65df5a0daf3a",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/02-xiaohongshu-65df5a0daf3a.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4284,
+          "height": 5712,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 2，匹配置信度 69",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:3:29fd004f8549",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/03-xiaohongshu-29fd004f8549.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3024,
+          "height": 4032,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 3，匹配置信度 69",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:4:58ca1e1d3734",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/04-xiaohongshu-58ca1e1d3734.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4284,
+          "height": 5712,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 4，匹配置信度 69",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:5:84e7820e11b3",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/05-xiaohongshu-84e7820e11b3.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3024,
+          "height": 4032,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 5，匹配置信度 69",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "35eae658-4243-4bf5-91d6-5a391bbb3699:6:f790d547343a",
+          "localUrl": "visuals/2026/released_top/35eae658-4243-4bf5-91d6-5a391bbb3699/06-xiaohongshu-f790d547343a.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 瑰夏一日两桶",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3024,
+          "height": 4032,
+          "alt": "Olivia Dean《The Art of Loving》小红书视觉候选图 6，匹配置信度 69",
+          "order": 6,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "Olivia是今年最喜欢听的歌手之一，从Messy开始就展现了她独特的声音以及无与伦比的创作天赋。这次收了替换封面黄胶、签名CD以及还没到的亚马逊粉胶，太好看了！（图2其他两张分别是一专Messy的黑胶以及今年Rsd推出的一张十寸紫胶） #oliviadean[话题]# #theartofloving[话题]# #黑胶[话题]# #vinyl[话题]# #彩色塑料片[话题]# #每日音乐推荐[话题]# #新专速递[话题]#",
+      "visualSummary": "小红书候选图文《The Art of Loving｜Olivia Dean》收录 6 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/35eae658-4243-4bf5-91d6-5a391bbb3699",
-          "title": "The Art of Loving",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
+          "type": "xiaohongshu",
+          "name": "小红书 · 瑰夏一日两桶",
+          "url": "https://www.xiaohongshu.com/explore/68dc0a9c0000000005030524?xsec_token=ABxgBvfWZkViTpuxj1dWqgsGM5-ETg3V_oTwtDjOz56fM%3D&xsec_source=pc_search",
+          "title": "The Art of Loving｜Olivia Dean",
+          "description": "Olivia是今年最喜欢听的歌手之一，从Messy开始就展现了她独特的声音以及无与伦比的创作天赋。这次收了替换封面黄胶、签名CD以及还没到的亚马逊粉胶，太好看了！（图2其他两张分别是一专Messy的黑胶以及今年Rsd推出的一张十寸紫胶） #oliviadean[话题]# #theartofloving[话题]# #黑胶[话题]# #vinyl[话题]# #彩色塑料片[话题]# #每日音乐推荐[话题]# #新专速递[话题]#",
+          "imageCount": 6,
+          "confidence": 94,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 58,
+      "visualImageCount": 0,
+      "candidateImageCount": 6,
+      "coverFallbackImageCount": 0,
+      "confidence": 100,
       "reviewed": false
     },
     {
@@ -601,6 +622,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -612,36 +636,156 @@
       "releaseDate": "2026-02-23",
       "bucket": "released_top",
       "rank": 18,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-cover_art_archive-941fd404563f.jpg",
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-xiaohongshu-db281e789b18.webp",
       "images": [
         {
-          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:1:941fd404563f",
-          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-cover_art_archive-941fd404563f.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/5a37b657-9f1d-4bce-b85f-9b1f5b72feca",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "IVE《REVIVE+》封面图",
-          "order": 1
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:1:db281e789b18",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/01-xiaohongshu-db281e789b18.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 1，匹配置信度 65",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:2:16d3c59242a7",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/02-xiaohongshu-16d3c59242a7.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 2，匹配置信度 65",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:3:9f4e5220cd5f",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/03-xiaohongshu-9f4e5220cd5f.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 3，匹配置信度 65",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:4:0e28190bca47",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/04-xiaohongshu-0e28190bca47.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 4，匹配置信度 65",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:5:ce6b25c6efa1",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/05-xiaohongshu-ce6b25c6efa1.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 5，匹配置信度 65",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:6:a92409705d4d",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/06-xiaohongshu-a92409705d4d.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 6，匹配置信度 65",
+          "order": 6,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:7:548913cdf1f6",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/07-xiaohongshu-548913cdf1f6.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 7，匹配置信度 65",
+          "order": 7,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:8:94ac5e664e93",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/08-xiaohongshu-94ac5e664e93.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 8，匹配置信度 65",
+          "order": 8,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "5a37b657-9f1d-4bce-b85f-9b1f5b72feca:9:c6930aebe395",
+          "localUrl": "visuals/2026/released_top/5a37b657-9f1d-4bce-b85f-9b1f5b72feca/09-xiaohongshu-c6930aebe395.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · BubbleM",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 4501,
+          "height": 5967,
+          "alt": "IVE《REVIVE+》小红书视觉候选图 9，匹配置信度 65",
+          "order": 9,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "想拍韩杂✅没灵感🥹 那就看看元英这组概念照 妆造｜服搭｜置景｜排版 🩵每日分享摄影美妆灵感🩵 @摄影薯 @美妆薯 @时尚薯 #审美积累[话题]# #摄影灵感[话题]# #韩杂[话题]# #张元英[话题]# #时尚摄影[话题]# #拍照姿势[话题]# #韩系写真[话题]# #韩妆[话题]# #摄影师审美[话题]# #审美[话题]#",
+      "visualSummary": "小红书候选图文《张元英概念的神🩵REVIVE＋》收录 9 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/5a37b657-9f1d-4bce-b85f-9b1f5b72feca",
-          "title": "REVIVE+",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
+          "type": "xiaohongshu",
+          "name": "小红书 · BubbleM",
+          "url": "https://www.xiaohongshu.com/explore/6a185a5f0000000035026d8e?xsec_token=ABnKj_9zYRo4toMoaZrY1GItvGfpYVDAaoU24MSKgAHNs%3D&xsec_source=pc_search",
+          "title": "张元英概念的神🩵REVIVE＋",
+          "description": "想拍韩杂✅没灵感🥹 那就看看元英这组概念照 妆造｜服搭｜置景｜排版 🩵每日分享摄影美妆灵感🩵 @摄影薯 @美妆薯 @时尚薯 #审美积累[话题]# #摄影灵感[话题]# #韩杂[话题]# #张元英[话题]# #时尚摄影[话题]# #拍照姿势[话题]# #韩系写真[话题]# #韩妆[话题]# #摄影师审美[话题]# #审美[话题]#",
+          "imageCount": 9,
+          "confidence": 88,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 58,
+      "visualImageCount": 0,
+      "candidateImageCount": 9,
+      "coverFallbackImageCount": 0,
+      "confidence": 100,
       "reviewed": false
     },
     {
@@ -652,36 +796,16 @@
       "releaseDate": "2026-03-27",
       "bucket": "released_top",
       "rank": 19,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3/01-cover_art_archive-32d95aee893d.jpg",
-      "images": [
-        {
-          "id": "ae1ff272-3682-4e39-8f9b-2a9eb30eddc3:1:32d95aee893d",
-          "localUrl": "visuals/2026/released_top/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3/01-cover_art_archive-32d95aee893d.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "RAYE《THIS MUSIC MAY CONTAIN HOPE.》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/ae1ff272-3682-4e39-8f9b-2a9eb30eddc3",
-          "title": "THIS MUSIC MAY CONTAIN HOPE.",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -692,36 +816,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 20,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/bb2c2b87-da99-401f-89fe-64860e65264b/01-cover_art_archive-4124c4816165.jpg",
-      "images": [
-        {
-          "id": "bb2c2b87-da99-401f-89fe-64860e65264b:1:4124c4816165",
-          "localUrl": "visuals/2026/released_top/bb2c2b87-da99-401f-89fe-64860e65264b/01-cover_art_archive-4124c4816165.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/bb2c2b87-da99-401f-89fe-64860e65264b",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Suede《Antidepressants (demos)》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/bb2c2b87-da99-401f-89fe-64860e65264b",
-          "title": "Antidepressants (demos)",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -738,6 +842,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -749,36 +856,16 @@
       "releaseDate": "2026-02-27",
       "bucket": "released_top",
       "rank": 22,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/a868464a-2e60-484b-bacd-aaeaee71284e/01-cover_art_archive-2167028d8064.jpg",
-      "images": [
-        {
-          "id": "a868464a-2e60-484b-bacd-aaeaee71284e:1:2167028d8064",
-          "localUrl": "visuals/2026/released_top/a868464a-2e60-484b-bacd-aaeaee71284e/01-cover_art_archive-2167028d8064.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/a868464a-2e60-484b-bacd-aaeaee71284e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Bruno Mars《The Romantic》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/a868464a-2e60-484b-bacd-aaeaee71284e",
-          "title": "The Romantic",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -789,36 +876,16 @@
       "releaseDate": "2026-03-06",
       "bucket": "released_top",
       "rank": 23,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/8676b232-108c-4229-be09-f1b09b0ec5f6/01-cover_art_archive-ee3ba6488092.jpg",
-      "images": [
-        {
-          "id": "8676b232-108c-4229-be09-f1b09b0ec5f6:1:ee3ba6488092",
-          "localUrl": "visuals/2026/released_top/8676b232-108c-4229-be09-f1b09b0ec5f6/01-cover_art_archive-ee3ba6488092.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/8676b232-108c-4229-be09-f1b09b0ec5f6",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Harry Styles《Kiss All the Time. Disco, Occasionally.》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/8676b232-108c-4229-be09-f1b09b0ec5f6",
-          "title": "Kiss All the Time. Disco, Occasionally.",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -835,6 +902,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -846,36 +916,16 @@
       "releaseDate": "2026-02-27",
       "bucket": "released_top",
       "rank": 25,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/746c577a-4bdc-4a00-bc95-c5da3546e786/01-cover_art_archive-60123f827b19.jpg",
-      "images": [
-        {
-          "id": "746c577a-4bdc-4a00-bc95-c5da3546e786:1:60123f827b19",
-          "localUrl": "visuals/2026/released_top/746c577a-4bdc-4a00-bc95-c5da3546e786/01-cover_art_archive-60123f827b19.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/746c577a-4bdc-4a00-bc95-c5da3546e786",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "PinkPantheress《Fancy Some More?》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/746c577a-4bdc-4a00-bc95-c5da3546e786",
-          "title": "Fancy Some More?",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -886,36 +936,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 26,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/fc5cb1fc-d824-3128-bcc9-77572517a503/01-cover_art_archive-84d8fda4bcfe.jpg",
-      "images": [
-        {
-          "id": "fc5cb1fc-d824-3128-bcc9-77572517a503:1:84d8fda4bcfe",
-          "localUrl": "visuals/2026/released_top/fc5cb1fc-d824-3128-bcc9-77572517a503/01-cover_art_archive-84d8fda4bcfe.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/fc5cb1fc-d824-3128-bcc9-77572517a503",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Madonna《The Confessions Tour》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/fc5cb1fc-d824-3128-bcc9-77572517a503",
-          "title": "The Confessions Tour",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -926,13 +956,72 @@
       "releaseDate": "2026-04-29",
       "bucket": "released_top",
       "rank": 27,
-      "status": "none",
-      "heroImageUrl": null,
-      "images": [],
-      "conceptDescription": null,
-      "visualSummary": null,
-      "sources": [],
-      "confidence": 0,
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/14f83b04-2b9e-4974-9169-476f26475be3/01-xiaohongshu-8f91f5e3279a.webp",
+      "images": [
+        {
+          "id": "14f83b04-2b9e-4974-9169-476f26475be3:1:8f91f5e3279a",
+          "localUrl": "visuals/2026/released_top/14f83b04-2b9e-4974-9169-476f26475be3/01-xiaohongshu-8f91f5e3279a.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/66dcfdfe000000002603dac1?xsec_token=ABi5IJ5ITL_GznKiZTVU9d_xdgmHjEOIpnmQSi8wyFw7k%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Nvnvan",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1000,
+          "height": 1000,
+          "alt": "The Weeknd《Hurry Up Tomorrow》小红书视觉候选图 1，匹配置信度 61",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "14f83b04-2b9e-4974-9169-476f26475be3:2:903d934c784e",
+          "localUrl": "visuals/2026/released_top/14f83b04-2b9e-4974-9169-476f26475be3/02-xiaohongshu-903d934c784e.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/66dcfdfe000000002603dac1?xsec_token=ABi5IJ5ITL_GznKiZTVU9d_xdgmHjEOIpnmQSi8wyFw7k%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Nvnvan",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1280,
+          "height": 1280,
+          "alt": "The Weeknd《Hurry Up Tomorrow》小红书视觉候选图 2，匹配置信度 61",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "14f83b04-2b9e-4974-9169-476f26475be3:3:0834034a91f0",
+          "localUrl": "visuals/2026/released_top/14f83b04-2b9e-4974-9169-476f26475be3/03-xiaohongshu-0834034a91f0.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/66dcfdfe000000002603dac1?xsec_token=ABi5IJ5ITL_GznKiZTVU9d_xdgmHjEOIpnmQSi8wyFw7k%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Nvnvan",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2000,
+          "height": 2000,
+          "alt": "The Weeknd《Hurry Up Tomorrow》小红书视觉候选图 3，匹配置信度 61",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        }
+      ],
+      "conceptDescription": "#theweeknd[话题]# #专辑[话题]# #盆栽哥[话题]# #theweeknd[话题]# After Hours Dawn FM Hurry Up Tomorrow ​",
+      "visualSummary": "小红书候选图文《the weeknd新专辑封面来了！三部曲齐活！》收录 3 张视觉图，需人工复核版权与匹配度。",
+      "sources": [
+        {
+          "type": "xiaohongshu",
+          "name": "小红书 · Nvnvan",
+          "url": "https://www.xiaohongshu.com/explore/66dcfdfe000000002603dac1?xsec_token=ABi5IJ5ITL_GznKiZTVU9d_xdgmHjEOIpnmQSi8wyFw7k%3D&xsec_source=pc_search",
+          "title": "the weeknd新专辑封面来了！三部曲齐活！",
+          "description": "#theweeknd[话题]# #专辑[话题]# #盆栽哥[话题]# #theweeknd[话题]# After Hours Dawn FM Hurry Up Tomorrow ​",
+          "imageCount": 3,
+          "confidence": 79,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        }
+      ],
+      "visualImageCount": 0,
+      "candidateImageCount": 3,
+      "coverFallbackImageCount": 0,
+      "confidence": 85,
       "reviewed": false
     },
     {
@@ -949,6 +1038,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -960,36 +1052,16 @@
       "releaseDate": "2026-04-24",
       "bucket": "released_top",
       "rank": 29,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/cfaad5aa-3381-4945-8dbc-3a2997acf820/01-cover_art_archive-56bb7689c7e8.jpg",
-      "images": [
-        {
-          "id": "cfaad5aa-3381-4945-8dbc-3a2997acf820:1:56bb7689c7e8",
-          "localUrl": "visuals/2026/released_top/cfaad5aa-3381-4945-8dbc-3a2997acf820/01-cover_art_archive-56bb7689c7e8.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/cfaad5aa-3381-4945-8dbc-3a2997acf820",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "CAVS《Sojourn》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/cfaad5aa-3381-4945-8dbc-3a2997acf820",
-          "title": "Sojourn",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1000,36 +1072,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 30,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3/01-cover_art_archive-bb59bc481465.jpg",
-      "images": [
-        {
-          "id": "38339050-b4bb-4a6e-bab3-d2d0d90fe9b3:1:bb59bc481465",
-          "localUrl": "visuals/2026/released_top/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3/01-cover_art_archive-bb59bc481465.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Bluey《Up Here》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/38339050-b4bb-4a6e-bab3-d2d0d90fe9b3",
-          "title": "Up Here",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1040,36 +1092,16 @@
       "releaseDate": "2026-04-24",
       "bucket": "released_top",
       "rank": 31,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/380ae97c-1f75-46d9-a69a-9bbef4e7e970/01-cover_art_archive-c2537679b479.jpg",
-      "images": [
-        {
-          "id": "380ae97c-1f75-46d9-a69a-9bbef4e7e970:1:c2537679b479",
-          "localUrl": "visuals/2026/released_top/380ae97c-1f75-46d9-a69a-9bbef4e7e970/01-cover_art_archive-c2537679b479.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/380ae97c-1f75-46d9-a69a-9bbef4e7e970",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Meghan Trainor《Toy With Me》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/380ae97c-1f75-46d9-a69a-9bbef4e7e970",
-          "title": "Toy With Me",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1080,36 +1112,16 @@
       "releaseDate": "2026-05-29",
       "bucket": "released_top",
       "rank": 32,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/dfd582da-ab2e-4009-9365-405bf1ad2c49/01-cover_art_archive-681b98442ae8.jpg",
-      "images": [
-        {
-          "id": "dfd582da-ab2e-4009-9365-405bf1ad2c49:1:681b98442ae8",
-          "localUrl": "visuals/2026/released_top/dfd582da-ab2e-4009-9365-405bf1ad2c49/01-cover_art_archive-681b98442ae8.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/dfd582da-ab2e-4009-9365-405bf1ad2c49",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Ariana Grande《Dangerous Woman》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/dfd582da-ab2e-4009-9365-405bf1ad2c49",
-          "title": "Dangerous Woman",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1120,36 +1132,16 @@
       "releaseDate": "2026-05",
       "bucket": "released_top",
       "rank": 33,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/51dd6e33-7307-3c25-9356-8f45227234cf/01-cover_art_archive-135438b47cee.jpg",
-      "images": [
-        {
-          "id": "51dd6e33-7307-3c25-9356-8f45227234cf:1:135438b47cee",
-          "localUrl": "visuals/2026/released_top/51dd6e33-7307-3c25-9356-8f45227234cf/01-cover_art_archive-135438b47cee.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/51dd6e33-7307-3c25-9356-8f45227234cf",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Carly Simon《Carly Simon》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/51dd6e33-7307-3c25-9356-8f45227234cf",
-          "title": "Carly Simon",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1160,36 +1152,16 @@
       "releaseDate": "2026-01-23",
       "bucket": "released_top",
       "rank": 34,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/a67dca90-8cf1-4395-b8c1-67fa4ea698d8/01-cover_art_archive-907d485fb87b.jpg",
-      "images": [
-        {
-          "id": "a67dca90-8cf1-4395-b8c1-67fa4ea698d8:1:907d485fb87b",
-          "localUrl": "visuals/2026/released_top/a67dca90-8cf1-4395-b8c1-67fa4ea698d8/01-cover_art_archive-907d485fb87b.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/a67dca90-8cf1-4395-b8c1-67fa4ea698d8",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Van Morrison《Somebody Tried to Sell Me a Bridge》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/a67dca90-8cf1-4395-b8c1-67fa4ea698d8",
-          "title": "Somebody Tried to Sell Me a Bridge",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1200,36 +1172,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 35,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/c73cd5dc-6792-4226-9949-60819a270d30/01-cover_art_archive-8748bf0e6ad6.jpg",
-      "images": [
-        {
-          "id": "c73cd5dc-6792-4226-9949-60819a270d30:1:8748bf0e6ad6",
-          "localUrl": "visuals/2026/released_top/c73cd5dc-6792-4226-9949-60819a270d30/01-cover_art_archive-8748bf0e6ad6.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/c73cd5dc-6792-4226-9949-60819a270d30",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Freeman《Free·Man》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/c73cd5dc-6792-4226-9949-60819a270d30",
-          "title": "Free·Man",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1240,36 +1192,16 @@
       "releaseDate": "2026-05-15",
       "bucket": "released_top",
       "rank": 36,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/cec81633-5419-4f92-b0ac-6e9c508a042f/01-cover_art_archive-bc7a5420f7a2.jpg",
-      "images": [
-        {
-          "id": "cec81633-5419-4f92-b0ac-6e9c508a042f:1:bc7a5420f7a2",
-          "localUrl": "visuals/2026/released_top/cec81633-5419-4f92-b0ac-6e9c508a042f/01-cover_art_archive-bc7a5420f7a2.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/cec81633-5419-4f92-b0ac-6e9c508a042f",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "underscores《U》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/cec81633-5419-4f92-b0ac-6e9c508a042f",
-          "title": "U",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1280,36 +1212,16 @@
       "releaseDate": "2026-03-20",
       "bucket": "released_top",
       "rank": 37,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/fe1afd65-1f02-4a1d-a322-d91a69eca15e/01-cover_art_archive-c971b73dd9bb.jpg",
-      "images": [
-        {
-          "id": "fe1afd65-1f02-4a1d-a322-d91a69eca15e:1:c971b73dd9bb",
-          "localUrl": "visuals/2026/released_top/fe1afd65-1f02-4a1d-a322-d91a69eca15e/01-cover_art_archive-c971b73dd9bb.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/fe1afd65-1f02-4a1d-a322-d91a69eca15e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Volo《Mine de rien》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/fe1afd65-1f02-4a1d-a322-d91a69eca15e",
-          "title": "Mine de rien",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1320,36 +1232,16 @@
       "releaseDate": "2026-05-22",
       "bucket": "released_top",
       "rank": 38,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/97c449fb-4e5a-4e3c-a303-6f826d128493/01-cover_art_archive-7ba56f6d506e.jpg",
-      "images": [
-        {
-          "id": "97c449fb-4e5a-4e3c-a303-6f826d128493:1:7ba56f6d506e",
-          "localUrl": "visuals/2026/released_top/97c449fb-4e5a-4e3c-a303-6f826d128493/01-cover_art_archive-7ba56f6d506e.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/97c449fb-4e5a-4e3c-a303-6f826d128493",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Camille《Negen Levens》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/97c449fb-4e5a-4e3c-a303-6f826d128493",
-          "title": "Negen Levens",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1360,36 +1252,16 @@
       "releaseDate": "2026-05-01",
       "bucket": "released_top",
       "rank": 39,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/8df9d9c1-bed1-480c-80f5-766323e122dc/01-cover_art_archive-686bb98cddef.jpg",
-      "images": [
-        {
-          "id": "8df9d9c1-bed1-480c-80f5-766323e122dc:1:686bb98cddef",
-          "localUrl": "visuals/2026/released_top/8df9d9c1-bed1-480c-80f5-766323e122dc/01-cover_art_archive-686bb98cddef.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/8df9d9c1-bed1-480c-80f5-766323e122dc",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Cindy《Another Country》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/8df9d9c1-bed1-480c-80f5-766323e122dc",
-          "title": "Another Country",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1406,6 +1278,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -1417,36 +1292,100 @@
       "releaseDate": "2026-03-20",
       "bucket": "released_top",
       "rank": 41,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-cover_art_archive-6286b6b79537.jpg",
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-xiaohongshu-7dd938858c5d.webp",
       "images": [
         {
-          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:1:6286b6b79537",
-          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-cover_art_archive-6286b6b79537.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/2f1c1e4c-6850-43a5-b818-634f996445b8",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Exodus《Goliath》封面图",
-          "order": 1
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:1:7dd938858c5d",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/01-xiaohongshu-7dd938858c5d.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 欧美摇滚乐",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1440,
+          "height": 2400,
+          "alt": "Exodus《Goliath》小红书视觉候选图 1，匹配置信度 62",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:2:16bd0dd20eee",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/02-xiaohongshu-16bd0dd20eee.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 欧美摇滚乐",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1440,
+          "height": 2400,
+          "alt": "Exodus《Goliath》小红书视觉候选图 2，匹配置信度 62",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:3:42c349d5e0fb",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/03-xiaohongshu-42c349d5e0fb.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 欧美摇滚乐",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1440,
+          "height": 2400,
+          "alt": "Exodus《Goliath》小红书视觉候选图 3，匹配置信度 62",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:4:77a2427873e1",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/04-xiaohongshu-77a2427873e1.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 欧美摇滚乐",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1440,
+          "height": 2400,
+          "alt": "Exodus《Goliath》小红书视觉候选图 4，匹配置信度 62",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "2f1c1e4c-6850-43a5-b818-634f996445b8:5:d2136d772630",
+          "localUrl": "visuals/2026/released_top/2f1c1e4c-6850-43a5-b818-634f996445b8/05-xiaohongshu-d2136d772630.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 欧美摇滚乐",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1440,
+          "height": 2400,
+          "alt": "Exodus《Goliath》小红书视觉候选图 5，匹配置信度 62",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "#金属乐[话题]# #摇滚[话题]# #Exodus[话题]# #欧美音乐[话题]# #Metal金属[话题]#",
+      "visualSummary": "小红书候选图文《Exodus - Goliath2026》收录 5 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/2f1c1e4c-6850-43a5-b818-634f996445b8",
-          "title": "Goliath",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
+          "type": "xiaohongshu",
+          "name": "小红书 · 欧美摇滚乐",
+          "url": "https://www.xiaohongshu.com/explore/69bdb530000000002200e511?xsec_token=ABk4bHKS77pjfTQOAkTQk0rTkw6E5i6pTtitZp6i4VRus%3D&xsec_source=pc_search",
+          "title": "Exodus - Goliath2026",
+          "description": "#金属乐[话题]# #摇滚[话题]# #Exodus[话题]# #欧美音乐[话题]# #Metal金属[话题]#",
+          "imageCount": 5,
+          "confidence": 79,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 58,
+      "visualImageCount": 0,
+      "candidateImageCount": 5,
+      "coverFallbackImageCount": 0,
+      "confidence": 91,
       "reviewed": false
     },
     {
@@ -1457,36 +1396,16 @@
       "releaseDate": "2026-02-13",
       "bucket": "released_top",
       "rank": 42,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/5351a021-c5cf-4642-999c-bbfc6d98212c/01-cover_art_archive-8fe8d31791b1.jpg",
-      "images": [
-        {
-          "id": "5351a021-c5cf-4642-999c-bbfc6d98212c:1:8fe8d31791b1",
-          "localUrl": "visuals/2026/released_top/5351a021-c5cf-4642-999c-bbfc6d98212c/01-cover_art_archive-8fe8d31791b1.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/5351a021-c5cf-4642-999c-bbfc6d98212c",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Jill Scott《To Whom This May Concern》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/5351a021-c5cf-4642-999c-bbfc6d98212c",
-          "title": "To Whom This May Concern",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1497,36 +1416,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 43,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/d79d2651-a4f6-30df-8262-874f08cfe94b/01-cover_art_archive-17f9a1b68a88.jpg",
-      "images": [
-        {
-          "id": "d79d2651-a4f6-30df-8262-874f08cfe94b:1:17f9a1b68a88",
-          "localUrl": "visuals/2026/released_top/d79d2651-a4f6-30df-8262-874f08cfe94b/01-cover_art_archive-17f9a1b68a88.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/d79d2651-a4f6-30df-8262-874f08cfe94b",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Gong《Flying Teapot: Radio Gnome Invisible, Part 1》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/d79d2651-a4f6-30df-8262-874f08cfe94b",
-          "title": "Flying Teapot: Radio Gnome Invisible, Part 1",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1537,36 +1436,16 @@
       "releaseDate": "2026-04-18",
       "bucket": "released_top",
       "rank": 44,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/4da9c492-078e-3779-8b64-a00bfd8f6b68/01-cover_art_archive-f4c6a3e39d67.jpg",
-      "images": [
-        {
-          "id": "4da9c492-078e-3779-8b64-a00bfd8f6b68:1:f4c6a3e39d67",
-          "localUrl": "visuals/2026/released_top/4da9c492-078e-3779-8b64-a00bfd8f6b68/01-cover_art_archive-f4c6a3e39d67.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/4da9c492-078e-3779-8b64-a00bfd8f6b68",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "The Tears《Here Come The Tears》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/4da9c492-078e-3779-8b64-a00bfd8f6b68",
-          "title": "Here Come The Tears",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1577,36 +1456,16 @@
       "releaseDate": "2026-04-03",
       "bucket": "released_top",
       "rank": 45,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/cd80d129-cb28-4e70-b4c2-b4ac052cb90e/01-cover_art_archive-6f821e195f51.jpg",
-      "images": [
-        {
-          "id": "cd80d129-cb28-4e70-b4c2-b4ac052cb90e:1:6f821e195f51",
-          "localUrl": "visuals/2026/released_top/cd80d129-cb28-4e70-b4c2-b4ac052cb90e/01-cover_art_archive-6f821e195f51.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/cd80d129-cb28-4e70-b4c2-b4ac052cb90e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Thundercat《Distracted》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/cd80d129-cb28-4e70-b4c2-b4ac052cb90e",
-          "title": "Distracted",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1617,36 +1476,16 @@
       "releaseDate": "2026-03-06",
       "bucket": "released_top",
       "rank": 46,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/672b0b19-7438-4fab-8f8e-78f0330c9cd1/01-cover_art_archive-319a7c6722b2.jpg",
-      "images": [
-        {
-          "id": "672b0b19-7438-4fab-8f8e-78f0330c9cd1:1:319a7c6722b2",
-          "localUrl": "visuals/2026/released_top/672b0b19-7438-4fab-8f8e-78f0330c9cd1/01-cover_art_archive-319a7c6722b2.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/672b0b19-7438-4fab-8f8e-78f0330c9cd1",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Squeeze《Trixies》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/672b0b19-7438-4fab-8f8e-78f0330c9cd1",
-          "title": "Trixies",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1657,36 +1496,16 @@
       "releaseDate": "2026-01-23",
       "bucket": "released_top",
       "rank": 47,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/77227490-12f9-3cf9-ae74-196f66c02403/01-cover_art_archive-f2f9c1f7560b.jpg",
-      "images": [
-        {
-          "id": "77227490-12f9-3cf9-ae74-196f66c02403:1:f2f9c1f7560b",
-          "localUrl": "visuals/2026/released_top/77227490-12f9-3cf9-ae74-196f66c02403/01-cover_art_archive-f2f9c1f7560b.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/77227490-12f9-3cf9-ae74-196f66c02403",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Squeeze《Play》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/77227490-12f9-3cf9-ae74-196f66c02403",
-          "title": "Play",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1703,6 +1522,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -1714,36 +1536,16 @@
       "releaseDate": "2026-02-27",
       "bucket": "released_top",
       "rank": 49,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/5d8cec42-b57c-4574-a9ec-6cc367202bae/01-cover_art_archive-6b07d57139b4.jpg",
-      "images": [
-        {
-          "id": "5d8cec42-b57c-4574-a9ec-6cc367202bae:1:6b07d57139b4",
-          "localUrl": "visuals/2026/released_top/5d8cec42-b57c-4574-a9ec-6cc367202bae/01-cover_art_archive-6b07d57139b4.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/5d8cec42-b57c-4574-a9ec-6cc367202bae",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Volumes《Mirror Touch》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/5d8cec42-b57c-4574-a9ec-6cc367202bae",
-          "title": "Mirror Touch",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1754,36 +1556,156 @@
       "releaseDate": "2026-01-23",
       "bucket": "released_top",
       "rank": 50,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-cover_art_archive-9ea48acf4659.jpg",
+      "status": "candidate_found",
+      "heroImageUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-xiaohongshu-9366d5577449.webp",
       "images": [
         {
-          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:1:9ea48acf4659",
-          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-cover_art_archive-9ea48acf4659.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "XG《THE CORE - 核》封面图",
-          "order": 1
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:1:9366d5577449",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/01-xiaohongshu-9366d5577449.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1707,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 1，匹配置信度 57",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:2:8b765d98decb",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/02-xiaohongshu-8b765d98decb.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1920,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 2，匹配置信度 57",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:3:56630c1b9ce2",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/03-xiaohongshu-56630c1b9ce2.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1707,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 3，匹配置信度 57",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:4:0103171799e5",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/04-xiaohongshu-0103171799e5.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1707,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 4，匹配置信度 57",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:5:5f0a915558f5",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/05-xiaohongshu-5f0a915558f5.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2560,
+          "height": 1891,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 5，匹配置信度 57",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:6:6ab71833a7a6",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/06-xiaohongshu-6ab71833a7a6.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1707,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 6，匹配置信度 57",
+          "order": 6,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:7:45144f39dd64",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/07-xiaohongshu-45144f39dd64.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1707,
+          "height": 2560,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 7，匹配置信度 57",
+          "order": 7,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:8:964eb0ebfa77",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/08-xiaohongshu-964eb0ebfa77.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2560,
+          "height": 1707,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 8，匹配置信度 57",
+          "order": 8,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "e0f6cb1b-acaa-44d5-904d-aad0bece9eaf:9:6da4efd076f6",
+          "localUrl": "visuals/2026/released_top/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf/09-xiaohongshu-6da4efd076f6.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · HengdiWang",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2560,
+          "height": 1707,
+          "alt": "XG《THE CORE - 核》小红书视觉候选图 9，匹配置信度 57",
+          "order": 9,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "为XG首张完整专辑《THE CORE - 核》个人预告照与视觉照中Chisa, Harvey, Jurin佩戴了HENGDI WANG Jewellery and Accessories Collection @HENGDI WANG Official #HengdiWang[话题]# #XG_THECORE_核[话题]# #XG[话题]# #HYPNOTIZE[话题]# #chisa[话题]# #CHISA[话题]# #jurin[话题]# #JURIN[话题]# #HARVEY[话题]# #harvey[话题]#",
+      "visualSummary": "小红书候选图文《与XG 新专辑个人照&视觉照合作的配饰系列》收录 9 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/e0f6cb1b-acaa-44d5-904d-aad0bece9eaf",
-          "title": "THE CORE - 核",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
+          "type": "xiaohongshu",
+          "name": "小红书 · HengdiWang",
+          "url": "https://www.xiaohongshu.com/explore/6978db02000000001a0292f0?xsec_token=ABkYOLoik-rDi3tyeS2pHDOBg6bJJhg8yn2XAZV5D7Qrs%3D&xsec_source=pc_search",
+          "title": "与XG 新专辑个人照&视觉照合作的配饰系列",
+          "description": "为XG首张完整专辑《THE CORE - 核》个人预告照与视觉照中Chisa, Harvey, Jurin佩戴了HENGDI WANG Jewellery and Accessories Collection @HENGDI WANG Official #HengdiWang[话题]# #XG_THECORE_核[话题]# #XG[话题]# #HYPNOTIZE[话题]# #chisa[话题]# #CHISA[话题]# #jurin[话题]# #JURIN[话题]# #HARVEY[话题]# #harvey[话题]#",
+          "imageCount": 9,
+          "confidence": 83,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 58,
+      "visualImageCount": 0,
+      "candidateImageCount": 9,
+      "coverFallbackImageCount": 0,
+      "confidence": 100,
       "reviewed": false
     },
     {
@@ -1794,7 +1716,7 @@
       "releaseDate": "2026-06-01",
       "bucket": "upcoming_top",
       "rank": 1,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-aaeaeea9/01-kpopofficial-2b0599072524.jpg",
       "images": [
         {
@@ -1803,10 +1725,13 @@
           "sourceUrl": "https://kpopofficial.com/album/treasure-new-wav/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "TREASURE《NEW WAV》预告图",
-          "order": 1
+          "alt": "TREASURE《NEW WAV》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -1820,9 +1745,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -1834,36 +1764,16 @@
       "releaseDate": "2026-06-19",
       "bucket": "upcoming_top",
       "rank": 2,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/a4a9f934-7006-46d8-8f21-960ed80eba29/01-cover_art_archive-55636ea759ab.jpg",
-      "images": [
-        {
-          "id": "a4a9f934-7006-46d8-8f21-960ed80eba29:1:55636ea759ab",
-          "localUrl": "visuals/2026/upcoming_top/a4a9f934-7006-46d8-8f21-960ed80eba29/01-cover_art_archive-55636ea759ab.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/a4a9f934-7006-46d8-8f21-960ed80eba29",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Pond《Terrestrials》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/a4a9f934-7006-46d8-8f21-960ed80eba29",
-          "title": "Terrestrials",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1874,36 +1784,16 @@
       "releaseDate": "2026-07-03",
       "bucket": "upcoming_top",
       "rank": 3,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/2dc4dae6-3475-4217-9e9f-06d3f0c763b4/01-cover_art_archive-1232f6352315.jpg",
-      "images": [
-        {
-          "id": "2dc4dae6-3475-4217-9e9f-06d3f0c763b4:1:1232f6352315",
-          "localUrl": "visuals/2026/upcoming_top/2dc4dae6-3475-4217-9e9f-06d3f0c763b4/01-cover_art_archive-1232f6352315.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/2dc4dae6-3475-4217-9e9f-06d3f0c763b4",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Madonna《CONFESSIONS II》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/2dc4dae6-3475-4217-9e9f-06d3f0c763b4",
-          "title": "CONFESSIONS II",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1914,36 +1804,16 @@
       "releaseDate": "2026-06-26",
       "bucket": "upcoming_top",
       "rank": 4,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/7dffeca3-420b-4095-abf4-f2e1ab61be35/01-cover_art_archive-87a41828a17e.jpg",
-      "images": [
-        {
-          "id": "7dffeca3-420b-4095-abf4-f2e1ab61be35:1:87a41828a17e",
-          "localUrl": "visuals/2026/upcoming_top/7dffeca3-420b-4095-abf4-f2e1ab61be35/01-cover_art_archive-87a41828a17e.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/7dffeca3-420b-4095-abf4-f2e1ab61be35",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Muse《The Wow! Signal》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/7dffeca3-420b-4095-abf4-f2e1ab61be35",
-          "title": "The Wow! Signal",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -1954,36 +1824,16 @@
       "releaseDate": "2026-06-12",
       "bucket": "upcoming_top",
       "rank": 5,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/4c4eee61-da1e-4115-8eb9-07e5b671fefe/01-cover_art_archive-152108de4b5a.jpg",
-      "images": [
-        {
-          "id": "4c4eee61-da1e-4115-8eb9-07e5b671fefe:1:152108de4b5a",
-          "localUrl": "visuals/2026/upcoming_top/4c4eee61-da1e-4115-8eb9-07e5b671fefe/01-cover_art_archive-152108de4b5a.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/4c4eee61-da1e-4115-8eb9-07e5b671fefe",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Olivia Rodrigo《you seem pretty sad for a girl so in love》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/4c4eee61-da1e-4115-8eb9-07e5b671fefe",
-          "title": "you seem pretty sad for a girl so in love",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2000,6 +1850,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -2011,7 +1864,7 @@
       "releaseDate": "2026-06-01",
       "bucket": "upcoming_top",
       "rank": 7,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/01-kpopofficial-8622a00d8bbd.jpg",
       "images": [
         {
@@ -2020,14 +1873,129 @@
           "sourceUrl": "https://kpopofficial.com/album/fifty-fifty-imperfect-imperfect/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》预告图",
-          "order": 1
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:2:47e26280c3bb",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/02-xiaohongshu-47e26280c3bb.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 6146,
+          "height": 12290,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 1，匹配置信度 34",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:3:3d55eac51f2b",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/03-xiaohongshu-3d55eac51f2b.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3072,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 2，匹配置信度 34",
+          "order": 3,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:4:7ce2198f9c0c",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/04-xiaohongshu-7ce2198f9c0c.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3072,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 3，匹配置信度 34",
+          "order": 4,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:5:61b4e6088cd9",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/05-xiaohongshu-61b4e6088cd9.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3072,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 4，匹配置信度 34",
+          "order": 5,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:6:5e7fbcde4202",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/06-xiaohongshu-5e7fbcde4202.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3072,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 5，匹配置信度 34",
+          "order": 6,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:7:6a097accf94f",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/07-xiaohongshu-6a097accf94f.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3073,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 6，匹配置信度 34",
+          "order": 7,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:8:4625599757e5",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/08-xiaohongshu-4625599757e5.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3073,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 7，匹配置信度 34",
+          "order": 8,
+          "requiresReview": true,
+          "rightsRisk": "high"
+        },
+        {
+          "id": "kpopofficial-3c76adb4:9:89607cd5d68f",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-3c76adb4/09-xiaohongshu-89607cd5d68f.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · Athena全肯定",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 3072,
+          "height": 4096,
+          "alt": "FIFTY FIFTY《Imperfect-I’mperfect》小红书视觉候选图 8，匹配置信度 34",
+          "order": 9,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "FIFTY FIFTY 4th Mini Album [Imperfect-I‘mperfect] 2026.06.01 6PM (KST) #杨子娴[话题]# #ATHENA[话题]# #FIFTYFIFTY[话题]# #新百妹[话题]# #kpop[话题]# #女爱豆[话题]#",
+      "visualSummary": "小红书候选图文《Athena｜FIFTY FIFTY六月mini4回归造型🧡》收录 8 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
           "type": "kpopofficial",
@@ -2037,10 +2005,27 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "type": "xiaohongshu",
+          "name": "小红书 · Athena全肯定",
+          "url": "https://www.xiaohongshu.com/explore/6a0ed619000000003501d7a8?xsec_token=ABu9rXbiNb7gLpdWlOn71HT68DolU5SnPAODH6tAx6Wo8%3D&xsec_source=pc_search",
+          "title": "Athena｜FIFTY FIFTY六月mini4回归造型🧡",
+          "description": "FIFTY FIFTY 4th Mini Album [Imperfect-I‘mperfect] 2026.06.01 6PM (KST) #杨子娴[话题]# #ATHENA[话题]# #FIFTYFIFTY[话题]# #新百妹[话题]# #kpop[话题]# #女爱豆[话题]#",
+          "imageCount": 8,
+          "confidence": 58,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 72,
+      "visualImageCount": 1,
+      "candidateImageCount": 8,
+      "coverFallbackImageCount": 0,
+      "confidence": 90,
       "reviewed": false
     },
     {
@@ -2051,36 +2036,16 @@
       "releaseDate": "2026-06-26",
       "bucket": "upcoming_top",
       "rank": 8,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/b9df3445-4699-4221-9994-734c1c912468/01-cover_art_archive-c1d54db9f3fd.jpg",
-      "images": [
-        {
-          "id": "b9df3445-4699-4221-9994-734c1c912468:1:c1d54db9f3fd",
-          "localUrl": "visuals/2026/upcoming_top/b9df3445-4699-4221-9994-734c1c912468/01-cover_art_archive-c1d54db9f3fd.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/b9df3445-4699-4221-9994-734c1c912468",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "The Strokes《Reality Awaits》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/b9df3445-4699-4221-9994-734c1c912468",
-          "title": "Reality Awaits",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2091,7 +2056,7 @@
       "releaseDate": "2026-06-26",
       "bucket": "upcoming_top",
       "rank": 9,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-d2d307c5/01-kpopofficial-34e6610c83c0.jpg",
       "images": [
         {
@@ -2100,14 +2065,31 @@
           "sourceUrl": "https://kpopofficial.com/album/ateez-golden-hour-part5/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "ATEEZ《GOLDEN HOUR : Part.5》预告图",
-          "order": 1
+          "alt": "ATEEZ《GOLDEN HOUR : Part.5》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "id": "kpopofficial-d2d307c5:2:9866fdc8f85b",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-d2d307c5/02-xiaohongshu-9866fdc8f85b.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/6a119c760000000036032fe2?xsec_token=ABw1RkrKBeTNLstSm1hDe98u8cxq3q3MIq7KF3ORb3h4A%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · 三原色",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 1290,
+          "height": 2796,
+          "alt": "ATEEZ《GOLDEN HOUR : Part.5》小红书视觉候选图 1，匹配置信度 66",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "Golden hour：Part.5要来了，下个月，期待！#新专辑[话题]# #Ateez[话题]# #GOLDENHOUR_Part5[话题]#",
+      "visualSummary": "小红书候选图文《Ateez新ep!Golden hour：Part.5》收录 1 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
           "type": "kpopofficial",
@@ -2117,10 +2099,27 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "type": "xiaohongshu",
+          "name": "小红书 · 三原色",
+          "url": "https://www.xiaohongshu.com/explore/6a119c760000000036032fe2?xsec_token=ABw1RkrKBeTNLstSm1hDe98u8cxq3q3MIq7KF3ORb3h4A%3D&xsec_source=pc_search",
+          "title": "Ateez新ep!Golden hour：Part.5",
+          "description": "Golden hour：Part.5要来了，下个月，期待！#新专辑[话题]# #Ateez[话题]# #GOLDENHOUR_Part5[话题]#",
+          "imageCount": 1,
+          "confidence": 75,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 72,
+      "visualImageCount": 1,
+      "candidateImageCount": 1,
+      "coverFallbackImageCount": 0,
+      "confidence": 75,
       "reviewed": false
     },
     {
@@ -2131,7 +2130,7 @@
       "releaseDate": "2026-06-01",
       "bucket": "upcoming_top",
       "rank": 10,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-8f558a0c/01-kpopofficial-24152b711599.jpg",
       "images": [
         {
@@ -2140,14 +2139,31 @@
           "sourceUrl": "https://kpopofficial.com/album/triples-assemble26-love-pop-pt-1/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "tripleS《ASSEMBLE26 LOVE&POP pt.1》预告图",
-          "order": 1
+          "alt": "tripleS《ASSEMBLE26 LOVE&POP pt.1》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "id": "kpopofficial-8f558a0c:2:1a0e5e0c27ce",
+          "localUrl": "visuals/2026/upcoming_top/kpopofficial-8f558a0c/02-xiaohongshu-1a0e5e0c27ce.webp",
+          "sourceUrl": "https://www.xiaohongshu.com/explore/69fa248b0000000035026b04?xsec_token=ABBe4zZLkbHkkLkRHvy9DSLcoH1_rS1PwChzOfTRXpNa4%3D&xsec_source=pc_search",
+          "sourceName": "小红书 · tripleS_Energetic",
+          "sourceType": "xiaohongshu",
+          "role": "ugc_candidate",
+          "width": 2050,
+          "height": 2560,
+          "alt": "tripleS《ASSEMBLE26 LOVE&POP pt.1》小红书视觉候选图 1，匹配置信度 38",
+          "order": 2,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "conceptDescription": null,
-      "visualSummary": null,
+      "conceptDescription": "tripleS LOVE & POP pt.1 回归日程表｜ 根据北京时间 转写 5月 5日 23:00 moon in 曼谷: 当地视角 6日 10:00 专辑预售 23:00 neptune in 台北：当地视角 7日 23:00 sun in 东京：当地视角 8日 23:00 zenith in 首尔：当地视角 9日 23:00 OT24 团体概念照（Blooming ver） 10日 23:00 moon 概念照 (Blooming Flower ver.) 11日 23:00 sun 概念照(Blooming Flower ver.) 12日 23:00 neptune 概念照 (Blooming Flower ver.) 13日 23:00 zenith 概念照 (Blooming Flower …",
+      "visualSummary": "小红书候选图文《》收录 1 张视觉图，需人工复核版权与匹配度。",
       "sources": [
         {
           "type": "kpopofficial",
@@ -2157,10 +2173,27 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
+        },
+        {
+          "type": "xiaohongshu",
+          "name": "小红书 · tripleS_Energetic",
+          "url": "https://www.xiaohongshu.com/explore/69fa248b0000000035026b04?xsec_token=ABBe4zZLkbHkkLkRHvy9DSLcoH1_rS1PwChzOfTRXpNa4%3D&xsec_source=pc_search",
+          "title": "",
+          "description": "tripleS LOVE & POP pt.1 回归日程表｜ 根据北京时间 转写 5月 5日 23:00 moon in 曼谷: 当地视角 6日 10:00 专辑预售 23:00 neptune in 台北：当地视角 7日 23:00 sun in 东京：当地视角 8日 23:00 zenith in 首尔：当地视角 9日 23:00 OT24 团体概念照（Blooming ver） 10日 23:00 moon 概念照 (Blooming Flower ver.) 11日 23:00 sun 概念照(Blooming Flower ver.) 12日 23:00 neptune 概念照 (Blooming Flower ver.…",
+          "imageCount": 1,
+          "confidence": 49,
+          "priority": 11,
+          "requiresReview": true,
+          "rightsRisk": "high"
         }
       ],
-      "confidence": 72,
+      "visualImageCount": 1,
+      "candidateImageCount": 1,
+      "coverFallbackImageCount": 0,
+      "confidence": 75,
       "reviewed": false
     },
     {
@@ -2171,36 +2204,16 @@
       "releaseDate": "2026-06-19",
       "bucket": "upcoming_top",
       "rank": 11,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/db49226b-0ab0-489a-82a5-84f57961798b/01-cover_art_archive-ac34c36ff799.jpg",
-      "images": [
-        {
-          "id": "db49226b-0ab0-489a-82a5-84f57961798b:1:ac34c36ff799",
-          "localUrl": "visuals/2026/upcoming_top/db49226b-0ab0-489a-82a5-84f57961798b/01-cover_art_archive-ac34c36ff799.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/db49226b-0ab0-489a-82a5-84f57961798b",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Zoon《Happy Thought School》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/db49226b-0ab0-489a-82a5-84f57961798b",
-          "title": "Happy Thought School",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2211,36 +2224,16 @@
       "releaseDate": "2026-06-06",
       "bucket": "upcoming_top",
       "rank": 12,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/de4a7faf-f723-4c5f-b7c3-abea91faeda8/01-cover_art_archive-4d4e9a62c8dc.jpg",
-      "images": [
-        {
-          "id": "de4a7faf-f723-4c5f-b7c3-abea91faeda8:1:4d4e9a62c8dc",
-          "localUrl": "visuals/2026/upcoming_top/de4a7faf-f723-4c5f-b7c3-abea91faeda8/01-cover_art_archive-4d4e9a62c8dc.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/de4a7faf-f723-4c5f-b7c3-abea91faeda8",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Six Sex《ULTRA》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/de4a7faf-f723-4c5f-b7c3-abea91faeda8",
-          "title": "ULTRA",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2251,36 +2244,16 @@
       "releaseDate": "2026-06-05",
       "bucket": "upcoming_top",
       "rank": 13,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/74fffc36-a761-4592-b56a-9d52f5ad92fc/01-cover_art_archive-c931a5c26af5.jpg",
-      "images": [
-        {
-          "id": "74fffc36-a761-4592-b56a-9d52f5ad92fc:1:c931a5c26af5",
-          "localUrl": "visuals/2026/upcoming_top/74fffc36-a761-4592-b56a-9d52f5ad92fc/01-cover_art_archive-c931a5c26af5.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/74fffc36-a761-4592-b56a-9d52f5ad92fc",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Madsen《SMILE》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/74fffc36-a761-4592-b56a-9d52f5ad92fc",
-          "title": "SMILE",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2291,36 +2264,16 @@
       "releaseDate": "2026-07-10",
       "bucket": "upcoming_top",
       "rank": 14,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e/01-cover_art_archive-685899920640.jpg",
-      "images": [
-        {
-          "id": "b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e:1:685899920640",
-          "localUrl": "visuals/2026/upcoming_top/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e/01-cover_art_archive-685899920640.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Pain Gain《Pain Gain》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/b38ab7d4-cd7f-4f0c-be48-0bcfd270d47e",
-          "title": "Pain Gain",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2331,36 +2284,16 @@
       "releaseDate": "2026-06-05",
       "bucket": "upcoming_top",
       "rank": 15,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/3a11deea-98b9-48a2-b844-2c859e5904ba/01-cover_art_archive-09768dff6c82.jpg",
-      "images": [
-        {
-          "id": "3a11deea-98b9-48a2-b844-2c859e5904ba:1:09768dff6c82",
-          "localUrl": "visuals/2026/upcoming_top/3a11deea-98b9-48a2-b844-2c859e5904ba/01-cover_art_archive-09768dff6c82.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/3a11deea-98b9-48a2-b844-2c859e5904ba",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Niall Horan《Dinner Party》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/3a11deea-98b9-48a2-b844-2c859e5904ba",
-          "title": "Dinner Party",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2371,36 +2304,16 @@
       "releaseDate": "2026-07-10",
       "bucket": "upcoming_top",
       "rank": 16,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6/01-cover_art_archive-a87c14931203.jpg",
-      "images": [
-        {
-          "id": "09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6:1:a87c14931203",
-          "localUrl": "visuals/2026/upcoming_top/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6/01-cover_art_archive-a87c14931203.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Finn Wolfhard《Fire From the Hip》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/09ed98cd-d1b7-40f5-89d1-f9ba966ca0c6",
-          "title": "Fire From the Hip",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2411,7 +2324,7 @@
       "releaseDate": "2026-06-15",
       "bucket": "upcoming_top",
       "rank": 17,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-32ce39bb/01-kpopofficial-ad43f5b4557b.jpg",
       "images": [
         {
@@ -2420,10 +2333,13 @@
           "sourceUrl": "https://kpopofficial.com/album/riize-mini-album-ii/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "RIIZE《II》预告图",
-          "order": 1
+          "alt": "RIIZE《II》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -2437,9 +2353,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -2451,36 +2372,16 @@
       "releaseDate": "2026-07-10",
       "bucket": "upcoming_top",
       "rank": 18,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/6c7fe306-6a28-4fa7-970c-f465019ec8eb/01-cover_art_archive-002707961ddf.jpg",
-      "images": [
-        {
-          "id": "6c7fe306-6a28-4fa7-970c-f465019ec8eb:1:002707961ddf",
-          "localUrl": "visuals/2026/upcoming_top/6c7fe306-6a28-4fa7-970c-f465019ec8eb/01-cover_art_archive-002707961ddf.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/6c7fe306-6a28-4fa7-970c-f465019ec8eb",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "The Plot in You《The Plot in You》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/6c7fe306-6a28-4fa7-970c-f465019ec8eb",
-          "title": "The Plot in You",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2491,36 +2392,16 @@
       "releaseDate": "2026-07-17",
       "bucket": "upcoming_top",
       "rank": 19,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/de928b96-183b-4c3f-926d-9ea2c67695e3/01-cover_art_archive-974b9595cb5d.jpg",
-      "images": [
-        {
-          "id": "de928b96-183b-4c3f-926d-9ea2c67695e3:1:974b9595cb5d",
-          "localUrl": "visuals/2026/upcoming_top/de928b96-183b-4c3f-926d-9ea2c67695e3/01-cover_art_archive-974b9595cb5d.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/de928b96-183b-4c3f-926d-9ea2c67695e3",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Quicksand《Bring On The Psychics》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/de928b96-183b-4c3f-926d-9ea2c67695e3",
-          "title": "Bring On The Psychics",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2531,7 +2412,7 @@
       "releaseDate": "2026-06-08",
       "bucket": "upcoming_top",
       "rank": 20,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-c9adbc07/01-kpopofficial-73bbecc4da67.jpg",
       "images": [
         {
@@ -2540,10 +2421,13 @@
           "sourceUrl": "https://kpopofficial.com/album/boynextdoor-home/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "BOYNEXTDOOR《HOME》预告图",
-          "order": 1
+          "alt": "BOYNEXTDOOR《HOME》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -2557,9 +2441,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -2571,7 +2460,7 @@
       "releaseDate": "2026-06-01",
       "bucket": "upcoming_top",
       "rank": 21,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-011e5f20/01-kpopofficial-8a067ead55ea.jpg",
       "images": [
         {
@@ -2580,10 +2469,13 @@
           "sourceUrl": "https://kpopofficial.com/album/shinee-atmos/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "SHINee《Atmos》预告图",
-          "order": 1
+          "alt": "SHINee《Atmos》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -2597,9 +2489,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -2611,36 +2508,16 @@
       "releaseDate": "2026-06-19",
       "bucket": "upcoming_top",
       "rank": 22,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/98b7365b-a6d7-47a9-a15a-5de1d549fda2/01-cover_art_archive-9dfc8ae5c0b9.jpg",
-      "images": [
-        {
-          "id": "98b7365b-a6d7-47a9-a15a-5de1d549fda2:1:9dfc8ae5c0b9",
-          "localUrl": "visuals/2026/upcoming_top/98b7365b-a6d7-47a9-a15a-5de1d549fda2/01-cover_art_archive-9dfc8ae5c0b9.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/98b7365b-a6d7-47a9-a15a-5de1d549fda2",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Red Kite《This Too Shall Pass》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/98b7365b-a6d7-47a9-a15a-5de1d549fda2",
-          "title": "This Too Shall Pass",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2651,7 +2528,7 @@
       "releaseDate": "2026-06-17",
       "bucket": "upcoming_top",
       "rank": 23,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-075293a4/01-kpopofficial-f36322122d4a.png",
       "images": [
         {
@@ -2660,10 +2537,13 @@
           "sourceUrl": "https://kpopofficial.com/album/onf-onf-my-self/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "ONF《ONF:MY SELF》预告图",
-          "order": 1
+          "alt": "ONF《ONF:MY SELF》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -2677,9 +2557,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -2691,36 +2576,16 @@
       "releaseDate": "2026-06-05",
       "bucket": "upcoming_top",
       "rank": 24,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/86265999-c4da-44fc-8323-cdff283acc2c/01-cover_art_archive-a4e049477eb7.jpg",
-      "images": [
-        {
-          "id": "86265999-c4da-44fc-8323-cdff283acc2c:1:a4e049477eb7",
-          "localUrl": "visuals/2026/upcoming_top/86265999-c4da-44fc-8323-cdff283acc2c/01-cover_art_archive-a4e049477eb7.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/86265999-c4da-44fc-8323-cdff283acc2c",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "CeCe Winans《The Hymns》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/86265999-c4da-44fc-8323-cdff283acc2c",
-          "title": "The Hymns",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2731,36 +2596,16 @@
       "releaseDate": "2026-06-05",
       "bucket": "upcoming_top",
       "rank": 25,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0/01-cover_art_archive-1364d43ff4f5.jpg",
-      "images": [
-        {
-          "id": "d0251bcf-883f-47ff-aa7b-d8dfe07a87d0:1:1364d43ff4f5",
-          "localUrl": "visuals/2026/upcoming_top/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0/01-cover_art_archive-1364d43ff4f5.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Barry Manilow《What a Time》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/d0251bcf-883f-47ff-aa7b-d8dfe07a87d0",
-          "title": "What a Time",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2777,6 +2622,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -2788,7 +2636,7 @@
       "releaseDate": "2026-06-01",
       "bucket": "upcoming_top",
       "rank": 27,
-      "status": "cover_only",
+      "status": "visual_found",
       "heroImageUrl": "visuals/2026/upcoming_top/kpopofficial-5dd76e13/01-kpopofficial-2cc08d7b5eb0.jpg",
       "images": [
         {
@@ -2797,10 +2645,13 @@
           "sourceUrl": "https://kpopofficial.com/album/meovv-bite-now/",
           "sourceName": "KpopOfficial",
           "sourceType": "kpopofficial",
+          "role": "teaser_photo",
           "width": null,
           "height": null,
-          "alt": "MEOVV《BITE NOW》预告图",
-          "order": 1
+          "alt": "MEOVV《BITE NOW》预告视觉图",
+          "order": 1,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
       "conceptDescription": null,
@@ -2814,9 +2665,14 @@
           "description": null,
           "imageCount": 1,
           "confidence": 72,
-          "priority": 2
+          "priority": 5,
+          "requiresReview": true,
+          "rightsRisk": "medium"
         }
       ],
+      "visualImageCount": 1,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 72,
       "reviewed": false
     },
@@ -2828,36 +2684,16 @@
       "releaseDate": "2026-07-31",
       "bucket": "upcoming_top",
       "rank": 28,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/a45fa107-0b0f-4146-91ed-c78336c054ac/01-cover_art_archive-2f20da3fb6d3.jpg",
-      "images": [
-        {
-          "id": "a45fa107-0b0f-4146-91ed-c78336c054ac:1:2f20da3fb6d3",
-          "localUrl": "visuals/2026/upcoming_top/a45fa107-0b0f-4146-91ed-c78336c054ac/01-cover_art_archive-2f20da3fb6d3.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/a45fa107-0b0f-4146-91ed-c78336c054ac",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Various Artists《The Devil Wears Prada 2: Music from the Motion Picture》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/a45fa107-0b0f-4146-91ed-c78336c054ac",
-          "title": "The Devil Wears Prada 2: Music from the Motion Picture",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     },
     {
@@ -2874,6 +2710,9 @@
       "conceptDescription": null,
       "visualSummary": null,
       "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
       "confidence": 0,
       "reviewed": false
     },
@@ -2885,36 +2724,16 @@
       "releaseDate": "2026-07-10",
       "bucket": "upcoming_top",
       "rank": 30,
-      "status": "cover_only",
-      "heroImageUrl": "visuals/2026/upcoming_top/07feb5f6-833a-49bc-a3c4-34ae74dac42c/01-cover_art_archive-2036e11eee52.jpg",
-      "images": [
-        {
-          "id": "07feb5f6-833a-49bc-a3c4-34ae74dac42c:1:2036e11eee52",
-          "localUrl": "visuals/2026/upcoming_top/07feb5f6-833a-49bc-a3c4-34ae74dac42c/01-cover_art_archive-2036e11eee52.jpg",
-          "sourceUrl": "https://coverartarchive.org/release-group/07feb5f6-833a-49bc-a3c4-34ae74dac42c",
-          "sourceName": "Cover Art Archive",
-          "sourceType": "cover_art_archive",
-          "width": null,
-          "height": null,
-          "alt": "Baby Rose《YEARNALISM》封面图",
-          "order": 1
-        }
-      ],
+      "status": "none",
+      "heroImageUrl": null,
+      "images": [],
       "conceptDescription": null,
       "visualSummary": null,
-      "sources": [
-        {
-          "type": "cover_art_archive",
-          "name": "Cover Art Archive",
-          "url": "https://coverartarchive.org/release-group/07feb5f6-833a-49bc-a3c4-34ae74dac42c",
-          "title": "YEARNALISM",
-          "description": null,
-          "imageCount": 1,
-          "confidence": 58,
-          "priority": 4
-        }
-      ],
-      "confidence": 58,
+      "sources": [],
+      "visualImageCount": 0,
+      "candidateImageCount": 0,
+      "coverFallbackImageCount": 0,
+      "confidence": 0,
       "reviewed": false
     }
   ]
