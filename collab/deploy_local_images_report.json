@@ -1,0 +1,15 @@
+{
+  "sourceRoot": "/Users/huangdong/Downloads/codex-lm/fashion-collabs-q1-2026",
+  "targetRoot": "/Users/huangdong/Downloads/github/caixukun_zhihu/collab",
+  "imageUrlCount": 426,
+  "downloadedCount": 425,
+  "failedCount": 1,
+  "placeholderPath": "assets/images/missing-image.svg",
+  "downloadedBytes": 89341702,
+  "failures": [
+    {
+      "url": "https://ecomapi.jewels.com/productimages/processed/V-20298826_0_565.jpg",
+      "error": "HTTP 404"
+    }
+  ]
+}

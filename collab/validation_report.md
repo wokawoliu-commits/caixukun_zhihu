@@ -1,0 +1,159 @@
+# Validation Report
+
+Generated: 2026-05-31
+
+## Summary
+- Main records: 115
+- Unique sources: 126
+- Image rows: 115
+- Records with image meta URL: 74
+- Source directory rows: 21
+- A/B candidate queue rows: 40
+- SKP product rows: 427
+- SKP covered collaborations: 70
+- SKP completion queue rows: 45
+- Verified official SKP rows preserved from cache: 204
+- Stella-like official gap risk rows: 29
+- Errors: 0
+- Warnings: 119
+
+## Errors
+- None
+
+## Test Plan Checks
+- Required main fields missing: 0
+- Release dates outside 2026 Q1: 0
+- Duplicate merge-key rows: 0
+- Image rows missing source page, credit, or rights note: 0
+- Sample date audit size: 10 records (Q12026-001 2026-01-15, Q12026-002 2026-01-03, Q12026-003 2026-01-26, Q12026-004 2026-01-26, Q12026-005 2026-01-26, Q12026-006 2026-01-16, Q12026-007 2026-01-23, Q12026-008 2026-01-31, Q12026-009 2026-01-24, Q12026-010 2026-01-20)
+- Boundary queue rows excluded from main table: 9
+- A/B candidates promoted across expansion passes: 32
+- Machine-run-2 candidates promoted to main table: 26
+- Source directory priority P0/P1 rows: 17
+- SKP required fields missing: 0
+- SKP duplicate product keys: 0
+- SKP rows with price but no currency: 0
+- SKP no-core records processed: 47 / 47
+- SKP evidence mix: verified_product=370, press_listed=57
+- SKP unresolved collaborations: 45
+
+## Warnings
+- Q12026-011: no og/twitter image found; gallery uses source page link only
+- Q12026-016: no og/twitter image found; gallery uses source page link only
+- Q12026-017: no og/twitter image found; gallery uses source page link only
+- Q12026-019: no og/twitter image found; gallery uses source page link only
+- Q12026-022: no og/twitter image found; gallery uses source page link only
+- Q12026-023: no og/twitter image found; gallery uses source page link only
+- Q12026-035: no og/twitter image found; gallery uses source page link only
+- Q12026-037: no og/twitter image found; gallery uses source page link only
+- Q12026-039: no og/twitter image found; gallery uses source page link only
+- Q12026-041: no og/twitter image found; gallery uses source page link only
+- Q12026-042: no og/twitter image found; gallery uses source page link only
+- Q12026-043: no og/twitter image found; gallery uses source page link only
+- Q12026-045: no og/twitter image found; gallery uses source page link only
+- Q12026-056: no og/twitter image found; gallery uses source page link only
+- Q12026-067: no og/twitter image found; gallery uses source page link only
+- Q12026-079: no og/twitter image found; gallery uses source page link only
+- Q12026-080: no og/twitter image found; gallery uses source page link only
+- Q12026-081: no og/twitter image found; gallery uses source page link only
+- Q12026-082: no og/twitter image found; gallery uses source page link only
+- Q12026-092: no og/twitter image found; gallery uses source page link only
+- Q12026-094: no og/twitter image found; gallery uses source page link only
+- Q12026-096: no og/twitter image found; gallery uses source page link only
+- Q12026-097: no og/twitter image found; gallery uses source page link only
+- Q12026-098: no og/twitter image found; gallery uses source page link only
+- Q12026-099: no og/twitter image found; gallery uses source page link only
+- Q12026-100: no og/twitter image found; gallery uses source page link only
+- Q12026-101: no og/twitter image found; gallery uses source page link only
+- Q12026-102: no og/twitter image found; gallery uses source page link only
+- Q12026-103: no og/twitter image found; gallery uses source page link only
+- Q12026-104: no og/twitter image found; gallery uses source page link only
+- Q12026-105: no og/twitter image found; gallery uses source page link only
+- Q12026-106: no og/twitter image found; gallery uses source page link only
+- Q12026-107: no og/twitter image found; gallery uses source page link only
+- Q12026-108: no og/twitter image found; gallery uses source page link only
+- Q12026-109: no og/twitter image found; gallery uses source page link only
+- Q12026-110: no og/twitter image found; gallery uses source page link only
+- Q12026-111: no og/twitter image found; gallery uses source page link only
+- Q12026-112: no og/twitter image found; gallery uses source page link only
+- Q12026-113: no og/twitter image found; gallery uses source page link only
+- Q12026-114: no og/twitter image found; gallery uses source page link only
+- Q12026-115: no og/twitter image found; gallery uses source page link only
+- SRC-102: source fetch returned HTTP 403
+- SRC-102: fetch note http 403
+- SRC-002: source fetch returned HTTP 403
+- SRC-002: fetch note http 403
+- SRC-003: source fetch returned HTTP 403
+- SRC-003: fetch note http 403
+- SRC-041: source fetch returned HTTP 403
+- SRC-041: fetch note http 403
+- SRC-046: source fetch returned HTTP 403
+- SRC-046: fetch note http 403
+- SRC-017: source fetch returned HTTP 403
+- SRC-017: fetch note http 403
+- SRC-010: source fetch returned HTTP 403
+- SRC-010: fetch note http 403
+- SRC-028: source fetch returned HTTP 403
+- SRC-028: fetch note http 403
+- SRC-125: source fetch returned HTTP 404
+- SRC-125: fetch note http 404
+- SRC-111: source fetch returned HTTP 404
+- SRC-111: fetch note http 404
+- SRC-113: source fetch returned HTTP 404
+- SRC-113: fetch note http 404
+- SRC-118: source fetch returned HTTP 404
+- SRC-118: fetch note http 404
+- SRC-108: source fetch returned HTTP 404
+- SRC-108: fetch note http 404
+- SRC-122: source fetch returned HTTP 404
+- SRC-122: fetch note http 404
+- SRC-115: source fetch returned HTTP 404
+- SRC-115: fetch note http 404
+- SRC-107: source fetch returned HTTP 404
+- SRC-107: fetch note http 404
+- SRC-110: source fetch returned HTTP 404
+- SRC-110: fetch note http 404
+- SRC-114: source fetch returned HTTP 404
+- SRC-114: fetch note http 404
+- SRC-119: source fetch returned HTTP 404
+- SRC-119: fetch note http 404
+- SRC-124: source fetch returned HTTP 404
+- SRC-124: fetch note http 404
+- SRC-116: source fetch returned HTTP 404
+- SRC-116: fetch note http 404
+- SRC-117: source fetch returned HTTP 404
+- SRC-117: fetch note http 404
+- SRC-120: source fetch returned HTTP 404
+- SRC-120: fetch note http 404
+- SRC-109: source fetch returned HTTP 404
+- SRC-109: fetch note http 404
+- SRC-123: source fetch returned HTTP 404
+- SRC-123: fetch note http 404
+- SRC-126: source fetch returned HTTP 404
+- SRC-126: fetch note http 404
+- SRC-112: source fetch returned HTTP 404
+- SRC-112: fetch note http 404
+- SRC-121: source fetch returned HTTP 404
+- SRC-121: fetch note http 404
+- SRC-088: source fetch returned HTTP 403
+- SRC-088: fetch note http 403
+- SRC-049: source fetch returned HTTP 403
+- SRC-049: fetch note http 403
+- SRC-091: source fetch returned HTTP 403
+- SRC-091: fetch note http 403
+- SRC-053: source fetch returned HTTP 403
+- SRC-053: fetch note http 403
+- SRC-090: source fetch returned HTTP 403
+- SRC-090: fetch note http 403
+- SRC-050: source fetch returned HTTP 403
+- SRC-050: fetch note http 403
+- SRC-083: source fetch returned HTTP 403
+- SRC-083: fetch note http 403
+- SRC-022: source fetch returned HTTP 403
+- SRC-022: fetch note http 403
+- SRC-023: source fetch returned HTTP 403
+- SRC-023: fetch note http 403
+- SRC-048: source fetch returned HTTP 403
+- SRC-048: fetch note http 403
+- SRC-089: source fetch returned HTTP 403
+- SRC-089: fetch note http 403
