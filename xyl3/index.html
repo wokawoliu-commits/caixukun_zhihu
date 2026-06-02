@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackPaper x 肖宇梁｜#NGC7023 鸢尾花星云 素材调研视觉版</title>
+  <meta name="description" content="SnackPaper x 肖宇梁 #NGC7023 鸢尾花星云第二条概念预热的事实素材、粉丝情感与传播框架视觉版。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2306070d'/%3E%3Cpath d='M12 36c12-20 28-20 40 0' fill='none' stroke='%238f82ff' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f6f0df'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #161615;
+      --muted: #6f6a61;
+      --paper: #f6f0df;
+      --paper-2: #ece2ca;
+      --paper-3: #fffaf0;
+      --night: #06070d;
+      --night-2: #161521;
+      --line: rgba(30, 26, 18, 0.18);
+      --iris: #5d54ba;
+      --iris-2: #9b8cff;
+      --green: #6f825e;
+      --amber: #b48645;
+      --rose: #b66c72;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    p,
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px clamp(18px, 4vw, 54px);
+      color: #fffaf0;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+
+    .topbar a,
+    .topbar span {
+      pointer-events: auto;
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      border-color: currentColor;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background: var(--night);
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-media img {
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.06);
+      filter: saturate(1.03) contrast(1.05);
+      animation: slowPan 18s ease-in-out infinite alternate;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 6, 11, 0.94), rgba(7, 8, 14, 0.38) 55%, rgba(7, 8, 14, 0.7)),
+        linear-gradient(180deg, rgba(6, 7, 13, 0.06), rgba(6, 7, 13, 0.92));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - clamp(34px, 8vw, 104px)));
+      margin: 0 auto;
+      padding: 118px 0 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(250px, 0.38fr);
+      gap: clamp(34px, 7vw, 86px);
+      align-items: end;
+    }
+
+    .kicker,
+    .eyebrow {
+      color: var(--iris);
+      font-size: 12px;
+      font-weight: 820;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .hero .kicker {
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      max-width: 860px;
+      margin-bottom: 24px;
+      font-size: clamp(46px, 8.9vw, 112px);
+      line-height: 0.97;
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+
+    h2 {
+      font-size: clamp(30px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 850;
+    }
+
+    h3 {
+      font-size: clamp(19px, 2.3vw, 25px);
+      line-height: 1.22;
+      letter-spacing: 0;
+      font-weight: 820;
+    }
+
+    .hero-lede {
+      max-width: 680px;
+      margin-bottom: 30px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 17px;
+      border: 1px solid rgba(255, 255, 255, 0.52);
+      border-radius: 4px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.86);
+    }
+
+    .button.dark {
+      color: var(--ink);
+      border-color: rgba(22, 22, 21, 0.24);
+      background: rgba(22, 22, 21, 0.06);
+    }
+
+    .hero-side {
+      border-left: 1px solid rgba(255, 255, 255, 0.24);
+      padding-left: 24px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 14px;
+    }
+
+    .hero-side strong {
+      display: block;
+      margin: 0 0 16px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .hero-side dl {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+    }
+
+    .hero-side div {
+      display: grid;
+      gap: 2px;
+    }
+
+    .hero-side dt {
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .hero-side dd {
+      margin: 0;
+    }
+
+    section {
+      position: relative;
+      padding: clamp(70px, 10vw, 132px) 0;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - clamp(34px, 8vw, 104px)));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.56fr) minmax(280px, 0.44fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: end;
+      margin-bottom: clamp(34px, 6vw, 64px);
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .intro {
+      background: var(--paper-3);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .thesis {
+      min-height: 320px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--paper);
+    }
+
+    .thesis:nth-child(2) {
+      background: #ede8d8;
+    }
+
+    .thesis:nth-child(3) {
+      background: #f7f1e2;
+    }
+
+    .thesis .num,
+    .story-step .num,
+    .source-tag {
+      color: var(--iris);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .thesis p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .visual-strip {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      min-height: 620px;
+      background: var(--night);
+      color: #fff;
+    }
+
+    .visual-strip figure {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .visual-strip figure img {
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.03);
+      transition: transform 700ms ease;
+    }
+
+    .visual-strip figure:hover img {
+      transform: scale(1.035);
+    }
+
+    .visual-strip figcaption {
+      position: absolute;
+      inset: auto 18px 18px;
+      padding: 11px 13px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(5, 6, 11, 0.58);
+      backdrop-filter: blur(10px);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 12px;
+    }
+
+    .visual-copy {
+      padding: clamp(34px, 6vw, 70px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+        var(--night-2);
+    }
+
+    .visual-copy p {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 17px;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.14);
+    }
+
+    .fact {
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .fact b {
+      display: block;
+      color: #fff;
+      font-size: 23px;
+      line-height: 1.1;
+    }
+
+    .fact span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+    }
+
+    .evidence {
+      background: var(--paper);
+    }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .evidence-item {
+      display: grid;
+      gap: 14px;
+      align-content: start;
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+    }
+
+    .evidence-item figure {
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: #ddd4bf;
+    }
+
+    .evidence-item figure.wide {
+      aspect-ratio: 4 / 3;
+    }
+
+    .evidence-item figure.reference {
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      background: #ebe2ce;
+    }
+
+    .evidence-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 700ms ease;
+    }
+
+    .evidence-item figure.reference img {
+      object-fit: contain;
+    }
+
+    .evidence-item:hover img {
+      transform: scale(1.045);
+    }
+
+    .evidence-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .bridge {
+      background: #181714;
+      color: #f7f1e2;
+    }
+
+    .bridge .section-head p {
+      color: rgba(247, 241, 226, 0.68);
+    }
+
+    .bridge-grid {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+    }
+
+    .quote-panel {
+      position: sticky;
+      top: 92px;
+      padding: clamp(26px, 4vw, 42px);
+      border: 1px solid rgba(247, 241, 226, 0.18);
+      background: rgba(247, 241, 226, 0.06);
+    }
+
+    .quote-panel blockquote {
+      font-size: clamp(28px, 4.4vw, 52px);
+      line-height: 1.08;
+      font-weight: 820;
+      letter-spacing: 0;
+    }
+
+    .quote-panel p {
+      margin-top: 24px;
+      color: rgba(247, 241, 226, 0.68);
+    }
+
+    .bridge-list {
+      display: grid;
+      gap: 1px;
+      background: rgba(247, 241, 226, 0.16);
+      border: 1px solid rgba(247, 241, 226, 0.16);
+    }
+
+    .bridge-card {
+      display: grid;
+      grid-template-columns: 0.34fr 1fr;
+      gap: 24px;
+      padding: clamp(24px, 4vw, 38px);
+      background: #181714;
+    }
+
+    .bridge-card .label {
+      color: var(--iris-2);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .bridge-card p {
+      margin-top: 10px;
+      color: rgba(247, 241, 226, 0.68);
+    }
+
+    .materials {
+      background: var(--paper-3);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .material-table {
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
+
+    .material-row {
+      display: grid;
+      grid-template-columns: 0.9fr 1fr 1fr 0.55fr;
+      gap: 24px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .material-row.header {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+
+    .material-row b {
+      font-size: 17px;
+    }
+
+    .material-row p,
+    .material-row span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .risk-low,
+    .risk-mid,
+    .risk-high {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .risk-low {
+      color: #345231;
+      background: rgba(111, 130, 94, 0.18);
+    }
+
+    .risk-mid {
+      color: #7c5a21;
+      background: rgba(180, 134, 69, 0.2);
+    }
+
+    .risk-high {
+      color: #7d363b;
+      background: rgba(182, 108, 114, 0.2);
+    }
+
+    .story {
+      background: var(--paper);
+    }
+
+    .story-board {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .story-step {
+      min-height: 290px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 22px;
+      background: var(--paper-3);
+    }
+
+    .story-step:nth-child(even) {
+      background: var(--paper-2);
+    }
+
+    .story-step p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .dos-donts {
+      background: #fbf6e9;
+      border-top: 1px solid var(--line);
+    }
+
+    .dos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(24px, 5vw, 56px);
+    }
+
+    .list-panel {
+      border-top: 3px solid var(--green);
+      padding-top: 22px;
+    }
+
+    .list-panel.dont {
+      border-color: var(--rose);
+    }
+
+    .list-panel ul {
+      margin: 22px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list-panel li {
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .cta {
+      color: #fff;
+      background: var(--night);
+      overflow: hidden;
+    }
+
+    .cta .wrap {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: clamp(28px, 6vw, 72px);
+      align-items: center;
+    }
+
+    .cta h2 {
+      margin-bottom: 22px;
+    }
+
+    .cta p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 17px;
+    }
+
+    .cta-image {
+      position: relative;
+      min-height: 520px;
+      overflow: hidden;
+      border-left: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .cta-image img {
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(1.04) contrast(1.02);
+    }
+
+    .cta-note {
+      margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+    }
+
+    .sources {
+      padding: 44px 0;
+      color: rgba(255, 255, 255, 0.7);
+      background: #0d0d11;
+      font-size: 13px;
+    }
+
+    .sources .wrap {
+      display: grid;
+      grid-template-columns: 0.3fr 0.7fr;
+      gap: 24px;
+    }
+
+    .source-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 16px;
+    }
+
+    .source-list a {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+      transition: transform 700ms ease;
+    }
+
+    .motion-ready .reveal {
+      transform: translateY(18px);
+    }
+
+    .reveal.is-visible {
+      transform: translateY(0);
+    }
+
+    @keyframes slowPan {
+      from {
+        transform: scale(1.06) translate3d(0, 0, 0);
+      }
+      to {
+        transform: scale(1.12) translate3d(-1.5%, -1%, 0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        display: none;
+      }
+
+      .hero-inner,
+      .section-head,
+      .visual-strip,
+      .bridge-grid,
+      .cta .wrap,
+      .sources .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.24);
+        padding-left: 0;
+        padding-top: 22px;
+      }
+
+      .thesis-grid,
+      .evidence-grid,
+      .story-board {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .material-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .quote-panel {
+        position: static;
+      }
+
+      .cta-image {
+        min-height: 360px;
+        border-left: 0;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .topbar {
+        padding: 14px 18px;
+      }
+
+      .hero {
+        min-height: 92svh;
+      }
+
+      .hero-inner {
+        width: calc(100% - 34px);
+        padding-bottom: 34px;
+      }
+
+      h1 {
+        font-size: clamp(42px, 15vw, 72px);
+      }
+
+      .thesis-grid,
+      .evidence-grid,
+      .story-board,
+      .dos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual-strip {
+        min-height: unset;
+      }
+
+      .visual-strip figure {
+        min-height: 380px;
+      }
+
+      .bridge-card,
+      .material-row {
+        grid-template-columns: 1fr;
+      }
+
+      .material-row.header {
+        display: none;
+      }
+
+      .story-step {
+        min-height: 230px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">SnackPaper x Xiao Yuliang</span>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#thesis">核心判断</a>
+      <a href="#evidence">素材证据</a>
+      <a href="#bridge">概念联结</a>
+      <a href="#story">发布框架</a>
+      <a href="#risk">避雷</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/iris-nebula-nasa.jpg" alt="">
+      </div>
+      <div class="hero-inner">
+        <div>
+          <p class="kicker">Concept Warm-up 02 / Research Visual</p>
+          <h1>#NGC7023<br>鸢尾花星云</h1>
+          <p class="hero-lede">第二条概念预热素材调研视觉版：把肖宇梁、酒酒、宇航员、整片宇宙与反射星云之间的关系，整理成可直接进入创意会的证据与叙事。</p>
+          <div class="hero-actions">
+            <a class="button" href="#evidence">查看素材证据</a>
+            <a class="button" href="research/xiao-yuliang-ngc7023-materials.md">打开完整 Markdown</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <strong>一句话判断</strong>
+          <dl>
+            <div>
+              <dt>人物底色</dt>
+              <dd>做自己、清醒、松弛、复杂而不被一句话定义。</dd>
+            </div>
+            <div>
+              <dt>情感锚点</dt>
+              <dd>“有你们好快乐”与酒酒陪伴，构成可公开使用的双向关系。</dd>
+            </div>
+            <div>
+              <dt>概念桥</dt>
+              <dd>反射星云不是独自燃烧，而是在关系中显影。</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="intro" id="thesis">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Research Thesis</p>
+            <h2>这不是把人放进星云，而是让既有记忆显影。</h2>
+          </div>
+          <p>调研显示，肖宇梁与粉丝之间本就长期共享“宇宙、宇航员、月亮、快乐、陪伴”的语义。NGC7023 需要做的是把这些素材组织成更高级的视觉坐标。</p>
+        </div>
+        <div class="thesis-grid reveal">
+          <article class="thesis">
+            <span class="num">01 / Universe</span>
+            <div>
+              <h3>整片宇宙</h3>
+              <p>微博置顶“身后已经有了整片宇宙 / Hello universe”是高可信入口，粉丝“宇航员”语境让星云概念不突兀。</p>
+            </div>
+          </article>
+          <article class="thesis">
+            <span class="num">02 / Reflection</span>
+            <div>
+              <h3>反射星云</h3>
+              <p>NGC7023 的蓝色来自尘埃反射星光。肖宇梁也在角色、镜头、粉丝与生活关系中被看见。</p>
+            </div>
+          </article>
+          <article class="thesis">
+            <span class="num">03 / Orbit</span>
+            <div>
+              <h3>酒酒的轨道</h3>
+              <p>酒酒把宇宙概念带回家：忙碌间隙的放慢节奏、简单日子的滋味、可触摸的陪伴。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-strip">
+      <figure>
+        <img src="assets/xhs-refs/r21.webp" alt="肖宇梁与酒酒相关小红书视觉参考">
+        <figcaption>本地参考图：肖宇梁与酒酒日常语境，“我和酒酒的一天”让陪伴关系可视化。</figcaption>
+      </figure>
+      <div class="visual-copy">
+        <div class="reveal">
+          <p class="eyebrow">Emotional Anchor</p>
+          <h2>酒酒不是花絮道具，是星云落到日常的轨道。</h2>
+        </div>
+        <p class="reveal">黑场提供未知、凝视与观测感；白场提供家、毛发、饭碗和靠近。两个场景不必写成反差人格，可以写成同一片星云的不同光谱。</p>
+        <div class="facts reveal">
+          <div class="fact">
+            <b>3.8万</b>
+            <span>酒酒陪吃饭小红书赞量级</span>
+          </div>
+          <div class="fact">
+            <b>6.5万</b>
+            <span>“有你们好快乐”赞量级</span>
+          </div>
+          <div class="fact">
+            <b>1.23</b>
+            <span>生日与十周年共同记忆</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence" id="evidence">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Evidence Wall</p>
+            <h2>可进入第二条预热的四类素材。</h2>
+          </div>
+          <p>优先选择官方账号、公开访谈、低争议粉丝共识和天文事实。争议、旧疾、CP 与角色代餐只作内部理解，不进入品牌口径。</p>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence-item reveal">
+            <figure class="wide">
+              <img src="assets/iris-nebula-nasa.jpg" alt="NGC 7023 鸢尾花星云">
+            </figure>
+            <span class="source-tag">NASA / NGC 7023</span>
+            <h3>反射星云</h3>
+            <p>蓝色来自尘埃反射星光。适合转译成“不是猛烈自燃，而是在关系中被照亮”。</p>
+          </article>
+          <article class="evidence-item reveal">
+            <figure class="reference">
+              <img src="assets/xhs-refs/r24.webp" alt="酒酒陪吃饭视觉参考">
+            </figure>
+            <span class="source-tag">Xiaohongshu / Jiujui</span>
+            <h3>酒酒陪伴</h3>
+            <p>“回家、放慢、简单日子”是高共鸣低风险的情绪锚点，可做“酒酒的轨道”。</p>
+          </article>
+          <article class="evidence-item reveal">
+            <figure class="reference">
+              <img src="assets/xhs-refs/r13.webp" alt="鸢尾花色彩视觉参考">
+            </figure>
+            <span class="source-tag">Iris / Color</span>
+            <h3>鸢尾色谱</h3>
+            <p>鸢尾花负责诗性和蓝紫色彩，虹膜负责凝视，星云负责未知与宇宙坐标。</p>
+          </article>
+          <article class="evidence-item reveal">
+            <figure class="reference">
+              <img src="assets/xhs-refs/r11.webp" alt="未来感光门视觉参考">
+            </figure>
+            <span class="source-tag">Visual System</span>
+            <h3>观测入口</h3>
+            <p>光门、投影、扫描线和档案编号，能把粉丝共同记忆包装成主题观测。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bridge" id="bridge">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Concept Bridge</p>
+            <h2>四条桥，把肖宇梁与 NGC7023 接上。</h2>
+          </div>
+          <p>第二条预热不需要证明“他适合星云”，而要让粉丝感到：这个概念本来就在他与大家的共同记忆里。</p>
+        </div>
+        <div class="bridge-grid">
+          <aside class="quote-panel reveal">
+            <blockquote>他身后的整片宇宙，这一次有了名字。</blockquote>
+            <p>建议作为主标题或收束句，直接连接微博置顶、粉丝宇航员语境与本季主题。</p>
+          </aside>
+          <div class="bridge-list">
+            <article class="bridge-card reveal">
+              <span class="label">Universe</span>
+              <div>
+                <h3>从“整片宇宙”到 #NGC7023</h3>
+                <p>微博置顶与粉丝“宇航员”语境，构成主题的第一层事实基础。星云不是新造词，而是长期关系的命名。</p>
+              </div>
+            </article>
+            <article class="bridge-card reveal">
+              <span class="label">Reflection</span>
+              <div>
+                <h3>从“做自己”到反射星云</h3>
+                <p>公开访谈中的清醒、人剧分离、自在坦荡，可以对应“在不同关系里显现不同光谱”。</p>
+              </div>
+            </article>
+            <article class="bridge-card reveal">
+              <span class="label">Iris</span>
+              <div>
+                <h3>从鸢尾到虹膜</h3>
+                <p>Iris 兼有花与眼睛。镜头凝视、眼部局部、星云倒影，能成为第二条的视觉入口。</p>
+              </div>
+            </article>
+            <article class="bridge-card reveal">
+              <span class="label">Orbit</span>
+              <div>
+                <h3>从酒酒到回家轨道</h3>
+                <p>酒酒让遥远星云落到生活现场：陪吃饭、靠近、放慢、家居暖白，承担情绪降落点。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="materials">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Material Matrix</p>
+            <h2>素材优先级与风险等级。</h2>
+          </div>
+          <p>这里可以直接作为创意会的素材清单。风险高的内容不建议进入正式物料，最多保留为内部理解。</p>
+        </div>
+        <div class="material-table reveal">
+          <div class="material-row header">
+            <span>素材</span>
+            <span>可用寓意</span>
+            <span>建议用法</span>
+            <span>风险</span>
+          </div>
+          <div class="material-row">
+            <b>整片宇宙 / Hello universe</b>
+            <p>粉丝陪伴从身后成为宇宙。</p>
+            <p>开篇、标题、收束句、星图视觉。</p>
+            <span class="risk-low">低</span>
+          </div>
+          <div class="material-row">
+            <b>有你们好快乐</b>
+            <p>肖宇梁与粉丝之间最干净的双向表达。</p>
+            <p>章节标题、评论互动、留言星图。</p>
+            <span class="risk-low">低</span>
+          </div>
+          <div class="material-row">
+            <b>酒酒陪吃饭</b>
+            <p>忙碌之后回家，陪伴让人慢下来。</p>
+            <p>“酒酒的轨道”短片、白场情绪落点。</p>
+            <span class="risk-low">低</span>
+          </div>
+          <div class="material-row">
+            <b>做自己 / 人剧分离</b>
+            <p>清醒、真实、角色与本人边界明确。</p>
+            <p>连接反射星云，不做角色代餐。</p>
+            <span class="risk-mid">中低</span>
+          </div>
+          <div class="material-row">
+            <b>受伤、旧疾、被黑</b>
+            <p>能解释粉丝保护欲，但商业表达风险高。</p>
+            <p>仅内部参考，不进入公开预热。</p>
+            <span class="risk-high">高</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Publishing Structure</p>
+            <h2>推荐落地：观测档案体。</h2>
+          </div>
+          <p>这条路径兼顾概念高级感和粉丝信服度：先讲星云科学，再讲肖宇梁的“被看见”，最后落到酒酒与陪伴。</p>
+        </div>
+        <div class="story-board reveal">
+          <article class="story-step">
+            <span class="num">01</span>
+            <div>
+              <h3>星云事实</h3>
+              <p>NGC7023 是反射星云，光抵达尘埃，蓝色显影。</p>
+            </div>
+          </article>
+          <article class="story-step">
+            <span class="num">02</span>
+            <div>
+              <h3>人物显影</h3>
+              <p>他被角色、镜头、舞台看见，也一直保有做自己的清醒。</p>
+            </div>
+          </article>
+          <article class="story-step">
+            <span class="num">03</span>
+            <div>
+              <h3>共同宇宙</h3>
+              <p>整片宇宙、宇航员、有你们好快乐，变成粉丝共享星图。</p>
+            </div>
+          </article>
+          <article class="story-step">
+            <span class="num">04</span>
+            <div>
+              <h3>酒酒轨道</h3>
+              <p>从黑场观测切到白场家居，星云从遥远变成可触摸。</p>
+            </div>
+          </article>
+          <article class="story-step">
+            <span class="num">05</span>
+            <div>
+              <h3>主题收束</h3>
+              <p>黑场与白场共同构成肖宇梁这一季的 NGC7023 光谱。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dos-donts" id="risk">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Risk Control</p>
+            <h2>写得动人，也要写得稳。</h2>
+          </div>
+          <p>第二条预热的安全边界很清楚：用官方表达与共同记忆打动粉丝，避开会激化争议的粉圈敏感点。</p>
+        </div>
+        <div class="dos-grid">
+          <div class="list-panel reveal">
+            <h3>建议强化</h3>
+            <ul>
+              <li>整片宇宙、宇航员、生日与十周年等共同记忆。</li>
+              <li>“有你们好快乐”这类双向、温和、可公开引用的表达。</li>
+              <li>酒酒陪伴、回家、放慢节奏、简单日子。</li>
+              <li>反射星云、显影、被看见、不同光谱。</li>
+            </ul>
+          </div>
+          <div class="list-panel dont reveal">
+            <h3>建议避开</h3>
+            <ul>
+              <li>CP 向称呼、粉籍判断、唯粉与 CP 粉冲突语境。</li>
+              <li>把张起灵写成品牌主叙事，或把演员写成角色代餐。</li>
+              <li>受伤、旧疾、生病、被黑、公司等苦难叙事。</li>
+              <li>酒酒相关其它品牌名与宠物食品产品卖点。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <div class="reveal">
+          <p class="eyebrow">Recommended Key Visual Copy</p>
+          <h2>他身后的整片宇宙，这一次有了名字。</h2>
+          <p>用 NGC7023 做主题名，用反射星云做概念逻辑，用酒酒做情感降落点。第二条预热可以从天文观测出发，最后抵达一个人、一只小狗和一群持续回应他的观测者。</p>
+          <div class="cta-note">
+            <span class="pill">观测档案卡</span>
+            <span class="pill">酒酒轨道短片</span>
+            <span class="pill">宇航员留言星图</span>
+            <span class="pill">黑白双光谱海报</span>
+          </div>
+        </div>
+        <figure class="cta-image reveal">
+          <img src="assets/xhs-refs/r12.webp" alt="鸢尾花概念视觉参考">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sources">
+    <div class="wrap">
+      <strong>主要来源</strong>
+      <div class="source-list">
+        <a href="https://www.weibo.com/u/2644575251">肖宇梁Rainco微博主页</a>
+        <a href="https://www.xiaohongshu.com/user/profile/5837c8ad50c4b4330316f98a">肖宇梁小红书主页</a>
+        <a href="https://www.xiaohongshu.com/explore/64d44a37000000000103f1a6">酒酒陪吃饭笔记</a>
+        <a href="https://www.xiaohongshu.com/explore/65b63245000000000a0311ca">有你们好快乐笔记</a>
+        <a href="https://k.sina.cn/article_6524158272_184dec14000100w5k2.html">新浪娱乐专访</a>
+        <a href="https://apod.nasa.gov/apod/ap160506.html">NASA APOD NGC 7023</a>
+        <a href="research/xiao-yuliang-ngc7023-materials.md">完整 Markdown 素材报告</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.add("motion-ready");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.16 });
+
+      document.querySelectorAll(".reveal").forEach((node) => observer.observe(node));
+    }
+  </script>
+</body>
+</html>
