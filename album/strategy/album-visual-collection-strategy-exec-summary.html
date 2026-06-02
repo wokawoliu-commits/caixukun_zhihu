@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>专辑视觉照片采集策略 - 汇报版</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317191f'/%3E%3Ccircle cx='16' cy='16' r='8' fill='%23c5432d'/%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        color: #17191f;
+        background: #f4f1e8;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background:
+          linear-gradient(90deg, rgba(23, 25, 31, 0.06) 1px, transparent 1px) 0 0 / 48px
+            48px,
+          #f4f1e8;
+      }
+
+      main {
+        width: min(1180px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 34px 0 56px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      .hero {
+        min-height: 360px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+        gap: 34px;
+        align-items: end;
+        padding: 54px 0 34px;
+        border-bottom: 1px solid rgba(23, 25, 31, 0.16);
+      }
+
+      .eyebrow {
+        margin-bottom: 16px;
+        color: #c5432d;
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 840px;
+        font-size: clamp(2.75rem, 6vw, 6rem);
+        line-height: 0.96;
+        letter-spacing: 0;
+      }
+
+      .hero__summary {
+        max-width: 760px;
+        margin-top: 24px;
+        color: #4f5258;
+        font-size: 1.12rem;
+        line-height: 1.72;
+      }
+
+      .decision {
+        border: 1px solid rgba(23, 25, 31, 0.18);
+        background: #17191f;
+        color: #f9f6ec;
+        padding: 22px;
+      }
+
+      .decision strong {
+        display: block;
+        margin-bottom: 12px;
+        color: #ff8a67;
+        font-size: 0.88rem;
+      }
+
+      .decision p {
+        font-size: 1.2rem;
+        font-weight: 850;
+        line-height: 1.45;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        margin: 28px 0;
+        border: 1px solid rgba(23, 25, 31, 0.16);
+        background: rgba(23, 25, 31, 0.16);
+      }
+
+      .metric {
+        min-height: 116px;
+        display: grid;
+        align-content: center;
+        gap: 8px;
+        padding: 18px;
+        background: #f9f6ec;
+      }
+
+      .metric__value {
+        color: #17191f;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .metric__label {
+        color: #5f6268;
+        font-size: 0.9rem;
+        font-weight: 800;
+      }
+
+      section {
+        padding: 34px 0;
+        border-top: 1px solid rgba(23, 25, 31, 0.14);
+      }
+
+      section:first-of-type {
+        border-top: 0;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.62fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: start;
+        margin-bottom: 22px;
+      }
+
+      h2 {
+        font-size: clamp(1.8rem, 3vw, 2.65rem);
+        line-height: 1.08;
+      }
+
+      .lead {
+        color: #55585e;
+        font-size: 1rem;
+        line-height: 1.72;
+      }
+
+      .callout {
+        padding: 22px;
+        border-left: 5px solid #c5432d;
+        background: #fffaf0;
+      }
+
+      .callout h3 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .callout p {
+        color: #4f5258;
+        line-height: 1.65;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .panel {
+        border: 1px solid rgba(23, 25, 31, 0.16);
+        background: rgba(249, 246, 236, 0.86);
+        padding: 20px;
+      }
+
+      .panel h3 {
+        margin-bottom: 12px;
+        color: #17191f;
+        font-size: 1.04rem;
+      }
+
+      .panel p,
+      li {
+        color: #55585e;
+        line-height: 1.62;
+      }
+
+      ul,
+      ol {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      .strategy-table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border: 1px solid rgba(23, 25, 31, 0.16);
+        background: #f9f6ec;
+      }
+
+      .strategy-table th,
+      .strategy-table td {
+        padding: 14px 15px;
+        border-bottom: 1px solid rgba(23, 25, 31, 0.12);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .strategy-table th {
+        background: #17191f;
+        color: #f9f6ec;
+        font-size: 0.84rem;
+        font-weight: 850;
+      }
+
+      .strategy-table td {
+        color: #4f5258;
+        line-height: 1.55;
+      }
+
+      .strategy-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 26px;
+        padding: 0 9px;
+        margin: 0 5px 6px 0;
+        background: rgba(197, 67, 45, 0.1);
+        color: #b33723;
+        font-size: 0.8rem;
+        font-weight: 850;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1px;
+        border: 1px solid rgba(23, 25, 31, 0.16);
+        background: rgba(23, 25, 31, 0.16);
+      }
+
+      .flow__step {
+        min-height: 150px;
+        padding: 18px;
+        background: #f9f6ec;
+      }
+
+      .flow__step span {
+        display: inline-block;
+        margin-bottom: 16px;
+        color: #c5432d;
+        font-size: 0.82rem;
+        font-weight: 900;
+      }
+
+      .flow__step h3 {
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+
+      .flow__step p {
+        color: #55585e;
+        line-height: 1.58;
+      }
+
+      .status-band {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 1px;
+        border: 1px solid rgba(23, 25, 31, 0.16);
+        background: rgba(23, 25, 31, 0.16);
+      }
+
+      .status-band > div {
+        padding: 22px;
+        background: #f9f6ec;
+      }
+
+      .status-band h3 {
+        margin-bottom: 12px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(23, 25, 31, 0.16);
+        color: #666970;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          width: min(100% - 24px, 760px);
+          padding-top: 20px;
+        }
+
+        .hero,
+        .section-head,
+        .two-col,
+        .status-band {
+          grid-template-columns: 1fr;
+        }
+
+        .metric-grid,
+        .flow {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        h1 {
+          font-size: 2.65rem;
+        }
+
+        .metric-grid,
+        .flow {
+          grid-template-columns: 1fr;
+        }
+
+        .strategy-table {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+
+        .footer {
+          display: grid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Album Visual Strategy · Executive Summary</p>
+          <h1>2026 专辑视觉照片采集策略</h1>
+          <p class="hero__summary">
+            我们要找的不是专辑封面，而是能让读者一眼理解专辑气质的视觉照片：
+            概念照、宣传照、teaser visual、MV still、媒体首发视觉等。
+          </p>
+        </div>
+        <aside class="decision">
+          <strong>当前核心判断</strong>
+          <p>不能用一个渠道解决所有专辑。正确路线是先判断专辑类型，再走对应的视觉采集 playbook。</p>
+        </aside>
+      </header>
+
+      <div class="metric-grid" aria-label="当前进展">
+        <div class="metric">
+          <span class="metric__value">80</span>
+          <span class="metric__label">第一版重点专辑</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">19</span>
+          <span class="metric__label">已确认核心视觉覆盖</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">49</span>
+          <span class="metric__label">v7 找到的候选覆盖</span>
+        </div>
+        <div class="metric">
+          <span class="metric__value">304</span>
+          <span class="metric__label">v7 候选图片总数</span>
+        </div>
+      </div>
+
+      <section>
+        <div class="section-head">
+          <h2>一句话结论</h2>
+          <p class="lead">
+            现在不是继续盲目加渠道，而是建立“类型分流 + 图片分层 + 人工复核”的机制。
+            K-pop、欧美主流 pop、粉丝 Wiki 强艺人、电影/视觉宇宙型专辑、独立厂牌专辑，视觉资料出现的位置完全不同。
+          </p>
+        </div>
+        <div class="callout">
+          <h3>老板需要知道的重点</h3>
+          <p>
+            当前网页已经能展示一批高质量视觉资料，但自动化扩大召回后会混入封面、官网小图、review 配图。
+            所以下一步不是把 v7 的 49 张候选全部上线，而是把候选池做清洗，确保老板 review 时看到的是“专辑视觉概貌”，不是资料噪音。
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>什么算视觉照片</h2>
+          <p class="lead">
+            我们把图片分层，避免把“有图”误判成“有视觉”。封面和站点缩略图只能兜底，不能证明专辑有视觉概念。
+          </p>
+        </div>
+        <div class="flow">
+          <div class="flow__step">
+            <span>01</span>
+            <h3>Confirmed Visual</h3>
+            <p>概念照、photoshoot、宣传照、MV still，页面语义和图片内容都强相关。</p>
+          </div>
+          <div class="flow__step">
+            <span>02</span>
+            <h3>Candidate Visual</h3>
+            <p>可能属于专辑周期，但需要人工看一眼，例如媒体配图、官方视频缩略图。</p>
+          </div>
+          <div class="flow__step">
+            <span>03</span>
+            <h3>Cover / Artwork Only</h3>
+            <p>专辑封面、单曲 artwork、实体商品图，不计入核心视觉覆盖。</p>
+          </div>
+          <div class="flow__step">
+            <span>04</span>
+            <h3>Reject</h3>
+            <p>站点 logo、小图、share image、旧 era、无关推荐视频，直接剔除。</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>按专辑类型分流</h2>
+          <p class="lead">
+            最有效的策略不是“搜专辑名”，而是先判断专辑属于哪类，再决定去哪里找图。
+          </p>
+        </div>
+        <table class="strategy-table">
+          <thead>
+            <tr>
+              <th>专辑类型</th>
+              <th>视觉资料通常在哪</th>
+              <th>优先渠道</th>
+              <th>风险控制</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>K-pop idol comeback</td>
+              <td>概念照、teaser、成员图通常成套发布</td>
+              <td>Kpopping、Kpop Wiki / Fandom、KpopOfficial</td>
+              <td>Kpopping 优先；Fandom 做补充，避免混入旧单曲页</td>
+            </tr>
+            <tr>
+              <td>粉丝 Wiki 强艺人</td>
+              <td>专辑 Gallery、Photoshoot、Promotional Material</td>
+              <td>艺人 Fandom 子域、MediaWiki API</td>
+              <td>只信专辑 Gallery；song page 默认降级</td>
+            </tr>
+            <tr>
+              <td>欧美主流 pop campaign</td>
+              <td>专辑采访、公告、单曲 MV、媒体首发页、press photo</td>
+              <td>Brave 定向搜索、Vogue / NME / Promonews / Dork / Uproxx、官方视频</td>
+              <td>必须确认 album-era single；媒体 og:image 不能直接算核心视觉</td>
+            </tr>
+            <tr>
+              <td>Album-film / transmedia</td>
+              <td>官方视频、电影剧照、press release、first-look photos</td>
+              <td>官网、厂牌 press release、媒体剧照、官方 YouTube、Fandom API</td>
+              <td>过滤封面、alternate cover、playlist、Topic audio</td>
+            </tr>
+            <tr>
+              <td>独立 / 厂牌导向专辑</td>
+              <td>厂牌官网、Bandcamp、press release，通常图少</td>
+              <td>官方站、厂牌页、Bandcamp、Google CSE</td>
+              <td>如果只有封面，不强行凑视觉覆盖</td>
+            </tr>
+            <tr>
+              <td>Live / archive / reissue</td>
+              <td>多为旧录音、现场档案、再版封面</td>
+              <td>默认降级或跳过</td>
+              <td>没有新视觉 campaign 时，不消耗抓取预算</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>渠道优先级</h2>
+          <p class="lead">
+            官方来源最可信，但并不总是最完整；专业图库和粉丝 Wiki 召回强，但必须复核版权和页面类型。
+          </p>
+        </div>
+        <div class="two-col">
+          <div class="panel">
+            <h3>核心渠道</h3>
+            <p>
+              <span class="tag">官方 / 厂牌 / press kit</span>
+              <span class="tag">Kpopping</span>
+              <span class="tag">Fandom Gallery</span>
+              <span class="tag">媒体首发页</span>
+              <span class="tag">官方视频</span>
+            </p>
+            <ul>
+              <li>官方来源质量最高，但很多专辑官网只放封面。</li>
+              <li>Kpopping 对 K-pop 概念照最有效，单张专辑可抓满 9 张。</li>
+              <li>欧美主流 pop 要沿 album-era singles 找媒体图和 MV still。</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>辅助与兜底</h3>
+            <p>
+              <span class="tag">小红书候选</span>
+              <span class="tag">Cover Art Archive</span>
+              <span class="tag">Google CSE</span>
+              <span class="tag">YouTube Data API</span>
+            </p>
+            <ul>
+              <li>小红书只作为中文语境线索，不计入核心覆盖。</li>
+              <li>Cover Art Archive 是封面库，只做封面兜底。</li>
+              <li>Google CSE / YouTube API 适合后续补官方站和视频能力。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>当前进展与风险</h2>
+          <p class="lead">
+            v7 证明 press campaign 路线能大幅提升召回，但也暴露出质量问题：自动抓到的图不一定都是视觉照片。
+          </p>
+        </div>
+        <div class="status-band">
+          <div>
+            <h3>好消息</h3>
+            <ul>
+              <li>Top 80 原始候选覆盖从 21 张提升到 49 张。</li>
+              <li>新增候选主要来自媒体页、官网图片、官方视频缩略图。</li>
+              <li>RAYE、Olivia Dean、The Weeknd、aespa、Poppy 等 case 已验证多条有效路径。</li>
+            </ul>
+          </div>
+          <div>
+            <h3>不能直接上线的原因</h3>
+            <ul>
+              <li>36 个抽检 / 新增 / 可疑条目中，29 个被标记风险。</li>
+              <li>常见误收包括封面、方形 packshot、小图、站点 share image、review metadata 图。</li>
+              <li>Brave 搜索配额触达限制后，v8 加严版还没跑完。</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <h2>下一步建议</h2>
+          <p class="lead">
+            下一步目标是把“候选池”变成“可给老板 review 的视觉板”。优先做质量门槛，而不是继续堆渠道。
+          </p>
+        </div>
+        <div class="flow">
+          <div class="flow__step">
+            <span>Step 1</span>
+            <h3>建立黄金评测集</h3>
+            <p>从 Top 80 中选 20 张成功、失败、边界案例，每次改策略都用它验证准确率。</p>
+          </div>
+          <div class="flow__step">
+            <span>Step 2</span>
+            <h3>跑 v8 加严版</h3>
+            <p>配额恢复后，用页面语义、图片尺寸、来源类型过滤 v7 噪音。</p>
+          </div>
+          <div class="flow__step">
+            <span>Step 3</span>
+            <h3>人工 review 候选池</h3>
+            <p>对 contact sheet 做快速审核，只把 confirmed / high-confidence candidate 上线。</p>
+          </div>
+          <div class="flow__step">
+            <span>Step 4</span>
+            <h3>产品化采集流程</h3>
+            <p>加搜索缓存、来源缓存、负样本规则，降低请求消耗和结果波动。</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>基于 album-visual-collection-strategy.md 汇总</span>
+        <span>更新日期：2026-06-02</span>
+      </footer>
+    </main>
+  </body>
+</html>
