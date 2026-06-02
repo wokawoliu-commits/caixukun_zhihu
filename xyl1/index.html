@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackPaper x 肖宇梁 | #NG7023 鸢尾花星云 概念预热策划</title>
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    :root {
+      --ink: #151515;
+      --muted: #696a6d;
+      --line: #d8d7d1;
+      --paper: #f8f7f3;
+      --white: #ffffff;
+      --night: #08090f;
+      --iris: #6550d8;
+      --iris-deep: #332873;
+      --sage: #87985c;
+      --warm: #c9a46a;
+      --radius: 8px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px clamp(18px, 4vw, 52px);
+      color: #f3f2ee;
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+
+    .topbar a,
+    .topbar span {
+      pointer-events: auto;
+    }
+
+    .mark {
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 18px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+
+    .nav a:hover {
+      border-color: currentColor;
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      overflow: hidden;
+      color: #fff;
+      background: var(--night);
+      display: grid;
+      align-items: end;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.05);
+      filter: saturate(1.03) contrast(1.02);
+      animation: slowDrift 16s ease-in-out infinite alternate;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 6, 12, 0.84), rgba(5, 6, 12, 0.38) 48%, rgba(5, 6, 12, 0.62)),
+        linear-gradient(180deg, rgba(5, 6, 12, 0.18), rgba(5, 6, 12, 0.86));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - clamp(36px, 8vw, 104px)));
+      margin: 0 auto;
+      padding: 132px 0 64px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.98fr) minmax(260px, 0.42fr);
+      gap: clamp(36px, 8vw, 90px);
+      align-items: end;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 13px;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 24px;
+      max-width: 820px;
+      font-size: clamp(48px, 9vw, 112px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      font-weight: 820;
+    }
+
+    .hero-lede {
+      max-width: 650px;
+      margin-bottom: 34px;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      border-radius: 999px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-side {
+      border-left: 1px solid rgba(255, 255, 255, 0.28);
+      padding-left: 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+    }
+
+    .hero-side strong {
+      display: block;
+      color: #fff;
+      font-size: 15px;
+      margin-bottom: 8px;
+    }
+
+    .credit {
+      margin-top: 22px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.54);
+    }
+
+    main {
+      background: var(--paper);
+    }
+
+    section {
+      padding: clamp(62px, 9vw, 112px) clamp(18px, 4vw, 52px);
+    }
+
+    .wrap {
+      width: min(var(--max), 100%);
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(220px, 0.52fr) minmax(0, 0.78fr);
+      gap: clamp(28px, 6vw, 72px);
+      align-items: start;
+      margin-bottom: 42px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--iris);
+      font-size: 12px;
+      font-weight: 760;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      font-size: clamp(31px, 5.4vw, 60px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 820;
+    }
+
+    .section-head p,
+    .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 1.8vw, 19px);
+      line-height: 1.82;
+    }
+
+    .overview {
+      background: var(--white);
+    }
+
+    .insight-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .insight {
+      min-height: 220px;
+      padding: 28px;
+      background: var(--white);
+    }
+
+    .insight span {
+      display: block;
+      margin-bottom: 42px;
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .insight h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .insight p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .story-band {
+      color: #f5f2e7;
+      background: #111018;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .story-band .section-head p,
+    .story-band .lead {
+      color: rgba(245, 242, 231, 0.74);
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .story-cell {
+      min-height: 250px;
+      padding: 28px;
+      background: #111018;
+    }
+
+    .story-cell b {
+      display: block;
+      color: #fff;
+      font-size: 21px;
+      line-height: 1.26;
+      margin-bottom: 16px;
+    }
+
+    .story-cell p {
+      color: rgba(245, 242, 231, 0.74);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .proposal-section {
+      background: var(--paper);
+    }
+
+    .proposal-section.alt {
+      background: #eeeeea;
+    }
+
+    .proposal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .proposal {
+      position: relative;
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .proposal:hover {
+      transform: translateY(-4px);
+      border-color: rgba(101, 80, 216, 0.5);
+      background: #fbfbf8;
+    }
+
+    .proposal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 22px;
+    }
+
+    .proposal h3 {
+      margin: 0;
+      max-width: 76%;
+      font-size: clamp(21px, 2.4vw, 28px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .proposal .num {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      color: var(--iris-deep);
+      border: 1px solid rgba(101, 80, 216, 0.3);
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 760;
+    }
+
+    .format {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 5px 10px 6px;
+      border-radius: 999px;
+      background: #eeecff;
+      color: var(--iris-deep);
+      font-size: 12px;
+      font-weight: 720;
+    }
+
+    .proposal dl {
+      margin: 0;
+      display: grid;
+      gap: 16px;
+    }
+
+    .proposal dt {
+      margin-bottom: 4px;
+      color: var(--sage);
+      font-size: 12px;
+      font-weight: 780;
+    }
+
+    .proposal dd {
+      margin: 0;
+      color: #444446;
+      font-size: 14px;
+      line-height: 1.78;
+    }
+
+    .refs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .refs a,
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: #474747;
+      background: #fff;
+      font-size: 12px;
+      text-decoration: none;
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+
+    .refs a:hover {
+      border-color: var(--iris);
+      color: var(--iris-deep);
+    }
+
+    .matrix {
+      background: var(--white);
+    }
+
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .ref-item {
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 18px;
+      padding: 18px;
+      background: var(--white);
+      text-decoration: none;
+      transition: background 160ms ease;
+    }
+
+    .ref-item:hover {
+      background: #f7f5ef;
+    }
+
+    .ref-id {
+      color: var(--iris);
+      font-weight: 780;
+      font-size: 13px;
+    }
+
+    .ref-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .ref-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .final-note {
+      background: #18171a;
+      color: #f5f1e7;
+      padding-bottom: 92px;
+    }
+
+    .final-note .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(240px, 0.28fr);
+      gap: 44px;
+      align-items: end;
+    }
+
+    .final-note h2 {
+      max-width: 820px;
+    }
+
+    .final-note p {
+      color: rgba(245, 241, 231, 0.72);
+    }
+
+    .note-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: rgba(245, 241, 231, 0.82);
+      font-size: 14px;
+    }
+
+    .note-list li {
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      padding-top: 12px;
+    }
+
+    .reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 620ms ease, transform 620ms ease;
+    }
+
+    .js .hero .reveal,
+    .js .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .js .hero .reveal {
+      animation: heroIn 720ms ease both;
+    }
+
+    @keyframes slowDrift {
+      from {
+        transform: scale(1.05) translate3d(-1%, -1%, 0);
+      }
+      to {
+        transform: scale(1.1) translate3d(1.5%, 1%, 0);
+      }
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero-media img,
+      .reveal,
+      .proposal,
+      .button {
+        animation: none;
+        transition: none;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner,
+      .section-head,
+      .final-note .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        max-width: 560px;
+      }
+
+      .insight-row,
+      .story-grid,
+      .proposal-grid,
+      .ref-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .insight,
+      .story-cell {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .topbar {
+        align-items: flex-start;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .hero-inner {
+        width: min(100% - 36px, var(--max));
+        padding-bottom: 42px;
+      }
+
+      h1 {
+        font-size: clamp(44px, 15vw, 72px);
+      }
+
+      section {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .proposal {
+        padding: 21px;
+      }
+
+      .proposal h3 {
+        max-width: none;
+      }
+
+      .proposal-top {
+        display: grid;
+      }
+
+      .proposal .num {
+        order: -1;
+      }
+
+      .ref-item {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar" aria-label="页面导航">
+    <span class="mark">SnackPaper x Xiao Yuliang</span>
+    <nav class="nav">
+      <a href="#insights">平台判断</a>
+      <a href="#push-one">推送一</a>
+      <a href="#push-two">推送二</a>
+      <a href="#references">参考索引</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img src="assets/iris-nebula-nasa.jpg" alt="">
+    </div>
+    <div class="hero-inner">
+      <div class="reveal">
+        <p class="kicker">Season 01 Concept Warm-up Proposal</p>
+        <h1>#NG7023<br>鸢尾花星云</h1>
+        <p class="hero-lede">两条概念预热推送，为SnackPaper与肖宇梁第一季合作建立主题、叙事与传播入口。</p>
+        <div class="hero-actions">
+          <a class="button" href="#push-one">查看主题解析10案</a>
+          <a class="button" href="#push-two">查看艺人联结10案</a>
+        </div>
+      </div>
+      <aside class="hero-side reveal">
+        <strong>核心命题</strong>
+        黑色帷幔前的科幻暗场，与白色家居空间里的松弛亲密，被统一为一次从星云抵达日常的观测。
+        <div class="credit">星云图像：NASA/JPL-Caltech, NGC 7023 Iris Nebula reference image.</div>
+      </aside>
+    </div>
+  </section>
+
+  <main>
+    <section class="overview" id="insights">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Platform Reading</p>
+            <h2>小红书的概念内容，更吃“可视化设定”。</h2>
+          </div>
+          <p>调研显示，年轻用户、青年艺术家和潮流品牌受众会停留在视觉强、标题短、设定清晰、可收藏的内容上。抽象概念需要被做成档案、色谱、镜头、声音或互动模板，而不是只靠长文解释。</p>
+        </div>
+
+        <div class="insight-row reveal">
+          <article class="insight">
+            <span>01</span>
+            <h3>概念先像画面，再像文案</h3>
+            <p>高互动案例通常先给一个强画面：星云空间、虹膜纹理、AIGC广告镜头、明星家居大片。解释在第二层。</p>
+          </article>
+          <article class="insight">
+            <span>02</span>
+            <h3>“编号感”适合预热</h3>
+            <p>NG7023天然像档案编号、观测记录、未知项目代号，适合悬念海报和视觉设定集。</p>
+          </article>
+          <article class="insight">
+            <span>03</span>
+            <h3>宠物不是道具，是关系证据</h3>
+            <p>肖宇梁与酒酒在小红书已有“陪伴日常”的平台认知，预热应把酒酒处理成陪伴星与归家轨道。</p>
+          </article>
+          <article class="insight">
+            <span>04</span>
+            <h3>两套造型要被串成旅程</h3>
+            <p>黑西装暗场是夜航者，白色家居是归家者。主题的情绪落点，是从神秘抵达亲密。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-band">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Concept Bridge</p>
+            <h2>“鸢尾花星云”可以拆成三条传播线。</h2>
+          </div>
+          <p>鸢尾花负责诗性与色彩，虹膜负责凝视与镜头关系，星云负责科幻与未知。肖宇梁与酒酒进入这个结构后，主题不再只是漂亮名词，而是一种关于被看见、被陪伴、被牵引回家的叙事。</p>
+        </div>
+
+        <div class="story-grid reveal">
+          <div class="story-cell">
+            <b>鸢尾花：柔软而有锋利边界</b>
+            <p>对应白色背心、米色线衣、家居沙发、松弛氛围，也对应青年艺术审美中的花朵标本和色谱。</p>
+          </div>
+          <div class="story-cell">
+            <b>虹膜：观看世界的方式</b>
+            <p>对应肖宇梁在镜头里的目光、暗场中被投影照亮的轮廓，以及观众与艺人之间的互相凝视。</p>
+          </div>
+          <div class="story-cell">
+            <b>星云：未知空间里的陪伴轨道</b>
+            <p>对应黑帷幔、投影光、科幻感和酒酒的出现。酒酒让星云从孤独的宇宙变成可抵达的关系。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal-section" id="push-one">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Push 01</p>
+            <h2>第一条预热：解析主题背景与深层寓意。</h2>
+          </div>
+          <p>目标是先把“#NG7023 鸢尾花星云”立住：它不是拍摄花絮标题，而是本季所有内容产品的视觉坐标、情绪坐标和命名系统。</p>
+        </div>
+
+        <div class="proposal-grid">
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>NG7023观测记录</h3><span class="num">01</span></div>
+            <span class="format">AIGC + 实拍混剪短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>把本季企划包装成一次星云观测。观众不是直接看大片，而是进入一份尚未完全公开的观测档案。</dd></div>
+              <div><dt>关键素材</dt><dd>黑帷幔、星云投影、肖宇梁剪影、观测坐标字幕、暗场粒子、低频合成器、极短旁白。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r1">R1</a><a href="#ref-r3">R3</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>一朵星云的命名学</h3><span class="num">02</span></div>
+            <span class="format">平面设计组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用“鸢尾花、虹膜、星云”三层意象逐页解释主题，让抽象概念变成可收藏的视觉知识卡。</dd></div>
+              <div><dt>关键素材</dt><dd>花瓣、虹膜纹理、NGC 7023星云、三段式术语卡、蓝紫色谱与家居暖白对照。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r3">R3</a><a href="#ref-r8">R8</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>CASE FILE: NG7023</h3><span class="num">03</span></div>
+            <span class="format">概念档案卡组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用档案编号、扫描线和样本记录承接“NG7023”的代码感，适合高端潮流品牌式悬念预热。</dd></div>
+              <div><dt>关键素材</dt><dd>项目编号、扫描线、接触印相、服装局部、星图标记、酒酒影子作为隐藏线索。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r4">R4</a><a href="#ref-r19">R19</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>星云标本盒</h3><span class="num">04</span></div>
+            <span class="format">定格动画</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>让花瓣、星尘、毛线纤维和黑色布褶逐帧组合成主题名，保留神秘感但提高观看性。</dd></div>
+              <div><dt>关键素材</dt><dd>纸片星图、透明胶片、米色毛线、星尘颗粒、黑布褶皱、犬牌或爪印收尾。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r12">R12</a><a href="#ref-r13">R13</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>Iris Spectrum</h3><span class="num">05</span></div>
+            <span class="format">色彩美学组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>把概念拆成色彩系统：深空黑、鸢尾紫、星云蓝、家居暖白。适合品牌内部延展KV、包装和话题贴纸。</dd></div>
+              <div><dt>关键素材</dt><dd>色卡、材质近景、投影光斑、白色沙发、黑西装、米色线衣、主题字体规范。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r6">R6</a><a href="#ref-r7">R7</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>暗场电台</h3><span class="num">06</span></div>
+            <span class="format">声音概念短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用声音制造“抵达星云”的前奏。它不急于曝光肖宇梁正脸，而是先建立本季听觉识别。</dd></div>
+              <div><dt>关键素材</dt><dd>投影机声、呼吸声、犬牌轻响、合成器低频、黑场光束、20秒以内旁白。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r11">R11</a><a href="#ref-r5">R5</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>鸢尾开合</h3><span class="num">07</span></div>
+            <span class="format">动态海报 / 循环动图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用“眼睛睁开，星云显影”的第一秒钩子，把鸢尾的花与虹膜的眼统一起来。</dd></div>
+              <div><dt>关键素材</dt><dd>虹膜粒子、花瓣开合、星光进入瞳孔、肖宇梁眼部局部、主题字逐帧显影。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r6">R6</a><a href="#ref-r4">R4</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>从暗夜到客厅</h3><span class="num">08</span></div>
+            <span class="format">双场景导览组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>将黑帷幔科幻场和白色家居场连成一条叙事路线，解释为什么两套造型属于同一主题。</dd></div>
+              <div><dt>关键素材</dt><dd>黑场/白场对照、星图路线、沙发光斑、投影光到日光的转场、同一姿态对照。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r14">R14</a><a href="#ref-r4">R4</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>NG7023解码海报</h3><span class="num">09</span></div>
+            <span class="format">悬念海报组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用“编号待解码”的方式引导评论区猜主题，适合正式发布前做倒计时和话题铺垫。</dd></div>
+              <div><dt>关键素材</dt><dd>数字编码、隐藏花瓣、局部肖像、倒计时、黑底短句、评论区提问模板。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r19">R19</a><a href="#ref-r20">R20</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>一场未公开展览</h3><span class="num">10</span></div>
+            <span class="format">美术馆墙签式组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>把拍摄企划包装成一件展览作品，用策展语气提高先锋感和艺术平台友好度。</dd></div>
+              <div><dt>关键素材</dt><dd>展签、作品编号、黑白空间、策展短文、主视觉局部、拍摄日期和材质说明。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r13">R13</a><a href="#ref-r1">R1</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="proposal-section alt" id="push-two">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Push 02</p>
+            <h2>第二条预热：深度诠释肖宇梁与主题的联结。</h2>
+          </div>
+          <p>目标不是解释肖宇梁“适合”这个概念，而是让观众感到：黑场里的神秘、白场里的松弛、酒酒代表的陪伴，本来就能共同构成他的这一季影像。</p>
+        </div>
+
+        <div class="proposal-grid">
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>他是一颗反射星云</h3><span class="num">01</span></div>
+            <span class="format">概念短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>借“反射星云”讲肖宇梁：不是刺眼发光，而是在镜头、陪伴与关系中显影。</dd></div>
+              <div><dt>关键素材</dt><dd>黑西装、投影光、侧脸、酒酒靠近、低声旁白、少量天文语汇。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r18">R18</a><a href="#ref-r14">R14</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>酒酒的轨道</h3><span class="num">02</span></div>
+            <span class="format">宠物视角微电影</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>让酒酒成为陪伴关系的叙事者。小狗不是“出现一下”，而是把肖宇梁从星云带回日常的轨道。</dd></div>
+              <div><dt>关键素材</dt><dd>低机位、犬牌声、沙发互动、手部近景、黑场到白场的匹配剪辑。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r17">R17</a><a href="#ref-r18">R18</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>一人一犬的双人海报</h3><span class="num">03</span></div>
+            <span class="format">时尚编辑组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>将肖宇梁和酒酒作为“主角与陪伴星”拍成双人关系大片，兼具粉丝情感与品牌审美。</dd></div>
+              <div><dt>关键素材</dt><dd>黑场一组、白场一组、互动手部、犬眼高光、留白版式、短标题。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r15">R15</a><a href="#ref-r16">R16</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>亲密距离研究</h3><span class="num">04</span></div>
+            <span class="format">微距图文影像</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用手、毛线、狗毛、目光、光斑讲亲密感。比直接煽情更高级，也更适合小红书收藏。</dd></div>
+              <div><dt>关键素材</dt><dd>白背心、米色线衣、沙发、酒酒毛发、肖宇梁手部、日光微尘。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r14">R14</a><a href="#ref-r7">R7</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>夜航者与归家者</h3><span class="num">05</span></div>
+            <span class="format">双人格概念组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>黑西装是夜航者，白色家居造型是归家者。两面不是反差，而是肖宇梁完整状态的两端。</dd></div>
+              <div><dt>关键素材</dt><dd>冷暖对照、动作切片、镜头凝视、黑白两套造型关键词、同构排版。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r9">R9</a><a href="#ref-r10">R10</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>来自酒酒的一封信</h3><span class="num">06</span></div>
+            <span class="format">配音动画 / 定格短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>以酒酒口吻讲“陪他从忙碌回到简单日子”，承接肖宇梁既有小红书语境。</dd></div>
+              <div><dt>关键素材</dt><dd>信纸、爪印、沙发光、犬牌、饭碗、温柔旁白、手写标题。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r16">R16</a><a href="#ref-r18">R18</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>你在哪一帧星云里</h3><span class="num">07</span></div>
+            <span class="format">互动测试组图</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>用小红书互动机制吸引评论：暗场/白场、鸢尾/虹膜、独行/陪伴，最后生成用户的“星云人格”。</dd></div>
+              <div><dt>关键素材</dt><dd>选择题卡、结果卡、肖宇梁局部剧照、主题tag、评论区引导句。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r19">R19</a><a href="#ref-r20">R20</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>镜头之外的抵达</h3><span class="num">08</span></div>
+            <span class="format">幕后概念纪录短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>预热不发完整大片，只发灯光、置景、酒酒互动，建立真实感与制作质感。</dd></div>
+              <div><dt>关键素材</dt><dd>打光过程、黑帷幔、投影测试、沙发调度、酒酒自然反应、现场环境声。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r10">R10</a><a href="#ref-r11">R11</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>他把宇宙带回家</h3><span class="num">09</span></div>
+            <span class="format">AIGC转场短片</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>星云投影转成客厅日光，表达肖宇梁从神秘到松弛的完整状态，让两套造型自然相连。</dd></div>
+              <div><dt>关键素材</dt><dd>星云到毛线纤维的match cut、黑到白转场、酒酒穿过画面、轻音乐。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r1">R1</a><a href="#ref-r14">R14</a></div>
+          </article>
+
+          <article class="proposal reveal">
+            <div class="proposal-top"><h3>我的陪伴星</h3><span class="num">10</span></div>
+            <span class="format">UGC共创预热</span>
+            <dl>
+              <div><dt>构思方向</dt><dd>借肖宇梁与酒酒，引导用户分享自己的陪伴关系。让概念从品牌发布延展为情感话题。</dd></div>
+              <div><dt>关键素材</dt><dd>肖宇梁与酒酒主图、模板边框、话题贴纸、用户可替换照片位、主题短句。</dd></div>
+            </dl>
+            <div class="refs"><a href="#ref-r17">R17</a><a href="#ref-r16">R16</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="matrix" id="references">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Reference Index</p>
+            <h2>推送参考索引。</h2>
+          </div>
+          <p>以下为调研中用于判断内容形式、标题语气、视觉手法与传播结构的小红书参考。链接为平台笔记链接，部分内容可能因登录态、平台策略或作者权限而变化。</p>
+        </div>
+
+        <div class="ref-grid reveal">
+          <a class="ref-item" id="ref-r1" href="https://www.xiaohongshu.com/explore/680b23f5000000001c015a00" target="_blank" rel="noreferrer"><span class="ref-id">R1</span><span><strong>Chanel 邂逅莫奈画风，AI视频演绎梦幻美学</strong><span>AIGC品牌广告、艺术风格嫁接、镜头感参考。</span></span></a>
+          <a class="ref-item" id="ref-r2" href="https://www.xiaohongshu.com/explore/68f6275100000000030390b9" target="_blank" rel="noreferrer"><span class="ref-id">R2</span><span><strong>AIGC 光影 Prada</strong><span>奢侈品牌光影短片与黑场质感参考。</span></span></a>
+          <a class="ref-item" id="ref-r3" href="https://www.xiaohongshu.com/explore/684aab9e0000000023003964" target="_blank" rel="noreferrer"><span class="ref-id">R3</span><span><strong>AI速出粒子星云主视觉KV</strong><span>粒子、星云、主视觉KV和教程型收藏逻辑。</span></span></a>
+          <a class="ref-item" id="ref-r4" href="https://www.xiaohongshu.com/explore/69d61cb3000000002202b7f3" target="_blank" rel="noreferrer"><span class="ref-id">R4</span><span><strong>未来感蓝调KV 光门概念视觉设计</strong><span>未来感蓝调、光门、概念视觉版式。</span></span></a>
+          <a class="ref-item" id="ref-r5" href="https://www.xiaohongshu.com/explore/69063ded0000000005033f57" target="_blank" rel="noreferrer"><span class="ref-id">R5</span><span><strong>我在星际中转站喝咖啡</strong><span>把宇宙空间日常化的AIGC短片参考。</span></span></a>
+          <a class="ref-item" id="ref-r6" href="https://www.xiaohongshu.com/explore/67a5536a000000001701f0b3" target="_blank" rel="noreferrer"><span class="ref-id">R6</span><span><strong>瞳孔里的城市梦</strong><span>虹膜、瞳孔、宏大空间与微观身体的视觉公式。</span></span></a>
+          <a class="ref-item" id="ref-r7" href="https://www.xiaohongshu.com/explore/69359ed9000000001f004223" target="_blank" rel="noreferrer"><span class="ref-id">R7</span><span><strong>Iris Texture</strong><span>虹膜纹理、美学素材、色彩与图案参考。</span></span></a>
+          <a class="ref-item" id="ref-r8" href="https://www.xiaohongshu.com/explore/68009de9000000000b017427" target="_blank" rel="noreferrer"><span class="ref-id">R8</span><span><strong>AI矢量花卉插画海报之鸢尾花篇</strong><span>鸢尾花视觉拆解、步骤型内容与收藏价值。</span></span></a>
+          <a class="ref-item" id="ref-r9" href="https://www.xiaohongshu.com/explore/68b40a14000000001b0372be" target="_blank" rel="noreferrer"><span class="ref-id">R9</span><span><strong>王嘉尔 Instant 概念短片</strong><span>明星概念短片、角色化表达与视觉强度。</span></span></a>
+          <a class="ref-item" id="ref-r10" href="https://www.xiaohongshu.com/explore/69c3bab80000000021038388" target="_blank" rel="noreferrer"><span class="ref-id">R10</span><span><strong>刘雯 Numéro创意短片</strong><span>明星创意短片、编辑气质、镜头叙事。</span></span></a>
+          <a class="ref-item" id="ref-r11" href="https://www.xiaohongshu.com/explore/69eee830000000003502d16b" target="_blank" rel="noreferrer"><span class="ref-id">R11</span><span><strong>辛芷蕾 Chanel N5 Sound Work</strong><span>声音设计、商业短片听觉识别参考。</span></span></a>
+          <a class="ref-item" id="ref-r12" href="https://www.xiaohongshu.com/explore/68b97132000000001c00915c" target="_blank" rel="noreferrer"><span class="ref-id">R12</span><span><strong>复古视觉 定格动画</strong><span>定格动画、物件运动、低成本高观看性。</span></span></a>
+          <a class="ref-item" id="ref-r13" href="https://www.xiaohongshu.com/explore/69d9e55f000000001d01922d" target="_blank" rel="noreferrer"><span class="ref-id">R13</span><span><strong>AI复活美术馆画中人</strong><span>美术馆语境、实验影像与AIGC叙事。</span></span></a>
+          <a class="ref-item" id="ref-r14" href="https://www.xiaohongshu.com/explore/671102b30000000026036104" target="_blank" rel="noreferrer"><span class="ref-id">R14</span><span><strong>tbh x 井柏然 无论在哪，也要睡个好觉</strong><span>明星家居大片、松弛感、温暖日常语气。</span></span></a>
+          <a class="ref-item" id="ref-r15" href="https://www.xiaohongshu.com/explore/693b89e4000000001e012630" target="_blank" rel="noreferrer"><span class="ref-id">R15</span><span><strong>陈伟霆和狗狗在享受一个平凡的午后</strong><span>明星与宠物的自然互动和生活化叙事。</span></span></a>
+          <a class="ref-item" id="ref-r16" href="https://www.xiaohongshu.com/explore/670f4b610000000021007fb7" target="_blank" rel="noreferrer"><span class="ref-id">R16</span><span><strong>刘恋 总有一只小狗，会在未来爱你</strong><span>宠物陪伴、温柔文案、情绪转译。</span></span></a>
+          <a class="ref-item" id="ref-r17" href="https://www.xiaohongshu.com/explore/69059c31000000000703bafd" target="_blank" rel="noreferrer"><span class="ref-id">R17</span><span><strong>走进宠物的生活小宇宙</strong><span>宠物与生活宇宙的高互动平台语境。</span></span></a>
+          <a class="ref-item" id="ref-r18" href="https://www.xiaohongshu.com/explore/64d44a37000000000103f1a6" target="_blank" rel="noreferrer"><span class="ref-id">R18</span><span><strong>肖宇梁 还有谁get不到酒酒陪吃饭的感觉</strong><span>肖宇梁与酒酒的既有陪伴认知和日常语气。</span></span></a>
+          <a class="ref-item" id="ref-r19" href="https://www.xiaohongshu.com/explore/696f1aff0000000022009389" target="_blank" rel="noreferrer"><span class="ref-id">R19</span><span><strong>明星预热悬念海报参考</strong><span>悬念海报、编号感、倒计时策略。</span></span></a>
+          <a class="ref-item" id="ref-r20" href="https://www.xiaohongshu.com/explore/67fe1779000000000d014fbb" target="_blank" rel="noreferrer"><span class="ref-id">R20</span><span><strong>新品预热海报灵感分享</strong><span>预热海报结构、封面抓手和系列节奏。</span></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-note">
+      <div class="wrap reveal">
+        <div>
+          <p class="eyebrow">Production Direction</p>
+          <h2>建议优先落地：档案卡组图 + 酒酒轨道短片。</h2>
+          <p class="lead">第一条用“CASE FILE: NG7023”建立主题系统，第二条用“酒酒的轨道”建立情感锚点。一个负责概念高度，一个负责用户停留。</p>
+        </div>
+        <ul class="note-list">
+          <li>发布节奏：先发编号悬念，再发概念解析，最后进入肖宇梁与酒酒的关系叙事。</li>
+          <li>视觉重点：暗场保留科幻神秘，白场承担亲密松弛，酒酒负责从宇宙回到家。</li>
+          <li>文案原则：少解释“高级”，多给观众可以转述的关键词和可以收藏的画面。</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  </script>
+</body>
+</html>
