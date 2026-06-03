@@ -1,0 +1,1516 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackPaper x 肖宇梁｜#NGC7023 鸢尾花星云 Instagram 概念预热 Proposal</title>
+  <meta name="description" content="基于 Instagram 概念内容调研，为 SnackPaper x 肖宇梁 #NGC7023 鸢尾花星云两条概念预热推送提出 20 个内容策划 proposal。">
+  <style>
+    :root {
+      --ink: #141413;
+      --paper: #f4efe4;
+      --paper-2: #e7dfd0;
+      --night: #05060a;
+      --night-2: #11121a;
+      --muted: #6f695f;
+      --line: rgba(20, 20, 19, 0.16);
+      --iris: #6e65dd;
+      --cyan: #8ec7c1;
+      --amber: #c99b55;
+      --white: #fffaf1;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.62;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; }
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 18px clamp(18px, 4vw, 52px);
+      color: var(--white);
+      mix-blend-mode: difference;
+      pointer-events: none;
+    }
+    .topbar a, .topbar span { pointer-events: auto; }
+    .brand { font-size: 13px; font-weight: 850; letter-spacing: 0; text-transform: uppercase; }
+    .nav { display: flex; gap: 16px; font-size: 12px; color: rgba(255, 250, 241, 0.78); white-space: nowrap; }
+    .nav a { text-decoration: none; border-bottom: 1px solid transparent; }
+    .nav a:hover { border-color: currentColor; }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--night);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/iris-nebula-nasa.jpg");
+      background-size: cover;
+      background-position: 50% 45%;
+      filter: saturate(1.05) contrast(1.1);
+      transform: scale(1.04);
+      animation: drift 22s ease-in-out infinite alternate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(5, 6, 10, 0.94), rgba(5, 6, 10, 0.46) 58%, rgba(5, 6, 10, 0.72)),
+        linear-gradient(180deg, rgba(5, 6, 10, 0.1), rgba(5, 6, 10, 0.92));
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: min(var(--max), calc(100% - clamp(34px, 8vw, 104px)));
+      margin: 0 auto;
+      padding: 118px 0 54px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.34fr);
+      gap: clamp(34px, 6vw, 78px);
+      align-items: end;
+    }
+    .kicker {
+      color: rgba(255, 250, 241, 0.72);
+      font-size: 12px;
+      font-weight: 850;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      margin: 0 0 14px;
+    }
+    h1, h2, h3, p, figure { margin: 0; }
+    h1 {
+      max-width: 900px;
+      font-size: clamp(43px, 8.6vw, 112px);
+      line-height: 0.98;
+      letter-spacing: 0;
+      margin-bottom: 24px;
+      font-weight: 900;
+    }
+    h1 span { display: block; }
+    h2 {
+      max-width: 900px;
+      font-size: clamp(30px, 5vw, 62px);
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 880;
+    }
+    h3 {
+      font-size: clamp(21px, 2.3vw, 30px);
+      line-height: 1.18;
+      letter-spacing: 0;
+      font-weight: 860;
+    }
+    .lede {
+      max-width: 720px;
+      color: rgba(255, 250, 241, 0.83);
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.72;
+    }
+    .hero-panel {
+      border-top: 1px solid rgba(255, 250, 241, 0.34);
+      padding-top: 18px;
+      color: rgba(255, 250, 241, 0.78);
+      font-size: 14px;
+    }
+    .hero-panel strong { color: var(--white); }
+    .hero-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid rgba(255, 250, 241, 0.46);
+      border-radius: 4px;
+      text-decoration: none;
+      color: var(--white);
+      background: rgba(255, 250, 241, 0.06);
+      font-size: 13px;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+    .button:hover { transform: translateY(-2px); background: rgba(255, 250, 241, 0.13); }
+
+    section { padding: clamp(58px, 8vw, 108px) clamp(20px, 5vw, 68px); }
+    .section-inner { width: min(var(--max), 100%); margin: 0 auto; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.55fr) minmax(300px, 0.45fr);
+      gap: clamp(24px, 5vw, 72px);
+      align-items: end;
+      margin-bottom: clamp(28px, 5vw, 62px);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 24px;
+    }
+    .eyebrow {
+      color: var(--iris);
+      font-size: 12px;
+      font-weight: 860;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .section-note { color: var(--muted); font-size: 16px; }
+    .dark {
+      color: var(--white);
+      background: var(--night-2);
+    }
+    .dark .section-note { color: rgba(255, 250, 241, 0.68); }
+    .dark .section-head { border-color: rgba(255, 250, 241, 0.18); }
+    .dark .eyebrow { color: var(--cyan); }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .metric {
+      min-height: 154px;
+      padding: 22px;
+      background: var(--paper);
+    }
+    .metric strong {
+      display: block;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      margin-bottom: 12px;
+      letter-spacing: 0;
+    }
+    .metric span { color: var(--muted); font-size: 14px; }
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 250, 241, 0.18);
+      border: 1px solid rgba(255, 250, 241, 0.18);
+    }
+    .trend {
+      min-height: 230px;
+      padding: 26px;
+      background: var(--night-2);
+      border: 0;
+    }
+    .trend h3 { margin-bottom: 13px; font-size: 22px; }
+    .trend p { color: rgba(255, 250, 241, 0.7); }
+    .trend .mark {
+      display: inline-flex;
+      margin-bottom: 28px;
+      color: var(--cyan);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .proposal-stack { display: grid; gap: 26px; }
+    .proposal {
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+    }
+    .dark .proposal { border-color: rgba(255, 250, 241, 0.2); }
+    .proposal-head {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+      margin-bottom: 20px;
+    }
+    .proposal-no {
+      display: inline-flex;
+      width: 56px;
+      height: 56px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid currentColor;
+      border-radius: 50%;
+      font-weight: 850;
+      color: var(--iris);
+    }
+    .dark .proposal-no { color: var(--cyan); }
+    .proposal-kicker {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 820;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .dark .proposal-kicker { color: rgba(255, 250, 241, 0.56); }
+    .proposal-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.72fr);
+      gap: clamp(24px, 4vw, 54px);
+      align-items: start;
+    }
+    .proposal-copy {
+      display: grid;
+      gap: 12px;
+      color: #292723;
+      font-size: 16px;
+    }
+    .dark .proposal-copy { color: rgba(255, 250, 241, 0.82); }
+    .proposal-copy strong { color: var(--ink); }
+    .dark .proposal-copy strong { color: var(--white); }
+    .type {
+      display: inline-flex;
+      width: fit-content;
+      padding: 5px 9px;
+      border: 1px solid var(--line);
+      color: var(--iris);
+      font-size: 13px;
+      font-weight: 820;
+    }
+    .dark .type { border-color: rgba(255, 250, 241, 0.2); color: var(--cyan); }
+    .material-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .material-list span {
+      display: inline-flex;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, 0.46);
+      color: #353029;
+      font-size: 13px;
+      line-height: 1.35;
+    }
+    .dark .material-list span {
+      color: rgba(255, 250, 241, 0.82);
+      border-color: rgba(255, 250, 241, 0.18);
+      background: rgba(255, 250, 241, 0.06);
+    }
+    .proposal-refs {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .ref-card {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+      color: inherit;
+      text-decoration: none;
+      background: rgba(255, 250, 241, 0.48);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: transform 180ms ease, border-color 180ms ease;
+    }
+    .dark .ref-card {
+      background: rgba(255, 250, 241, 0.06);
+      border-color: rgba(255, 250, 241, 0.18);
+    }
+    .ref-card:hover { transform: translateY(-3px); border-color: currentColor; }
+    .ref-image {
+      display: block;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #d8d0c0;
+    }
+    .ref-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 400ms ease;
+    }
+    .ref-card:hover img { transform: scale(1.04); }
+    .ref-meta { display: grid; gap: 7px; padding: 14px; }
+    .ref-source, .ref-stats {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.35;
+    }
+    .dark .ref-source, .dark .ref-stats { color: rgba(255, 250, 241, 0.56); }
+    .ref-title { font-weight: 830; line-height: 1.24; }
+    .ref-lesson { color: #4f493f; font-size: 12px; line-height: 1.45; }
+    .dark .ref-lesson { color: rgba(255, 250, 241, 0.68); }
+
+    .wall {
+      display: grid;
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 250, 241, 0.18);
+      border: 1px solid rgba(255, 250, 241, 0.18);
+    }
+    .wall-item {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #111;
+      text-decoration: none;
+    }
+    .wall-item img {
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.85);
+      transition: transform 300ms ease, filter 300ms ease;
+    }
+    .wall-item span {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 7px 8px;
+      color: var(--white);
+      background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.72));
+      font-size: 11px;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 180ms ease, transform 180ms ease;
+    }
+    .wall-item:hover img { transform: scale(1.05); filter: saturate(1.08); }
+    .wall-item:hover span { opacity: 1; transform: translateY(0); }
+    .closing {
+      display: grid;
+      grid-template-columns: minmax(0, 0.7fr) minmax(260px, 0.3fr);
+      gap: 36px;
+      align-items: end;
+    }
+    .closing p { color: rgba(255, 250, 241, 0.74); max-width: 760px; }
+    .fineprint {
+      color: rgba(255, 250, 241, 0.48);
+      font-size: 12px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: rise 700ms ease forwards;
+    }
+    .delay-1 { animation-delay: 120ms; }
+    .delay-2 { animation-delay: 240ms; }
+
+    @keyframes drift {
+      from { transform: scale(1.04) translate3d(-1%, -1%, 0); }
+      to { transform: scale(1.09) translate3d(1.6%, 1%, 0); }
+    }
+    @keyframes rise {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner, .section-head, .proposal-grid, .closing {
+        grid-template-columns: 1fr;
+      }
+      .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .trend-grid { grid-template-columns: 1fr; }
+      .wall { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    }
+    @media (max-width: 680px) {
+      .topbar { position: absolute; mix-blend-mode: normal; }
+      .nav { display: none; }
+      .hero-inner { width: min(100% - 32px, var(--max)); padding-bottom: 38px; }
+      section { padding-inline: 16px; }
+      .method-grid, .proposal-refs { grid-template-columns: 1fr; }
+      .proposal-head { grid-template-columns: 54px 1fr; gap: 14px; }
+      .proposal-no { width: 44px; height: 44px; }
+      .wall { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="brand">SnackPaper x Xiao Yuliang</span>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#method">Method</a>
+      <a href="#trends">Signals</a>
+      <a href="#preheat-1">Preheat 01</a>
+      <a href="#preheat-2">Preheat 02</a>
+      <a href="#references">References</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="reveal">
+          <p class="kicker">Instagram concept content research / 2026-06-03</p>
+          <h1><span>#NGC7023</span><span>鸢尾花星云</span></h1>
+          <p class="lede">基于 JustOneAPI 抓取的 Instagram 先锋品牌、青年文化媒体与视觉艺术账号内容，为 SnackPaper 与肖宇梁第一季概念企划提出两条预热推送的 20 个图文/影像 proposal。</p>
+          <div class="hero-links">
+            <a class="button" href="#preheat-1">看预热一 10 案</a>
+            <a class="button" href="#preheat-2">看预热二 10 案</a>
+          </div>
+        </div>
+        <aside class="hero-panel reveal delay-1">
+          <p><strong>核心判断</strong></p>
+          <p>第一条要把“星云主题”讲得有来源、有符号系统；第二条要把“星云与肖宇梁”讲成长期存在的宇宙、显影、陪伴关系，而不是临时包装。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="section-inner">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Research Method</p>
+            <h2>用 Ins 的当下发布语法，反推两条预热该长什么样。</h2>
+          </div>
+          <p class="section-note">调研通过 JustOneAPI Instagram 接口完成，token 未写入任何产出文件。账号组以先锋品牌、青年文化媒体、电影/艺术平台为主；hashtag 与 reels 搜索用于验证趋势，不作为低质随机参考的主来源。</p>
+        </div>
+        <div class="method-grid reveal delay-1">
+          <div class="metric"><strong>21</strong><span>个账号抓取：LOEWE、Prada、Miu Miu、Balenciaga、Dazed、i-D、NOWNESS、A24 等</span></div>
+          <div class="metric"><strong>10</strong><span>个 hashtag 搜索：fashionfilm、artdirection、generativeart、visualculture 等</span></div>
+          <div class="metric"><strong>8</strong><span>组 reels 搜索：fashion film、surreal fashion、ai fashion、home portrait 等</span></div>
+          <div class="metric"><strong>40</strong><span>个高质量推送参考被选入 proposal，每个方案对应 2 个 reference</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="trends">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Instagram Signals</p>
+            <h2>年轻语境里的“概念推送”，不是讲大词，而是建立可进入的观看机制。</h2>
+          </div>
+          <p class="section-note">从本轮参考里抽出的 6 个可借鉴趋势，直接影响后面 20 个 proposal 的形式选择。</p>
+        </div>
+        <div class="trend-grid">
+          <article class="trend"><span class="mark">01 / Archive</span><h3>档案化</h3><p>Maison Margiela、LOEWE、Prada 都把概念放进“历史、工艺、事件、文件”的结构里。#NGC7023 第一条也应像一份可收藏的观测档案。</p></article>
+          <article class="trend"><span class="mark">02 / Trailer</span><h3>电影预告化</h3><p>A24、MUBI、Balenciaga 的强短片语法证明：悬念、标题卡、声音和黑帧能让商业内容获得叙事重量。</p></article>
+          <article class="trend"><span class="mark">03 / Zine</span><h3>杂志/小书化</h3><p>i-D、Dazed、It's Nice That 善于把人物、设计和文化解释做成 zine 结构。肖宇梁的多面性很适合这种轻出版感。</p></article>
+          <article class="trend"><span class="mark">04 / Hybrid Image</span><h3>生成式影像透明化</h3><p>NOWNESS 与 SHOWstudio 的实验影像提示：AIGC 最好成为概念演化过程，而不是替代实拍的奇观。</p></article>
+          <article class="trend"><span class="mark">05 / Intimacy</span><h3>亲密关系高级化</h3><p>Jacquemus、WePresent 把家人、母女、日常关系处理得有仪式感。酒酒可以成为情感叙事核心，而不是可爱点缀。</p></article>
+          <article class="trend"><span class="mark">06 / Object World</span><h3>物件世界观</h3><p>材质、海报、声音、空间、道具都能被内容产品化。黑西装、米色线衣、白沙发、帷幔和狗碗都应进入视觉资产库。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="preheat-1">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Preheat 01 / Concept Background</p>
+            <h2>第一条：解析介绍本季企划概念主题的背景信息与深层寓意。</h2>
+          </div>
+          <p class="section-note">目标是先建立 #NGC7023 的“科学来源、符号结构、视觉语言和内容产品潜力”。重点讲主题，不急着把肖宇梁全部讲透。</p>
+        </div>
+        <div class="proposal-stack">
+          
+  <article class="proposal" id="preheat-1-01">
+    <div class="proposal-head">
+      <span class="proposal-no">01</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《NGC7023 观测档案》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">平面设计组图 / 长图档案</p>
+        <p><strong>内容构思：</strong>把第一条预热做成一份被打开的天文观测文件：编号、坐标、光谱、尘埃、鸢尾/虹膜双关依次出现，最后才露出黑西装置身星云投影的剪影。</p>
+        <p><strong>成立原因：</strong>先让主题显得“有出处、有秩序、有可研究性”，避免星云只成为漂亮背景。年轻用户也更容易把它收藏成审美资料。</p>
+        <div class="material-list">
+          <span>NASA 鸢尾花星云图与简化星图</span><span>黑色帷幔、蓝紫投影、眼睛/虹膜纹理</span><span>打字机编号、扫描线、显影标尺</span><span>文案关键词：反射星云、被看见、显影、鸢尾</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DXEtEbTjPnC/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r01.jpg" alt="Maison Margiela / folders"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@maisonmargiela · DXEtEbTjPnC</span>
+        <span class="ref-title">Maison Margiela / folders</span>
+        <span class="ref-lesson">档案化解释品牌工艺，把一个视觉技法变成可持续的概念栏目。</span>
+        <span class="ref-stats">59K likes · 254 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY-I9ANlIVp/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r02.jpg" alt="Art Basel zoom-in"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@artbasel · DY-I9ANlIVp</span>
+        <span class="ref-title">Art Basel zoom-in</span>
+        <span class="ref-lesson">用局部放大与观看动作引导观众进入作品细节。</span>
+        <span class="ref-stats">2K likes · 18 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-02">
+    <div class="proposal-head">
+      <span class="proposal-no">02</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《星云显影 15 秒》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">AIGC 视频 / 实拍素材混剪</p>
+        <p><strong>内容构思：</strong>从黑场粒子开始，蓝紫尘埃被一道光扫过，逐渐形成鸢尾花瓣，最后切到肖宇梁黑西装的投影轮廓。全片像一段还未完成的观测记录。</p>
+        <p><strong>成立原因：</strong>短视频更适合作为第一波触达；先给氛围和世界观，不急着解释完整信息。</p>
+        <div class="material-list">
+          <span>暗场粒子、雾面投影、虹膜扩张动画</span><span>低频合成器、微弱快门声</span><span>剪辑手法：慢推、闪白、局部失焦</span><span>结尾只出现主题字样 #NGC7023 鸢尾花星云</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY6_pdiD7SU/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r03.jpg" alt="NOWNESS digital universe"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@nowness · DY6_pdiD7SU</span>
+        <span class="ref-title">NOWNESS digital universe</span>
+        <span class="ref-lesson">数字构建宇宙与身体表演并置，适合参考星云短片的影像语法。</span>
+        <span class="ref-stats">9K likes · 143 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DYeO9zkzbtE/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r04.jpg" alt="Gentle Monster surreal mise-en-scene"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@gentlemonster · DYeO9zkzbtE</span>
+        <span class="ref-title">Gentle Monster surreal mise-en-scene</span>
+        <span class="ref-lesson">以荒诞装置和明星面孔把产品广告转成超现实世界观。</span>
+        <span class="ref-stats">1.1M likes · 21K comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-03">
+    <div class="proposal-head">
+      <span class="proposal-no">03</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《一片星云的来历》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">8 页 carousel 概念科普</p>
+        <p><strong>内容构思：</strong>用精炼图文解释 NGC7023：它是反射星云、蓝色来自尘埃反射星光、Iris 同时指鸢尾与虹膜。每页只讲一个概念。</p>
+        <p><strong>成立原因：</strong>品牌要先建立主题的可信度和可复述性；让粉丝能用自己的话向外安利这个企划。</p>
+        <div class="material-list">
+          <span>星云事实卡、蓝色反射光图示、鸢尾花轮廓</span><span>SnackPaper 第一季拍摄的黑/白双场景小切片</span><span>版式：大留白 + 小字注释 + 低饱和图像</span><span>收束句：不是自发光，而是在关系里显影</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY9rGTJssVZ/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r05.jpg" alt="LOEWE 180 years"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@loewe · DY9rGTJssVZ</span>
+        <span class="ref-title">LOEWE 180 years</span>
+        <span class="ref-lesson">把品牌历史做成可传播的纪念节点，适合转译为企划起源页。</span>
+        <span class="ref-stats">48K likes · 415 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZEUv9qj-RK/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r06.jpg" alt="Prada Mode"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@prada · DZEUv9qj-RK</span>
+        <span class="ref-title">Prada Mode</span>
+        <span class="ref-lesson">用跨界创作者阵容和事件制度感，让概念具有文化议程属性。</span>
+        <span class="ref-stats">26K likes · 187 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-04">
+    <div class="proposal-head">
+      <span class="proposal-no">04</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《生成式鸢尾》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">AIGC 组图 / AI 过程透明帖</p>
+        <p><strong>内容构思：</strong>用 AIGC 生成“星云像花、花像眼睛、眼睛像入口”的三组视觉，再叠加实拍投影纹理，形成主题视觉的候选演化过程。</p>
+        <p><strong>成立原因：</strong>年轻艺术圈对生成式影像敏感，透明展示生成逻辑比单纯炫技更高级，也能把企划显得在探索媒介。</p>
+        <div class="material-list">
+          <span>3 组视觉 prompt 方向：nebula/petal/iris</span><span>实拍投影纹理作为 final layer</span><span>屏幕录制式生成过程、失败图样、参数残影</span><span>声明：AIGC 用于概念延展，主视觉仍以实拍为核心</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY2I68wKm9W/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r07.jpg" alt="SHOWstudio AI fashion"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@showstudio · DY2I68wKm9W</span>
+        <span class="ref-title">SHOWstudio AI fashion</span>
+        <span class="ref-lesson">把 AI 影像争议变成可讨论的话题入口，适合 AIGC 透明表达。</span>
+        <span class="ref-stats">1K likes · 29 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY7UVqkkwBP/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r08.jpg" alt="NOWNESS Experiments"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@nowness · DY7UVqkkwBP</span>
+        <span class="ref-title">NOWNESS Experiments</span>
+        <span class="ref-lesson">以实验影像解释抽象状态，适合反射星云的诗性显影。</span>
+        <span class="ref-stats">2K likes · 28 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-05">
+    <div class="proposal-head">
+      <span class="proposal-no">05</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《夜幕预告片》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">电影预告式 Reel</p>
+        <p><strong>内容构思：</strong>把黑色帷幔当作夜空与剧场幕布，短片以“幕布尚未拉开”为叙事：星云投影、衣料反光、狗的影子一闪而过。</p>
+        <p><strong>成立原因：</strong>概念预热需要保留悬念；电影化能把两套拍摄从“大片物料”升级为“第一季内容宇宙”。</p>
+        <div class="material-list">
+          <span>黑西装轮廓、帷幔褶皱、投影光斑</span><span>标题卡：A reflection is about to appear</span><span>剪辑：黑帧、呼吸感停顿、1 秒犬影彩蛋</span><span>声音：布料摩擦、远处低频、胶片快门</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY4UDZTBa8G/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r09.jpg" alt="Balenciaga A New York Minute"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@balenciaga · DY4UDZTBa8G</span>
+        <span class="ref-title">Balenciaga A New York Minute</span>
+        <span class="ref-lesson">电影导演与短片叙事为单品制造高级预告片感。</span>
+        <span class="ref-stats">26K likes · 225 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DWjfwilEeI4/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r10.jpg" alt="A24 Backrooms"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@a24 · DWjfwilEeI4</span>
+        <span class="ref-title">A24 Backrooms</span>
+        <span class="ref-lesson">以强类型片气质和一句话钩子制造高参与预告。</span>
+        <span class="ref-stats">1.4M likes · 10K comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-06">
+    <div class="proposal-head">
+      <span class="proposal-no">06</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《鸢尾符号解剖》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">设计图谱 / 平面海报组</p>
+        <p><strong>内容构思：</strong>把 Iris 拆成三层：花、虹膜、星云。每层用一个图案系统表达，再合成 SnackPaper 本季的概念符号。</p>
+        <p><strong>成立原因：</strong>适合品牌后续所有内容产品复用：贴纸、封面、水印、拍立得边框、动态标题卡都能从这套符号系统延展。</p>
+        <div class="material-list">
+          <span>鸢尾花瓣轮廓、虹膜环形线、星云尘埃颗粒</span><span>三色系统：深黑、蓝紫、暖白</span><span>互动问题：你看到的是花、眼睛，还是星云？</span><span>输出一张可做系列封面的主符号</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DYzzkubBriN/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r11.jpg" alt="It&#039;s Nice That symbol story"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@itsnicethat · DYzzkubBriN</span>
+        <span class="ref-title">It&#039;s Nice That symbol story</span>
+        <span class="ref-lesson">把一个大众符号拆成设计史与文化史，适合做鸢尾/虹膜解释。</span>
+        <span class="ref-stats">14K likes · 127 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY2b0M6E7a2/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r12.jpg" alt="SSENSE palette prompt"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@ssense · DY2b0M6E7a2</span>
+        <span class="ref-title">SSENSE palette prompt</span>
+        <span class="ref-lesson">用开放式提问把审美讨论转成互动入口。</span>
+        <span class="ref-stats">3K likes · 12 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-07">
+    <div class="proposal-head">
+      <span class="proposal-no">07</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《星云材料库》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">拼贴组图 / 物料 swatch board</p>
+        <p><strong>内容构思：</strong>把本季物料当成材料研究：黑西装羊毛纹理、帷幔、投影颗粒、米色线衣、白色沙发、酒酒毛发，全部做成星云材料样本。</p>
+        <p><strong>成立原因：</strong>这会把抽象概念落到可触摸的质地，品牌也更像在做一本高端纸本/内容产品，而不只是发艺人图。</p>
+        <div class="material-list">
+          <span>微距材质图、色卡、编号贴纸、透明胶带</span><span>黑场和白场分别做两套材料页</span><span>剪辑可用定帧动画：样本被一张张摆上桌</span><span>文案：星云不是远方，它也有质地</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DXrbkZ_CicK/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r13.jpg" alt="Acne Studios collage practice"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@acnestudios · DXrbkZ_CicK</span>
+        <span class="ref-title">Acne Studios collage practice</span>
+        <span class="ref-lesson">艺术家方法论、拼贴与再摄影可借鉴为星云素材库。</span>
+        <span class="ref-stats">7K likes · 26 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DXBtU8vgFcC/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r14.jpg" alt="Maison Margiela Bianchetto Shenzhen"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@maisonmargiela · DXBtU8vgFcC</span>
+        <span class="ref-title">Maison Margiela Bianchetto Shenzhen</span>
+        <span class="ref-lesson">同一工艺在不同空间重复出现，适合建立系列化概念资产。</span>
+        <span class="ref-stats">37K likes · 146 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-08">
+    <div class="proposal-head">
+      <span class="proposal-no">08</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《NGC7023 声音明信片》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">声音视觉化短视频 / ASMR teaser</p>
+        <p><strong>内容构思：</strong>把主题做成一张会发声的明信片：宇宙低频、投影机运转、纸张翻动、酒酒靠近沙发的脚步，组成 20 秒声音场景。</p>
+        <p><strong>成立原因：</strong>Ins 上很多高质感发布已经把声音当成概念资产；这能让预热在静态海报之外多一个记忆点。</p>
+        <div class="material-list">
+          <span>黑场低频 + 白场环境音的 A/B 对照</span><span>音频波形转成星云线条</span><span>画面极少动：只让光斑和纸张轻微漂移</span><span>建议同步做可下载铃声/短音频彩蛋</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DXwFvVHjQs0/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r15.jpg" alt="Acne Studios soundtrack vinyl"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@acnestudios · DXwFvVHjQs0</span>
+        <span class="ref-title">Acne Studios soundtrack vinyl</span>
+        <span class="ref-lesson">把视觉企划延展成声音载体，适合预热中的音频资产。</span>
+        <span class="ref-stats">10K likes · 109 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY2DzjKEzW3/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r16.jpg" alt="MUBI trailer"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@mubi · DY2DzjKEzW3</span>
+        <span class="ref-title">MUBI trailer</span>
+        <span class="ref-lesson">电影平台的预告节奏可参考为 15-30 秒概念短片结构。</span>
+        <span class="ref-stats">46K likes · 394 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-09">
+    <div class="proposal-head">
+      <span class="proposal-no">09</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《虹膜近景海报》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">明星杂志式封面组图 / 局部裁切 poster</p>
+        <p><strong>内容构思：</strong>还不完整露出全身，只发布眼部、手部、领口、酒酒毛发、沙发边缘等局部，并用虹膜纹理作为统一框架。</p>
+        <p><strong>成立原因：</strong>局部先导能提升期待感；也与 Iris 的“眼睛/被看见”天然相连。</p>
+        <div class="material-list">
+          <span>肖宇梁眼部或侧脸局部、黑西装领口、白背心肩颈</span><span>蓝紫反光覆盖局部皮肤和织物</span><span>大字少量：IRIS / REFLECTION / 7023</span><span>每张海报加一行观测注释</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DZDXRTxCSeg/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r17.jpg" alt="i-D Alexa Demie Zine"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@i_d · DZDXRTxCSeg</span>
+        <span class="ref-title">i-D Alexa Demie Zine</span>
+        <span class="ref-lesson">明星、摄影师与 zine 形式组合，适合艺人概念化呈现。</span>
+        <span class="ref-stats">61K likes · 211 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZDJnjnqG3m/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r18.jpg" alt="Dazed Action Issue cover"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@dazed · DZDJnjnqG3m</span>
+        <span class="ref-title">Dazed Action Issue cover</span>
+        <span class="ref-lesson">青年文化杂志用封面照和 issue 主题完成身份定位。</span>
+        <span class="ref-stats">31K likes · 31 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-1-10">
+    <div class="proposal-head">
+      <span class="proposal-no">10</span>
+      <div>
+        <p class="proposal-kicker">预热一：概念主题解析</p>
+        <h3>《城市坐标预告》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">OOH 模拟图 / 发布日历海报</p>
+        <p><strong>内容构思：</strong>把 #NGC7023 设计成已经在城市里出现的观测信号：路牌、地铁灯箱、杂志页、墙面投影，最后给出正式发布倒计时。</p>
+        <p><strong>成立原因：</strong>在正式内容发布前制造“这个企划正在扩散”的公共感，适合品牌账号、小红书和微博同步转发。</p>
+        <div class="material-list">
+          <span>城市夜景中的蓝紫光标、纸本海报贴墙</span><span>坐标文字：NGC7023 / CEPHEUS / SNACKPAPER</span><span>倒计时 3/2/1 组图</span><span>结尾露出两套造型的极小画面切片</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DZApzHOlGuZ/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r19.jpg" alt="A24 city sightings"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@a24 · DZApzHOlGuZ</span>
+        <span class="ref-title">A24 city sightings</span>
+        <span class="ref-lesson">用城市坐标和重复出现制造“已经到处发生”的扩散感。</span>
+        <span class="ref-stats">544K likes · 1K comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZCLfXMsMWX/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r20.jpg" alt="LOEWE artist cast"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@loewe · DZCLfXMsMWX</span>
+        <span class="ref-title">LOEWE artist cast</span>
+        <span class="ref-lesson">品牌好友与艺术家群像可转译为企划世界观的角色墙。</span>
+        <span class="ref-stats">25K likes · 369 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="preheat-2">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Preheat 02 / Xiao Yuliang Connection</p>
+            <h2>第二条：深度诠释主题与肖宇梁之间的契合、联结和陪伴寓意。</h2>
+          </div>
+          <p class="section-note">目标是让粉丝感到“品牌读懂了他”：黑场不是单纯酷感，白场不是单纯生活照，酒酒也不是花絮，而是宇宙主题落回陪伴关系的关键。</p>
+        </div>
+        <div class="proposal-stack">
+          
+  <article class="proposal" id="preheat-2-11">
+    <div class="proposal-head">
+      <span class="proposal-no">11</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《他身后的整片宇宙》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">人物概念 zine / 情感长图</p>
+        <p><strong>内容构思：</strong>从肖宇梁长期共享的“宇宙”符号进入：不是把星云硬套给他，而是把他与粉丝之间已有的宇宙关系视觉化。</p>
+        <p><strong>成立原因：</strong>第二条预热的重点是“契合”，必须让粉丝感觉品牌读懂了他，而不是只借用了一个美丽主题。</p>
+        <div class="material-list">
+          <span>宇宙/宇航员/观测者关键词</span><span>黑场造型作为遥远星云，白场造型作为回家轨道</span><span>酒酒作为陪伴星进入最后两页</span><span>文案保持克制：他不是孤独星体，他有自己的轨道</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DT2p689iJqj/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r21.jpg" alt="Jacquemus grandmother ambassador"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@jacquemus · DT2p689iJqj</span>
+        <span class="ref-title">Jacquemus grandmother ambassador</span>
+        <span class="ref-lesson">把亲密关系升格为品牌叙事核心，适合参考陪伴关系的公开表达。</span>
+        <span class="ref-stats">183K likes · 4K comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZFS_t6qbTL/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r22.jpg" alt="Dazed behind the scenes"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@dazed · DZFS_t6qbTL</span>
+        <span class="ref-title">Dazed behind the scenes</span>
+        <span class="ref-lesson">青年杂志用 BTS 让正式大片先有近距离入口。</span>
+        <span class="ref-stats">19K likes · 17 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-12">
+    <div class="proposal-head">
+      <span class="proposal-no">12</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《黑场与白场的光谱》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">双场景对照 carousel / 12 秒 split video</p>
+        <p><strong>内容构思：</strong>把黑西装暗场和白色家居空间解释为同一片星云的两段光谱：一端是未知、克制、投影；一端是日光、松弛、陪伴。</p>
+        <p><strong>成立原因：</strong>避免把两套造型写成割裂的反差人格，而是建立“同一人、不同光谱”的高级解释。</p>
+        <div class="material-list">
+          <span>左右分屏：夜空帷幔 vs 白色沙发</span><span>色彩从蓝紫过渡到暖白</span><span>剪辑：黑场慢推，白场轻晃手持</span><span>字幕：same nebula, different spectrum</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY3JocxgiKz/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r23.jpg" alt="Prada ever-shifting perspectives"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@prada · DY3JocxgiKz</span>
+        <span class="ref-title">Prada ever-shifting perspectives</span>
+        <span class="ref-lesson">通过多视角和态度碰撞解释造型变化。</span>
+        <span class="ref-stats">16K likes · 166 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZEHd0nD-YX/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r24.jpg" alt="Miu Miu shared moments"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@miumiu · DZEHd0nD-YX</span>
+        <span class="ref-title">Miu Miu shared moments</span>
+        <span class="ref-lesson">轻松、日光、共同体验的语气适合白场家居氛围。</span>
+        <span class="ref-stats">9K likes · 115 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-13">
+    <div class="proposal-head">
+      <span class="proposal-no">13</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《酒酒的轨道》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">宠物视角短片 / 亲密关系图文</p>
+        <p><strong>内容构思：</strong>让酒酒成为第二条预热的叙事视角：它从黑场边缘经过，最后回到白色沙发旁，连接“星云”与“家”。</p>
+        <p><strong>成立原因：</strong>酒酒不是花絮道具，而是肖宇梁陪伴关系的象征；它能把宏大的宇宙主题落回粉丝真正关心的日常。</p>
+        <div class="material-list">
+          <span>犬影、爪印、靠近的呼吸、沙发上的互动</span><span>镜头低机位、手部抚摸、毛发微距</span><span>旁白可用第三人称：有些轨道很小，却把人带回家</span><span>注意不强化任何其他宠物商业信息</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DZCgp_6kQqQ/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r25.jpg" alt="NOWNESS Meets"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@nowness · DZCgp_6kQqQ</span>
+        <span class="ref-title">NOWNESS Meets</span>
+        <span class="ref-lesson">创作者访谈与生活线索并置，适合酒酒作为情感入口。</span>
+        <span class="ref-stats">2K likes · 64 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY2Rsq6jU7H/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r26.jpg" alt="WePresent Mom,Me"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@wepresent · DY2Rsq6jU7H</span>
+        <span class="ref-title">WePresent Mom,Me</span>
+        <span class="ref-lesson">亲密关系影像项目用克制文字承托情感，不滥情。</span>
+        <span class="ref-stats">4K likes · 89 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-14">
+    <div class="proposal-head">
+      <span class="proposal-no">14</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《回家的白色画布》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">家居静物组图 / 明亮日光短片</p>
+        <p><strong>内容构思：</strong>围绕白背心、米色线衣、白色沙发、酒酒互动，做一组“星云落地后的生活切片”。</p>
+        <p><strong>成立原因：</strong>肖宇梁的粉丝很吃自然、松弛、生活感；这套内容让概念不止神秘，也有可以靠近的温度。</p>
+        <div class="material-list">
+          <span>白色空间、米色织物、柔软沙发、窗边日光</span><span>肖宇梁与酒酒的亲昵互动</span><span>画面节奏：慢、轻、少解释</span><span>文案：当光落下来，星云也可以像家</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DX8dldeID70/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r27.jpg" alt="Jacquemus white canvas"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@jacquemus · DX8dldeID70</span>
+        <span class="ref-title">Jacquemus white canvas</span>
+        <span class="ref-lesson">白色画布、家人、仪式感可对应白背心米色线衣造型。</span>
+        <span class="ref-stats">276K likes · 4K comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY5R99YjQk5/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r39.jpg" alt="Miu Miu summer essentials"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@miumiu · DY5R99YjQk5</span>
+        <span class="ref-title">Miu Miu summer essentials</span>
+        <span class="ref-lesson">以材质和日光建立松弛生活方式氛围。</span>
+        <span class="ref-stats">8K likes · 39 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-15">
+    <div class="proposal-head">
+      <span class="proposal-no">15</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《夜航者与归家者》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">30 秒双幕电影预告</p>
+        <p><strong>内容构思：</strong>第一幕是黑场：夜航、投影、沉默凝视；第二幕是白场：沙发、酒酒、笑意和松弛。最后两幕以同一个眼神或手部动作对接。</p>
+        <p><strong>成立原因：</strong>肖宇梁的魅力在于可进入角色的克制，也能回到真实生活的鲜活；电影双幕可以把这种张力讲清楚。</p>
+        <div class="material-list">
+          <span>黑场标题：The Observer</span><span>白场标题：The Companion</span><span>镜头桥：抬眼/低头/手掌从暗到亮</span><span>音乐从低频过渡到室内环境声</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY11yxXKvGY/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r28.jpg" alt="Balenciaga cinematic loop"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@balenciaga · DY11yxXKvGY</span>
+        <span class="ref-title">Balenciaga cinematic loop</span>
+        <span class="ref-lesson">同一电影化概念连续发布，适合两套造型的章节化预热。</span>
+        <span class="ref-stats">21K likes · 240 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DY0BZKEj84N/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r29.jpg" alt="MUBI poster first look"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@mubi · DY0BZKEj84N</span>
+        <span class="ref-title">MUBI poster first look</span>
+        <span class="ref-lesson">用先导海报和 trailer drop 节奏制造期待。</span>
+        <span class="ref-stats">80K likes · 475 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-16">
+    <div class="proposal-head">
+      <span class="proposal-no">16</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《观测者星图》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">粉丝情感 motion graphic / 评论星图</p>
+        <p><strong>内容构思：</strong>把粉丝、观众、酒酒、镜头都写成“观测者”，他们不是背景，而是让反射星云显影的光源之一。</p>
+        <p><strong>成立原因：</strong>这能把“反射星云”的科学概念转成艺人与粉丝的双向关系，形成高共鸣但不过度煽情的表达。</p>
+        <div class="material-list">
+          <span>星点化的留言、日期节点、宇航员/宇宙符号</span><span>星点连线最终构成 Iris 图案</span><span>不直接搬运未授权粉丝原话，可用抽象关键词</span><span>文案：被看见，也在回应看见他的人</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DZDtkV4mVZj/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r30.jpg" alt="i-D zine scenes"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@i_d · DZDtkV4mVZj</span>
+        <span class="ref-title">i-D zine scenes</span>
+        <span class="ref-lesson">zine 内页式发布适合承载肖宇梁多面性。</span>
+        <span class="ref-stats">57K likes · 224 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DYmnCf5k_0G/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r31.jpg" alt="SSENSE cultural essay"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@ssense · DYmnCf5k_0G</span>
+        <span class="ref-title">SSENSE cultural essay</span>
+        <span class="ref-lesson">把人物风格放进文化脉络中解析，适合艺人与概念的深层连接。</span>
+        <span class="ref-stats">4K likes · 37 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-17">
+    <div class="proposal-head">
+      <span class="proposal-no">17</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《一句话形容不了我》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">迷你书 / 折页式 carousel</p>
+        <p><strong>内容构思：</strong>借肖宇梁“多面性”做一本 10 页迷你书：演员、观测者、夜航者、归家者、酒酒的陪伴者，彼此并列而不是互相解释。</p>
+        <p><strong>成立原因：</strong>粉丝会反感单一标签；迷你书形式能把人物复杂度做得轻巧、可收藏、可二次传播。</p>
+        <div class="material-list">
+          <span>小开本封面、页码、装订线、手写旁注</span><span>黑白两套造型各占一半</span><span>每页一个词，不写长篇夸赞</span><span>可延展成实体明信片/折页内容产品</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DYzfFXBDlef/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r32.jpg" alt="It&#039;s Nice That mini books"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@itsnicethat · DYzfFXBDlef</span>
+        <span class="ref-title">It&#039;s Nice That mini books</span>
+        <span class="ref-lesson">迷你书、设计物、出版感适合内容产品化。</span>
+        <span class="ref-stats">5K likes · 17 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DXhVx3PCKZi/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r33.jpg" alt="SHOWstudio fashion film"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@showstudio · DXhVx3PCKZi</span>
+        <span class="ref-title">SHOWstudio fashion film</span>
+        <span class="ref-lesson">时装短片以声画与身体制造强气质。</span>
+        <span class="ref-stats">9K likes · 235 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-18">
+    <div class="proposal-head">
+      <span class="proposal-no">18</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《幕后显影》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">BTS 短片 / 拍摄札记组图</p>
+        <p><strong>内容构思：</strong>用拍摄现场的灯、投影、布景、酒酒互动建立真实感：概念不是后期包装，而是在拍摄现场一点点显影出来。</p>
+        <p><strong>成立原因：</strong>预热期可以先放“如何诞生”，既保护正片，又让粉丝对拍摄付出和艺人状态产生信任。</p>
+        <div class="material-list">
+          <span>投影机、灯位、帷幔布料、沙发局部</span><span>肖宇梁候场或调整服装的非正式瞬间</span><span>酒酒与工作人员/肖宇梁互动一闪而过</span><span>字幕用 production note，而不是常规花絮口吻</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DZFPFSBKtXn/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r34.jpg" alt="Dazed in-between takes"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@dazed · DZFPFSBKtXn</span>
+        <span class="ref-title">Dazed in-between takes</span>
+        <span class="ref-lesson">拍摄间隙采访能让正式大片提前产生人味。</span>
+        <span class="ref-stats">11K likes · 8 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DYkWwTmMR-I/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r35.jpg" alt="Diesel desire campaign"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@diesel · DYkWwTmMR-I</span>
+        <span class="ref-title">Diesel desire campaign</span>
+        <span class="ref-lesson">明星代言与抽象情绪词绑定，适合把“陪伴/显影”做成主题宣言。</span>
+        <span class="ref-stats">269K likes · 919 comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-19">
+    <div class="proposal-head">
+      <span class="proposal-no">19</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《陪伴关系沉浸展》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">概念展览模拟 / 3D 空间组图</p>
+        <p><strong>内容构思：</strong>把两套拍摄布景想象成一个小型展览：黑色房间播放星云投影，白色房间摆放沙发、线衣、狗碗和纸本照片。</p>
+        <p><strong>成立原因：</strong>这能把品牌内容产品化，不只是发帖；也为后续快闪、展陈、粉丝互动装置留下空间。</p>
+        <div class="material-list">
+          <span>展览平面图、房间编号、动线箭头</span><span>黑场/白场两个空间的渲染图或 AIGC 草图</span><span>物件标签：curtain / sofa / orbit / companion</span><span>结尾 CTA：正式内容即将开放观测</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DY68M1ejWac/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r36.jpg" alt="Art Basel immersive experience"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@artbasel · DY68M1ejWac</span>
+        <span class="ref-title">Art Basel immersive experience</span>
+        <span class="ref-lesson">把发布想象成沉浸式现场，而不仅是图片露出。</span>
+        <span class="ref-stats">10K likes · 181 comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DYMzA-UDJv-/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r37.jpg" alt="WePresent short film"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@wepresent · DYMzA-UDJv-</span>
+        <span class="ref-title">WePresent short film</span>
+        <span class="ref-lesson">短片先导 + 文化人物传记感，适合概念企划的电影化包装。</span>
+        <span class="ref-stats">47K likes · 1K comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+  <article class="proposal" id="preheat-2-20">
+    <div class="proposal-head">
+      <span class="proposal-no">20</span>
+      <div>
+        <p class="proposal-kicker">预热二：肖宇梁深层联结</p>
+        <h3>《第一季总预告：从奇异到亲密》</h3>
+      </div>
+    </div>
+    <div class="proposal-grid">
+      <div class="proposal-copy">
+        <p class="type">混合剪辑 teaser / 内容发布总引</p>
+        <p><strong>内容构思：</strong>用 20 秒把第一季两套造型串成一个情绪弧线：奇异、凝视、显影、靠近、回家。最后落到肖宇梁与酒酒同框的亲密瞬间。</p>
+        <p><strong>成立原因：</strong>第二条预热之后就要进入正式发布，这个方案最适合承担承上启下的任务，把概念和艺人关系一起锁定。</p>
+        <div class="material-list">
+          <span>前 8 秒黑场超现实，后 8 秒白场生活感</span><span>最后 4 秒出现主题、发布时间、内容产品线索</span><span>剪辑节奏从断裂到顺滑</span><span>文案：宇宙很远，陪伴很近</span>
+        </div>
+      </div>
+      <div class="proposal-refs">
+        
+    <a class="ref-card" href="https://www.instagram.com/p/DYUd_d_zy7P/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r38.jpg" alt="Gentle Monster campaign cadence"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@gentlemonster · DYUd_d_zy7P</span>
+        <span class="ref-title">Gentle Monster campaign cadence</span>
+        <span class="ref-lesson">连续短视频保持同一奇异世界观，适合第一季连载节奏。</span>
+        <span class="ref-stats">212K likes · 2K comments</span>
+      </span>
+    </a>
+    <a class="ref-card" href="https://www.instagram.com/p/DZC0rsYtoBI/" target="_blank" rel="noreferrer">
+      <span class="ref-image"><img src="assets/ig-refs/r40.jpg" alt="Jacquemus everyday moments"></span>
+      <span class="ref-meta">
+        <span class="ref-source">@jacquemus · DZC0rsYtoBI</span>
+        <span class="ref-title">Jacquemus everyday moments</span>
+        <span class="ref-lesson">把宏大身份落回 everyday moments，适合从星云落回沙发与酒酒。</span>
+        <span class="ref-stats">437K likes · 5K comments</span>
+      </span>
+    </a>
+      </div>
+    </div>
+  </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="references">
+      <div class="section-inner">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Reference Wall</p>
+            <h2>本轮入选的 40 个 Instagram 推送参考。</h2>
+          </div>
+          <p class="section-note">点击缩略图可跳转到 Instagram 原帖。图像为本地下载缩略图，仅用于内部策划参考；详细结构化数据已同步输出到 <code>research/snackpaper-ngc7023-ins-reference-pool.json</code>。</p>
+        </div>
+        <div class="wall">
+          
+  <a class="wall-item" href="https://www.instagram.com/p/DXEtEbTjPnC/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r01.jpg" alt="Maison Margiela / folders">
+    <span>@maisonmargiela</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY-I9ANlIVp/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r02.jpg" alt="Art Basel zoom-in">
+    <span>@artbasel</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY6_pdiD7SU/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r03.jpg" alt="NOWNESS digital universe">
+    <span>@nowness</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYeO9zkzbtE/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r04.jpg" alt="Gentle Monster surreal mise-en-scene">
+    <span>@gentlemonster</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY9rGTJssVZ/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r05.jpg" alt="LOEWE 180 years">
+    <span>@loewe</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZEUv9qj-RK/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r06.jpg" alt="Prada Mode">
+    <span>@prada</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY2I68wKm9W/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r07.jpg" alt="SHOWstudio AI fashion">
+    <span>@showstudio</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY7UVqkkwBP/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r08.jpg" alt="NOWNESS Experiments">
+    <span>@nowness</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY4UDZTBa8G/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r09.jpg" alt="Balenciaga A New York Minute">
+    <span>@balenciaga</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DWjfwilEeI4/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r10.jpg" alt="A24 Backrooms">
+    <span>@a24</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYzzkubBriN/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r11.jpg" alt="It&#039;s Nice That symbol story">
+    <span>@itsnicethat</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY2b0M6E7a2/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r12.jpg" alt="SSENSE palette prompt">
+    <span>@ssense</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DXrbkZ_CicK/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r13.jpg" alt="Acne Studios collage practice">
+    <span>@acnestudios</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DXBtU8vgFcC/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r14.jpg" alt="Maison Margiela Bianchetto Shenzhen">
+    <span>@maisonmargiela</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DXwFvVHjQs0/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r15.jpg" alt="Acne Studios soundtrack vinyl">
+    <span>@acnestudios</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY2DzjKEzW3/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r16.jpg" alt="MUBI trailer">
+    <span>@mubi</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZDXRTxCSeg/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r17.jpg" alt="i-D Alexa Demie Zine">
+    <span>@i_d</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZDJnjnqG3m/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r18.jpg" alt="Dazed Action Issue cover">
+    <span>@dazed</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZApzHOlGuZ/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r19.jpg" alt="A24 city sightings">
+    <span>@a24</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZCLfXMsMWX/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r20.jpg" alt="LOEWE artist cast">
+    <span>@loewe</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DT2p689iJqj/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r21.jpg" alt="Jacquemus grandmother ambassador">
+    <span>@jacquemus</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZFS_t6qbTL/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r22.jpg" alt="Dazed behind the scenes">
+    <span>@dazed</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY3JocxgiKz/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r23.jpg" alt="Prada ever-shifting perspectives">
+    <span>@prada</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZEHd0nD-YX/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r24.jpg" alt="Miu Miu shared moments">
+    <span>@miumiu</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZCgp_6kQqQ/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r25.jpg" alt="NOWNESS Meets">
+    <span>@nowness</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY2Rsq6jU7H/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r26.jpg" alt="WePresent Mom,Me">
+    <span>@wepresent</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DX8dldeID70/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r27.jpg" alt="Jacquemus white canvas">
+    <span>@jacquemus</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY11yxXKvGY/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r28.jpg" alt="Balenciaga cinematic loop">
+    <span>@balenciaga</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY0BZKEj84N/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r29.jpg" alt="MUBI poster first look">
+    <span>@mubi</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZDtkV4mVZj/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r30.jpg" alt="i-D zine scenes">
+    <span>@i_d</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYmnCf5k_0G/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r31.jpg" alt="SSENSE cultural essay">
+    <span>@ssense</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYzfFXBDlef/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r32.jpg" alt="It&#039;s Nice That mini books">
+    <span>@itsnicethat</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DXhVx3PCKZi/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r33.jpg" alt="SHOWstudio fashion film">
+    <span>@showstudio</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZFPFSBKtXn/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r34.jpg" alt="Dazed in-between takes">
+    <span>@dazed</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYkWwTmMR-I/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r35.jpg" alt="Diesel desire campaign">
+    <span>@diesel</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY68M1ejWac/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r36.jpg" alt="Art Basel immersive experience">
+    <span>@artbasel</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYMzA-UDJv-/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r37.jpg" alt="WePresent short film">
+    <span>@wepresent</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DYUd_d_zy7P/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r38.jpg" alt="Gentle Monster campaign cadence">
+    <span>@gentlemonster</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DY5R99YjQk5/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r39.jpg" alt="Miu Miu summer essentials">
+    <span>@miumiu</span>
+  </a>
+  <a class="wall-item" href="https://www.instagram.com/p/DZC0rsYtoBI/" target="_blank" rel="noreferrer">
+    <img src="assets/ig-refs/r40.jpg" alt="Jacquemus everyday moments">
+    <span>@jacquemus</span>
+  </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="dark">
+      <div class="section-inner closing">
+        <div>
+          <p class="eyebrow">Recommended First Move</p>
+          <h2>先用“观测档案”建立主题，再用“酒酒的轨道”把星云带回肖宇梁。</h2>
+          <p>最稳的发布组合是：第一条采用 Proposal 01 或 03，建立 NGC7023 的概念可信度；第二条采用 Proposal 13 或 20，把黑场、白场、酒酒与粉丝关系串成一个完整情绪弧线。</p>
+        </div>
+        <p class="fineprint">Research source: Instagram public content retrieved through JustOneAPI. Background concept source: local NGC7023 / Xiao Yuliang material notes in this workspace.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

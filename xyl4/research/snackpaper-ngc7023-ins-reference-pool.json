@@ -1,0 +1,968 @@
+{
+  "generatedAt": "2026-06-03T03:40:10.748Z",
+  "method": "Instagram posts were retrieved through JustOneAPI Instagram endpoints. API token is not stored in this file.",
+  "selectedRefs": [
+    {
+      "id": "r01",
+      "account": "maisonmargiela",
+      "code": "DXEtEbTjPnC",
+      "label": "Maison Margiela / folders",
+      "lesson": "档案化解释品牌工艺，把一个视觉技法变成可持续的概念栏目。",
+      "url": "https://www.instagram.com/p/DXEtEbTjPnC/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/671227739_18576590740001850_2340365966817277938_n.jpg?stp=dst-jpg_e15_s480x480_tt6&_nc_cat=104&ig_cache_key=Mzg3NDQxODA2ODEyNjc0NjkyMA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=o76cyyYgAv4Q7kNvwFy2BTZ&_nc_oc=AdoDu5S5k0N6WWbetdrcwt8Y1ryDoQjokIGfQtoFV6-eWQ09-TeBFsnEq4vShicn0QE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=IoO4GCnU39F0qItc8H686g&_nc_ss=7a3ba&oh=00_Af8V6HdBaFPRpz0AxoWm3MlBzac0N7Qr8lSXwrdON1I2Pw&oe=6A256DDB",
+      "image": "assets/ig-refs/r01.jpg",
+      "caption": "BIANCHETTO: ATELIER EXPERIENCE As part of MaisonMargiela/folders, we explore Bianchetto, the white overpaint technique introduced by the House in 1989 through which surfaces are transformed into a blank canvas. Applied to garments, objects, and interiors, the paint naturally cracks and fades over time, gradually revealing visible signs of use. Participants at our atelier experience in Shenzhen are invited to wear the blouse blanche — the white lab coat worn by our team in the ateliers and offices in Paris — and apply the technique to their own garments. Scenography: OMA Production: La Mode en Images",
+      "likes": 59343,
+      "comments": 254,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r02",
+      "account": "artbasel",
+      "code": "DY-I9ANlIVp",
+      "label": "Art Basel zoom-in",
+      "lesson": "用局部放大与观看动作引导观众进入作品细节。",
+      "url": "https://www.instagram.com/p/DY-I9ANlIVp/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708927166_18609260239045122_3273392424955312433_n.jpg?stp=dst-jpg_e35_s1080x1080_sh2.08_tt6&_nc_cat=108&ig_cache_key=MzkwODYwMDc2Njk5NTQwMjUxMw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=FkQgk7D-gZkQ7kNvwF-atgm&_nc_oc=AdqsA_aAyBQHWYWwFBW-41PJpgcnlrkuVFGuks6DYF_gwv2S8WNGlQqmfU3xvZ0hO7UAYqHSSC732jp1CJd76NAX&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=8MywNGZ0znt1bEOCVY2ENA&_nc_ss=7a3ba&oh=00_Af-JZ34hSZq2vf4DNg0QO3ZYtaUtL_GxSIcNgPg6T4BDYw&oe=6A257734",
+      "image": "assets/ig-refs/r02.jpg",
+      "caption": "✏️ Zoom in. Then zoom in again. Shown here: Ataru Sato, Hope you feel better soon, 2025. Find this and other works at the upcoming edition of Art Basel in Basel presented by @kosakukanechika gallery.",
+      "likes": 2288,
+      "comments": 18,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r03",
+      "account": "nowness",
+      "code": "DY6_pdiD7SU",
+      "label": "NOWNESS digital universe",
+      "lesson": "数字构建宇宙与身体表演并置，适合参考星云短片的影像语法。",
+      "url": "https://www.instagram.com/p/DY6_pdiD7SU/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/707724573_18585118939022647_3859926507137207684_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=109&ig_cache_key=MzkwNzcxNTU1MjgzNjAzOTgyODE4NTg1MTE4OTMzMDIyNjQ3.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0OC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=W3EepZZXHsoQ7kNvwFX9F0m&_nc_oc=AdrTehJ6YU0U5jHU7a_7XTpvlLmZOaLT4kxxjCuciHuqoHUHjDtjBkHTf5JG2M3_qAE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=OuAxnl3OgRK_2XOsIG_4xQ&_nc_ss=7a3ba&oh=00_Af_ifwpqYQT_g8sO0OvUFwT0OniTHmIFkSyTUnR00iAylw&oe=6A256A22",
+      "image": "assets/ig-refs/r03.jpg",
+      "caption": "NEW! #NOWNESSPresents: Artist-director Frederik Heyman merges his digitally constructed universes with the physical performance practice of Milou Van Duijnhoven for the experimental short film ‘The Scent Remains’ ⁠ Building on digital techniques that rooted past collaborations with artists from Beyoncé, to Arca, and (LA)Horde, Heyman lets green-screen environments, duplication of the performer, and distortion of reality function as emotional architecture, using digital relics as a sensory layer through which grief is guided, misled, and processed⁠ ⁠ Tap the link in bio to watch the full film on NOWNESS 🎬⁠ ⁠ A film by @frederikheyman⁠ Performance by @milou.van.duijnhoven⁠ Production: Roxane Lemaire & Marie Mettepenningen for @bouncerocks⁠ Sound: @eavsounds & Tim De Smet for @soundslikesonhouse",
+      "likes": 9110,
+      "comments": 143,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r04",
+      "account": "gentlemonster",
+      "code": "DYeO9zkzbtE",
+      "label": "Gentle Monster surreal mise-en-scene",
+      "lesson": "以荒诞装置和明星面孔把产品广告转成超现实世界观。",
+      "url": "https://www.instagram.com/p/DYeO9zkzbtE/",
+      "imageRemote": "https://scontent-arn2-1.cdninstagram.com/v/t51.82787-15/702306740_18591907162004867_4760584932947227236_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=1&ig_cache_key=Mzg5OTYyMDE0NzI2Njk2MDE5NjE4NTkxOTA3MTU5MDA0ODY3.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=PxJexQhIhR4Q7kNvwGr7_iy&_nc_oc=AdrxP5z8zbJ-wQlwioAzW8HaG53hNeAIGXnSQaZAdp8E5EPRhaICGTYNl9YGNUp9NZw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_gid=oCsFPX8-Rv1tpLDUKV2tRA&_nc_ss=7a3ba&oh=00_Af_BydLwFPWp_zeW_zZNUnXS9Vm_mid8-AuYtGQaZCTuiA&oe=6A258066",
+      "image": "assets/ig-refs/r04.jpg",
+      "caption": "2026 Veggie Collection🍅 The 2026 Veggie Collection campaign, starring @katarinabluu of Aespa, translates a bizarre obsession into a surreal mise-en-scène set against a desolate field. Gentle Monster presents the 2026 Veggie Collection. The collection offers a series of compact folding eyewear that reinterpret the forms and colors of vegetables with a refined yet playful edge, expanding the ever-evolving universe of Gentle Monster. Available for Pre-order starting today 9AM EST in United States, South Korea, followed by China on May 28. For other countries, notification sign-up is available on gentlemonster.com at 9am EST. Global launching on June 5. To celebrate the 2026 Veggie Collection, immersive pop-up installations arrive in seven global stores: ⁣ GENTLE MONSTER LA POP-UP 8626 Melrose Ave, West Hollywood, CA 90069 Opening on June 5 HAUS NOWHERE SEOUL 433, Ttukseom-ro, Seongdong-gu, Seoul Opening on June 5 ⁣ HAUS NOWHERE DOSAN 50 Apgujeong-ro 46-gil, Gangnam-gu, Seoul Opening on June 14 HAUS NOWHERE SHANGHAI 798-812, Middle Huaihai Rd., Huangpu District, Shanghai Open every day from 10am to 10pm⁣⁣⁣ Opening on June 6 ⁣⁣ GENTLE MONSTER BEIJING TAIKOO LI 1F S10-15, 2F S10-23 & 3F S10-32, South Zone, Taikoo Li Sanlitun, 19# Sanlitun Rd, Chaoyang District, Beijing Opening on June 6 GENTLE MONSTER TOKYO POP-UP 6 Chome 35−6, Yodobashi J6 Building, Jingumae, Shibuya, Tokyo Opening on June 5 HAUS NOWHERE BANGKOK ICONSIAM, M21 & Unit 123, 299 Charoen Nakorn Rd, Bangkok 10600 Opening on June 5",
+      "likes": 1093800,
+      "comments": 20601,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r05",
+      "account": "loewe",
+      "code": "DY9rGTJssVZ",
+      "label": "LOEWE 180 years",
+      "lesson": "把品牌历史做成可传播的纪念节点，适合转译为企划起源页。",
+      "url": "https://www.instagram.com/p/DY9rGTJssVZ/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/711945592_18599028685041611_5293033270071114574_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=110&ig_cache_key=MzkwODQ2OTYwMDUwODEwMTk3NzE4NTk5MDI4Njc5MDQxNjEx.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=yw_ecw6kFEkQ7kNvwGCoQQ9&_nc_oc=AdoO7OcythEh26Rc15-bGC0OrE2MQ3UovbIqv17Lxwq7PRsPUEMK1U156PcRBCDSGg8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=tjI7YZtDdkHspgC89epQOw&_nc_ss=7a3ba&oh=00_Af_-beJoneTsj3X9DHWXNVNafSJOHF0PO33-XrTPfg5u-Q&oe=6A258246",
+      "image": "assets/ig-refs/r05.jpg",
+      "caption": "In 2026, LOEWE turns 180. Founded in 1846 in Madrid as a small leather workshop, LOEWE is the second-oldest luxury fashion house in the world. As we celebrate our 180th anniversary, we honour almost two centuries of craft as an art, imagination as a tool, and a distinct playful spirit. A film narrated by Antonio Banderas.",
+      "likes": 47599,
+      "comments": 415,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r06",
+      "account": "prada",
+      "code": "DZEUv9qj-RK",
+      "label": "Prada Mode",
+      "lesson": "用跨界创作者阵容和事件制度感，让概念具有文化议程属性。",
+      "url": "https://www.instagram.com/p/DZEUv9qj-RK/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/710403641_18608438305022893_5743619705351653504_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=1&ig_cache_key=MzkxMDM0MTU3NDI5MTg2ODg1Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=yJOkQUYFfK4Q7kNvwGambWy&_nc_oc=AdrQLUkwf36trjTSGESIMzWwSjdxcnL6aVoX_WBJCEHJ0UWTIud5XI8apaENQbQ2e1dxHLKETZw0wGYlnGGoQD3W&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=D7PKkb9Mv33iJ58FxmEKYQ&_nc_ss=7a3ba&oh=00_Af9qM-0P2KLn1rMJZ9RlUZjXqlnnjKF6-vRlmq9B_pfudg&oe=6A255821",
+      "image": "assets/ig-refs/r06.jpg",
+      "caption": "Prada presents Prada Mode New York, June 3–7. The multi-day event will build on Danish film director Nicolas Winding Refn and Japanese game creator Hideo Kojima’s previous collaboration, Satellites, an exhibition exploring the connection between love, language, and creativity through the friendship of the two artists, which was presented at Prada Aoyama Tokyo last year. Satellites II extends across New York through site-specific installations, screenings, artist conversations, and special programming, from the Hotel Chelsea to Katz’s Delicatessen, Prada Broadway, The Shack, Angelika Film Center, and The Lure Fishbar. Register via link in bio to attend from June 5–7. #PradaMode #Prada",
+      "likes": 25766,
+      "comments": 187,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r07",
+      "account": "showstudio",
+      "code": "DY2I68wKm9W",
+      "label": "SHOWstudio AI fashion",
+      "lesson": "把 AI 影像争议变成可讨论的话题入口，适合 AIGC 透明表达。",
+      "url": "https://www.instagram.com/p/DY2I68wKm9W/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/706780480_18589455847049607_7042230676710768804_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=105&ig_cache_key=MzkwNjM0ODk2MjEyNDgyMDMxMDE4NTg5NDU1ODQ0MDQ5NjA3.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=6XambOua5MIQ7kNvwGSjYf5&_nc_oc=AdpPVxDy-Qw4S8Rwh9B7niqj0GlSvYkv8gezo0S-Lk-8Q_f7gbZy-HKoIqcfPovE-4A&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=sSDg45bHdmZeotli1wsE-g&_nc_ss=7a3ba&oh=00_Af-Oiz66Bt3_QAj2du6pSOOHjTv-yhT1MNXGbcFgIxfLzQ&oe=6A256099",
+      "image": "assets/ig-refs/r07.jpg",
+      "caption": "Artificial intelligence is changing fashion image-making fast and not without controversy. As brands experiment with AI-generated campaigns, conversations around authorship, ethics, and the future of creative jobs continue to intensify. For the latest Industry Access conversation, legendary image-maker Nick Knight @nick_knight joins creative technologist Tom Wandrag @a_new_plane at SHOWstudio @showstudio in London to discuss the promises and limits of AI in fashion. With Knight’s groundbreaking work shooting stars like Björk, Kate Moss, Naomi Campbell, and Iman and A New Plane’s experiments with emerging technology, the pair explore whether AI can expand creativity without replacing the human instinct behind great images. Moderated by Models.com Editorial Director Irene Ojo-Felix, watch part 1 of conversation now at the link in bio and stay tuned next week for part 2. Editor-in-Chief: Stephan Moskovic @themoskovic Editorial Director and Interviewer: Irene Ojo-Felix @iojofx Location: SHOWstudio London @showstudio Special Thanks: SHOWstudio, Nick Knight @nick_knight, Tom Wandrag @a_new_plane, Charlotte Knight, and Christopher Michael @chrimichael at Egos & Icons",
+      "likes": 1008,
+      "comments": 29,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r08",
+      "account": "nowness",
+      "code": "DY7UVqkkwBP",
+      "label": "NOWNESS Experiments",
+      "lesson": "以实验影像解释抽象状态，适合反射星云的诗性显影。",
+      "url": "https://www.instagram.com/p/DY7UVqkkwBP/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.71878-15/710941889_1631174991279062_3205077557601464919_n.jpg?stp=dst-jpg_e15_s360x360_tt6&_nc_cat=107&ig_cache_key=MzkwNzgwNjU1MTQyNDA0MTAzOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fbmZyYW1lX2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=UOVcHSbO1YcQ7kNvwHxpXH6&_nc_oc=Adr2TA4dMZndQyaTHsyadFqtSgnIC6errjbJ3I1sGW-fYo1NBg8Lb4WZcNy-3pbhoiw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=OuAxnl3OgRK_2XOsIG_4xQ&_nc_ss=7a3ba&oh=00_Af-mhYxs0lXx9X57KfAzndX1ib-30SokMbOfmDGVsSAkmA&oe=6A257319",
+      "image": "assets/ig-refs/r08.jpg",
+      "caption": "#Experiments: Merging digitally constructed universes with physical performance, artist Frederik Heyman and performer Milou Van Duijnhoven build a hybrid mourning ritual set inside a black, timeless void, navigating fragments of memory trapped in repetition and transformation⁠ ⁠ Carrying the weight of breath and exhaustion, tension and fragility, Van Duijnhoven’s performance places the physical body in a suspended state as the unstable environment shifts around her⁠ ⁠ Informed by gaming logic, Heyman uses a first-person camera perspective to establish the presence of an invisible observer who can witness but never intervene, becoming part of the mourning process, and a reflection of Heyman himself⁠ ⁠ Tap the link in bio to watch the full film on NOWNESS 🎬⁠ ⁠ A film by @frederikheyman⁠ Performance by @milou.van.duijnhoven⁠ Production: Roxane Lemaire & Marie Mettepenningen for @bouncerocks⁠ Sound: @eavsounds & Tim De Smet for @soundslikesonhouse",
+      "likes": 2380,
+      "comments": 28,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r09",
+      "account": "balenciaga",
+      "code": "DY4UDZTBa8G",
+      "label": "Balenciaga A New York Minute",
+      "lesson": "电影导演与短片叙事为单品制造高级预告片感。",
+      "url": "https://www.instagram.com/p/DY4UDZTBa8G/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708570963_18599861767037149_6954053194489239623_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=100&ig_cache_key=MzkwNjk2MDg3MDk5NTI0Mjc1ODE4NTk5ODYxNzY0MDM3MTQ5.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=kxWETyikkOMQ7kNvwHoGXEz&_nc_oc=Adptjini0YLdpzl1KKMpWlZyXGBe6u6T4VJkzUqr2zgbn7s_IvpX7wros7TdhKGqwXM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=7nwg5wtl3ySebU6zDto-vQ&_nc_ss=7a3ba&oh=00_Af8bUvt6497Brsyl6IPLXtseMPsguvFFmZ4mlmqlUIA-vw&oe=6A2574A7",
+      "image": "assets/ig-refs/r09.jpg",
+      "caption": "A NEW YORK MINUTE Starring Sarah Pidgeon Directed by Celine Song Creative Direction by Pierpaolo Piccioli Le City Bag and the Fall 26 collection are available in store and on balenciaga.com",
+      "likes": 26489,
+      "comments": 225,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r10",
+      "account": "a24",
+      "code": "DWjfwilEeI4",
+      "label": "A24 Backrooms",
+      "lesson": "以强类型片气质和一句话钩子制造高参与预告。",
+      "url": "https://www.instagram.com/p/DWjfwilEeI4/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/658472972_18576176119015227_5660332540175018248_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=1&ig_cache_key=Mzg2NTA3MjU4MDMxOTg5NjEyMDE4NTc2MTc2MTEzMDE1MjI3.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEzMDguc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=UxuXt10d-S8Q7kNvwH2IxJ7&_nc_oc=AdqyZSfw5bc6YrmtJAf--VyGdYTVVvusmHcBsd56hrHOufeze2nKhFouATAHCJJD_TU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=PsdRYb82tFbe5x8nHCm4lQ&_nc_ss=7a3ba&oh=00_Af8wkJPt5MGGE7Ap241q0zQ6x4oLMAM5lK5se0MPF-i8og&oe=6A2571A4",
+      "image": "assets/ig-refs/r10.jpg",
+      "caption": "Everything must go. Experience BACKROOMS, a Kane Parsons film starring Chiwetel Ejiofor and Renate Reinsve. In Theaters 05.29.26 — tickets on sale now.",
+      "likes": 1403160,
+      "comments": 10219,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r11",
+      "account": "itsnicethat",
+      "code": "DYzzkubBriN",
+      "label": "It's Nice That symbol story",
+      "lesson": "把一个大众符号拆成设计史与文化史，适合做鸢尾/虹膜解释。",
+      "url": "https://www.instagram.com/p/DYzzkubBriN/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/709134945_18581720968035681_8217657857868160459_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=106&ig_cache_key=MzkwNTY5MjEyNTk3OTEyOTk5NzE4NTgxNzIwOTY1MDM1Njgx.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=2Pjk2VlcNjkQ7kNvwGqdSr1&_nc_oc=AdozQpMrZa80EJ-Ql-IEn4PMNQLbgjwT9NDufHNm_wv7Jh4mmBiVzbuY6VzVIXC3y2w&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=4xLH9gkr18Nd4oOhseqGbQ&_nc_ss=7a3ba&oh=00_Af-mQS8TLR-5_XrmOR2Ni_mpLCgvIAfiAMF2EJyc41lkrg&oe=6A258CA7",
+      "image": "assets/ig-refs/r11.jpg",
+      "caption": "“The Peace symbol is probably one of the best pieces of graphic design” - Ram Reyes The Peace symbol is iconic - universally recognised and understood. But who created this graphic design and what’s the context behind its legacy? Ram aka @oversettext is back to explore the history of this icon, how it’s become a global symbol for freedom and why it’s probably one of the best pieces of graphic design ever created. Which other icons would you rank as S tier? #INTwithRamR #DesignHistory #Peace",
+      "likes": 13594,
+      "comments": 127,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r12",
+      "account": "ssense",
+      "code": "DY2b0M6E7a2",
+      "label": "SSENSE palette prompt",
+      "lesson": "用开放式提问把审美讨论转成互动入口。",
+      "url": "https://www.instagram.com/p/DY2b0M6E7a2/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708442206_18592848373051604_1340675155675161347_n.jpg?stp=dst-jpg_e35_p1080x1080_tt6&_nc_cat=108&ig_cache_key=MzkwNjQzMTk3NjI2NTA1MDM0MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=RzBafUWmTdAQ7kNvwFak8qV&_nc_oc=AdobgU2DVIVs2f1g2xgn454Sm68pmD8ARQcF4D6n_jjvn9ofiAC6OUVC_rC5nzp_H48RGoBrqYvUUgZRY1i-Q5qo&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=SBjpX9-GLLYB_bEY6kprDw&_nc_ss=7a3ba&oh=00_Af83VKdTWX7LET7mPWoELKNnOX1FnH1iv0yQ3uejTzsQzw&oe=6A2557A3",
+      "image": "assets/ig-refs/r12.jpg",
+      "caption": "What's your palette this season?",
+      "likes": 2870,
+      "comments": 12,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r13",
+      "account": "acnestudios",
+      "code": "DXrbkZ_CicK",
+      "label": "Acne Studios collage practice",
+      "lesson": "艺术家方法论、拼贴与再摄影可借鉴为星云素材库。",
+      "url": "https://www.instagram.com/p/DXrbkZ_CicK/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/683692154_18584986888024331_1456350821536388746_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=105&ig_cache_key=Mzg4NTMyMDA2NDA2MDc3MzQ5Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=ARcnXhgcJR0Q7kNvwEYLyD0&_nc_oc=AdobqM78qBaNSpeXRQncEFeb4311r5nrr4-_fwFcAglD0WADTN5DJFgViTHnj5IMUJGOB35pIXvqRMuV7C696Hob&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=zll5-dTBZEXAhSZdLHoyfA&_nc_ss=7a3ba&oh=00_Af9ImbAAoTlVeqOHgKlCIvOpay5vyMs1zqVJJJ5Tg6fD0Q&oe=6A258455",
+      "image": "assets/ig-refs/r13.jpg",
+      "caption": "Looking back at our collaboration with collage artist Pacifico Silano, whose works were showcased at the Women’s Spring Summer 2026 Show space. The artist takes us through his process using archival fragments, layered and reworked to explore identity and memory. Artworks Pacifico Silano",
+      "likes": 6677,
+      "comments": 26,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r14",
+      "account": "maisonmargiela",
+      "code": "DXBtU8vgFcC",
+      "label": "Maison Margiela Bianchetto Shenzhen",
+      "lesson": "同一工艺在不同空间重复出现，适合建立系列化概念资产。",
+      "url": "https://www.instagram.com/p/DXBtU8vgFcC/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/670473503_18576388594001850_1163832222885846714_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=103&ig_cache_key=Mzg3MzU3NDcyNjc1MjMzMzY5Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=wI8kmNHIWD0Q7kNvwFZYAc9&_nc_oc=AdpkOq44y6cMgjA0BXgiYNvDzBGZ3Wk9F-M9GK507fF0Nari88W802YVypOdqVCO8jw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=IoO4GCnU39F0qItc8H686g&_nc_ss=7a3ba&oh=00_Af8n0AsJTROdpVzLrB9G9fnV--_iO0rThIwvLLEIBVq6jQ&oe=6A257722",
+      "image": "assets/ig-refs/r14.jpg",
+      "caption": "BIANCHETTO: ATELIER EXPERIENCE As part of MaisonMargiela/folders, in Shenzhen we present Bianchetto, our white overpaint technique first introduced in 1989, leaving visible brush strokes and transforming surfaces into a blank canvas. Participants are invited to transform an item from their own wardrobe using the technique, guided by the Maison Margiela Atelier team. Through the act of covering the surface in white paint, the piece is transformed into a house code, completed with our signature four white stitches. Scenography: OMA Production: La Mode en Images",
+      "likes": 37195,
+      "comments": 146,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r15",
+      "account": "acnestudios",
+      "code": "DXwFvVHjQs0",
+      "label": "Acne Studios soundtrack vinyl",
+      "lesson": "把视觉企划延展成声音载体，适合预热中的音频资产。",
+      "url": "https://www.instagram.com/p/DXwFvVHjQs0/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/682044229_18585561757024331_7127713584359927093_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=100&ig_cache_key=Mzg4NjYzMDk0NjMxMzQwNjMzOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=GO7TKoS5e6wQ7kNvwHEP3Ai&_nc_oc=AdoCqqS1cwNCGkHRacIAoEQ3Gu_kd5hzHX3OAdknGeZkXrUAr6fiX3-MHAOLiRR71-xds4efe2CP9aG88IkGgKUM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=zll5-dTBZEXAhSZdLHoyfA&_nc_ss=7a3ba&oh=00_Af9X0Ifraqo5TRy9-YvgJcM0V6XoIVRbEbq4YjyvWawM0w&oe=6A25655E",
+      "image": "assets/ig-refs/r15.jpg",
+      "caption": "An exclusive soundtrack by Robyn for the Acne Studios SS26 Show, pressed on vinyl. Designed by Pacifico Silano, reimagining SS26 campaign using his signature collage approach. The vinyl features Robotboy by Yung Lean and Robyn, Sexistential and Talk to Me by Robyn. Arranged by Robyn and Patrik Berger.",
+      "likes": 9641,
+      "comments": 109,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r16",
+      "account": "mubi",
+      "code": "DY2DzjKEzW3",
+      "label": "MUBI trailer",
+      "lesson": "电影平台的预告节奏可参考为 15-30 秒概念短片结构。",
+      "url": "https://www.instagram.com/p/DY2DzjKEzW3/",
+      "imageRemote": "https://scontent-vie1-1.cdninstagram.com/v/t51.82787-15/708918756_17875402119668919_7198367897774516866_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=101&ig_cache_key=MzkwNjMyNjQ2MzM3MzMyNTc1MTE3ODc1NDAyMTEzNjY4OTE5.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=vPL-4J0OF3cQ7kNvwG2QMlv&_nc_oc=Adr6QGQ5hgYize3lvpKduEzx8ZryU_ccCfY_FUxkgD2Ab2i-LBimsjHyr-wLTCl7q20&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-vie1-1.cdninstagram.com&_nc_gid=XKlEtMZGvL7l-GEZ8ZGurw&_nc_ss=7a3ba&oh=00_Af8Wz2p58w-9R0R1Y9XIx_zXGoI5EyCrnlnULpPt0XQRqw&oe=6A2579DA",
+      "image": "assets/ig-refs/r16.jpg",
+      "caption": "A trailer to die for. Jane Schoenbrun's TEENAGE SEX AND DEATH AT CAMP MIASMA is in theaters starting August 7. A MUBI Release.",
+      "likes": 46016,
+      "comments": 394,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r17",
+      "account": "i_d",
+      "code": "DZDXRTxCSeg",
+      "label": "i-D Alexa Demie Zine",
+      "lesson": "明星、摄影师与 zine 形式组合，适合艺人概念化呈现。",
+      "url": "https://www.instagram.com/p/DZDXRTxCSeg/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/715098841_18606491302007211_4584751220359681355_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=1&ig_cache_key=MzkxMDA2NTYzMDUxMjI2NTYxMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMjE2MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=eauYFlkUVxEQ7kNvwEZHXPm&_nc_oc=Ado5mCeskyqxR-07ZT6q68SEhrBu59AQmyMNsiSAHCXpORoPs93XOX_EyDABhd4dfPI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=KJj7ROdVyfDORY5_-iEaAA&_nc_ss=7a3ba&oh=00_Af_ss53crCpW1vGCc-qmdQA8ioLaxpN0YlHKF8zlIUvLGg&oe=6A257420",
+      "image": "assets/ig-refs/r17.jpg",
+      "caption": "@alexademie’s next chapter is here 🪽🪽 Created in collaboration with the enigmatic actress, i-D’s Alexa Demie Zine is a tribute to divine beauty and the mysteries that lie beyond the walled garden of pop culture. In conversation with author Ottessa Moshfegh, Demie debriefs on the roller coaster ride of ‘Euphoria’ and what comes next. The limited edition publication photographed by Petra Collins is comprised of 10 double-sided A2 posters, featuring photography, text, and exclusive illustrations by Demie. Secure your copy at the link in bio. Photographed by @petrafcollins Styled by @brynnsigrid.j.s Interview by Ottessa Moshfegh Extras: @falizerome @tahliara_ @jayakang @vanesssaromo @bleujimi @benevolentsofia @celestegiaa Hair: @sonnymolinahair Makeup: @alisa_yasuda using @chanel.beauty Nails: @brookeritchienails Set Design: @nicholasdesjardins Casting Director: @sam__franco Production: @perfectprojects_ Post Production: @andi.elloway Location: #MoonlightStudios #MandalayGeneratingStation",
+      "likes": 60730,
+      "comments": 211,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r18",
+      "account": "dazed",
+      "code": "DZDJnjnqG3m",
+      "label": "Dazed Action Issue cover",
+      "lesson": "青年文化杂志用封面照和 issue 主题完成身份定位。",
+      "url": "https://www.instagram.com/p/DZDJnjnqG3m/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/709862737_18597863737046375_8424043087868783727_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=103&ig_cache_key=MzkxMDAxMTIwMjIxMjIyODU4Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=XQi-9fnZKKoQ7kNvwFyu-ml&_nc_oc=AdpyJIUZhIK_jA03LEziPORziCVCTJM-_EOiBgBRBA_2U7saHPOOC4Gy6DWNIXLIAVk&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=U_p8VM7m2E0qFUckSz0RGQ&_nc_ss=7a3ba&oh=00_Af9R1mlQvbVckUVutj_5JL7k29tdJc3z6qjhT7N8ZEaLJw&oe=6A25759C",
+      "image": "assets/ig-refs/r18.jpg",
+      "caption": "Who’s that chick? 🐥 For the fourth cover of the Action Issue of @dazed, @eloise_parry captures @ivystwrt and @dahnameringsabell in the Welsh countryside wearing @prada.⁠ ⁠ Tap the link in bio to see more 🔗⁠ ⁠ Photography @eloise_parry⁠ Styling @zaraeloise⁠ Hair @sarahjopalmer⁠ Make-up @laurenfreynolds⁠ Casting @jesuiscasting⁠ Models @ivystwrt @dahnameringsabell⁠ Dazed producer @mayalessof⁠ ⁠ Editor-in-chief @ted_stansfield⁠ Fashion & image director @imruh ⁠ Art director @estermero⁠ Editorial director @dominiquesisley ⁠ ⁠ #IvyStewart wears #Prada⁠ ⁠ Taken from the summer 2026 Action Issue of #Dazed⁠",
+      "likes": 30920,
+      "comments": 31,
+      "mediaType": 1,
+      "isVideo": false
+    },
+    {
+      "id": "r19",
+      "account": "a24",
+      "code": "DZApzHOlGuZ",
+      "label": "A24 city sightings",
+      "lesson": "用城市坐标和重复出现制造“已经到处发生”的扩散感。",
+      "url": "https://www.instagram.com/p/DZApzHOlGuZ/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/712410296_17890664001537858_6644167436386697217_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=1&ig_cache_key=MzkwOTMwNzEwNTQ1OTA4NzAzNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMzAyNC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=wgO-TimKUTQQ7kNvwFMXeK4&_nc_oc=AdpCkXTJMQhfeNiMqcNChKuVZut7xi17AN5q7-pRJlHbV8xRczkhhbghKiCluuyFhtc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=PsdRYb82tFbe5x8nHCm4lQ&_nc_ss=7a3ba&oh=00_Af9dGkDQ6UZYjwgKFYQRG__NG0DloDNEjq8S_atTTbhu_w&oe=6A2581AF",
+      "image": "assets/ig-refs/r19.jpg",
+      "caption": "Once you see it, it’s everywhere 📍London 📍New York 📍Phoenix, AZ 📍Washington, DC 📍Houston, TX 📍Chicago, IL 📍Melbourne, AUS 📍Phoenix, AZ 📍Philadelphia, PA 📍Seattle, WA",
+      "likes": 544103,
+      "comments": 1303,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r20",
+      "account": "loewe",
+      "code": "DZCLfXMsMWX",
+      "label": "LOEWE artist cast",
+      "lesson": "品牌好友与艺术家群像可转译为企划世界观的角色墙。",
+      "url": "https://www.instagram.com/p/DZCLfXMsMWX/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/711829287_18598993606041611_4133829512599082456_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=101&ig_cache_key=MzkwOTczNzk2MDIzNTM4NjI2MzE4NTk4OTkzNjAzMDQxNjEx.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjExNzAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=JMKjmM9BfNQQ7kNvwH_ItcO&_nc_oc=Adrb1t89jurlw8j6uZC_wXmh6fWn1EeWQASGnz9ipFAHwgYGRDiwu5ZoqaEZ2XdLzlw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=tjI7YZtDdkHspgC89epQOw&_nc_ss=7a3ba&oh=00_Af-0N92lpQfkGUX5HSnAYb_a_A5_92NXfPyWvUxvyv0kNQ&oe=6A258593",
+      "image": "assets/ig-refs/r20.jpg",
+      "caption": "180 years of LOEWE. A cast of artists and friends of the House celebrates almost two centuries of craft and leather excellence, alongside a playful lion motif that nods to the meaning of Loewe, the German word for lion. With Sissy Spacek, Giselle, Salma Abu Deif, Julia Garner, Kara Walker and Kara Wai.",
+      "likes": 25092,
+      "comments": 369,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r21",
+      "account": "jacquemus",
+      "code": "DT2p689iJqj",
+      "label": "Jacquemus grandmother ambassador",
+      "lesson": "把亲密关系升格为品牌叙事核心，适合参考陪伴关系的公开表达。",
+      "url": "https://www.instagram.com/p/DT2p689iJqj/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/621235670_18561816016019666_6523975658299434665_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=110&ig_cache_key=MzgxNjQyMjEwNTMzNjU1MjA5OQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=6V_7QAiYlCsQ7kNvwHJ7mNh&_nc_oc=AdrV_5FSM_RCjgaTkaEMVlaN7lFqtQBTpxRS8nL2DIQjLuIRXGfdfmT8mDQjpkuK8vqPEXX7pAsu_AQPppRMk6KM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=dpO8gf5FNmoZJdcWEpgr6w&_nc_ss=7a3ba&oh=00_Af87ZcASQyDZXlLy_kzhGeLyX5vChtAMgEcOj4AeXCBdBg&oe=6A256B46",
+      "image": "assets/ig-refs/r21.jpg",
+      "caption": "I’m proud to introduce our very first Jacquemus Brand Ambassador: my grandmother, Liline Jacquemus. Before anything, there was her. The original icon. She was born in 1946 and raised in Alleins, a small village in the South of France. She grew up surrounded by fields, sun, and simplicity, raised by a strong Italian single mother. Before Jacquemus existed, she was already my inspiration. Her strength, her elegance, her authenticity… she shaped the way I see women, and the way I imagine this Maison. We love her, we’re obsessed with her… And as our ambassador, here some of her commitment: The ambassador must adhere to a full look policy at all times, without exception. The ambassador must accept that the Maison has the final word on every glam, hair, makeup, silhouette, and styling proposal. The ambassador must engage in no collaborations whatsoever; she is not a trend, she is a commitment. The ambassador must attend every show as if it were a family dinner, front row, without discussion. The ambassador must not be seen, photographed, sketched, remembered, or emotionally associated with any Maison that is not Jacquemus. The ambassador must not pronounce the names of other fashion houses. The ambassador must not wear any other brand, archive, label, or “just something comfortable”; comfort is conceptual. The ambassador must not like other brands’ posts, ever. The ambassador must not use the word “brand” and must instead say “family.” The ambassador must always answer the question “Are you exclusive?” with: “Bien sûr!”. The ambassador must not remove Jacquemus pieces at home, at night, or in dreams. The ambassador must smile. Always. As we should all do ;) Shot at Simon Porte Jacquemus’ home in the south of France Pablo Picasso ©️ Succession Picasso 2026",
+      "likes": 182843,
+      "comments": 4144,
+      "mediaType": 1,
+      "isVideo": false
+    },
+    {
+      "id": "r22",
+      "account": "dazed",
+      "code": "DZFS_t6qbTL",
+      "label": "Dazed behind the scenes",
+      "lesson": "青年杂志用 BTS 让正式大片先有近距离入口。",
+      "url": "https://www.instagram.com/p/DZFS_t6qbTL/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/711729697_18598120534046375_7810488194365125283_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=111&ig_cache_key=MzkxMDYxNTM5NDkwNzk2MDUyMzE4NTk4MTIwNTI4MDQ2Mzc1.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMTUuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=qd6VkagTCREQ7kNvwEjR4Lb&_nc_oc=AdqCAl_bpBycMF2_lyx0He6Q_G5ExouYQj4KVWTbuoX68Sf67V044Uxc_FYtBCxFNSc&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=U_p8VM7m2E0qFUckSz0RGQ&_nc_ss=7a3ba&oh=00_Af_LbcRm2seowYCfFZagXo_bfOneL1srZxZ_bErR_X7IEg&oe=6A256600",
+      "image": "assets/ig-refs/r22.jpg",
+      "caption": "Go behind the scenes at @mroger’s cover shoot for the Action Issue of @dazed, shot by @kingsley_ifill and styled by @verydavidbradshaw 🤍⁠ ⁠ Tap the link in bio to see more 🔗⁠ ⁠ Photography @kingsley_ifill⁠ Styling @verydavidbradshaw⁠ Grooming @marinabelfonrose⁠ Dazed producer @mayalessof⁠ ⁠ Editor-in-chief @ted_stansfield⁠ Fashion & image director @imruh ⁠ Art director @estermero⁠ Editorial director @dominiquesisley ⁠ ⁠ Video Editor @vascovision ⁠ Video Coordinator @chestermckee⁠ ⁠ Taken from the summer 2026 Action Issue of #Dazed",
+      "likes": 18913,
+      "comments": 17,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r23",
+      "account": "prada",
+      "code": "DY3JocxgiKz",
+      "label": "Prada ever-shifting perspectives",
+      "lesson": "通过多视角和态度碰撞解释造型变化。",
+      "url": "https://www.instagram.com/p/DY3JocxgiKz/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708006351_18606793741022893_657853332370464819_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=103&ig_cache_key=MzkwNjYzMzEzNzQxODMxNDkxOQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=noXv0eSeI7gQ7kNvwE-JpEH&_nc_oc=AdoShAy4g770BZZTrUBZ9Wxp6vQmFozP03RE2U-aoFUsXQD0ex9x8ivq6t_8uc_ipbDroEY-8NfQLWu_-Q1T5csd&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&se=7&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=D7PKkb9Mv33iJ58FxmEKYQ&_nc_ss=7a3ba&oh=00_Af8_08bwDG8yoOF01CDnPgg98HXHp-QYLQjiri9MvUo_Xg&oe=6A25717F",
+      "image": "assets/ig-refs/r23.jpg",
+      "caption": "Ever-shifting perspectives. Instinctive collisions of attitude define Prada Days of Summer 2026 with Liu Wen and Prada Ambassador Damson Idris. Explore more via link in bio. Creative Directors: #MiucciaPrada and #RafSimons Photography: @davidsimsofficial Campaign Creative Direction: @ferdinandoverderi Cast: @liuwenlw @damsonidris #PradaSummer #Prada",
+      "likes": 15536,
+      "comments": 166,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r24",
+      "account": "miumiu",
+      "code": "DZEHd0nD-YX",
+      "label": "Miu Miu shared moments",
+      "lesson": "轻松、日光、共同体验的语气适合白场家居氛围。",
+      "url": "https://www.instagram.com/p/DZEHd0nD-YX/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/711847612_18591844438059840_891598243912370021_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=111&ig_cache_key=MzkxMDI4MzIxMjE0NDc2NDQzOTE4NTkxODQ0NDM1MDU5ODQw.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=MhVq0Le3MHMQ7kNvwEINtGL&_nc_oc=AdrmV7cVPUmpAeL_r5LC-9JryoOVy4y9aXtiBaYMyIpPcJNW_HpN3KjkTr7EYbx5ckg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=idTQp-Tu3dtelQ6nhqwVyw&_nc_ss=7a3ba&oh=00_Af9y-CkqYwdlcF-Y-GMujWwHZgjNGxrENU8MTZN2n1_DWA&oe=6A258B6A",
+      "image": "assets/ig-refs/r24.jpg",
+      "caption": "Throwback to an escape in the south of France with summer lawn games, a performance by @margueritecommelafleur_ , and shared moments. Miutine and Fleur de Lait floated through the summery air, as Miu Miu Beauty brought together guests such as @carlotaweberm, @luciadeluis, @abrilru_, @dolmalisa, @aliluvi, @jadeeregeent, @styleto, @gattoni.jd, @blondinav, @rosedoll, @janellezharmenova, @jamilla.strand, @mimimoocher, @llolaclark, @ria.caeliya, @millieleer. #MiuMiuBeauty #FleurdeLait #Miutine",
+      "likes": 8709,
+      "comments": 115,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r25",
+      "account": "nowness",
+      "code": "DZCgp_6kQqQ",
+      "label": "NOWNESS Meets",
+      "lesson": "创作者访谈与生活线索并置，适合酒酒作为情感入口。",
+      "url": "https://www.instagram.com/p/DZCgp_6kQqQ/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.71878-15/712603860_1369166745022661_5886514370953293316_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=105&ig_cache_key=MzkwOTgyOTUzNzY5MzY1MDY3Mg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNjQwLnNkci52aWRlb19uZnJhbWVfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=6EaL1EbAkCwQ7kNvwGMs-7T&_nc_oc=AdoYYx18i0BzDuU1ffLGGDzFfiBp_mv328IYDt6KOfJur5Snmpp_bLVnLrQ3zV9tzJg&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=OuAxnl3OgRK_2XOsIG_4xQ&_nc_ss=7a3ba&oh=00_Af-y6bECdHhWkrtHFmIAKmSebij-_yQie3JhHeDPbrYWvw&oe=6A2588F1",
+      "image": "assets/ig-refs/r25.jpg",
+      "caption": "#NOWNESSMeets: Frederik Heyman 🐕 Acclaimed visual artist and director shares the inspiration and work processes behind his experimental short film ‘The Scent Remains’ ⁠ ⁠ Merging digitally constructed universes, with the physical performance practice of Milou Van Duijnhoven, the film unfolds as a mourning ritual, navigating fragments of memory trapped in repetition and transformation⁠ ⁠ Swipe to hear Heyman’s reflections on how the endurance of the human body and mind inspire his work, and the creative possibilities the digital world makes possible for film ⁠ ⁠ Tap the link in bio to watch ‘The Scent Remains’ on NOWNESS 🎥⁠ ⁠ A film by @frederikheyman⁠ Performance by @milou.van.duijnhoven⁠ Production: Roxane Lemaire & Marie Mettepenningen for @bouncerocks⁠ Sound: @eavsounds & Tim De Smet for @soundslikesonhouse",
+      "likes": 2267,
+      "comments": 64,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r26",
+      "account": "wepresent",
+      "code": "DY2Rsq6jU7H",
+      "label": "WePresent Mom,Me",
+      "lesson": "亲密关系影像项目用克制文字承托情感，不滥情。",
+      "url": "https://www.instagram.com/p/DY2Rsq6jU7H/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708216652_18595625005028643_7103217386010676264_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzkwNjM4NzE5ODM5MDYwNzQwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=3gpFjNQQNLEQ7kNvwFS92ZZ&_nc_oc=AdqqWbgCaEJ2flVzHT97AOcqB3W3D0xQPpIl-V04vjbHh2JscVy_jtzl_CaJT7XpPYM&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&se=7&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=1W84YbMb3cyDMr99_JGzUg&_nc_ss=7a3ba&oh=00_Af_mg3DN1mwJpsez9h6308FXteJ2cvduGFrXcZ1Ly8Vsrg&oe=6A258C02",
+      "image": "assets/ig-refs/r26.jpg",
+      "caption": "Photographer @ravieb ‘s stripped back project “Mom,Me” is nothing like her celebrity work. Raven jokes this intimate series about mother-daughter bonds is an embodiment of the “your mom’s just a girl” meme. “As you get older, your relationship with your mother changes” she told us. “Regardless of what that bond looked like when you were young, it shifts. You begin to see her multitudes, realizing that she is also a woman, who makes mistakes and is just figuring life out.” Capturing generations of motherhood, the project began as a way for Raven to release her grief after her mother’s passing, and has become her greatest personal and professional affirmation. “Initially, when I lost my mom, you have all these big feelings, but over time you begin to unlock these little survival strategies” she says. “I’ve alchemised that energy in an empowering way, and in return, I feel closer to my mom.” The story continues - link in bio🔗 words: @gemfletcher",
+      "likes": 3546,
+      "comments": 89,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r27",
+      "account": "jacquemus",
+      "code": "DX8dldeID70",
+      "label": "Jacquemus white canvas",
+      "lesson": "白色画布、家人、仪式感可对应白背心米色线衣造型。",
+      "url": "https://www.instagram.com/p/DX8dldeID70/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.71878-15/659154369_975539044873631_3912397128882506266_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=103&ig_cache_key=Mzg5MDExNDI5NTc1NDY2OTgxMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fbmZyYW1lX2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=DuKAzXuR0CEQ7kNvwHX4R6E&_nc_oc=AdrQsTf5PxjZS3hCJIIy6ZCiA3wrUD14BfTOPWDx3IM-TSIWCn1C8tlN6mqME9puw5tsRd8-f5HSFkb2DqCtUv5v&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=dpO8gf5FNmoZJdcWEpgr6w&_nc_ss=7a3ba&oh=00_Af9oMbF_FH2ELTW5HKdIVSUepmDHgIKU9zTZVh7UDDFyXQ&oe=6A2557EA",
+      "image": "assets/ig-refs/r27.jpg",
+      "caption": "I brought my grandmother to the Met Gala tonight. 🥹💭 I wanted us to feel like a white canvas, pure and light, like a plaster sculpture by Alberto Giacometti, in white organza. She is 80 years old this year, and it’s her very first time leaving Europe, her very first long flight… What a night. Merci @metmuseum 🤍 And dear Anna Wintour. Family is where my art begins.",
+      "likes": 276013,
+      "comments": 4383,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r28",
+      "account": "balenciaga",
+      "code": "DY11yxXKvGY",
+      "label": "Balenciaga cinematic loop",
+      "lesson": "同一电影化概念连续发布，适合两套造型的章节化预热。",
+      "url": "https://www.instagram.com/p/DY11yxXKvGY/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708866405_18599583802037149_6400955041123325510_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=106&ig_cache_key=MzkwNjI2NDgzNzI1NDczODMyODE4NTk5NTgzNzk5MDM3MTQ5.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEwODAuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=tWFVb79f9IEQ7kNvwF_-om9&_nc_oc=AdrR1t1G4knozkZDUMnymimuyTGs55G4Jiuif9lZlcQcnW0FGhzFaty3p_PV8clcZ9A&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=7nwg5wtl3ySebU6zDto-vQ&_nc_ss=7a3ba&oh=00_Af9LHT7TOlEM2hcyxIqmt2YutirL32VRjHBLwhUDzntyZw&oe=6A256FF3",
+      "image": "assets/ig-refs/r28.jpg",
+      "caption": "A NEW YORK MINUTE Starring Sarah Pidgeon Directed by Celine Song Creative Direction by Pierpaolo Piccioli The Rodeo Bag and the Fall 26 collection are available in store and on balenciaga.com",
+      "likes": 21041,
+      "comments": 240,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r29",
+      "account": "mubi",
+      "code": "DY0BZKEj84N",
+      "label": "MUBI poster first look",
+      "lesson": "用先导海报和 trailer drop 节奏制造期待。",
+      "url": "https://www.instagram.com/p/DY0BZKEj84N/",
+      "imageRemote": "https://scontent-vie1-1.cdninstagram.com/v/t51.82787-15/707125767_18595391362031735_3281027368062585815_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=105&ig_cache_key=MzkwNTc1MjkwMzY4NDQ0MzY2MQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=63rb6fvlpAMQ7kNvwFhqC8r&_nc_oc=Adrrwd388XDetEqlhcxdljgt8iJhZ5NXIEgrtnCeW6UfQrQPATAu1EDK0wwgbOtapZw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-vie1-1.cdninstagram.com&_nc_gid=XKlEtMZGvL7l-GEZ8ZGurw&_nc_ss=7a3ba&oh=00_Af8gMSIEOOwEL2kng30NWbwCL6B-nPiTHgB06nuoPGr36w&oe=6A2577C6",
+      "image": "assets/ig-refs/r29.jpg",
+      "caption": "Exclusive first look at the new poster for Jane Schoenbrun’s Teenage Sex and Death at Camp Miasma 🩸 In theaters this August. Trailer drops tomorrow. Add to your watchlist at the link in bio.",
+      "likes": 80137,
+      "comments": 475,
+      "mediaType": 1,
+      "isVideo": false
+    },
+    {
+      "id": "r30",
+      "account": "i_d",
+      "code": "DZDtkV4mVZj",
+      "label": "i-D zine scenes",
+      "lesson": "zine 内页式发布适合承载肖宇梁多面性。",
+      "url": "https://www.instagram.com/p/DZDtkV4mVZj/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/711149507_18606544222007211_8485452870435556226_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=103&ig_cache_key=MzkxMDE2ODU4ODEyNDU3MDA3NA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuNzIwLnNkci52aWRlb19kZWZhdWx0X2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=PvQg0J2wOzIQ7kNvwGcfTDB&_nc_oc=AdphzKYaQNgdNGk9n6PMQVYE4QzWuYJDUIRRCgap5pvJ2xIi5j4S1SXPumTd9lYtm_U&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=KJj7ROdVyfDORY5_-iEaAA&_nc_ss=7a3ba&oh=00_Af_hNdL6K2NpjEVdx7NqNFpzxoqsP7jBq50JCI-1Mtq0qw&oe=6A2558A6",
+      "image": "assets/ig-refs/r30.jpg",
+      "caption": "Scenes from the @alexademie Zine. See more at the link in bio. Photographed by @petrafcollins Styled by @brynnsigrid.j.s Interview by Ottessa Moshfegh Director: @brooketjames Director of Photography: @raybee8 Extras: @falizerome @tahliara_ @jayakang @vanesssaromo @bleujimi @benevolentsofia @celestegiaa Hair: @sonnymolinahair Makeup: @alisa_yasuda using @chanel.beauty Nails: @brookeritchienails Set Design: @nicholasdesjardins Casting Director: @sam__franco Production: @perfectprojects_ Post Production: @andi.elloway Location: #MoonlightStudios #MandalayGeneratingStation",
+      "likes": 57023,
+      "comments": 224,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r31",
+      "account": "ssense",
+      "code": "DYmnCf5k_0G",
+      "label": "SSENSE cultural essay",
+      "lesson": "把人物风格放进文化脉络中解析，适合艺人与概念的深层连接。",
+      "url": "https://www.instagram.com/p/DYmnCf5k_0G/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/705662070_18590971111051604_5938447359222135663_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ig_cache_key=MzkwMTk3Nzc0MjE0NTcwMjgxMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=GVb5aiLQnjUQ7kNvwEvkw-G&_nc_oc=AdpXmdLZAANcvuy3gmulrKUs9v8Qw_eRpWTAblxOdvrx9_d6PkDsyfbvIoALfZYjWSCs5GQ5WZd8Qyej4lSkI8fX&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&se=7&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=SBjpX9-GLLYB_bEY6kprDw&_nc_ss=7a3ba&oh=00_Af9FEN4HH6rMw0KidCeVZyyDAYIJQTI3iTYP9IMCdttYkw&oe=6A257831",
+      "image": "assets/ig-refs/r31.jpg",
+      "caption": "Bruce Lee’s influence on fashion has been overshadowed by his legacy in film and martial arts. But long before personal style became inseparable from celebrity image-making, Lee understood the power of clothing as performance, using fashion to shape perception and destabilize expectations. His wardrobe moved fluidly between kaftans, Cuban heels, tailored suits, bell bottoms, and silk shirts, reflecting a man constantly shifting between cultures and identities. That restless sense of style now informs a new collaboration between Lu'u Dan and the Bruce Lee estate, built around the actor’s underrated fashion legacy. Drawing from family archives and Lee’s personal closet, the collection revisits the confidence and theatricality that defined his approach to getting dressed. At the link in bio, @chrisgayomali goes inside Bruce Lee’s surprisingly eclectic wardrobe and the collaboration inspired by it.⁣ ⁣ Written by Chris Gayomali (@chrisgayomali)⁣ Images courtesy of Shannon Lee (@therealshannonlee)",
+      "likes": 4162,
+      "comments": 37,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r32",
+      "account": "itsnicethat",
+      "code": "DYzfFXBDlef",
+      "label": "It's Nice That mini books",
+      "lesson": "迷你书、设计物、出版感适合内容产品化。",
+      "url": "https://www.instagram.com/p/DYzfFXBDlef/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/707309362_18581774131035681_5314092082398275641_n.jpg?stp=dst-jpg_e35_p1080x1080_sh2.08_tt6&_nc_cat=104&ig_cache_key=MzkwNTYwMTg0NDgxOTA4MTEzMg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTQ0MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=oYGCcDj6qkEQ7kNvwGaBshJ&_nc_oc=AdoDLU7TY8BOKbqvkXt9OLyWaHcWwZyNcijJJA6ZX6VizJT0n2sTbD-g9edZ4czs_hw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=4xLH9gkr18Nd4oOhseqGbQ&_nc_ss=7a3ba&oh=00_Af9njTFgNa-XwKfae9_hvO80wd6tq3N4m6LTxEd7YiqIkQ&oe=6A2566A8",
+      "image": "assets/ig-refs/r32.jpg",
+      "caption": "3 mini books that deserve big love! Gum Girl by @nrdanan Garishly pink and satirical, Gum Girl explores sensory experiences through editorial design, playing on ideas surrounding girlhood and the grotesque. @ThirdPlaceZine by @XanderOpiyo and Gala Mendoza Third Place Zine is a playful publication about city life that’s built for everyone. A collaborative publishing project about the places that aren’t work or home, where people are finding belonging. @Spillll.Studio by Panita Siriwongwan-ngarm, Hyeda Park, Mika Tohmon and Nandal Seo Spillll is a queer culinary zine series that’s crafted with a decentralised design model. It’s an ongoing series of zines on food and personal experiences that are filled with “discussion on feminism and queerness from Japan, South Korea, and Thailand”. To find out more about these mini books you can search for their titles over at itsnicethat.com, where we chat to the creatives about their inspirations, practices and of course the publications themselves. #ItsNiceThat #SaveForLater",
+      "likes": 5246,
+      "comments": 17,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r33",
+      "account": "showstudio",
+      "code": "DXhVx3PCKZi",
+      "label": "SHOWstudio fashion film",
+      "lesson": "时装短片以声画与身体制造强气质。",
+      "url": "https://www.instagram.com/p/DXhVx3PCKZi/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.71878-15/681446482_844706937965048_626523593591755224_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=102&ig_cache_key=Mzg4MjQ4MDEzOTMwOTE5Njg5OA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fbmZyYW1lX2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=kFrRBN-diJwQ7kNvwHJhAEG&_nc_oc=AdpMkIIPgFvs2zu3sQXgmnI7wq2GlSWECs7Uy255TjlY36XHYnsnNxT4AZDug3TFin8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=sSDg45bHdmZeotli1wsE-g&_nc_ss=7a3ba&oh=00_Af9QhpFgDxF5JfSzkj6mRxWP_Uy__Ue6ZPr4VjGgulZ9Kw&oe=6A257BD8",
+      "image": "assets/ig-refs/r33.jpg",
+      "caption": "My fashion film of the beautiful @hunterpifer , styled by @sadie_davies with creative direction from @calumkingsleyknight . Heavenly soundtrack by @poisonannaworld . For @lampoonmagazine . Credits Firstly huge 🤍 and thank you to @charlotteesmeknight . Film edit ; @esmewarren and @raquel_couceiro_ Thank you to @michaelgossage @showstudio Make-up: @chiaolihsu Hair: @eugenesouleiman Nails: @abena_lopez_nails Paintings by @cliff_warner_artist Set Design: @tomotattle Digital Operation: @gotagram Film Edit: @showstudio Executive Production: @liberteproductions @bendybackpanda Production: Jonathan Faulkner @jonnyfaulkner7 First Photographic Assistance: @larasugarhughes Photographic Assistance: @gilwarneruk @oldnightkidwang Styling Assistance: @adamatylda & Olivier van de Velde @oliviervandevelde Hair Assistance: @_carloavena Make-up Assistance: @aurorablancomakeup Music by @poisonannaworld",
+      "likes": 9132,
+      "comments": 235,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r34",
+      "account": "dazed",
+      "code": "DZFPFSBKtXn",
+      "label": "Dazed in-between takes",
+      "lesson": "拍摄间隙采访能让正式大片提前产生人味。",
+      "url": "https://www.instagram.com/p/DZFPFSBKtXn/",
+      "imageRemote": "https://scontent-bru2-1.cdninstagram.com/v/t51.82787-15/711405986_18598111105046375_5039884852192070917_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=108&ig_cache_key=MzkxMDU5ODE4NTA4MzEzMTM2NzE4NTk4MTExMTAyMDQ2Mzc1.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjEyMTUuc2RyLnZpZGVvX2RlZmF1bHRfY292ZXJfZnJhbWUuQzMifQ%3D%3D&_nc_ohc=G-jD89JCptoQ7kNvwG-oDjV&_nc_oc=AdoiNqBwlxvI9fQZxoAEbDEAD7fefGRFtrCHsPATp7g2306VS_MkSwtK0Poz3IGVTgI&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-bru2-1.cdninstagram.com&_nc_gid=U_p8VM7m2E0qFUckSz0RGQ&_nc_ss=7a3ba&oh=00_Af_HQMnbC_cr-xqQJeEEPbKALl7ZbE2NexJOvqoHWJuhIA&oe=6A255CA2",
+      "image": "assets/ig-refs/r34.jpg",
+      "caption": "We caught up with @mrogers in between takes at his cover shoot for the Action Issue of @dazed 🎬⁠ ⁠ Tap the link in bio to see more of the cover story 🔗⁠ ⁠ Photography @kingsley_ifill⁠ Styling @verydavidbradshaw⁠ Grooming @marinabelfonrose⁠ Dazed producer @mayalessof⁠ ⁠ Editor-in-chief @ted_stansfield⁠ Fashion & image director @imruh ⁠ Art director @estermero⁠ Editorial director @dominiquesisley ⁠ ⁠ Director @danilboparai⁠ Video Editor @vascovision ⁠ Video Coordinator @chestermckee⁠ ⁠ Taken from the summer 2026 Action Issue of #Dazed",
+      "likes": 10985,
+      "comments": 8,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r35",
+      "account": "diesel",
+      "code": "DYkWwTmMR-I",
+      "label": "Diesel desire campaign",
+      "lesson": "明星代言与抽象情绪词绑定，适合把“陪伴/显影”做成主题宣言。",
+      "url": "https://www.instagram.com/p/DYkWwTmMR-I/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/702273109_18590038345037005_7097550039734671204_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=111&ig_cache_key=MzkwMTM0MzI1MzgwOTY2Nzk3NjE4NTkwMDM4MzM5MDM3MDA1.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjkwNy5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=PXO9me1A3uQQ7kNvwGEO4U0&_nc_oc=AdrlLLlDiNp1R7dLzSn1_B_oA8zKkDZjyKG7Pzwr84_8N59IwTelDvgWV0Re7muFcWY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=G0DYKCgVKh4PdWX7peOCYA&_nc_ss=7a3ba&oh=00_Af8YAfYbL_Cj3-NHnbMnWdJvGLEvRoLtm6N8N4aIIeDHrA&oe=6A25639A",
+      "image": "assets/ig-refs/r35.jpg",
+      "caption": "Only Desire, Diesel’s first feminine fragrance under the creative direction of @GlennMartens, celebrates female desire as a vital force of self-expression and power. Proud to step in as the new global ambassador of this fragrance anchored by notes of metallic vanilla. #ONLYDESIRE #MyDesireMyPower #ForSuccessfulLiving",
+      "likes": 269092,
+      "comments": 919,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r36",
+      "account": "artbasel",
+      "code": "DY68M1ejWac",
+      "label": "Art Basel immersive experience",
+      "lesson": "把发布想象成沉浸式现场，而不仅是图片露出。",
+      "url": "https://www.instagram.com/p/DY68M1ejWac/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/709426401_18608879059045122_9162960916118001123_n.jpg?stp=dst-jpg_e15_s640x640_tt6&_nc_cat=109&ig_cache_key=MzkwNzcwMDM5MTU0MjYxMzY2MDE4NjA4ODc5MDUzMDQ1MTIy.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjkwMC5zZHIudmlkZW9fZGVmYXVsdF9jb3Zlcl9mcmFtZS5DMyJ9&_nc_ohc=uO7XMDZfL-YQ7kNvwGyUtL3&_nc_oc=AdrZn6ntsTxUyaxkhUtlS_vFTMvDzwcciiCQ7uskZocGFXUfE345khhAwSZSGAsjSA_JpRMKBHRcVSBLB0m7HBt_&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=8MywNGZ0znt1bEOCVY2ENA&_nc_ss=7a3ba&oh=00_Af9yQBO2kZMHixv0bUXUL0hPnRuR3AqbQPdpN7WW0Jx2PA&oe=6A256C44",
+      "image": "assets/ig-refs/r36.jpg",
+      "caption": "On Saturday, June 20, 2026, during Art Basel, @art.klub.basel will present Warehouse Artefacts, an immersive experience by @thomasbangalter, @julian.charriere, and @rampa_keinemusik, staged as a deconstructed dancefloor bringing together transmissions from political history and underground music culture. 👉 Warehouse Artefacts is on view in Hall 1.1 for all Art Basel ticket holders between 11am–5pm. 👉As part of the evening program from 6pm–11pm, the installation unfolds into a rave with a DJ set by Rampa and Special Guest. 👉 For more info and tickets to the evening program, please click through the link in our bio to reserve this exclusive experience. — Warehouse Artefacts is produced by @nordsternbasel and presented in cooperation with Art Basel and @fondationbeyeler. ‘Inner Worlds | Thomas Bangalter, Julian Charrière, and Rampa’ was produced by Art Basel in collaboration with Nowness.",
+      "likes": 9988,
+      "comments": 181,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r37",
+      "account": "wepresent",
+      "code": "DYMzA-UDJv-",
+      "label": "WePresent short film",
+      "lesson": "短片先导 + 文化人物传记感，适合概念企划的电影化包装。",
+      "url": "https://www.instagram.com/p/DYMzA-UDJv-/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/694116616_18590813083028643_8276616576181855438_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzg5NDcxMDkwMzU3Njk4ODQ2MA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=63nY3rkElcsQ7kNvwF-uPZ3&_nc_oc=AdpoUjPuIboVbGjOWrv4ykWzY7LeSSJVyI6Ps15FmE9awfULgbXyt4thzbdntR7Y4aY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&se=7&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=1W84YbMb3cyDMr99_JGzUg&_nc_ss=7a3ba&oh=00_Af9ApcJQkA77cl3e14imF5ybVW3eKmhdYYhUOQSUEwY2-w&oe=6A25738B",
+      "image": "assets/ig-refs/r37.jpg",
+      "caption": "We’re excited to announce “Wild Bird”, a new short film written by and starring @russelltovey as the late fashion designer Alexander McQueen and Academy Award-winner Olivia Colman as the enigmatic fashion icon Isabella Blow. “Wild Bird” will be a new and interpretive approach to one of fashion’s most storied relationships. “The relationship between Isabella and Lee is beautifully tragic and endlessly compelling.” - Russell Tovey. Directed by @andrewhaighfilm the filmmaker behind “All Of Us Strangers” (2023), and with costumes by @thesandypowell , the film will be released later this year on WePresent. Commissioned by WePresent and produced by @susiehall_23 for @hatopictures",
+      "likes": 46837,
+      "comments": 1048,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r38",
+      "account": "gentlemonster",
+      "code": "DYUd_d_zy7P",
+      "label": "Gentle Monster campaign cadence",
+      "lesson": "连续短视频保持同一奇异世界观，适合第一季连载节奏。",
+      "url": "https://www.instagram.com/p/DYUd_d_zy7P/",
+      "imageRemote": "https://scontent-arn2-1.cdninstagram.com/v/t51.71878-15/687769008_2217698048997080_3520662150607360059_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=103&ig_cache_key=Mzg5Njg3MTQ4MjQ2NzIzMzQ4Nw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fbmZyYW1lX2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=C-BmLlrOsmgQ7kNvwHtEkc9&_nc_oc=Adpe9gpeb46WF_4xr-RQpiPiE-Ce18h3N7WngVKmiEAossgpnzqPgTQkgFnRYJafu5o&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-arn2-1.cdninstagram.com&_nc_gid=oCsFPX8-Rv1tpLDUKV2tRA&_nc_ss=7a3ba&oh=00_Af_8IuVZI_hh_cb-OccnbLv98452_wfAwFLRmmCk7TtnIg&oe=6A2579E6",
+      "image": "assets/ig-refs/r38.jpg",
+      "caption": "🍅Veggie Collection with @katarinabluu Available for PRE-ORDER starting May 18 9am EST in United States, South Korea, followed by China on May 28 Global launching on June 5",
+      "likes": 212046,
+      "comments": 1558,
+      "mediaType": 2,
+      "isVideo": true
+    },
+    {
+      "id": "r39",
+      "account": "miumiu",
+      "code": "DY5R99YjQk5",
+      "label": "Miu Miu summer essentials",
+      "lesson": "以材质和日光建立松弛生活方式氛围。",
+      "url": "https://www.instagram.com/p/DY5R99YjQk5/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.82787-15/708528272_18590430721059840_5944850486316394764_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=MzkwNzIzMzA5NjExNDE4MDM1Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0ueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=7TKwZnFoo7oQ7kNvwFf7Kh3&_nc_oc=AdqDD2mpAORaYo3CpI_iKNQUudf1KBqdxj9FeaupI4LNMnWcQO9Z6jwfJckMFB8I0mw&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&se=7&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=idTQp-Tu3dtelQ6nhqwVyw&_nc_ss=7a3ba&oh=00_Af-AVd8N0LVagp-0bXmMJaUknhafW_Fn1UsIoQWDSzuofg&oe=6A258040",
+      "image": "assets/ig-refs/r39.jpg",
+      "caption": "New essentials for the summer: raffia tote bag expresses the sprirt of the new season. Explore Miu Miu l’Eté 2026 collection via link in bio. Creative Director: #MiucciaPrada Art Direction: Christopher Simmonds Photographed by @devclaro Styling: @lottavolkova #MiuMiu #MiuMiuEte",
+      "likes": 7988,
+      "comments": 39,
+      "mediaType": 8,
+      "isVideo": false
+    },
+    {
+      "id": "r40",
+      "account": "jacquemus",
+      "code": "DZC0rsYtoBI",
+      "label": "Jacquemus everyday moments",
+      "lesson": "把宏大身份落回 everyday moments，适合从星云落回沙发与酒酒。",
+      "url": "https://www.instagram.com/p/DZC0rsYtoBI/",
+      "imageRemote": "https://scontent-cph2-1.cdninstagram.com/v/t51.71878-15/709205770_1344218227561375_7354286474495826334_n.jpg?stp=dst-jpg_e15_p360x360_tt6&_nc_cat=1&ig_cache_key=MzkwOTkxOTEyNzUyNjM0MjcyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkNMSVBTLnhwaWRzLjY0MC5zZHIudmlkZW9fbmZyYW1lX2NvdmVyX2ZyYW1lLkMzIn0%3D&_nc_ohc=c0NnqaK9ErgQ7kNvwH2EXDg&_nc_oc=AdqUG2fzDvxAly-gqN4kUdf3b8odIfHtL7ZBbzN8svf6duTANPgjU4GIZq24ejEthbSU89OEOXhpL0hPpG8ea5xr&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent-cph2-1.cdninstagram.com&_nc_gid=dpO8gf5FNmoZJdcWEpgr6w&_nc_ss=7a3ba&oh=00_Af8mHVz7LCGhuwJqqNWw3fOFyvoIlfLf2h6EGYxciwdyLA&oe=6A257638",
+      "image": "assets/ig-refs/r40.jpg",
+      "caption": "“In France, football is more than a sport... It lives in the everyday moments and has always been part of my life. Working with the French national team means representing a country, a culture, and unforgettable moments. It means the world to me.” — @simon_porte_jacquemus X2: NIKE ’26 COLLAB KITS. EARLY ACCESS AVAILABLE AT @jacquemus & @equipedefrance 11TH JUNE COMING TO SNKRS AND SELECT RETAILERS 16TH JUNE",
+      "likes": 437158,
+      "comments": 5478,
+      "mediaType": 2,
+      "isVideo": true
+    }
+  ],
+  "proposals": [
+    {
+      "group": "preheat-1",
+      "no": "01",
+      "title": "《NGC7023 观测档案》",
+      "type": "平面设计组图 / 长图档案",
+      "idea": "把第一条预热做成一份被打开的天文观测文件：编号、坐标、光谱、尘埃、鸢尾/虹膜双关依次出现，最后才露出黑西装置身星云投影的剪影。",
+      "why": "先让主题显得“有出处、有秩序、有可研究性”，避免星云只成为漂亮背景。年轻用户也更容易把它收藏成审美资料。",
+      "materials": [
+        "NASA 鸢尾花星云图与简化星图",
+        "黑色帷幔、蓝紫投影、眼睛/虹膜纹理",
+        "打字机编号、扫描线、显影标尺",
+        "文案关键词：反射星云、被看见、显影、鸢尾"
+      ],
+      "refs": [
+        "r01",
+        "r02"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "02",
+      "title": "《星云显影 15 秒》",
+      "type": "AIGC 视频 / 实拍素材混剪",
+      "idea": "从黑场粒子开始，蓝紫尘埃被一道光扫过，逐渐形成鸢尾花瓣，最后切到肖宇梁黑西装的投影轮廓。全片像一段还未完成的观测记录。",
+      "why": "短视频更适合作为第一波触达；先给氛围和世界观，不急着解释完整信息。",
+      "materials": [
+        "暗场粒子、雾面投影、虹膜扩张动画",
+        "低频合成器、微弱快门声",
+        "剪辑手法：慢推、闪白、局部失焦",
+        "结尾只出现主题字样 #NGC7023 鸢尾花星云"
+      ],
+      "refs": [
+        "r03",
+        "r04"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "03",
+      "title": "《一片星云的来历》",
+      "type": "8 页 carousel 概念科普",
+      "idea": "用精炼图文解释 NGC7023：它是反射星云、蓝色来自尘埃反射星光、Iris 同时指鸢尾与虹膜。每页只讲一个概念。",
+      "why": "品牌要先建立主题的可信度和可复述性；让粉丝能用自己的话向外安利这个企划。",
+      "materials": [
+        "星云事实卡、蓝色反射光图示、鸢尾花轮廓",
+        "SnackPaper 第一季拍摄的黑/白双场景小切片",
+        "版式：大留白 + 小字注释 + 低饱和图像",
+        "收束句：不是自发光，而是在关系里显影"
+      ],
+      "refs": [
+        "r05",
+        "r06"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "04",
+      "title": "《生成式鸢尾》",
+      "type": "AIGC 组图 / AI 过程透明帖",
+      "idea": "用 AIGC 生成“星云像花、花像眼睛、眼睛像入口”的三组视觉，再叠加实拍投影纹理，形成主题视觉的候选演化过程。",
+      "why": "年轻艺术圈对生成式影像敏感，透明展示生成逻辑比单纯炫技更高级，也能把企划显得在探索媒介。",
+      "materials": [
+        "3 组视觉 prompt 方向：nebula/petal/iris",
+        "实拍投影纹理作为 final layer",
+        "屏幕录制式生成过程、失败图样、参数残影",
+        "声明：AIGC 用于概念延展，主视觉仍以实拍为核心"
+      ],
+      "refs": [
+        "r07",
+        "r08"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "05",
+      "title": "《夜幕预告片》",
+      "type": "电影预告式 Reel",
+      "idea": "把黑色帷幔当作夜空与剧场幕布，短片以“幕布尚未拉开”为叙事：星云投影、衣料反光、狗的影子一闪而过。",
+      "why": "概念预热需要保留悬念；电影化能把两套拍摄从“大片物料”升级为“第一季内容宇宙”。",
+      "materials": [
+        "黑西装轮廓、帷幔褶皱、投影光斑",
+        "标题卡：A reflection is about to appear",
+        "剪辑：黑帧、呼吸感停顿、1 秒犬影彩蛋",
+        "声音：布料摩擦、远处低频、胶片快门"
+      ],
+      "refs": [
+        "r09",
+        "r10"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "06",
+      "title": "《鸢尾符号解剖》",
+      "type": "设计图谱 / 平面海报组",
+      "idea": "把 Iris 拆成三层：花、虹膜、星云。每层用一个图案系统表达，再合成 SnackPaper 本季的概念符号。",
+      "why": "适合品牌后续所有内容产品复用：贴纸、封面、水印、拍立得边框、动态标题卡都能从这套符号系统延展。",
+      "materials": [
+        "鸢尾花瓣轮廓、虹膜环形线、星云尘埃颗粒",
+        "三色系统：深黑、蓝紫、暖白",
+        "互动问题：你看到的是花、眼睛，还是星云？",
+        "输出一张可做系列封面的主符号"
+      ],
+      "refs": [
+        "r11",
+        "r12"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "07",
+      "title": "《星云材料库》",
+      "type": "拼贴组图 / 物料 swatch board",
+      "idea": "把本季物料当成材料研究：黑西装羊毛纹理、帷幔、投影颗粒、米色线衣、白色沙发、酒酒毛发，全部做成星云材料样本。",
+      "why": "这会把抽象概念落到可触摸的质地，品牌也更像在做一本高端纸本/内容产品，而不只是发艺人图。",
+      "materials": [
+        "微距材质图、色卡、编号贴纸、透明胶带",
+        "黑场和白场分别做两套材料页",
+        "剪辑可用定帧动画：样本被一张张摆上桌",
+        "文案：星云不是远方，它也有质地"
+      ],
+      "refs": [
+        "r13",
+        "r14"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "08",
+      "title": "《NGC7023 声音明信片》",
+      "type": "声音视觉化短视频 / ASMR teaser",
+      "idea": "把主题做成一张会发声的明信片：宇宙低频、投影机运转、纸张翻动、酒酒靠近沙发的脚步，组成 20 秒声音场景。",
+      "why": "Ins 上很多高质感发布已经把声音当成概念资产；这能让预热在静态海报之外多一个记忆点。",
+      "materials": [
+        "黑场低频 + 白场环境音的 A/B 对照",
+        "音频波形转成星云线条",
+        "画面极少动：只让光斑和纸张轻微漂移",
+        "建议同步做可下载铃声/短音频彩蛋"
+      ],
+      "refs": [
+        "r15",
+        "r16"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "09",
+      "title": "《虹膜近景海报》",
+      "type": "明星杂志式封面组图 / 局部裁切 poster",
+      "idea": "还不完整露出全身，只发布眼部、手部、领口、酒酒毛发、沙发边缘等局部，并用虹膜纹理作为统一框架。",
+      "why": "局部先导能提升期待感；也与 Iris 的“眼睛/被看见”天然相连。",
+      "materials": [
+        "肖宇梁眼部或侧脸局部、黑西装领口、白背心肩颈",
+        "蓝紫反光覆盖局部皮肤和织物",
+        "大字少量：IRIS / REFLECTION / 7023",
+        "每张海报加一行观测注释"
+      ],
+      "refs": [
+        "r17",
+        "r18"
+      ]
+    },
+    {
+      "group": "preheat-1",
+      "no": "10",
+      "title": "《城市坐标预告》",
+      "type": "OOH 模拟图 / 发布日历海报",
+      "idea": "把 #NGC7023 设计成已经在城市里出现的观测信号：路牌、地铁灯箱、杂志页、墙面投影，最后给出正式发布倒计时。",
+      "why": "在正式内容发布前制造“这个企划正在扩散”的公共感，适合品牌账号、小红书和微博同步转发。",
+      "materials": [
+        "城市夜景中的蓝紫光标、纸本海报贴墙",
+        "坐标文字：NGC7023 / CEPHEUS / SNACKPAPER",
+        "倒计时 3/2/1 组图",
+        "结尾露出两套造型的极小画面切片"
+      ],
+      "refs": [
+        "r19",
+        "r20"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "11",
+      "title": "《他身后的整片宇宙》",
+      "type": "人物概念 zine / 情感长图",
+      "idea": "从肖宇梁长期共享的“宇宙”符号进入：不是把星云硬套给他，而是把他与粉丝之间已有的宇宙关系视觉化。",
+      "why": "第二条预热的重点是“契合”，必须让粉丝感觉品牌读懂了他，而不是只借用了一个美丽主题。",
+      "materials": [
+        "宇宙/宇航员/观测者关键词",
+        "黑场造型作为遥远星云，白场造型作为回家轨道",
+        "酒酒作为陪伴星进入最后两页",
+        "文案保持克制：他不是孤独星体，他有自己的轨道"
+      ],
+      "refs": [
+        "r21",
+        "r22"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "12",
+      "title": "《黑场与白场的光谱》",
+      "type": "双场景对照 carousel / 12 秒 split video",
+      "idea": "把黑西装暗场和白色家居空间解释为同一片星云的两段光谱：一端是未知、克制、投影；一端是日光、松弛、陪伴。",
+      "why": "避免把两套造型写成割裂的反差人格，而是建立“同一人、不同光谱”的高级解释。",
+      "materials": [
+        "左右分屏：夜空帷幔 vs 白色沙发",
+        "色彩从蓝紫过渡到暖白",
+        "剪辑：黑场慢推，白场轻晃手持",
+        "字幕：same nebula, different spectrum"
+      ],
+      "refs": [
+        "r23",
+        "r24"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "13",
+      "title": "《酒酒的轨道》",
+      "type": "宠物视角短片 / 亲密关系图文",
+      "idea": "让酒酒成为第二条预热的叙事视角：它从黑场边缘经过，最后回到白色沙发旁，连接“星云”与“家”。",
+      "why": "酒酒不是花絮道具，而是肖宇梁陪伴关系的象征；它能把宏大的宇宙主题落回粉丝真正关心的日常。",
+      "materials": [
+        "犬影、爪印、靠近的呼吸、沙发上的互动",
+        "镜头低机位、手部抚摸、毛发微距",
+        "旁白可用第三人称：有些轨道很小，却把人带回家",
+        "注意不强化任何其他宠物商业信息"
+      ],
+      "refs": [
+        "r25",
+        "r26"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "14",
+      "title": "《回家的白色画布》",
+      "type": "家居静物组图 / 明亮日光短片",
+      "idea": "围绕白背心、米色线衣、白色沙发、酒酒互动，做一组“星云落地后的生活切片”。",
+      "why": "肖宇梁的粉丝很吃自然、松弛、生活感；这套内容让概念不止神秘，也有可以靠近的温度。",
+      "materials": [
+        "白色空间、米色织物、柔软沙发、窗边日光",
+        "肖宇梁与酒酒的亲昵互动",
+        "画面节奏：慢、轻、少解释",
+        "文案：当光落下来，星云也可以像家"
+      ],
+      "refs": [
+        "r27",
+        "r39"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "15",
+      "title": "《夜航者与归家者》",
+      "type": "30 秒双幕电影预告",
+      "idea": "第一幕是黑场：夜航、投影、沉默凝视；第二幕是白场：沙发、酒酒、笑意和松弛。最后两幕以同一个眼神或手部动作对接。",
+      "why": "肖宇梁的魅力在于可进入角色的克制，也能回到真实生活的鲜活；电影双幕可以把这种张力讲清楚。",
+      "materials": [
+        "黑场标题：The Observer",
+        "白场标题：The Companion",
+        "镜头桥：抬眼/低头/手掌从暗到亮",
+        "音乐从低频过渡到室内环境声"
+      ],
+      "refs": [
+        "r28",
+        "r29"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "16",
+      "title": "《观测者星图》",
+      "type": "粉丝情感 motion graphic / 评论星图",
+      "idea": "把粉丝、观众、酒酒、镜头都写成“观测者”，他们不是背景，而是让反射星云显影的光源之一。",
+      "why": "这能把“反射星云”的科学概念转成艺人与粉丝的双向关系，形成高共鸣但不过度煽情的表达。",
+      "materials": [
+        "星点化的留言、日期节点、宇航员/宇宙符号",
+        "星点连线最终构成 Iris 图案",
+        "不直接搬运未授权粉丝原话，可用抽象关键词",
+        "文案：被看见，也在回应看见他的人"
+      ],
+      "refs": [
+        "r30",
+        "r31"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "17",
+      "title": "《一句话形容不了我》",
+      "type": "迷你书 / 折页式 carousel",
+      "idea": "借肖宇梁“多面性”做一本 10 页迷你书：演员、观测者、夜航者、归家者、酒酒的陪伴者，彼此并列而不是互相解释。",
+      "why": "粉丝会反感单一标签；迷你书形式能把人物复杂度做得轻巧、可收藏、可二次传播。",
+      "materials": [
+        "小开本封面、页码、装订线、手写旁注",
+        "黑白两套造型各占一半",
+        "每页一个词，不写长篇夸赞",
+        "可延展成实体明信片/折页内容产品"
+      ],
+      "refs": [
+        "r32",
+        "r33"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "18",
+      "title": "《幕后显影》",
+      "type": "BTS 短片 / 拍摄札记组图",
+      "idea": "用拍摄现场的灯、投影、布景、酒酒互动建立真实感：概念不是后期包装，而是在拍摄现场一点点显影出来。",
+      "why": "预热期可以先放“如何诞生”，既保护正片，又让粉丝对拍摄付出和艺人状态产生信任。",
+      "materials": [
+        "投影机、灯位、帷幔布料、沙发局部",
+        "肖宇梁候场或调整服装的非正式瞬间",
+        "酒酒与工作人员/肖宇梁互动一闪而过",
+        "字幕用 production note，而不是常规花絮口吻"
+      ],
+      "refs": [
+        "r34",
+        "r35"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "19",
+      "title": "《陪伴关系沉浸展》",
+      "type": "概念展览模拟 / 3D 空间组图",
+      "idea": "把两套拍摄布景想象成一个小型展览：黑色房间播放星云投影，白色房间摆放沙发、线衣、狗碗和纸本照片。",
+      "why": "这能把品牌内容产品化，不只是发帖；也为后续快闪、展陈、粉丝互动装置留下空间。",
+      "materials": [
+        "展览平面图、房间编号、动线箭头",
+        "黑场/白场两个空间的渲染图或 AIGC 草图",
+        "物件标签：curtain / sofa / orbit / companion",
+        "结尾 CTA：正式内容即将开放观测"
+      ],
+      "refs": [
+        "r36",
+        "r37"
+      ]
+    },
+    {
+      "group": "preheat-2",
+      "no": "20",
+      "title": "《第一季总预告：从奇异到亲密》",
+      "type": "混合剪辑 teaser / 内容发布总引",
+      "idea": "用 20 秒把第一季两套造型串成一个情绪弧线：奇异、凝视、显影、靠近、回家。最后落到肖宇梁与酒酒同框的亲密瞬间。",
+      "why": "第二条预热之后就要进入正式发布，这个方案最适合承担承上启下的任务，把概念和艺人关系一起锁定。",
+      "materials": [
+        "前 8 秒黑场超现实，后 8 秒白场生活感",
+        "最后 4 秒出现主题、发布时间、内容产品线索",
+        "剪辑节奏从断裂到顺滑",
+        "文案：宇宙很远，陪伴很近"
+      ],
+      "refs": [
+        "r38",
+        "r40"
+      ]
+    }
+  ]
+}
