@@ -1,0 +1,1426 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackPaper x 肖宇梁｜#NGC7023 鸢尾花星云可用素材库</title>
+  <meta name="description" content="SnackPaper x 肖宇梁 #NGC7023 鸢尾花星云第二条概念预热可用素材库：具体事件、物件、语录、粉丝反馈、出处与避雷边界。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23070914'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%233f70ab'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23fffaf0'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --night: #070914;
+      --ink: #171a22;
+      --paper: #f4efe7;
+      --paper-2: #e8ddce;
+      --line: rgba(23, 26, 34, .15);
+      --white: #fffaf0;
+      --muted: #6d717c;
+      --blue: #3f70ab;
+      --blue-2: #84bdff;
+      --iris: #7868c9;
+      --gold: #c59b53;
+      --green: #5d806d;
+      --rose: #b66b68;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: linear-gradient(180deg, #f8f2e8 0%, var(--paper) 48%, #e8dece 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+    img { display: block; width: 100%; height: auto; }
+    button, input { font: inherit; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px clamp(18px, 4vw, 50px);
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(7, 9, 20, .84), rgba(7, 9, 20, .2), transparent);
+      backdrop-filter: blur(12px);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 14px;
+      color: rgba(255, 250, 240, .78);
+      font-size: 12px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      border-color: currentColor;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92svh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background: var(--night);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image: url("assets/iris-nebula-noirlab.jpg");
+      background-size: cover;
+      background-position: 50% 42%;
+      filter: brightness(.68) saturate(1.12) contrast(1.08);
+      transform: scale(1.03);
+      animation: drift 24s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 53% 45%, rgba(132, 189, 255, .24), transparent 19rem),
+        linear-gradient(90deg, rgba(7, 9, 20, .9), rgba(7, 9, 20, .64) 45%, rgba(7, 9, 20, .18)),
+        linear-gradient(180deg, rgba(7, 9, 20, .08), rgba(7, 9, 20, .94));
+    }
+
+    .starfield {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .72;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.9) 0 1px, transparent 1.7px),
+        radial-gradient(circle, rgba(132,189,255,.7) 0 1px, transparent 1.9px);
+      background-size: 92px 124px, 154px 184px;
+      background-position: 0 0, 34px 48px;
+      animation: stars 40s linear infinite;
+      mix-blend-mode: screen;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 118px 0 clamp(52px, 8vw, 96px);
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(280px, .46fr);
+      gap: clamp(28px, 6vw, 76px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: rgba(255, 250, 240, .75);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 920px;
+      font-size: clamp(42px, 7.9vw, 108px);
+      line-height: .92;
+      font-weight: 920;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 740px;
+      margin: 24px 0 0;
+      color: rgba(255, 250, 240, .84);
+      font-size: clamp(17px, 2vw, 23px);
+    }
+
+    .hero-side {
+      padding-left: clamp(20px, 3vw, 30px);
+      border-left: 1px solid rgba(255, 250, 240, .24);
+    }
+
+    .hero-side strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .hero-side p {
+      margin: 0 0 16px;
+      color: rgba(255, 250, 240, .76);
+      font-size: 14px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-actions a {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, .24);
+      background: rgba(255, 255, 255, .09);
+      backdrop-filter: blur(16px);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .hero-actions a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, .58);
+      background: rgba(255, 255, 255, .15);
+    }
+
+    .section {
+      padding: clamp(68px, 8vw, 116px) 0;
+    }
+
+    .dark {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 16% 0%, rgba(63, 112, 171, .33), transparent 24rem),
+        radial-gradient(circle at 88% 18%, rgba(120, 104, 201, .18), transparent 24rem),
+        linear-gradient(180deg, #080b17, #111624);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .78fr) minmax(280px, .48fr);
+      gap: clamp(24px, 5vw, 70px);
+      align-items: end;
+      margin-bottom: clamp(28px, 5vw, 58px);
+    }
+
+    .label {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .dark .label { color: var(--blue-2); }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(31px, 4.8vw, 64px);
+      line-height: 1.02;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .dark .section-head p { color: rgba(255, 250, 240, .7); }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .image-panel {
+      min-height: 520px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 250, 240, .12);
+      background: #050711;
+    }
+
+    .image-panel img {
+      height: 100%;
+      min-height: 520px;
+      object-fit: cover;
+      filter: saturate(1.06) contrast(1.06);
+    }
+
+    .concept-list {
+      display: grid;
+      gap: 12px;
+      align-content: center;
+    }
+
+    .concept-row {
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-top: 1px solid rgba(255, 250, 240, .16);
+    }
+
+    .concept-row b {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .concept-row span {
+      color: rgba(255, 250, 240, .72);
+      font-size: 14px;
+    }
+
+    .controls {
+      position: sticky;
+      top: 58px;
+      z-index: 12;
+      margin-bottom: 22px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(244, 239, 231, .88);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 42px rgba(23, 26, 34, .08);
+    }
+
+    .searchbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .searchbar input {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, .76);
+      color: var(--ink);
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    .counter {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tab {
+      min-height: 34px;
+      border: 1px solid rgba(23, 26, 34, .16);
+      background: transparent;
+      color: #333844;
+      padding: 6px 10px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .tab[aria-pressed="true"] {
+      color: #fff;
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .material-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .material-card {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, .72);
+      box-shadow: 0 18px 34px rgba(23, 26, 34, .07);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .material-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(63, 112, 171, .35);
+      box-shadow: 0 22px 44px rgba(23, 26, 34, .11);
+    }
+
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 5px 9px;
+      color: #fff;
+      background: var(--ink);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge.universe { background: var(--blue); }
+    .badge.tenth { background: var(--iris); }
+    .badge.gifts { background: var(--gold); color: #231a0b; }
+    .badge.jiujiu { background: var(--green); }
+    .badge.professional { background: #283449; }
+    .badge.quotes { background: var(--rose); }
+    .badge.avoid { background: #3a3a3a; }
+
+    .trust {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .material-card h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    .evidence {
+      margin: 0 0 13px;
+      color: #2f3440;
+      font-size: 15px;
+    }
+
+    .evidence mark {
+      padding: 0 3px;
+      color: #10223b;
+      background: rgba(132, 189, 255, .32);
+    }
+
+    .mini {
+      margin-top: auto;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .mini b {
+      color: var(--ink);
+    }
+
+    .source-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .source-row a {
+      color: var(--blue);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .source-row a:hover { text-decoration: underline; }
+
+    .source-date {
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+      border-top: 1px solid rgba(255, 250, 240, .18);
+    }
+
+    .moment {
+      display: grid;
+      grid-template-columns: 138px 1fr 190px;
+      gap: 20px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255, 250, 240, .16);
+    }
+
+    .moment time {
+      color: var(--blue-2);
+      font-weight: 900;
+    }
+
+    .moment h3 {
+      margin: 0 0 6px;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    .moment p {
+      margin: 0;
+      color: rgba(255, 250, 240, .72);
+      font-size: 14px;
+    }
+
+    .moment .tag {
+      align-self: start;
+      justify-self: end;
+      color: rgba(255, 250, 240, .72);
+      font-size: 13px;
+    }
+
+    .object-wall {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .object-tile {
+      min-height: 170px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 240, .7);
+    }
+
+    .object-tile b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .object-tile span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote-board {
+      columns: 2 360px;
+      column-gap: 18px;
+    }
+
+    .quote {
+      break-inside: avoid;
+      margin: 0 0 16px;
+      padding: 20px;
+      color: var(--white);
+      border: 1px solid rgba(255, 250, 240, .14);
+      background: rgba(255, 250, 240, .06);
+    }
+
+    .quote p {
+      margin: 0 0 12px;
+      font-size: 19px;
+      line-height: 1.45;
+    }
+
+    .quote small {
+      color: rgba(255, 250, 240, .62);
+    }
+
+    .warning-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .warning {
+      padding: 16px;
+      border: 1px solid rgba(23, 26, 34, .18);
+      background: rgba(255, 250, 240, .76);
+    }
+
+    .warning b {
+      display: block;
+      margin-bottom: 8px;
+      color: #2d2f36;
+    }
+
+    .warning span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 38px 0 52px;
+      color: rgba(255, 250, 240, .68);
+      background: var(--night);
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.35);
+    }
+
+    @keyframes drift {
+      from { transform: scale(1.03) translate3d(-8px, -5px, 0); }
+      to { transform: scale(1.08) translate3d(10px, 8px, 0); }
+    }
+
+    @keyframes stars {
+      from { background-position: 0 0, 34px 48px; }
+      to { background-position: 0 220px, 34px 288px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .hero-inner,
+      .section-head,
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        max-width: 560px;
+      }
+
+      .material-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .object-wall,
+      .warning-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .moment {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .moment .tag {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 680px) {
+      html { scroll-padding-top: 128px; }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+        padding: 12px 18px;
+      }
+
+      .nav {
+        justify-content: flex-start;
+      }
+
+      .hero {
+        min-height: 96svh;
+      }
+
+      .hero-inner {
+        width: min(var(--max), calc(100% - 28px));
+        padding-top: 150px;
+      }
+
+      .wrap {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .hero-side {
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid rgba(255, 250, 240, .22);
+        padding-top: 20px;
+      }
+
+      .controls {
+        top: 96px;
+      }
+
+      .searchbar {
+        grid-template-columns: 1fr;
+      }
+
+      .material-grid,
+      .object-wall,
+      .warning-list {
+        grid-template-columns: 1fr;
+      }
+
+      .material-card {
+        min-height: auto;
+      }
+
+      .moment {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .moment .tag {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SnackPaper x 肖宇梁 Rainco&99</div>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#concept">概念锚点</a>
+      <a href="#materials">素材库</a>
+      <a href="#timeline">共享记忆</a>
+      <a href="#objects">物件墙</a>
+      <a href="#avoid">避雷</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="鸢尾花星云素材库首屏">
+      <div class="starfield" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">第二条概念预热｜具体素材工作台</p>
+          <h1>#NGC7023 鸢尾花星云</h1>
+          <p class="hero-copy">这版只保留能落地的材料：具体物件、具体事件、具体原话、具体粉丝反馈、具体出处，以及每条素材如何连接“反射星云、宇宙蓝、蓝色火焰、双向映照”。</p>
+          <div class="hero-actions">
+            <a href="#materials">进入素材库</a>
+            <a href="concrete-materials.md">查看 Markdown 底稿</a>
+          </div>
+        </div>
+        <aside class="hero-side" aria-label="素材数量">
+          <strong id="heroCount">48</strong>
+          <p>条可用素材，按宇宙坐标、十周年、伴手礼、酒酒、专业火焰、语录六类整理。</p>
+          <strong>避开</strong>
+          <p>争议细节、CP 争执、绯闻评论、角色代餐式绑定，以及“毛孩子”“生活碎片”这类无法直接使用的空词。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="concept" class="section dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">CONCEPT ANCHORS</p>
+            <h2>先把星云概念钉在四个可证实的点上。</h2>
+          </div>
+          <p>来自企划 PDF：NGC7023 是反射星云，蓝色来自中央炽热恒星的散射光；蓝不是冷，而是更高温度的热。第二条预热要证明：这些并非生硬套词，而能在肖宇梁与宇航员的共同记忆里找到具体证据。</p>
+        </div>
+        <div class="proof-grid">
+          <figure class="image-panel">
+            <img src="assets/ngc7023-meaning.png" alt="企划 PDF 中关于 NGC7023 鸢尾花星云寓意的页面截图">
+          </figure>
+          <div class="concept-list">
+            <div class="concept-row">
+              <b>反射星云</b>
+              <span>对应“没有粉丝就没有我”“互相不可缺少”、见面会对视、祝福墙与宇宙回响。</span>
+            </div>
+            <div class="concept-row">
+              <b>宇宙蓝</b>
+              <span>对应粉丝体系中的应援色 `#3F70AB`，也能成为推文视觉色号。</span>
+            </div>
+            <div class="concept-row">
+              <b>蓝色火焰</b>
+              <span>对应《轻舞》、话剧光绪、打戏与魔术训练这些持续燃烧的职业材料。</span>
+            </div>
+            <div class="concept-row">
+              <b>生命基石</b>
+              <span>对应酒酒生日直播、《婆娑》cut、19 分钟录屏，以及可被带回家的伴手礼。</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="materials" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">MATERIAL ATLAS</p>
+            <h2>每条都能直接回答：是什么，在哪，怎么用。</h2>
+          </div>
+          <p>优先呈现具体事实，不把“感动”“陪伴”“生活感”当作素材本身。粉丝转录与粉丝反馈会单独标注，正式品牌发布前可按状态做二次核验。</p>
+        </div>
+
+        <div class="controls" aria-label="素材筛选">
+          <div class="searchbar">
+            <input id="searchInput" type="search" placeholder="搜索：酒酒、伴手礼、宇宙蓝、轻舞、没有粉丝、香气、光绪">
+            <span id="resultCount" class="counter"></span>
+          </div>
+          <div class="tabs" role="group" aria-label="素材分类">
+            <button class="tab" type="button" data-filter="all" aria-pressed="true">全部</button>
+            <button class="tab" type="button" data-filter="universe" aria-pressed="false">宇宙坐标</button>
+            <button class="tab" type="button" data-filter="tenth" aria-pressed="false">十周年</button>
+            <button class="tab" type="button" data-filter="gifts" aria-pressed="false">伴手礼</button>
+            <button class="tab" type="button" data-filter="jiujiu" aria-pressed="false">酒酒</button>
+            <button class="tab" type="button" data-filter="professional" aria-pressed="false">专业火焰</button>
+            <button class="tab" type="button" data-filter="quotes" aria-pressed="false">语录</button>
+          </div>
+        </div>
+
+        <div id="materialGrid" class="material-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">SHARED MEMORY LINE</p>
+            <h2>几段能被粉丝认出来的共享记忆。</h2>
+          </div>
+          <p>这些节点适合串成预热二的主线：从宇航员的星图，到十周年现场，再落到酒酒和职业舞台。</p>
+        </div>
+        <div class="timeline">
+          <article class="moment">
+            <time>2024.11.25</time>
+            <div>
+              <h3>酒酒生日直播</h3>
+              <p>粉丝保存“酒酒生日场”录屏，微博出现《婆娑》cut、19 分钟多直播录屏、小酒酒生日快乐等记忆点。</p>
+            </div>
+            <span class="tag">陪伴关系</span>
+          </article>
+          <article class="moment">
+            <time>2025.11.18</time>
+            <div>
+              <h3>宇航员探月手册</h3>
+              <p>粉丝体系明确“鱼粮、小月亮、宇航员、宇宙蓝 #3F70AB”，可直接与星云主题对接。</p>
+            </div>
+            <span class="tag">宇宙坐标</span>
+          </article>
+          <article class="moment">
+            <time>2026.01.20</time>
+            <div>
+              <h3>宇航员高光时刻</h3>
+              <p>宇航员集结号、宇宙回响、探月日记、莫比乌斯环、祝福墙、自制物料和角色还原打卡。</p>
+            </div>
+            <span class="tag">粉丝行动</span>
+          </article>
+          <article class="moment">
+            <time>2026.01.24</time>
+            <div>
+              <h3>CALL ME X 十周年见面会</h3>
+              <p>舞蹈、歌曲、VCR、小游戏、伴手礼、合影、谈心环节共同组成“不是口号”的双向奔赴。</p>
+            </div>
+            <span class="tag">十年之约</span>
+          </article>
+          <article class="moment">
+            <time>2026.05.09</time>
+            <div>
+              <h3>新角色与魔术训练</h3>
+              <p>5 分钟微信电话定下新角色，为《大戏法》学习魔术，继续把身体和技能交给新的舞台。</p>
+            </div>
+            <span class="tag">持续生成</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="objects" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">OBJECT WALL</p>
+            <h2>可以进入视觉、标题或互动话题的物件。</h2>
+          </div>
+          <p>这些比抽象词更好用：它们能出现在推文配图、开屏标题、长图小标题、彩蛋编号或互动提问里。</p>
+        </div>
+        <div class="object-wall">
+          <div class="object-tile"><b>探月手册</b><span>粉丝身份图册，可写“请查收这次星云航线”。</span></div>
+          <div class="object-tile"><b>#3F70AB</b><span>宇宙蓝色号，可做视觉彩蛋和标题底色。</span></div>
+          <div class="object-tile"><b>签售桌椅</b><span>桌椅往前调、试垫高，代表他调整距离让粉丝看见。</span></div>
+          <div class="object-tile"><b>祝福墙</b><span>宇宙回响的实体介质，粉丝把祝福留在现场。</span></div>
+          <div class="object-tile"><b>伴手礼袋</b><span>洗面奶、防晒、护肤品、熏香，把情感落成生活用品。</span></div>
+          <div class="object-tile"><b>线香</b><span>“真诚的香气”对应看不见但会留下的陪伴。</span></div>
+          <div class="object-tile"><b>酒酒生日录屏</b><span>2024.11.25 的可核日期和共同保存动作。</span></div>
+          <div class="object-tile"><b>《婆娑》cut</b><span>把酒酒生日和声音记忆连接起来。</span></div>
+          <div class="object-tile"><b>《轻舞》</b><span>十周年舞台的身体记忆，接“迎风起舞”。</span></div>
+          <div class="object-tile"><b>朝服</b><span>光绪线的枷锁、凝视、爆发，接蓝色火焰。</span></div>
+          <div class="object-tile"><b>望远镜</b><span>粉丝坐二楼仍被表演击中的观看物件。</span></div>
+          <div class="object-tile"><b>魔术道具</b><span>新角色训练线，说明他仍在生成新的光。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">QUOTE BANK</p>
+            <h2>可候选引用的短句，按核验状态使用。</h2>
+          </div>
+          <p>本人微博和官方媒体可直接进入文案；粉丝转录/语录整理建议在定稿前补核原视频或原帖。</p>
+        </div>
+        <div class="quote-board">
+          <blockquote class="quote"><p>“很快乐很喜欢很难忘不断回味中…谢谢大家”</p><small>本人微博，2026-01-25，可直接引用。</small></blockquote>
+          <blockquote class="quote"><p>“没有粉丝就没有我啊”</p><small>粉丝视频转录与小红书高赞笔记，建议核原视频。</small></blockquote>
+          <blockquote class="quote"><p>“我们都是互相不可缺少的，我也需要你们。”</p><small>粉丝视频转录，概念匹配度高，需核原视频。</small></blockquote>
+          <blockquote class="quote"><p>“每一个无名的人，都在发光。”</p><small>小红书谈心环节笔记转述，需核原视频。</small></blockquote>
+          <blockquote class="quote"><p>“月亮都知道，月亮都记得。”</p><small>粉丝共同保存语句，可做二创式标题。</small></blockquote>
+          <blockquote class="quote"><p>“我身后已经有了整片宇宙。”</p><small>语录整理贴，强匹配但需核原出处。</small></blockquote>
+          <blockquote class="quote"><p>“我们各自努力，较高处见。”</p><small>语录整理贴，适合互勉段落，需核原出处。</small></blockquote>
+          <blockquote class="quote"><p>“谢谢大家，把我介绍给山川、河流、大海。”</p><small>粉丝评论回忆，适合候选，需核原图/原帖。</small></blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="avoid" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="label">DO NOT USE</p>
+            <h2>避雷边界也要写进素材库。</h2>
+          </div>
+          <p>第二条预热要让粉丝信服，前提是尊重粉圈边界，不把争议和泛词包装成深意。</p>
+        </div>
+        <div class="warning-list">
+          <div class="warning"><b>CP 向词</b><span>不引用，不做梗，不进入概念证明。</span></div>
+          <div class="warning"><b>负面舆情</b><span>纠纷、绯闻、雪藏、争吵评论直接排除。</span></div>
+          <div class="warning"><b>场地争议</b><span>只保留体验调整和权益照顾，不复述冲突。</span></div>
+          <div class="warning"><b>泛化宠物词</b><span>不用“毛孩子”空写，必须落到酒酒生日直播等事件。</span></div>
+          <div class="warning"><b>角色代餐</b><span>张起灵只做出圈入口，不让企划变成 IP 绑定。</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      调研来源包括：小红书抓取详情与评论、微博 MediaCrawler 公开帖文、品牌企划 PDF。完整可复制底稿见 <a href="concrete-materials.md">concrete-materials.md</a>。小红书链接可能需要登录环境打开。
+    </div>
+  </footer>
+
+  <script>
+    const materials = [
+      {
+        group: "universe", type: "物件", trust: "粉丝官方资料",
+        title: "宇航员探月手册",
+        evidence: "手册把他写成“鱼粮、小月亮”，并列出生日、平台、作品、粉丝组织等坐标。",
+        use: "可做预热二开篇：粉丝早已用一份星图认识他。",
+        link: "不是生硬套宇宙概念，而是沿着已有粉丝坐标进入 NGC7023。",
+        source: "微博 @肖宇梁影迷团", date: "2025-11-18", href: "https://m.weibo.cn/detail/5234336978702455"
+      },
+      {
+        group: "universe", type: "颜色", trust: "可直接用",
+        title: "宇宙蓝 #3F70AB",
+        evidence: "探月手册明确写到应援色为“宇宙蓝 #3F70AB”。",
+        use: "可做长图色块、标题字色、页脚彩蛋。",
+        link: "对应鸢尾花星云的蓝色反射光，也接企划“蓝色火焰”。",
+        source: "微博 @肖宇梁影迷团", date: "2025-11-18", href: "https://m.weibo.cn/detail/5234336978702455"
+      },
+      {
+        group: "universe", type: "粉丝行动", trust: "可直接用",
+        title: "宇航员集结号",
+        evidence: "见面会活动邀请粉丝寻找搭子，分享自制物料以及交换物料。",
+        use: "适合做互动话题：带着你的一件星云物料来赴约。",
+        link: "宇航员不是旁观者，而是共同发射信号的人。",
+        source: "微博 @肖宇梁影迷团", date: "2026-01-20", href: "https://m.weibo.cn/detail/5257245415703824"
+      },
+      {
+        group: "universe", type: "现场物件", trust: "可直接用",
+        title: "宇宙回响与祝福墙",
+        evidence: "活动设置“宇宙回响”：在应援现场祝福墙留下祝福并拍照发帖。",
+        use: "可把祝福墙写成粉丝把光反射回去的实体表面。",
+        link: "反射星云的概念由祝福墙变成可拍、可留、可回看的物件。",
+        source: "微博 @肖宇梁影迷团", date: "2026-01-20", href: "https://m.weibo.cn/detail/5257245415703824"
+      },
+      {
+        group: "universe", type: "现场行动", trust: "可直接用",
+        title: "探月日记",
+        evidence: "活动邀请粉丝分享见面会现场和幸福瞬间，并写“分享幸福，幸福就会变成双倍”。",
+        use: "适合做预热二收束：光抵达后会被记录、转发、放大。",
+        link: "幸福被分享后变成双倍，正是反射与回响。",
+        source: "微博 @肖宇梁影迷团", date: "2026-01-20", href: "https://m.weibo.cn/detail/5257245415703824"
+      },
+      {
+        group: "universe", type: "视觉符号", trust: "可直接用",
+        title: "莫比乌斯环与角色还原妆造",
+        evidence: "活动设置“莫比乌斯环”：分享角色还原妆造，见面时随身携带另一时空的“他”。",
+        use: "适合做视觉小标题：另一时空的他，也被带进星云。",
+        link: "莫比乌斯环能连接角色与真我，但需避免写成角色代餐。",
+        source: "微博 @肖宇梁影迷团", date: "2026-01-20", href: "https://m.weibo.cn/detail/5257245415703824"
+      },
+      {
+        group: "universe", type: "数字彩蛋", trust: "轻用",
+        title: "01.23 与 NGC7023",
+        evidence: "探月手册列生日 1995.01.23；企划 PDF 提到 NGC7023 尾号也是 23。",
+        use: "只适合做排版彩蛋或小标题，不建议写成玄学论证。",
+        link: "让生日与星云编号轻轻相遇，点到即止。",
+        source: "企划 PDF / 探月手册", date: "2026-06-03 整理", href: "concrete-materials.md"
+      },
+      {
+        group: "tenth", type: "主题", trust: "官方活动",
+        title: "CALL ME X · 没有名字的人",
+        evidence: "十周年粉丝见面会 & 生日会正式官宣主题。",
+        use: "可作为预热二的人物命题：未被定义的人如何发光。",
+        link: "反射星云不是固定标签，而是在光谱和观看中显影。",
+        source: "微博 @LIVERSE音宇宙", date: "2026-01-19", href: "https://m.weibo.cn/detail/5256891733381133"
+      },
+      {
+        group: "tenth", type: "短句", trust: "官方物料",
+        title: "十年之约，宇宙为证",
+        evidence: "开票信息以这句话引出十周年见面会。",
+        use: "可接“星光抵达需要时间”，让十年成为可感距离。",
+        link: "NGC7023 的光年感与出道十周年天然咬合。",
+        source: "微博 @-4PERCENT-", date: "2026-01-05", href: "https://m.weibo.cn/detail/5251722262089298"
+      },
+      {
+        group: "tenth", type: "主题意象", trust: "官方活动",
+        title: "月亮为信，小熊为伴",
+        evidence: "官宣文案写“你以月亮为信”“你以小熊为伴”。",
+        use: "可把月亮和小熊分别连接粉丝称呼、陪伴关系。",
+        link: "一个指向远方仰望，一个指向近身陪伴。",
+        source: "微博 @LIVERSE音宇宙", date: "2026-01-19", href: "https://m.weibo.cn/detail/5256891733381133"
+      },
+      {
+        group: "tenth", type: "人物表达", trust: "官方活动",
+        title: "标签之外的光谱",
+        evidence: "官宣文案写他在标签之外构建独一无二的光谱。",
+        use: "适合连接外冷内热、角色与真我、蓝色火焰。",
+        link: "光谱是 NGC7023 最适合人物化的关键词。",
+        source: "微博 @LIVERSE音宇宙", date: "2026-01-19", href: "https://m.weibo.cn/detail/5256891733381133"
+      },
+      {
+        group: "tenth", type: "艺人本人", trust: "本人微博",
+        title: "很快乐很喜欢很难忘",
+        evidence: "十周年见面会后本人发：“很快乐很喜欢很难忘不断回味中…谢谢大家”。",
+        use: "可作推文结尾的一句真实回声。",
+        link: "他说谢谢，宇航员也说谢谢，光路完成一次返还。",
+        source: "微博 @肖宇梁Rainco", date: "2026-01-25", href: "https://m.weibo.cn/detail/5259073597738576"
+      },
+      {
+        group: "tenth", type: "粉丝转录", trust: "需核原视频",
+        title: "没有粉丝就没有我啊",
+        evidence: "小红书高赞笔记标题与微博粉丝视频转录都保存了这句。",
+        use: "正式推文若引用，需核原视频；可先作为内部核心论据。",
+        link: "这是反射星云最直观的人物关系：不是单向发光。",
+        source: "小红书 Butterfly的追月手册 / 微博 January23rd-Rain", date: "2026-01-26 / 2026-01-28", href: "https://www.xiaohongshu.com/explore/697743d0000000002800b82a"
+      },
+      {
+        group: "tenth", type: "粉丝转录", trust: "需核原视频",
+        title: "我们互相不可缺少",
+        evidence: "粉丝视频转录里出现“我们都是互相不可缺少的，我也需要你们”。",
+        use: "可作为双向奔赴段落的候选原话。",
+        link: "把“陪伴”从粉丝单向支持改写为彼此支撑。",
+        source: "微博 January23rd-Rain", date: "2026-01-28", href: "https://m.weibo.cn/detail/5260091617188831"
+      },
+      {
+        group: "tenth", type: "粉丝反馈", trust: "粉丝评论",
+        title: "不止一次问有没有不舒服",
+        evidence: "粉丝评论称从观礼到结束，他不止一次问大家有没有不舒服、有没有开心。",
+        use: "可写成现场照顾的动作细节。",
+        link: "他关心光是否抵达，也关心观看者是否舒服。",
+        source: "小红书 Butterfly的追月手册评论", date: "2026-01-26", href: "https://www.xiaohongshu.com/explore/697743d0000000002800b82a"
+      },
+      {
+        group: "tenth", type: "现场动作", trust: "粉丝评论",
+        title: "上台合照逐个对视",
+        evidence: "评论记录每个上台合照的人，他都会认真看、对视，像想记住大家。",
+        use: "适合写“几秒钟的对视，是双向奔赴最小的单位”。",
+        link: "反射星云不是远观，是真实目光之间的回光。",
+        source: "小红书 Butterfly的追月手册评论", date: "2026-01-26", href: "https://www.xiaohongshu.com/explore/697743d0000000002800b82a"
+      },
+      {
+        group: "tenth", type: "现场物件", trust: "粉丝评论",
+        title: "签售桌椅往前调",
+        evidence: "作者回复称粉丝说看不见，他把桌椅往前调，并试要垫多高才看得见。",
+        use: "这是“在意粉丝体验”的强物件证据。",
+        link: "让彼此看见，是反射星云最具体的翻译。",
+        source: "小红书 Butterfly的追月手册作者回复", date: "2026-01-26", href: "https://www.xiaohongshu.com/explore/697743d0000000002800b82a"
+      },
+      {
+        group: "tenth", type: "现场节目", trust: "品牌返图",
+        title: "舞蹈、歌曲、VCR、小游戏、伴手礼",
+        evidence: "品牌返图总结十周年现场包含这些精心准备的内容。",
+        use: "可拆成现场体验清单，避免只写“生日会”。",
+        link: "这些是星云里一束束可被回看的光。",
+        source: "微博 @德妃DERMAFIRM", date: "2026-01-26", href: "https://m.weibo.cn/detail/5259339470473637"
+      },
+      {
+        group: "tenth", type: "粉丝承诺", trust: "品牌返图",
+        title: "宇航员一直在这里",
+        evidence: "德妃返图写“尽管去做你所想，宇航员一直在这里”。",
+        use: "适合做结尾辅助句，但不替代本人原话。",
+        link: "像星尘接住光，也像宇航员接住他的下一段路。",
+        source: "微博 @德妃DERMAFIRM", date: "2026-01-26", href: "https://m.weibo.cn/detail/5259339470473637"
+      },
+      {
+        group: "tenth", type: "媒体线", trust: "媒体发布",
+        title: "ELLE 十周年纪录片",
+        evidence: "ELLE 写他从舞蹈到表演、从角色到舞台，一路笃定专注。",
+        use: "适合支撑“十年不是停留，而是持续转化”。",
+        link: "恒星的热不是一瞬，是持续燃烧。",
+        source: "小红书 @ELLE", date: "2026-01-25", href: "https://www.xiaohongshu.com/explore/69730a23000000000b00ba6a"
+      },
+      {
+        group: "gifts", type: "权益动作", trust: "粉丝讨论",
+        title: "退票保留伴手礼",
+        evidence: "见面会场地调整讨论中，多名粉丝提到退票仍保留伴手礼。",
+        use: "只取“照顾体验”的事实点，不进入争议细节。",
+        link: "陪伴不是宣言，而是让粉丝不吃亏的实际安排。",
+        source: "小红书 横店多利笔记评论", date: "2026-01-20", href: "https://www.xiaohongshu.com/explore/696e709a000000001a02b805"
+      },
+      {
+        group: "gifts", type: "现场权益", trust: "粉丝讨论",
+        title: "VIP 保底合影",
+        evidence: "评论提到每个 VIP 保底都有合影。",
+        use: "可与上台对视一起写成“被认真看见”。",
+        link: "合影是双向关系里最直接的实体回声。",
+        source: "小红书 横店多利笔记评论", date: "2026-01-20", href: "https://www.xiaohongshu.com/explore/696e709a000000001a02b805"
+      },
+      {
+        group: "gifts", type: "现场权益", trust: "粉丝讨论",
+        title: "奶茶逆应援",
+        evidence: "评论提到现场还送奶茶逆应援。",
+        use: "可做轻量暖点：不是宏大叙事，是一杯拿在手里的照顾。",
+        link: "星云再远，也要落回掌心的温度。",
+        source: "小红书 横店多利笔记评论", date: "2026-01-20", href: "https://www.xiaohongshu.com/explore/696e709a000000001a02b805"
+      },
+      {
+        group: "gifts", type: "伴手礼清单", trust: "粉丝整理",
+        title: "洗面奶、防晒、护肤品、熏香",
+        evidence: "伴手礼公开笔记把生日会礼物拆成这些实用好物。",
+        use: "可让“伴手礼”不再是空词，直接写成日常用品列表。",
+        link: "宇宙蓝的光落到生活里，变成每天会用的东西。",
+        source: "小红书 ChicXDaily", date: "2026-02-13", href: "https://www.xiaohongshu.com/explore/698f36d7000000000e00c16c"
+      },
+      {
+        group: "gifts", type: "气味物件", trust: "品牌发布",
+        title: "手作线香",
+        evidence: "Sagrada Madre 用手作线香承接“真诚的香气”。",
+        use: "可作为“看不见但会留下”的隐形素材。",
+        link: "反射光是看得见的，香气是留得住的。",
+        source: "小红书 @Sagrada Madre小助理", date: "2026-02-13", href: "https://www.xiaohongshu.com/explore/698f077f000000000e03cfd8"
+      },
+      {
+        group: "gifts", type: "粉丝反馈", trust: "粉丝评论",
+        title: "爱被好好珍惜和回应",
+        evidence: "评论把线香解释成每次见面被真诚对待、爱被回应。",
+        use: "适合成为双向奔赴段落的粉丝证词。",
+        link: "这就是反射星云：光被珍惜以后再次返回。",
+        source: "小红书 Sagrada Madre 评论", date: "2026-02-13", href: "https://www.xiaohongshu.com/explore/698f077f000000000e03cfd8"
+      },
+      {
+        group: "gifts", type: "香气主题", trust: "品牌发布",
+        title: "不被定义的香",
+        evidence: "adopt 香水写“没有名字的人，不被定义的香”。",
+        use: "可与 Call Me X 的未定义人物主题相接。",
+        link: "香气与光谱一样，都不必被单一名字困住。",
+        source: "微博 @法国adopt香水官方微博", date: "2026-01-15", href: "https://m.weibo.cn/detail/5255455391876795"
+      },
+      {
+        group: "gifts", type: "自然物件", trust: "品牌发布",
+        title: "长白山的雪",
+        evidence: "御泥坊以“长白山的雪，化了又积，生生不息”写十年之约。",
+        use: "可把雪的循环写成时间和陪伴的循环。",
+        link: "冷的雪与热的光并置，适合鸢尾花星云冷蓝反差。",
+        source: "微博 @御泥坊", date: "2026-01-23", href: "https://m.weibo.cn/detail/5258248044416055"
+      },
+      {
+        group: "jiujiu", type: "事件", trust: "多源互证",
+        title: "2024.11.25 酒酒生日直播",
+        evidence: "微博和小红书均出现酒酒生日场直播录屏。",
+        use: "把 99/酒酒从宠物称呼落为一个可核日期。",
+        link: "星云很远，陪伴很近；这条让宇宙叙事回到身边。",
+        source: "微博 / 小红书录屏", date: "2024-11-25", href: "https://www.xiaohongshu.com/explore/674485f80000000007032f52"
+      },
+      {
+        group: "jiujiu", type: "声音记忆", trust: "粉丝视频",
+        title: "酒酒生日《婆娑》cut",
+        evidence: "微博有“20241125 酒酒生日婆娑 cut”。",
+        use: "可写成这段共同记忆的声音锚点。",
+        link: "陪伴不是抽象关系，它有日期，也有被保存下来的声音。",
+        source: "微博 @看纸鸢", date: "2024-11-25", href: "https://m.weibo.cn/detail/5104718383417968"
+      },
+      {
+        group: "jiujiu", type: "录屏时长", trust: "粉丝视频",
+        title: "19 分钟多的直播录屏",
+        evidence: "粉丝写第一次看鱼粮直播，整理了 19 分钟多的酒酒生日场录屏。",
+        use: "时长是非常具体的记忆刻度。",
+        link: "星光需要时间抵达，直播也被粉丝用时间保存下来。",
+        source: "微博 @南方菇凉Rainco", date: "2024-11-26", href: "https://m.weibo.cn/detail/5104774183649399"
+      },
+      {
+        group: "jiujiu", type: "粉丝反馈", trust: "粉丝反馈",
+        title: "我们被肖宇梁养得很好",
+        evidence: "酒酒生日当天粉丝写“我们真的被肖宇梁养的很好”。",
+        use: "可作为被照顾感的粉丝原生表达。",
+        link: "把“治愈陪伴”落到粉丝自己的话里。",
+        source: "微博 @月梦中的梁咪", date: "2024-11-25", href: "https://m.weibo.cn/detail/5104707347680714"
+      },
+      {
+        group: "jiujiu", type: "粉丝记忆组", trust: "粉丝反馈",
+        title: "酒酒、宇航员、打戏",
+        evidence: "十周年复盘粉丝自然列出“关于酒酒，关于宇航员，关于打戏”。",
+        use: "可以直接变成预热二三段式结构。",
+        link: "陪伴、粉丝、专业，刚好组成肖宇梁与星云的三条光路。",
+        source: "微博 @鱼的前程亮亮光", date: "2026-02-05", href: "https://m.weibo.cn/detail/5263060358138023"
+      },
+      {
+        group: "professional", type: "舞台", trust: "粉丝现场反馈",
+        title: "《轻舞》与迎风起舞",
+        evidence: "粉丝转述采访称他 16 岁离家很远，曾有坎坷，但一直迎风起舞。",
+        use: "正式引用前建议核原采访；可先作舞台线核心素材。",
+        link: "蓝色火焰不是冷感人设，是长期训练和坚持。",
+        source: "微博粉丝现场转述", date: "2026-01-24", href: "https://m.weibo.cn/detail/5258728515306789"
+      },
+      {
+        group: "professional", type: "官方评价", trust: "官方媒体",
+        title: "绝境中不曾熄灭的火焰",
+        evidence: "江苏大剧院写肖宇梁饰演的光绪有“绝境中不曾熄灭的火焰”。",
+        use: "几乎可以直接接企划的“蓝色火焰”。",
+        link: "外在清俊忧郁，内里仍有火，正是 NGC7023 反差。",
+        source: "微博 @江苏大剧院JSCPA", date: "2026-01-04", href: "https://m.weibo.cn/detail/5251405431966808"
+      },
+      {
+        group: "professional", type: "舞台物件", trust: "官方媒体",
+        title: "朝服、枷锁、凝视、呐喊",
+        evidence: "江苏大剧院物料写厚重朝服成为枷锁，并提到凝视与爆发呐喊。",
+        use: "适合做图像符号：黑暗舞台里的火。",
+        link: "花瓣柔和，中心炽热；光绪线能支撑这种双层结构。",
+        source: "微博 @江苏大剧院JSCPA", date: "2026-01-04", href: "https://m.weibo.cn/detail/5251405431966808"
+      },
+      {
+        group: "professional", type: "观演物件", trust: "粉丝 repo",
+        title: "二楼与望远镜",
+        evidence: "粉丝坐二楼、用望远镜，仍感受到台词里的决绝与孤注一掷。",
+        use: "可写“离得远也能被击中”，避免只谈近景颜值。",
+        link: "强光不需要靠近才被感知。",
+        source: "小红书 线下轻微社恐患者", date: "2024-09-09", href: "https://www.xiaohongshu.com/explore/66decb300000000027004ac6"
+      },
+      {
+        group: "professional", type: "舞台画面", trust: "粉丝 repo",
+        title: "盘龙柱与下跪",
+        evidence: "粉丝 repo 记下绕柱、盘龙柱、下跪和最后一次争取。",
+        use: "可做职业段落里的画面化素材。",
+        link: "把“火焰”翻译成身体动作与舞台空间。",
+        source: "小红书 线下轻微社恐患者", date: "2024-09-09", href: "https://www.xiaohongshu.com/explore/66decb300000000027004ac6"
+      },
+      {
+        group: "professional", type: "新角色", trust: "媒体发布",
+        title: "5 分钟微信电话",
+        evidence: "中新文娱报道他 5 分钟微信电话定下新角色。",
+        use: "适合写他进入新光路的轻快起点。",
+        link: "星云不是旧光回放，也有正在生成的新角色。",
+        source: "微博 @中新文娱", date: "2026-05-09", href: "https://m.weibo.cn/detail/5296691897960062"
+      },
+      {
+        group: "professional", type: "新技能", trust: "媒体发布",
+        title: "为新角色学魔术",
+        evidence: "报道提到他向青年魔术表演艺术家学习，苦练魔术技巧。",
+        use: "可把魔术道具作为“创造力/无限可能”的物件。",
+        link: "蓝色火焰持续训练，不止停留在已知角色里。",
+        source: "微博 @中新文娱", date: "2026-05-09", href: "https://m.weibo.cn/detail/5296691897960062"
+      },
+      {
+        group: "professional", type: "反差入口", trust: "粉丝评论",
+        title: "憨憨演出了张起灵",
+        evidence: "终极笔记专访评论：“真想不到一个憨憨演出了张起灵”。",
+        use: "只做外冷内热的反差证明，不做 IP 绑定。",
+        link: "观众先看见冷色调，后来发现真实的人很热。",
+        source: "小红书 终极笔记专访评论", date: "2021-07-24", href: "https://www.xiaohongshu.com/explore/60fb9a4a000000002103b5d9"
+      },
+      {
+        group: "professional", type: "人剧分离", trust: "粉丝转述",
+        title: "几乎哪儿都不像",
+        evidence: "作者回复转述采访中他说自己和张起灵几乎哪儿都不像。",
+        use: "适合写“他能进入角色，也能做自己”。",
+        link: "与 Call Me X 的未定义主题一致。",
+        source: "小红书 终极笔记专访作者回复", date: "2021-07-24", href: "https://www.xiaohongshu.com/explore/60fb9a4a000000002103b5d9"
+      },
+      {
+        group: "quotes", type: "候选语录", trust: "粉丝整理，需核原",
+        title: "月亮都知道，月亮都记得",
+        evidence: "多个小红书笔记和评论反复保存这句。",
+        use: "适合作为推文小标题或视觉旁白。",
+        link: "月亮、反射光、记忆天然相连。",
+        source: "小红书 萨拉包 / 是非cium", date: "2022-04-02 / 2026-01-05", href: "https://www.xiaohongshu.com/explore/624871a8000000002103b994"
+      },
+      {
+        group: "quotes", type: "候选语录", trust: "粉丝整理，需核原",
+        title: "我身后已经有了整片宇宙",
+        evidence: "语录整理贴写：“我以为，我什么都不会拥有。但回头发现，我身后已经有了整片宇宙。”",
+        use: "正式引用前核原；内部文案方向非常适配。",
+        link: "整片宇宙可以解释成他身后的宇航员。",
+        source: "小红书 朵朵小锦鲤", date: "2024-07-10", href: "https://www.xiaohongshu.com/explore/668e9159000000000a0042a8"
+      },
+      {
+        group: "quotes", type: "候选语录", trust: "粉丝整理，需核原",
+        title: "我们各自努力，较高处见",
+        evidence: "语录整理贴将这句列为肖宇梁温柔励志语录。",
+        use: "适合与星云的“较高处”空间感结合。",
+        link: "不是停在原地，而是各自发光后再次相见。",
+        source: "小红书 朵朵小锦鲤", date: "2024-07-10", href: "https://www.xiaohongshu.com/explore/668e9159000000000a0042a8"
+      },
+      {
+        group: "quotes", type: "候选语录", trust: "粉丝回忆，需核原",
+        title: "山川、河流、大海",
+        evidence: "评论回忆他说“谢谢大家，把我介绍给山川、河流、大海”。",
+        use: "适合把宇宙意象折回自然意象。",
+        link: "星云之外还有地球上的山川河海，是同一束光抵达不同地方。",
+        source: "小红书 白雨笔记评论", date: "2024-02-25", href: "https://www.xiaohongshu.com/explore/65db248000000000070054a2"
+      },
+      {
+        group: "quotes", type: "本人小红书", trust: "本人发布",
+        title: "一些小“积攒”",
+        evidence: "肖宇梁小红书发布“近来”，配文为“一些小‘积攒’”。",
+        use: "可写“星尘也是一点点积攒出来的”。",
+        link: "把日常照片和宇宙星尘建立轻连接。",
+        source: "小红书 @肖宇梁", date: "2026-04-23", href: "https://www.xiaohongshu.com/explore/69e9e0af000000001f031805"
+      },
+      {
+        group: "quotes", type: "自然图像", trust: "粉丝整理",
+        title: "永远向往山川和湖海",
+        evidence: "小红书笔记以雪山、海洋等自然标签整理肖宇梁视觉素材。",
+        use: "适合和“山川河流大海”候选语录互证。",
+        link: "让 NGC7023 不只在太空，也能回到地球风景。",
+        source: "小红书 Ustinian", date: "2025-11-19", href: "https://www.xiaohongshu.com/explore/691d986f000000001e0326a9"
+      }
+    ];
+
+    const labels = {
+      universe: "宇宙坐标",
+      tenth: "十周年",
+      gifts: "伴手礼",
+      jiujiu: "酒酒",
+      professional: "专业火焰",
+      quotes: "语录"
+    };
+
+    const grid = document.querySelector("#materialGrid");
+    const searchInput = document.querySelector("#searchInput");
+    const resultCount = document.querySelector("#resultCount");
+    const heroCount = document.querySelector("#heroCount");
+    const tabs = Array.from(document.querySelectorAll(".tab"));
+    let activeFilter = "all";
+
+    heroCount.textContent = materials.length;
+
+    function createCard(item) {
+      const article = document.createElement("article");
+      article.className = "material-card";
+
+      const top = document.createElement("div");
+      top.className = "card-top";
+
+      const badge = document.createElement("span");
+      badge.className = `badge ${item.group}`;
+      badge.textContent = labels[item.group] || item.group;
+
+      const trust = document.createElement("span");
+      trust.className = "trust";
+      trust.textContent = item.trust;
+
+      top.append(badge, trust);
+
+      const title = document.createElement("h3");
+      title.textContent = item.title;
+
+      const evidence = document.createElement("p");
+      evidence.className = "evidence";
+      evidence.textContent = item.evidence;
+
+      const mini = document.createElement("div");
+      mini.className = "mini";
+      const use = document.createElement("div");
+      use.innerHTML = "<b>可用方式：</b>";
+      use.append(document.createTextNode(item.use));
+      const link = document.createElement("div");
+      link.innerHTML = "<b>概念连接：</b>";
+      link.append(document.createTextNode(item.link));
+      mini.append(use, link);
+
+      const sourceRow = document.createElement("div");
+      sourceRow.className = "source-row";
+      const source = document.createElement("a");
+      source.href = item.href;
+      source.target = item.href.startsWith("http") ? "_blank" : "_self";
+      source.rel = item.href.startsWith("http") ? "noopener" : "";
+      source.textContent = item.source;
+      const date = document.createElement("span");
+      date.className = "source-date";
+      date.textContent = item.date;
+      sourceRow.append(source, date);
+
+      article.append(top, title, evidence, mini, sourceRow);
+      return article;
+    }
+
+    function matches(item, query) {
+      if (!query) return true;
+      const haystack = [
+        item.group, item.type, item.trust, item.title, item.evidence,
+        item.use, item.link, item.source, item.date
+      ].join(" ").toLowerCase();
+      return haystack.includes(query.toLowerCase());
+    }
+
+    function render() {
+      const query = searchInput.value.trim();
+      const filtered = materials.filter(item => {
+        const byTab = activeFilter === "all" || item.group === activeFilter;
+        return byTab && matches(item, query);
+      });
+      grid.replaceChildren(...filtered.map(createCard));
+      resultCount.textContent = `显示 ${filtered.length} / ${materials.length} 条`;
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        activeFilter = tab.dataset.filter;
+        tabs.forEach(item => item.setAttribute("aria-pressed", item === tab ? "true" : "false"));
+        render();
+      });
+    });
+
+    searchInput.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
