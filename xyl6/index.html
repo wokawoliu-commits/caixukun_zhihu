@@ -1,0 +1,1078 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SnackPaper x 肖宇梁｜#NGC7023 鸢尾花星云 概念预热二素材库</title>
+  <meta name="description" content="SnackPaper x 肖宇梁 #NGC7023 鸢尾花星云第二条概念预热素材调研：粉丝共同记忆、人物契合、酒酒陪伴符号与避雷边界。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23060812'/%3E%3Ccircle cx='32' cy='32' r='18' fill='%233f70ab'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23fff9ef'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --night: #060812;
+      --night-2: #101423;
+      --paper: #f4efe5;
+      --paper-2: #ebe2d4;
+      --ink: #151821;
+      --muted: #686b73;
+      --line: rgba(21, 24, 33, .16);
+      --blue: #3f70ab;
+      --blue-2: #79bbff;
+      --iris: #9a83ff;
+      --gold: #d0a75e;
+      --green: #5f8c76;
+      --white: #fff9ef;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #f7f1e8 0%, var(--paper) 46%, #e9dfd0 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.62;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; }
+
+    .topbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px clamp(18px, 4vw, 48px);
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(6, 8, 18, .76), rgba(6, 8, 18, .16) 78%, transparent);
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      gap: 15px;
+      color: rgba(255, 249, 239, .74);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .nav a {
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .nav a:hover {
+      color: #fff;
+      border-color: currentColor;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      color: var(--white);
+      background: var(--night);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image: url("assets/iris-nebula-noirlab.jpg");
+      background-size: cover;
+      background-position: 50% 42%;
+      filter: saturate(1.12) contrast(1.08) brightness(.7);
+      transform: scale(1.04);
+      animation: slowDrift 24s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 48% 44%, rgba(105, 192, 255, .28), transparent 18rem),
+        linear-gradient(90deg, rgba(6, 8, 18, .88) 0%, rgba(6, 8, 18, .55) 45%, rgba(6, 8, 18, .12) 100%),
+        linear-gradient(180deg, rgba(6, 8, 18, .2), rgba(6, 8, 18, .92));
+    }
+
+    .starfield {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .7;
+      background-image:
+        radial-gradient(circle, rgba(255,255,255,.95) 0 1px, transparent 1.6px),
+        radial-gradient(circle, rgba(121,187,255,.7) 0 1px, transparent 1.8px);
+      background-size: 90px 120px, 150px 180px;
+      background-position: 0 0, 32px 42px;
+      animation: starSlide 36s linear infinite;
+      mix-blend-mode: screen;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 118px 0 clamp(56px, 9vw, 108px);
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(280px, .42fr);
+      gap: clamp(28px, 6vw, 76px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: rgba(255, 249, 239, .72);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 900px;
+      font-size: clamp(46px, 8.4vw, 112px);
+      line-height: .9;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 24px 0 0;
+      color: rgba(255, 249, 239, .82);
+      font-size: clamp(17px, 2.1vw, 24px);
+      line-height: 1.54;
+    }
+
+    .hero-side {
+      border-left: 1px solid rgba(255, 249, 239, .22);
+      padding-left: clamp(20px, 3vw, 30px);
+    }
+
+    .hero-side strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .hero-side p {
+      margin: 0 0 18px;
+      color: rgba(255, 249, 239, .76);
+      font-size: 14px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 26px;
+    }
+
+    .hero-links a {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 15px;
+      color: #fff;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, .22);
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(16px);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .hero-links a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, .52);
+      background: rgba(255, 255, 255, .14);
+    }
+
+    .section {
+      padding: clamp(72px, 9vw, 128px) 0;
+    }
+
+    .section.dark {
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(63, 112, 171, .34), transparent 24rem),
+        radial-gradient(circle at 82% 16%, rgba(154, 131, 255, .2), transparent 25rem),
+        linear-gradient(180deg, #080b17, #111423);
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(260px, .75fr) minmax(280px, .55fr);
+      gap: clamp(24px, 5vw, 70px);
+      align-items: end;
+      margin-bottom: clamp(30px, 5vw, 64px);
+    }
+
+    .label {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .dark .label { color: var(--blue-2); }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(34px, 5.3vw, 72px);
+      line-height: .98;
+      letter-spacing: 0;
+      font-weight: 900;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(16px, 1.65vw, 20px);
+      line-height: 1.72;
+    }
+
+    .dark .lead { color: rgba(255, 249, 239, .7); }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .proof {
+      min-height: 210px;
+      padding: 24px;
+      background: rgba(255, 249, 239, .62);
+      transition: background .25s ease, transform .25s ease;
+    }
+
+    .proof:hover {
+      background: #fffaf1;
+      transform: translateY(-3px);
+    }
+
+    .proof b {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: 42px;
+      line-height: 1;
+      font-weight: 900;
+    }
+
+    .proof h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.22;
+    }
+
+    .proof p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, .7fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+    }
+
+    .media-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 0;
+      background: #090b13;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+    }
+
+    .media-frame img {
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      filter: saturate(1.1) contrast(1.08);
+    }
+
+    .media-caption {
+      position: absolute;
+      inset: auto 18px 18px;
+      padding: 12px 14px;
+      color: rgba(255,249,239,.84);
+      background: rgba(6, 8, 18, .62);
+      backdrop-filter: blur(12px);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .axis {
+      display: grid;
+      gap: 18px;
+    }
+
+    .axis-item {
+      display: grid;
+      grid-template-columns: 108px minmax(0, 1fr);
+      gap: 20px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,249,239,.18);
+    }
+
+    .axis-item:last-child { border-bottom: 1px solid rgba(255,249,239,.18); }
+
+    .axis-item span {
+      color: var(--blue-2);
+      font-weight: 850;
+      font-size: 15px;
+    }
+
+    .axis-item h3 {
+      margin: 0 0 8px;
+      color: #fff;
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: 1.18;
+    }
+
+    .axis-item p {
+      margin: 0;
+      color: rgba(255,249,239,.72);
+      font-size: 15px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .moment {
+      min-height: 230px;
+      padding: 26px 20px;
+      border-right: 1px solid var(--line);
+      position: relative;
+      background: rgba(255, 249, 239, .36);
+      transition: background .22s ease;
+    }
+
+    .moment:first-child { border-left: 1px solid var(--line); }
+    .moment:hover { background: rgba(255, 249, 239, .8); }
+
+    .moment .date {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .moment h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.25;
+    }
+
+    .moment p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .quote-band {
+      position: relative;
+      padding: clamp(72px, 10vw, 150px) 0;
+      color: var(--white);
+      background: var(--night);
+      overflow: hidden;
+    }
+
+    .quote-band::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/iris-nebula-noirlab.jpg");
+      background-size: cover;
+      background-position: 50% 46%;
+      opacity: .42;
+      filter: saturate(1.15) contrast(1.15);
+      transform: scale(1.02);
+    }
+
+    .quote-band::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6,8,18,.9), rgba(6,8,18,.62), rgba(6,8,18,.94)),
+        radial-gradient(circle at 50% 45%, rgba(63,112,171,.34), transparent 24rem);
+    }
+
+    .quote-inner {
+      position: relative;
+      z-index: 1;
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .quote {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 70px);
+      line-height: 1.12;
+      font-weight: 900;
+    }
+
+    .quote-source {
+      margin: 22px auto 0;
+      max-width: 620px;
+      color: rgba(255,249,239,.68);
+      font-size: 15px;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: minmax(240px, .44fr) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 54px);
+      align-items: start;
+    }
+
+    .sticky-note {
+      position: sticky;
+      top: 92px;
+      padding-top: 4px;
+    }
+
+    .sticky-note h3 {
+      margin: 0 0 14px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.1;
+    }
+
+    .sticky-note p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .evidence {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 24px;
+      padding: 22px;
+      background: rgba(255,249,239,.58);
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .evidence:hover {
+      background: #fffaf1;
+      transform: translateX(3px);
+    }
+
+    .evidence em {
+      color: var(--blue);
+      font-style: normal;
+      font-weight: 850;
+      font-size: 14px;
+    }
+
+    .evidence strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .evidence p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .avoid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .avoid-item {
+      padding: 22px;
+      border: 1px solid rgba(255,249,239,.18);
+      background: rgba(255,249,239,.06);
+    }
+
+    .avoid-item h3 {
+      margin: 0 0 10px;
+      color: #fff;
+      font-size: 19px;
+    }
+
+    .avoid-item p {
+      margin: 0;
+      color: rgba(255,249,239,.7);
+      font-size: 14px;
+    }
+
+    .storyline {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+      counter-reset: step;
+    }
+
+    .step {
+      min-height: 270px;
+      padding: 24px;
+      background: rgba(255,249,239,.66);
+      counter-increment: step;
+      position: relative;
+    }
+
+    .step::before {
+      content: counter(step, decimal-leading-zero);
+      display: block;
+      margin-bottom: 38px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-area {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .65fr);
+      gap: clamp(30px, 5vw, 70px);
+      align-items: start;
+    }
+
+    .source-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .source-list li {
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-list a {
+      color: var(--ink);
+      font-weight: 780;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .image-note {
+      border: 1px solid var(--line);
+      background: #fffaf1;
+    }
+
+    .image-note img {
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: 50% 0;
+    }
+
+    .image-note p {
+      margin: 0;
+      padding: 16px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 38px clamp(20px, 4vw, 52px);
+      color: rgba(255,249,239,.68);
+      background: #060812;
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @keyframes slowDrift {
+      from { transform: scale(1.04) translate3d(-1%, -1%, 0); }
+      to { transform: scale(1.1) translate3d(1.5%, 1%, 0); }
+    }
+
+    @keyframes starSlide {
+      from { background-position: 0 0, 32px 42px; }
+      to { background-position: 180px 240px, 332px 402px; }
+    }
+
+    @media (max-width: 980px) {
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 2px;
+      }
+
+      .hero-inner,
+      .section-head,
+      .split,
+      .matrix,
+      .source-area {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid rgba(255,249,239,.22);
+        padding-top: 24px;
+      }
+
+      .proof-grid,
+      .avoid,
+      .storyline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .sticky-note { position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .hero::before {
+        background-position: 52% 40%;
+      }
+
+      .hero-inner {
+        width: min(100% - 32px, var(--max));
+        padding-top: 136px;
+      }
+
+      h1 { font-size: clamp(42px, 16vw, 70px); }
+
+      .proof-grid,
+      .timeline,
+      .avoid,
+      .storyline {
+        grid-template-columns: 1fr;
+      }
+
+      .proof,
+      .moment,
+      .step {
+        min-height: auto;
+      }
+
+      .evidence {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .axis-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .media-frame img {
+        aspect-ratio: 4 / 3;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">SnackPaper x 肖宇梁</div>
+    <nav class="nav" aria-label="页面导航">
+      <a href="#logic">概念逻辑</a>
+      <a href="#materials">素材锚点</a>
+      <a href="#story">叙事结构</a>
+      <a href="#avoid">避雷边界</a>
+      <a href="#sources">信源</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="starfield" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">概念预热二素材库｜#NGC7023 鸢尾花星云</p>
+          <h1>写给宇航员的一封蓝色回信</h1>
+          <p class="hero-copy">这份页面把肖宇梁的粉丝共同记忆、人物气质、职业路径与酒酒陪伴符号，映射到“反射星云”的深层寓意：看似清冷，内里炽热；不是单向发光，而是在彼此映照中被看见。</p>
+          <div class="hero-links">
+            <a href="#story">查看预热结构</a>
+            <a href="material-bank.md">打开完整素材库</a>
+          </div>
+        </div>
+        <aside class="hero-side">
+          <strong>#3F70AB</strong>
+          <p>宇宙蓝是粉丝社群长期使用的身份颜色，也能成为本季视觉的主色彩蛋。</p>
+          <strong>2018.11.19</strong>
+          <p>粉丝名“宇航员”的共同记忆节点。</p>
+          <strong>2024.11.25</strong>
+          <p>酒酒生日直播与剪辑，是“陪伴关系”的日常锚点。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="logic">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">Core Logic</p>
+            <h2>不是硬凑星云，而是把已经存在的光路显影</h2>
+          </div>
+          <p class="lead">NGC7023 是反射星云：星云自身不发光，而是接住中央恒星的光，反射出梦幻蓝色。肖宇梁与宇航员的关系也适合这样讲：他给出真诚、专业与陪伴，粉丝把这束光保存、扩散，再回到他身边。</p>
+        </div>
+
+        <div class="proof-grid reveal">
+          <article class="proof">
+            <b>01</b>
+            <h3>宇宙母题不是外加</h3>
+            <p>名字里的“宇”、粉丝名“宇航员”、应援色“宇宙蓝”，已经构成稳定语义场。</p>
+          </article>
+          <article class="proof">
+            <b>02</b>
+            <h3>蓝色不是冷，是热</h3>
+            <p>鸢尾花星云的蓝色可转译为他的清冷气质与炽热内核之间的反差。</p>
+          </article>
+          <article class="proof">
+            <b>03</b>
+            <h3>角色是入口，不是终点</h3>
+            <p>张起灵/打戏/眼神是出圈记忆，但预热应落到他本人“做自己”的真实。</p>
+          </article>
+          <article class="proof">
+            <b>04</b>
+            <h3>酒酒让宇宙有温度</h3>
+            <p>酒酒把浩瀚概念落回日常陪伴，成为 Rainco&99 里最可触摸的情感符号。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="wrap split">
+        <div class="media-frame reveal">
+          <img src="assets/iris-nebula-noirlab.jpg" alt="鸢尾花星云深色星场">
+          <div class="media-caption">视觉关键词：黑暗星场、蓝色火焰、中心高光、柔软云气。Image: NOIRLab / NSF / AURA.</div>
+        </div>
+        <div class="axis reveal">
+          <div class="axis-item">
+            <span>星云</span>
+            <div>
+              <h3>反射，不是孤立发光</h3>
+              <p>适合讲“双向奔赴”：他说谢谢，宇航员也说谢谢；光从来不是单向抵达。</p>
+            </div>
+          </div>
+          <div class="axis-item">
+            <span>蓝色</span>
+            <div>
+              <h3>清冷只是抵达眼前的颜色</h3>
+              <p>粉丝先看到角色的冷感，后来被本人真诚、好笑、较真的温度留住。</p>
+            </div>
+          </div>
+          <div class="axis-item">
+            <span>花瓣</span>
+            <div>
+              <h3>柔软外观，坚实能量</h3>
+              <p>适合连接他的舞蹈、打戏、话剧、原声台词与持续训练。</p>
+            </div>
+          </div>
+          <div class="axis-item">
+            <span>酒酒</span>
+            <div>
+              <h3>星云很远，陪伴很近</h3>
+              <p>一只被粉丝熟悉的小狗，让宏大企划有了可以被摸到的生活温度。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="materials">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">Shared Memory</p>
+            <h2>可用事件、数字与图像符号</h2>
+          </div>
+          <p class="lead">这些素材更适合进入品牌预热正片：它们有粉丝共识、能和星云寓意咬合，也避开了争议语境。</p>
+        </div>
+
+        <div class="timeline reveal">
+          <article class="moment">
+            <span class="date">1995.01.23</span>
+            <h3>生日与尾号 23</h3>
+            <p>NGC7023 与 1 月 23 日可做轻彩蛋，不宜做主论证。</p>
+          </article>
+          <article class="moment">
+            <span class="date">2018.11.19</span>
+            <h3>宇航员</h3>
+            <p>粉丝名更名节点，强化“探月、星河、抵达”的叙事身份。</p>
+          </article>
+          <article class="moment">
+            <span class="date">#3F70AB</span>
+            <h3>宇宙蓝</h3>
+            <p>粉丝侧高频认知色，和鸢尾花星云的蓝色火焰天然相连。</p>
+          </article>
+          <article class="moment">
+            <span class="date">2024.11.25</span>
+            <h3>酒酒生日</h3>
+            <p>直播、剪辑与“婆娑 cut”形成轻松温暖的陪伴记忆。</p>
+          </article>
+          <article class="moment">
+            <span class="date">2026.01.24</span>
+            <h3>十周年见面会</h3>
+            <p>“十年之约，宇宙为证”可连接星光抵达需要时间。</p>
+          </article>
+          <article class="moment">
+            <span class="date">Rainco&99</span>
+            <h3>陪伴进入镜头</h3>
+            <p>酒酒不是装饰，而是本季情感关系的具象物。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="quote-inner reveal">
+        <p class="quote">蓝不是冷，蓝是更高温度的热。</p>
+        <p class="quote-source">这可以成为第二条预热的概念心脏：用 NGC7023 的“蓝色火焰”解释肖宇梁身上的清冷表象与炽热内核。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap matrix">
+        <aside class="sticky-note reveal">
+          <p class="label">What Fans Buy</p>
+          <h3>粉丝最容易被打动的六类内容</h3>
+          <p>不是把所有热词都塞进文案，而是保留能产生共鸣的稳定母题。</p>
+        </aside>
+
+        <div class="evidence-list reveal">
+          <article class="evidence">
+            <em>出圈入口</em>
+            <div>
+              <strong>张起灵、打戏、眼神与微表情</strong>
+              <p>作为“被看见的起点”即可，不要把预热写成角色代餐或版本比较。</p>
+            </div>
+          </article>
+          <article class="evidence">
+            <em>人格反差</em>
+            <div>
+              <strong>清冷角色之外的真诚、好笑、做自己</strong>
+              <p>新浪采访与粉丝讨论都指向“角色是角色，你是你”的人剧分离表达。</p>
+            </div>
+          </article>
+          <article class="evidence">
+            <em>陪伴日常</em>
+            <div>
+              <strong>酒酒、小黑、毛孩子、生活碎片</strong>
+              <p>粉丝对这类内容反应轻松亲昵，适合作为预热里的温暖落点。</p>
+            </div>
+          </article>
+          <article class="evidence">
+            <em>双向奔赴</em>
+            <div>
+              <strong>见面会、生日会、伴手礼与“谢谢大家”</strong>
+              <p>粉丝最容易被“认真对待每一次见面”的细节打动。</p>
+            </div>
+          </article>
+          <article class="evidence">
+            <em>价值观</em>
+            <div>
+              <strong>善良、希望、孤独、自信、更好的自己</strong>
+              <p>语录可做候选，但正式海报级引用建议核对原始物料。</p>
+            </div>
+          </article>
+          <article class="evidence">
+            <em>专业成长</em>
+            <div>
+              <strong>舞蹈、打戏、话剧、台词与新角色学习</strong>
+              <p>把他从“过去的出圈角色”带到“持续向前的演员”。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="story">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">Preheat 02 Structure</p>
+            <h2>第二条预热可直接采用的叙事骨架</h2>
+          </div>
+          <p class="lead">整篇不要写成资料堆砌。建议从“蓝色火焰”进入，再依次证明：宇宙语言早已存在、清冷里有炽热、陪伴是彼此映照、酒酒让星云落回人间。</p>
+        </div>
+
+        <div class="storyline reveal">
+          <article class="step">
+            <h3>蓝色不是冷</h3>
+            <p>用 NGC7023 的反射星云与蓝色火焰建立主概念。</p>
+          </article>
+          <article class="step">
+            <h3>宇宙语言早已存在</h3>
+            <p>写“宇”、宇航员、宇宙蓝 #3F70AB、探月手册。</p>
+          </article>
+          <article class="step">
+            <h3>清冷只是入口</h3>
+            <p>从角色记忆转向本人真实、真诚、做自己与专业热度。</p>
+          </article>
+          <article class="step">
+            <h3>光不是单向抵达</h3>
+            <p>十周年见面会、谢谢大家、伴手礼与粉丝回响。</p>
+          </article>
+          <article class="step">
+            <h3>酒酒让宇宙变近</h3>
+            <p>把 Rainco&99 写成陪伴关系进入镜头，而非单纯可爱装饰。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="avoid">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <p class="label">Risk Boundary</p>
+            <h2>避雷边界</h2>
+          </div>
+          <p class="lead">第二条预热要让粉丝信服和被打动，关键是“稳”：不借争议煽情，不进入饭圈冲突，不把角色与本人混成一个人。</p>
+        </div>
+
+        <div class="avoid reveal">
+          <article class="avoid-item">
+            <h3>不碰争议</h3>
+            <p>负面舆情、绯闻、健康旧事、公司/后援会管理争议都不进入正片。</p>
+          </article>
+          <article class="avoid-item">
+            <h3>不做拉踩</h3>
+            <p>张起灵只能作为入口，不做版本比较，不触发 CP/唯粉冲突。</p>
+          </article>
+          <article class="avoid-item">
+            <h3>不把粉丝写成尘埃</h3>
+            <p>反射星云可写“星尘、光路、回响、映照”，避免附属感。</p>
+          </article>
+          <article class="avoid-item">
+            <h3>不卖惨</h3>
+            <p>可以写时间、等待与重新开始，不写具体谁对谁错。</p>
+          </article>
+          <article class="avoid-item">
+            <h3>不滥用酒酒内梗</h3>
+            <p>“胖如猪、失宠”等只做内部理解，正片保留温暖陪伴。</p>
+          </article>
+          <article class="avoid-item">
+            <h3>不直接用未核语录</h3>
+            <p>粉丝整理语录可入候选池，品牌海报级 quote 需二次核原出处。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="wrap source-area">
+        <div class="reveal">
+          <p class="label">Sources</p>
+          <h2>调研信源与原始数据</h2>
+          <p class="lead">页面基于独立调研素材库整理，完整原始抓取与素材说明已随 HTML 一起保存在当前目录。</p>
+          <ul class="source-list">
+            <li><a href="material-bank.md">完整素材库 Markdown</a>：调研范围、素材优先级、避雷边界与源索引。</li>
+            <li><a href="https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-caldwell-catalog/caldwell-4/">NASA Caldwell 4</a>：Iris Nebula / NGC7023 反射星云与蓝色散射说明。</li>
+            <li><a href="https://science.nasa.gov/photojournal/infrared-iris/">NASA Infrared Iris</a>：NGC7023 位于仙王座、距离约 1,300 光年。</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Iris_Nebula_NGC_7023_(noao-ngc7023).jpg">NOIRLab / Wikimedia Commons</a>：页面主视觉图片，CC BY 4.0，作者 T.A. Rector / University of Alaska Anchorage, H. Schweiker / WIYN and NOIRLab / NSF / AURA。</li>
+            <li><a href="https://www.iq.com/actor-info/rainco-238126605?_from=iqiyi&lang=en_us">爱奇艺肖宇梁艺人页</a>：基础资料、毕业院校与职业身份。</li>
+            <li><a href="https://k.sina.cn/article_6524158272_184dec14000100w5k2.html">新浪肖宇梁专访</a>：做自己、人剧分离、角色理解等。</li>
+            <li>小红书与微博数据：详见当前调研目录下的搜索结果、详情和 MediaCrawler JSONL 文件。</li>
+          </ul>
+        </div>
+        <div class="image-note reveal">
+          <img src="assets/ngc7023-meaning.png" alt="鸢尾花星云寓意截图">
+          <p>企划 PDF 第 4 页的核心寓意图：光明与希望、孤傲绝烂、生命基石等是第二条预热与肖宇梁人物线连接的关键。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>Generated for SnackPaper x 肖宇梁 #NGC7023 concept preheat · Root: /Users/huangdong/Downloads/github/caixukun_zhihu/xyl6</span>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
+
+    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+  </script>
+</body>
+</html>
