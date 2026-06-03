@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>抖音礼物传播调研 | 野兽派、Aesop、Fortnum & Mason、Maison Margiela Replica</title>
+  <meta name="description" content="基于 JustOneAPI 抖音内容样本，对四个品牌围绕礼物、送礼的传播理念、核心打法、产品功能性、传播路径和营销事件进行调研。">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230b6b5f'/%3E%3Cpath d='M8 13h16v13H8zM7 10h18v5H7zM15 10h2v16h-2z' fill='white'/%3E%3Cpath d='M12 10c-4-3 0-7 4-1 4-6 8-2 4 1' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #626a6f;
+      --line: #d9dedb;
+      --paper: #fbfcfb;
+      --wash: #eef3f0;
+      --green: #0b6b5f;
+      --coral: #b64f43;
+      --gold: #ad7a24;
+      --steel: #36556f;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      --serif: Georgia, "Times New Roman", "Songti SC", serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 20;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: #fff;
+      border-radius: 6px;
+    }
+    .skip-link:focus { top: 16px; }
+
+    .hero {
+      min-height: 88svh;
+      display: grid;
+      grid-template-columns: minmax(24px, 1fr) minmax(0, 1180px) minmax(24px, 1fr);
+      align-items: stretch;
+      background:
+        linear-gradient(90deg, rgba(11,107,95,.09) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(11,107,95,.08) 1px, transparent 1px),
+        #f8faf8;
+      background-size: 48px 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-inner {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+      padding: 52px 0 42px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 2px;
+      background: var(--green);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 84px);
+      line-height: .98;
+      letter-spacing: 0;
+      max-width: 780px;
+    }
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 600px;
+      color: #3d464a;
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.75;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border: 1px solid var(--ink);
+      border-radius: 6px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .18s ease, background .18s ease, color .18s ease;
+    }
+    .button.primary { background: var(--ink); color: #fff; }
+    .button:hover { transform: translateY(-2px); }
+    .button.primary:hover { background: var(--green); border-color: var(--green); }
+
+    .matrix {
+      width: 100%;
+      border: 1px solid var(--ink);
+      background: rgba(255,255,255,.86);
+      box-shadow: 12px 12px 0 rgba(11,107,95,.12);
+    }
+    .matrix-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 16px;
+      padding: 18px;
+      border-bottom: 1px solid var(--ink);
+    }
+    .matrix-head strong { font-size: 18px; }
+    .matrix-head span { color: var(--muted); font-size: 13px; }
+    .brand-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .brand-tile {
+      min-height: 190px;
+      padding: 20px;
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background .2s ease;
+    }
+    .brand-tile:nth-child(2n) { border-right: 0; }
+    .brand-tile:nth-last-child(-n+2) { border-bottom: 0; }
+    .brand-tile:hover { background: #f3f7f4; }
+    .brand-tile b { display: block; font-size: clamp(18px, 2vw, 24px); line-height: 1.18; }
+    .brand-tile em { display: block; margin-top: 10px; color: var(--muted); font-style: normal; line-height: 1.55; }
+    .signal {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 20px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .beast { background: var(--coral); }
+    .aesop { background: var(--green); }
+    .fortnum { background: var(--gold); }
+    .replica { background: var(--steel); }
+
+    .summary-band { border-bottom: 1px solid var(--line); background: #fff; }
+    .summary-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+    .metric { min-height: 118px; padding: 18px; background: #fff; }
+    .metric span { display: block; color: var(--muted); font-size: 13px; }
+    .metric strong { display: block; margin-top: 8px; font-size: clamp(26px, 4vw, 42px); line-height: 1; }
+    .metric small { display: block; margin-top: 10px; color: #465155; line-height: 1.45; }
+
+    .shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 48px 24px 84px;
+      display: grid;
+      grid-template-columns: 250px minmax(0, 1fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .toc {
+      position: sticky;
+      top: 20px;
+      max-height: calc(100svh - 40px);
+      overflow: auto;
+      padding: 18px 0;
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .toc-title { color: var(--ink); font-weight: 800; margin-bottom: 12px; }
+    .toc ul { list-style: none; padding: 0; margin: 0; }
+    .toc li { margin: 0; padding: 0; }
+    .toc a {
+      display: block;
+      padding: 6px 0;
+      color: var(--muted);
+      text-decoration: none;
+      line-height: 1.35;
+    }
+    .toc a:hover { color: var(--green); }
+
+    article { min-width: 0; font-size: 17px; line-height: 1.88; }
+    article > * { max-width: 850px; }
+    article h2 {
+      margin: 64px 0 18px;
+      padding-top: 18px;
+      border-top: 2px solid var(--ink);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    article h2:first-child { margin-top: 0; }
+    article h3 {
+      margin: 42px 0 12px;
+      font-size: clamp(20px, 2.5vw, 26px);
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+    article p { margin: 0 0 18px; color: #293236; }
+    article ul, article ol { padding-left: 1.2em; }
+    article code {
+      padding: 2px 5px;
+      border: 1px solid #d3dad6;
+      border-radius: 4px;
+      background: #f2f5f3;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: .92em;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    article table {
+      width: 100%;
+      max-width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 34px;
+      font-size: 15px;
+      line-height: 1.55;
+      background: #fff;
+    }
+    article table th { color: #fff; background: var(--ink); font-weight: 700; text-align: left; }
+    article table th, article table td { padding: 12px 13px; border: 1px solid var(--line); vertical-align: top; }
+    article table tr:nth-child(even) td { background: #f7f9f7; }
+    article a { color: var(--green); }
+
+    .table-wrap { width: 100%; max-width: 100%; overflow-x: auto; overflow-y: hidden; margin: 24px 0 34px; border: 1px solid var(--line); background: #fff; }
+    .table-wrap table { margin: 0; min-width: 720px; border: 0; }
+    .table-wrap th:first-child, .table-wrap td:first-child { border-left: 0; }
+    .table-wrap th:last-child, .table-wrap td:last-child { border-right: 0; }
+
+    .source-note {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 24px 48px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .source-note code {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .source-note a { color: var(--green); }
+
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .hero { min-height: auto; }
+      .hero-inner { grid-template-columns: 1fr; padding: 38px 0 34px; }
+      .matrix { box-shadow: 8px 8px 0 rgba(11,107,95,.12); }
+      .summary-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .shell { grid-template-columns: 1fr; gap: 24px; padding-top: 30px; }
+      .toc { position: static; max-height: none; }
+      .toc ul { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 2px 18px; }
+    }
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 18px minmax(0, 1fr) 18px; }
+      .brand-grid { grid-template-columns: 1fr; }
+      .brand-tile { border-right: 0; border-bottom: 1px solid var(--ink); min-height: 156px; }
+      .brand-tile:nth-last-child(-n+2) { border-bottom: 1px solid var(--ink); }
+      .brand-tile:last-child { border-bottom: 0; }
+      .matrix-head { grid-template-columns: 1fr; }
+      .summary-inner { grid-template-columns: 1fr; padding: 18px; }
+      .toc ul { grid-template-columns: 1fr; }
+      article { font-size: 16px; }
+      article h2 { margin-top: 48px; }
+      .button { width: 100%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .button, .brand-tile { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#report">跳到正文</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-text reveal">
+        <div class="eyebrow">Douyin Gift Strategy Research · 2026-06-03</div>
+        <h1>抖音礼物传播调研</h1>
+        <p class="hero-copy">四个品牌，四种送礼逻辑：可见仪式、体面实用、英伦来源地、专属记忆香气。</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#report">阅读报告</a>
+          <a class="button" href="douyin_gift_brand_research.md">查看 Markdown</a>
+        </div>
+      </div>
+      <div class="matrix reveal" aria-label="四个品牌的礼物传播矩阵">
+        <div class="matrix-head"><strong>礼物价值矩阵</strong><span>基于 233 条清洗后有效抖音样本</span></div>
+        <div class="brand-grid">
+          <div class="brand-tile"><div><b>野兽派 The Beast</b><em>把爱意变成可见、可开箱、可转发的仪式。</em></div><span class="signal beast">视觉仪式</span></div>
+          <div class="brand-tile"><div><b>Aesop 伊索</b><em>用克制审美和日常护理表达体面的关照。</em></div><span class="signal aesop">审美实用</span></div>
+          <div class="brand-tile"><div><b>Fortnum & Mason</b><em>把英伦来源地、包装和食品分享感打包。</em></div><span class="signal fortnum">来源地体面</span></div>
+          <div class="brand-tile"><div><b>Maison Margiela Replica</b><em>用气味复刻一段无法复制的关系记忆。</em></div><span class="signal replica">专属记忆</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="summary-band" aria-label="样本摘要">
+    <div class="summary-inner">
+      <div class="metric"><span>关键词视频搜索</span><strong>42</strong><small>品牌名叠加礼物、礼盒、节日、对象与产品线。</small></div>
+      <div class="metric"><span>用户搜索</span><strong>11</strong><small>含 Fortnum 精确账号补探，确认账号口径边界。</small></div>
+      <div class="metric"><span>视频详情</span><strong>48</strong><small>补充推荐词、作者、互动指标与详情文案。</small></div>
+      <div class="metric"><span>有效样本</span><strong>233</strong><small>野兽派 84、Aesop 50、F&M 35、Replica 64。</small></div>
+    </div>
+  </section>
+
+  <main class="shell" id="report">
+    <aside class="toc" aria-label="报告目录"><div class="toc-title">目录</div><ul><li><a href="#0">0. 结论先行</a></li><li><a href="#1">1. 方法与样本边界</a></li><li><a href="#2-the-beast">2. 野兽派 The Beast</a></li><li><a href="#3-aesop">3. Aesop 伊索</a></li><li><a href="#4-fortnum-mason">4. Fortnum &amp; Mason</a></li><li><a href="#5-maison-margiela-replica">5. Maison Margiela Replica</a></li><li><a href="#6">6. 横向洞察</a></li><li><a href="#7">7. 建议</a></li><li><a href="#8">8. 代表样本索引</a></li><li><a href="#9">9. 接口与资料来源</a></li></ul></aside>
+    <article><p>调研日期：2026-06-03<br />
+数据来源：JustOneAPI 抖音接口；原始采集文件见 <code>reports/douyin_gift_evidence.json</code>。<br />
+采集口径：42 组品牌/礼物相关关键词视频搜索、11 组用户搜索（含 3 组 Fortnum 精确账号补探）、部分官方/疑似官方账号作品列表、48 条视频详情、12 个评论页。视频搜索使用综合排序 <code>sortType=_0</code>、不限发布时间 <code>publishTime=_0</code>、不限时长 <code>duration=_0</code>、第 1 页结果。互动数为采集时 API 返回值。<br />
+清洗后有效样本：野兽派 84 条、Aesop 50 条、Fortnum &amp; Mason 35 条、Maison Margiela Replica 64 条。</p>
+<h2 id="0">0. 结论先行</h2>
+<p>四个品牌在抖音里都围绕“礼物”建立了关系脚本，但它们卖的不是同一种礼物价值：</p>
+<table>
+<thead>
+<tr>
+<th>品牌</th>
+<th>抖音礼物传播母题</th>
+<th>最强触发场景</th>
+<th>产品承载</th>
+<th>抖音核心打法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>野兽派 The Beast</td>
+<td>把爱意变成可看见、可开箱、可被立刻转发的仪式</td>
+<td>520、母亲节、七夕、情人节、圣诞</td>
+<td>花束、永生花、香薰、香水香囊、IP 联名礼盒</td>
+<td>官方节日片 + 旗舰店短视频 + 达人/用户开箱 + IP 联名种草</td>
+</tr>
+<tr>
+<td>Aesop 伊索</td>
+<td>克制审美包装下的日常照护，体面且实用</td>
+<td>圣诞、新年、闺蜜/商务送礼、旅行购买</td>
+<td>圣诞倒数日历、护手霜、护肤、洗护、香水香薰</td>
+<td>开箱、清单、价值计算、海外购买攻略；抖音未见清晰官方号</td>
+</tr>
+<tr>
+<td>Fortnum &amp; Mason</td>
+<td>把英伦来源地、包装和食品分享感打包成体面伴手礼</td>
+<td>伦敦/英国伴手礼、生日、圣诞、中秋香港限定</td>
+<td>茶、饼干、巧克力、音乐饼干盒、月饼茶礼、礼篮</td>
+<td>旅行攻略 + 疑似品牌/渠道内容 + 高端零食推荐 + 节庆礼盒</td>
+</tr>
+<tr>
+<td>Maison Margiela Replica</td>
+<td>用气味复刻一段“专属记忆”，把香水变成关系凭证</td>
+<td>七夕、情人节、圣诞、520</td>
+<td>香水礼盒、定制标签、慵懒周末/微醺后/航行物语等香型</td>
+<td>官方香氛号 + 达人集中投放 + 限定礼盒开箱 + 定制/小众话术</td>
+</tr>
+</tbody>
+</table>
+<p>横向看，抖音比小红书更强调“瞬间可感知”的礼物效果。野兽派靠花与包装的视觉冲击，Replica 靠限定礼盒和“专属记忆”话术；这两个品牌最适配短视频的前 3 秒种草。Aesop 和 Fortnum &amp; Mason 更依赖“解释型内容”：Aesop 要解释为什么实用、为什么值、哪些单品好；Fortnum 要解释哪里买、为什么体面、什么食品适合送人。也因此，后两者在抖音上的传播更像达人/用户帮品牌完成礼物语境翻译。</p>
+<h2 id="1">1. 方法与样本边界</h2>
+<p>本次先通过 JustOneAPI 的抖音视频搜索接口抓取品牌与礼物相关关键词，再用视频详情接口补充推荐词、作者、互动指标等结构化信息，用评论接口抽取少量用户反馈。账号侧使用用户搜索接口识别企业号或高频作者；野兽派和 Maison Margiela 可识别出较明确的官方/旗舰店账号，Aesop 未找到可确认的中国抖音官方号，Fortnum &amp; Mason 只有一个低粉丝普通用户账号 <code>Fortnum&amp;Mason福南梅森</code>，未在企业号搜索中确认认证身份。</p>
+<p>电商商品搜索曾以“野兽派 礼盒”测试，但返回业务码 301，本报告不使用抖音电商商品数据。所有“产品功能性”判断都来自视频文本、标签、推荐词、评论和账号内容，不等同于完整 SKU 审计。</p>
+<p>样本清洗时剔除了明显同名噪声：Aesop 中的“伊索寓言”、伊索童装/管乐/美发/家居建材等；Fortnum 中的泛茶礼、其他“梅森”同名内容；Maison Margiela 中的 MAISON de SIT.E 等非 Margiela 账号。由于抖音搜索结果受时间、账号、排序和平台推荐影响，本报告用于传播洞察，不作为全平台统计。</p>
+<h2 id="2-the-beast">2. 野兽派 The Beast</h2>
+<p>样本概况：原始 93 条，清洗后 84 条有效；其中 11 条抓取详情，3 条抓取评论。有效样本中，官方/旗舰店风格作者约 39 条，主要来自 <code>BEAST野兽派官方旗舰店</code> 和 <code>tbh野兽派家居生活旗舰店</code>。企业号搜索显示 <code>BEAST野兽派官方旗舰店</code> 粉丝约 88.4 万，另有家居内衣、家居生活、香薰、个人护理等分账号。</p>
+<h3 id="21">2.1 传播理念</h3>
+<p>野兽派在抖音里的礼物理念是“把关系表达做成可见仪式”。它不是简单说“送花”，而是不断把花、香薰、香水、礼盒、联名物转译成告白、定情、陪伴和亲情。高相关词里，“礼物”出现 20 次，“开箱”15 次，“限定”12 次；场景侧 520、母亲节、七夕、情人节都很集中。</p>
+<p>它的礼物内容有三层：第一层是花艺和永生花的即时视觉冲击，适合在视频里一眼看懂“收到礼物”；第二层是香薰、香水、香囊等居家/气味产品，把短暂的收礼瞬间拉长为日常陪伴；第三层是 IP 联名，如 Hello Kitty、星星人，让礼物从情侣花束扩展到潮玩、女性自我犒赏和朋友礼物。</p>
+<h3 id="22">2.2 核心打法</h3>
+<p>野兽派最强的是官方节日内容。2023 年七夕样本里，官方旗舰店发布“七夕限定香水与香囊礼盒”，文案把香荷包解释为“定情与思念”；同系列视频“镜中花，香荷包；野玫瑰，寄相思”获得约 9.94 万赞、397 评论、3302 收藏、1019 分享。2023 情人节，“爱你”永生花告白兔约 3.40 万赞，“辣吻”“我可以”玫瑰花桶均在 4 万赞以上。</p>
+<p>第二个打法是明星/人物情感片。2024 母亲节，官方视频“请妈妈和孩子对视 1 分钟”，配音旁白提到龚俊，获得约 8.53 万赞、1930 分享；2023 母亲节归亚蕾手捧母亲节限定大花束，强调“妈妈的高光时刻”。2025 母亲节又出现赵雅芝与儿子内容，文案落点是“送给妈妈的礼物”。这说明野兽派把母亲节从“买束花”升级为亲子关系的情绪片。</p>
+<p>第三个打法是联名开箱。2026 年 1 月达人视频“野兽派 x Hello Kitty 联名礼盒”获得约 2.79 万赞、1250 收藏、648 分享；关键词统计里 Hello Kitty 和星星人各出现 10 次，联名出现 8 次。联名的意义不是单次卖货，而是把野兽派的礼物场景从鲜花节日扩展到“可收藏、可晒、可当生日/朋友礼物”的生活方式物件。</p>
+<h3 id="23">2.3 产品功能性</h3>
+<p>野兽派的功能性本质是“解决表达难题”。花束、玫瑰、永生花负责把爱意具象化，适合情人节、七夕、520、母亲节等必须表达的节点；香薰和香水负责把“美”延续到家居空间，样本中香薰出现 6 次、香水 3 次、香囊 2 次；礼盒和开箱负责让收礼过程可传播。</p>
+<p>用户评论也能看到功能问题会进入转化链路。例如香薰礼盒样本下，评论出现“哪个味道最好闻”“味道是浓郁还是淡雅”“这个没盖子怎么灭”等问题，说明当产品从花转向香薰时，用户开始从视觉礼物转向气味、使用方式和安全感判断。</p>
+<h3 id="24">2.4 传播路径</h3>
+<p>野兽派的传播路径是：官方节日限定或明星情感片先定义主题，再由旗舰店账号和分品类账号放出产品短视频，达人/用户用开箱强化“收到礼物”的真实感，联名内容进一步进入 IP 人群。抖音上的强点是官方账号矩阵清晰，能够把花艺、香薰、家居生活分别运营；弱点是传播高度依赖节日节点，非节日内容需要靠联名或产品故事维持热度。</p>
+<h3 id="25">2.5 营销事件线索</h3>
+<table>
+<thead>
+<tr>
+<th>事件/动作</th>
+<th>抖音样本信号</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023 情人节限定</td>
+<td>“爱你”永生花告白兔、“辣吻”“我可以”玫瑰花桶</td>
+<td>用直接告白话术，把花艺变成情侣礼物标准答案</td>
+</tr>
+<tr>
+<td>2023 七夕香荷包系列</td>
+<td>香水与香囊礼盒，“定情与思念”</td>
+<td>将传统荷包意象转成香氛礼盒，提高文化与关系含义</td>
+</tr>
+<tr>
+<td>2024/2025 母亲节</td>
+<td>龚俊配音、归亚蕾/赵雅芝相关样本</td>
+<td>用人物情感片把母亲节礼物从“花束”转成亲情表达</td>
+</tr>
+<tr>
+<td>Hello Kitty/星星人联名</td>
+<td>达人开箱、联名礼盒推荐</td>
+<td>用 IP 提升礼物可收藏性和分享欲</td>
+</tr>
+<tr>
+<td>圣诞礼盒/开箱</td>
+<td>“超大圣诞礼物”“会飘雪的圣诞礼盒”</td>
+<td>强化视觉惊喜和开箱瞬间</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-aesop">3. Aesop 伊索</h2>
+<p>样本概况：原始 65 条，清洗后 50 条有效；其中 9 条抓取详情，2 条抓取评论。用户搜索未识别到可信的 Aesop 中国官方/企业抖音号，样本主要来自达人、用户、海外生活账号和疑似零售/分销账号。</p>
+<h3 id="31">3.1 传播理念</h3>
+<p>Aesop 在抖音里的礼物理念是“低调体面、日常可用的关照”。与野兽派和 Replica 的高情绪表达不同，Aesop 需要通过开箱、产品清单、护手霜/护肤/洗护等功能来解释为什么值得送。有效样本中，“礼物”出现 13 次，“开箱”12 次，“送礼”6 次；产品词里护肤 8 次、香水 6 次、身体 5 次、护手霜 3 次、香芹 3 次。</p>
+<p>它的礼物价值不是“收到那一刻很震撼”，而是“送的人有品味，收的人真的会用”。评论里有用户问护手霜、香水、精华和肤质，也有人关注包装束口袋，这说明 Aesop 的礼物感由产品功能、气味偏好、包装审美共同构成。</p>
+<h3 id="32">3.2 核心打法</h3>
+<p>第一是圣诞倒数日历和礼盒开箱。2025 年 10 月视频“全网第一个拍的 Aesop 圣诞倒数日历礼盒”约 2566 赞、530 评论、683 分享，评论区出现“想要护手霜”“伊索香水持久”“精华推荐吗”等问题。另一条“所以最后到底回本了没”围绕倒数日历做价值计算，约 1916 赞、130 评论。</p>
+<p>第二是“正确送礼/长期主义/商务送礼”清单。样本中有“送礼物的正确打开方式”“最全礼物合集”“商务送礼”“长期主义”“实用好物”等话术。这些内容把 Aesop 从美妆护肤品牌转成“不会太亲密、不会太随便、男女/客户都能接受”的礼物选项。</p>
+<p>第三是海外购买和产品攻略。澳洲生活样本以“澳洲伊索闭眼抄作业清单”介绍护手霜等好物，说明 Aesop 在抖音有一部分传播是由海外生活/旅游购买驱动。对国内用户来说，Aesop 的稀缺感和门店审美仍能支撑礼物价值。</p>
+<h3 id="33">3.3 产品功能性</h3>
+<p>Aesop 的功能性最强，礼物解释成本也最低。护手霜、身体护理、洗护适合日常使用；香水和香薰提高情绪价值；香芹籽等护肤线提供“懂品牌”的进阶感；倒数日历和圣诞礼盒把多个品类打包，降低送礼选择难度。</p>
+<p>不过，Aesop 在抖音也出现了“审美小众光环被规模化稀释”的批判内容。一条 2026 年 4 月商业拆解视频获得约 6526 赞、523 评论、1894 分享，讨论 Aesop 从小众审美到规模化后的问题。该样本不是礼物内容主线，但提示风险：Aesop 的送礼价值很依赖“克制、小众、审美高级”的品牌感，一旦被用户感知为普通化，礼物溢价会被质疑。</p>
+<h3 id="34">3.4 传播路径</h3>
+<p>Aesop 的抖音路径更像“用户替品牌解释”。没有清晰官方号时，内容从达人/用户开箱开始，通过评论区产品问答形成微型导购，再由海外生活账号、礼物清单账号和疑似零售账号扩散到具体场景。相较小红书，抖音上的 Aesop 内容更少强调门店叙事，更多强调“拆开有什么”“值不值”“哪些单品适合送”。</p>
+<h3 id="35">3.5 营销事件线索</h3>
+<table>
+<thead>
+<tr>
+<th>事件/动作</th>
+<th>抖音样本信号</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025 圣诞倒数日历</td>
+<td>多条开箱、回本计算、评论区产品问答</td>
+<td>Aesop 最清晰的礼盒化动作，适合短视频逐件展示</td>
+</tr>
+<tr>
+<td>圣诞/新年礼物</td>
+<td>“圣诞礼物”“新年贺礼”“新年礼物”</td>
+<td>节日礼物主要通过开箱和礼盒完成传播</td>
+</tr>
+<tr>
+<td>长期主义/商务送礼</td>
+<td>礼物合集、商务送礼、实用好物</td>
+<td>Aesop 被转译为体面、不冒犯、可批量选择的礼物</td>
+</tr>
+<tr>
+<td>海外购买攻略</td>
+<td>澳洲伊索清单、旅行/机场/限量款</td>
+<td>海外渠道提升稀缺感，但也会使内容更分散</td>
+</tr>
+<tr>
+<td>品牌规模化争议</td>
+<td>商业拆解视频讨论小众品牌规模化</td>
+<td>提醒礼物溢价依赖审美光环和品牌稀缺感</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-fortnum-mason">4. Fortnum &amp; Mason</h2>
+<p>样本概况：原始 71 条，清洗后 35 条有效；其中 8 条抓取详情。用户搜索确认到一个普通用户账号 <code>Fortnum&amp;Mason福南梅森</code>，粉丝约 428，未在企业号搜索中确认认证；有效样本中该作者出现 14 条。因此本报告把它称为“高频作者/疑似品牌或渠道内容”，而不是确认官方号。</p>
+<h3 id="41">4.1 传播理念</h3>
+<p>Fortnum &amp; Mason 在抖音里的礼物理念是“可携带的英伦体面感”。它的礼物价值由三件事叠加：第一，伦敦、皮卡迪利、英国伴手礼、王室同款等来源地背书；第二，茶、饼干、巧克力、礼篮这些适合分享的食品；第三，精致包装、音乐饼干盒、月饼茶礼等可展示的礼盒形态。</p>
+<p>关键词统计非常清楚：有效样本中“伦敦”13 次、“伴手礼”8 次、“圣诞”5 次、“香港”4 次；产品词中茶 18 次、下午茶 11 次、饼干 9 次。也就是说，F&amp;M 在抖音不是靠“食品好吃”单点传播，而是靠“在哪里买、为什么体面、送给谁合适”形成礼物理由。</p>
+<h3 id="42">4.2 核心打法</h3>
+<p>第一是目的地/旅行攻略。2026 年 2 月视频“在伦敦十几镑全款拿下王室同款伴手礼”明确说“来伦敦不知道买什么礼物回去，这家可以直接抄作业”，并带有伦敦购物、英国伴手礼、旅行攻略、送礼推荐等标签。2025 年 10 月英国伴手礼盘点视频把 Fortnum &amp; Mason 与 Harrods、Holland &amp; Barrett 等并列，约 894 赞、814 收藏、207 分享，收藏高于点赞，说明攻略属性强。</p>
+<p>第二是节庆礼盒。高频作者 <code>Fortnum&amp;Mason福南梅森</code> 发布 2025 中秋香港限定月饼茶礼，文案显示 Mooncake &amp; Tea Pairing Gift Box，把英式名茶与中式月饼装进一盒，并提及香港 181 门店。另有 2025 圣诞礼篮、圣诞限定下午茶等内容，把品牌转入家庭/朋友分享场景。</p>
+<p>第三是包装和趣味机制。生日音乐饼干盒样本写到音乐饼干礼盒会唱 Happy Birthday、能转圈、外观有手绘插画，虽然互动数低，但礼物逻辑很强：它把食品从“吃掉”变成“打开时有惊喜”。</p>
+<h3 id="43">4.3 产品功能性</h3>
+<p>Fortnum &amp; Mason 的功能性不是强功效，而是“轻负担分享”。茶适合长辈、客户、办公室和英伦下午茶语境；饼干/曲奇/巧克力适合朋友、同事、旅行伴手礼；礼篮适合圣诞和家庭分享；月饼茶礼适合中秋本地化送礼；音乐饼干盒提供生日仪式感。</p>
+<p>它的短板也明显：如果没有伦敦、香港、王室、包装和礼盒叙事，只讨论食品本身，品牌差异会减弱。抖音里也容易被泛茶礼、进口零食、同名“梅森”内容污染，说明 F&amp;M 的品牌识别在国内抖音还不够强。</p>
+<h3 id="44">4.4 传播路径</h3>
+<p>F&amp;M 的传播路径是：旅行/留学/英国生活内容提供“买什么伴手礼”的入口；高频作者或渠道账号发布节日礼盒与新品；零食/茶类账号把它拆成高端食品推荐；用户收藏/转发攻略，形成购买地点、预算、是否体面等问题。与野兽派、Replica 不同，F&amp;M 不依赖强官方矩阵，而依赖“目的地和包装”让用户相信这份礼物有来历。</p>
+<h3 id="45">4.5 营销事件线索</h3>
+<table>
+<thead>
+<tr>
+<th>事件/动作</th>
+<th>抖音样本信号</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2025 中秋香港限定月饼茶礼</td>
+<td>月饼礼盒上架香港 181 门店，英式名茶 x 中式月饼</td>
+<td>明确本地化节庆礼盒，把英伦品牌带入中秋送礼</td>
+</tr>
+<tr>
+<td>生日音乐饼干盒</td>
+<td>Happy Birthday 音乐、转圈、手绘插画</td>
+<td>用产品机关增强开箱惊喜，适合生日礼物</td>
+</tr>
+<tr>
+<td>2025 圣诞礼篮/下午茶</td>
+<td>茶、咖啡、饼干、甜点，强调家人朋友分享</td>
+<td>把圣诞礼物从单品转成节日餐桌/下午茶</td>
+</tr>
+<tr>
+<td>伦敦皮卡迪利/王室同款</td>
+<td>旅行攻略、王室同款伴手礼</td>
+<td>来源地和历史背书是送礼体面的核心</td>
+</tr>
+<tr>
+<td>海外旗舰店/进口零食推荐</td>
+<td>玫瑰饼干、红茶礼盒、进口零食</td>
+<td>渠道化内容补足国内购买入口，但需防低质分销稀释品牌</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-maison-margiela-replica">5. Maison Margiela Replica</h2>
+<p>样本概况：原始 82 条，清洗后 64 条有效；其中 12 条抓取详情，3 条抓取评论。用户搜索可识别 <code>MaisonMargiela马吉拉香氛</code>，粉丝约 56.5 万，认证信息为欧莱雅（中国）有限公司；另有 <code>Maison Margiela 马吉拉</code> 旗舰店号，粉丝约 10.7 万。</p>
+<h3 id="51">5.1 传播理念</h3>
+<p>Replica 在抖音里的礼物理念最清晰：礼物不是一瓶香水，而是一段“独属于你们的记忆香气”。高相关样本反复出现“限定礼盒”“定制”“专属回忆”“无法复制”“小众特别”“高级浪漫”等词。有效样本中香水出现 49 次，慵懒周末出现 30 次，情人节 12 次、七夕 8 次，说明香型与关系节日高度绑定。</p>
+<p>Replica 的优势是产品命名天然带场景。慵懒周末、微醺后、温暖壁炉、航行物语等名称本身就像短视频标题，可以直接连接情侣关系、假日气氛、冬季居家和旅行记忆。相比 Aesop 要解释功能，Replica 只需要把香味命名和收礼对象连接起来。</p>
+<h3 id="52">5.2 核心打法</h3>
+<p>第一是节日限定礼盒集中投放。2023 年七夕，多个达人样本同日或同期发布“七夕限定”“夏忆礼盒”“定制专属回忆”。其中 MH 玩数码样本约 4.89 万赞、1112 评论、3132 分享；张章鱼开箱样本约 2.10 万赞、1237 评论、3290 分享；马同学样本“让女友收到瞬间就能记住”约 3.69 万赞、5625 分享。</p>
+<p>第二是情人节“不可复制”话术。2024 年 1 月集中出现“独属于你的记忆香气”“超有心意的情人节礼盒”“真正走心的情人节礼物是无法复制”“可以定制的浪漫”等内容。它把礼物价值从价格/品牌转移到专属标签和关系记忆，让香水更像关系凭证。</p>
+<p>第三是香型故事驱动。样本中“慵懒周末”极高频，既是产品，也是内容脚本。温暖壁炉、微醺后、航行物语等香型让达人可以围绕“什么场景适合送什么味道”做推荐，而不只是在讲前中后调。</p>
+<h3 id="53">5.3 产品功能性</h3>
+<p>Replica 的功能性是情绪与身份表达。它不能像护手霜那样解决皮肤干燥，也不像茶饼干那样可分享；它解决的是“如何送出一份看起来懂她/懂他、不是随便买的礼物”。定制标签和限定包装提高专属感；小众香型和场景命名提高品味感；礼盒开箱提高可晒性。</p>
+<p>评论区也显示这种打法的双刃剑。一方面，用户会讨论价格、适合男女、期待收到；另一方面，也会出现“好多广告”“为什么要送”“马吉拉不算小众”等质疑。Replica 的营销强度高，礼物话术容易奏效，也容易被识别为投放。</p>
+<h3 id="54">5.4 传播路径</h3>
+<p>Replica 的路径更像标准的“官方定主题，达人放大，用户用礼物语言二次传播”：官方香氛号与旗舰店提供品牌和礼盒素材，达人围绕七夕/情人节集中发布，标题里直接嵌入“女友、专属、定制、浪漫、无法复制”，视频详情推荐词又把搜索导向“马吉拉情人节礼盒”“马吉拉香水”。这条路径在抖音上效率很高，因为短视频不需要展开复杂产品知识，只要让用户相信“这瓶香水代表某个记忆”。</p>
+<h3 id="55">5.5 营销事件线索</h3>
+<table>
+<thead>
+<tr>
+<th>事件/动作</th>
+<th>抖音样本信号</th>
+<th>判断</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2023 七夕“夏忆礼盒”</td>
+<td>定制专属回忆、七夕礼物、慵懒周末</td>
+<td>最强礼物事件，把香水礼盒与“专属记忆”绑定</td>
+</tr>
+<tr>
+<td>2024 情人节限定礼盒</td>
+<td>独属于你的记忆香气、无法复制、可以定制</td>
+<td>延续七夕逻辑，用定制和不可复制强化关系凭证</td>
+</tr>
+<tr>
+<td>圣诞金银礼盒</td>
+<td>圣诞限定礼盒、爆闪包装</td>
+<td>用视觉包装补充节日开箱效果</td>
+</tr>
+<tr>
+<td>香型内容矩阵</td>
+<td>慵懒周末、温暖壁炉、微醺后、航行物语</td>
+<td>香型名成为内容标题和送礼脚本</td>
+</tr>
+<tr>
+<td>达人集中扩散</td>
+<td>多个达人高赞高分享样本</td>
+<td>投放有效，但评论区会出现广告感和小众性争议</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6">6. 横向洞察</h2>
+<p>第一，四个品牌分别占据四种礼物价值：野兽派是视觉仪式，Aesop 是审美化实用，Fortnum &amp; Mason 是来源地体面，Replica 是专属记忆。它们都能送礼，但“送礼理由”完全不同。野兽派和 Replica 更适合情侣/节日强情绪节点；Aesop 更适合朋友、同事、客户和不想越界的关系；F&amp;M 更适合旅行伴手礼、节庆分享和商务体面场景。</p>
+<p>第二，抖音放大的是“可被一眼理解”的礼物。野兽派的花、礼盒和联名周边，Replica 的限定礼盒和定制标签，都能在短视频里迅速建立礼物感。Aesop 与 F&amp;M 需要更长解释链：Aesop 要讲产品矩阵和值不值；F&amp;M 要讲伦敦、香港、王室、包装和在哪里买。因此后两者在抖音上更依赖攻略和开箱，而不是纯品牌大片。</p>
+<p>第三，官方账号 presence 直接影响路径。野兽派账号矩阵清晰，能自己定义节日主题；Replica 有欧莱雅体系下的香氛号和旗舰店号，容易做集中投放；Aesop 没有清晰官方号，礼物语境由用户/达人/海外账号代为翻译；F&amp;M 的高频作者粉丝少且未确认企业认证，品牌识别更多依赖旅行达人和渠道内容。</p>
+<p>第四，评论区暴露转化阻力。野兽派香薰会被问味道、使用方式和价格；Aesop 会被问护手霜、香水、精华与包装；F&amp;M 的阻力在渠道、品牌识别和是否真的“高级”；Replica 的阻力是广告感、价格和“小众是否还小众”。这些问题对应各品牌后续内容应补的信息。</p>
+<h2 id="7">7. 建议</h2>
+<p>野兽派应继续保持节日主线，但把非节日内容做成“礼物后续生活”。比如鲜花之后如何摆、香薰如何选味、联名礼盒如何成为生日/乔迁/朋友礼物。这样可以降低对 520、七夕、母亲节的依赖。</p>
+<p>Aesop 在抖音最需要一个可信的官方或官方授权内容入口。短期可围绕“护手霜/身体护理/圣诞倒数日历/商务送礼”做系列短视频，用清单和价值计算降低选择压力；中期应补门店服务、包装和适合关系边界的内容，强化“体面但不冒犯”的礼物定位。</p>
+<p>Fortnum &amp; Mason 应把“英伦体面”转成更稳定的中文礼物结构：伦敦伴手礼、香港节庆礼盒、生日音乐饼干盒、圣诞礼篮、中秋茶月礼盒。重点不是泛泛说高端食品，而是明确“送谁、什么预算、在哪里买、为什么不失礼”。同时要控制渠道化内容质量，避免被泛进口零食稀释。</p>
+<p>Maison Margiela Replica 的“专属记忆”打法已经很强，后续可以减少同质化投放标题，增加香型选择工具：送女友/男友/朋友分别选什么，慵懒周末、温暖壁炉、微醺后分别对应什么关系和季节。这样既保留情绪价值，也能缓解评论区对广告感的质疑。</p>
+<h2 id="8">8. 代表样本索引</h2>
+<table>
+<thead>
+<tr>
+<th>品牌</th>
+<th>视频 ID</th>
+<th>作者</th>
+<th>采集到的核心信号</th>
+<th>互动概况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>野兽派</td>
+<td>7261812392294632738</td>
+<td>BEAST野兽派官方旗舰店</td>
+<td>七夕香荷包系列，寄相思/定情意象</td>
+<td>赞 99438 / 评 397 / 藏 3302 / 转 1019</td>
+</tr>
+<tr>
+<td>野兽派</td>
+<td>7365723812245032211</td>
+<td>BEAST野兽派官方旗舰店</td>
+<td>2024 母亲节亲子对视情感片</td>
+<td>赞 85271 / 评 284 / 藏 2842 / 转 1930</td>
+</tr>
+<tr>
+<td>野兽派</td>
+<td>7593373974420723825</td>
+<td>蒋蒋_Skybro</td>
+<td>Hello Kitty 联名礼盒开箱</td>
+<td>赞 27876 / 评 224 / 藏 1250 / 转 648</td>
+</tr>
+<tr>
+<td>Aesop</td>
+<td>7567411662988635380</td>
+<td>啥都讲讲的姜姜</td>
+<td>2025 圣诞倒数日历礼盒开箱</td>
+<td>赞 2566 / 评 530 / 藏 277 / 转 683</td>
+</tr>
+<tr>
+<td>Aesop</td>
+<td>7582540316692860219</td>
+<td>全智圆</td>
+<td>倒数日历“回本”价值计算</td>
+<td>赞 1916 / 评 130 / 藏 116 / 转 98</td>
+</tr>
+<tr>
+<td>Aesop</td>
+<td>7480894147877014795</td>
+<td>澳洲小年糕</td>
+<td>澳洲伊索好物/护手霜攻略</td>
+<td>赞 2640 / 评 66 / 藏 1802 / 转 987</td>
+</tr>
+<tr>
+<td>Fortnum &amp; Mason</td>
+<td>7546212209836772667</td>
+<td>Fortnum&amp;Mason福南梅森</td>
+<td>2025 中秋香港限定月饼茶礼</td>
+<td>赞 8 / 评 11 / 藏 8 / 转 1</td>
+</tr>
+<tr>
+<td>Fortnum &amp; Mason</td>
+<td>7548859395718679866</td>
+<td>Fortnum&amp;Mason福南梅森</td>
+<td>生日音乐饼干礼盒</td>
+<td>赞 4 / 评 0 / 藏 2 / 转 0</td>
+</tr>
+<tr>
+<td>Fortnum &amp; Mason</td>
+<td>7601264858088230153</td>
+<td>伦敦长颈陆老师Giraffery</td>
+<td>伦敦王室同款伴手礼攻略</td>
+<td>赞 31 / 评 1 / 藏 25 / 转 19</td>
+</tr>
+<tr>
+<td>Replica</td>
+<td>7261140648697285946</td>
+<td>MH 玩数码</td>
+<td>七夕“夏忆礼盒”，定制专属回忆</td>
+<td>赞 48924 / 评 1112 / 藏 2631 / 转 3132</td>
+</tr>
+<tr>
+<td>Replica</td>
+<td>7323912793671994676</td>
+<td>冯雪儿Tiamo</td>
+<td>情人节礼盒，“无法复制”话术</td>
+<td>赞 16153 / 评 240 / 藏 3711 / 转 825</td>
+</tr>
+<tr>
+<td>Replica</td>
+<td>7307175586269629734</td>
+<td>小曾顿时大喜</td>
+<td>圣诞金银礼盒开箱</td>
+<td>赞 7871 / 评 234 / 藏 460 / 转 199</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9">9. 接口与资料来源</h2>
+<ul>
+<li>JustOneAPI 抖音接口目录：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/</code></li>
+<li>视频搜索 API V4：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/video-search-v4</code></li>
+<li>用户搜索 API V2：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/user-search-v2</code></li>
+<li>用户发布视频 API V3：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/user-published-videos-v3</code></li>
+<li>视频详情 API V2：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/video-details-v2</code></li>
+<li>视频评论 API V1：<code>https://docs.justoneapi.com/zh/api/douyin-tiktok-china/video-comments-v1</code></li>
+<li>本地证据文件：<code>reports/douyin_gift_evidence.json</code></li>
+</ul></article>
+  </main>
+
+  <footer class="source-note">
+    本页面由 <code>reports/douyin_gift_brand_research.md</code> 生成，部署根目录为 <code>/Users/huangdong/Downloads/github/caixukun_zhihu/liwu2</code>。数据来自 JustOneAPI 抖音接口，报告已保留方法边界与样本限制说明。
+  </footer>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal, article h2, article h3, article table').forEach((el) => {
+      el.classList.add('reveal');
+      revealObserver.observe(el);
+    });
+
+    document.querySelectorAll('article table').forEach((table) => {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      table.parentNode.insertBefore(wrap, table);
+      wrap.appendChild(table);
+    });
+  </script>
+</body>
+</html>
