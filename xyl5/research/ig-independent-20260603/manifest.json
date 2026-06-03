@@ -1,0 +1,139 @@
+{
+  "date": "2026-06-03",
+  "baseUrl": "https://api.justoneapi.com",
+  "tokenStored": false,
+  "accounts": [
+    {
+      "username": "nowness",
+      "bucket": "film_culture"
+    },
+    {
+      "username": "dazed",
+      "bucket": "youth_culture"
+    },
+    {
+      "username": "i_d",
+      "bucket": "youth_culture"
+    },
+    {
+      "username": "highsnobiety",
+      "bucket": "street_culture"
+    },
+    {
+      "username": "hypebeast",
+      "bucket": "street_culture"
+    },
+    {
+      "username": "showstudio",
+      "bucket": "fashion_film"
+    },
+    {
+      "username": "itsnicethat",
+      "bucket": "design_culture"
+    },
+    {
+      "username": "thefacemagazine",
+      "bucket": "pop_culture"
+    },
+    {
+      "username": "anothermagazine",
+      "bucket": "fashion_editorial"
+    },
+    {
+      "username": "032c",
+      "bucket": "fashion_editorial"
+    },
+    {
+      "username": "designboom",
+      "bucket": "design_culture"
+    },
+    {
+      "username": "dezeen",
+      "bucket": "design_culture"
+    },
+    {
+      "username": "prada",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "loewe",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "maisonmargiela",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "balenciaga",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "coperni",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "gentlemonster",
+      "bucket": "future_retail"
+    },
+    {
+      "username": "acnestudios",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "miumiu",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "ferragamo",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "muglerofficial",
+      "bucket": "luxury_brand"
+    },
+    {
+      "username": "petrafcollins",
+      "bucket": "artist_photography"
+    },
+    {
+      "username": "frederikheyman",
+      "bucket": "digital_artist"
+    },
+    {
+      "username": "sixnfive",
+      "bucket": "digital_artist"
+    },
+    {
+      "username": "refikanadol",
+      "bucket": "digital_artist"
+    },
+    {
+      "username": "madewithrunway",
+      "bucket": "ai_tools"
+    },
+    {
+      "username": "avant.arte",
+      "bucket": "art_platform"
+    }
+  ],
+  "hashtags": [
+    "fashionfilm",
+    "artdirection",
+    "editorialdesign",
+    "aifashion",
+    "generativeart",
+    "digitalartist",
+    "conceptfilm",
+    "zine"
+  ],
+  "reelKeywords": [
+    "fashion film",
+    "AI fashion campaign",
+    "concept film",
+    "digital art",
+    "editorial zine",
+    "art direction"
+  ],
+  "normalizedCount": 652,
+  "selectedCount": 56
+}
