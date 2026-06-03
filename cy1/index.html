@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>成毅 x GAP Title 升级粉丝数据分析报告</title>
+  <meta name="description" content="成毅粉丝亚洲覆盖、消费信号与 GAP title 升级建议报告。">
+  <style>
+    :root {
+      --paper: #fbfaf6;
+      --surface: #ffffff;
+      --surface-soft: #f3f7f5;
+      --ink: #1d252f;
+      --muted: #66717f;
+      --line: #dce3e0;
+      --gap-blue: #0b3d91;
+      --teal: #0d867a;
+      --amber: #a56f14;
+      --rose: #a8423a;
+      --shadow: 0 14px 36px rgba(29, 37, 47, 0.08);
+      --radius: 8px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.68;
+      letter-spacing: 0;
+      background: var(--paper);
+    }
+
+    a {
+      color: var(--gap-blue);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(11, 61, 145, 0.24);
+    }
+
+    a:hover { border-bottom-color: var(--gap-blue); }
+
+    .wrap {
+      width: min(1120px, calc(100vw - 40px));
+      margin: 0 auto;
+    }
+
+    .masthead {
+      padding: 52px 0 34px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.96), rgba(239,247,243,0.94) 58%, rgba(248,241,231,0.9)),
+        var(--paper);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.78);
+      font-size: 13px;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .masthead h1 {
+      max-width: 880px;
+      margin: 18px 0 14px;
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 880px;
+      margin: 0;
+      color: #445060;
+      font-size: clamp(17px, 2vw, 20px);
+    }
+
+    .headline-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 18px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+
+    .recommendation,
+    .decision-note {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .recommendation strong,
+    .decision-note strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gap-blue);
+      font-size: 15px;
+    }
+
+    .recommendation p,
+    .decision-note p { margin: 0; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: rgba(251, 250, 246, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav .wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    .nav a {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border: 0;
+      border-radius: 6px;
+      color: #344152;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .nav a:hover {
+      color: var(--gap-blue);
+      background: var(--surface-soft);
+    }
+
+    section {
+      padding: 46px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: end;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .metric {
+      min-height: 128px;
+      padding: 18px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(29, 37, 47, 0.05);
+    }
+
+    .metric .value {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--gap-blue);
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 780;
+      line-height: 1;
+    }
+
+    .metric .label {
+      display: block;
+      color: #313d4c;
+      font-weight: 720;
+      line-height: 1.35;
+    }
+
+    .metric .hint {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 19px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .panel p { margin: 0 0 12px; }
+    .panel p:last-child { margin-bottom: 0; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      color: #334154;
+      border: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .evidence-list,
+    .plain-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .evidence-list li,
+    .plain-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .evidence-list li:last-child,
+    .plain-list li:last-child { border-bottom: 0; }
+
+    .quote {
+      margin: 18px 0 0;
+      padding: 18px 20px;
+      background: #f8f3ea;
+      border-left: 4px solid var(--amber);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: #443623;
+      font-weight: 650;
+    }
+
+    .bars {
+      display: grid;
+      gap: 12px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 132px 1fr 54px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .bar-label {
+      color: #314052;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .bar-track {
+      height: 12px;
+      background: #e5ebe8;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar-fill {
+      display: block;
+      width: calc(var(--p) * 1%);
+      height: 100%;
+      background: linear-gradient(90deg, var(--teal), var(--gap-blue));
+      border-radius: inherit;
+    }
+
+    .bar-value {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      font-weight: 650;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .region {
+      min-height: 166px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .region b {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+      color: #273545;
+      font-size: 16px;
+    }
+
+    .region b span {
+      color: var(--gap-blue);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .region p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .source {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .source strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #2c3948;
+    }
+
+    .source a {
+      display: inline-block;
+      margin: 3px 0;
+      font-size: 14px;
+    }
+
+    .callout {
+      padding: 20px 22px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(11, 61, 145, 0.26);
+      background: #f0f6ff;
+      color: #26384f;
+    }
+
+    .callout strong {
+      color: var(--gap-blue);
+    }
+
+    .foot {
+      padding: 26px 0 44px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .foot p { margin: 0; }
+
+    @media (max-width: 860px) {
+      .headline-grid,
+      .two-col,
+      .section-title,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title { align-items: start; }
+      .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .matrix { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(100vw - 28px, 1120px); }
+      .masthead { padding-top: 38px; }
+      .metric-grid,
+      .matrix { grid-template-columns: 1fr; }
+      .bar-row { grid-template-columns: 106px 1fr 44px; }
+      .recommendation,
+      .decision-note,
+      .panel,
+      .region,
+      .source { padding: 16px; }
+    }
+
+    @media print {
+      .nav { display: none; }
+      body { background: #fff; }
+      section, .masthead { break-inside: avoid; }
+      .metric, .panel, .region, .source, .recommendation, .decision-note { box-shadow: none; }
+      a { color: #000; border-bottom: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <span class="eyebrow">2026-06-03 采集与整理 · GAP title 升级材料</span>
+      <h1>成毅粉丝亚洲覆盖与消费转化数据分析</h1>
+      <p class="lead">用于支持将“GAP 中国品牌代言人”升级为“GAP 大中华区品牌代言人”，并同步争取亚太区 campaign title 的证据型汇报页。</p>
+
+      <div class="headline-grid">
+        <div class="recommendation">
+          <strong>主诉求</strong>
+          <p>立即升级为 <b>GAP 大中华区品牌代言人</b>。这一 title 与 Gap Inc. 大中华区业务结构、宝尊本地化运营，以及成毅粉丝在中国大陆、台北与跨境华语消费圈的自然覆盖最匹配。</p>
+        </div>
+        <div class="decision-note">
+          <strong>进阶诉求</strong>
+          <p>以 90 天为周期试点 <b>GAP 亚太区品牌活动代言人/品牌大使</b>，优先覆盖日本、韩国、泰国、新加坡、马来西亚、中国台湾与越南。</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="报告导航">
+    <div class="wrap">
+      <a href="#summary">核心指标</a>
+      <a href="#argument">title 论证</a>
+      <a href="#asia">亚洲覆盖</a>
+      <a href="#consumer">消费画像</a>
+      <a href="#actions">行动建议</a>
+      <a href="#sources">附件与来源</a>
+      <a href="#limits">限制说明</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="summary">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>核心指标</h2>
+          <p>微博公开样本由 MediaCrawler 于 2026-06-03 抓取。移动端对部分互动字段显示为 100万+，本页统一按下限处理。</p>
+        </div>
+
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="value">880万+</span>
+            <span class="label">GAP 官宣相关微博互动下限</span>
+            <span class="hint">点赞 680万+，评论与转发均按 100万+ 下限计。</span>
+          </div>
+          <div class="metric">
+            <span class="value">101</span>
+            <span class="label">去重后有效成毅相关微博</span>
+            <span class="hint">其中 GAP 相关 33 条，生日/应援相关 65 条。</span>
+          </div>
+          <div class="metric">
+            <span class="value">89%</span>
+            <span class="label">评论样本女性账号占比</span>
+            <span class="hint">公开评论 155 条中，女性账号 138 条，男性账号 17 条。</span>
+          </div>
+          <div class="metric">
+            <span class="value">12</span>
+            <span class="label">明确消费意向评论</span>
+            <span class="hint">包含加购、没货、购买链接、下单同款、到店购买等信号。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="argument">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>title 论证</h2>
+          <p>建议先用“低风险、强匹配”的大中华区 title 获得总部确认，再把亚太试点作为增长验证。</p>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <h3>为什么“大中华区”最稳</h3>
+            <ul class="evidence-list">
+              <li>Gap Inc. 已将中国大陆及香港业务交由宝尊以本地伙伴模式运营，并推进台湾相关过渡，Greater China 是总部能理解的业务单元。</li>
+              <li>宝尊 2026Q1 披露品牌管理业务增长受 GAP 品牌销售提升推动，说明总部会关注本地化传播与可转化声量。</li>
+              <li>微博样本显示，成毅相关线下场景覆盖上海、北京、杭州、深圳、重庆、成都、福州、镇江、台北等城市。</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>为什么可争取“亚太试点”</h3>
+            <ul class="evidence-list">
+              <li>生日应援与海外后援会线索已覆盖日本、韩国、泰国、新加坡、马来西亚、越南与中国台湾。</li>
+              <li>海外粉丝不只是转评赞，还会组织投屏、生日咖啡店、跨境巴士屏、应援车与祝福视频。</li>
+              <li>V-Pulse 对成毅海外热度的分析将泰国、越南和海外 superfan 社群列为重点，与微博样本互相印证。</li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="quote">总部话术：Cheng Yi’s current impact already exceeds a China-only title. Upgrading him to Greater China Brand Ambassador is a low-risk, strategically aligned step; piloting an APAC campaign title can further test regional sell-through with trackable commerce links.</p>
+      </div>
+    </section>
+
+    <section id="asia">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>亚洲覆盖</h2>
+          <p>区域命中数来自公开微博内容的关键词与文本聚合，适合证明覆盖与组织力，不直接等同销售额。</p>
+        </div>
+
+        <div class="bars" aria-label="地区命中数量条形图">
+          <div class="bar-row"><span class="bar-label">中国大陆</span><span class="bar-track"><span class="bar-fill" style="--p:100"></span></span><span class="bar-value">32</span></div>
+          <div class="bar-row"><span class="bar-label">多国应援</span><span class="bar-track"><span class="bar-fill" style="--p:63"></span></span><span class="bar-value">20</span></div>
+          <div class="bar-row"><span class="bar-label">马来西亚</span><span class="bar-track"><span class="bar-fill" style="--p:56"></span></span><span class="bar-value">18</span></div>
+          <div class="bar-row"><span class="bar-label">泰国</span><span class="bar-track"><span class="bar-fill" style="--p:50"></span></span><span class="bar-value">16</span></div>
+          <div class="bar-row"><span class="bar-label">韩国</span><span class="bar-track"><span class="bar-fill" style="--p:44"></span></span><span class="bar-value">14</span></div>
+          <div class="bar-row"><span class="bar-label">新加坡</span><span class="bar-track"><span class="bar-fill" style="--p:41"></span></span><span class="bar-value">13</span></div>
+          <div class="bar-row"><span class="bar-label">日本</span><span class="bar-track"><span class="bar-fill" style="--p:25"></span></span><span class="bar-value">8</span></div>
+          <div class="bar-row"><span class="bar-label">欧洲/法国</span><span class="bar-track"><span class="bar-fill" style="--p:13"></span></span><span class="bar-value">4</span></div>
+          <div class="bar-row"><span class="bar-label">台北</span><span class="bar-track"><span class="bar-fill" style="--p:9"></span></span><span class="bar-value">3</span></div>
+          <div class="bar-row"><span class="bar-label">越南</span><span class="bar-track"><span class="bar-fill" style="--p:6"></span></span><span class="bar-value">2</span></div>
+        </div>
+
+        <div class="matrix">
+          <div class="region"><b>中国大陆 <span>32</span></b><p>上海南京路、外滩、东方明珠、北京、杭州、深圳、重庆、成都、福州、镇江等城市线下场景。</p></div>
+          <div class="region"><b>日本 <span>8</span></b><p>东京、池袋 Hareza Vision 双屏、生贺剧宣应援，说明日语圈粉丝具备独立投放能力。</p></div>
+          <div class="region"><b>韩国 <span>14</span></b><p>首尔大屏、龙山站、弘大生日咖啡店，并与生日直播报道中的韩国粉丝来信互证。</p></div>
+          <div class="region"><b>泰国 <span>16</span></b><p>曼谷、Union Mall、泰国粉丝生日应援，与外部研究中的泰国热度相互印证。</p></div>
+          <div class="region"><b>新加坡 <span>13</span></b><p>新加坡粉丝 party，以及马来西亚柔佛至新加坡跨境巴士车载电视投放。</p></div>
+          <div class="region"><b>马来西亚 <span>18</span></b><p>生日与剧宣联合应援、跑步活动与城市影像传播，覆盖华语与东南亚消费圈。</p></div>
+          <div class="region"><b>中国台湾/台北 <span>3</span></b><p>台北生日应援车与大屏，适合支撑大中华区 title 的自然覆盖边界。</p></div>
+          <div class="region"><b>越南 <span>2</span></b><p>越南粉丝发帖与外部海外热度研究互证，可作为亚太试点的观察市场。</p></div>
+          <div class="region"><b>多国应援 <span>20</span></b><p>十国投屏、海外后援会、世界各地祝福视频，体现跨区自组织能力。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consumer">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>消费画像与粘性</h2>
+          <p>微博公开数据不适合推断精确年龄比例，因此本页采用“可验证行为 + 外部品牌案例”的稳妥表达。</p>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <h3>人群重合度</h3>
+            <p>广告门玫珂菲案例称成毅核心粉丝为 20-35 岁女性，购买力与粘性高；本次微博评论样本女性账号约 89%，同时可观察到白领、妈妈粉、家庭消费决策者等表达。</p>
+            <div class="tag-row">
+              <span class="tag">年轻女性</span>
+              <span class="tag">轻熟白领</span>
+              <span class="tag">妈妈粉</span>
+              <span class="tag">家庭衣橱</span>
+              <span class="tag">同款转化</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>购买与转化信号</h3>
+            <ul class="plain-list">
+              <li>“购物车都快满了”</li>
+              <li>“现在好多都没货了”</li>
+              <li>“我也买了这个礼盒”</li>
+              <li>“在哪里买，没看到购买链接”</li>
+              <li>“正赶上618大促，今天跑去 gap 买了五件”</li>
+              <li>“谁能忍住不下单同款”</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="actions">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>行动建议</h2>
+          <p>将粉丝自发组织力转化为品牌可归因增长，用数据降低总部对跨区 title 的决策风险。</p>
+        </div>
+
+        <div class="two-col">
+          <article class="panel">
+            <h3>title 路径</h3>
+            <ul class="evidence-list">
+              <li>第一步：提交“GAP 大中华区品牌代言人”申请，强调 Greater China 业务结构、台北及跨境华语覆盖。</li>
+              <li>第二步：同步申请“GAP 亚太区品牌活动代言人/品牌大使”90 天试点，覆盖重点 APAC 市场。</li>
+              <li>第三步：按地区设置 UTM、专属优惠码、landing page、线下大屏 QR 与地区社媒话题。</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>活动设计</h3>
+            <ul class="evidence-list">
+              <li>把应援从单纯投屏转为分散打卡、线上共创、城市穿搭挑战和公益衣物回收。</li>
+              <li>制作日文、韩文、泰文、英文、马来文/中文双语素材，降低区域传播门槛。</li>
+              <li>总部复盘时以地区 sell-through、会员新增、站内搜索、社媒互动和线下到店指标为准。</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>附件与来源</h2>
+          <p>页面保留本地报告、CSV 数据与公开来源入口，便于二次加工成 PPT 或提交给品牌团队核验。</p>
+        </div>
+
+        <div class="source-grid">
+          <div class="source">
+            <strong>本地报告</strong>
+            <a href="reports/成毅_GAP_title升级粉丝数据分析报告.md">完整 Markdown 报告</a><br>
+            <a href="reports/成毅_GAP_title升级_一页版.md">一页版摘要</a><br>
+            <a href="reports/source_registry.jsonl">来源登记 JSONL</a>
+          </div>
+
+          <div class="source">
+            <strong>数据附件</strong>
+            <a href="data/weibo_summary.json">微博统计摘要 JSON</a><br>
+            <a href="data/weibo_region_matrix.csv">亚洲覆盖矩阵 CSV</a><br>
+            <a href="data/weibo_top_notes.csv">高互动微博 CSV</a><br>
+            <a href="data/weibo_purchase_comment_signals.csv">消费信号评论 CSV</a><br>
+            <a href="data/weibo_top_comments.csv">高互动评论 CSV</a>
+          </div>
+
+          <div class="source">
+            <strong>核心公开来源</strong>
+            <a href="https://www.gapinc.com/en-hk/articles/2023/01/gap-china-update">Gap China Update</a><br>
+            <a href="https://www.prnewswire.com/news-releases/baozun-announces-first-quarter-2026-unaudited-financial-results-302777444.html">宝尊 2026Q1 财报新闻稿</a><br>
+            <a href="https://www.gapinc.com/en-do/articles/2026/05/gap-inc-reports-first-quarter-fiscal-2026-results%2C">Gap Inc. 2026Q1</a><br>
+            <a href="https://m.adquan.com/case2/detail-357928">广告门玫珂菲案例</a><br>
+            <a href="https://www.v-pulse.com/news/cheng-yis-overseas-triumph-the-secret-to-his-success-in-vietnam/">V-Pulse 海外分析</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>限制说明</h2>
+          <p>这一页适合作为争取 title 的证据型材料，但对外正式使用前建议用品牌后台或合规第三方数据补强。</p>
+        </div>
+
+        <div class="callout">
+          <p><strong>请按“公开样本分析”使用：</strong>微博抓取为小样本公开数据，不代表全量微博或全平台数据；公开字段不能可靠推断个人年龄；生日应援适合证明覆盖与组织力，不应直接等同于销售额；微博移动端部分互动字段显示为 100万+ 下限，不能当作精确数。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <p>部署目录：/Users/huangdong/Downloads/github/caixukun_zhihu/cy1 · 数据采集日期：2026-06-03 · 生成方式：公开来源研究 + MediaCrawler 微博公开样本聚合。</p>
+    </div>
+  </footer>
+</body>
+</html>
