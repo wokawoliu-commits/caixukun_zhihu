@@ -306,6 +306,106 @@
       .reveal { opacity: 1; transform: none; transition: none; }
       .button, .brand-tile { transition: none; }
     }
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      html, body {
+        background: #fff;
+      }
+
+      .skip-link {
+        display: none !important;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      .hero {
+        min-height: 255mm;
+        page-break-after: always;
+      }
+
+      .hero-inner {
+        padding: 24mm 0 18mm;
+      }
+
+      .hero-actions {
+        display: none;
+      }
+
+      .summary-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .shell {
+        max-width: none;
+        padding: 18px 24px 54px;
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .toc {
+        position: static;
+        max-height: none;
+        break-inside: avoid;
+      }
+
+      .toc ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2px 18px;
+      }
+
+      article {
+        max-width: none;
+        font-size: 14px;
+        line-height: 1.72;
+      }
+
+      article > * {
+        max-width: none;
+      }
+
+      article h2,
+      article h3,
+      .metric,
+      .brand-tile,
+      .source-note,
+      .table-wrap,
+      article table {
+        break-inside: avoid;
+      }
+
+      article table {
+        font-size: 12px;
+      }
+
+      article table th,
+      article table td {
+        padding: 8px 9px;
+        word-break: break-word;
+      }
+
+      .table-wrap {
+        overflow: visible;
+      }
+
+      .source-note {
+        max-width: none;
+        padding: 18px 24px 24px;
+      }
+    }
   </style>
 </head>
 <body>
