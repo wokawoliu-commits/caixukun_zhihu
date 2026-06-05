@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>森马三个月短代艺人推荐</title>
+    <style>
+      :root {
+        --ink: #17211b;
+        --muted: #66736c;
+        --line: #dbe4dc;
+        --paper: #f7f8f4;
+        --white: #ffffff;
+        --green: #12824c;
+        --green-dark: #0b5233;
+        --mint: #dff1e6;
+        --sky: #dcecf7;
+        --coral: #f26d5b;
+        --amber: #f2c64d;
+        --coal: #222826;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB",
+          "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid rgba(23, 33, 27, 0.12);
+        background: rgba(247, 248, 244, 0.92);
+        backdrop-filter: blur(12px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 14px 24px;
+      }
+
+      .brandmark {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+      }
+
+      .brand-dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 10px 0 0 var(--coral), 20px 0 0 var(--amber);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: var(--muted);
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .nav-links a:hover {
+        color: var(--green-dark);
+      }
+
+      .hero {
+        min-height: 92vh;
+        display: grid;
+        align-items: center;
+        grid-template-columns: minmax(0, 1.04fr) minmax(360px, 0.96fr);
+        gap: 42px;
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 58px 24px 46px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 7px 10px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--white);
+        color: var(--green-dark);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-top: 22px;
+        font-size: clamp(42px, 6vw, 78px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero-copy {
+        max-width: 650px;
+        margin-top: 22px;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 42px;
+        padding: 0 16px;
+        border: 1px solid var(--ink);
+        border-radius: 6px;
+        background: var(--ink);
+        color: var(--white);
+        font-size: 14px;
+        font-weight: 800;
+      }
+
+      .button.secondary {
+        border-color: var(--line);
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      .hero-note {
+        margin-top: 16px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .visual-board {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 260px 180px 170px;
+        gap: 12px;
+      }
+
+      .photo-tile {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #d9ded8;
+        border: 1px solid rgba(23, 33, 27, 0.08);
+      }
+
+      .photo-tile.large {
+        grid-row: span 2;
+      }
+
+      .photo-tile.wide {
+        grid-column: span 2;
+      }
+
+      .photo-tile::after {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        padding: 6px 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.88);
+        color: var(--ink);
+        font-size: 12px;
+        font-weight: 800;
+      }
+
+      .focus-left img {
+        object-position: left center;
+      }
+
+      .focus-right img {
+        object-position: right center;
+      }
+
+      .section {
+        border-top: 1px solid var(--line);
+        padding: 64px 24px;
+      }
+
+      .section.alt {
+        background: var(--white);
+      }
+
+      .inner {
+        max-width: 1180px;
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.84fr) minmax(280px, 0.58fr);
+        gap: 28px;
+        align-items: end;
+        margin-bottom: 28px;
+      }
+
+      h2 {
+        font-size: clamp(30px, 4vw, 52px);
+        line-height: 1.08;
+        letter-spacing: 0;
+      }
+
+      .section-head p,
+      .lead {
+        color: var(--muted);
+        line-height: 1.75;
+        font-size: 16px;
+      }
+
+      .rec-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 18px;
+      }
+
+      .rec-panel,
+      .mini-panel,
+      .artist-card,
+      .source-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .rec-panel {
+        padding: 28px;
+        background: var(--green-dark);
+        color: var(--white);
+      }
+
+      .rec-panel .label,
+      .mini-panel .label,
+      .artist-meta .label {
+        color: currentColor;
+        opacity: 0.74;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .rec-panel h3 {
+        margin-top: 12px;
+        font-size: clamp(30px, 4vw, 54px);
+        line-height: 1.02;
+      }
+
+      .rec-panel p {
+        margin-top: 16px;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 17px;
+        line-height: 1.7;
+      }
+
+      .rec-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 0 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.26);
+        background: rgba(255, 255, 255, 0.11);
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .mini-stack {
+        display: grid;
+        gap: 18px;
+      }
+
+      .mini-panel {
+        padding: 22px;
+      }
+
+      .mini-panel h3 {
+        margin-top: 10px;
+        font-size: 24px;
+      }
+
+      .mini-panel p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .mini-panel.accent {
+        background: var(--sky);
+      }
+
+      .mini-panel.warm {
+        background: #fff5dd;
+      }
+
+      .brand-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      .brand-item {
+        min-height: 170px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .brand-item strong {
+        display: block;
+        font-size: 22px;
+        line-height: 1.2;
+      }
+
+      .brand-item p {
+        margin-top: 12px;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 14px;
+      }
+
+      .artists {
+        display: grid;
+        gap: 24px;
+      }
+
+      .artist-card {
+        overflow: hidden;
+      }
+
+      .artist-layout {
+        display: grid;
+        grid-template-columns: minmax(360px, 0.92fr) minmax(0, 1.08fr);
+        min-height: 560px;
+      }
+
+      .artist-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 8px;
+        padding: 8px;
+        background: #e7ece6;
+      }
+
+      .artist-gallery .span {
+        grid-row: span 2;
+      }
+
+      .artist-gallery .wide {
+        grid-column: span 2;
+      }
+
+      .artist-body {
+        padding: 30px;
+      }
+
+      .artist-meta {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 18px;
+      }
+
+      .artist-meta h3 {
+        margin-top: 8px;
+        font-size: clamp(30px, 4vw, 48px);
+        line-height: 1.05;
+      }
+
+      .rank {
+        min-width: 76px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        background: var(--ink);
+        color: var(--white);
+        text-align: center;
+        font-weight: 900;
+      }
+
+      .rank span {
+        display: block;
+        font-size: 34px;
+        line-height: 1;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 14px 0 22px;
+      }
+
+      .tag {
+        padding: 7px 9px;
+        border-radius: 999px;
+        background: var(--mint);
+        color: var(--green-dark);
+        font-size: 12px;
+        font-weight: 900;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .text-block h4 {
+        margin: 0 0 9px;
+        font-size: 15px;
+      }
+
+      .text-block p,
+      .text-block li {
+        color: var(--muted);
+        line-height: 1.68;
+        font-size: 14px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .source-line {
+        margin-top: 22px;
+        padding-top: 18px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      .source-line a,
+      .source-card a,
+      .fineprint a {
+        color: var(--green-dark);
+        font-weight: 800;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .matrix {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .matrix th,
+      .matrix td {
+        padding: 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .matrix th {
+        background: #edf4ed;
+        font-size: 13px;
+        color: var(--green-dark);
+      }
+
+      .matrix td {
+        color: var(--muted);
+        line-height: 1.55;
+        font-size: 14px;
+      }
+
+      .matrix td strong {
+        color: var(--ink);
+      }
+
+      .score {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 2px;
+        color: var(--ink);
+        font-weight: 900;
+        font-size: 26px;
+      }
+
+      .score small {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .timeline {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .month {
+        min-height: 250px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--white);
+        padding: 22px;
+      }
+
+      .month .num {
+        width: 44px;
+        height: 44px;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--coal);
+        color: var(--white);
+        font-weight: 900;
+      }
+
+      .month h3 {
+        margin-top: 18px;
+        font-size: 24px;
+      }
+
+      .month p {
+        margin-top: 10px;
+        color: var(--muted);
+        line-height: 1.68;
+        font-size: 14px;
+      }
+
+      .sources {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .source-card {
+        padding: 18px;
+        min-height: 168px;
+      }
+
+      .source-card strong {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .source-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .fineprint {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 22px 24px 48px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.7;
+      }
+
+      @media (max-width: 960px) {
+        .hero,
+        .section-head,
+        .rec-grid,
+        .artist-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          padding-top: 34px;
+          min-height: auto;
+        }
+
+        .visual-board {
+          grid-template-rows: 220px 170px 160px;
+        }
+
+        .brand-grid,
+        .timeline,
+        .sources {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .artist-layout {
+          min-height: auto;
+        }
+
+        .artist-gallery {
+          min-height: 520px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .nav-links {
+          width: 100%;
+          overflow-x: auto;
+          padding-bottom: 4px;
+        }
+
+        .hero {
+          padding-left: 18px;
+          padding-right: 18px;
+        }
+
+        .visual-board,
+        .artist-gallery,
+        .content-grid,
+        .brand-grid,
+        .timeline,
+        .sources {
+          grid-template-columns: 1fr;
+        }
+
+        .visual-board {
+          grid-template-rows: repeat(4, 220px);
+        }
+
+        .photo-tile.large,
+        .photo-tile.wide,
+        .artist-gallery .span,
+        .artist-gallery .wide {
+          grid-column: auto;
+          grid-row: auto;
+        }
+
+        .artist-gallery {
+          min-height: auto;
+        }
+
+        .artist-gallery .photo-tile {
+          min-height: 240px;
+        }
+
+        .artist-body,
+        .rec-panel {
+          padding: 22px;
+        }
+
+        .matrix {
+          display: block;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <nav class="nav" aria-label="页面导航">
+        <a class="brandmark" href="#top" aria-label="回到顶部">
+          <span class="brand-dot" aria-hidden="true"></span>
+          森马短代推荐
+        </a>
+        <div class="nav-links">
+          <a href="#recommendation">推荐结论</a>
+          <a href="#brand">品牌口径</a>
+          <a href="#artists">艺人风格</a>
+          <a href="#matrix">对比评分</a>
+          <a href="#activation">三个月打法</a>
+          <a href="#sources">资料来源</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <span class="eyebrow">汇报版资料页｜2026.06.05</span>
+          <h1>森马三个月短代艺人推荐</h1>
+          <p class="hero-copy">
+            基于三组候选艺人的公开日常穿搭、机场街拍、品牌活动造型和森马“舒服、亲和、年轻、多场景”的品牌口径，建议以张康乐作为主推短代人选，星邱组合与 ONER 分别作为内容型、男团型备选。
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#recommendation">查看结论</a>
+            <a class="button secondary" href="#artists">看风格拆解</a>
+            <a class="button secondary" href="zhang-kangle.html">张康乐单页</a>
+            <a class="button secondary" href="xingqiu.html">星邱单页</a>
+            <a class="button secondary" href="oner.html">ONER 单页</a>
+          </div>
+          <p class="hero-note">
+            口径说明：本页用于艺人推荐汇报，未包含商务报价、档期、舆情尽调与合同排他条款。
+          </p>
+        </div>
+        <div class="visual-board" aria-label="候选艺人穿搭素材拼图">
+          <figure class="photo-tile large" data-label="张康乐｜街头羽绒">
+            <img src="assets/zhang-mlb.jpg" alt="张康乐街头羽绒造型" />
+          </figure>
+          <figure class="photo-tile" data-label="星邱｜双人穿搭">
+            <img src="assets/xingqiu-look-1.jpg" alt="黄星邱鼎杰双人穿搭素材" />
+          </figure>
+          <figure class="photo-tile" data-label="ONER｜群像造型">
+            <img src="assets/oner-brand-event.jpg" alt="ONER 群像活动造型" />
+          </figure>
+          <figure class="photo-tile wide" data-label="森马场景关键词：日常、通勤、轻户外">
+            <img src="assets/zhang-burberry-airport.jpg" alt="张康乐机场风衣造型" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section alt" id="recommendation">
+        <div class="inner">
+          <div class="section-head">
+            <h2>推荐结论</h2>
+            <p>
+              若本次短代目标是拉近森马与 18-35 岁年轻大众的生活距离，并带动夏末初秋的男装/中性化穿搭转化，首推张康乐。若目标更偏社媒话题和双人内容，再考虑星邱组合。
+            </p>
+          </div>
+
+          <div class="rec-grid">
+            <article class="rec-panel">
+              <div class="label">Primary recommendation</div>
+              <h3>首推张康乐</h3>
+              <p>
+                他的公开造型在“清爽少年感、街头运动、都市外套、牛仔单品”之间切换自然，既有时尚资源带来的拍摄完成度，又没有过强的高奢距离感。对森马而言，最关键的是他能把单品穿成可复制的日常状态，适合三个月短代快速落地同款、门店物料和社媒穿搭教程。
+              </p>
+              <div class="rec-badges" aria-label="张康乐推荐关键词">
+                <span class="badge">清爽亲和</span>
+                <span class="badge">牛仔外套适配</span>
+                <span class="badge">轻户外可延展</span>
+                <span class="badge">短代执行更集中</span>
+              </div>
+            </article>
+
+            <div class="mini-stack">
+              <article class="mini-panel accent">
+                <div class="label">Backup 01</div>
+                <h3>星邱组合</h3>
+                <p>
+                  优势在“双人日常”和约会/逛街内容，适合做城市搭子、情侣/朋友同款、配饰互动。但 CP 叙事容易盖过品牌，建议作为内容合作而非唯一短代主视觉。
+                </p>
+              </article>
+              <article class="mini-panel warm">
+                <div class="label">Backup 02</div>
+                <h3>ONER</h3>
+                <p>
+                  群像男团适合做多套 Lookbook 和男装场景扩列，身形和舞台感强。短板是公开穿搭素材口径偏早，当前三人团认知需要重新校准。
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="brand">
+        <div class="inner">
+          <div class="section-head">
+            <h2>森马品牌口径转译</h2>
+            <p>
+              森马官网将成人服饰定位为“大众日常生活方式品牌”，核心消费者为 18-35 岁大学生及年轻工薪群体。2025 年年报进一步强调日常休闲、都市通勤、轻户外三大场景，以及森柔牛仔、舒服裤、凉感 T、防晒服等心智产品。
+            </p>
+          </div>
+
+          <div class="brand-grid">
+            <article class="brand-item">
+              <strong>年轻大众</strong>
+              <p>
+                需要艺人自带年轻感和可亲近度，不能只停留在“精致大片”，要能进入校园、通勤、周末出行等真实消费场景。
+              </p>
+            </article>
+            <article class="brand-item">
+              <strong>舒服生活</strong>
+              <p>
+                候选人的日常穿搭要看起来松弛、轻便、好行动，适合承接森马“舒服体验品质生活”的消费心智。
+              </p>
+            </article>
+            <article class="brand-item">
+              <strong>多场景单品</strong>
+              <p>
+                短代不能只拍一张海报，需要能持续三个月拆出外套、牛仔、T 恤、裤装、防晒或轻户外系列。
+              </p>
+            </article>
+            <article class="brand-item">
+              <strong>品销同频</strong>
+              <p>
+                推荐标准以“可卖同款”为优先，兼顾社媒讨论。艺人风格越能被消费者复制，短代转化越清楚。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="artists">
+        <div class="inner">
+          <div class="section-head">
+            <h2>艺人穿搭与森马适配</h2>
+            <p>
+              以下拆解按“公开穿搭风格、森马产品映射、短代打法、风险控制”四个维度呈现，便于汇报时直接对应到品牌和商品。
+            </p>
+          </div>
+
+          <div class="artists">
+            <article class="artist-card">
+              <div class="artist-layout">
+                <div class="artist-gallery">
+                  <figure class="photo-tile span" data-label="MLB 街头羽绒">
+                    <img src="assets/zhang-mlb-puffer-1.jpg" alt="张康乐 MLB 羽绒穿搭" />
+                  </figure>
+                  <figure class="photo-tile" data-label="牛仔飞行员夹克">
+                    <img src="assets/zhang-denim.jpg" alt="张康乐牛仔飞行员夹克造型" />
+                  </figure>
+                  <figure class="photo-tile" data-label="机场风衣">
+                    <img src="assets/zhang-burberry-airport.jpg" alt="张康乐 Burberry 机场风衣造型" />
+                  </figure>
+                </div>
+                <div class="artist-body">
+                  <div class="artist-meta">
+                    <div>
+                      <div class="label">Candidate 01</div>
+                      <h3>张康乐</h3>
+                    </div>
+                    <div class="rank">推荐<span>1</span></div>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">清爽少年感</span>
+                    <span class="tag">都市外套</span>
+                    <span class="tag">牛仔与运动鞋</span>
+                    <span class="tag">轻户外可塑</span>
+                  </div>
+                  <div class="content-grid">
+                    <div class="text-block">
+                      <h4>穿搭观察</h4>
+                      <p>
+                        公开造型以利落外套、牛仔、黑白基础色、运动鞋和轻量配饰为主。MLB 造型体现街头羽绒和复古运动感，Burberry 机场图体现全黑风衣与围巾带来的都市冷感，南京活动的牛仔飞行员夹克更接近森马可卖单品。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>森马映射</h4>
+                      <ul>
+                        <li>森柔牛仔：牛仔夹克、牛仔裤、清爽初秋套装。</li>
+                        <li>舒服裤/凉感 T：机场与城市通勤的实穿组合。</li>
+                        <li>轻户外：软壳、薄外套、防晒服、换季羽绒。</li>
+                      </ul>
+                    </div>
+                    <div class="text-block">
+                      <h4>推荐理由</h4>
+                      <p>
+                        张康乐能在“时尚感”和“国民休闲”之间保持平衡，不会让森马显得过度高奢化。对三个月短代而言，单人形象集中、物料统一、同款货架和直播间口径更好打通。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>风险与控制</h4>
+                      <p>
+                        知名度仍需投放放大，建议把 KPI 放在新品曝光、同款点击、门店物料转化和小红书/抖音穿搭内容，而非全民级破圈。
+                      </p>
+                    </div>
+                  </div>
+                  <p class="source-line">
+                    素材参考：
+                    <a href="https://www.cosmopolitancn.com/cosmo/detail/44851" target="_blank" rel="noreferrer">时尚 COSMO｜张康乐成为 MLB 潮流品牌大使</a>、
+                    <a href="https://kandian.sina.cn/article_1301666333_4d95da1d027012n8a.html?from=fashion" target="_blank" rel="noreferrer">新浪看点｜Burberry 机场出发图</a>、
+                    <a href="https://www.sina.cn/news/detail/5280814007846314.html" target="_blank" rel="noreferrer">新浪｜南京 Burberry 活动造型</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="artist-card">
+              <div class="artist-layout">
+                <div class="artist-gallery">
+                  <figure class="photo-tile span" data-label="星邱双人穿搭">
+                    <img src="assets/xingqiu-look-1.jpg" alt="黄星邱鼎杰双人穿搭照片" />
+                  </figure>
+                  <figure class="photo-tile" data-label="日常镜头">
+                    <img src="assets/xingqiu-look-2.jpg" alt="星邱日常穿搭照片" />
+                  </figure>
+                  <figure class="photo-tile" data-label="白西装活动">
+                    <img src="assets/xingqiu-white-suit.jpg" alt="黄星邱鼎杰白西装活动造型" />
+                  </figure>
+                </div>
+                <div class="artist-body">
+                  <div class="artist-meta">
+                    <div>
+                      <div class="label">Candidate 02</div>
+                      <h3>星邱组合</h3>
+                    </div>
+                    <div class="rank">推荐<span>2</span></div>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">双人日常</span>
+                    <span class="tag">约会/逛街</span>
+                    <span class="tag">互动内容强</span>
+                    <span class="tag">搭子同款</span>
+                  </div>
+                  <div class="content-grid">
+                    <div class="text-block">
+                      <h4>穿搭观察</h4>
+                      <p>
+                        星邱的亮点不是单个高定造型，而是两个人在日常 Vlog、逛街、配饰互动和活动双人造型里的生活感。公开内容里反复出现“舒服日常、一起出门、慢慢逛街”的叙事，非常适合社媒短视频。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>森马映射</h4>
+                      <ul>
+                        <li>双人同款：T 恤、衬衫、舒服裤、薄外套。</li>
+                        <li>搭子穿搭：同色系、互补色、配饰小物。</li>
+                        <li>城市生活：早餐、逛街、city walk、旅行轻装。</li>
+                      </ul>
+                    </div>
+                    <div class="text-block">
+                      <h4>推荐理由</h4>
+                      <p>
+                        如果森马希望三个月内快速制造“好嗑、好穿、好拍”的内容资产，星邱的双人关系和粉丝二创动力会更强，适合做“舒服出门搭子”系列。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>风险与控制</h4>
+                      <p>
+                        CP 叙事可能比品牌更抢眼，且受粉圈讨论影响较大。建议合同命名为“短期品牌好友/合作搭档”，主视觉避免过度亲密绑定，把重点放在双人穿搭场景。
+                      </p>
+                    </div>
+                  </div>
+                  <p class="source-line">
+                    素材参考：
+                    <a href="https://www.sina.cn/news/detail/5291728778036424.html" target="_blank" rel="noreferrer">新浪｜黄星邱鼎杰星选穿搭</a>、
+                    <a href="https://www.sina.cn/news/detail/5300438444544358.html" target="_blank" rel="noreferrer">新浪｜黄星邱鼎杰约会日常记录</a>、
+                    <a href="https://kandian.sina.cn/article_5601456932_14ddf732404002g84g.html?from=fashion" target="_blank" rel="noreferrer">新浪看点｜双人白西装直播造型</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <article class="artist-card">
+              <div class="artist-layout">
+                <div class="artist-gallery">
+                  <figure class="photo-tile wide" data-label="ONER 早期群像素材">
+                    <img src="assets/oner-brand-event.jpg" alt="ONER 群像品牌活动造型" />
+                  </figure>
+                  <figure class="photo-tile focus-left" data-label="男团 Lookbook">
+                    <img src="assets/oner-brand-event.jpg" alt="ONER 男团造型局部" />
+                  </figure>
+                  <figure class="photo-tile focus-right" data-label="多风格男装">
+                    <img src="assets/oner-brand-event.jpg" alt="ONER 多风格男装造型局部" />
+                  </figure>
+                </div>
+                <div class="artist-body">
+                  <div class="artist-meta">
+                    <div>
+                      <div class="label">Candidate 03</div>
+                      <h3>ONER</h3>
+                    </div>
+                    <div class="rank">推荐<span>3</span></div>
+                  </div>
+                  <div class="tag-row">
+                    <span class="tag">男团群像</span>
+                    <span class="tag">男模比例</span>
+                    <span class="tag">多套造型</span>
+                    <span class="tag">音乐活动适配</span>
+                  </div>
+                  <div class="content-grid">
+                    <div class="text-block">
+                      <h4>穿搭观察</h4>
+                      <p>
+                        公开街拍资料呈现飞行员夹克、运动套装、针织衫、破洞裤、白色长裤等不同男装风格，成员身形和舞台感能支撑多套 Lookbook。群像强，适合把一个系列拆成多种男装人格。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>森马映射</h4>
+                      <ul>
+                        <li>男装系列拍摄：运动、通勤、校园、潮流四套组合。</li>
+                        <li>线下路演：音乐节、商场快闪、校园活动。</li>
+                        <li>货架陈列：一组人带出多套同款，方便店内分区。</li>
+                      </ul>
+                    </div>
+                    <div class="text-block">
+                      <h4>推荐理由</h4>
+                      <p>
+                        若森马本次想强化男装阵列，ONER 的群像更利于展示品类宽度。但作为三个月短代主推，人群聚焦和当前热度不如张康乐清楚。
+                      </p>
+                    </div>
+                    <div class="text-block">
+                      <h4>风险与控制</h4>
+                      <p>
+                        公开可引用的穿搭图偏早，且 ONER 当前为三人团，需在汇报和合同口径中明确成员配置；正式物料建议重拍当前成员版本。可用于男装 Lookbook 或快闪嘉宾，不建议作为唯一主代。
+                      </p>
+                    </div>
+                  </div>
+                  <p class="source-line">
+                    素材参考：
+                    <a href="https://www.jiepai.net/88327.html" target="_blank" rel="noreferrer">尚街拍｜ONER 机场街拍</a>、
+                    <a href="https://k.sina.cn/article_7054756821_p1a47f0bd500100islc.html" target="_blank" rel="noreferrer">新浪｜ONER 品牌活动造型</a>、
+                    <a href="https://www.cpophome.com/oner-members-profile/" target="_blank" rel="noreferrer">CPOP HOME｜ONER 当前成员资料</a>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="matrix">
+        <div class="inner">
+          <div class="section-head">
+            <h2>对比评分</h2>
+            <p>
+              评分为提案判断口径，用于横向比较三组候选人，不代表商业报价或最终合作确定性。权重偏向森马短代最关键的“品牌亲和、商品转化、三个月内容连续性”。
+            </p>
+          </div>
+
+          <table class="matrix" aria-label="候选艺人对比评分表">
+            <thead>
+              <tr>
+                <th>候选</th>
+                <th>综合分</th>
+                <th>最适合的森马任务</th>
+                <th>核心优势</th>
+                <th>主要风险</th>
+                <th>建议身份</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>张康乐</strong></td>
+                <td><span class="score">90<small>/100</small></span></td>
+                <td>森柔牛仔、舒服裤、外套、防晒/轻户外的三个月主线。</td>
+                <td>年轻、清爽、可复制，有街头和都市外套的时尚完成度，单人短代执行集中。</td>
+                <td>大众破圈需投放和平台内容放大，粉丝规模不宜被过度承诺。</td>
+                <td><strong>三个月短代主推</strong></td>
+              </tr>
+              <tr>
+                <td><strong>星邱组合</strong></td>
+                <td><span class="score">82<small>/100</small></span></td>
+                <td>双人同款、城市搭子、约会/逛街、配饰与轻便出行内容。</td>
+                <td>互动自然，社媒话题和二创动力强，适合做短视频连续内容。</td>
+                <td>CP 叙事可能抢走品牌焦点，舆论和粉圈讨论需要更细管理。</td>
+                <td><strong>内容型备选</strong></td>
+              </tr>
+              <tr>
+                <td><strong>ONER</strong></td>
+                <td><span class="score">72<small>/100</small></span></td>
+                <td>男装多造型 Lookbook、音乐节/快闪、校园或商场男装专区。</td>
+                <td>群像丰富，身形条件好，能一次展示多种男装风格。</td>
+                <td>公开穿搭素材时间差较大，当前三人团认知需重新教育。</td>
+                <td><strong>男团型备选</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section alt" id="activation">
+        <div class="inner">
+          <div class="section-head">
+            <h2>三个月执行打法</h2>
+            <p>
+              以下以张康乐为主推对象设计，适合森马从“舒服好穿”延展到“年轻人真的愿意照着穿”。如改用星邱或 ONER，可保留阶段逻辑，替换为双人或群像内容。
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="month">
+              <div class="num">01</div>
+              <h3>首月：舒服出门</h3>
+              <p>
+                主推凉感 T、舒服裤、防晒服。拍摄城市通勤、机场出发、周末散步三套内容，关键词是“早八到下班都舒服”。张康乐负责把基础单品穿出干净少年感。
+              </p>
+            </article>
+            <article class="month">
+              <div class="num">02</div>
+              <h3>次月：森柔牛仔</h3>
+              <p>
+                主推牛仔夹克、牛仔裤、薄衬衫。用“牛仔一套，三种场景”做小红书图文、抖音短片和门店橱窗，强化森马的年轻化与高颜值。
+              </p>
+            </article>
+            <article class="month">
+              <div class="num">03</div>
+              <h3>收官：轻户外换季</h3>
+              <p>
+                主推软壳、薄外套、针织或换季羽绒。内容从城市延伸到郊游、露营、音乐节，完成从“日常穿”到“出去玩也穿”的场景闭环。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sources">
+        <div class="inner">
+          <div class="section-head">
+            <h2>资料来源</h2>
+            <p>
+              本页图片与风格描述来自公开网页素材，页面内已在各艺人模块标注出处。以下为品牌与艺人核心参考资料。
+            </p>
+          </div>
+
+          <div class="sources">
+            <article class="source-card">
+              <strong>森马品牌与业务口径</strong>
+              <p>
+                <a href="https://www.semir.com/index.html" target="_blank" rel="noreferrer">森马集团官网</a>：成人服饰定位为大众日常生活方式品牌，面向 18-35 岁大学生及年轻工薪群体。<br />
+                <a href="https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-31/dcc46cfb-850d-4672-b681-7aa559abb75b.PDF" target="_blank" rel="noreferrer">2025 年年度报告</a>：日常休闲、都市通勤、轻户外三大场景及心智产品。
+              </p>
+            </article>
+            <article class="source-card">
+              <strong>张康乐穿搭素材</strong>
+              <p>
+                <a href="https://www.cosmopolitancn.com/cosmo/detail/44851" target="_blank" rel="noreferrer">时尚 COSMO MLB 品牌大使报道</a><br />
+                <a href="https://kandian.sina.cn/article_1301666333_4d95da1d027012n8a.html?from=fashion" target="_blank" rel="noreferrer">Burberry 机场图报道</a><br />
+                <a href="https://www.sina.cn/news/detail/5280814007846314.html" target="_blank" rel="noreferrer">南京 Burberry 活动造型</a>
+              </p>
+            </article>
+            <article class="source-card">
+              <strong>星邱组合穿搭素材</strong>
+              <p>
+                <a href="https://www.sina.cn/news/detail/5291728778036424.html" target="_blank" rel="noreferrer">星选穿搭</a><br />
+                <a href="https://www.sina.cn/news/detail/5300438444544358.html" target="_blank" rel="noreferrer">520 约会日常记录</a><br />
+                <a href="https://kandian.sina.cn/article_5601456932_14ddf732404002g84g.html?from=fashion" target="_blank" rel="noreferrer">白西装直播造型</a>
+              </p>
+            </article>
+            <article class="source-card">
+              <strong>ONER 穿搭与成员资料</strong>
+              <p>
+                <a href="https://www.jiepai.net/88327.html" target="_blank" rel="noreferrer">尚街拍机场穿搭</a><br />
+                <a href="https://k.sina.cn/article_7054756821_p1a47f0bd500100islc.html" target="_blank" rel="noreferrer">新浪品牌活动造型图集</a><br />
+                <a href="https://www.cpophome.com/oner-members-profile/" target="_blank" rel="noreferrer">CPOP HOME 成员资料</a>
+              </p>
+            </article>
+            <article class="source-card">
+              <strong>图片使用说明</strong>
+              <p>
+                图片仅作为内部推荐汇报中的公开资料参考和风格识别，不用于商业发布成品。正式对外投放需另行取得艺人、摄影及平台授权。
+              </p>
+            </article>
+            <article class="source-card">
+              <strong>结论口径</strong>
+              <p>
+                推荐排序基于公开素材、品牌场景适配、短代执行效率和内容风险控制的综合判断。正式签约前建议补充报价、档期、竞品排他、舆情及粉丝画像数据。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="fineprint">
+      制作口径：本资料页为森马三个月短代人选推荐草案。建议主推张康乐，备选星邱组合与 ONER。所有外链与图片来源截至 2026 年 6 月 5 日可公开访问。
+    </footer>
+  </body>
+</html>
