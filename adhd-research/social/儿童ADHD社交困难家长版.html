@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>儿童 ADHD 社交困难家长版说明</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1f2933;
+      --muted: #5e6c7a;
+      --soft: #f6f2ea;
+      --paper: #fffdf8;
+      --line: #ded6c9;
+      --green: #1f766b;
+      --green-soft: #e7f3ef;
+      --blue: #2f6f9f;
+      --blue-soft: #e9f3fb;
+      --gold: #9a6b18;
+      --gold-soft: #fff3d6;
+      --rose: #9b4141;
+      --rose-soft: #fae8e6;
+      --shadow: 0 18px 42px rgba(42, 34, 22, .10);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+      background:
+        linear-gradient(180deg, rgba(31,118,107,.08), transparent 360px),
+        var(--soft);
+    }
+
+    .page {
+      width: min(1080px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 34px 0 64px;
+    }
+
+    header {
+      padding: 34px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--green);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 880px;
+      font-size: 34px;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      margin: 18px 0 0;
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 16px 18px;
+      background: var(--blue-soft);
+      border-left: 5px solid var(--blue);
+      border-radius: var(--radius);
+      color: #24485d;
+    }
+
+    nav {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--green);
+      text-decoration: none;
+      padding: 8px 12px;
+      border: 1px solid rgba(31, 118, 107, .25);
+      border-radius: 999px;
+      background: #fff;
+      font-weight: 650;
+      font-size: 14px;
+    }
+
+    section {
+      margin-top: 26px;
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(42, 34, 22, .06);
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-size: 24px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 24px 0 10px;
+      font-size: 18px;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .pill-card {
+      padding: 18px;
+      background: var(--green-soft);
+      border: 1px solid rgba(31, 118, 107, .18);
+      border-radius: var(--radius);
+    }
+
+    .pill-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #155d55;
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 28px;
+      margin-right: 8px;
+      border-radius: 999px;
+      background: var(--gold-soft);
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 14px;
+      vertical-align: 1px;
+    }
+
+    .plain-list {
+      margin: 12px 0 0;
+      padding-left: 20px;
+    }
+
+    .plain-list li {
+      margin: 8px 0;
+    }
+
+    .checklist {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 18px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 30px;
+    }
+
+    .checklist li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .55em;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--green);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    .stage {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .stage:first-of-type {
+      border-top: 0;
+    }
+
+    .stage b {
+      color: var(--blue);
+    }
+
+    .warning {
+      background: var(--rose-soft);
+      border-left: 5px solid var(--rose);
+      padding: 16px 18px;
+      border-radius: var(--radius);
+      margin-top: 14px;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .step {
+      counter-increment: step;
+      position: relative;
+      padding: 16px 18px 16px 56px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    .step::before {
+      content: counter(step);
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+      text-align: center;
+      line-height: 26px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 13px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+
+    th {
+      background: var(--gold-soft);
+      color: #63430d;
+      font-weight: 800;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    details {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .footer {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 780px) {
+      .page {
+        width: min(100% - 22px, 1080px);
+        padding-top: 18px;
+      }
+
+      header,
+      section {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .lead {
+        font-size: 16px;
+      }
+
+      .summary,
+      .grid,
+      .checklist {
+        grid-template-columns: 1fr;
+      }
+
+      .stage {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <p class="eyebrow">给家长看的大白话版</p>
+      <h1>ADHD 孩子的社交困难，不只是“不懂礼貌”或“不合群”</h1>
+      <p class="lead">
+        这份页面把原来的专业文献综述改成家长容易读懂的版本。它想说明一件事：
+        很多 ADHD 孩子不是不想交朋友，而是在真实互动里太容易“跟不上节奏”。
+      </p>
+      <div class="notice">
+        <strong>先说重点：</strong>
+        下面内容不能替代医生诊断，也不是让家长自己给孩子贴标签。它更适合作为观察孩子、和老师沟通、决定是否求助专业人员的参考。
+      </div>
+      <nav aria-label="页面目录">
+        <a href="#quick">三句话看懂</a>
+        <a href="#looks">常见表现</a>
+        <a href="#types">不同孩子不一样</a>
+        <a href="#age">不同年龄</a>
+        <a href="#observe">家长观察清单</a>
+        <a href="#help">怎么帮</a>
+      </nav>
+    </header>
+
+    <section id="quick">
+      <h2>三句话看懂这件事</h2>
+      <div class="summary">
+        <div class="pill-card">
+          <strong>1. 社交困难很常见</strong>
+          ADHD 孩子更容易遇到朋友少、被排斥、被误会、被欺负、聊天接不上等问题。这不是小问题，也不是个别孩子才会有。
+        </div>
+        <div class="pill-card">
+          <strong>2. 问题常常不是“不会”</strong>
+          很多孩子知道要排队、要轮流、不能插嘴，但一到真实场景就做不到。这更像“现场发挥失控”，不是单纯没学过。
+        </div>
+        <div class="pill-card">
+          <strong>3. 光教道理通常不够</strong>
+          只告诉孩子“你要好好说话”“你要交朋友”帮助有限。更有效的是家长、老师、同伴环境和专业支持一起配合。
+        </div>
+      </div>
+    </section>
+
+    <section id="looks">
+      <h2>ADHD 孩子的社交困难，平时可能长什么样？</h2>
+      <p>
+        家长最容易看到的是孩子“跟别人玩不到一起”。但仔细拆开看，背后常常有几类不同困难。
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3><span class="tag">1</span>读不懂别人当下的意思</h3>
+          <p>
+            比如同学已经不耐烦了，他还继续讲；别人只是开玩笑，他当真生气；老师委婉提醒，他没听出“该停了”。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span class="tag">2</span>轮流、等待、刹车很难</h3>
+          <p>
+            常见表现是抢话、插队、打断游戏规则、别人还没说完就接话。孩子未必故意捣乱，而是刹车系统慢半拍。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span class="tag">3</span>朋友少，友谊不稳</h3>
+          <p>
+            有些孩子一开始很热情，但很快因为冲动、情绪爆发、说话太直接或总忘规则，被同伴慢慢疏远。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span class="tag">4</span>更容易被排挤或被欺负</h3>
+          <p>
+            研究里反复看到：ADHD 孩子被同伴取笑、排除在游戏外、成为霸凌对象的风险更高。家长不要只问“你有没有欺负别人”，也要问“有没有人总是欺负你”。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span class="tag">5</span>聊天和表达容易“跑偏”</h3>
+          <p>
+            孩子可能开话题很突然、讲故事没头没尾、默认别人知道背景、听不懂潜台词，或者很难把一件事说清楚。
+          </p>
+        </div>
+        <div class="card">
+          <h3><span class="tag">6</span>越大越怕被拒绝</h3>
+          <p>
+            到青春期后，有些孩子会变得很敏感：别人没回消息、眼神不对、没叫他一起玩，他就觉得“他们讨厌我”。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="types">
+      <h2>不同 ADHD 孩子的社交问题，不一定是同一种</h2>
+      <p>
+        家长常说“ADHD 孩子都很冲”。其实不一定。有些孩子是明显冲动，有些孩子更像慢半拍、游离、跟不上。
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>孩子的样子</th>
+            <th>社交中常见困难</th>
+            <th>家长可以怎么理解</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>不专心更多</td>
+            <td>容易漏听规则、没注意别人表情、游戏中反应慢、聊天接不上。</td>
+            <td>不是不在乎朋友，而是经常没抓住关键线索。</td>
+          </tr>
+          <tr>
+            <td>过动、冲动更多</td>
+            <td>抢话、插手别人游戏、等不了、情绪上来太快，容易和同伴发生正面冲突。</td>
+            <td>不是一定想惹事，而是“想法到动作”之间缺少缓冲。</td>
+          </tr>
+          <tr>
+            <td>混合型</td>
+            <td>既容易漏信息，也容易冲出去做，社交失败可能更频繁。</td>
+            <td>需要同时帮孩子补“看清现场”和“刹住动作”两件事。</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>共病会让社交画像更复杂</h3>
+      <p>
+        如果孩子还合并对立违抗、品行问题、自闭谱系特征、焦虑、语言或学习困难，社交问题往往会更重，也会换一种样子。
+      </p>
+      <ul class="plain-list">
+        <li><strong>合并对立违抗或品行问题：</strong>更容易把别人理解成“故意针对我”，冲突升级更快。</li>
+        <li><strong>合并自闭谱系特征：</strong>社交沟通、理解暗示、来回对话会更吃力。</li>
+        <li><strong>合并焦虑：</strong>孩子可能更怕出错、更怕被拒绝，也可能越紧张越表现不好。</li>
+        <li><strong>合并语言或学习困难：</strong>孩子可能不是不想表达，而是真的组织语言、讲清楚事情很难。</li>
+      </ul>
+    </section>
+
+    <section id="age">
+      <h2>不同年龄段，社交困难会换一种样子</h2>
+      <div class="stage">
+        <b>学前期</b>
+        <div>
+          <p>
+            问题常表现为玩游戏不等人、轮流困难、情绪爆发后不会修复、听不懂简单规则。这个阶段不一定已经明显“没朋友”，但社交基础能力已经能看出端倪。
+          </p>
+        </div>
+      </div>
+      <div class="stage">
+        <b>小学期</b>
+        <div>
+          <p>
+            这是社交困难最容易暴露的阶段。课堂、小组任务、课间游戏都要求孩子同时做到听规则、等轮流、控制冲动、读懂别人反应。很多 ADHD 孩子就是在这里反复受挫。
+          </p>
+        </div>
+      </div>
+      <div class="stage">
+        <b>青春期</b>
+        <div>
+          <p>
+            朋友关系变得更复杂，孩子更在意评价，也更容易因为被拒绝、被冷落、被排除而受伤。这个阶段要特别关注孤立、霸凌、焦虑和抑郁信号。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="observe">
+      <h2>家长可以先观察这些信号</h2>
+      <p>
+        不需要一次全查完。你可以拿这份清单和老师一起对照，看看孩子在家、学校、课间、兴趣班是不是表现一致。
+      </p>
+      <ul class="checklist">
+        <li>孩子是否经常说“没人愿意跟我玩”？</li>
+        <li>是否经常被同学告状、排斥、起外号、故意不带他？</li>
+        <li>是否知道规则，但真正玩起来总忘？</li>
+        <li>是否很难等待、轮流、控制插话？</li>
+        <li>是否常常误会别人的表情、语气或玩笑？</li>
+        <li>是否讲故事跳跃，别人听不明白？</li>
+        <li>是否一被拒绝就情绪崩溃，或回家反复想？</li>
+        <li>是否在学校比在家困难明显得多？</li>
+        <li>是否有焦虑、抑郁、睡眠差、食欲变化等伴随问题？</li>
+        <li>是否有语言、阅读、写作或学习上的明显困难？</li>
+      </ul>
+      <div class="warning">
+        <strong>需要尽快处理的情况：</strong>
+        如果孩子持续被霸凌、开始拒学、明显孤立、经常说自己没用、不想活，或者出现自伤念头，请尽快联系学校心理老师、儿童精神科、发育行为儿科或当地危机干预资源。
+      </div>
+    </section>
+
+    <section id="help">
+      <h2>那家长到底能怎么帮？</h2>
+      <p>
+        一个实用原则是：不要只问“孩子懂不懂道理”，要问“孩子在哪个环节卡住了”。卡点不一样，帮法也不一样。
+      </p>
+      <div class="steps">
+        <div class="step">
+          <strong>先找失败环节，而不是先批评性格。</strong>
+          观察孩子是没听懂规则、没看懂表情、太急着插话、情绪刹不住，还是被别人长期排挤。问题越具体，越容易帮。
+        </div>
+        <div class="step">
+          <strong>把社交技巧放回真实场景里练。</strong>
+          只在家里讲“你要有礼貌”很难迁移。可以在玩桌游、排队、约同学来家里、兴趣班活动中练“等一下”“换你说”“我刚才误会了”等小动作。
+        </div>
+        <div class="step">
+          <strong>和老师建立同一套提示语言。</strong>
+          例如老师用简短暗号提醒“暂停一下”“看对方脸”“等他说完”，比当众批评更有用。提示要短、及时、可重复。
+        </div>
+        <div class="step">
+          <strong>帮孩子保住一两个稳定朋友。</strong>
+          不必一上来追求“全班都喜欢”。先帮助孩子维持一段安全、低压力、可预测的友谊，常常比参加很多社交训练班更现实。
+        </div>
+        <div class="step">
+          <strong>把霸凌当成重点排查项。</strong>
+          有些孩子不会主动说被欺负，只会表现为发脾气、拒学、肚子疼、睡不好。家长要温和、具体地问：“有没有人总是不让你加入？”“有没有人拿你开玩笑，你不舒服？”
+        </div>
+        <div class="step">
+          <strong>必要时处理核心症状和共病。</strong>
+          药物、行为干预、语言治疗、心理治疗、家长训练、学校支持都可能是拼图的一部分。药物可能帮助孩子更能刹车、更能听进去，但通常不能单独“修好朋友关系”。
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>家长最容易踩的几个坑</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>坑一：只说“你要合群一点”</h3>
+          <p>
+            对孩子来说，这句话太大了。更有用的是拆成具体动作：先看对方，等他说完，再说一句和话题有关的话。
+          </p>
+        </div>
+        <div class="card">
+          <h3>坑二：只让孩子道歉</h3>
+          <p>
+            道歉很重要，但如果孩子不知道下次怎么做，下一次还会重复。道歉后要补一句“下次我先问你能不能加入”。
+          </p>
+        </div>
+        <div class="card">
+          <h3>坑三：把所有问题都归为“不听话”</h3>
+          <p>
+            ADHD 的社交困难常常和工作记忆、冲动控制、语言组织、情绪调节有关。只靠惩罚，往往只能让孩子更挫败。
+          </p>
+        </div>
+        <div class="card">
+          <h3>坑四：忽略孩子被排挤</h3>
+          <p>
+            有些孩子看起来像“总惹事”，其实也可能长期被嘲笑、被排除、被挑衅。先弄清楚同伴环境，再谈责任和训练。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>一个简单的一周行动方案</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>时间</th>
+            <th>家长可以做什么</th>
+            <th>目的</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>第 1 天</td>
+            <td>问老师三个具体问题：孩子课间和谁玩？最常冲突发生在哪里？有没有被排挤或被欺负？</td>
+            <td>先拿到真实场景信息。</td>
+          </tr>
+          <tr>
+            <td>第 2 天</td>
+            <td>和孩子复盘一个小场景，只问“当时发生了什么”，先不急着讲道理。</td>
+            <td>降低防御，让孩子愿意说。</td>
+          </tr>
+          <tr>
+            <td>第 3 天</td>
+            <td>选一个最小动作练习，例如“等别人说完再接一句”。</td>
+            <td>把抽象社交变成可练习动作。</td>
+          </tr>
+          <tr>
+            <td>第 4 天</td>
+            <td>和老师约定一个课堂或课间提示暗号。</td>
+            <td>让孩子在真正需要时得到提醒。</td>
+          </tr>
+          <tr>
+            <td>第 5 天</td>
+            <td>安排一次低压力互动，例如和一个相对友善的同学短时间一起玩。</td>
+            <td>创造成功经验，而不是只纠错。</td>
+          </tr>
+          <tr>
+            <td>周末</td>
+            <td>复盘本周一个做得好的点，告诉孩子“你哪里进步了”。</td>
+            <td>让孩子看到自己不是“社交失败者”。</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>给家长的一句安慰，也是一句提醒</h2>
+      <p>
+        ADHD 孩子的社交困难，很多时候不是孩子“坏”“自私”“没教养”。他们可能真心想融入，却在注意、冲动、语言、情绪和同伴反馈里反复摔跤。
+      </p>
+      <p>
+        但也不要因为“他不是故意的”就放任问题继续。最好的支持，是既理解孩子的难处，也一步一步教他在真实关系里学会停一下、看一看、听一听、补一句、修复一次。
+      </p>
+
+      <details>
+        <summary>这份家长版主要改写自哪些专业结论？</summary>
+        <p>
+          原报告依据近十年关于儿童与青少年 ADHD 社交功能的系统综述、Meta 分析、队列研究和病例对照研究。家长版保留了这些核心方向：
+        </p>
+        <ul class="plain-list">
+          <li>ADHD 儿童在同伴关系、日常社交技巧、心智理论、情绪识别和语用语言方面更容易受损。</li>
+          <li>同伴排斥、霸凌受害、朋友少、友谊质量差是需要主动询问的现实问题。</li>
+          <li>不专心型和冲动型的社交困难样子不同，不能一概而论。</li>
+          <li>焦虑、ASD 特征、ODD/CD、语言和学习困难会改变社交问题的严重度和表现。</li>
+          <li>单纯社交技巧训练证据有限，更需要家庭、学校、同伴环境和专业治疗的组合支持。</li>
+        </ul>
+        <p>
+          原报告中提到的代表性研究包括 Ros et al., 2018；Bora &amp; Pantelis, 2016；Haza et al., 2024；Carruthers et al., 2022；Kessler &amp; Ikuta, 2023；Spender et al., 2023；Storebø et al., 2019；Cordier et al., 2018；Mikami et al., 2020 等。
+        </p>
+      </details>
+    </section>
+
+    <p class="footer">
+      生成文件：儿童ADHD社交困难家长版.html。建议用浏览器打开阅读，也可以打印给家长或老师讨论。
+    </p>
+  </main>
+</body>
+</html>
