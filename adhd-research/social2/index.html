@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADHD 孩子社交能力提高：家长大白话版</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17222b;
+      --muted: #596775;
+      --paper: #fffdf8;
+      --wash: #f5f7f4;
+      --line: #d8dfd8;
+      --green: #17735d;
+      --green-soft: #e5f3ee;
+      --blue: #2a6f9e;
+      --blue-soft: #e7f1f8;
+      --amber: #a26313;
+      --amber-soft: #fff0d4;
+      --rose: #a34350;
+      --rose-soft: #fae6e8;
+      --violet: #6857a6;
+      --violet-soft: #eeeafd;
+      --radius: 8px;
+      --shadow: 0 12px 32px rgba(23, 34, 43, .08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.78;
+      background: var(--paper);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 560px;
+      color: #ffffff;
+      background:
+        linear-gradient(90deg, rgba(13, 42, 38, .94), rgba(13, 42, 38, .78) 46%, rgba(13, 42, 38, .30)),
+        url("adhd-social-hero.png");
+      background-position: center;
+      background-size: cover;
+    }
+
+    .hero .wrap {
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: minmax(0, 640px) minmax(260px, 1fr);
+      gap: 40px;
+      align-items: center;
+      padding: 52px 0 60px;
+    }
+
+    .kicker {
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: 0;
+      color: #b9eadc;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 680px;
+      font-size: 46px;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 640px;
+      margin: 22px 0 0;
+      font-size: 20px;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, .88);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-actions a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, .42);
+      border-radius: var(--radius);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 750;
+      background: rgba(255, 255, 255, .10);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-actions a.primary {
+      color: #10352f;
+      background: #bff1df;
+      border-color: #bff1df;
+    }
+
+    .map {
+      align-self: end;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: var(--radius);
+      background: rgba(10, 35, 32, .38);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .map-title {
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 750;
+      color: #d8fff1;
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .map-item {
+      min-height: 86px;
+      padding: 14px;
+      border: 1px solid rgba(255, 255, 255, .26);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .10);
+    }
+
+    .map-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 16px;
+    }
+
+    .map-item span {
+      color: rgba(255, 255, 255, .78);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .nav-band {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 253, 248, .94);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
+
+    nav a {
+      flex: 0 0 auto;
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      color: var(--green);
+      text-decoration: none;
+      border: 1px solid rgba(23, 115, 93, .25);
+      border-radius: var(--radius);
+      background: #ffffff;
+      font-size: 14px;
+      font-weight: 750;
+    }
+
+    section {
+      padding: 58px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:nth-of-type(even) {
+      background: var(--wash);
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 30px;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.4;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    .notice {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-left: 5px solid var(--blue);
+      border-radius: var(--radius);
+      background: var(--blue-soft);
+      color: #24495f;
+    }
+
+    .takeaways {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .takeaway {
+      min-height: 178px;
+      padding: 20px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 22px rgba(23, 34, 43, .05);
+    }
+
+    .takeaway b,
+    .method b,
+    .routine b,
+    .example b {
+      color: var(--green);
+    }
+
+    .plain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .plain-box {
+      padding: 18px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .plain-box .label {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 3px 9px;
+      margin-bottom: 10px;
+      border-radius: var(--radius);
+      color: #ffffff;
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 750;
+    }
+
+    .compare {
+      display: grid;
+      gap: 12px;
+    }
+
+    .compare-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .term,
+    .meaning {
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .term {
+      font-weight: 800;
+      color: #24495f;
+      background: var(--blue-soft);
+    }
+
+    .meaning {
+      color: #25313a;
+    }
+
+    .method-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .method {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .badge {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 3px 9px;
+      margin-bottom: 12px;
+      border-radius: var(--radius);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .badge.good {
+      color: #145d4c;
+      background: var(--green-soft);
+    }
+
+    .badge.help {
+      color: #24495f;
+      background: var(--blue-soft);
+    }
+
+    .badge.wait {
+      color: #74430b;
+      background: var(--amber-soft);
+    }
+
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      counter-reset: step;
+    }
+
+    .routine {
+      position: relative;
+      min-height: 220px;
+      padding: 48px 18px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: #ffffff;
+    }
+
+    .routine::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      top: 16px;
+      left: 18px;
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--green);
+      font-weight: 850;
+      line-height: 1;
+    }
+
+    .examples {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .example {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #ffffff;
+    }
+
+    .example .scene {
+      margin: 0 0 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+      font-weight: 800;
+    }
+
+    .script {
+      padding: 18px;
+      border-radius: var(--radius);
+      background: #ffffff;
+      border: 1px solid var(--line);
+    }
+
+    .script p {
+      margin: 8px 0;
+    }
+
+    .script strong {
+      color: var(--violet);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 7px 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .callout {
+      padding: 20px;
+      border-left: 5px solid var(--rose);
+      border-radius: var(--radius);
+      background: var(--rose-soft);
+      color: #653039;
+    }
+
+    .callout.green {
+      border-left-color: var(--green);
+      background: var(--green-soft);
+      color: #174e43;
+    }
+
+    .check {
+      list-style: none;
+      padding: 0;
+    }
+
+    .check li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .check li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .58em;
+      width: 13px;
+      height: 13px;
+      border-radius: 4px;
+      border: 2px solid var(--green);
+      background: #ffffff;
+    }
+
+    footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      background: #ffffff;
+    }
+
+    @media (max-width: 920px) {
+      .hero .wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .map {
+        align-self: auto;
+      }
+
+      .takeaways,
+      .plain-grid,
+      .method-list,
+      .routine-grid,
+      .examples,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(100% - 22px, 1120px);
+      }
+
+      .hero,
+      .hero .wrap {
+        min-height: auto;
+      }
+
+      .hero .wrap {
+        padding: 38px 0 44px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .lead {
+        font-size: 18px;
+      }
+
+      section {
+        padding: 42px 0;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+
+      .compare-row {
+        grid-template-columns: 1fr;
+      }
+
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .nav-band,
+      .hero-actions {
+        display: none;
+      }
+
+      body {
+        background: #ffffff;
+      }
+
+      .hero {
+        min-height: auto;
+        color: #17222b;
+        background: #ffffff;
+        border-bottom: 2px solid #d8dfd8;
+      }
+
+      .hero .wrap {
+        min-height: auto;
+        display: block;
+        padding: 24px 0;
+      }
+
+      .lead,
+      .kicker {
+        color: #17222b;
+      }
+
+      .map {
+        display: none;
+      }
+
+      section {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <p class="kicker">给家长看的大白话版</p>
+        <h1>ADHD 孩子的社交能力，怎么一点点练起来？</h1>
+        <p class="lead">很多孩子不是“不懂礼貌”，也不是“不想交朋友”。他们常常是太快说话、太晚发现别人表情变了，或者没听懂别人话里的意思。社交能力可以练，但要放在真实生活里练。</p>
+        <div class="hero-actions">
+          <a class="primary" href="#quick">先看结论</a>
+          <a href="#home">家里怎么做</a>
+          <a href="#school">怎么和老师配合</a>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="nav-band">
+    <div class="wrap">
+      <nav aria-label="页面导航">
+        <a href="#quick">结论</a>
+        <a href="#why">为什么会卡壳</a>
+        <a href="#plain">专业词翻译</a>
+        <a href="#methods">哪些方法值得试</a>
+        <a href="#home">家庭练习</a>
+        <a href="#hidden">听懂话外音</a>
+        <a href="#school">学校配合</a>
+        <a href="#help">何时求助</a>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <section id="quick">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>先说结论：不要只盯着“教社交规则”</h2>
+          <p>研究的大方向可以翻译成一句话：孩子要真正进步，不能只听课、背规则，还要有人陪他在真实场景里反复练。</p>
+        </div>
+
+        <div class="takeaways">
+          <div class="takeaway">
+            <h3>单独上社交课，效果常常不够稳</h3>
+            <p><b>原因很简单：</b>课上会了，不代表操场、饭桌、教室小组讨论时也能用出来。ADHD 孩子尤其需要把方法带到生活里。</p>
+          </div>
+          <div class="takeaway">
+            <h3>家长、老师、同伴一起参与，更容易见效</h3>
+            <p><b>最值得做的是：</b>家长在家里带着复盘，老师在课堂里创造合作机会，同伴在游戏里给孩子真实反馈。</p>
+          </div>
+          <div class="takeaway">
+            <h3>目标要小，不要一下子要求孩子“会做人”</h3>
+            <p><b>先练一两个点：</b>听别人说完、看表情、发现别人不想玩了、学会道歉、学会换话题。小目标更容易坚持。</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          这份页面是把原研究综述改写成家长容易读的版本，用于家庭教育参考。它不能替代医生、心理师或学校专业人员的评估和治疗建议。
+        </div>
+      </div>
+    </section>
+
+    <section id="why">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>孩子为什么容易在社交里“慢半拍”或“快半拍”？</h2>
+          <p>ADHD 影响的不只是坐不住、注意力不集中，也会影响孩子怎么看人、怎么听话、怎么控制自己下一句要说什么。</p>
+        </div>
+
+        <div class="plain-grid">
+          <div class="plain-box">
+            <span class="label">看漏信号</span>
+            <h3>别人已经不高兴了，孩子没发现</h3>
+            <p>比如同学皱眉、沉默、身体转开，孩子还继续讲自己的事。不是故意烦人，而是没抓到这些小信号。</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">反应太快</span>
+            <h3>话还没想完，嘴已经说出去了</h3>
+            <p>孩子可能插话、抢玩具、开过头的玩笑。事后他也知道不好，但当下刹车很难。</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">听不出话外音</span>
+            <h3>别人说“算了”，他以为真的没事</h3>
+            <p>很多社交信息不在字面上，而在语气、表情和场景里。ADHD 孩子可能只听到字面意思。</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">情绪上头</span>
+            <h3>一急就吵，一委屈就退出</h3>
+            <p>情绪一上来，孩子更难听见别人说什么，也更难用刚学过的社交技巧。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="plain">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>把原文里的专业词，翻成家长听得懂的话</h2>
+          <p>这些词听起来很学术，其实说的都是孩子生活里每天会遇到的小场景。</p>
+        </div>
+
+        <div class="compare">
+          <div class="compare-row">
+            <div class="term">社交技能训练</div>
+            <div class="meaning">教孩子具体怎么做：轮流说话、加入游戏、拒绝别人、道歉、解决冲突。问题是，只在课堂练还不够，要回到真实同伴互动里用。</div>
+          </div>
+          <div class="compare-row">
+            <div class="term">认知行为疗法</div>
+            <div class="meaning">帮孩子学会先停一下，再想怎么说、怎么做。比如心里提醒自己：“我先看对方表情，再决定要不要继续说。”</div>
+          </div>
+          <div class="compare-row">
+            <div class="term">心智理论</div>
+            <div class="meaning">说白了，就是猜一猜别人心里可能怎么想。比如“我觉得很好笑，但对方可能觉得尴尬”。</div>
+          </div>
+          <div class="compare-row">
+            <div class="term">视角采择</div>
+            <div class="meaning">站到别人那边看一眼。不是让孩子马上认错，而是先明白：“如果我是他，我可能会怎么感受？”</div>
+          </div>
+          <div class="compare-row">
+            <div class="term">语用语言</div>
+            <div class="meaning">会不会在合适的场合说合适的话。比如同样一句“你真厉害”，可能是真夸，也可能是反话，要看语气和场景。</div>
+          </div>
+          <div class="compare-row">
+            <div class="term">同伴介入</div>
+            <div class="meaning">不是大人一直讲道理，而是安排合适的同龄孩子一起玩、一起合作，让 ADHD 孩子在互动中练。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="methods">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>哪些方法更值得家长先考虑？</h2>
+          <p>下面不是“排名”，而是按家庭最容易理解和执行的方式来整理。重点是组合使用，而不是押宝某一个方法。</p>
+        </div>
+
+        <div class="method-list">
+          <div class="method">
+            <span class="badge good">优先考虑</span>
+            <h3>家长做“友谊教练”</h3>
+            <p><b>怎么做：</b>家长帮孩子约玩、提前预演、现场轻提醒、事后复盘。不要只问“你为什么这样”，要问“下次你可以试哪一句”。</p>
+            <p><b>适合：</b>孩子想交朋友，但常常玩着玩着闹翻。</p>
+          </div>
+
+          <div class="method">
+            <span class="badge good">优先考虑</span>
+            <h3>同伴一起练</h3>
+            <p><b>怎么做：</b>找性格相对稳定、愿意配合的同伴，从短时间、规则清楚的游戏开始。比如拼搭、桌游、合作任务。</p>
+            <p><b>适合：</b>孩子在真实游戏里容易抢、急、听不进去。</p>
+          </div>
+
+          <div class="method">
+            <span class="badge good">优先考虑</span>
+            <h3>学校里的合作学习和老师提醒</h3>
+            <p><b>怎么做：</b>请老师在小组任务里给孩子明确角色，及时表扬孩子的一个好行为，比如“你刚才等同学说完了”。</p>
+            <p><b>适合：</b>孩子在班级里被误解、被排斥，或者小组活动冲突多。</p>
+          </div>
+
+          <div class="method">
+            <span class="badge help">可配合</span>
+            <h3>视频示范</h3>
+            <p><b>怎么做：</b>看一小段社交情境视频，然后停下来问三件事：对方什么表情？他可能怎么想？下一句怎么说更好？</p>
+            <p><b>适合：</b>孩子听讲道理容易烦，但看画面更能理解。</p>
+          </div>
+
+          <div class="method">
+            <span class="badge help">可配合</span>
+            <h3>心理师带的情绪和行为训练</h3>
+            <p><b>怎么做：</b>在专业人员带领下练“暂停、想一想、再行动”，也练冲突后怎么补救。</p>
+            <p><b>适合：</b>孩子情绪爆发多，家里已经很难靠提醒解决。</p>
+          </div>
+
+          <div class="method">
+            <span class="badge wait">谨慎看待</span>
+            <h3>App、游戏、VR 等新工具</h3>
+            <p><b>怎么做：</b>可以作为练习的辅助，但不要以为用了软件就自然会交朋友。真正要看的还是孩子能不能把学到的东西用到同学身上。</p>
+            <p><b>适合：</b>孩子对电子互动更有兴趣，但需要大人陪着迁移到现实生活。</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          关于药物：药物主要帮助注意力、冲动和情绪稳定，有些孩子因此更容易参与社交练习。但药物不是“社交课”，更不要自行开始、停药或调整剂量，必须听医生意见。
+        </div>
+      </div>
+    </section>
+
+    <section id="home">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>家里怎么练：别讲太多大道理，先做四件小事</h2>
+          <p>家庭练习不需要搞得像上课。每次 5 到 10 分钟，短、具体、可重复，比一次讲半小时更有用。</p>
+        </div>
+
+        <div class="routine-grid">
+          <div class="routine">
+            <h3>先选一个目标</h3>
+            <p>一周只练一个点，比如“别人说话时不插嘴”或“发现对方不想玩就停下来”。目标越小，孩子越容易成功。</p>
+          </div>
+          <div class="routine">
+            <h3>提前排练一句话</h3>
+            <p>不要只说“你要礼貌”。直接给句子：“我可以加入吗？”“你想先玩哪个？”“我刚刚太急了，对不起。”</p>
+          </div>
+          <div class="routine">
+            <h3>现场只轻轻提醒</h3>
+            <p>约定一个暗号，比如摸一下手腕，意思是“看一下对方表情”。不要当众批评，孩子会更失控。</p>
+          </div>
+          <div class="routine">
+            <h3>事后复盘一好一改</h3>
+            <p>先说一个做得好的点，再说下次改一个点。比如：“你今天等了同学两次，下次我们练声音小一点。”</p>
+          </div>
+        </div>
+
+        <div class="two-col" style="margin-top: 18px;">
+          <div class="callout green">
+            <h3>家长可以这样说</h3>
+            <ul class="check">
+              <li>“我看到你刚刚忍住没有抢，这是进步。”</li>
+              <li>“我们不用一次做完美，今天只练这一件事。”</li>
+              <li>“你猜他刚才为什么转身？我们一起想三个可能。”</li>
+              <li>“下次你可以先说：我也想玩，可以轮到我吗？”</li>
+            </ul>
+          </div>
+
+          <div class="callout">
+            <h3>尽量少这样说</h3>
+            <ul>
+              <li>“你怎么总是这样？”</li>
+              <li>“这么简单你都不懂？”</li>
+              <li>“你再这样就没人喜欢你。”</li>
+              <li>“你明明知道不该这样，为什么还犯？”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hidden">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>重点练习：帮孩子听懂“话外音”</h2>
+          <p>很多社交冲突，不是孩子不知道规则，而是没读懂别人真正想表达什么。可以用“三问法”慢慢练。</p>
+        </div>
+
+        <div class="plain-grid">
+          <div class="plain-box">
+            <span class="label">第一问</span>
+            <h3>对方的脸、声音、动作告诉你什么？</h3>
+            <p>让孩子先找证据：皱眉、沉默、声音变小、往后退、看向别人、一直说“算了”。</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">第二问</span>
+            <h3>他可能在想什么？</h3>
+            <p>鼓励孩子想出两个以上可能，不要只给一个答案。比如“他可能累了，也可能不喜欢这个玩法”。</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">第三问</span>
+            <h3>我下一步怎么做更合适？</h3>
+            <p>给孩子准备可直接使用的句子：“你是不是想休息？”“那我们换一个？”“我刚才声音太大了吗？”</p>
+          </div>
+          <div class="plain-box">
+            <span class="label">加一步</span>
+            <h3>练“停一下”</h3>
+            <p>ADHD 孩子常常不是不会，而是来不及用。可以练一个动作：闭嘴三秒、看对方、再说下一句。</p>
+          </div>
+        </div>
+
+        <div class="examples" style="margin-top: 18px;">
+          <div class="example">
+            <p class="scene">场景一：同学说“我等会儿再玩”</p>
+            <p><b>不要马上理解成：</b>他答应了，等会儿一定玩。</p>
+            <p><b>可以理解成：</b>他现在可能想休息，也可能不想继续。</p>
+            <p><b>可练句子：</b>“好，那你想玩的时候叫我。”</p>
+          </div>
+
+          <div class="example">
+            <p class="scene">场景二：同学说“你又这样啊”</p>
+            <p><b>不要只听字面：</b>他说的是一句评价。</p>
+            <p><b>可以理解成：</b>他可能已经有点烦或失望。</p>
+            <p><b>可练句子：</b>“我刚才太急了，我重新来一次。”</p>
+          </div>
+
+          <div class="example">
+            <p class="scene">场景三：大家笑了，孩子继续开玩笑</p>
+            <p><b>需要提醒：</b>第一次笑可能是好笑，后面安静了就要停。</p>
+            <p><b>可以观察：</b>有人转头、翻白眼、说“别说了”。</p>
+            <p><b>可练句子：</b>“好，我停了。我们继续玩吧。”</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="school">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>怎么和学校配合：请老师帮忙“搭台阶”</h2>
+          <p>不要只让老师“多管管”。更有效的是请老师帮孩子创造能成功的小机会，并且及时看见他的好行为。</p>
+        </div>
+
+        <div class="two-col">
+          <div class="script">
+            <h3>和老师沟通时，可以这样说</h3>
+            <p><strong>1. 说明困难：</strong>“孩子不是故意捣乱，他常常没注意到同学已经不高兴。”</p>
+            <p><strong>2. 给出小目标：</strong>“这两周我们想先练小组活动里等别人说完。”</p>
+            <p><strong>3. 请求具体支持：</strong>“能不能给他一个明确角色，比如记录员或材料管理员？”</p>
+            <p><strong>4. 请老师抓进步：</strong>“如果他做到一次，请当场简短表扬，让他知道哪个行为是对的。”</p>
+          </div>
+
+          <div class="script">
+            <h3>学校里可以用的小办法</h3>
+            <ul class="check">
+              <li>小组任务前，把规则写清楚：谁先说、谁记录、谁汇报。</li>
+              <li>给孩子安排稳定、温和、愿意合作的同伴。</li>
+              <li>冲突发生后先降温，再复盘，不在全班面前审问。</li>
+              <li>表扬具体行为，不只说“表现不错”。比如“你刚才等同学说完了”。</li>
+              <li>如果孩子被排斥严重，需要班主任、心理老师和家长一起制定支持计划。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="help">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>什么时候需要找专业人员？</h2>
+          <p>如果孩子只是偶尔社交不顺，可以先从家庭和学校支持做起。如果已经明显影响生活，就不要只靠家长硬扛。</p>
+        </div>
+
+        <div class="method-list">
+          <div class="method">
+            <span class="badge help">建议评估</span>
+            <h3>孩子经常被排斥，或者完全不想上学</h3>
+            <p>这可能不只是“不会交朋友”，还可能伴随焦虑、抑郁、自尊受损，建议尽早找儿童精神科、发育行为儿科或心理师评估。</p>
+          </div>
+          <div class="method">
+            <span class="badge help">建议评估</span>
+            <h3>冲突越来越激烈，家里学校都很难收场</h3>
+            <p>如果孩子经常打人、摔东西、强烈爆发，需要专业人员一起看注意力、冲动、情绪调节和家庭应对方式。</p>
+          </div>
+          <div class="method">
+            <span class="badge help">建议评估</span>
+            <h3>怀疑还有语言、学习或自闭谱系问题</h3>
+            <p>如果孩子长期听不懂玩笑、很难理解别人的想法，或语言表达明显困难，需要更完整的发育和语言评估。</p>
+          </div>
+          <div class="method">
+            <span class="badge help">建议评估</span>
+            <h3>已经尝试很多办法，仍然没有改善</h3>
+            <p>可能需要把目标拆得更细，或者调整干预方式。专业人员可以帮助家长判断问题卡在哪里。</p>
+          </div>
+        </div>
+
+        <div class="notice">
+          最后提醒：社交进步通常不是突然变好，而是从“少一次插话”“多看一眼表情”“吵完后能补一句道歉”开始。家长要抓这些小变化，它们就是孩子正在长出来的能力。
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>整理依据：原文件《adhd社交提高.md》的研究综述内容。本文已改写为家长友好的说明文，删除了大部分论文式表述，保留核心建议和风险提醒。</p>
+    </div>
+  </footer>
+</body>
+</html>
