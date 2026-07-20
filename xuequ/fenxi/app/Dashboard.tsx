@@ -562,7 +562,7 @@ export default function Dashboard() {
           </div>
           <div className="source-intro">
             <p>当前筛选：{area} · {year}。链接直达政府页面、工作簿或考试院一分一段表。</p>
-            <a className="download-link" href="/downloads/beijing-education-population-data.xlsx" download>
+            <a className="download-link" href="downloads/beijing-education-population-data.xlsx" download>
               下载完整 Excel 数据包 ↓
             </a>
           </div>
