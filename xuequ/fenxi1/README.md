@@ -13,6 +13,10 @@ npm run local
 
 网站地址：`http://localhost:4174/`。端口与原网站的 `4173` 分开，两者可同时运行。
 
+## GitHub Pages 部署
+
+执行 `npm run prepare:github-pages` 后，项目根目录会生成可直接托管的 `index.html`、`assets/` 和 `downloads/`。将这些文件与源码一起放在仓库的 `xuequ/fenxi1/` 目录下即可。
+
 ## 研究记录
 
 `research/comparison/` 包含：

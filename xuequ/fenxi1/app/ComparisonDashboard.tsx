@@ -80,7 +80,7 @@ export default function ComparisonDashboard() {
           </p>
           <div className="hero-actions">
             <a className="primary-action" href="#findings">查看差异结论 ↓</a>
-            <a className="text-action" href="/downloads/beijing-education-population-data.xlsx" download>
+            <a className="text-action" href="downloads/beijing-education-population-data.xlsx" download>
               下载原网站底表
             </a>
           </div>
