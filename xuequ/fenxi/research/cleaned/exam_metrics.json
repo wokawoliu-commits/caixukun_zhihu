@@ -1,0 +1,53 @@
+{
+  "gaokao_population": [
+    {"year": 2010, "area": "北京市", "value": 80241, "display": "80,241", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://gaokao.chsi.com.cn/gkxx/ss/201008/20100804/113220108.html"},
+    {"year": 2011, "area": "北京市", "value": 76007, "display": "76,007", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201106/t20110607_628513.shtml"},
+    {"year": 2012, "area": "北京市", "value": 73460, "display": "73,460", "scope": "报名总数", "precision": "exact", "confidence": "A", "source": "https://www.moe.gov.cn/jyb_xwfb/xw_zt/moe_357/s6211/s6511/s6522/201206/t20120605_137180.html"},
+    {"year": 2013, "area": "北京市", "value": 72736, "display": "72,736", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://gaokao.chsi.com.cn/gkxx/ss/201303/20130305/394077149.html"},
+    {"year": 2014, "area": "北京市", "value": 70517, "display": "70,517", "scope": "报名总数", "precision": "exact", "confidence": "A", "source": "https://www.moe.gov.cn/jyb_xwfb/s5147/201403/t20140324_166007.html"},
+    {"year": 2015, "area": "北京市", "value": 67816, "display": "67,816", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://www.moe.gov.cn/jyb_xwfb/s5147/201506/t20150612_190390.html"},
+    {"year": 2016, "area": "北京市", "value": 61222, "display": "61,222", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://gaokao.chsi.com.cn/z/gkbmfslq2016/bmrs.jsp"},
+    {"year": 2017, "area": "北京市", "value": 60638, "display": "60,638", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://www.edu.cn/edu/zhao_sheng_kao_shi/gao_kao/gzzc_xgdt/201703/t20170330_1502660.shtml"},
+    {"year": 2018, "area": "北京市", "value": 63073, "display": "63,073", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://edu.people.com.cn/n1/2018/0605/c1053-30037495.html"},
+    {"year": 2019, "area": "北京市", "value": 59209, "display": "59,209", "scope": "报名总数", "precision": "exact", "confidence": "A", "source": "https://www.beijing.gov.cn/zhengce/zcjd/201905/t20190523_79099.html"},
+    {"year": 2020, "area": "北京市", "value": 49225, "display": "49,225", "scope": "参加统一高考", "precision": "exact", "confidence": "A", "source": "https://www.moe.gov.cn/jyb_xwfb/s5147/202006/t20200630_469272.html"},
+    {"year": 2021, "area": "北京市", "value": 51738, "display": "51,738", "scope": "报名总数", "precision": "exact", "confidence": "B", "source": "https://www.chinanews.com.cn/gn/2021/06-07/9493867.shtml", "alternate_value": 45238, "alternate_scope": "实际参加"},
+    {"year": 2022, "area": "北京市", "value": 54000, "display": "约54,000", "scope": "报名人数", "precision": "rounded", "confidence": "A", "source": "https://jw.beijing.gov.cn/zmhd/jyzbj/202205/t20220530_2723957.html"},
+    {"year": 2023, "area": "北京市", "value": 58000, "display": "58,000余", "scope": "参加高考", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202306/t20230606_3122553.html"},
+    {"year": 2024, "area": "北京市", "value": 67000, "display": "约67,000", "scope": "报名人数", "precision": "rounded", "confidence": "A", "source": "https://www.beijing.gov.cn/gongkai/ldhd/202406/t20240604_3703580.html"},
+    {"year": 2025, "area": "北京市", "value": 78900, "display": "78,900", "scope": "报名人数", "precision": "exact", "confidence": "A", "source": "https://www.beijing.gov.cn/gongkai/ldhd/202506/t20250607_4108375.html"},
+    {"year": 2026, "area": "北京市", "value": 84900, "display": "84,900", "scope": "报名人数", "precision": "exact", "confidence": "A", "source": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202606/t20260607_4689597.html", "status": "current"},
+    {"year": 2020, "area": "西城区", "value": 6413, "display": "6,413", "scope": "参加高考", "precision": "exact", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv862512.html"},
+    {"year": 2024, "area": "西城区", "value": 7500, "display": "7,500余", "scope": "高考考生", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv954186.html"},
+    {"year": 2025, "area": "西城区", "value": 9000, "display": "9,000余", "scope": "报名人数", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv979601.html"},
+    {"year": 2018, "area": "朝阳区", "value": 4000, "display": "4,000余", "scope": "参加考试", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://chyrd.bjchy.gov.cn/yfly/ff80808163d349de0163d7c6ad470001.html"},
+    {"year": 2022, "area": "朝阳区", "value": 4900, "display": "4,900余", "scope": "参加考试", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://chyrd.bjchy.gov.cn/yfly/8a24f0b481228d3c01816000ab0a00f0.html"},
+    {"year": 2024, "area": "朝阳区", "value": 6600, "display": "6,600余", "scope": "参加高考（媒体参考）", "precision": "lower_bound_rounded", "confidence": "B", "source": "https://m.bjnews.com.cn/detail/1717715397129382.html"},
+    {"year": 2025, "area": "朝阳区", "value": 8500, "display": "8,500余", "scope": "参加高考（媒体参考）", "precision": "lower_bound_rounded", "confidence": "B", "source": "https://m.bjnews.com.cn/detail/1749261446168620.html"}
+  ],
+  "undergraduate_admitted": [
+    {"year": 2010, "area": "北京市", "value": 40637, "confidence": "B", "source": "https://gaokao.chsi.com.cn/gkxx/ss/201008/20100804/113220108.html"},
+    {"year": 2011, "area": "北京市", "value": 43812, "confidence": "B", "source": "https://gaokao.chsi.com.cn/gkxx/ss/201111/20111129/264626239.html"},
+    {"year": 2012, "area": "北京市", "value": 37570, "confidence": "B", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201207/t20120731_819395.shtml"},
+    {"year": 2013, "area": "北京市", "value": 37169, "confidence": "B", "source": "https://edu.sina.com.cn/gaokao/2013-08-01/1125390979.shtml"},
+    {"year": 2014, "area": "北京市", "value": 42946, "confidence": "B", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201408/t20140812_1162810.shtml"},
+    {"year": 2015, "area": "北京市", "value": 44123, "confidence": "C", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201803/t20180330_1592915.shtml"},
+    {"year": 2016, "area": "北京市", "value": 40841, "confidence": "C", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201803/t20180330_1592915.shtml"},
+    {"year": 2017, "area": "北京市", "value": 40550, "confidence": "C", "source": "https://gaokao.eol.cn/bei_jing/dongtai/201803/t20180330_1592915.shtml"},
+    {"year": 2019, "area": "北京市", "value": 41076, "confidence": "C", "source": "https://www.gaokzx.com/c/201907/37347.html"}
+  ],
+  "undergraduate_above_cutoff": [
+    {"year": 2020, "area": "北京市", "value": 37397, "cutoff": 436, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2020/0725/76223.html"},
+    {"year": 2021, "area": "北京市", "value": 36736, "cutoff": 400, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2021/0625/79201.html"},
+    {"year": 2022, "area": "北京市", "value": 37319, "cutoff": 425, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2022/0625/82074.html"},
+    {"year": 2023, "area": "北京市", "value": 42347, "cutoff": 448, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2023/0625/83922.html"},
+    {"year": 2024, "area": "北京市", "value": 44923, "cutoff": 434, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2024/0625/85432.html"},
+    {"year": 2025, "area": "北京市", "value": 53994, "cutoff": 430, "confidence": "A", "source": "https://www.bjeea.cn/uploads/soft/250625/172-2506250Q456.pdf"}
+  ],
+  "notes": {
+    "gaokao_population": "报名、实考与统考人数并非同一口径；网站保留每年原始口径，不把它们伪装成完全同质的序列。",
+    "undergraduate_admitted": "本科实际录取人数；2018及2020年以后未找到连续、可核实的公开总数。",
+    "undergraduate_above_cutoff": "普通本科控制线及以上累计人数，来自一分一段表；这是上线人数，不等于最终被本科院校录取的人数。",
+    "district_gap": "区级本科录取/上线总人数未见稳定公开口径；西城仅检出2019年本科上线率93.4%，因分母不明，不据此反推人数。"
+  }
+}

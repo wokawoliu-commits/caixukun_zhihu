@@ -1,0 +1,8 @@
+{"claim_id":"C01","claim":"教委2025学年实际普通高中招生为西城11,626、朝阳10,202、全市84,275","support":["E01","E02"],"status":"verified","confidence":"A"}
+{"claim_id":"C02","claim":"文章含1+3分子与教委实招的差额为西城355人、朝阳-17人","support":["E01","E07","E08"],"status":"verified_calculation","confidence":"A"}
+{"claim_id":"C03","claim":"西城更新版正确普高率为80.82%，文章81.35%来自沿用旧分母","support":["E07"],"status":"verified_calculation","confidence":"A"}
+{"claim_id":"C04","claim":"西城92%与可重算80.82%相差11.18个百分点且缺少可复核口径","support":["E07","E12"],"status":"conflict","confidence":"A"}
+{"claim_id":"C05","claim":"网站同年初中招生/高中招生比率不能解释为同届学生升学率","support":["E01"],"status":"methodological","confidence":"A"}
+{"claim_id":"C06","claim":"朝阳统招依赖高于西城，但原网站无分通道数据，不能直接验证","support":["E11"],"status":"article_only","confidence":"B"}
+{"claim_id":"C07","claim":"网传学校录取线不是官方精确数据","support":["E06"],"status":"source_caveat","confidence":"A"}
+{"claim_id":"C08","claim":"A8的620分中考录取线与2025新中考510分量表冲突","support":["E13"],"status":"conflict","confidence":"A"}
