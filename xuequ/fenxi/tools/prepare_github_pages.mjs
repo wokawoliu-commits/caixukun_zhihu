@@ -27,10 +27,25 @@ for (const file of ["index.html", "index.rsc", "404.html"]) {
   const target = path.join(root, file);
   if (!fs.existsSync(target)) continue;
   const html = fs.readFileSync(target, "utf8")
-    .replaceAll('"/assets/', '"assets/')
-    .replaceAll('"/downloads/', '"downloads/')
-    .replaceAll('"/og-education-observatory.png', '"og-education-observatory.png');
+    .replaceAll('"/assets/', '"./assets/')
+    .replaceAll('"/downloads/', '"./downloads/')
+    .replaceAll('"/og-education-observatory.png', '"./og-education-observatory.png');
   fs.writeFileSync(target, html);
+}
+
+// Vinext's runtime preload helper is emitted with a root-relative prefix.
+// GitHub Pages serves this app below /xuequ/fenxi/, so make those preload
+// URLs document-relative as well; otherwise the page shell renders but the
+// client chart bundle is requested from the domain root and never runs.
+const assets = path.join(root, "assets");
+if (fs.existsSync(assets)) {
+  for (const file of fs.readdirSync(assets)) {
+    if (!file.endsWith(".js")) continue;
+    const target = path.join(assets, file);
+    const source = fs.readFileSync(target, "utf8");
+    const rewritten = source.replaceAll("return`/`+e", "return`./`+e");
+    if (rewritten !== source) fs.writeFileSync(target, rewritten);
+  }
 }
 
 console.log(`Prepared GitHub Pages files in ${root}`);
