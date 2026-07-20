@@ -1,0 +1,8 @@
+{"claim_id":"C01","claim":"朝外本部的英语课程环境和同伴英语基线比人朝更突出，但高目标家庭仍普遍需要课外投入","evidence_ids":["E08","E09","E10","E02"],"confidence":"medium_high","caveat":"人朝英语证据主要来自比较家长，缺少人朝校内英语的一手细节"}
+{"claim_id":"C02","claim":"朝外本部家庭作业较少且多在校完成，是较稳定的家长口碑","evidence_ids":["E07","E10"],"confidence":"high","caveat":"不同年级和班级可能变化；不等于没有考试或没有课外学习"}
+{"claim_id":"C03","claim":"人朝的家庭作业、考试卷和项目任务更可见，家长参与度更高","evidence_ids":["E01","E05"],"confidence":"medium_high","caveat":"主要由一个直接比较评论和一个六年级家庭交叉支持"}
+{"claim_id":"C04","claim":"人朝在社团、综合活动和非主科丰富度上更常被家长认为优于朝外本部","evidence_ids":["E01","E02","E07","E08"],"confidence":"medium","caveat":"证据集中在同一直接比较帖，尚缺多个独立帖子验证"}
+{"claim_id":"C05","claim":"朝外的压力更多来自英语外学、同伴竞争和家庭期待，而非单纯的回家作业量","evidence_ids":["E07","E09","E10","E12"],"confidence":"medium_high","caveat":"家长社群和班级差异可能很大"}
+{"claim_id":"C06","claim":"人朝的大体量、多校址是选择时必须单独核验的现实成本","evidence_ids":["E04","E06"],"confidence":"high","caveat":"家长统计的具体班数和班额不是官方数字"}
+{"claim_id":"C07","claim":"朝外教师负责度口碑总体正面，但部分家长担忧投诉氛围使教师趋于保守","evidence_ids":["E09","E10","E11"],"confidence":"medium","caveat":"负面信号集中在一个讨论串，可能仅影响部分班级"}
+{"claim_id":"C08","claim":"小学阶段学生本人公开样本不足，核心结论应视为家长口碑而非学生群体统计","evidence_ids":["E14"],"confidence":"high","caveat":"小学生公开发帖少，身份难核验"}

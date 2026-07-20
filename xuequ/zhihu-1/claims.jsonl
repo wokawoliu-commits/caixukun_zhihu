@@ -1,0 +1,7 @@
+{"claim_id":"C-01","claim":"人朝小学旧样本更偏快乐、活动丰富、作业相对少","evidence_ids":["E-RC-01","E-RC-02","E-RC-03","E-RC-04"],"confidence":"medium","caveat":"核心样本较旧，扩容后不可直接外推"}
+{"claim_id":"C-02","claim":"朝外本部小学更偏英语特色、强规则和较早的学习节奏","evidence_ids":["E-CW-01","E-CW-02","E-CW-04","E-CW-05","E-CW-06","E-CW-09"],"confidence":"high","caveat":"当前最强样本来自232校区，其他地址可能不同"}
+{"claim_id":"C-03","claim":"两校教师责任心总体都获得正面评价","evidence_ids":["E-RC-02","E-RC-04","E-CW-01","E-CW-08","E-CW-09"],"confidence":"medium_high","caveat":"班主任个体差异显著"}
+{"claim_id":"C-04","claim":"朝外小学的伙食和午间节奏是较稳定的负面摩擦","evidence_ids":["E-CW-05","E-CW-07"],"confidence":"medium_high","caveat":"当前小学只来自232校区一名学生，异物等细节无法独立核验"}
+{"claim_id":"C-05","claim":"人朝当前最大不确定性是扩容、多校区后旧口碑是否仍成立","evidence_ids":["E-RC-05","E-OFF-01"],"confidence":"high","caveat":"缺少2025-2026身份明确家长长文"}
+{"claim_id":"C-06","claim":"知乎无法可靠判断两校谁更出成绩","evidence_ids":["E-CW-01"],"confidence":"high","caveat":"直接比较只有单边家长回答，缺乏可比小学成绩数据"}
+{"claim_id":"C-07","claim":"朝外的路径确定性与内部竞争并存","evidence_ids":["E-CW-03","E-CW-10"],"confidence":"medium","caveat":"直升与分层政策必须按入学年份和官方规则另核"}

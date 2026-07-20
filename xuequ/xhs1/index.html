@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="人朝小学与朝外本部近三年小红书家长口碑对比，覆盖英语、作业、活动、管理、家长负担与学校规模。">
+  <title>人朝小学 vs 朝外本部｜近三年家长口碑对比</title>
+  <style>
+    :root {
+      --paper: #f3efe6;
+      --paper-2: #e9e3d8;
+      --ink: #171715;
+      --muted: #68645d;
+      --line: #c7c0b4;
+      --accent: #c8442d;
+      --accent-dark: #923321;
+      --white: #fffdf8;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.55), transparent 32rem),
+        var(--paper);
+      font-family: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", system-ui, sans-serif;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+    }
+
+    a { color: inherit; }
+    button { font: inherit; }
+    ::selection { background: var(--accent); color: white; }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 100;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transform-origin: left;
+    }
+
+    .site-nav {
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      padding: 0 clamp(20px, 4vw, 64px);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+
+    .brand {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .nav-actions { display: flex; gap: 10px; }
+    .nav-link, .print-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 16px;
+      color: inherit;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.38);
+      border-radius: 999px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .nav-link:hover, .print-btn:hover {
+      color: var(--ink);
+      background: var(--white);
+      transform: translateY(-1px);
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 100svh;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--ink);
+      isolation: isolate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      z-index: -1;
+      height: 38%;
+      background: linear-gradient(to top, rgba(0,0,0,.34), transparent);
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+      padding: 120px 0 78px;
+    }
+
+    .hero-kicker {
+      margin: 0 0 18px;
+      color: #ded7ca;
+      font-size: clamp(12px, 1.2vw, 15px);
+      font-weight: 600;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: rise .7s .08s ease forwards;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      margin: 0;
+      font-family: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      font-size: clamp(54px, 10.4vw, 142px);
+      font-weight: 700;
+      line-height: .92;
+      letter-spacing: -.075em;
+      opacity: 0;
+      animation: rise .9s .18s cubic-bezier(.22,.8,.22,1) forwards;
+    }
+
+    .hero h1 .versus {
+      display: inline-block;
+      margin: 0 .08em;
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: .36em;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: 0;
+      vertical-align: middle;
+      transform: rotate(-8deg);
+    }
+
+    .hero-deck {
+      max-width: 640px;
+      margin: 34px 0 0;
+      color: #d9d2c6;
+      font-size: clamp(17px, 2vw, 22px);
+      line-height: 1.65;
+      opacity: 0;
+      animation: rise .8s .34s ease forwards;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 26px;
+      margin-top: 34px;
+      color: #b9b2a8;
+      font-size: 13px;
+      opacity: 0;
+      animation: rise .8s .46s ease forwards;
+    }
+
+    .hero-meta strong { color: var(--white); font-weight: 600; }
+
+    .hero-visual {
+      position: absolute;
+      z-index: -2;
+      top: 50%;
+      right: -4vw;
+      width: min(61vw, 820px);
+      transform: translateY(-49%);
+      opacity: .66;
+      animation: breathe 10s ease-in-out infinite alternate;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      right: clamp(20px, 4vw, 64px);
+      bottom: 32px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: #a9a39a;
+      font-size: 11px;
+      letter-spacing: .15em;
+      writing-mode: vertical-rl;
+    }
+    .scroll-cue::after {
+      content: "";
+      width: 1px;
+      height: 54px;
+      background: linear-gradient(var(--accent) 50%, rgba(255,255,255,.2) 50%);
+      background-size: 100% 200%;
+      animation: scroll-line 1.8s ease infinite;
+    }
+
+    @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+    @keyframes breathe { to { transform: translateY(-51%) scale(1.018); } }
+    @keyframes scroll-line { to { background-position: 0 -200%; } }
+
+    .scope-bar {
+      border-bottom: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+    .scope-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      width: min(var(--max), calc(100% - 40px));
+      margin: auto;
+    }
+    .scope-item {
+      min-height: 112px;
+      padding: 25px 26px 20px 0;
+      border-right: 1px solid var(--line);
+    }
+    .scope-item + .scope-item { padding-left: 26px; }
+    .scope-item:last-child { border-right: 0; }
+    .scope-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .scope-value { font-size: 16px; font-weight: 650; }
+
+    main section { scroll-margin-top: 24px; }
+    .section {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: clamp(90px, 12vw, 160px) 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .5fr 1.5fr;
+      gap: 40px;
+      margin-bottom: clamp(46px, 8vw, 92px);
+    }
+    .section-no {
+      color: var(--accent);
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+    }
+    .eyebrow {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+    .section h2 {
+      max-width: 840px;
+      margin: 0;
+      font-family: "Songti SC", "STSong", serif;
+      font-size: clamp(38px, 6vw, 72px);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .section-intro {
+      max-width: 710px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .thesis {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 8vw, 110px);
+      align-items: start;
+    }
+    .thesis-school {
+      border-top: 6px solid var(--ink);
+      padding-top: 26px;
+    }
+    .thesis-school.accent { border-top-color: var(--accent); }
+    .thesis-school h3 {
+      margin: 0 0 22px;
+      font-family: "Songti SC", "STSong", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.1;
+    }
+    .thesis-school p { margin: 0; color: var(--muted); font-size: 18px; }
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .keywords li {
+      padding: 5px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .paradox {
+      margin-top: clamp(70px, 10vw, 120px);
+      padding: clamp(38px, 6vw, 72px) 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+    }
+    .paradox strong {
+      display: block;
+      font-family: "Songti SC", "STSong", serif;
+      font-size: clamp(48px, 8vw, 100px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .paradox strong span { color: var(--accent); }
+    .paradox p { max-width: 700px; margin: 26px auto 0; color: var(--muted); }
+
+    .spectrum { display: grid; gap: 4px; }
+    .spectrum-head, .spectrum-row {
+      display: grid;
+      grid-template-columns: 135px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .spectrum-head { margin-bottom: 14px; color: var(--muted); font-size: 12px; }
+    .spectrum-legend {
+      display: flex;
+      justify-content: space-between;
+    }
+    .spectrum-legend b:first-child { color: var(--ink); }
+    .spectrum-legend b:last-child { color: var(--accent); }
+    .spectrum-row {
+      min-height: 72px;
+      border-top: 1px solid var(--line);
+    }
+    .spectrum-row:last-child { border-bottom: 1px solid var(--line); }
+    .spectrum-label { font-size: 15px; font-weight: 650; }
+    .track {
+      position: relative;
+      height: 24px;
+    }
+    .track::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--line);
+    }
+    .track::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 4px;
+      bottom: 4px;
+      width: 1px;
+      background: var(--line);
+    }
+    .point {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--ink);
+      border-radius: 50%;
+      background: var(--paper);
+      transform: translate(-50%, -50%);
+      transition: left 1s cubic-bezier(.2,.75,.2,1);
+    }
+    .point.chaowai { border-color: var(--accent); background: var(--accent); }
+    .spectrum.in-view .point { left: var(--pos); }
+    .spectrum-note { margin: 18px 0 0 163px; color: var(--muted); font-size: 12px; }
+
+    .school-section {
+      width: 100%;
+      padding: clamp(90px, 12vw, 160px) max(20px, calc((100vw - var(--max))/2));
+    }
+    .school-section.dark { color: var(--white); background: var(--ink); }
+    .school-section.light { background: var(--paper-2); }
+    .school-section .section-head { margin-bottom: 70px; }
+    .school-section.dark .section-intro { color: #bfb8ad; }
+    .school-section.dark .section-no { color: #ed765e; }
+
+    .deep-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: clamp(50px, 9vw, 130px);
+    }
+    .signature {
+      position: sticky;
+      top: 36px;
+      align-self: start;
+    }
+    .signature-word {
+      display: block;
+      color: var(--accent);
+      font-family: "Songti SC", "STSong", serif;
+      font-size: clamp(76px, 11vw, 160px);
+      font-weight: 700;
+      line-height: .85;
+      letter-spacing: -.08em;
+    }
+    .signature small { display: block; margin-top: 26px; color: var(--muted); }
+    .dark .signature small { color: #aaa49b; }
+
+    .findings { display: grid; gap: 0; }
+    .finding {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 22px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+    .dark .finding { border-color: #3e3d39; }
+    .finding:last-child { border-bottom: 1px solid var(--line); }
+    .dark .finding:last-child { border-color: #3e3d39; }
+    .finding-no { color: var(--accent); font-family: Georgia, serif; font-style: italic; }
+    .finding h3 { margin: 0 0 8px; font-size: 21px; }
+    .finding p { margin: 0; color: var(--muted); }
+    .dark .finding p { color: #bdb7ad; }
+    .source-link {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 13px;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .source-link::after { content: "↗"; transition: transform .2s ease; }
+    .source-link:hover::after { transform: translate(3px, -3px); }
+
+    .fit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 8vw, 100px);
+    }
+    .fit-col { border-top: 4px solid var(--ink); padding-top: 25px; }
+    .fit-col.accent { border-top-color: var(--accent); }
+    .fit-col h3 { margin: 0 0 22px; font-family: "Songti SC", "STSong", serif; font-size: 33px; }
+    .fit-list { margin: 0; padding: 0; list-style: none; }
+    .fit-list li {
+      position: relative;
+      padding: 17px 0 17px 28px;
+      border-top: 1px solid var(--line);
+    }
+    .fit-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+    .caution {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 40px;
+      margin-top: 90px;
+      padding-top: 34px;
+      border-top: 1px solid var(--line);
+    }
+    .caution h3 { margin: 0; font-family: "Songti SC", "STSong", serif; font-size: 30px; }
+    .caution ol { margin: 0; padding-left: 1.2em; }
+
+    .audit-section { color: var(--white); background: var(--ink); }
+    .audit-section .section { width: min(var(--max), calc(100% - 40px)); }
+    .audit-section .section-intro { color: #bdb7ad; }
+    .audit-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 70px;
+      border-top: 1px solid #44423e;
+      border-bottom: 1px solid #44423e;
+    }
+    .audit-stat { padding: 26px 24px 26px 0; }
+    .audit-stat + .audit-stat { padding-left: 24px; border-left: 1px solid #44423e; }
+    .audit-stat strong { display: block; color: var(--white); font-family: Georgia, serif; font-size: 44px; line-height: 1; }
+    .audit-stat span { color: #aaa49b; font-size: 13px; }
+
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .filter-btn {
+      padding: 8px 15px;
+      color: #bbb5aa;
+      background: transparent;
+      border: 1px solid #4d4a45;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+    .filter-btn:hover, .filter-btn.active { color: var(--white); border-color: var(--accent); background: var(--accent); }
+
+    .evidence-list { border-top: 1px solid #44423e; }
+    .evidence-item { border-bottom: 1px solid #44423e; }
+    .evidence-item[hidden] { display: none; }
+    .evidence-item summary {
+      display: grid;
+      grid-template-columns: 72px 120px 1fr 80px;
+      gap: 20px;
+      align-items: center;
+      min-height: 82px;
+      cursor: pointer;
+      list-style: none;
+    }
+    .evidence-item summary::-webkit-details-marker { display: none; }
+    .evidence-id { color: #858078; font-family: Georgia, serif; }
+    .evidence-school { font-size: 13px; font-weight: 700; }
+    .evidence-summary { color: #ded8cd; line-height: 1.5; }
+    .confidence { color: #bbb5aa; font-size: 12px; text-align: right; }
+    .confidence::after { content: "＋"; display: inline-block; margin-left: 12px; color: var(--accent); }
+    details[open] .confidence::after { content: "—"; }
+    .evidence-detail {
+      display: grid;
+      grid-template-columns: 192px 1fr;
+      gap: 20px;
+      padding: 0 0 28px 192px;
+      color: #aaa49b;
+      font-size: 13px;
+    }
+    .evidence-detail p { margin: 0; }
+
+    .limitations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 70px;
+      margin-top: 90px;
+    }
+    .limitation {
+      padding: 23px 0;
+      border-top: 1px solid #44423e;
+    }
+    .limitation strong { display: block; margin-bottom: 7px; }
+    .limitation p { margin: 0; color: #aaa49b; font-size: 14px; }
+
+    .decision {
+      background: var(--accent);
+      color: var(--white);
+    }
+    .decision .section { padding-top: 110px; padding-bottom: 110px; }
+    .decision-grid {
+      display: grid;
+      grid-template-columns: .55fr 1.45fr;
+      gap: 50px;
+    }
+    .decision-label { font-size: 12px; font-weight: 700; letter-spacing: .15em; }
+    .decision blockquote {
+      margin: 0;
+      font-family: "Songti SC", "STSong", serif;
+      font-size: clamp(34px, 5vw, 62px);
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -.03em;
+    }
+
+    footer {
+      padding: 58px max(20px, calc((100vw - var(--max))/2));
+      color: #aaa49b;
+      background: var(--ink);
+      border-top: 1px solid #3d3b37;
+      font-size: 12px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; gap: 30px; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .footer-links a { color: #d5cfc4; text-decoration-color: #5d5952; text-underline-offset: 4px; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in-view { opacity: 1; transform: none; }
+
+    @media (max-width: 780px) {
+      .site-nav { height: 62px; }
+      .nav-link { display: none; }
+      .print-btn { min-height: 34px; padding: 0 12px; font-size: 12px; }
+      .hero-inner { padding-top: 110px; }
+      .hero h1 { max-width: 92%; }
+      .hero-visual { right: -46vw; width: 130vw; opacity: .42; }
+      .scroll-cue { display: none; }
+      .scope-inner { grid-template-columns: 1fr; }
+      .scope-item, .scope-item + .scope-item { min-height: auto; padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .scope-item:last-child { border-bottom: 0; }
+      .section-head, .deep-grid, .fit-grid, .caution, .decision-grid { grid-template-columns: 1fr; }
+      .section-head { gap: 12px; }
+      .thesis { grid-template-columns: 1fr; gap: 54px; }
+      .spectrum-head, .spectrum-row { grid-template-columns: 92px 1fr; gap: 14px; }
+      .spectrum-note { margin-left: 106px; }
+      .signature { position: static; }
+      .signature-word { font-size: 92px; }
+      .audit-stats { grid-template-columns: 1fr; }
+      .audit-stat, .audit-stat + .audit-stat { padding: 18px 0; border-left: 0; border-bottom: 1px solid #44423e; }
+      .audit-stat:last-child { border-bottom: 0; }
+      .evidence-item summary { grid-template-columns: 52px 92px 1fr; gap: 10px; padding: 14px 0; }
+      .confidence { grid-column: 2 / 4; text-align: left; }
+      .evidence-detail { grid-template-columns: 1fr; padding: 0 0 24px 62px; }
+      .limitations { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
+      .hero-kicker, .hero h1, .hero-deck, .hero-meta, .reveal { opacity: 1; transform: none; }
+      .point { left: var(--pos); }
+    }
+
+    @media print {
+      @page { size: A4; margin: 14mm; }
+      body { background: white; color: black; font-size: 10pt; }
+      .progress, .site-nav, .scroll-cue, .filter-bar { display: none !important; }
+      .hero { min-height: 230mm; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .hero-inner { width: 100%; }
+      .section, .school-section { width: 100%; padding: 18mm 0; }
+      .school-section.dark, .audit-section, .decision, footer { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .signature { position: static; }
+      .reveal { opacity: 1; transform: none; }
+      .point { left: var(--pos); }
+      .evidence-item { break-inside: avoid; }
+      .evidence-item:not([open]) .evidence-detail { display: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" aria-hidden="true"></div>
+
+  <nav class="site-nav" aria-label="页面导航">
+    <div class="brand">朝阳小学口碑观察 / 2026</div>
+    <div class="nav-actions">
+      <a class="nav-link" href="#comparison">查看对比</a>
+      <button class="print-btn" type="button" onclick="window.print()">打印 / PDF</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-kicker">近三年 · 小红书在读家庭口碑</p>
+      <h1>人朝小学<span class="versus">vs</span><br>朝外本部</h1>
+      <p class="hero-deck">不是“谁更强”，而是两种家庭体验：一边更宽，一边更聚焦。</p>
+      <div class="hero-meta">
+        <span>时间范围 <strong>2023.05.30—2026.07.20</strong></span>
+        <span>调研口径 <strong>家长与就读家庭优先</strong></span>
+        <span>更新日期 <strong>2026.07.20</strong></span>
+      </div>
+    </div>
+
+    <svg class="hero-visual" viewBox="0 0 900 900" role="img" aria-label="两所学校体验的抽象对照图">
+      <defs>
+        <pattern id="grid" width="45" height="45" patternUnits="userSpaceOnUse">
+          <path d="M45 0H0V45" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <circle cx="450" cy="450" r="338" fill="url(#grid)" stroke="#fff" stroke-opacity=".3"/>
+      <circle cx="450" cy="450" r="248" fill="none" stroke="#fff" stroke-opacity=".2"/>
+      <path d="M450 112V788M112 450H788" stroke="#fff" stroke-opacity=".28"/>
+      <path d="M450 163A287 287 0 0 1 737 450" fill="none" stroke="#c8442d" stroke-width="18" stroke-linecap="round"/>
+      <path d="M450 737A287 287 0 0 1 163 450" fill="none" stroke="#fff" stroke-opacity=".8" stroke-width="6" stroke-linecap="round"/>
+      <g fill="none" stroke="#fff" stroke-opacity=".75" stroke-width="4">
+        <path d="M279 545V403l171-99 171 99v142"/>
+        <path d="M318 545V423h264v122"/>
+        <path d="M359 423v122M405 423v122M451 423v122M497 423v122M543 423v122"/>
+        <path d="M239 545h422M211 588h478"/>
+      </g>
+      <circle cx="673" cy="263" r="17" fill="#c8442d"/>
+      <circle cx="227" cy="637" r="9" fill="#fff"/>
+    </svg>
+    <div class="scroll-cue" aria-hidden="true">SCROLL</div>
+  </header>
+
+  <aside class="scope-bar" aria-label="调研范围">
+    <div class="scope-inner">
+      <div class="scope-item">
+        <span class="scope-label">学校口径</span>
+        <span class="scope-value">人朝小学 vs 北京市朝阳外国语学校小学部本部</span>
+      </div>
+      <div class="scope-item">
+        <span class="scope-label">已排除</span>
+        <span class="scope-value">朝外来广营等分校区、人朝实验、人朝分</span>
+      </div>
+      <div class="scope-item">
+        <span class="scope-label">判断边界</span>
+        <span class="scope-value">样本少于10人/校，不做机械评分</span>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <section class="section" id="summary">
+      <div class="section-head reveal">
+        <span class="section-no">01 / 结论</span>
+        <div>
+          <span class="eyebrow">THE SHORT ANSWER</span>
+          <h2>选择的不是名次，<br>而是家庭愿意承担的成本。</h2>
+        </div>
+      </div>
+
+      <div class="thesis reveal">
+        <article class="thesis-school">
+          <h3>人朝小学</h3>
+          <p>社团、活动与非主科体验更丰富，孩子状态更舒展；家庭作业、项目任务和大校规模也更容易进入家庭生活。</p>
+          <ul class="keywords" aria-label="人朝小学关键词">
+            <li>活动面广</li><li>过程可见</li><li>家庭参与</li><li>一校六址</li>
+          </ul>
+        </article>
+        <article class="thesis-school accent">
+          <h3>朝外本部</h3>
+          <p>英语、纪律与校内完成度更突出；回家作业不一定多，但英语外学和同伴水平形成另一种隐性压力。</p>
+          <ul class="keywords" aria-label="朝外本部关键词">
+            <li>英语突出</li><li>规则严格</li><li>校内完成</li><li>隐性竞争</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="paradox reveal">
+        <strong>“省家长” <span>≠</span> “不卷”</strong>
+        <p>朝外家长所说的“省心”主要指日常作业在校完成；所谓“卷”，更多来自英语水平、同伴竞争和家庭的课外投入。</p>
+      </div>
+    </section>
+
+    <section class="section" id="comparison">
+      <div class="section-head reveal">
+        <span class="section-no">02 / 光谱</span>
+        <div>
+          <span class="eyebrow">QUALITATIVE SPECTRUM</span>
+          <h2>六个维度，<br>看见风格差异。</h2>
+          <p class="section-intro">位置只表达近三年家长口碑的相对倾向，不是量化分数，也不代表教学质量排名。</p>
+        </div>
+      </div>
+
+      <div class="spectrum reveal" aria-label="两校六维口碑光谱">
+        <div class="spectrum-head">
+          <span></span>
+          <div class="spectrum-legend"><b>人朝倾向</b><span>中间</span><b>朝外倾向</b></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">英语特色</span>
+          <div class="track"><i class="point renchao" style="--pos:38%"></i><i class="point chaowai" style="--pos:84%"></i></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">校内完成</span>
+          <div class="track"><i class="point renchao" style="--pos:49%"></i><i class="point chaowai" style="--pos:81%"></i></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">活动社团</span>
+          <div class="track"><i class="point renchao" style="--pos:18%"></i><i class="point chaowai" style="--pos:58%"></i></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">规则严格</span>
+          <div class="track"><i class="point renchao" style="--pos:47%"></i><i class="point chaowai" style="--pos:86%"></i></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">家庭项目</span>
+          <div class="track"><i class="point renchao" style="--pos:22%"></i><i class="point chaowai" style="--pos:62%"></i></div>
+        </div>
+        <div class="spectrum-row">
+          <span class="spectrum-label">规模复杂</span>
+          <div class="track"><i class="point renchao" style="--pos:14%"></i><i class="point chaowai" style="--pos:55%"></i></div>
+        </div>
+      </div>
+      <p class="spectrum-note reveal">墨色圆点代表人朝，朱红圆点代表朝外。越靠各自一侧，表示该特征越常与该校关联。</p>
+    </section>
+
+    <section class="school-section light" id="renchao">
+      <div class="section-head reveal">
+        <span class="section-no">03 / 人朝小学</span>
+        <div>
+          <span class="eyebrow">RENCHAO PRIMARY</span>
+          <h2>更宽的校园体验，<br>更可见的家庭参与。</h2>
+          <p class="section-intro">人朝的优势不只在课堂，而在活动面；它的成本也不只在作业，而在大体量、多校址与项目协作。</p>
+        </div>
+      </div>
+
+      <div class="deep-grid">
+        <div class="signature reveal">
+          <span class="signature-word">宽</span>
+          <small>家长口碑中的核心性格：活动与综合体验更宽。</small>
+        </div>
+        <div class="findings">
+          <article class="finding reveal">
+            <span class="finding-no">01</span>
+            <div><h3>社团和非主科更丰富</h3><p>直接比较帖里，家长反复把社团、活动和孩子体验列为人朝的相对优势。这个结论为中等置信度，不能外推为所有孩子都更快乐。</p><a class="source-link" href="https://www.xiaohongshu.com/explore/6a0006c1000000000602302f" target="_blank" rel="noopener">查看原帖</a></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">02</span>
+            <div><h3>作业与评价更容易被家长看见</h3><p>家庭作业、带回的考试卷、手抄报和观察项目会进入家庭；六年级家长也会明确讨论阶段考试与初中分班。</p><a class="source-link" href="https://www.xiaohongshu.com/explore/6a3e2a51000000000f005038" target="_blank" rel="noopener">六年级家长记录</a></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">03</span>
+            <div><h3>超大规模是现实变量</h3><p>官方资料为“一校六址”、小学109个教学班、全校7,636名学生。2024级家长统计约20个一年级班，具体班数为家长数据而非官方口径。</p><a class="source-link" href="https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf" target="_blank" rel="noopener">官方学校介绍</a></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">04</span>
+            <div><h3>英语需要家庭自行规划</h3><p>本轮样本没有显示人朝校内英语是压倒性特色；比较家庭预期可能需要课外补充。由于缺少人朝英语课堂的一手细节，这条置信度较低。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="school-section dark" id="chaowai">
+      <div class="section-head reveal">
+        <span class="section-no">04 / 朝外本部</span>
+        <div>
+          <span class="eyebrow">CHAOYANG FOREIGN LANGUAGE</span>
+          <h2>更聚焦的学习主线，<br>更隐形的家庭竞争。</h2>
+          <p class="section-intro">朝外的英语和校内管理最容易被家长感知；相应的压力，常常发生在放学之后。</p>
+        </div>
+      </div>
+
+      <div class="deep-grid">
+        <div class="signature reveal">
+          <span class="signature-word">聚</span>
+          <small>家长口碑中的核心性格：英语、纪律与执行更聚焦。</small>
+        </div>
+        <div class="findings">
+          <article class="finding reveal">
+            <span class="finding-no">01</span>
+            <div><h3>英语是最稳定的优势标签</h3><p>家长提到英语课较多、教师整体较好，会补充读物和材料；但想维持校内高分，不少家庭仍会外学。</p><a class="source-link" href="https://www.xiaohongshu.com/explore/67e93164000000001b03f070" target="_blank" rel="noopener">在读家长问答</a></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">02</span>
+            <div><h3>回家作业少，是较稳定口碑</h3><p>六年在读家长和两校比较帖相互支持：不少作业在校完成，回家盯作业的日常负担相对低；但考试存在，试卷未必带回。</p><a class="source-link" href="https://www.xiaohongshu.com/explore/6a0006c1000000000602302f" target="_blank" rel="noopener">两校比较帖</a></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">03</span>
+            <div><h3>严格与负责，同时存在</h3><p>“老师负责”多次出现；管理规则也更明确。适合认可强执行的家庭，不一定适合高度看重自由表达的孩子。</p></div>
+          </article>
+          <article class="finding reveal">
+            <span class="finding-no">04</span>
+            <div><h3>投诉氛围是班级级别风险</h3><p>同一讨论串有多个评论称，投诉会使部分教师减少拔高或分享。信号重复但缺第二个独立帖子验证，只能评为中等置信度。</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <div class="section-head reveal">
+        <span class="section-no">05 / 适配</span>
+        <div>
+          <span class="eyebrow">FAMILY FIT</span>
+          <h2>哪一种日常，<br>更像你们家的日常？</h2>
+        </div>
+      </div>
+
+      <div class="fit-grid reveal">
+        <article class="fit-col">
+          <h3>更偏向人朝，如果你们——</h3>
+          <ul class="fit-list">
+            <li>更看重社团、综合活动与孩子在校体验</li>
+            <li>能接受手抄报、观察记录等项目进入家庭</li>
+            <li>愿意自行规划英语补充</li>
+            <li>已经核实具体校址、通勤与班额</li>
+          </ul>
+        </article>
+        <article class="fit-col accent">
+          <h3>更偏向朝外，如果你们——</h3>
+          <ul class="fit-list">
+            <li>把英语环境和学校日常管理放在更高优先级</li>
+            <li>希望作业尽量在校完成</li>
+            <li>接受纪律严格、活动相对聚焦</li>
+            <li>能承受英语外学与同伴竞争带来的投入</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="caution reveal">
+        <h3>两边都要谨慎</h3>
+        <ol>
+          <li>只依据“牛校”标签，不核实具体校址、班主任与年级政策。</li>
+          <li>把少量家长的体验当作全校平均。</li>
+          <li>认为十二年一贯制等于升学路径完全确定；相关政策应按入学当年官方文件复核。</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="audit-section" id="evidence">
+      <div class="section">
+        <div class="section-head reveal">
+          <span class="section-no">06 / 证据</span>
+          <div>
+            <span class="eyebrow">EVIDENCE AUDIT</span>
+            <h2>每一个结论，<br>都标注它的边界。</h2>
+            <p class="section-intro">点击任一证据可展开身份线索和发布日期；被排除的校区错配样本也保留在审计表中。</p>
+          </div>
+        </div>
+
+        <div class="audit-stats reveal">
+          <div class="audit-stat"><strong>14</strong><span>条结构化证据</span></div>
+          <div class="audit-stat"><strong>2024—26</strong><span>核心帖子发布时间</span></div>
+          <div class="audit-stat"><strong>&lt;10</strong><span>每校一手家长账号</span></div>
+        </div>
+
+        <div class="filter-bar reveal" role="group" aria-label="筛选证据">
+          <button class="filter-btn active" data-filter="all" type="button">全部</button>
+          <button class="filter-btn" data-filter="人朝" type="button">人朝</button>
+          <button class="filter-btn" data-filter="朝外" type="button">朝外</button>
+          <button class="filter-btn" data-filter="excluded" type="button">排除项</button>
+        </div>
+        <div class="evidence-list reveal" id="evidenceList"></div>
+
+        <div class="limitations reveal">
+          <div class="limitation"><strong>严格执行时间窗口</strong><p>核心小红书帖子均发布于2024年6月至2026年6月；2023年5月30日前内容未采纳。</p></div>
+          <div class="limitation"><strong>学生本人样本稀少</strong><p>小学阶段学生公开发帖极少，核心判断实际上以在读家长为主。</p></div>
+          <div class="limitation"><strong>校区不能混用</strong><p>朝外来广营样本仅用于说明校区差异，没有用于推断本部。</p></div>
+          <div class="limitation"><strong>平台存在选择偏差</strong><p>公开发帖家庭往往择校投入较高，不能代表全部家长。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="decision">
+      <div class="section decision-grid reveal">
+        <span class="decision-label">FINAL TAKE</span>
+        <blockquote>朝外的优势更集中：英语、纪律、校内完成。人朝的优势更偏体验：社团、活动、非主科与舒展感。</blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>仅代表2023.05.30—2026.07.20公开样本，不替代入学当年的官方政策核验。</span>
+      <div class="footer-links">
+        <a href="https://www.bjchy.gov.cn/affair/domain/jy/4028805a9aecc7c1019b2029277c2f13.html" target="_blank" rel="noopener">官方学校名录</a>
+        <a href="./口碑对比报告.md">Markdown报告</a>
+        <a href="./evidence_table.csv">证据CSV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const evidence = [
+      {id:'E01', school:'人朝小学', group:'人朝', date:'2026-05-10', identity:'具备具体家庭场景的比较评论者（疑似家长）', type:'近一手', included:true, confidence:'中高', summary:'有家庭作业，考试卷带回，社团和非主科丰富；项目任务需家庭参与', url:'https://www.xiaohongshu.com/explore/6a0006c1000000000602302f'},
+      {id:'E02', school:'人朝小学', group:'人朝', date:'2026-05-10', identity:'做过两校比较的家长', type:'近一手', included:true, confidence:'中', summary:'认为活动更丰富、孩子体验更快乐；英语可能需课外补充', url:'https://www.xiaohongshu.com/explore/6a0006c1000000000602302f'},
+      {id:'E03', school:'人朝小学', group:'人朝', date:'2024-12-03', identity:'2024级在读家长', type:'一手', included:true, confidence:'高', summary:'老师通过班级平台发照片，孩子适应良好', url:'https://www.xiaohongshu.com/explore/674ec6b00000000002028810'},
+      {id:'E04', school:'人朝小学', group:'人朝', date:'2024-12-03', identity:'2024级在读家长', type:'一手', included:true, confidence:'中', summary:'家长自行统计当届约20班，单班约36至40人以上', url:'https://www.xiaohongshu.com/explore/674ef39200000000060166dd'},
+      {id:'E05', school:'人朝小学', group:'人朝', date:'2026-06-26', identity:'六年级下在读家庭', type:'一手', included:true, confidence:'高', summary:'关注三次大考成绩及初中分班', url:'https://www.xiaohongshu.com/explore/6a3e2a51000000000f005038'},
+      {id:'E06', school:'人朝小学', group:'人朝', date:'2025-05', identity:'朝阳区官方资料', type:'官方', included:true, confidence:'高', summary:'一校六址，小学109个教学班，全校7,636名学生', url:'https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf'},
+      {id:'E07', school:'朝外本部', group:'朝外', date:'2026-05-10', identity:'具备具体家庭场景的比较评论者（疑似家长）', type:'近一手', included:true, confidence:'中高', summary:'家庭作业很少，多由学校内部完成；低年级社团较少', url:'https://www.xiaohongshu.com/explore/6a0006c1000000000602302f'},
+      {id:'E08', school:'朝外本部', group:'朝外', date:'2026-05-10', identity:'做过两校比较的家长', type:'近一手', included:true, confidence:'中', summary:'英语优势明显、管理严格，活动少于人朝', url:'https://www.xiaohongshu.com/explore/6a0006c1000000000602302f'},
+      {id:'E09', school:'朝外本部', group:'朝外', date:'2025-03-30', identity:'讨论校内英语材料的家长', type:'高度疑似一手', included:true, confidence:'中高', summary:'英语课较多、教师总体较好；重视英语的家庭普遍外学', url:'https://www.xiaohongshu.com/explore/67e93164000000001b03f070'},
+      {id:'E10', school:'朝外本部', group:'朝外', date:'2025-03-30', identity:'明确六年在读家长', type:'一手', included:true, confidence:'高', summary:'作业多在校完成；英语阅读和考试有难度；同伴关系与沟通正面', url:'https://www.xiaohongshu.com/explore/67e93164000000001b03f070'},
+      {id:'E11', school:'朝外本部', group:'朝外', date:'2025-03-30', identity:'六年在读家长及同帖其他家长', type:'一手/高度疑似一手', included:true, confidence:'中', summary:'投诉可能使部分班级教师减少拔高或分享', url:'https://www.xiaohongshu.com/explore/67e93164000000001b03f070'},
+      {id:'E12', school:'朝外本部', group:'朝外', date:'2024-06-28', identity:'长期家长或居住者', type:'高度疑似一手', included:true, confidence:'中低', summary:'校风正、教学低调；家长分享书籍和资源', url:'https://www.xiaohongshu.com/explore/667dae31000000001c036eaf'},
+      {id:'E13', school:'朝外来广营', group:'excluded', date:'2025-02-21', identity:'来广营一年级家长', type:'一手', included:false, confidence:'对该校区高', summary:'校区不匹配，仅用于校区差异警示', url:'https://www.xiaohongshu.com/explore/67b89114000000002803e79e'},
+      {id:'E14', school:'人朝全学段', group:'excluded', date:'2025-07-24', identity:'自述小初高12年在人朝的学生', type:'一手', included:false, confidence:'对小学低', summary:'缺少小学阶段具体细节，不参与核心结论', url:'https://www.xiaohongshu.com/explore/6881ba62000000000b009cf8'}
+    ];
+
+    const evidenceList = document.getElementById('evidenceList');
+    const escapeHTML = value => String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+
+    evidenceList.innerHTML = evidence.map(item => `
+      <details class="evidence-item" data-group="${escapeHTML(item.group)}">
+        <summary>
+          <span class="evidence-id">${escapeHTML(item.id)}</span>
+          <span class="evidence-school">${escapeHTML(item.school)}</span>
+          <span class="evidence-summary">${escapeHTML(item.summary)}</span>
+          <span class="confidence">${item.included ? '置信度 ' + escapeHTML(item.confidence) : '已排除'}</span>
+        </summary>
+        <div class="evidence-detail">
+          <p>${escapeHTML(item.date)} · ${escapeHTML(item.type)}</p>
+          <p>身份线索：${escapeHTML(item.identity)}<br><a class="source-link" href="${escapeHTML(item.url)}" target="_blank" rel="noopener">打开原始来源</a></p>
+        </div>
+      </details>`).join('');
+
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        document.querySelectorAll('.evidence-item').forEach(item => {
+          item.hidden = filter !== 'all' && item.dataset.group !== filter;
+        });
+      });
+    });
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal, .spectrum').forEach(el => observer.observe(el));
+
+    const progress = document.getElementById('progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max > 0 ? Math.min(100, scrollY / max * 100) : 0}%`;
+    };
+    addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+  </script>
+</body>
+</html>
