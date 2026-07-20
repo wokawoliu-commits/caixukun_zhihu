@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="严格基于知乎家长与小学就读学生公开回答，对比北京朝阳区人朝小学与陈经纶中学分校小学部利泽校区的口碑与证据缺口。">
+  <meta name="theme-color" content="#102b32">
+  <link rel="icon" href="data:,">
+  <title>人朝小学 vs 陈分利泽｜知乎家长与学生口碑证据报告</title>
+  <style>
+    :root {
+      --paper: #f3efe5;
+      --paper-2: #e8e1d3;
+      --paper-3: #d9cfbd;
+      --ink: #143039;
+      --muted: #66747a;
+      --line: rgba(20,48,57,.19);
+      --line-strong: rgba(20,48,57,.43);
+      --white: #fffdf7;
+      --rc: #276775;
+      --rc-soft: #a9ccd0;
+      --lz: #aa503a;
+      --lz-soft: #e0b4a7;
+      --gold: #d7a14d;
+      --display: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--paper); }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 12%, rgba(255,255,255,.76), transparent 29rem),
+        var(--paper);
+      font-family: var(--sans);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-underline-offset: 4px; }
+    button { font: inherit; }
+    .shell { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+    .progress {
+      position: fixed; inset: 0 auto auto 0; z-index: 40;
+      width: 0; height: 3px; background: var(--gold);
+      transition: width .08s linear;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: var(--white);
+      background: #102b32;
+    }
+    .hero__image {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; object-position: 58% center;
+      transform: scale(1.045);
+      animation: heroZoom 1.7s cubic-bezier(.2,.8,.2,1) both;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(7,25,31,.94) 0%, rgba(7,25,31,.79) 35%, rgba(7,25,31,.16) 70%, rgba(7,25,31,.03) 100%),
+        linear-gradient(0deg, rgba(7,25,31,.92) 0%, transparent 54%);
+    }
+    .hero__inner {
+      position: relative; z-index: 2;
+      width: min(calc(100% - 48px), var(--max)); margin-inline: auto;
+      padding: 76px 0 54px;
+    }
+    .kicker {
+      margin: 0 0 22px;
+      color: rgba(255,255,255,.7);
+      font-size: 12px; font-weight: 760; letter-spacing: .18em; text-transform: uppercase;
+      animation: rise .75s .05s both;
+    }
+    .hero h1 {
+      max-width: 890px; margin: 0;
+      font: 760 clamp(46px, 7.5vw, 96px)/.98 var(--display);
+      letter-spacing: -.055em;
+      text-wrap: balance;
+      animation: rise .9s .14s both;
+    }
+    .hero h1 span { color: #f0bd79; }
+    .hero__deck {
+      max-width: 680px; margin: 28px 0 0;
+      color: rgba(255,255,255,.83);
+      font-size: clamp(17px, 2vw, 22px);
+      animation: rise .9s .25s both;
+    }
+    .hero__bottom {
+      display: grid; grid-template-columns: 1fr auto; gap: 42px; align-items: end;
+      margin-top: 40px; padding-top: 23px;
+      border-top: 1px solid rgba(255,255,255,.32);
+      animation: rise .9s .38s both;
+    }
+    .hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; color: rgba(255,255,255,.7); font-size: 13px; }
+    .hero__meta strong { color: var(--white); }
+    .hero__link {
+      display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px;
+      border: 1px solid rgba(255,255,255,.58); text-decoration: none; font-weight: 700; font-size: 14px;
+      background: rgba(7,25,31,.22); backdrop-filter: blur(10px);
+      transition: .24s ease;
+    }
+    .hero__link:hover { background: var(--white); color: var(--ink); transform: translateY(-2px); }
+
+    .section { padding: 108px 0; border-top: 1px solid var(--line); }
+    .section--tight { padding: 70px 0; }
+    .section--ink { color: var(--white); background: var(--ink); border: 0; }
+    .section--warm { background: var(--paper-2); }
+    .section__head {
+      display: grid; grid-template-columns: .72fr 1.6fr; gap: 52px; align-items: start;
+      margin-bottom: 62px;
+    }
+    .section__number { color: var(--lz); font-size: 12px; font-weight: 800; letter-spacing: .16em; }
+    .section--ink .section__number { color: #efb49f; }
+    .section h2 {
+      margin: 0; font: 760 clamp(36px, 5vw, 64px)/1.08 var(--display);
+      letter-spacing: -.04em; text-wrap: balance;
+    }
+    .section__intro { max-width: 790px; margin: 20px 0 0; color: var(--muted); font-size: 17px; }
+    .section--ink .section__intro { color: rgba(255,255,255,.68); }
+    .lead { margin: 0; font: 680 clamp(26px, 3.7vw, 44px)/1.4 var(--display); letter-spacing: -.025em; }
+    .lead em { color: var(--lz); font-style: normal; }
+
+    .truth-grid {
+      display: grid; grid-template-columns: 1fr 1fr; margin-top: 72px;
+      border-block: 1px solid var(--line-strong);
+    }
+    .truth { padding: 42px 46px 42px 0; }
+    .truth + .truth { padding-left: 46px; border-left: 1px solid var(--line-strong); }
+    .truth__label { margin: 0 0 16px; color: var(--rc); font-size: 12px; font-weight: 820; letter-spacing: .13em; }
+    .truth + .truth .truth__label { color: var(--lz); }
+    .truth h3 { margin: 0 0 15px; font: 740 29px/1.22 var(--display); }
+    .truth p { margin: 0; color: var(--muted); }
+
+    .scope {
+      display: grid; grid-template-columns: 220px 1fr; gap: 46px;
+      padding: 32px 0; border-top: 1px solid var(--line);
+    }
+    .scope:last-child { border-bottom: 1px solid var(--line); }
+    .scope strong { font-size: 14px; }
+    .scope p { margin: 0; color: var(--muted); }
+
+    .ledger {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-block: 1px solid rgba(255,255,255,.26);
+    }
+    .ledger__item { min-height: 168px; padding: 30px 26px 30px 0; }
+    .ledger__item + .ledger__item { padding-left: 26px; border-left: 1px solid rgba(255,255,255,.26); }
+    .ledger__value { display: block; color: #f1c49d; font: 760 clamp(43px, 6vw, 70px)/1 var(--display); }
+    .ledger__label { display: block; margin-top: 12px; color: rgba(255,255,255,.7); font-size: 13px; }
+    .ledger__item:last-child .ledger__value { color: #f19d83; }
+    .method-note { margin: 30px 0 0; color: rgba(255,255,255,.62); font-size: 13px; }
+
+    .filterbar { display: flex; flex-wrap: wrap; gap: 9px; margin-bottom: 22px; }
+    .filter {
+      min-height: 38px; padding: 0 14px;
+      color: var(--muted); border: 1px solid var(--line); background: transparent;
+      cursor: pointer; transition: .2s ease;
+    }
+    .filter:hover, .filter[aria-pressed="true"] { color: var(--white); background: var(--ink); border-color: var(--ink); }
+    .matrix { border-top: 1px solid var(--line-strong); }
+    .matrix__row {
+      display: grid; grid-template-columns: 160px 1fr 1fr 122px;
+      border-bottom: 1px solid var(--line);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .matrix__row[hidden] { display: none; }
+    .matrix__cell { padding: 24px 25px 24px 0; }
+    .matrix__cell + .matrix__cell { padding-left: 25px; border-left: 1px solid var(--line); }
+    .matrix__head { color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+    .matrix__topic { font-weight: 780; }
+    .matrix__rc { color: var(--rc); }
+    .matrix__lz { color: var(--lz); }
+    .matrix__signal { font-size: 12px; font-weight: 760; }
+    .signal--known { color: var(--rc); }
+    .signal--gap { color: var(--lz); }
+
+    .profiles { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+    .profile { position: relative; padding-top: 24px; border-top: 4px solid var(--rc); }
+    .profile--lz { border-color: var(--lz); }
+    .profile__eyebrow { margin: 0 0 15px; color: var(--rc); font-size: 12px; font-weight: 820; letter-spacing: .13em; }
+    .profile--lz .profile__eyebrow { color: var(--lz); }
+    .profile h3 { margin: 0 0 20px; font: 740 clamp(30px, 4vw, 44px)/1.1 var(--display); }
+    .profile__standfirst { margin: 0 0 28px; color: var(--muted); font-size: 17px; }
+    .finding { padding: 23px 0; border-top: 1px solid var(--line); }
+    .finding h4 { margin: 0 0 8px; font-size: 15px; }
+    .finding p { margin: 0; color: var(--muted); }
+    .finding a { font-weight: 690; }
+    .empty {
+      margin: 28px 0; padding: 34px 0;
+      border-block: 1px solid var(--line-strong);
+      font: 680 25px/1.45 var(--display);
+    }
+    .empty span { color: var(--lz); }
+
+    .baseline {
+      display: grid; grid-template-columns: .85fr 1fr; gap: 68px; align-items: start;
+    }
+    .scale-compare { display: grid; gap: 30px; }
+    .scale__label { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 9px; font-size: 13px; font-weight: 760; }
+    .scale__track { height: 13px; background: rgba(255,255,255,.12); overflow: hidden; }
+    .scale__fill { height: 100%; background: #7fc0ca; transform-origin: left; animation: grow 1.1s ease both; }
+    .scale__fill--lz { width: 23%; background: #e7957b; }
+    .baseline__text p { margin: 0 0 18px; color: rgba(255,255,255,.7); }
+    .baseline__text strong { color: var(--white); }
+
+    .exclusion { display: grid; grid-template-columns: 180px 1fr 130px; gap: 26px; padding: 25px 0; border-top: 1px solid var(--line); }
+    .exclusion:last-child { border-bottom: 1px solid var(--line); }
+    .exclusion__type { color: var(--lz); font-size: 12px; font-weight: 820; letter-spacing: .1em; }
+    .exclusion p { margin: 0; color: var(--muted); }
+    .exclusion__why { color: var(--muted); font-size: 12px; }
+
+    .decision {
+      display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid var(--line-strong);
+    }
+    .decision__side { padding: 38px 46px 38px 0; }
+    .decision__side + .decision__side { padding-left: 46px; border-left: 1px solid var(--line-strong); }
+    .decision h3 { margin: 0 0 14px; font: 740 30px/1.2 var(--display); }
+    .decision p { margin: 0; color: var(--muted); }
+    .decision strong { color: var(--lz); }
+
+    .questions { counter-reset: q; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; }
+    .question {
+      counter-increment: q; display: grid; grid-template-columns: 42px 1fr; gap: 12px;
+      padding: 20px 0; border-top: 1px solid rgba(255,255,255,.18);
+    }
+    .question::before { content: counter(q, decimal-leading-zero); color: #efb49f; font-size: 12px; font-weight: 800; }
+    .question p { margin: 0; color: rgba(255,255,255,.78); }
+
+    .sources { columns: 2; column-gap: 52px; }
+    .source { break-inside: avoid; padding: 18px 0; border-top: 1px solid var(--line); }
+    .source__meta { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+    .source a { font-weight: 700; }
+    .source p { margin: 7px 0 0; color: var(--muted); font-size: 13px; }
+    .footer { padding: 34px 0; color: var(--muted); border-top: 1px solid var(--line); font-size: 12px; }
+    .footer__row { display: flex; justify-content: space-between; gap: 30px; }
+
+    .reveal { transform: translateY(24px); transition: transform .65s ease; }
+    .reveal.is-visible { transform: none; }
+    @keyframes rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+    @keyframes heroZoom { from { transform: scale(1.1); } to { transform: scale(1.045); } }
+    @keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    @media (max-width: 860px) {
+      .hero { min-height: 92svh; }
+      .hero::after { background: linear-gradient(0deg, rgba(7,25,31,.96) 0%, rgba(7,25,31,.62) 60%, rgba(7,25,31,.14) 100%); }
+      .hero__image { object-position: 65% center; }
+      .hero__bottom, .section__head, .baseline { grid-template-columns: 1fr; }
+      .hero__bottom { gap: 20px; }
+      .hero__link { width: fit-content; }
+      .ledger { grid-template-columns: 1fr 1fr; }
+      .ledger__item:nth-child(3) { border-left: 0; border-top: 1px solid rgba(255,255,255,.26); padding-left: 0; }
+      .ledger__item:nth-child(4) { border-top: 1px solid rgba(255,255,255,.26); }
+      .matrix { overflow-x: auto; }
+      .matrix__row { min-width: 800px; }
+      .profiles, .truth-grid, .decision { grid-template-columns: 1fr; }
+      .truth + .truth, .decision__side + .decision__side { padding-left: 0; border-left: 0; border-top: 1px solid var(--line-strong); }
+      .truth, .truth + .truth, .decision__side, .decision__side + .decision__side { padding-right: 0; }
+      .questions { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 620px) {
+      .shell, .hero__inner { width: min(calc(100% - 32px), var(--max)); }
+      .hero__inner { padding-bottom: 30px; }
+      .hero h1 { font-size: clamp(42px, 15vw, 65px); }
+      .hero__deck { font-size: 16px; }
+      .hero__meta { gap: 7px 16px; }
+      .section { padding: 76px 0; }
+      .section--tight { padding: 54px 0; }
+      .section__head { gap: 14px; margin-bottom: 42px; }
+      .scope { grid-template-columns: 1fr; gap: 8px; }
+      .ledger { grid-template-columns: 1fr; }
+      .ledger__item, .ledger__item + .ledger__item { min-height: 0; padding: 24px 0; border-left: 0; border-top: 1px solid rgba(255,255,255,.26); }
+      .ledger__item:first-child { border-top: 0; }
+      .profiles { gap: 52px; }
+      .exclusion { grid-template-columns: 1fr; gap: 7px; }
+      .sources { columns: 1; }
+      .footer__row { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media print {
+      .progress, .filterbar, .hero__link { display: none; }
+      .hero { min-height: 560px; }
+      .reveal { opacity: 1; transform: none; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="hero">
+    <img class="hero__image" src="assets/school-choice-hero.png" alt="家长与孩子面对通向两所校园的分岔路">
+    <div class="hero__inner">
+      <p class="kicker">Zhihu evidence review · Beijing Chaoyang · 2026.07.20</p>
+      <h1>人朝小学<br>还是<span>陈分利泽</span>？</h1>
+      <p class="hero__deck">答案不是一张排名表。严格筛完家长与小学就读学生评论后，一边留下两位旧生，一边是零位可核身份作者。</p>
+      <div class="hero__bottom">
+        <div class="hero__meta">
+          <span><strong>24</strong> 组利泽专项检索词</span>
+          <span><strong>394</strong> 条去重候选</span>
+          <span><strong>24</strong> 条校区相关回答</span>
+          <span><strong>18</strong> 条公开评论核验</span>
+        </div>
+        <a class="hero__link" href="#verdict">先看结论 ↓</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="verdict">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">01 / 核心判断</span>
+          <div>
+            <h2>不能诚实比较的地方，<br>比排名更重要。</h2>
+            <p class="section__intro">本报告只纳入自述为目标小学家长、在读生或毕业生，且内容明确落到小学阶段的回答与评论。房产号、教育咨询、排名帖只用于审计平台叙事，不参与口碑结论。</p>
+          </div>
+        </div>
+        <p class="lead">严格口径下，知乎不能支持“两校谁口碑更好”。人朝呈现一幅<em>可信但过时的历史学生画像</em>；利泽呈现的是<em>外围标签很多、校园生活证据为空</em>。</p>
+        <div class="truth-grid">
+          <article class="truth">
+            <p class="truth__label">人朝小学 · 信息风险是“旧”</p>
+            <h3>活动丰富、老师负责、体验舒展</h3>
+            <p>2 位有小学经历的学生作者，家长 0 位。唯一细节长答主要对应约 2013—2019 年，作者本人提醒扩容后不能直接平移到当前各校区。</p>
+          </article>
+          <article class="truth">
+            <p class="truth__label">陈分利泽 · 信息风险是“空”</p>
+            <h3>没有合格一手样本，不等于没有问题</h3>
+            <p>24 条校区相关回答与 18 条公开评论逐一核验后，利泽在读家长、学生或校友均为 0。所谓“小而美”主要出自外围账号。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--warm" id="scope">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">02 / 对象消歧</span>
+          <div>
+            <h2>只比较这两个<br>具体办学对象。</h2>
+            <p class="section__intro">“人大附”“人朝”“陈经纶”的分校与集团命名非常容易混淆。任何无法落到小学部和具体校区的内容都被排除。</p>
+          </div>
+        </div>
+        <div class="scope">
+          <strong>人朝小学</strong>
+          <p><b>中国人民大学附属中学朝阳学校小学部</b>。不包含民办人大附中朝阳分校、人朝分东坝校区，也不包含人大附中朝阳实验学校。</p>
+        </div>
+        <div class="scope">
+          <strong>陈分利泽</strong>
+          <p><b>北京市陈经纶中学分校小学部利泽校区</b>。2022 官方简介地址为利泽西园一区 116 楼；它是承担一至六年级的物理校区，“九年一贯”不等于七至九年级仍在 116 楼。不混入望欣园、原望京实验、帝景、嘉铭、保利或陈经纶中学本部。</p>
+        </div>
+        <div class="scope">
+          <strong>官方资料用途</strong>
+          <p>只确认学校实体、地址、学段与历史规模；官方宣传、竞赛成果和贯通课程不能冒充家长或学生的生活体验。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="sample">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">03 / 样本账本</span>
+          <div>
+            <h2>检索量很大，<br>合格样本仍然很小。</h2>
+            <p class="section__intro">候选数量不是口碑数量。一篇回答里的多个细节仍只算一位作者；题目里写“孩子”也不等于回答者是该校家长。</p>
+          </div>
+        </div>
+        <div class="ledger">
+          <div class="ledger__item"><span class="ledger__value">2</span><span class="ledger__label">人朝合格一手作者<br>均为有小学经历学生</span></div>
+          <div class="ledger__item"><span class="ledger__value">0</span><span class="ledger__label">人朝明确小学部家长<br>当前小学在读生也为 0</span></div>
+          <div class="ledger__item"><span class="ledger__value">24</span><span class="ledger__label">利泽校区相关回答<br>来自 16 个问题</span></div>
+          <div class="ledger__item"><span class="ledger__value">0</span><span class="ledger__label">利泽合格家长/学生<br>公开评论一手也为 0</span></div>
+        </div>
+        <p class="method-note">利泽路径：24 组关键词 → 394 条去重回答 → 24 条校区锚定回答 → 18 条公开评论身份复核 → 0 条合格一手样本。采集时知乎登录态有效。</p>
+      </div>
+    </section>
+
+    <section class="section" id="matrix">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">04 / 逐维度对比</span>
+          <div>
+            <h2>哪里有证据，<br>哪里只是空白。</h2>
+            <p class="section__intro">点击筛选查看学习、日常与路径。这里不以“未知=中等”填满表格，也不把没有差评解释为满意。</p>
+          </div>
+        </div>
+        <div class="filterbar" aria-label="筛选比较维度">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button class="filter" type="button" data-filter="learning" aria-pressed="false">学习与教师</button>
+          <button class="filter" type="button" data-filter="life" aria-pressed="false">校园日常</button>
+          <button class="filter" type="button" data-filter="path" aria-pressed="false">规模与路径</button>
+        </div>
+        <div class="matrix" role="table" aria-label="两校知乎一手口碑逐维度比较">
+          <div class="matrix__row matrix__head" role="row">
+            <div class="matrix__cell" role="columnheader">维度</div>
+            <div class="matrix__cell matrix__rc" role="columnheader">人朝小学</div>
+            <div class="matrix__cell matrix__lz" role="columnheader">陈分利泽</div>
+            <div class="matrix__cell" role="columnheader">判断</div>
+          </div>
+          <div class="matrix__row" role="row" data-group="learning"><div class="matrix__cell matrix__topic">作业与测评</div><div class="matrix__cell">旧届学生称作业相对不多，但经常周测。</div><div class="matrix__cell">无合格家长或学生样本。</div><div class="matrix__cell matrix__signal signal--gap">不能比较</div></div>
+          <div class="matrix__row" role="row" data-group="learning"><div class="matrix__cell matrix__topic">教师</div><div class="matrix__cell">低年级照顾细、高年级教学受认可；个别班主任偏重分数。</div><div class="matrix__cell">无合格样本，不能写“教师更负责”。</div><div class="matrix__cell matrix__signal signal--gap">不能比较</div></div>
+          <div class="matrix__row" role="row" data-group="life"><div class="matrix__cell matrix__topic">活动与社团</div><div class="matrix__cell">科技节、风筝节、运动会、数学节、图书漂流与多类社团，历史细节最扎实。</div><div class="matrix__cell">无一手校园活动体验。</div><div class="matrix__cell matrix__signal signal--gap">不能比较</div></div>
+          <div class="matrix__row" role="row" data-group="life"><div class="matrix__cell matrix__topic">校园氛围</div><div class="matrix__cell">一名旧届作者的朋友关系与校园参与感较正面。</div><div class="matrix__cell">无合格样本。</div><div class="matrix__cell matrix__signal signal--gap">不能比较</div></div>
+          <div class="matrix__row" role="row" data-group="life"><div class="matrix__cell matrix__topic">家校沟通</div><div class="matrix__cell">明确小学部家长为 0。</div><div class="matrix__cell">明确在读家长为 0。</div><div class="matrix__cell matrix__signal signal--gap">两校未知</div></div>
+          <div class="matrix__row" role="row" data-group="life"><div class="matrix__cell matrix__topic">午餐 / 午休</div><div class="matrix__cell">历史描述过旧，不作当前结论。</div><div class="matrix__cell">无一手日常体验。</div><div class="matrix__cell matrix__signal signal--gap">两校未知</div></div>
+          <div class="matrix__row" role="row" data-group="path"><div class="matrix__cell matrix__topic">学校规模</div><div class="matrix__cell">2022 官方快照为 109 班、4440 人；不是口碑。</div><div class="matrix__cell">2022 官方快照为 25 班、1002 人；不是口碑。</div><div class="matrix__cell matrix__signal signal--known">只可比量级</div></div>
+          <div class="matrix__row" role="row" data-group="path"><div class="matrix__cell matrix__topic">贯通路径</div><div class="matrix__cell">旧生路径经历不能代替 2026 入学规则。</div><div class="matrix__cell">2026 政策支持升本校初中部；未指定物理初中校区，也没有一手家庭体验。</div><div class="matrix__cell matrix__signal signal--gap">政策已核 / 体验未知</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--warm" id="profiles">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">05 / 两校画像</span>
+          <div>
+            <h2>一所留下旧回忆，<br>一所留下问号。</h2>
+            <p class="section__intro">画像的丰富程度不等于学校质量。它只反映知乎上公开、可核身份的信息可见度。</p>
+          </div>
+        </div>
+        <div class="profiles">
+          <article class="profile">
+            <p class="profile__eyebrow">RENCHAO / HISTORICAL STUDENT VOICE</p>
+            <h3>人朝小学</h3>
+            <p class="profile__standfirst">现有知乎一手口碑主要来自两名有小学经历的学生；核心长答提供了可信的历史体验，但不是当前校区普遍性调查。</p>
+            <div class="finding">
+              <h4>活动型体验最鲜明</h4>
+              <p>具体项目与个人参与细节互相对应，比泛泛的“素质教育好”更有证据力。<a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noopener">查看长答 ↗</a></p>
+            </div>
+            <div class="finding">
+              <h4>责任心与分数导向并存</h4>
+              <p>同一作者既肯定老师照顾与教学，也记录个别班主任更偏重成绩的摩擦。</p>
+            </div>
+            <div class="finding">
+              <h4>“作业少”不等于“完全不卷”</h4>
+              <p>旧届表述是书面作业相对少，同时常有周测；两个维度不能合并成一个轻松标签。</p>
+            </div>
+            <div class="finding">
+              <h4>核心限制来自作者本人</h4>
+              <p>作者提醒新增校区、学生增长后变化可能很大，这是结论边界，不是脚注。</p>
+            </div>
+          </article>
+          <article class="profile profile--lz">
+            <p class="profile__eyebrow">LIZE / REPUTATION VACUUM</p>
+            <h3>陈分利泽</h3>
+            <p class="profile__standfirst">知乎可见讨论高度围绕房产、划片与路径，几乎没有孩子一天如何度过的叙述。</p>
+            <p class="empty"><span>0 位</span>可确认的利泽在读家长、学生或校友；<br><span>0 条</span>可计入口碑的公开评论。</p>
+            <div class="finding">
+              <h4>直接问校，回答仍非一手</h4>
+              <p>与黄城根比较的 4 条回答都没有就读身份与校内细节，且均为 0 赞 0 评。<a href="https://www.zhihu.com/question/454838975" target="_blank" rel="noopener">查看问题 ↗</a></p>
+            </div>
+            <div class="finding">
+              <h4>外围叙事的共同点</h4>
+              <p>房产/教育账号更常强调九年路径、望京居住和总价组合，而不是作业、师资、活动或生活服务。</p>
+            </div>
+            <div class="finding">
+              <h4>相对评价随比较对象变化</h4>
+              <p>对望欣园时偏正面，对黄城根时偏负面，说明所谓层级标签高度依赖语境，不能视为共识。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="baseline">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">06 / 官方背景</span>
+          <div>
+            <h2>同一时点的规模快照，<br>只解释背景。</h2>
+            <p class="section__intro">以下来自 2022 版朝阳区学校简介册，不是 2026 实时班额，也不参与口碑评分。</p>
+          </div>
+        </div>
+        <div class="baseline">
+          <div class="scale-compare" aria-label="2022官方班级规模比较">
+            <div class="scale"><div class="scale__label"><span>人朝小学</span><span>109 班 / 4440 人</span></div><div class="scale__track"><div class="scale__fill" style="width:100%"></div></div></div>
+            <div class="scale"><div class="scale__label"><span>陈分利泽</span><span>25 班 / 1002 人</span></div><div class="scale__track"><div class="scale__fill scale__fill--lz"></div></div></div>
+          </div>
+          <div class="baseline__text">
+            <p><strong>可以说：</strong>两者在 2022 快照上的量级差异明显；利泽当时为一至六年级校区，并参与小初贯通课程研究。</p>
+            <p><strong>不能说：</strong>大校资源一定更多、小校管理一定更细，或 2022 的班数就是 2026 班额。质量判断仍要回到同届、同校区的一手体验。</p>
+            <p><strong>当前路径：</strong>2026 朝阳区政策确认九年一贯制学校初中部对口接收本校小学毕业年级学生；具体物理校区和单个家庭资格仍按当年通知。</p>
+            <p><a href="https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf" target="_blank" rel="noopener">朝阳区学校简介册 ↗</a>　<a href="https://www.bjesr.cn/ywbm/jcjy/kydt/2020-11-20/48786.html" target="_blank" rel="noopener">北京教科院调研 ↗</a>　<a href="https://www.bjchy.gov.cn/affair/file/otherfile/4028805a9d486e5c019dcc965f07669c.html" target="_blank" rel="noopener">2026 入学政策 ↗</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="excluded">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">07 / 为什么排除</span>
+          <div>
+            <h2>热度不等于口碑，<br>提问不等于经历。</h2>
+            <p class="section__intro">以下内容被保存到证据索引，便于复核；但不会进入“家长和学生怎么评价”的主结论。</p>
+          </div>
+        </div>
+        <div class="exclusion"><span class="exclusion__type">房产 / 学区号</span><p>“小而美”“集团前三”“认可度高”等标签没有在读身份，也没有作业、老师、午休或活动细节。</p><span class="exclusion__why">外围舆情</span></div>
+        <div class="exclusion"><span class="exclusion__type">择校中的准家长</span><p>“正在犹豫”“准备买利泽西园”只能证明关注与选择意图，不能证明孩子已经就读。</p><span class="exclusion__why">非入学后体验</span></div>
+        <div class="exclusion"><span class="exclusion__type">广义陈分评价</span><p>只说“陈分小学部”，但无法分辨利泽还是望欣园，不能强行落到本校区。</p><span class="exclusion__why">校区不明确</span></div>
+        <div class="exclusion"><span class="exclusion__type">中学阶段校友</span><p>陈分初中体验即使是第一手，也不能替代利泽小学部体验。</p><span class="exclusion__why">学段不匹配</span></div>
+        <div class="exclusion"><span class="exclusion__type">历史招生说法</span><p>旧回答里的户籍、划片、直升断言具有时效风险，必须改由入学当年官方政策确认。</p><span class="exclusion__why">政策不稳定</span></div>
+      </div>
+    </section>
+
+    <section class="section section--warm" id="decision">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">08 / 择校怎么用</span>
+          <div>
+            <h2>不是选哪所，<br>而是下一步查什么。</h2>
+            <p class="section__intro">知乎证据的不对称，决定了两校的核验策略也应不同。</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="decision__side"><h3>人朝：验证旧口碑是否延续</h3><p>带着“活动、教师照顾、作业与周测”四个历史线索，去问孩子实际落位校区的 2025—2026 同届家长。重点识别扩容后哪些体验仍在、哪些已变。</p></div>
+          <div class="decision__side"><h3>利泽：从零补齐校园日常</h3><p>不要先问“是不是小而美”，先问一天的时间表：几点到校、作业多久、是否午休、老师如何反馈、社团如何参加。<strong>零样本不是零风险。</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ink" id="questions">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">09 / 线下核验清单</span>
+          <div>
+            <h2>问同届家长的<br>12 个具体问题。</h2>
+            <p class="section__intro">把抽象的“好不好”拆成可观察的日常。</p>
+          </div>
+        </div>
+        <div class="questions">
+          <div class="question"><p>孩子实际落位哪个校区，六年内是否换校址？</p></div>
+          <div class="question"><p>2026 届一年级多少班、平均班额多少？</p></div>
+          <div class="question"><p>班主任和语数英教师的教龄、稳定性与轮岗情况？</p></div>
+          <div class="question"><p>低年级与高年级工作日平均作业时长分别多少？</p></div>
+          <div class="question"><p>周测、单元测与阶段评价多频繁，成绩如何反馈？</p></div>
+          <div class="question"><p>家长是否需要批改、打印或大量参与项目任务？</p></div>
+          <div class="question"><p>午餐由谁运营，近一年最常见反馈是什么？</p></div>
+          <div class="question"><p>是否有真实午休，空间和时长怎么安排？</p></div>
+          <div class="question"><p>课后服务到几点，社团是否全员可选、是否收费？</p></div>
+          <div class="question"><p>学生冲突与教师沟通问题通常如何处理？</p></div>
+          <div class="question"><p>人朝当前各小学地址的活动与主科师资是否一致？</p></div>
+          <div class="question"><p>利泽升入本校初中的 2026 官方规则与条件是什么？</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell reveal">
+        <div class="section__head">
+          <span class="section__number">10 / 证据索引</span>
+          <div>
+            <h2>每个关键判断，<br>都能回到原链接。</h2>
+            <p class="section__intro">知乎链接用于核对公开回答；官方链接只负责实体、地址、学段与历史规模。完整结构化证据随网页目录一并交付。</p>
+          </div>
+        </div>
+        <div class="sources">
+          <div class="source"><span class="source__meta">知乎 · 一手学生 · 2022 / 更新至 2025</span><a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noopener">人朝小学—初中—高中贯通学生长答 ↗</a><p>人朝最详细样本；小学经历主要约 2013—2019。</p></div>
+          <div class="source"><span class="source__meta">知乎 · 一手学生 · 2023</span><a href="https://www.zhihu.com/question/306364511/answer/3120426882" target="_blank" rel="noopener">人朝有小学经历学生短答 ↗</a><p>小学只有简短概括；初中负面没有外推。</p></div>
+          <div class="source"><span class="source__meta">知乎 · 排除样本 · 2021</span><a href="https://www.zhihu.com/question/454838975" target="_blank" rel="noopener">黄城根 vs 陈分利泽直接比较题 ↗</a><p>4 条回答均非利泽家长/学生，且无校内细节。</p></div>
+          <div class="source"><span class="source__meta">知乎 · 排除样本 · 2020</span><a href="https://www.zhihu.com/question/411872251/answer/1468515695" target="_blank" rel="noopener">芳草地东洲 vs 利泽比较题 ↗</a><p>唯一回答仍在向家长求证，不构成体验证据。</p></div>
+          <div class="source"><span class="source__meta">朝阳区政府 · 2025</span><a href="https://www.bjchy.gov.cn/affair/domain/jy/4028805a9aecc7c1019b2029277c2f13.html" target="_blank" rel="noopener">2025 年朝阳区中小学名录 ↗</a><p>确认北京市陈经纶中学分校为公办九年一贯制学校。</p></div>
+          <div class="source"><span class="source__meta">朝阳区学校简介册 · 2022 版</span><a href="https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf" target="_blank" rel="noopener">人朝与利泽官方规模、地址快照 ↗</a><p>只用于 2022 历史背景，不当作 2026 实时数据。</p></div>
+          <div class="source"><span class="source__meta">北京教育科学研究院 · 2020</span><a href="https://www.bjesr.cn/ywbm/jcjy/kydt/2020-11-20/48786.html" target="_blank" rel="noopener">陈分小初贯通教学调研 ↗</a><p>明确当时利泽承担一至六年级；属于办学基线。</p></div>
+          <div class="source"><span class="source__meta">北京市教委 · 2024 活动 / 2025 发布</span><a href="https://jw.beijing.gov.cn/tmc/jxyhd/202502/P020250214585334436311.pdf" target="_blank" rel="noopener">市级活动名单中的利泽校区 ↗</a><p>用于确认校区名称仍被官方材料使用；不保留学生姓名。</p></div>
+          <div class="source"><span class="source__meta">朝阳区教委 · 2026-04-28</span><a href="https://www.bjchy.gov.cn/affair/file/otherfile/4028805a9d486e5c019dcc965f07669c.html" target="_blank" rel="noopener">2026 年义务教育入学意见 ↗</a><p>确认升入本校初中部的制度路径；不指定物理校区，不替单个家庭作资格承诺。</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__row"><span>北京朝阳小学口碑研究 · 知乎家长与学生严格口径</span><span>调研截至 2026-07-20 · 不构成入学承诺或学校排名</span></div>
+  </footer>
+
+  <script>
+    const progress = document.querySelector('.progress');
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+    };
+    addEventListener('scroll', updateProgress, { passive: true });
+    addEventListener('resize', updateProgress);
+    updateProgress();
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .09 });
+    document.querySelectorAll('.reveal').forEach((node) => observer.observe(node));
+
+    const filters = document.querySelectorAll('.filter');
+    const rows = document.querySelectorAll('.matrix__row[data-group]');
+    filters.forEach((button) => button.addEventListener('click', () => {
+      const value = button.dataset.filter;
+      filters.forEach((item) => item.setAttribute('aria-pressed', String(item === button)));
+      rows.forEach((row) => { row.hidden = value !== 'all' && row.dataset.group !== value; });
+    }));
+  </script>
+</body>
+</html>

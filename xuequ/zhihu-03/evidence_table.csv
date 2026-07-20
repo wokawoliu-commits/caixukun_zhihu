@@ -1,0 +1,10 @@
+evidence_id,platform,source_url,published_time,school,identity_clue,evidence_summary,dimension,confidence,eligible_firsthand
+E-RC-01,知乎,https://www.zhihu.com/question/270728297/answer/2620054587,2022-08-10/更新至2025-11-01,人朝小学,自述13级小学并后续贯通就读学生,旧届作业相对不多但常周测,作业与测评,历史届高/当前低,是
+E-RC-02,知乎,https://www.zhihu.com/question/270728297/answer/2620054587,同上,人朝小学,同上,低年级照顾细高年级教学获认可；个别班主任偏重成绩,教师,个人历史体验高,是
+E-RC-03,知乎,https://www.zhihu.com/question/270728297/answer/2620054587,同上,人朝小学,同上,科技节风筝节运动会数学节图书漂流与社团等具体活动,活动与社团,历史届高,是
+E-RC-04,知乎,https://www.zhihu.com/question/306364511/answer/3120426882,2023-07-15,人朝小学,自述有该校小学初中经历学生,小学总体不错并重能力培养,培养方式,中低,是
+E-RC-05,知乎,https://www.zhihu.com/question/270728297/answer/2620054587,同上,人朝小学,核心作者主动提醒变化,新增校区和学生数量增长后旧体验不可平移,时效与扩容,高（边界提示）,是
+E-LZ-00,知乎检索审计,,截至2026-07-20,陈经纶中学分校小学部利泽校区,24组关键词/394去重候选/校区与身份复核,无合格家长或小学学生一手口碑,样本缺口,高,否
+E-OFF-01,朝阳区学校简介册,https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf,2022版,人朝小学,官方资料,109班4440人,规模快照,2022高,否
+E-OFF-02,朝阳区学校简介册,https://www.bjchy.gov.cn/UserFiles/File/fa81ae9945c14b5da97d2a6b31a1a052.pdf,2022版,陈经纶中学分校小学部利泽校区,官方资料,25班1002人57名教师,规模快照,2022高,否
+E-OFF-03,北京教育科学研究院,https://www.bjesr.cn/ywbm/jcjy/kydt/2020-11-20/48786.html,2020-11-20,陈经纶中学分校小学部利泽校区,官方教研记录,利泽承担一至六年级并开展小初贯通课程研究,学段与贯通,2020高,否

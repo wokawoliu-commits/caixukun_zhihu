@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-07-20T18:24:59+08:00",
+  "platform": "知乎公开回答与公开评论",
+  "target": "北京市陈经纶中学分校小学部利泽校区",
+  "query_count": 24,
+  "deduped_answer_candidates": 394,
+  "campus_anchored_answers": 24,
+  "related_questions": 16,
+  "public_comments_reviewed": 18,
+  "eligible_firsthand_parent_answers": 0,
+  "eligible_firsthand_student_answers": 0,
+  "eligible_firsthand_comments": 0,
+  "renchao_reused_strict_authors": 2,
+  "renchao_parent_authors": 0,
+  "notes": [
+    "候选数量不等于口碑样本数量",
+    "利泽校区回答以房产、划片和路径叙事为主",
+    "人朝两位作者均为有小学经历的学生，其中一篇为详细历史长答",
+    "所有身份均来自知乎公开自述，未做线下实名核验"
+  ]
+}

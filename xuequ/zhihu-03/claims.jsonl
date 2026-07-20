@@ -1,0 +1,6 @@
+{"claim_id":"C-01","claim":"严格按家长和小学就读学生口径，知乎不能支持‘两校谁口碑更好’的结论","evidence_ids":["E-RC-01","E-RC-04","E-LZ-00"],"confidence":"high","caveat":"人朝只有2名历史学生作者，利泽为0名合格一手作者，证据角色和时效严重不对称"}
+{"claim_id":"C-02","claim":"人朝旧届学生口碑偏活动丰富、教师负责、体验较舒展，作业相对不多但有经常性周测","evidence_ids":["E-RC-01","E-RC-02","E-RC-03","E-RC-04"],"confidence":"medium","caveat":"多数维度来自同一名约2013—2019在读经历作者，不代表2026所有校区"}
+{"claim_id":"C-03","claim":"利泽在知乎的可见度主要来自房产、划片与升学路径叙事，而不是在校生活叙事","evidence_ids":["E-LZ-00"],"confidence":"high","caveat":"‘九年一贯’等事实另由官方材料核对；外围作者的‘小而美’或层级标签不算口碑"}
+{"claim_id":"C-04","claim":"利泽没有公开一手差评不能解释为负面少或满意度高","evidence_ids":["E-LZ-00"],"confidence":"high","caveat":"零合格样本是信息缺口，不是零问题"}
+{"claim_id":"C-05","claim":"人朝与利泽在2022官方规模快照上量级差异显著，但规模本身不能推出质量好坏","evidence_ids":["E-OFF-01","E-OFF-02"],"confidence":"high","caveat":"数据是2022快照且两校组织结构不同，2026班额需另核"}
+{"claim_id":"C-06","claim":"若必须基于现有知乎材料决策，人朝只能提供历史体验参考，利泽必须依靠同届家长线下补证","evidence_ids":["E-RC-05","E-LZ-00"],"confidence":"high","caveat":"这不是推荐人朝，而是两校公开证据可见度不同"}
