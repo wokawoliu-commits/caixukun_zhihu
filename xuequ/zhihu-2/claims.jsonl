@@ -1,0 +1,6 @@
+{"claim_id":"C-01","claim":"人朝旧届学生口碑更偏活动丰富、相对轻松、老师负责","supporting_evidence_ids":["E-RC-01","E-RC-02","E-RC-03","E-RC-04","E-RC-05"],"confidence":"中高（历史届次）；当前中低"}
+{"claim_id":"C-02","claim":"人朝当前最大不确定是扩容和多校区后旧口碑能否迁移","supporting_evidence_ids":["E-RC-06"],"confidence":"高风险信号；当前具体体验仍未知"}
+{"claim_id":"C-03","claim":"西师家长口碑更偏教学严谨、习惯培养和年级教研，同时孩子体验可保持快乐","supporting_evidence_ids":["E-XS-01","E-XS-02","E-XS-03"],"confidence":"中（单一日常家长样本）"}
+{"claim_id":"C-04","claim":"西师大校规模在一位家长样本中没有直接转化成师资失控，年级教研被视为缓冲机制","supporting_evidence_ids":["E-XS-02","E-XS-05"],"confidence":"中"}
+{"claim_id":"C-05","claim":"西师高年级家庭的主要摩擦更像小升初派位不确定，而不是小学教学满意度低","supporting_evidence_ids":["E-XS-01","E-XS-06","E-XS-07"],"confidence":"中高"}
+{"claim_id":"C-06","claim":"现有知乎一手证据不能支持两校绝对排名，也不能可靠比较当前作业时长和升学结果","supporting_evidence_ids":["E-RC-01","E-RC-06","E-XS-04","E-XS-06"],"confidence":"高"}

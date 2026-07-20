@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="北京市朝阳区人朝小学与北京市西城区西师附小的知乎家长、学生一手口碑对比。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2312243a'/%3E%3Cpath d='M14 24 32 14l18 10-18 10L14 24Zm7 8 11 6 11-6v11c-6 6-16 6-22 0V32Z' fill='%23f3efe6'/%3E%3C/svg%3E" />
+  <title>人朝小学 vs 西师附小｜知乎家长与学生口碑对比</title>
+  <style>
+    :root {
+      --paper: #f3efe6;
+      --paper-2: #ebe3d6;
+      --ink: #12243a;
+      --muted: #5d6771;
+      --rule: rgba(18, 36, 58, .18);
+      --accent: #c45b32;
+      --accent-soft: #e8c2af;
+      --white: #fffdf8;
+      --max: 1180px;
+      --serif: "Songti SC", "Noto Serif CJK SC", "STSong", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.78;
+      text-rendering: optimizeLegibility;
+    }
+    a { color: inherit; text-decoration-color: rgba(196, 91, 50, .55); text-underline-offset: .2em; }
+    a:hover { color: var(--accent); }
+    button { font: inherit; }
+    .progress {
+      position: fixed; inset: 0 auto auto 0; width: 0; height: 3px;
+      background: var(--accent); z-index: 100; box-shadow: 0 0 18px rgba(196,91,50,.42);
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      background: #0d1c2d;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: -3%; z-index: -3;
+      background: url("assets/school-choice-hero.png") 64% center / cover no-repeat;
+      transform: translateY(var(--hero-y, 0px)) scale(1.035);
+      will-change: transform;
+    }
+    .hero::after {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(8,18,31,.94) 0%, rgba(8,18,31,.72) 42%, rgba(8,18,31,.22) 76%, rgba(8,18,31,.08) 100%),
+        linear-gradient(0deg, rgba(8,18,31,.80) 0%, rgba(8,18,31,.03) 48%);
+    }
+    .mast {
+      position: absolute; inset: 0 0 auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 24px clamp(20px, 4vw, 64px);
+      color: rgba(255,253,248,.78);
+      font-size: 12px; letter-spacing: .14em;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .mast strong { color: var(--white); letter-spacing: .05em; font-size: 14px; }
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px)); margin: 0 auto;
+      padding: 150px 0 9vh;
+      color: var(--white);
+    }
+    .eyebrow {
+      display: flex; align-items: center; gap: 12px;
+      color: #f0c4b1; font-size: 13px; letter-spacing: .18em; text-transform: uppercase;
+      opacity: 0; animation: enter .8s .08s ease forwards;
+    }
+    .eyebrow::before { content: ""; width: 38px; height: 1px; background: currentColor; }
+    h1 {
+      margin: 22px 0 24px;
+      max-width: 850px;
+      font-family: var(--serif);
+      font-size: clamp(48px, 7.4vw, 106px);
+      font-weight: 700; line-height: .98; letter-spacing: -.055em;
+      opacity: 0; animation: enter .95s .18s cubic-bezier(.2,.8,.2,1) forwards;
+    }
+    h1 .vs { color: var(--accent-soft); font-size: .45em; letter-spacing: .02em; vertical-align: .22em; margin: 0 .16em; }
+    .dek {
+      max-width: 720px; margin: 0 0 36px;
+      font-family: var(--serif); font-size: clamp(18px, 2.2vw, 27px); line-height: 1.55;
+      color: rgba(255,253,248,.88);
+      opacity: 0; animation: enter .9s .34s ease forwards;
+    }
+    .hero-meta {
+      display: flex; flex-wrap: wrap; gap: 8px 28px;
+      color: rgba(255,253,248,.65); font-size: 13px;
+      opacity: 0; animation: enter .9s .46s ease forwards;
+    }
+    .hero-meta b { color: var(--white); font-size: 18px; margin-right: 5px; }
+    .scroll-cue {
+      position: absolute; right: clamp(20px,4vw,64px); bottom: 38px;
+      color: rgba(255,255,255,.66); font-size: 11px; letter-spacing: .14em;
+      writing-mode: vertical-rl;
+    }
+    .scroll-cue::after { content: ""; display: inline-block; width: 1px; height: 54px; margin-top: 12px; background: rgba(255,255,255,.42); animation: pulse 1.8s infinite; }
+
+    main { overflow: clip; }
+    .section { padding: clamp(72px, 10vw, 140px) 20px; border-top: 1px solid var(--rule); }
+    .wrap { width: min(var(--max), 100%); margin: 0 auto; }
+    .kicker { color: var(--accent); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700; }
+    h2 {
+      margin: 14px 0 24px; font-family: var(--serif);
+      font-size: clamp(36px, 5vw, 68px); line-height: 1.08; letter-spacing: -.035em;
+    }
+    h3 { font-family: var(--serif); font-size: clamp(24px, 3vw, 38px); line-height: 1.2; margin: 0 0 18px; }
+    h4 { font-size: 16px; margin: 0 0 8px; }
+    p { margin: 0 0 1.15em; }
+    .lead { max-width: 880px; font-family: var(--serif); font-size: clamp(22px, 2.8vw, 34px); line-height: 1.55; }
+    .muted { color: var(--muted); }
+    .note { font-size: 13px; color: var(--muted); }
+
+    .verdict { background: var(--ink); color: var(--white); }
+    .verdict .kicker { color: #e8a286; }
+    .verdict-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(40px, 8vw, 110px); align-items: end; }
+    .verdict .lead { color: rgba(255,253,248,.9); }
+    .choice-lines { border-top: 1px solid rgba(255,255,255,.24); }
+    .choice-line { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.24); }
+    .choice-line b { display: block; color: #f0c4b1; font-size: 12px; letter-spacing: .12em; margin-bottom: 7px; }
+
+    .sample-band { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); margin-top: 56px; }
+    .sample-item { padding: 28px 24px 12px 0; border-right: 1px solid var(--rule); }
+    .sample-item:last-child { border-right: 0; padding-left: 24px; }
+    .sample-item:not(:first-child) { padding-left: 24px; }
+    .sample-item strong { display: block; font-family: var(--serif); font-size: clamp(35px, 4.6vw, 58px); line-height: 1; color: var(--accent); }
+    .sample-item span { display: block; margin-top: 10px; color: var(--muted); font-size: 13px; }
+
+    .table-shell { margin-top: 48px; overflow-x: auto; border-top: 2px solid var(--ink); }
+    table { width: 100%; border-collapse: collapse; min-width: 860px; }
+    th, td { padding: 20px 18px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); }
+    th { font-size: 12px; letter-spacing: .08em; color: var(--muted); background: rgba(255,255,255,.2); }
+    td:first-child { font-weight: 700; width: 15%; }
+    td:nth-child(2), td:nth-child(3) { width: 34%; }
+    .sig { display: inline-block; margin-top: 6px; padding: 2px 8px; border: 1px solid currentColor; border-radius: 99px; font-size: 11px; color: var(--accent); }
+
+    .school-section { background: var(--white); }
+    .school-head { display: grid; grid-template-columns: .78fr 1.22fr; gap: clamp(40px, 8vw, 110px); align-items: start; }
+    .school-number { font-family: var(--serif); font-size: clamp(90px, 14vw, 180px); line-height: .75; color: var(--paper-2); }
+    .findings { margin-top: 68px; border-top: 2px solid var(--ink); }
+    .finding { display: grid; grid-template-columns: 200px 1fr; gap: 38px; padding: 34px 0; border-bottom: 1px solid var(--rule); }
+    .finding .label { color: var(--accent); font-size: 12px; letter-spacing: .12em; font-weight: 700; }
+    .finding p { max-width: 800px; margin-bottom: 10px; }
+    .finding .source { font-size: 12px; color: var(--muted); }
+
+    .tension { background: var(--paper-2); }
+    .tension-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); margin-top: 54px; border: 1px solid var(--rule); }
+    .tension-pane { background: var(--paper-2); padding: clamp(28px, 4.2vw, 58px); }
+    .tension-pane .school-tag { color: var(--accent); font-size: 12px; letter-spacing: .16em; font-weight: 700; }
+    .tension-pane ul { list-style: none; padding: 0; margin: 28px 0 0; }
+    .tension-pane li { padding: 17px 0 17px 28px; border-top: 1px solid var(--rule); position: relative; }
+    .tension-pane li::before { content: "↳"; position: absolute; left: 0; color: var(--accent); }
+
+    .evidence-toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin: 34px 0 22px; }
+    .filter-btn { border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 9px 15px; border-radius: 99px; cursor: pointer; }
+    .filter-btn.active, .filter-btn:hover { background: var(--ink); color: var(--white); }
+    .evidence-list { border-top: 2px solid var(--ink); }
+    .evidence-row { display: grid; grid-template-columns: 120px 180px 1fr 100px; gap: 24px; padding: 24px 0; border-bottom: 1px solid var(--rule); transition: opacity .2s, transform .2s; }
+    .evidence-row.hidden { display: none; }
+    .evidence-row .role { font-weight: 700; }
+    .evidence-row .school { color: var(--accent); }
+    .confidence { font-size: 12px; color: var(--muted); }
+
+    .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 8vw, 96px); margin-top: 50px; }
+    .fit-col { border-top: 3px solid var(--ink); padding-top: 26px; }
+    .fit-col ol { margin: 0; padding-left: 1.4em; }
+    .fit-col li { padding: 12px 0; border-bottom: 1px solid var(--rule); }
+
+    details { border-top: 1px solid var(--rule); }
+    details:last-child { border-bottom: 1px solid var(--rule); }
+    summary { cursor: pointer; list-style: none; padding: 22px 44px 22px 0; font-weight: 700; position: relative; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; position: absolute; right: 2px; top: 14px; font: 32px/1 var(--serif); color: var(--accent); transition: transform .2s; }
+    details[open] summary::after { transform: rotate(45deg); }
+    details .detail-body { padding: 0 0 24px; max-width: 900px; color: var(--muted); }
+
+    .sources { background: #0f2033; color: var(--white); }
+    .sources .kicker { color: #e8a286; }
+    .source-list { margin-top: 42px; counter-reset: src; }
+    .source-item { counter-increment: src; display: grid; grid-template-columns: 48px 1fr; gap: 18px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,.18); }
+    .source-item::before { content: counter(src, decimal-leading-zero); color: #e8a286; font-family: var(--serif); font-size: 20px; }
+    .source-item p { margin: 3px 0 0; color: rgba(255,255,255,.65); font-size: 13px; }
+    .sources a { text-decoration-color: rgba(232,162,134,.7); }
+
+    footer { padding: 28px 20px; background: #091522; color: rgba(255,255,255,.52); font-size: 12px; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 24px; }
+
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @keyframes enter { to { opacity: 1; transform: none; } from { opacity: 0; transform: translateY(24px); } }
+    @keyframes pulse { 0%,100% { opacity: .3; transform: scaleY(.5); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+
+    @media (max-width: 850px) {
+      .hero::after { background: linear-gradient(90deg, rgba(8,18,31,.92), rgba(8,18,31,.5)), linear-gradient(0deg, rgba(8,18,31,.85), transparent 58%); }
+      .hero-inner { padding-bottom: 88px; }
+      .scroll-cue { display: none; }
+      .verdict-grid, .school-head, .fit-grid { grid-template-columns: 1fr; }
+      .sample-band { grid-template-columns: 1fr 1fr; }
+      .sample-item:nth-child(2) { border-right: 0; }
+      .sample-item:nth-child(3) { padding-left: 0; border-top: 1px solid var(--rule); }
+      .sample-item:nth-child(4) { border-top: 1px solid var(--rule); }
+      .finding { grid-template-columns: 1fr; gap: 8px; }
+      .tension-grid { grid-template-columns: 1fr; }
+      .evidence-row { grid-template-columns: 90px 1fr; gap: 6px 18px; }
+      .evidence-row .summary { grid-column: 1 / -1; }
+      .evidence-row .confidence { text-align: right; }
+    }
+    @media (max-width: 560px) {
+      .mast span:last-child { display: none; }
+      h1 { font-size: clamp(46px, 16vw, 72px); }
+      h1 .vs { display: block; margin: .28em 0; width: max-content; }
+      .sample-band { grid-template-columns: 1fr; }
+      .sample-item, .sample-item:not(:first-child), .sample-item:last-child { padding: 22px 0; border-right: 0; border-top: 1px solid var(--rule); }
+      footer .wrap { display: block; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"></div>
+
+  <header class="hero" id="top">
+    <div class="mast"><strong>BEIJING SCHOOL REPUTATION / 04</strong><span>知乎公开样本 · 家长与学生一手口碑</span></div>
+    <div class="hero-inner">
+      <div class="eyebrow">朝阳 × 西城 · 2026.07.20</div>
+      <h1>人朝小学 <span class="vs">VS</span> 西师附小</h1>
+      <p class="dek">两所大校，两种安心：一边是活动与贯通感，一边是习惯与教研。真正的区别，藏在样本年代、校区扩容与小升初路径里。</p>
+      <div class="hero-meta">
+        <span><b>359</b> 候选回答</span>
+        <span><b>124</b> 公开评论</span>
+        <span><b>4</b> 严格一手作者</span>
+        <span><b>&lt;10</b> 两校均属小样本</span>
+      </div>
+    </div>
+    <div class="scroll-cue">向下阅读</div>
+  </header>
+
+  <main>
+    <section class="section verdict">
+      <div class="wrap verdict-grid reveal">
+        <div>
+          <div class="kicker">Bottom line</div>
+          <h2>不是谁更强，<br />而是哪种风险更可接受。</h2>
+          <p class="lead">人朝的强项是旧生记忆里的活动、轻松感与师生温度，风险是扩容后还能保留多少；西师的强项是家长感受到的严谨、习惯和统一教研，风险是小学表现换不来确定的初中出口。</p>
+        </div>
+        <div class="choice-lines">
+          <div class="choice-line"><b>偏人朝</b>看重小学活动、表达与同伴体验；愿意按实际校区核验当前师资、班额和活动覆盖。</div>
+          <div class="choice-line"><b>偏西师</b>看重规则、学习习惯与年级教研；能接受西城小升初派位带来的路径不确定。</div>
+          <div class="choice-line"><b>不能回答</b>现有知乎样本不足以证明谁当前作业更多、成绩更好或“绝对排名”更高。</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="wrap reveal">
+        <div class="kicker">Scope & sample</div>
+        <h2>证据不对称，必须先说清。</h2>
+        <p class="lead">主结论只保留明确自述身份的一手内容。人朝有学生、没有最新家长；西师有家长、没有学生本人长文。咨询号、房产号和排名帖只用于找线索，不用于给学校定性。</p>
+        <div class="sample-band">
+          <div class="sample-item"><strong>2</strong><span>人朝学生作者<br />其中 1 位为小学—高中贯通学生</span></div>
+          <div class="sample-item"><strong>0</strong><span>人朝明确家长作者<br />当前生活服务信息因此空缺</span></div>
+          <div class="sample-item"><strong>2</strong><span>西师家长作者<br />覆盖二年级与 2022 届毕业班</span></div>
+          <div class="sample-item"><strong>0</strong><span>西师学生长文<br />学生压力感与活动体验缺口明显</span></div>
+        </div>
+        <p class="note" style="margin-top:28px">学校口径：人朝指中国人民大学附属中学朝阳学校小学部；西师指北京市西城区师范学校附属小学。人朝分、人朝实验、西师附中及身份不清的展览路咨询材料均被排除。</p>
+      </div>
+    </section>
+
+    <section class="section" id="compare">
+      <div class="wrap reveal">
+        <div class="kicker">Side-by-side</div>
+        <h2>八个维度，看到口碑的重心。</h2>
+        <div class="table-shell">
+          <table>
+            <thead><tr><th>维度</th><th>人朝小学</th><th>西师附小</th><th>判断</th></tr></thead>
+            <tbody>
+              <tr><td>总体气质</td><td>旧生偏“开心、轻松、活动多”</td><td>家长偏“严谨但孩子快乐，习惯抓得好”</td><td><span class="sig">中等</span></td></tr>
+              <tr><td>作业与测评</td><td>旧生称作业不多、常周测</td><td>无可靠日均时长；毕业家长的排名与五六年级成绩意识很强</td><td><span class="sig">不能比谁更卷</span></td></tr>
+              <tr><td>教师</td><td>照顾细、教学好；个别班主任偏分数</td><td>家长肯定年轻教师、年级教研与校长</td><td><span class="sig">两校均正面</span></td></tr>
+              <tr><td>学习习惯</td><td>学生更强调改毛病、校园与人际体验</td><td>家长直接肯定习惯培养与基础</td><td><span class="sig">西师信号更强</span></td></tr>
+              <tr><td>活动与社团</td><td>具体列出科技节、风筝节、数学节、图书漂流与多个社团</td><td>严格一手样本未具体展开</td><td><span class="sig">人朝历史占优</span></td></tr>
+              <tr><td>同伴关系</td><td>调皮但整体轻松愉快</td><td>融洽、互帮互助；家长未感到欺凌氛围</td><td><span class="sig">均正面</span></td></tr>
+              <tr><td>大校规模</td><td>旧生主动提醒扩容后变化很大</td><td>班多，但家长认为教研托住了教学；2022 届称年级 16 班</td><td><span class="sig">都需按校区看</span></td></tr>
+              <tr><td>小升初感受</td><td>贯通学生具有较强连续感；当前政策另核</td><td>成绩靠前仍可能面对不理想派位，路径焦虑突出</td><td><span class="sig">差异明显</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section school-section" id="renchao">
+      <div class="wrap">
+        <div class="school-head reveal">
+          <div><div class="school-number">01</div><div class="kicker" style="margin-top:26px">Chaoyang · RCFCS</div></div>
+          <div><h2>人朝小学</h2><p class="lead">历史口碑像一所“让孩子有很多校园故事”的小学：活动具体、老师负责、日常负担不重。问题在于，这幅画像主要来自扩容前后的旧届学生。</p></div>
+        </div>
+        <div class="findings reveal">
+          <div class="finding"><div class="label">活动是最强证据</div><div><h3>不是一句“素质教育”，而是一串可复述的经历。</h3><p>贯通学生列出科技节、风筝节、数学节、运动会、端午龙舟、图书漂流、六一展台，以及武术、田径、足球等社团。活动的名称、组织方式与个人参与彼此印证。</p><div class="source"><a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noreferrer">知乎｜贯通学生长答 ↗</a></div></div></div>
+          <div class="finding"><div class="label">老师的张力</div><div><h3>照顾细、教学好，也可能遇到偏分数的班主任。</h3><p>作者肯定低年级老师的细致与高年级教学水平，同时坦率写到一位班主任更偏爱成绩好的学生。她不喜欢这种体验，却仍认可老师总体有效——这比单纯好评更可信。</p><div class="source"><a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noreferrer">同一学生回答 ↗</a></div></div></div>
+          <div class="finding"><div class="label">日常节奏</div><div><h3>作业不多，但并非没有评价节奏。</h3><p>旧生称每天六节课、作业不多、常周测。更像低日常负担与周期反馈并存，而非完全放养。另一位学生用“注重培养学生能力”作简短补强。</p><div class="source"><a href="https://www.zhihu.com/question/306364511/answer/3120426882" target="_blank" rel="noreferrer">知乎｜学生短评 ↗</a></div></div></div>
+          <div class="finding"><div class="label">最大问号</div><div><h3>旧口碑能否穿过“一校六址”的扩容。</h3><p>作者本人提醒新增校区、学生数大幅增长后变化会很大；2025 年官方信息确认学校已“一校六址”。当前班额、师资来源、活动覆盖与接送，必须按孩子实际校区重新核验。</p><div class="source"><a href="https://xsd.bjchy.gov.cn/news/9F555B3DF1C8490995260A6958E9B2B1" target="_blank" rel="noreferrer">朝阳区官方信息 ↗</a></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section school-section" id="xishi">
+      <div class="wrap">
+        <div class="school-head reveal">
+          <div><div class="school-number">02</div><div class="kicker" style="margin-top:26px">Xicheng · XSFX</div></div>
+          <div><h2>西师附小</h2><p class="lead">家长口碑更像“严谨而有托举”：班级多，却靠年级教研、习惯培养和稳定校风维持满意度。到高年级，焦虑从课堂转向了派位。</p></div>
+        </div>
+        <div class="findings reveal">
+          <div class="finding"><div class="label">日常满意度</div><div><h3>严谨与快乐，并没有在这位家长眼里冲突。</h3><p>2021 级二年级家长肯定教学、习惯培养、年级教研、年轻教师与校长，也明确说孩子过得快乐。这是西师最完整、最符合“在读家长”标准的日常样本。</p><div class="source"><a href="https://www.zhihu.com/answer/2660392464#comment-10275916184" target="_blank" rel="noreferrer">知乎｜在读家长评论 ↗</a></div></div></div>
+          <div class="finding"><div class="label">规模缓冲</div><div><h3>班多，但家长感受到的是教研托底，而非师资失控。</h3><p>该家长主动回应了年轻教师与班级规模问题，认为年级教研和带教机制使教学水平保持稳定。它不能代表所有班，却给出了理解大校质量控制的关键线索。</p><div class="source"><a href="https://www.zhihu.com/answer/2660392464#comment-10275916184" target="_blank" rel="noreferrer">同一在读家长评论 ↗</a></div></div></div>
+          <div class="finding"><div class="label">同伴与校风</div><div><h3>孩子快乐，朋友关系是满意度的重要组成。</h3><p>家长称同学融洽、互帮互助，孩子交到好朋友，未感到校园欺凌氛围。只能理解为一个家庭的正面观察，不能扩大为“绝无欺凌”。</p><div class="source"><a href="https://www.zhihu.com/answer/2660392464#comment-10275916184" target="_blank" rel="noreferrer">同一在读家长评论 ↗</a></div></div></div>
+          <div class="finding"><div class="label">路径焦虑</div><div><h3>小学成绩靠前，不等于初中出口确定。</h3><p>2022 届毕业生家长称年级 16 个班，并以两个班约 37—38 人的去向、成绩和志愿复盘派位；自己的孩子成绩靠前，仍进入家长眼中的非理想初中。焦虑源是随机路径，不是对小学教学的否定。</p><div class="source"><a href="https://www.zhihu.com/question/542064648/answer/2569115321" target="_blank" rel="noreferrer">知乎｜毕业生家长长答 ↗</a></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tension">
+      <div class="wrap reveal">
+        <div class="kicker">Tension map</div>
+        <h2>口碑真正有用的地方，<br />是看见赞美背后的代价。</h2>
+        <div class="tension-grid">
+          <div class="tension-pane"><div class="school-tag">人朝小学</div><h3 style="margin-top:12px">快乐 × 扩容</h3><ul><li>旧届学生对老师、活动和同伴的回忆非常正面。</li><li>同一学生亲自提醒，新增校区与人数增长让旧经验失效。</li><li>结论：不是口碑差，而是好口碑的可迁移性不足。</li></ul></div>
+          <div class="tension-pane"><div class="school-tag">西师附小</div><h3 style="margin-top:12px">小学满意 × 升学焦虑</h3><ul><li>低年级家长对教学、习惯、教研与同伴都很满意。</li><li>毕业家长的长文几乎全部围绕排名、志愿和派位。</li><li>结论：摩擦不在小学教得差，而在出口不确定。</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evidence">
+      <div class="wrap reveal">
+        <div class="kicker">Firsthand evidence</div>
+        <h2>只看有身份线索的一手证据。</h2>
+        <p class="muted">可按作者角色筛选。身份不明评论、咨询号和房产号未列入。</p>
+        <div class="evidence-toolbar" role="group" aria-label="证据筛选">
+          <button class="filter-btn active" data-filter="all">全部 4 位</button>
+          <button class="filter-btn" data-filter="student">学生 2 位</button>
+          <button class="filter-btn" data-filter="parent">家长 2 位</button>
+        </div>
+        <div class="evidence-list">
+          <div class="evidence-row" data-role="student"><div class="role">学生</div><div class="school">人朝小学</div><div class="summary">13 级人朝小、19 级人朝初、22 级人朝高中；详细讲作业、老师、活动、同伴与扩容风险。<br><a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noreferrer">查看原回答 ↗</a></div><div class="confidence">历史届次：高<br>当前：中低</div></div>
+          <div class="evidence-row" data-role="student"><div class="role">学生</div><div class="school">人朝小学</div><div class="summary">明确有该校小学与初中经历；小学短评为“注重培养学生能力”。<br><a href="https://www.zhihu.com/question/306364511/answer/3120426882" target="_blank" rel="noreferrer">查看原回答 ↗</a></div><div class="confidence">中低</div></div>
+          <div class="evidence-row" data-role="parent"><div class="role">家长</div><div class="school">西师附小</div><div class="summary">孩子 2021 年入学、评论时二年级；覆盖教学、教研、年轻教师、校长、同伴与快乐度。<br><a href="https://www.zhihu.com/answer/2660392464#comment-10275916184" target="_blank" rel="noreferrer">查看原评论 ↗</a></div><div class="confidence">单家庭：高</div></div>
+          <div class="evidence-row" data-role="parent"><div class="role">家长</div><div class="school">西师附小</div><div class="summary">2022 届毕业生家长；复盘年级规模、两个班去向、成绩排名和小升初派位。<br><a href="https://www.zhihu.com/question/542064648/answer/2569115321" target="_blank" rel="noreferrer">查看原回答 ↗</a></div><div class="confidence">个人经历：高<br>概率外推：低</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit">
+      <div class="wrap reveal">
+        <div class="kicker">Fit, not rank</div>
+        <h2>用孩子和家庭的取舍反推学校。</h2>
+        <div class="fit-grid">
+          <div class="fit-col"><h3>更偏人朝</h3><ol><li>希望小学阶段有更高的活动参与密度。</li><li>孩子对过强的规则或成绩比较较敏感。</li><li>家庭愿意自己把握学习节奏。</li><li>能在报名前核清实际校区、班额与师资。</li><li>看重同一教育体系的连续感，但会核验当年政策。</li></ol></div>
+          <div class="fit-col"><h3>更偏西师</h3><ol><li>重视规则、学习习惯与基础。</li><li>接受大校，希望教研机制托住多班级。</li><li>喜欢教育投入强、信息密度高的家长环境。</li><li>能够过滤比较与排名带来的焦虑。</li><li>能接受西城小升初派位的不确定性。</li></ol></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="verify">
+      <div class="wrap reveal">
+        <div class="kicker">Offline checklist</div>
+        <h2>决定前，追问这 12 个问题。</h2>
+        <details><summary>人朝：孩子实际会进入哪个校区，六年中是否换址？</summary><div class="detail-body">不要只问“是不是人朝”，要问具体地址、年级流转、接送距离和校区之间的教师轮岗。</div></details>
+        <details><summary>人朝：当前一年级多少班、平均班额多少？</summary><div class="detail-body">旧生口碑来自扩容前后交界；当前班额是判断老师关注度与活动覆盖的起点。</div></details>
+        <details><summary>人朝：旧生提到的活动是否覆盖全部小学校区？</summary><div class="detail-body">逐项问科技节、风筝节、数学节、图书漂流、六一展台和社团，不要只听“活动丰富”。</div></details>
+        <details><summary>人朝：一至三年级真实作业、周测与家长配合时长？</summary><div class="detail-body">旧样本是“作业不多、常周测”；需要用同届家长的工作日时间表更新。</div></details>
+        <details><summary>人朝：午餐、午休、课后托管与家校沟通如何？</summary><div class="detail-body">这些维度在知乎严格一手样本中为空白，必须线下补齐。</div></details>
+        <details><summary>人朝：班主任和主科教师来自稳定团队、新招聘还是跨校区轮岗？</summary><div class="detail-body">品牌不能替代具体班级师资；至少访问两个校区、三个年级的家长。</div></details>
+        <details><summary>西师：孩子是本部、阳光部还是展览路校区？</summary><div class="detail-body">本报告核心家长样本主要是本部语境，不把展览路咨询号评价直接混入。</div></details>
+        <details><summary>西师：年级统一教研如何落到不同班？</summary><div class="detail-body">问集体备课、统一作业、年轻教师带教、班主任稳定性，而不只问“老师好不好”。</div></details>
+        <details><summary>西师：一至三年级、四至六年级每天作业多久？</summary><div class="detail-body">现有一手家长没有给出可靠日均时长，不能凭“严谨”推断“作业多”。</div></details>
+        <details><summary>西师：班级人数、午餐、午睡、社团名额和课后服务？</summary><div class="detail-body">这些生活维度决定大校摩擦，知乎核心样本覆盖不足。</div></details>
+        <details><summary>西师：高年级家长群的成绩与升学比较会不会影响孩子？</summary><div class="detail-body">毕业家长展示出很高的信息密度；需要问孩子本人感受，而不只听家长策略。</div></details>
+        <details><summary>西师：2026 年小升初以什么官方规则为准？</summary><div class="detail-body">2026 年西城仍包含全区派位、学区登记和学区派位等方式；2022 家长经验不能直接当录取预测。<a href="https://www.bjxch.gov.cn/xxgk/xxxqzcwj/pnidpv997472.html" target="_blank" rel="noreferrer">查看现行政策 ↗</a></div></details>
+      </div>
+    </section>
+
+    <section class="section sources" id="sources">
+      <div class="wrap reveal">
+        <div class="kicker">Sources & limits</div>
+        <h2>证据索引与边界。</h2>
+        <div class="source-list">
+          <div class="source-item"><div><a href="https://www.zhihu.com/question/270728297/answer/2620054587" target="_blank" rel="noreferrer"><strong>人朝贯通学生长答</strong></a><p>最详细的一手小学样本；历史经历可信，当前迁移需谨慎。</p></div></div>
+          <div class="source-item"><div><a href="https://www.zhihu.com/question/306364511/answer/3120426882" target="_blank" rel="noreferrer"><strong>人朝学生短评</strong></a><p>仅补强“能力培养”，不外推其初中负面到小学。</p></div></div>
+          <div class="source-item"><div><a href="https://www.zhihu.com/answer/2660392464#comment-10275916184" target="_blank" rel="noreferrer"><strong>西师 2021 级在读家长评论</strong></a><p>日常教学、习惯、教研、教师、同伴与满意度核心样本。</p></div></div>
+          <div class="source-item"><div><a href="https://www.zhihu.com/question/542064648/answer/2569115321" target="_blank" rel="noreferrer"><strong>西师 2022 届毕业家长长答</strong></a><p>规模、高年级成绩意识与小升初派位焦虑核心样本。</p></div></div>
+          <div class="source-item"><div><a href="https://xsd.bjchy.gov.cn/news/9F555B3DF1C8490995260A6958E9B2B1" target="_blank" rel="noreferrer"><strong>朝阳区官方学校信息</strong></a><p>用于公办三学部与“一校六址”口径，不用于口碑评价。</p></div></div>
+          <div class="source-item"><div><a href="https://www.bjxch.gov.cn/xxgk/xxxqzcwj/pnidpv997472.html" target="_blank" rel="noreferrer"><strong>西城区 2026 义务教育入学意见</strong></a><p>用于说明现行初中路径，不把 2022 家长经验当作 2026 预测。</p></div></div>
+        </div>
+        <p class="note" style="color:rgba(255,255,255,.58);margin-top:38px">限制：两校严格一手作者都少于 10；身份只能按公开自述判断；人朝缺最新家长、西师缺学生长文；同校不同校区、年级与班主任差异可能大于品牌差异；报告不采用咨询号、房产号、排名帖或未验证升学率作为口碑主证据。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>人朝小学 × 西师附小｜知乎口碑调研</span><span>公开资料研究 · 2026-07-20 · 不构成入学承诺</span></div></footer>
+
+  <script>
+    const progress = document.querySelector('.progress');
+    const hero = document.querySelector('.hero');
+    const updateScroll = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = `${max > 0 ? (scrollY / max) * 100 : 0}%`;
+      if (hero && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const beforeShift = Math.min(scrollY * .035, 28);
+        hero.style.setProperty('--hero-y', `${beforeShift}px`);
+      }
+    };
+    addEventListener('scroll', updateScroll, { passive: true });
+    updateScroll();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const buttons = document.querySelectorAll('.filter-btn');
+    const rows = document.querySelectorAll('.evidence-row');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      const filter = button.dataset.filter;
+      rows.forEach(row => row.classList.toggle('hidden', filter !== 'all' && row.dataset.role !== filter));
+    }));
+  </script>
+</body>
+</html>
