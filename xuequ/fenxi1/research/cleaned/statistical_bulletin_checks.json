@@ -1,0 +1,14 @@
+[
+  {"year": 2014, "primary": 153000, "junior": 103000, "senior": 55000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1637247.html"},
+  {"year": 2015, "primary": 146000, "junior": 89000, "senior": 57000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202002/t20200216_1643269.html"},
+  {"year": 2016, "primary": 145000, "junior": 92000, "senior": 54000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202002/t20200216_1643265.html"},
+  {"year": 2017, "primary": 158000, "junior": 103000, "senior": 54000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/zxfbu/202002/t20200216_1633939.html"},
+  {"year": 2018, "primary": 184000, "junior": 101000, "senior": 47000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202002/t20200216_1643263.html"},
+  {"year": 2019, "primary": 183000, "junior": 117000, "senior": 51000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202003/t20200302_1673395.html"},
+  {"year": 2020, "primary": 202000, "junior": 122000, "senior": 61000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202103/t20210311_2304370.html"},
+  {"year": 2021, "primary": 186000, "junior": 120000, "senior": 62000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/sjjd_31444/202202/t20220228_2618115.html"},
+  {"year": 2022, "primary": 190000, "junior": 121000, "senior": 75000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202303/t20230321_2940951.html"},
+  {"year": 2023, "primary": 235000, "junior": 135000, "senior": 80000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202403/t20240321_3595860.html"},
+  {"year": 2024, "primary": 193000, "junior": 161000, "senior": 82000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202503/t20250319_4038820.html"},
+  {"year": 2025, "primary": 183000, "junior": 162000, "senior": 84000, "unit": "0.1万人（已换算成人）", "source": "https://tjj.beijing.gov.cn/tjsj_31433/tjgb_31445/ndgb_31446/202603/t20260325_4565494.html"}
+]

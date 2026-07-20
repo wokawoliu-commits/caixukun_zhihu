@@ -1,0 +1,23 @@
+{
+  "objective": "建立北京市、北京市西城区、北京市朝阳区小学、初中、普通高中招生、高考人口与本科结果的可追溯数据网站",
+  "started_at": "2026-07-20T19:40:00+08:00",
+  "completed_at": "2026-07-20T23:10:00+08:00",
+  "geography": ["北京市", "西城区", "朝阳区"],
+  "education_years": [2014, 2025],
+  "gaokao_years": [2010, 2026],
+  "source_priority": ["政府原始工作簿/考试院表", "统计年鉴/统计公报", "政府新闻稿", "权威机构转引", "媒体历史汇总"],
+  "exclusion_rules": [
+    "不把招生计划当作实际招生",
+    "不把高中阶段招生当作普通高中招生",
+    "不把报名人数、实考人数与统考人数视为同一口径",
+    "不把本科线及以上人数当作本科实际录取人数",
+    "不按全市比例反推区级本科人数"
+  ],
+  "artifacts": [
+    "research/cleaned/education_admissions_2014_2025.json",
+    "research/cleaned/exam_metrics.json",
+    "research/cleaned/internal_consistency_checks.json",
+    "public/downloads/beijing-education-population-data.xlsx",
+    "research/report.md"
+  ]
+}

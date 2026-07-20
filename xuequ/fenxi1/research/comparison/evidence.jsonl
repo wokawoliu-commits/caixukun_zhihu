@@ -1,0 +1,13 @@
+{"evidence_id":"E01","source_id":"S02","claim":"2025年西城普通高中招生11,626人，朝阳10,202人，全市84,275人","locator":"普通中学分区学生基本情况/招生数","evidence_type":"official_table","confidence":1.0}
+{"evidence_id":"E02","source_id":"S03","claim":"2025年全市普通高中招生约8.4万人，与精确数84,275四舍五入一致","locator":"教育章节","evidence_type":"cross_check","confidence":0.95}
+{"evidence_id":"E03","source_id":"A01","quote":"2025年校额到校据不完全统计已提升至2778个","locator":"article.md:56","evidence_type":"direct_quote","confidence":0.65}
+{"evidence_id":"E04","source_id":"A01","quote":"孩子基本都有高中上","locator":"article.md:70","evidence_type":"direct_quote","confidence":0.45}
+{"evidence_id":"E05","source_id":"A02","claim":"西城11,500人参考、中位分453；朝阳10,729人参考、中位分448","locator":"article.md:62-75","evidence_type":"article_data","confidence":0.65}
+{"evidence_id":"E06","source_id":"A03","quote":"网友分享版，可能存在1-2分的误差","locator":"article.md:22","evidence_type":"source_caveat","confidence":0.9}
+{"evidence_id":"E07","source_id":"A04","claim":"西城分子11,271、更新分母13,945，但正文实际使用13,855并报81.35%","locator":"article.md:60-70","evidence_type":"calculation_audit","confidence":1.0}
+{"evidence_id":"E08","source_id":"A04","claim":"朝阳含1+3分子10,219、分母16,464、结果62.07%","locator":"article.md:146-156","evidence_type":"article_data","confidence":0.9}
+{"evidence_id":"E09","source_id":"A05","claim":"全市普通高中计划约8.5万、中考报名11.05万，文章计算76.9%","locator":"article.md:24-33","evidence_type":"article_data","confidence":0.8}
+{"evidence_id":"E10","source_id":"A05","claim":"西城11,181/13,855的中间结果误写80.0%，结论写80.7%","locator":"article.md:48-58","evidence_type":"calculation_audit","confidence":1.0}
+{"evidence_id":"E11","source_id":"A06","claim":"西城统招占比58.12%，朝阳统招占比71.61%","locator":"article.md:84-124","evidence_type":"article_data","confidence":0.85}
+{"evidence_id":"E12","source_id":"A07","quote":"虽然西城普高率达92%","locator":"article.md:128","evidence_type":"direct_quote","confidence":0.45}
+{"evidence_id":"E13","source_id":"A08","claim":"文章把十三中2025中考录取线描述为约620分","locator":"article.md:196-199","evidence_type":"scale_conflict","confidence":1.0}

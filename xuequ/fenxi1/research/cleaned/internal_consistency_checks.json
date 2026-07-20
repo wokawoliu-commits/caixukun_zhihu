@@ -1,0 +1,866 @@
+[
+  {
+    "year": 2014,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 153249,
+    "comparison": 153400,
+    "difference": -151
+  },
+  {
+    "year": 2014,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 102693,
+    "comparison": 102827,
+    "difference": -134
+  },
+  {
+    "year": 2014,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 55184,
+    "comparison": 55428,
+    "difference": -244
+  },
+  {
+    "year": 2014,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 12488,
+    "comparison": 12489,
+    "difference": -1
+  },
+  {
+    "year": 2014,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 8684,
+    "comparison": 8690,
+    "difference": -6
+  },
+  {
+    "year": 2014,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 7022,
+    "comparison": 7042,
+    "difference": -20
+  },
+  {
+    "year": 2014,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 25745,
+    "comparison": 25745,
+    "difference": 0
+  },
+  {
+    "year": 2014,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 13898,
+    "comparison": 13958,
+    "difference": -60
+  },
+  {
+    "year": 2014,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 4362,
+    "comparison": 4547,
+    "difference": -185
+  },
+  {
+    "year": 2015,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 145876,
+    "comparison": 145995,
+    "difference": -119
+  },
+  {
+    "year": 2015,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 89152,
+    "comparison": 89282,
+    "difference": -130
+  },
+  {
+    "year": 2015,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 56743,
+    "comparison": 56937,
+    "difference": -194
+  },
+  {
+    "year": 2015,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 13074,
+    "comparison": 13078,
+    "difference": -4
+  },
+  {
+    "year": 2015,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 7857,
+    "comparison": 7870,
+    "difference": -13
+  },
+  {
+    "year": 2015,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 7068,
+    "comparison": 7089,
+    "difference": -21
+  },
+  {
+    "year": 2015,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 21176,
+    "comparison": 21176,
+    "difference": 0
+  },
+  {
+    "year": 2015,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 12153,
+    "comparison": 12183,
+    "difference": -30
+  },
+  {
+    "year": 2015,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 4665,
+    "comparison": 4764,
+    "difference": -99
+  },
+  {
+    "year": 2016,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 145274,
+    "comparison": 145393,
+    "difference": -119
+  },
+  {
+    "year": 2016,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 91854,
+    "comparison": 91976,
+    "difference": -122
+  },
+  {
+    "year": 2016,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 53544,
+    "comparison": 53687,
+    "difference": -143
+  },
+  {
+    "year": 2016,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 13455,
+    "comparison": 13457,
+    "difference": -2
+  },
+  {
+    "year": 2016,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 8325,
+    "comparison": 8343,
+    "difference": -18
+  },
+  {
+    "year": 2016,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 6603,
+    "comparison": 6631,
+    "difference": -28
+  },
+  {
+    "year": 2016,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 22093,
+    "comparison": 22099,
+    "difference": -6
+  },
+  {
+    "year": 2016,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 12910,
+    "comparison": 12942,
+    "difference": -32
+  },
+  {
+    "year": 2016,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 4537,
+    "comparison": 4569,
+    "difference": -32
+  },
+  {
+    "year": 2017,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 157559,
+    "comparison": 157658,
+    "difference": -99
+  },
+  {
+    "year": 2017,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 103263,
+    "comparison": 103371,
+    "difference": -108
+  },
+  {
+    "year": 2017,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 53755,
+    "comparison": 54068,
+    "difference": -313
+  },
+  {
+    "year": 2017,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 15050,
+    "comparison": 15054,
+    "difference": -4
+  },
+  {
+    "year": 2017,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 10181,
+    "comparison": 10196,
+    "difference": -15
+  },
+  {
+    "year": 2017,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 6596,
+    "comparison": 6629,
+    "difference": -33
+  },
+  {
+    "year": 2017,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 24570,
+    "comparison": 24576,
+    "difference": -6
+  },
+  {
+    "year": 2017,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 14290,
+    "comparison": 14319,
+    "difference": -29
+  },
+  {
+    "year": 2017,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 4430,
+    "comparison": 4534,
+    "difference": -104
+  },
+  {
+    "year": 2018,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 184339,
+    "comparison": 184449,
+    "difference": -110
+  },
+  {
+    "year": 2018,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 100984,
+    "comparison": 101097,
+    "difference": -113
+  },
+  {
+    "year": 2018,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 47355,
+    "comparison": 47702,
+    "difference": -347
+  },
+  {
+    "year": 2018,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 18328,
+    "comparison": 18333,
+    "difference": -5
+  },
+  {
+    "year": 2018,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 10119,
+    "comparison": 10129,
+    "difference": -10
+  },
+  {
+    "year": 2018,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 5697,
+    "comparison": 5732,
+    "difference": -35
+  },
+  {
+    "year": 2018,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 28505,
+    "comparison": 28519,
+    "difference": -14
+  },
+  {
+    "year": 2018,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 13693,
+    "comparison": 13728,
+    "difference": -35
+  },
+  {
+    "year": 2018,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 3745,
+    "comparison": 3845,
+    "difference": -100
+  },
+  {
+    "year": 2019,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 182873,
+    "comparison": 182979,
+    "difference": -106
+  },
+  {
+    "year": 2019,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 117398,
+    "comparison": 117528,
+    "difference": -130
+  },
+  {
+    "year": 2019,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 51403,
+    "comparison": 51879,
+    "difference": -476
+  },
+  {
+    "year": 2019,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 18623,
+    "comparison": 18638,
+    "difference": -15
+  },
+  {
+    "year": 2019,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 12513,
+    "comparison": 12542,
+    "difference": -29
+  },
+  {
+    "year": 2019,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 6120,
+    "comparison": 6183,
+    "difference": -63
+  },
+  {
+    "year": 2019,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 28305,
+    "comparison": 28308,
+    "difference": -3
+  },
+  {
+    "year": 2019,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 16618,
+    "comparison": 16643,
+    "difference": -25
+  },
+  {
+    "year": 2019,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 4206,
+    "comparison": 4398,
+    "difference": -192
+  },
+  {
+    "year": 2020,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 202157,
+    "comparison": 202226,
+    "difference": -69
+  },
+  {
+    "year": 2020,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 122123,
+    "comparison": 122222,
+    "difference": -99
+  },
+  {
+    "year": 2020,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 61071,
+    "comparison": 61423,
+    "difference": -352
+  },
+  {
+    "year": 2020,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 21066,
+    "comparison": 21075,
+    "difference": -9
+  },
+  {
+    "year": 2020,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 12984,
+    "comparison": 13008,
+    "difference": -24
+  },
+  {
+    "year": 2020,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 7930,
+    "comparison": 7979,
+    "difference": -49
+  },
+  {
+    "year": 2020,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 31426,
+    "comparison": 31432,
+    "difference": -6
+  },
+  {
+    "year": 2020,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 18224,
+    "comparison": 18241,
+    "difference": -17
+  },
+  {
+    "year": 2020,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 5513,
+    "comparison": 5609,
+    "difference": -96
+  },
+  {
+    "year": 2021,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 186440,
+    "comparison": 186551,
+    "difference": -111
+  },
+  {
+    "year": 2021,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 120431,
+    "comparison": 120702,
+    "difference": -271
+  },
+  {
+    "year": 2021,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 62263,
+    "comparison": 62771,
+    "difference": -508
+  },
+  {
+    "year": 2021,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 21357,
+    "comparison": 21375,
+    "difference": -18
+  },
+  {
+    "year": 2021,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 13595,
+    "comparison": 13635,
+    "difference": -40
+  },
+  {
+    "year": 2021,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 8074,
+    "comparison": 8165,
+    "difference": -91
+  },
+  {
+    "year": 2021,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 28970,
+    "comparison": 28981,
+    "difference": -11
+  },
+  {
+    "year": 2021,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 17501,
+    "comparison": 17544,
+    "difference": -43
+  },
+  {
+    "year": 2021,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 5916,
+    "comparison": 5950,
+    "difference": -34
+  },
+  {
+    "year": 2022,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 189935,
+    "comparison": 189971,
+    "difference": -36
+  },
+  {
+    "year": 2022,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 121270,
+    "comparison": 121324,
+    "difference": -54
+  },
+  {
+    "year": 2022,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 74681,
+    "comparison": 75141,
+    "difference": -460
+  },
+  {
+    "year": 2022,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 20420,
+    "comparison": 20428,
+    "difference": -8
+  },
+  {
+    "year": 2022,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 14353,
+    "comparison": 14377,
+    "difference": -24
+  },
+  {
+    "year": 2022,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 10250,
+    "comparison": 10333,
+    "difference": -83
+  },
+  {
+    "year": 2022,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 27675,
+    "comparison": 27680,
+    "difference": -5
+  },
+  {
+    "year": 2022,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 17662,
+    "comparison": 17679,
+    "difference": -17
+  },
+  {
+    "year": 2022,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 7910,
+    "comparison": 7933,
+    "difference": -23
+  },
+  {
+    "year": 2023,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 235253,
+    "comparison": 235371,
+    "difference": -118
+  },
+  {
+    "year": 2023,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 134985,
+    "comparison": 135154,
+    "difference": -169
+  },
+  {
+    "year": 2023,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 79716,
+    "comparison": 80253,
+    "difference": -537
+  },
+  {
+    "year": 2023,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 24400,
+    "comparison": 24406,
+    "difference": -6
+  },
+  {
+    "year": 2023,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 16018,
+    "comparison": 16053,
+    "difference": -35
+  },
+  {
+    "year": 2023,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 10438,
+    "comparison": 10544,
+    "difference": -106
+  },
+  {
+    "year": 2023,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 33102,
+    "comparison": 33112,
+    "difference": -10
+  },
+  {
+    "year": 2023,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 19986,
+    "comparison": 20025,
+    "difference": -39
+  },
+  {
+    "year": 2023,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 9491,
+    "comparison": 9529,
+    "difference": -38
+  },
+  {
+    "year": 2024,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 192706,
+    "comparison": 192957,
+    "difference": -251
+  },
+  {
+    "year": 2024,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 161338,
+    "comparison": 161522,
+    "difference": -184
+  },
+  {
+    "year": 2024,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 82137,
+    "comparison": 82853,
+    "difference": -716
+  },
+  {
+    "year": 2024,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 19539,
+    "comparison": 19544,
+    "difference": -5
+  },
+  {
+    "year": 2024,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 19721,
+    "comparison": 19780,
+    "difference": -59
+  },
+  {
+    "year": 2024,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 10887,
+    "comparison": 11019,
+    "difference": -132
+  },
+  {
+    "year": 2024,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 26492,
+    "comparison": 26500,
+    "difference": -8
+  },
+  {
+    "year": 2024,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 23767,
+    "comparison": 23786,
+    "difference": -19
+  },
+  {
+    "year": 2024,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 10026,
+    "comparison": 10099,
+    "difference": -73
+  },
+  {
+    "year": 2025,
+    "area": "北京市",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 183445,
+    "comparison": 183484,
+    "difference": -39
+  },
+  {
+    "year": 2025,
+    "area": "北京市",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 162349,
+    "comparison": 162502,
+    "difference": -153
+  },
+  {
+    "year": 2025,
+    "area": "北京市",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 84275,
+    "comparison": 84940,
+    "difference": -665
+  },
+  {
+    "year": 2025,
+    "area": "西城区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 18435,
+    "comparison": 18443,
+    "difference": -8
+  },
+  {
+    "year": 2025,
+    "area": "西城区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 20106,
+    "comparison": 20187,
+    "difference": -81
+  },
+  {
+    "year": 2025,
+    "area": "西城区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 11626,
+    "comparison": 11747,
+    "difference": -121
+  },
+  {
+    "year": 2025,
+    "area": "朝阳区",
+    "metric": "小学招生数 vs 小学一年级在校生",
+    "reported": 25907,
+    "comparison": 25910,
+    "difference": -3
+  },
+  {
+    "year": 2025,
+    "area": "朝阳区",
+    "metric": "初中招生数 vs 初中一年级在校生",
+    "reported": 24371,
+    "comparison": 24398,
+    "difference": -27
+  },
+  {
+    "year": 2025,
+    "area": "朝阳区",
+    "metric": "高中招生数 vs 高中一年级在校生",
+    "reported": 10202,
+    "comparison": 10268,
+    "difference": -66
+  }
+]

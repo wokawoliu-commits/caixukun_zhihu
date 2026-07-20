@@ -1,0 +1,7 @@
+{"claim_id":"C001","statement":"2023年是全市小学招生峰值，2025年较峰值回落22.0%","evidence_ids":["E001"],"calculation":"183445/235253-1","confidence":"A"}
+{"claim_id":"C002","statement":"全市初中和普通高中招生在2025年均达到2014年以来最高值","evidence_ids":["E001"],"calculation":"2014—2025逐年最大值","confidence":"A"}
+{"claim_id":"C003","statement":"2025年西城占全市小学、初中、普高招生的10.0%、12.4%、13.8%","evidence_ids":["E001","E002"],"calculation":"区值/全市值","confidence":"A"}
+{"claim_id":"C004","statement":"2025年朝阳占全市小学、初中、普高招生的14.1%、15.0%、12.1%","evidence_ids":["E001","E003"],"calculation":"区值/全市值","confidence":"A"}
+{"claim_id":"C005","statement":"高考报名、统考和实考口径不可混用","evidence_ids":["E006"],"calculation":"2021报名51738与实际参加45238相差6500人","confidence":"A"}
+{"claim_id":"C006","statement":"本科线及以上人数不能表述为本科实际录取人数","evidence_ids":["E007"],"calculation":"上线是分数分布累计，录取是招生结果","confidence":"A"}
+{"claim_id":"C007","statement":"区级本科绝对人数应显示未公开，不进行比例反推","evidence_ids":["E008"],"calculation":"缺少明确分母、同年高考绝对数与统一区级发布口径","confidence":"B"}
