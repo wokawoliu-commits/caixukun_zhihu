@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type MouseEvent } from "react";
 import admissionsRaw from "../research/cleaned/education_admissions_2014_2025.json";
 import checksRaw from "../research/cleaned/internal_consistency_checks.json";
 import bulletinsRaw from "../research/cleaned/statistical_bulletin_checks.json";
@@ -20,6 +20,12 @@ type AdmissionRecord = {
   primary_source_url: string;
   middle_source_url: string;
   confidence: string;
+  unit?: string;
+  definition?: string;
+  source_agency?: string;
+  primary_locator?: string;
+  junior_locator?: string;
+  senior_locator?: string;
 };
 
 type ExamRecord = {
@@ -49,6 +55,28 @@ type ConsistencyCheck = {
   reported: number;
   comparison: number;
   difference: number;
+};
+
+type TrendPoint = {
+  area: Area;
+  year: number;
+  value: number;
+};
+
+type SourceDetail = {
+  area: Area;
+  year: number;
+  metric: MetricId;
+  value: number | null;
+  display?: string;
+  source?: string;
+  sourceIndex?: string;
+  sourceName: string;
+  locator?: string;
+  definition?: string;
+  confidence?: string;
+  precision?: string;
+  note?: string;
 };
 
 const admissions = admissionsRaw as AdmissionRecord[];
@@ -127,8 +155,89 @@ function getValue(area: Area, year: number, metric: MetricId) {
   return admissionValue(record, metric);
 }
 
-function TrendCanvas({ metric, activeYear }: { metric: MetricId; activeYear: number }) {
+function getSourceDetail(area: Area, year: number, metric: MetricId): SourceDetail {
+  if (metric === "gaokao") {
+    const record = exam.gaokao_population.find(
+      (item) => item.area === area && item.year === year,
+    );
+    return {
+      area,
+      year,
+      metric,
+      value: record?.value ?? null,
+      display: record?.display,
+      source: record?.source,
+      sourceName: record ? "原始高考公开信息" : "暂未找到稳定公开来源",
+      locator: record ? `高考人口 · ${record.scope ?? "原始发布口径"}` : undefined,
+      confidence: record?.confidence,
+      precision: record?.precision,
+      note: record
+        ? "报名、实考与统一高考人数按原始发布口径保留，不能直接视为同一统计序列。"
+        : "该区域该年度暂未找到可公开核验的高考人数。",
+    };
+  }
+
+  if (metric === "undergraduate") {
+    const record = exam.undergraduate_above_cutoff.find(
+      (item) => item.area === area && item.year === year,
+    );
+    return {
+      area,
+      year,
+      metric,
+      value: record?.value ?? null,
+      source: record?.source,
+      sourceName: record ? "北京教育考试院一分一段表" : "暂未找到稳定公开来源",
+      locator: record
+        ? `普通本科控制线 ${record.cutoff ?? ""} 分及以上累计人数`
+        : undefined,
+      confidence: record?.confidence,
+      note: record
+        ? "这是普通本科控制线及以上人数，不等于最终本科录取人数。"
+        : "区级本科线及以上绝对人数暂未找到稳定公开口径。",
+    };
+  }
+
+  const record = admissions.find((item) => item.area === area && item.year === year);
+  const locator = metric === "primary"
+    ? record?.primary_locator
+    : metric === "junior"
+      ? record?.junior_locator
+      : record?.senior_locator;
+  const source = metric === "primary" ? record?.primary_source_url : record?.middle_source_url;
+  const value = admissionValue(record, metric);
+
+  return {
+    area,
+    year,
+    metric,
+    value,
+    source,
+    sourceIndex: record?.source_index_url,
+    sourceName: record?.source_agency ?? "北京市教育委员会",
+    locator,
+    definition: record?.definition ?? METRICS[metric].definition,
+    confidence: record?.confidence,
+    note: value === null ? "该区域该年度暂未找到可公开核验的招生数。" : undefined,
+  };
+}
+
+function TrendCanvas({
+  metric,
+  activeYear,
+  onPointSelect,
+}: {
+  metric: MetricId;
+  activeYear: number;
+  onPointSelect: (point: TrendPoint) => void;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const layoutRef = useRef<{
+    width: number;
+    height: number;
+    padding: { top: number; right: number; bottom: number; left: number };
+    maximum: number;
+  } | null>(null);
 
   const series = useMemo(
     () =>
@@ -172,6 +281,7 @@ function TrendCanvas({ metric, activeYear }: { metric: MetricId; activeYear: num
       const maximum = Math.max(...all, 1) * 1.08;
       const xAt = (index: number) => padding.left + (index / (YEARS.length - 1)) * innerWidth;
       const yAt = (value: number) => padding.top + innerHeight - (value / maximum) * innerHeight;
+      layoutRef.current = { width, height, padding, maximum };
 
       context.font = "11px ui-monospace, SFMono-Regular, Menlo, monospace";
       context.textBaseline = "middle";
@@ -251,10 +361,41 @@ function TrendCanvas({ metric, activeYear }: { metric: MetricId; activeYear: num
     return () => observer.disconnect();
   }, [series, activeYear]);
 
+  const handleClick = (event: MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    const layout = layoutRef.current;
+    if (!canvas || !layout) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+    const innerWidth = layout.width - layout.padding.left - layout.padding.right;
+    const innerHeight = layout.height - layout.padding.top - layout.padding.bottom;
+    const xAt = (index: number) => layout.padding.left + (index / (YEARS.length - 1)) * innerWidth;
+    const yAt = (value: number) => layout.padding.top + innerHeight - (value / layout.maximum) * innerHeight;
+
+    let closest: (TrendPoint & { distance: number }) | null = null;
+    series.forEach(({ area, values }) => {
+      values.forEach((point, index) => {
+        if (point.value === null) return;
+        const distance = Math.hypot(x - xAt(index), y - yAt(point.value));
+        if (!closest || distance < closest.distance) {
+          closest = { area, year: point.year, value: point.value, distance };
+        }
+      });
+    });
+
+    if (closest && closest.distance <= (layout.width < 640 ? 18 : 22)) {
+      onPointSelect({ area: closest.area, year: closest.year, value: closest.value });
+    }
+  };
+
   return (
     <div className="chart-canvas-wrap">
       <canvas
         ref={canvasRef}
+        onClick={handleClick}
+        tabIndex={0}
         aria-label={`${METRICS[metric].label}，2014至2025年，北京市、西城区、朝阳区趋势图`}
         role="img"
       />
@@ -267,11 +408,69 @@ function ValueDisplay({ value }: { value: number | null }) {
   return <>{formatter.format(value)}</>;
 }
 
+function precisionLabel(precision?: string) {
+  if (precision === "rounded") return "约数";
+  if (precision === "lower_bound_rounded") return "约数 / 下限";
+  return precision === "exact" ? "精确值" : precision;
+}
+
+function SourceInspector({
+  detail,
+  onClose,
+}: {
+  detail: SourceDetail;
+  onClose: () => void;
+}) {
+  return (
+    <aside className="source-inspector" aria-live="polite">
+      <div className="source-inspector-head">
+        <div>
+          <span className="eyebrow">已选数据 · 来源</span>
+          <h3>{METRICS[detail.metric].label} · {detail.area} · {detail.year}</h3>
+        </div>
+        <button type="button" className="source-inspector-close" onClick={onClose} aria-label="关闭来源详情">
+          关闭 ×
+        </button>
+      </div>
+      <div className="source-inspector-grid">
+        <div className="source-inspector-value">
+          <span>数据值</span>
+          <strong>{detail.display ?? (detail.value === null ? "未公开" : formatter.format(detail.value))}</strong>
+        </div>
+        <div>
+          <span>口径 / 定位</span>
+          <p>{detail.locator ?? detail.definition ?? "该数据没有公开的细分定位。"}</p>
+        </div>
+        <div>
+          <span>来源机构</span>
+          <p>{detail.sourceName}</p>
+        </div>
+        <div>
+          <span>质量标记</span>
+          <p>{[detail.confidence && `质量 ${detail.confidence}`, precisionLabel(detail.precision)].filter(Boolean).join(" · ") || "未标记"}</p>
+        </div>
+      </div>
+      {detail.note && <p className="source-inspector-note">{detail.note}</p>}
+      <div className="source-inspector-actions">
+        {detail.source ? (
+          <a href={detail.source} target="_blank" rel="noreferrer">打开原始来源 ↗</a>
+        ) : (
+          <span>当前筛选没有可打开的原始链接</span>
+        )}
+        {detail.sourceIndex && (
+          <a href={detail.sourceIndex} target="_blank" rel="noreferrer">打开来源总入口 ↗</a>
+        )}
+      </div>
+    </aside>
+  );
+}
+
 export default function Dashboard() {
   const [area, setArea] = useState<Area>("北京市");
   const [year, setYear] = useState(2025);
   const [metric, setMetric] = useState<MetricId>("primary");
   const [showAllSources, setShowAllSources] = useState(false);
+  const [selectedSource, setSelectedSource] = useState<SourceDetail | null>(null);
 
   const selectedAdmission = admissions.find(
     (item) => item.area === area && item.year === year,
@@ -396,7 +595,10 @@ export default function Dashboard() {
                   type="button"
                   key={item}
                   className={area === item ? "active" : ""}
-                  onClick={() => setArea(item)}
+                  onClick={() => {
+                    setArea(item);
+                    setSelectedSource(getSourceDetail(item, year, metric));
+                  }}
                 >
                   {item}
                 </button>
@@ -414,7 +616,11 @@ export default function Dashboard() {
               max="2025"
               step="1"
               value={year}
-              onChange={(event) => setYear(Number(event.target.value))}
+              onChange={(event) => {
+                const nextYear = Number(event.target.value);
+                setYear(nextYear);
+                setSelectedSource(getSourceDetail(area, nextYear, metric));
+              }}
               aria-label="选择年份"
             />
             <div className="range-labels">
@@ -431,7 +637,11 @@ export default function Dashboard() {
             key={card.id}
             type="button"
             className={`metric-card ${metric === card.id ? "selected" : ""}`}
-            onClick={() => setMetric(card.id)}
+            onClick={() => {
+              setMetric(card.id);
+              setSelectedSource(getSourceDetail(area, year, card.id));
+            }}
+            aria-label={`${METRICS[card.id].label}，点击查看数据来源`}
           >
             <span className="metric-index">0{index + 1}</span>
             <span className="metric-label">{METRICS[card.id].label}</span>
@@ -442,6 +652,10 @@ export default function Dashboard() {
           </button>
         ))}
       </section>
+
+      {selectedSource && (
+        <SourceInspector detail={selectedSource} onClose={() => setSelectedSource(null)} />
+      )}
 
       <section className="trend-section" id="trend">
         <div className="section-heading">
@@ -468,7 +682,10 @@ export default function Dashboard() {
               aria-selected={metric === item}
               key={item}
               className={metric === item ? "active" : ""}
-              onClick={() => setMetric(item)}
+              onClick={() => {
+                setMetric(item);
+                setSelectedSource(getSourceDetail(area, year, item));
+              }}
             >
               {METRICS[item].short}
             </button>
@@ -476,7 +693,16 @@ export default function Dashboard() {
         </div>
 
         <div className="chart-shell">
-          <TrendCanvas metric={metric} activeYear={year} />
+          <p className="chart-click-hint">点击趋势图上的数据点，可查看该年、该区域的原始来源。</p>
+          <TrendCanvas
+            metric={metric}
+            activeYear={year}
+            onPointSelect={(point) => {
+              setArea(point.area);
+              setYear(point.year);
+              setSelectedSource(getSourceDetail(point.area, point.year, metric));
+            }}
+          />
           <div className="chart-legend">
             {AREAS.map((item) => (
               <span key={item}>
@@ -575,7 +801,14 @@ export default function Dashboard() {
           {sourceRowsVisible.map((card) => (
             <div className="ledger-row" key={card.id}>
               <span>{METRICS[card.id].label}</span>
-              <strong><ValueDisplay value={card.value} /></strong>
+              <button
+                type="button"
+                className="ledger-value-button"
+                onClick={() => setSelectedSource(getSourceDetail(area, year, card.id))}
+                aria-label={`${METRICS[card.id].label}，点击查看数据来源`}
+              >
+                <strong><ValueDisplay value={card.value} /></strong>
+              </button>
               <span>{card.note} · {card.confidence}</span>
               <a href={card.source} target="_blank" rel="noreferrer">打开原件 ↗</a>
             </div>
