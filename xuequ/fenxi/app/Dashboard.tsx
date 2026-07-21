@@ -89,7 +89,7 @@ const exam = examRaw as {
 };
 
 const AREAS: Area[] = ["北京市", "西城区", "朝阳区"];
-const YEARS = Array.from({ length: 12 }, (_, index) => 2014 + index);
+const YEARS = Array.from({ length: 13 }, (_, index) => 2014 + index);
 const AREA_COLORS: Record<Area, string> = {
   北京市: "#c6402c",
   西城区: "#1f5e67",
@@ -396,7 +396,7 @@ function TrendCanvas({
         ref={canvasRef}
         onClick={handleClick}
         tabIndex={0}
-        aria-label={`${METRICS[metric].label}，2014至2025年，北京市、西城区、朝阳区趋势图`}
+        aria-label={`${METRICS[metric].label}，${YEARS[0]}至${YEARS[YEARS.length - 1]}年，北京市、西城区、朝阳区趋势图`}
         role="img"
       />
     </div>
@@ -566,7 +566,7 @@ export default function Dashboard() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-kicker">2014—2025 · 3个区域 · 5类人口指标</div>
+        <div className="hero-kicker">2014—2026 · 3个区域 · 5类人口指标</div>
         <div className="hero-grid">
           <div>
             <h1>
@@ -608,12 +608,25 @@ export default function Dashboard() {
           <div className="year-control">
             <div className="year-heading">
               <span className="control-label">学年起始年</span>
-              <output>{year}</output>
+              <div className="year-heading-actions">
+                <output>{year}</output>
+                <button
+                  type="button"
+                  className={year === 2026 ? "latest-year-button active" : "latest-year-button"}
+                  aria-pressed={year === 2026}
+                  onClick={() => {
+                    setYear(2026);
+                    setSelectedSource(getSourceDetail(area, 2026, metric));
+                  }}
+                >
+                  查看 2026
+                </button>
+              </div>
             </div>
             <input
               type="range"
               min="2014"
-              max="2025"
+              max="2026"
               step="1"
               value={year}
               onChange={(event) => {
@@ -625,7 +638,7 @@ export default function Dashboard() {
             />
             <div className="range-labels">
               <span>2014</span>
-              <span>2025</span>
+              <span>2026</span>
             </div>
           </div>
         </div>
@@ -752,13 +765,17 @@ export default function Dashboard() {
           <article className="verify-card">
             <span className="verify-tag">独立来源</span>
             <h3>统计公报四舍五入复核</h3>
-            {area === "北京市" && bulletin ? (
-              <>
-                <p>
-                  {year} 年市统计局公报报出小学 {compactFormatter.format(bulletin.primary)}、初中 {compactFormatter.format(bulletin.junior)}、普高 {compactFormatter.format(bulletin.senior)}。
-                </p>
-                <a href={bulletin.source} target="_blank" rel="noreferrer">查看市统计局公报 ↗</a>
-              </>
+            {area === "北京市" ? (
+              bulletin ? (
+                <>
+                  <p>
+                    {year} 年市统计局公报报出小学 {compactFormatter.format(bulletin.primary)}、初中 {compactFormatter.format(bulletin.junior)}、普高 {compactFormatter.format(bulletin.senior)}。
+                  </p>
+                  <a href={bulletin.source} target="_blank" rel="noreferrer">查看市统计局公报 ↗</a>
+                </>
+              ) : (
+                <p>2026 年教育事业招生统计尚未发布；当前只展示已经公开的高考报名和分数分布数据。</p>
+              )
             ) : area === "西城区" ? (
               <p>
                 西城统计年鉴终值与市教委分区工作簿在 2014—2024 年逐项一致，2025 年再由区教育概述复核。
@@ -849,13 +866,13 @@ export default function Dashboard() {
           <div>
             <h3>本科结果</h3>
             <p>
-              2020—2025 用考试院控制线累计人数表示“本科线及以上”。这不是实际录取数；区级绝对数没有稳定公开来源。
+              2020—2026 用考试院控制线累计人数表示“本科线及以上”。这不是实际录取数；区级绝对数没有稳定公开来源。
             </p>
           </div>
           <div>
             <h3>2026 状态</h3>
             <p>
-              2026 年全市高考报名 84,900 人已发布；本科普通批仍在录取期间，本网站不提前填入本科结果。
+              2026 年全市高考报名 84,900 人；普通本科控制线 429 分及以上累计 59,457 人。后者是上线人数，不是最终录取数。
             </p>
           </div>
         </div>

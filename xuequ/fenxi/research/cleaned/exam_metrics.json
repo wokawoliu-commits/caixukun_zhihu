@@ -20,6 +20,7 @@
     {"year": 2020, "area": "西城区", "value": 6413, "display": "6,413", "scope": "参加高考", "precision": "exact", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv862512.html"},
     {"year": 2024, "area": "西城区", "value": 7500, "display": "7,500余", "scope": "高考考生", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv954186.html"},
     {"year": 2025, "area": "西城区", "value": 9000, "display": "9,000余", "scope": "报名人数", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv979601.html"},
+    {"year": 2026, "area": "西城区", "value": 9700, "display": "9,700余", "scope": "报名考生", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://www.bjxch.gov.cn/xcdt/xxxq/pnidpv999279.html", "status": "current"},
     {"year": 2018, "area": "朝阳区", "value": 4000, "display": "4,000余", "scope": "参加考试", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://chyrd.bjchy.gov.cn/yfly/ff80808163d349de0163d7c6ad470001.html"},
     {"year": 2022, "area": "朝阳区", "value": 4900, "display": "4,900余", "scope": "参加考试", "precision": "lower_bound_rounded", "confidence": "A", "source": "https://chyrd.bjchy.gov.cn/yfly/8a24f0b481228d3c01816000ab0a00f0.html"},
     {"year": 2024, "area": "朝阳区", "value": 6600, "display": "6,600余", "scope": "参加高考（媒体参考）", "precision": "lower_bound_rounded", "confidence": "B", "source": "https://m.bjnews.com.cn/detail/1717715397129382.html"},
@@ -42,7 +43,8 @@
     {"year": 2022, "area": "北京市", "value": 37319, "cutoff": 425, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2022/0625/82074.html"},
     {"year": 2023, "area": "北京市", "value": 42347, "cutoff": 448, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2023/0625/83922.html"},
     {"year": 2024, "area": "北京市", "value": 44923, "cutoff": 434, "confidence": "A", "source": "https://www.bjeea.cn/html/gkgz/fujian/2024/0625/85432.html"},
-    {"year": 2025, "area": "北京市", "value": 53994, "cutoff": 430, "confidence": "A", "source": "https://www.bjeea.cn/uploads/soft/250625/172-2506250Q456.pdf"}
+    {"year": 2025, "area": "北京市", "value": 53994, "cutoff": 430, "confidence": "A", "source": "https://www.bjeea.cn/uploads/soft/250625/172-2506250Q456.pdf"},
+    {"year": 2026, "area": "北京市", "value": 59457, "cutoff": 429, "confidence": "A", "source": "https://www.bjeea.cn/uploads/soft/260625/2026%E5%B9%B4%E5%8C%97%E4%BA%AC%E5%B8%82%E9%AB%98%E8%80%83%E8%80%83%E7%94%9F%E5%88%86%E6%95%B0%E5%88%86%E5%B8%83.pdf"}
   ],
   "notes": {
     "gaokao_population": "报名、实考与统考人数并非同一口径；网站保留每年原始口径，不把它们伪装成完全同质的序列。",

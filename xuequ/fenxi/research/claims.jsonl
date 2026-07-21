@@ -5,3 +5,5 @@
 {"claim_id":"C005","statement":"高考报名、统考和实考口径不可混用","evidence_ids":["E006"],"calculation":"2021报名51738与实际参加45238相差6500人","confidence":"A"}
 {"claim_id":"C006","statement":"本科线及以上人数不能表述为本科实际录取人数","evidence_ids":["E007"],"calculation":"上线是分数分布累计，录取是招生结果","confidence":"A"}
 {"claim_id":"C007","statement":"区级本科绝对人数应显示未公开，不进行比例反推","evidence_ids":["E008"],"calculation":"缺少明确分母、同年高考绝对数与统一区级发布口径","confidence":"B"}
+{"claim_id":"C008","statement":"2026年北京高考报名84900人，西城区报名9700余人","evidence_ids":["E006","E009"],"calculation":"官方报名口径；西城区为下限约数","confidence":"A"}
+{"claim_id":"C009","statement":"2026年普通本科线429分及以上累计59457人，不等于最终录取人数","evidence_ids":["E010"],"calculation":"一分一段表429分行累计人数","confidence":"A"}

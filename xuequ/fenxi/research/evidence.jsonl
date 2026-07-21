@@ -6,3 +6,5 @@
 {"evidence_id":"E006","claim":"2025年北京高考报名人数为78900人，2026年为84900人","source_ids":["S014","S015"],"method":"北京市政府官方发布","confidence":"A"}
 {"evidence_id":"E007","claim":"2025年普通本科控制线430分及以上累计53994人","source_ids":["S016"],"method":"北京教育考试院一分一段表430分行累计人数","confidence":"A"}
 {"evidence_id":"E008","claim":"西城和朝阳未见连续公开的区级本科录取或上线绝对人数","source_ids":["S008","S009","S010","S020"],"method":"政府、教委、统计年鉴与考试机构定向检索；仅检出比例或零散高考人数","confidence":"B"}
+{"evidence_id":"E009","claim":"2026年西城区高考报名考生9700余人","source_ids":["S025"],"method":"西城区政府官方发布","confidence":"A"}
+{"evidence_id":"E010","claim":"2026年普通本科控制线429分及以上累计59457人","source_ids":["S026"],"method":"北京教育考试院一分一段表429分行累计人数","confidence":"A"}

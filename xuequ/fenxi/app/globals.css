@@ -122,6 +122,17 @@ nav a:hover { color: var(--red); }
 .year-control { display: grid; gap: 8px; }
 .year-heading { display: flex; align-items: center; justify-content: space-between; }
 .year-heading output { font: 700 16px ui-monospace, SFMono-Regular, Menlo, monospace; }
+.year-heading-actions { display: flex; align-items: center; gap: 12px; }
+.latest-year-button {
+  border: 1px solid var(--red);
+  padding: 5px 9px;
+  color: var(--red);
+  background: transparent;
+  font: 700 10px ui-monospace, SFMono-Regular, Menlo, monospace;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+.latest-year-button:hover, .latest-year-button.active { color: var(--white); background: var(--red); }
 input[type="range"] { width: 100%; accent-color: var(--red); }
 .range-labels { display: flex; justify-content: space-between; color: var(--ink-soft); font: 10px ui-monospace, SFMono-Regular, Menlo, monospace; }
 
