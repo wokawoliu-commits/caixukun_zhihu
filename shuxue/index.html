@@ -1,0 +1,1606 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1623">
+  <meta name="description" content="基于 109 组知乎检索词、2,496 条成功抓取正文的学前数学启蒙动画替代品研究。">
+  <title>不爱《数字积木》，也能爱上数学｜知乎调研视觉报告</title>
+  <style>
+    :root {
+      --ink: #0b1623;
+      --ink-2: #132436;
+      --paper: #f1eee5;
+      --paper-2: #e8e4da;
+      --white: #fffdf7;
+      --muted: #6b706f;
+      --line: rgba(11, 22, 35, 0.17);
+      --line-dark: rgba(255, 255, 255, 0.18);
+      --accent: #c9ff3f;
+      --accent-ink: #1c2900;
+      --display: "Songti SC", "STSong", "Noto Serif CJK SC", serif;
+      --sans: "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ink);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      transform: translateY(-160%);
+      padding: 10px 14px;
+      color: var(--ink);
+      background: var(--accent);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .scroll-progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      z-index: 90;
+      width: 0;
+      height: 3px;
+      background: var(--accent);
+      transform-origin: left;
+    }
+
+    .site-nav {
+      position: absolute;
+      inset: 0 0 auto;
+      z-index: 30;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: min(calc(100% - 48px), var(--max));
+      height: 78px;
+      margin: 0 auto;
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+
+    .wordmark-mark {
+      display: grid;
+      width: 24px;
+      height: 24px;
+      place-items: center;
+      color: var(--accent-ink);
+      background: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.78;
+      transition: opacity 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      opacity: 1;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 100svh;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(5, 13, 21, 0.97) 0%, rgba(5, 13, 21, 0.86) 35%, rgba(5, 13, 21, 0.18) 67%, rgba(5, 13, 21, 0.08) 100%),
+        url("assets/math-animation-hero.png") 58% center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 24%;
+      pointer-events: none;
+      background: linear-gradient(transparent, rgba(5, 13, 21, 0.62));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 48px), var(--max));
+      margin: 76px auto 0;
+    }
+
+    .hero-copy {
+      width: min(680px, 58vw);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: rise 700ms 100ms ease forwards;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 46px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 660px;
+      margin-bottom: 24px;
+      font-family: var(--display);
+      font-size: clamp(58px, 7.2vw, 110px);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+    }
+
+    .hero h1 span {
+      display: block;
+      opacity: 0;
+      transform: translateY(28px);
+      animation: rise 820ms cubic-bezier(.22, .82, .25, 1) forwards;
+    }
+
+    .hero h1 span:nth-child(1) {
+      animation-delay: 220ms;
+    }
+
+    .hero h1 span:nth-child(2) {
+      color: var(--accent);
+      animation-delay: 340ms;
+    }
+
+    .hero-deck {
+      max-width: 540px;
+      margin-bottom: 34px;
+      color: rgba(255, 253, 247, 0.76);
+      font-size: clamp(17px, 1.5vw, 21px);
+      line-height: 1.65;
+      opacity: 0;
+      animation: rise 700ms 500ms ease forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      opacity: 0;
+      animation: rise 700ms 620ms ease forwards;
+    }
+
+    .primary-link,
+    .secondary-link {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .primary-link {
+      color: var(--accent-ink);
+      background: var(--accent);
+    }
+
+    .secondary-link {
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+    }
+
+    .primary-link:hover,
+    .secondary-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .secondary-link:hover {
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-note {
+      position: absolute;
+      z-index: 3;
+      right: max(24px, calc((100vw - var(--max)) / 2));
+      bottom: 36px;
+      width: 250px;
+      padding-top: 14px;
+      color: rgba(255, 253, 247, 0.76);
+      border-top: 1px solid rgba(255, 255, 255, 0.34);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-note strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--white);
+      font-size: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    @keyframes rise {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      position: relative;
+      padding: 120px 24px;
+    }
+
+    .section-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(160px, 0.36fr) 1fr;
+      gap: 48px;
+      margin-bottom: 72px;
+      align-items: start;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      max-width: 860px;
+      margin-bottom: 22px;
+      font-family: var(--display);
+      font-size: clamp(42px, 5vw, 76px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .section-lede {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.85;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 700ms ease, transform 700ms cubic-bezier(.22, .82, .25, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .verdict-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1.28fr);
+      gap: 80px;
+      align-items: end;
+    }
+
+    .verdict-number {
+      display: block;
+      margin-bottom: 16px;
+      font-family: var(--display);
+      font-size: clamp(110px, 15vw, 210px);
+      line-height: 0.78;
+      letter-spacing: -0.08em;
+    }
+
+    .verdict-label {
+      max-width: 360px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .verdict-label strong {
+      color: var(--ink);
+    }
+
+    .evidence-chart {
+      border-top: 1px solid var(--line);
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(185px, 0.75fr) minmax(220px, 1fr) 54px;
+      gap: 22px;
+      align-items: center;
+      min-height: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .bar-label {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .bar-label small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .bar-track {
+      height: 8px;
+      overflow: hidden;
+      background: rgba(11, 22, 35, 0.1);
+    }
+
+    .bar-fill {
+      width: 0;
+      height: 100%;
+      background: var(--ink);
+      transition: width 1100ms cubic-bezier(.22, .82, .25, 1);
+    }
+
+    .bar-row:first-child .bar-fill {
+      background: var(--accent-ink);
+      box-shadow: inset 0 0 0 20px var(--accent);
+    }
+
+    .reveal.is-visible .bar-fill {
+      width: var(--w);
+    }
+
+    .bar-value {
+      font-family: var(--display);
+      font-size: 24px;
+      text-align: right;
+    }
+
+    .chart-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .matcher {
+      color: var(--white);
+      background: var(--ink);
+      overflow: hidden;
+    }
+
+    .matcher::before {
+      content: "";
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 420px;
+      height: 420px;
+      border: 1px solid rgba(201, 255, 63, 0.18);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 80px rgba(201, 255, 63, 0.025),
+        0 0 0 160px rgba(201, 255, 63, 0.018);
+      pointer-events: none;
+    }
+
+    .matcher .eyebrow,
+    .matcher .section-lede {
+      color: rgba(255, 253, 247, 0.58);
+    }
+
+    .reason-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      max-width: 900px;
+      margin-bottom: 62px;
+    }
+
+    .reason-button {
+      min-height: 46px;
+      padding: 0 18px;
+      color: rgba(255, 253, 247, 0.78);
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: color 180ms ease, border 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .reason-button:hover,
+    .reason-button:focus-visible {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.64);
+      transform: translateY(-2px);
+    }
+
+    .reason-button[aria-pressed="true"] {
+      color: var(--accent-ink);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .match-result {
+      display: grid;
+      grid-template-columns: 82px 1fr;
+      gap: 28px;
+      max-width: 980px;
+      align-items: start;
+    }
+
+    .match-index {
+      display: grid;
+      width: 64px;
+      height: 64px;
+      place-items: center;
+      color: var(--accent-ink);
+      background: var(--accent);
+      font-family: var(--display);
+      font-size: 30px;
+    }
+
+    .match-result h3 {
+      margin-bottom: 14px;
+      font-family: var(--display);
+      font-size: clamp(34px, 4.4vw, 64px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.04em;
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .match-result p {
+      max-width: 720px;
+      margin: 0;
+      color: rgba(255, 253, 247, 0.62);
+      font-size: 16px;
+    }
+
+    .result-swap {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+
+    .candidates {
+      background: var(--paper);
+    }
+
+    .candidate-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .candidate {
+      position: relative;
+      display: grid;
+      grid-template-columns: 90px minmax(260px, 0.8fr) minmax(320px, 1.2fr) 140px;
+      gap: 30px;
+      min-height: 210px;
+      padding: 42px 0;
+      align-items: start;
+      border-bottom: 1px solid var(--line);
+      transition: opacity 260ms ease, transform 260ms ease, background 260ms ease;
+    }
+
+    .candidate::before {
+      content: "";
+      position: absolute;
+      inset: 0 -24px;
+      z-index: -1;
+      background: transparent;
+      transition: background 260ms ease;
+    }
+
+    .candidate.is-match::before {
+      background: rgba(201, 255, 63, 0.42);
+    }
+
+    .candidate.is-dim {
+      opacity: 0.26;
+      transform: scale(0.995);
+    }
+
+    .candidate-rank {
+      font-family: var(--display);
+      font-size: 52px;
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    .candidate-title {
+      margin-bottom: 12px;
+      font-family: var(--display);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.035em;
+    }
+
+    .candidate-alias {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .candidate-copy {
+      color: #424847;
+      font-size: 15px;
+    }
+
+    .candidate-copy strong {
+      color: var(--ink);
+    }
+
+    .candidate-proof {
+      padding-top: 5px;
+      text-align: right;
+    }
+
+    .proof-number {
+      display: block;
+      font-family: var(--display);
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .proof-label {
+      display: block;
+      margin: 7px 0 18px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .evidence-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .evidence-link::after {
+      content: "↗";
+      transition: transform 180ms ease;
+    }
+
+    .evidence-link:hover::after {
+      transform: translate(2px, -2px);
+    }
+
+    .quote-band {
+      color: var(--white);
+      background: var(--ink-2);
+    }
+
+    .quote-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.55fr) minmax(420px, 1.45fr);
+      gap: 88px;
+      align-items: start;
+    }
+
+    .quote-aside {
+      position: sticky;
+      top: 36px;
+    }
+
+    .quote-aside .eyebrow {
+      color: rgba(255, 253, 247, 0.54);
+    }
+
+    .quote-metric {
+      margin: 32px 0 12px;
+      color: var(--accent);
+      font-family: var(--display);
+      font-size: 84px;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .quote-aside p {
+      max-width: 310px;
+      color: rgba(255, 253, 247, 0.56);
+      font-size: 13px;
+    }
+
+    blockquote {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: 1.34;
+      letter-spacing: -0.035em;
+    }
+
+    blockquote mark {
+      color: var(--accent-ink);
+      background: var(--accent);
+      padding: 0 0.08em;
+    }
+
+    .quote-source {
+      display: block;
+      margin-top: 32px;
+      color: rgba(255, 253, 247, 0.6);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-style: normal;
+      text-decoration: none;
+    }
+
+    .age-path {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .age-stop {
+      min-height: 250px;
+      padding: 28px 26px 34px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .age-stop:not(:first-child) {
+      padding-left: 26px;
+    }
+
+    .age-stop:last-child {
+      border-right: 0;
+    }
+
+    .age {
+      display: block;
+      margin-bottom: 38px;
+      font-family: var(--display);
+      font-size: 48px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .age-stop h3 {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+
+    .age-stop p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .method {
+      color: var(--white);
+      background: #07111b;
+    }
+
+    .method .section-title {
+      max-width: 900px;
+    }
+
+    .method .eyebrow,
+    .method .section-lede {
+      color: rgba(255, 253, 247, 0.56);
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .method-stat {
+      min-height: 220px;
+      padding: 28px 24px 34px 0;
+      border-right: 1px solid var(--line-dark);
+    }
+
+    .method-stat:not(:first-child) {
+      padding-left: 24px;
+    }
+
+    .method-stat:last-child {
+      border-right: 0;
+    }
+
+    .method-stat strong {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--accent);
+      font-family: var(--display);
+      font-size: clamp(52px, 6vw, 78px);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .method-stat span {
+      display: block;
+      max-width: 190px;
+      color: rgba(255, 253, 247, 0.62);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .method-note {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 64px;
+      margin-top: 52px;
+      color: rgba(255, 253, 247, 0.54);
+      font-size: 13px;
+    }
+
+    .method-note p {
+      margin: 0;
+    }
+
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .source-links a {
+      display: inline-flex;
+      min-height: 42px;
+      align-items: center;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      font-size: 12px;
+      text-decoration: none;
+      transition: border 180ms ease, color 180ms ease;
+    }
+
+    .source-links a:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    footer {
+      padding: 42px 24px;
+      color: rgba(255, 253, 247, 0.5);
+      background: #050c13;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .footer-inner a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 920px) {
+      .hero {
+        background-position: 64% center;
+      }
+
+      .hero-copy {
+        width: min(660px, 82vw);
+      }
+
+      .hero-note {
+        display: none;
+      }
+
+      .section-head,
+      .verdict-layout,
+      .quote-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .verdict-layout {
+        gap: 54px;
+      }
+
+      .quote-aside {
+        position: static;
+      }
+
+      .candidate {
+        grid-template-columns: 64px minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+      }
+
+      .candidate-proof {
+        grid-column: 2 / -1;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        text-align: left;
+      }
+
+      .proof-label {
+        max-width: 180px;
+        margin: 0;
+      }
+
+      .age-path,
+      .method-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .age-stop:nth-child(2),
+      .method-stat:nth-child(2) {
+        border-right: 0;
+      }
+
+      .age-stop:nth-child(-n+2),
+      .method-stat:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .method-stat:nth-child(-n+2) {
+        border-bottom-color: var(--line-dark);
+      }
+    }
+
+    @media (max-width: 640px) {
+      body {
+        font-size: 15px;
+      }
+
+      .site-nav {
+        width: calc(100% - 32px);
+        height: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 880px;
+        background:
+          linear-gradient(180deg, rgba(5, 13, 21, 0.4) 0%, rgba(5, 13, 21, 0.84) 46%, rgba(5, 13, 21, 0.98) 76%),
+          url("assets/math-animation-hero.png") 69% top / auto 58% no-repeat,
+          var(--ink);
+        align-items: end;
+      }
+
+      .hero-inner {
+        width: calc(100% - 32px);
+        margin: 0 auto 64px;
+      }
+
+      .hero-copy {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(58px, 18vw, 82px);
+      }
+
+      .hero-deck {
+        font-size: 16px;
+      }
+
+      .section {
+        padding: 88px 16px;
+      }
+
+      .section-head {
+        gap: 24px;
+        margin-bottom: 50px;
+      }
+
+      .section-title {
+        font-size: 44px;
+      }
+
+      .section-lede {
+        font-size: 16px;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr 46px;
+        gap: 10px 14px;
+        padding: 12px 0;
+      }
+
+      .bar-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .bar-value {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .reason-controls {
+        margin-bottom: 44px;
+      }
+
+      .reason-button {
+        min-height: 42px;
+        padding: 0 14px;
+        font-size: 13px;
+      }
+
+      .match-result {
+        grid-template-columns: 1fr;
+      }
+
+      .match-index {
+        width: 48px;
+        height: 48px;
+        font-size: 24px;
+      }
+
+      .candidate {
+        grid-template-columns: 48px 1fr;
+        gap: 20px 16px;
+        padding: 34px 0;
+      }
+
+      .candidate-rank {
+        font-size: 36px;
+      }
+
+      .candidate-copy,
+      .candidate-proof {
+        grid-column: 2;
+      }
+
+      .candidate-proof {
+        flex-wrap: wrap;
+      }
+
+      .age-path,
+      .method-grid,
+      .method-note {
+        grid-template-columns: 1fr;
+      }
+
+      .age-stop,
+      .age-stop:not(:first-child),
+      .method-stat,
+      .method-stat:not(:first-child) {
+        min-height: auto;
+        padding: 26px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .method-stat,
+      .method-stat:not(:first-child) {
+        border-bottom-color: var(--line-dark);
+      }
+
+      .age-stop:last-child,
+      .method-stat:last-child {
+        border-bottom: 0;
+      }
+
+      .age {
+        margin-bottom: 14px;
+      }
+
+      .method-note {
+        gap: 24px;
+      }
+
+      .footer-inner {
+        display: block;
+      }
+    }
+
+    @media print {
+      .site-nav,
+      .scroll-progress,
+      .hero-actions,
+      .reason-controls {
+        display: none !important;
+      }
+
+      .hero {
+        min-height: 680px;
+      }
+
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .candidate.is-dim {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="hero" aria-label="彩色木质积木在深蓝桌面上分成多条路径">
+    <nav class="site-nav" aria-label="页面导航">
+      <a class="wordmark" href="#top">
+        <span class="wordmark-mark">数</span>
+        <span>知乎学前数学动画研究</span>
+      </a>
+      <div class="nav-links">
+        <a href="#verdict">研究结论</a>
+        <a href="#matcher">怎么选</a>
+        <a href="#candidates">核心片单</a>
+        <a href="#method">方法</a>
+      </div>
+    </nav>
+
+    <div class="hero-inner" id="top">
+      <div class="hero-copy">
+        <div class="kicker">Zhihu Research · 2026.07.27</div>
+        <h1>
+          <span>不爱数字积木，</span>
+          <span>也能爱上数学。</span>
+        </h1>
+        <p class="hero-deck">
+          不是所有孩子都吃“方块人”这一套。我们翻过 2,496 条可访问知乎正文，替孩子找出六条不同的数学启蒙入口。
+        </p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#matcher">按孩子反应选片</a>
+          <a class="secondary-link" href="#verdict">先看证据</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-note">
+      <strong>247 → 84</strong>
+      《数字积木》正文提及量仍断层领先，但第二选择不止一个。
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section" id="verdict">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <p class="eyebrow">01 / Verdict</p>
+          <div>
+            <h2 class="section-title">没有一比一平替，只有更匹配的入口。</h2>
+            <p class="section-lede">
+              《数字积木》同时赢在体系、讨论密度与家庭实测。替代它的正确方式，不是找“第二名”，而是先识别孩子究竟排斥语言、画风、抽象度，还是缺少剧情。
+            </p>
+          </div>
+        </div>
+
+        <div class="verdict-layout">
+          <div>
+            <span class="verdict-number">247</span>
+            <p class="verdict-label">
+              条知乎回答正文确实点名《数字积木》，来自至少 <strong>147 位作者</strong>；第二名纯数学动画只有 84 条。
+            </p>
+          </div>
+
+          <div>
+            <div class="evidence-chart" aria-label="主要数学动画的知乎正文命中数量">
+              <div class="bar-row">
+                <div class="bar-label">数字积木<small>Numberblocks</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:100%"></div></div>
+                <div class="bar-value">247</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">怪兽数学小分队<small>Monster Math Squad</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:34%"></div></div>
+                <div class="bar-value">84</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">数学城小兄妹<small>Team Umizoomi</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:25.5%"></div></div>
+                <div class="bar-value">63</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">数字虫<small>The Numtums</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:24.3%"></div></div>
+                <div class="bar-value">60</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">佩格和小猫<small>Peg + Cat</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:15%"></div></div>
+                <div class="bar-value">37</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">数字小精灵<small>Numberjacks</small></div>
+                <div class="bar-track"><div class="bar-fill" style="--w:13.4%"></div></div>
+                <div class="bar-value">33</div>
+              </div>
+            </div>
+            <p class="chart-note">
+              统计口径：回答正文真实出现片名；检索词命中不算。详细表见页面底部“严格正文统计”。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section matcher" id="matcher">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <p class="eyebrow">02 / Match</p>
+          <div>
+            <h2 class="section-title">孩子为什么不喜欢？</h2>
+            <p class="section-lede">点一个最接近的反应。下面会立即给出更合适的入口，并在完整片单里高亮匹配项。</p>
+          </div>
+        </div>
+
+        <div class="reason-controls" role="group" aria-label="选择孩子不喜欢数字积木的原因">
+          <button class="reason-button" type="button" data-reason="story" aria-pressed="false">没剧情，看不进去</button>
+          <button class="reason-button" type="button" data-reason="language" aria-pressed="false">英语太快，听不懂</button>
+          <button class="reason-button" type="button" data-reason="hard" aria-pressed="false">太抽象、太难</button>
+          <button class="reason-button" type="button" data-reason="monster" aria-pressed="false">喜欢怪兽和闯关</button>
+          <button class="reason-button" type="button" data-reason="car" aria-pressed="false">只爱汽车和动作</button>
+          <button class="reason-button" type="button" data-reason="older" aria-pressed="false">已经嫌低幼</button>
+          <button class="reason-button" type="button" data-reason="familiar" aria-pressed="false">不喜欢被“教”</button>
+        </div>
+
+        <div class="match-result" aria-live="polite">
+          <div class="match-index" id="match-index">→</div>
+          <div>
+            <h3 id="match-title">先试前三部：怪兽、任务、低幼。</h3>
+            <p id="match-copy">不知道原因时，从《怪兽数学小分队》《数学城小兄妹》《数字虫》各试 2—3 集，观察孩子是否主动重看、跟数或复现。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section candidates" id="candidates">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <p class="eyebrow">03 / Shortlist</p>
+          <div>
+            <h2 class="section-title">六部核心替代，各自赢在一件事。</h2>
+            <p class="section-lede">排序综合正文提及、作者数、家庭体验信号和与《数字积木》的同文出现，不等同于外部平台评分。</p>
+          </div>
+        </div>
+
+        <div class="candidate-list">
+          <article class="candidate" data-tags="story monster">
+            <div class="candidate-rank">01</div>
+            <div>
+              <h3 class="candidate-title">怪兽数学小分队</h3>
+              <div class="candidate-alias">Monster Math Squad · 3岁+</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>最接近的直接替代。</strong> 用小怪兽解决日常困难，几何造型鲜明，同一概念会重复，还会邀请观众一起数。适合需要剧情、角色和互动的孩子。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">84</span>
+              <span class="proof-label">正文提及<br>57 条家庭体验信号</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/315294454/answer/1139619452" target="_blank" rel="noopener">看知乎证据</a>
+            </div>
+          </article>
+
+          <article class="candidate" data-tags="story">
+            <div class="candidate-rank">02</div>
+            <div>
+              <h3 class="candidate-title">数学城小兄妹</h3>
+              <div class="candidate-alias">Team Umizoomi · 2—8岁</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>任务感最强。</strong> 兄妹团队用数数、图案、形状和空间关系完成救援，不一直围着数字本身打转。适合喜欢闯关、救援和屏幕互动的孩子。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">63</span>
+              <span class="proof-label">正文提及<br>46 位作者</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/34012296/answer/130321994" target="_blank" rel="noopener">看家庭经验</a>
+            </div>
+          </article>
+
+          <article class="candidate" data-tags="hard language">
+            <div class="candidate-rank">03</div>
+            <div>
+              <h3 class="candidate-title">数字虫</h3>
+              <div class="candidate-alias">The Numtums · 低龄优先</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>更轻、更低幼。</strong> 先认 1—10，再进入生活化数字故事；短集数、歌曲和日常场景降低理解负担。长处是先让孩子喜欢数字，而不是抢跑运算。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">60</span>
+              <span class="proof-label">正文提及<br>41 条家庭体验信号</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/315294454/answer/1139619452" target="_blank" rel="noopener">看知乎证据</a>
+            </div>
+          </article>
+
+          <article class="candidate" data-tags="story language">
+            <div class="candidate-rank">04</div>
+            <div>
+              <h3 class="candidate-title">佩格和小猫</h3>
+              <div class="candidate-alias">Peg + Cat · 故事型</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>数学面更宽。</strong> 运算、几何、测量和数据都藏在人物挑战里。英文版语速偏快，知乎家长建议低龄先试中文版本；也适合需要通过女主角建立数学自信的孩子。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">37</span>
+              <span class="proof-label">正文提及<br>30 位作者</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/20960587/answer/2727526158" target="_blank" rel="noopener">看家庭反馈</a>
+            </div>
+          </article>
+
+          <article class="candidate" data-tags="hard story">
+            <div class="candidate-rank">05</div>
+            <div>
+              <h3 class="candidate-title">数字小精灵</h3>
+              <div class="candidate-alias">Numberjacks · 3—6岁</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>数字＋超级英雄。</strong> 每集处理一个由“数字异常”引发的问题，结构固定、比较好懂。适合仍喜欢数字拟人化，却不喜欢方块组合方式的孩子。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">33</span>
+              <span class="proof-label">正文提及<br>25 条与数字积木同文</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/315294454/answer/1139619452" target="_blank" rel="noopener">看知乎证据</a>
+            </div>
+          </article>
+
+          <article class="candidate" data-tags="car">
+            <div class="candidate-rank">06</div>
+            <div>
+              <h3 class="candidate-title">旋风战车队</h3>
+              <div class="candidate-alias">Blaze · 兴趣优先</div>
+            </div>
+            <div class="candidate-copy">
+              <strong>数学少一点，兴趣多一点。</strong> 混合数学、物理和编程概念。知乎有孩子迷完《数字积木》后反复看它近一年；知识密度较低，但车辆与动作更能留住注意力。
+            </div>
+            <div class="candidate-proof">
+              <span class="proof-number">19</span>
+              <span class="proof-label">正文提及<br>12 条家庭体验信号</span>
+              <a class="evidence-link" href="https://www.zhihu.com/question/661654946/answer/130313298482" target="_blank" rel="noopener">看真实实测</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quote-band">
+      <div class="section-inner quote-layout reveal">
+        <aside class="quote-aside">
+          <p class="eyebrow">A useful exception</p>
+          <div class="quote-metric">≈ 1年</div>
+          <p>这是本次语料里最能说明“趣味匹配比榜单排名更重要”的家庭案例。</p>
+        </aside>
+
+        <blockquote>
+          “我闺女迷完数字积木开始迷恋《旋风战车队》，翻来覆去看了快一年……知识性少一些，<mark>大概是趣味性更强吧</mark>。”
+          <a class="quote-source" href="https://www.zhihu.com/question/661654946/answer/130313298482" target="_blank" rel="noopener">— 知乎家庭实测，82 赞 / 18 评论 ↗</a>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section" id="age">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <p class="eyebrow">04 / Age path</p>
+          <div>
+            <h2 class="section-title">年龄只是边界，理解与兴趣才是入口。</h2>
+            <p class="section-lede">知乎片单年龄建议并不完全一致，下面只保留最稳妥的试播路径。每部先试 2—3 集，不用为了“口碑好”强推。</p>
+          </div>
+        </div>
+
+        <div class="age-path">
+          <div class="age-stop">
+            <span class="age">2—4</span>
+            <h3>降低认知负担</h3>
+            <p>数字虫、米奇妙妙屋。先认数、形状、空间和简单关系。</p>
+          </div>
+          <div class="age-stop">
+            <span class="age">3—5</span>
+            <h3>剧情带着学</h3>
+            <p>怪兽数学小分队、数学城小兄妹、数字小精灵。</p>
+          </div>
+          <div class="age-stop">
+            <span class="age">4—6</span>
+            <h3>按兴趣分流</h3>
+            <p>佩格和小猫、旋风战车队；猫、音乐、汽车与动作都能成为入口。</p>
+          </div>
+          <div class="age-stop">
+            <span class="age">6+</span>
+            <h3>进入连续冒险</h3>
+            <p>数学小先锋 Cyberchase；7 岁后再试数学荒岛历险记。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="section-inner reveal">
+        <div class="section-head">
+          <p class="eyebrow">05 / Method</p>
+          <div>
+            <h2 class="section-title">不是凭印象列片单，而是把知乎回答逐条落到正文。</h2>
+            <p class="section-lede">先高召回，再抓正文，再按真实片名严格复核。低赞回答也保留，资源号导流与家庭体验信号分别标记。</p>
+          </div>
+        </div>
+
+        <div class="method-grid">
+          <div class="method-stat">
+            <strong>109</strong>
+            <span>组检索词：年龄、目标、片名中英译名，以及“不喜欢 / 看不懂”等反向问题</span>
+          </div>
+          <div class="method-stat">
+            <strong>2,564</strong>
+            <span>去重候选回答；每组最多读取 8 页，点赞阈值降到 0</span>
+          </div>
+          <div class="method-stat">
+            <strong>2,496</strong>
+            <span>成功抓取正文，覆盖候选的 97.35%；65 条受限、3 条删除或不可用</span>
+          </div>
+          <div class="method-stat">
+            <strong>574</strong>
+            <span>严格复核后，正文确实点名至少一部数学动画的回答</span>
+          </div>
+        </div>
+
+        <div class="method-note">
+          <p>
+            “家庭体验”和“疑似导流 / 商业”来自文本信号，不等同于对作者身份的事实判断。最终排序还人工阅读了主候选的代表回答、比较反馈与负面体验。
+          </p>
+          <div>
+            <p>
+              知乎搜索存在排序、折叠、删除和权限限制。本报告代表 2026-07-27 本轮可访问语料，不是外部平台综合评分，也不声称覆盖站内每一条历史内容。
+            </p>
+            <div class="source-links">
+              <a href="知乎学前数学启蒙动画替代品调研报告.md">完整 Markdown 报告</a>
+              <a href="严格正文命中统计.md">严格正文统计</a>
+              <a href="知乎_学前数学启蒙动画_高召回.xlsx">高召回候选表</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>知乎学前数学启蒙动画替代品调研 · 静态发布版</span>
+      <span>主视觉由图像生成制作，无文字、品牌或版权角色</span>
+    </div>
+  </footer>
+
+  <script>
+    const progress = document.querySelector(".scroll-progress");
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    const revealItems = [...document.querySelectorAll(".reveal")];
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -60px" });
+
+      revealItems.forEach((el) => revealObserver.observe(el));
+    } else {
+      revealItems.forEach((el) => el.classList.add("is-visible"));
+    }
+
+    const reasonData = {
+      story: {
+        index: "01",
+        title: "换叙事：怪兽数学小分队 → 数学城小兄妹 → 佩格和小猫",
+        copy: "这三部都把数学放进任务或生活难题里。孩子追的是角色和剧情，数学作为解决问题的工具自然出现。",
+        tags: ["story"]
+      },
+      language: {
+        index: "中",
+        title: "先降低语言门槛：数字虫，或中文版本的佩格和小猫",
+        copy: "知乎家长确实提到《数字积木》后期语速快、唱段多。先选择更低龄、画面对应更直接，或有中文版本的内容。",
+        tags: ["language"]
+      },
+      hard: {
+        index: "↓",
+        title: "降低抽象度：数字虫 → 数字小精灵",
+        copy: "从认数、数量、简单关系与固定叙事开始。先让孩子感觉“我看得懂”，再考虑运算覆盖面。",
+        tags: ["hard"]
+      },
+      monster: {
+        index: "01",
+        title: "直接试《怪兽数学小分队》",
+        copy: "它是知乎证据最强的直接替代：正文命中 84 条，57 条带家庭体验信号，怪兽角色、日常任务和重复概念都更有戏。",
+        tags: ["monster"]
+      },
+      car: {
+        index: "06",
+        title: "直接试《旋风战车队》",
+        copy: "数学密度不是最高，但车辆、动作、物理与编程能留住车迷。真实家庭案例里，有孩子反复看了近一年。",
+        tags: ["car"]
+      },
+      older: {
+        index: "6+",
+        title: "进入大龄路线：数学小先锋 → 数学荒岛历险记",
+        copy: "前者多建议 6—10 岁，后者多建议 7 岁以上。连续冒险和小学阶段知识更多，不再是典型低龄启蒙片。",
+        tags: ["older"]
+      },
+      familiar: {
+        index: "软",
+        title: "先用熟悉角色软着陆：米奇妙妙屋",
+        copy: "它不是系统数学课，但数字、形状、空间和工具选择会自然进入互动。适合一看到“教学片”就抵触的低龄孩子。",
+        tags: ["familiar"]
+      }
+    };
+
+    const buttons = [...document.querySelectorAll(".reason-button")];
+    const candidates = [...document.querySelectorAll(".candidate")];
+    const resultTitle = document.getElementById("match-title");
+    const resultCopy = document.getElementById("match-copy");
+    const resultIndex = document.getElementById("match-index");
+
+    function swapResult(data) {
+      resultTitle.classList.add("result-swap");
+      resultCopy.classList.add("result-swap");
+      setTimeout(() => {
+        resultIndex.textContent = data.index;
+        resultTitle.textContent = data.title;
+        resultCopy.textContent = data.copy;
+        resultTitle.classList.remove("result-swap");
+        resultCopy.classList.remove("result-swap");
+      }, 170);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const reason = button.dataset.reason;
+        const data = reasonData[reason];
+        const alreadyActive = button.getAttribute("aria-pressed") === "true";
+
+        buttons.forEach((item) => item.setAttribute("aria-pressed", "false"));
+        candidates.forEach((item) => item.classList.remove("is-match", "is-dim"));
+
+        if (alreadyActive) {
+          swapResult({
+            index: "→",
+            title: "先试前三部：怪兽、任务、低幼。",
+            copy: "不知道原因时，从《怪兽数学小分队》《数学城小兄妹》《数字虫》各试 2—3 集，观察孩子是否主动重看、跟数或复现。"
+          });
+          return;
+        }
+
+        button.setAttribute("aria-pressed", "true");
+        swapResult(data);
+
+        const matchedCandidates = candidates.filter((item) => {
+          const tags = item.dataset.tags.split(" ");
+          return data.tags.some((tag) => tags.includes(tag));
+        });
+
+        candidates.forEach((item) => {
+          const tags = item.dataset.tags.split(" ");
+          const isMatch = data.tags.some((tag) => tags.includes(tag));
+          item.classList.toggle("is-match", matchedCandidates.length > 0 && isMatch);
+          item.classList.toggle("is-dim", matchedCandidates.length > 0 && !isMatch);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
