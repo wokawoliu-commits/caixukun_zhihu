@@ -15,7 +15,7 @@
     "weibo": "authenticated low-frequency manual browsing",
     "xiaohongshu": "TikHub Xiaohongshu App V2 API",
     "browser_cookies_used_for_xiaohongshu": false,
-    "xiaohongshu_estimated_max_cost_usd": 1.09
+    "xiaohongshu_estimated_max_cost_usd": 1.28
   },
   "report_dir": "/Users/huangdong/Downloads/ding1/output/曾可妮_综合调研_20260810",
   "artifact_paths": {
@@ -35,7 +35,7 @@
     "xiaohongshu_sources": 53,
     "xiaohongshu_deduplicated_candidates": 693,
     "xiaohongshu_official_posts": 205,
-    "xiaohongshu_detail_samples": 29,
+    "xiaohongshu_detail_samples": 48,
     "xiaohongshu_returned_hot_comments": 57
   },
   "continuation": null
