@@ -1,0 +1,42 @@
+{
+  "version": "3.0.0",
+  "query": "曾可妮品牌访谈、概念企划与拍摄策划：微博及小红书跨平台综合调研（第三步）",
+  "mode": "ultradeep",
+  "started_at": "2026-08-10T13:36:00Z",
+  "finished_at": "2026-08-10T13:58:34Z",
+  "assumptions": [
+    "互动量为采集时快照，不跨年份或跨平台机械比较",
+    "不存在公开证据等于未证实，不等于绝对不存在",
+    "宠物品种、年龄、健康、性别与小Q/Q宝标准写法需由艺人团队复核",
+    "创意未拍过仅指本轮公开样本中的相对空位",
+    "负面舆情采用最小披露，只保留品牌避雷所需的词与结构"
+  ],
+  "provider_config": {
+    "weibo": "authenticated low-frequency manual browsing",
+    "xiaohongshu": "TikHub Xiaohongshu App V2 API",
+    "browser_cookies_used_for_xiaohongshu": false,
+    "xiaohongshu_estimated_max_cost_usd": 1.09
+  },
+  "report_dir": "/Users/huangdong/Downloads/ding1/output/曾可妮_综合调研_20260810",
+  "artifact_paths": {
+    "sources": "sources.jsonl",
+    "evidence": "evidence.jsonl",
+    "claims": "claims.jsonl",
+    "report": "曾可妮_品牌访谈与概念企划综合调研报告_第三步.md",
+    "html": "曾可妮_品牌访谈与概念企划综合调研报告_第三步.html",
+    "html_builder": "build_html.py",
+    "quality_report": "质量核验.md"
+  },
+  "counts": {
+    "sources": 137,
+    "evidence": 252,
+    "claims": 30,
+    "weibo_sources": 84,
+    "xiaohongshu_sources": 53,
+    "xiaohongshu_deduplicated_candidates": 693,
+    "xiaohongshu_official_posts": 205,
+    "xiaohongshu_detail_samples": 29,
+    "xiaohongshu_returned_hot_comments": 57
+  },
+  "continuation": null
+}

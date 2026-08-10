@@ -1,0 +1,1504 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>曾可妮品牌访谈与概念企划综合调研报告（第三步）</title>
+  <style>
+    :root {
+      --navy: #12344a;
+      --navy-2: #204e68;
+      --ink: #18242b;
+      --muted: #64727a;
+      --line: #d8e0e4;
+      --soft: #f4f7f8;
+      --paper: #ffffff;
+      --accent: #a9573d;
+      --sidebar: 292px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef2f3;
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans CJK SC", "Microsoft YaHei", sans-serif;
+      font-size: 15px;
+      line-height: 1.78;
+    }
+    a { color: var(--navy-2); }
+    .skip-link { position: fixed; left: 12px; top: -60px; z-index: 100; background: white; padding: 8px 12px; border: 1px solid var(--navy); }
+    .skip-link:focus { top: 12px; }
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: var(--sidebar);
+      background: var(--navy);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      z-index: 20;
+    }
+    .sidebar-head { padding: 24px 22px 18px; border-bottom: 1px solid rgba(255,255,255,.18); }
+    .sidebar-kicker { color: #b9ced9; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+    .sidebar-title { margin-top: 8px; font-size: 17px; line-height: 1.45; font-weight: 650; }
+    .toc { padding: 14px 10px 32px; overflow-y: auto; }
+    .toc-link {
+      display: block;
+      color: #e8f0f3;
+      text-decoration: none;
+      border-left: 3px solid transparent;
+      line-height: 1.45;
+    }
+    .toc-main { padding: 8px 10px; margin-top: 2px; font-size: 13px; font-weight: 620; }
+    .toc-sub { padding: 5px 10px 5px 25px; font-size: 12px; color: #b9ced9; }
+    .toc-link:hover, .toc-link.active { background: rgba(255,255,255,.09); border-left-color: #d9a48f; color: #fff; }
+    .page { margin-left: var(--sidebar); min-height: 100vh; }
+    .hero { background: var(--paper); border-bottom: 1px solid var(--line); padding: 44px 54px 30px; }
+    .hero-inner, .metrics, .report { max-width: 1180px; margin: 0 auto; }
+    .eyebrow { color: var(--accent); font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { color: var(--navy); font-size: clamp(28px, 3vw, 42px); line-height: 1.22; letter-spacing: -.035em; margin: 10px 0 16px; max-width: 980px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px 24px; color: var(--muted); font-size: 13px; }
+    .hero-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .button { appearance: none; border: 1px solid var(--navy); background: white; color: var(--navy); padding: 8px 13px; font: inherit; font-size: 13px; cursor: pointer; text-decoration: none; }
+    .button.primary { color: white; background: var(--navy); }
+    .metrics-wrap { background: var(--soft); border-bottom: 1px solid var(--line); }
+    .metrics { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .metric { padding: 20px 18px; border-right: 1px solid var(--line); }
+    .metric:last-child { border-right: 0; }
+    .metric-number { display: block; color: var(--navy); font-size: 28px; line-height: 1.1; font-weight: 750; font-variant-numeric: tabular-nums; }
+    .metric-label { display: block; color: var(--muted); font-size: 12px; margin-top: 5px; }
+    .report { background: var(--paper); padding: 30px 54px 70px; }
+    blockquote { margin: 0 0 28px; padding: 13px 17px; background: var(--soft); border-left: 4px solid var(--navy-2); color: #43545d; }
+    blockquote p { margin: 0; }
+    .heading-anchor { display: block; position: relative; top: -18px; visibility: hidden; }
+    .section-title { color: var(--navy); font-size: 23px; line-height: 1.35; margin: 50px 0 18px; padding: 0 0 10px; border-bottom: 2px solid var(--navy); letter-spacing: -.012em; }
+    .subsection-title { color: var(--ink); font-size: 18px; line-height: 1.45; margin: 32px 0 12px; }
+    p { margin: 0 0 15px; }
+    strong { color: #0d2c3e; font-weight: 680; }
+    ul, ol { margin: 12px 0 20px; padding-left: 26px; }
+    li { margin: 7px 0; padding-left: 3px; }
+    .executive-title { margin-top: 16px; }
+    .summary-grid { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .summary-grid li { margin: 0; padding: 15px 16px; background: var(--soft); border-left: 3px solid var(--navy-2); line-height: 1.65; }
+    .table-scroll { overflow-x: auto; margin: 18px 0 28px; border: 1px solid var(--line); }
+    .data-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 13px; line-height: 1.55; }
+    .data-table th { position: sticky; top: 0; background: var(--navy); color: white; text-align: left; vertical-align: top; padding: 11px 12px; font-weight: 650; }
+    .data-table td { border-bottom: 1px solid var(--line); padding: 10px 12px; vertical-align: top; }
+    .data-table tbody tr:nth-child(even) { background: #f8fafb; }
+    .data-table tbody tr:hover { background: #edf4f6; }
+    code { padding: 2px 5px; background: var(--soft); border: 1px solid var(--line); font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9em; }
+    .citation { color: var(--navy-2); background: #eaf2f5; text-decoration: none; font-size: 11px; font-weight: 700; padding: 1px 4px; margin: 0 1px; white-space: nowrap; }
+    .citation:hover { color: white; background: var(--navy-2); }
+    .bibliography { margin-top: 60px; padding-top: 8px; }
+    .bib-tools { display: flex; align-items: center; gap: 12px; margin: 14px 0 18px; }
+    .bib-search { flex: 1; min-width: 220px; border: 1px solid #aebcc3; padding: 10px 12px; font: inherit; background: white; }
+    .bib-count { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .bib-list { list-style: none; padding: 0; margin: 0; }
+    .bib-entry { display: grid; grid-template-columns: 46px 54px minmax(0,1fr) 62px; gap: 10px; align-items: start; margin: 0; padding: 12px 8px; border-bottom: 1px solid var(--line); font-size: 13px; }
+    .bib-entry:target { background: #fff4d8; outline: 2px solid #d3a034; }
+    .bib-number { color: var(--navy); font-weight: 750; font-variant-numeric: tabular-nums; }
+    .platform-badge { display: inline-block; border: 1px solid #aebcc3; color: #4f626c; padding: 1px 5px; font-size: 10px; text-align: center; white-space: nowrap; }
+    .bib-text a { text-decoration: none; }
+    .bib-text a:hover { text-decoration: underline; }
+    .back-to-report { font-size: 11px; color: var(--muted); text-decoration: none; text-align: right; }
+    .empty-state { display: none; padding: 24px; color: var(--muted); background: var(--soft); }
+    .footer { color: var(--muted); font-size: 12px; border-top: 1px solid var(--line); padding-top: 20px; margin-top: 35px; }
+    @media (max-width: 980px) {
+      :root { --sidebar: 0px; }
+      .sidebar { position: static; width: auto; height: auto; }
+      .sidebar-head { padding: 15px 18px; }
+      .sidebar-title { font-size: 14px; }
+      .toc { display: flex; overflow-x: auto; padding: 8px; white-space: nowrap; }
+      .toc-link { display: inline-block; border-left: 0; border-bottom: 3px solid transparent; }
+      .toc-sub { display: none; }
+      .page { margin-left: 0; }
+      .hero { padding: 30px 24px 24px; }
+      .report { padding: 25px 24px 55px; }
+      .metrics { grid-template-columns: repeat(3, 1fr); }
+      .metric { border-bottom: 1px solid var(--line); }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 14px; }
+      .metrics { grid-template-columns: repeat(2, 1fr); }
+      .summary-grid { grid-template-columns: 1fr; }
+      .section-title { font-size: 20px; }
+      .bib-entry { grid-template-columns: 42px 50px minmax(0,1fr); }
+      .back-to-report { display: none; }
+      .hero-actions { flex-wrap: wrap; }
+    }
+    @media print {
+      body { background: white; font-size: 10pt; color: #111; }
+      .sidebar, .hero-actions, .bib-tools, .back-to-report, .skip-link { display: none !important; }
+      .page { margin: 0; }
+      .hero, .report { padding: 14mm 16mm; max-width: none; }
+      .metrics { display: table; width: 100%; }
+      .metric { display: table-cell; border: 1px solid #ccc; }
+      .section-title, .subsection-title { break-after: avoid; page-break-after: avoid; }
+      p, li { orphans: 3; widows: 3; }
+      .table-scroll { overflow: visible; border: 0; }
+      .data-table { min-width: 0; font-size: 7.5pt; break-inside: avoid; page-break-inside: avoid; }
+      .data-table th { position: static; background: #e7ecef; color: #111; }
+      .citation { color: #111; background: none; padding: 0; }
+      .bib-entry { break-inside: avoid; page-break-inside: avoid; }
+      a { color: #111; text-decoration: none; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#report">跳到正文</a>
+  <aside class="sidebar" aria-label="报告目录">
+    <div class="sidebar-head">
+      <div class="sidebar-kicker">Research Report</div>
+      <div class="sidebar-title">曾可妮品牌访谈与概念企划</div>
+    </div>
+    <nav class="toc"><a class="toc-link toc-main" href="#executive-summary-执行摘要">Executive Summary｜执行摘要</a>
+<a class="toc-link toc-main" href="#introduction-范围与决策口径">Introduction｜范围与决策口径</a>
+<a class="toc-link toc-sub" href="#1-调研问题">1. 调研问题</a>
+<a class="toc-link toc-sub" href="#2-数据范围与规模">2. 数据范围与规模</a>
+<a class="toc-link toc-sub" href="#3-跨平台职责分工">3. 跨平台职责分工</a>
+<a class="toc-link toc-main" href="#main-analysis-主体分析">Main Analysis｜主体分析</a>
+<a class="toc-link toc-main" href="#4-五个核心人设标签-谁在塑造-品牌如何使用">4. 五个核心人设标签：谁在塑造、品牌如何使用</a>
+<a class="toc-link toc-sub" href="#4-1-一句话人物定义">4.1 一句话人物定义</a>
+<a class="toc-link toc-sub" href="#4-2-标签优先级">4.2 标签优先级</a>
+<a class="toc-link toc-main" href="#5-关键经历与发展时间线">5. 关键经历与发展时间线</a>
+<a class="toc-link toc-main" href="#6-最值得挖掘的故事点-温暖力量与访谈问题">6. 最值得挖掘的故事点：温暖力量与访谈问题</a>
+<a class="toc-link toc-main" href="#7-粉丝内容偏好-什么最买账-为什么">7. 粉丝内容偏好：什么最买账、为什么</a>
+<a class="toc-link toc-sub" href="#7-1-五类高传播触发器">7.1 五类高传播触发器</a>
+<a class="toc-link toc-sub" href="#7-2-具体审美偏好">7.2 具体审美偏好</a>
+<a class="toc-link toc-sub" href="#7-3-粉丝想看但现有公开样本相对不足的内容">7.3 粉丝想看但现有公开样本相对不足的内容</a>
+<a class="toc-link toc-main" href="#8-已经拍得较多或需谨慎的妆造">8. 已经拍得较多或需谨慎的妆造</a>
+<a class="toc-link toc-sub" href="#8-1-明确不喜欢与-容易浪费她-的点">8.1 明确不喜欢与“容易浪费她”的点</a>
+<a class="toc-link toc-main" href="#9-猫咪与宠物专项-事实-故事-性格与讨论知识点">9. 猫咪与宠物专项：事实、故事、性格与讨论知识点</a>
+<a class="toc-link toc-sub" href="#9-1-品牌先记住的核验结论">9.1 品牌先记住的核验结论</a>
+<a class="toc-link toc-sub" href="#9-2-15个相处故事与日常分享-已满足-不少于10个">9.2 15个相处故事与日常分享（已满足“不少于10个”）</a>
+<a class="toc-link toc-sub" href="#9-3-12个猫咪性格特点-出圈事件-狗项据实留空">9.3 12个猫咪性格特点/出圈事件（狗项据实留空）</a>
+<a class="toc-link toc-sub" href="#9-4-粉丝讨论最多的10个猫话题-知识细节">9.4 粉丝讨论最多的10个猫话题/知识细节</a>
+<a class="toc-link toc-sub" href="#9-5-猫咪内容如何拍-才会真正打动粉丝">9.5 猫咪内容如何拍，才会真正打动粉丝</a>
+<a class="toc-link toc-main" href="#10-粉丝与曾可妮共享的10个珍贵物件-瞬间">10. 粉丝与曾可妮共享的10个珍贵物件/瞬间</a>
+<a class="toc-link toc-main" href="#11-舆情禁区-敏感词与发布审核">11. 舆情禁区、敏感词与发布审核</a>
+<a class="toc-link toc-sub" href="#11-1-一级红线-不进入提问-标题-镜头关系与互动话术">11.1 一级红线：不进入提问、标题、镜头关系与互动话术</a>
+<a class="toc-link toc-sub" href="#11-2-二级敏感-内部理解-对外换词或先确认">11.2 二级敏感：内部理解，对外换词或先确认</a>
+<a class="toc-link toc-sub" href="#11-3-视觉与剪辑雷区">11.3 视觉与剪辑雷区</a>
+<a class="toc-link toc-sub" href="#11-4-发布前敏感词组合规则">11.4 发布前敏感词组合规则</a>
+<a class="toc-link toc-main" href="#12-粉丝内部的分歧地图-避免踩雷-而不是给粉丝贴标签">12. 粉丝内部的分歧地图：避免踩雷，而不是给粉丝贴标签</a>
+<a class="toc-link toc-sub" href="#12-1-不同入坑阶段的情感按钮与雷点">12.1 不同入坑阶段的情感按钮与雷点</a>
+<a class="toc-link toc-sub" href="#12-2-是否存在-粉丝集体反感某个人">12.2 是否存在“粉丝集体反感某个人”</a>
+<a class="toc-link toc-main" href="#recommendations-拍摄-访谈与宣发提案">Recommendations｜拍摄、访谈与宣发提案</a>
+<a class="toc-link toc-main" href="#13-总创意-身体记得-生活会回答">13. 总创意：《身体记得，生活会回答》</a>
+<a class="toc-link toc-sub" href="#13-1-访谈四幕结构">13.1 访谈四幕结构</a>
+<a class="toc-link toc-sub" href="#13-2-推荐访谈问题池-按安全程度排序">13.2 推荐访谈问题池（按安全程度排序）</a>
+<a class="toc-link toc-main" href="#14-时尚主编策划-15套拍摄妆造-主题与理由">14. 时尚主编策划：15套拍摄妆造、主题与理由</a>
+<a class="toc-link toc-sub" href="#14-1-15套中建议优先制作的5套">14.1 15套中建议优先制作的5套</a>
+<a class="toc-link toc-main" href="#15-拍摄内容-妆造-服饰-场景与道具建议-15条">15. 拍摄内容、妆造、服饰、场景与道具建议（15条）</a>
+<a class="toc-link toc-main" href="#16-宣发内容矩阵与节奏">16. 宣发内容矩阵与节奏</a>
+<a class="toc-link toc-main" href="#synthesis-跨平台综合判断">Synthesis｜跨平台综合判断</a>
+<a class="toc-link toc-sub" href="#17-一个更准确的人物母题">17. 一个更准确的人物母题</a>
+<a class="toc-link toc-sub" href="#18-平台不是两个版本的人设-而是两个叙事镜头">18. 平台不是两个版本的人设，而是两个叙事镜头</a>
+<a class="toc-link toc-sub" href="#19-高互动旧资产-与-新项目方向-必须分开">19. “高互动旧资产”与“新项目方向”必须分开</a>
+<a class="toc-link toc-sub" href="#20-最值得粉丝珍藏的是-连续性-不是一次性宠粉">20. 最值得粉丝珍藏的是“连续性”，不是一次性宠粉</a>
+<a class="toc-link toc-main" href="#counterevidence-register-反证与不确定性登记">Counterevidence Register｜反证与不确定性登记</a>
+<a class="toc-link toc-main" href="#limitations-局限与上线前待核清单">Limitations｜局限与上线前待核清单</a>
+<a class="toc-link toc-sub" href="#上线前必须向艺人团队确认的10项">上线前必须向艺人团队确认的10项</a>
+<a class="toc-link toc-main" href="#claims-evidence-table-核心结论-证据映射">Claims-Evidence Table｜核心结论—证据映射</a>
+<a class="toc-link toc-main" href="#methodology-方法与质量控制">Methodology｜方法与质量控制</a></nav>
+  </aside>
+  <div class="page">
+    <header class="header">
+      <div class="hero">
+        <div class="hero-inner">
+        <div class="eyebrow">微博 × 小红书跨平台综合调研</div>
+        <h1>曾可妮品牌访谈与概念企划综合调研报告（第三步）</h1>
+        <div class="hero-meta">
+          <span>数据截止：2026-08-10</span>
+          <span>137个可回查来源</span>
+          <span>适用：品牌、访谈导演、摄影与公关审核</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary" href="#executive-summary-执行摘要">从执行摘要开始</a>
+          <a class="button" href="#bibliography">查看参考来源</a>
+          <button class="button" type="button" onclick="window.print()">打印或另存为PDF</button>
+        </div>
+        </div>
+      </div>
+    </header>
+    <div class="metrics-wrap">
+      <div class="metrics" aria-label="关键数据">
+        <div class="metric"><span class="metric-number">137</span><span class="metric-label">可回查来源</span></div>
+        <div class="metric"><span class="metric-number">252</span><span class="metric-label">原子证据</span></div>
+        <div class="metric"><span class="metric-number">30/30</span><span class="metric-label">获支持结论</span></div>
+        <div class="metric"><span class="metric-number">15</span><span class="metric-label">拍摄主题</span></div>
+        <div class="metric"><span class="metric-number">15</span><span class="metric-label">猫咪日常</span></div>
+      </div>
+    </div>
+    <main class="content" id="report">
+      <article class="report">
+        <blockquote>
+<p>数据截止：2026-08-10（Asia/Shanghai）<br/>
+平台范围：微博、小红书；补充使用两平台可回链的本人采访、认证媒体、作品官微、合作方及粉丝公开内容<br/>
+使用对象：品牌内容负责人、访谈导演、摄影主编、造型与公关审核团队<br/>
+证据标识：A＝本人原帖/完整采访；B＝认证媒体、节目/剧集官微、合作方或现场创作者；C＝粉丝讨论；“推导”＝跨平台分析，不冒充粉丝原话</p>
+</blockquote>
+<span class="heading-anchor" id="executive-summary-执行摘要"></span><h2 class="section-title executive-title">Executive Summary｜执行摘要</h2>
+<ul class="summary-grid">
+<li><strong>人物核心不是单一“酷飒高妹”，而是“有控制力，也允许生活失控”。</strong> 微博的完整采访、舞台与上下班反差内容，以及小红书的舞蹈、母亲突然入镜、猫不配合等高互动内容共同证明：她最有辨识度的魅力，是舞台/工作中专业、利落、有身体控制，生活里松弛、好笑、柔软、会承认疼痛和害怕。<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></li>
+<li><strong>最有大众正面意义的成长叙事是“把害怕练成能力、把等待过成行动”，不是“被埋没后翻红”。</strong> 她本人谈过滑板恐惧、重新定义输赢、不再急着要结果、“爱人先爱己”；近年的返校、拍戏与唱跳并行、健康提醒又让这种长期主义具象化。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></li>
+<li><strong>粉丝最买账的是“人物在做事”。</strong> 角色记忆、完整舞蹈、片场第一视角、返校/武汉、真实生活打断和宠物连续剧，比无行动的纯棚拍更能扩散。小红书本人样本中，郑南衣约3.94万赞、“可妮摇”约3.20万赞、雪景片场约2.92万赞、母亲入镜舞蹈约1.10万赞；这些互动是抓取时快照，不等同全平台民调。<a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a></li>
+<li><strong>猫咪线可靠、长线且适合做情绪落点；“她养狗”则不成立。</strong> 两平台支持她至少有旺崽和小Q/Q宝两只猫，能确认收养缘分、直播后等候、胖瘦/炸毛变化、猫毛、拒绝亲近、钻行李箱和远程看猫等日常；只确认旺崽曾与朋友的狗同框，未发现她本人养狗的可靠证据。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a><a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a><a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></li>
+<li><strong>高风险不是某一个“对家”，而是四种叙事机制。</strong> 公开创意应完全避开真人CP化、《乘风2023》名次/卡位/节目公允、八卦私人关系、替粉丝控诉资源与团队；现有证据不足以认定粉丝当前集体反感某一具体个人。<a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-68" title="粉丝高互动帖：双担与提纯争议" aria-label="来源 68">[68]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a><a class="citation" href="#ref-72" title="乘风卡位争议攻击帖" aria-label="来源 72">[72]</a><a class="citation" href="#ref-73" title="微博搜索：曾可妮 争议" aria-label="来源 73">[73]</a><a class="citation" href="#ref-74" title="乘风抱团与刷脸质疑帖" aria-label="来源 74">[74]</a><a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a><a class="citation" href="#ref-104" title="小红书用户（2025）。乘风历届卡位姐姐讨论" aria-label="来源 104">[104]</a><a class="citation" href="#ref-130" title="蜡笔小昕MELARS（2026）。笑死 和芒果势不两立" aria-label="来源 130">[130]</a></li>
+<li><strong>主创方向：去掉角色皮肤，保留专业的骨架。</strong> 红衣反派、刺客/战损、全黑冷脸、新中式、雪场长腿、健身露腰等都已充分出现；下一次应拍身体记忆、工作过程、武汉在地、明亮色权力感、真实熟龄、卸下装备与猫留下的生活痕迹。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-55" title="媒体：黑长直深V镂空西装" aria-label="来源 55">[55]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-87" title="曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look" aria-label="来源 87">[87]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a><a class="citation" href="#ref-116" title="艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆" aria-label="来源 116">[116]</a><a class="citation" href="#ref-117" title="网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发" aria-label="来源 117">[117]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-133" title="尼斯娱乐（2026）。曾可妮×王令仪｜海棠春定妆侧拍" aria-label="来源 133">[133]</a></li>
+</ul>
+<p><strong>首选总主题：</strong>《身体记得，生活会回答》——让舞者、演员、成熟艺人、武汉女孩与养猫人落在同一个真实的人身上。访谈从“练出来的控制”进入，经由“害怕与等待”，最后回到“被生活打断、被粉丝和猫接住”。</p>
+<p><strong>总体置信度：高。</strong> 核心人格、内容偏好、主要风险与养猫事实均获两平台或一手来源交叉支持；宠物品种/年龄、早期离开歌舞团细节、所谓“从未拍过”的绝对判断仍需艺人团队确认。</p>
+<span class="heading-anchor" id="introduction-范围与决策口径"></span><h2 class="section-title">Introduction｜范围与决策口径</h2>
+<span class="heading-anchor" id="1-调研问题"></span><h3 class="subsection-title">1. 调研问题</h3>
+<p>本报告回答四个品牌决策问题：曾可妮最稳定、最具公共价值的人设与故事是什么；粉丝真正愿意看、保存和讨论哪些内容；哪些妆造和叙事已经重复，未来如何做出新意；哪些粉籍、节目、私人关系与执行问题必须在采访、视觉和宣发中提前避开。</p>
+<span class="heading-anchor" id="2-数据范围与规模"></span><h3 class="subsection-title">2. 数据范围与规模</h3>
+<p>微博阶段以用户已登录页面进行低频人工浏览，登记84个可回链来源与94条原子证据，重点覆盖2020—2026年本人微博、完整采访、认证媒体/官方粉丝站与普通粉丝讨论。小红书阶段严格通过TikHub Xiaohongshu App V2 API采集，未读取本地Cookies；归档109个API响应文件，形成693条去重候选，其中本人账号笔记205条，抽取29条详情和57条实际返回的高赞评论，登记53个稳定来源与158条原子证据。<a class="citation" href="#ref-134" title="TikHub（2026）。小红书App V2搜索笔记接口" aria-label="来源 134">[134]</a><a class="citation" href="#ref-135" title="TikHub（2026）。小红书App V2图文详情接口" aria-label="来源 135">[135]</a><a class="citation" href="#ref-136" title="TikHub（2026）。小红书App V2视频详情接口" aria-label="来源 136">[136]</a><a class="citation" href="#ref-137" title="TikHub（2026）。小红书App V2评论接口" aria-label="来源 137">[137]</a></p>
+<p>本报告合并137个来源、252条证据与30条阶段性结论。互动量均为采集时快照，只用于识别相对强信号，不机械跨年份、跨平台比较；微博搜索与小红书搜索均受算法排序影响，故“未发现”不等于“绝对不存在”。</p>
+<span class="heading-anchor" id="3-跨平台职责分工"></span><h3 class="subsection-title">3. 跨平台职责分工</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>决策问题</th>
+<th>微博贡献</th>
+<th>小红书贡献</th>
+<th>第三步口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本人价值观</td>
+<td>完整采访原话、官宣与职业节点强</td>
+<td>返校、生日、健康与生活表达强</td>
+<td>以一手表达为准，两平台互证</td>
+</tr>
+<tr>
+<td>粉丝偏好</td>
+<td>舞台、角色、发型、比例与历史记忆</td>
+<td>高赞/高藏内容、真实生图、Vlog与视觉重复更清晰</td>
+<td>“动起来+真实过程”是公约数</td>
+</tr>
+<tr>
+<td>猫咪</td>
+<td>姓名、收养、接京、体型变化强</td>
+<td>相处喜剧、掉毛、行李箱、远程看猫强</td>
+<td>可确认两只猫；品种、年龄仍待核</td>
+</tr>
+<tr>
+<td>舆情</td>
+<td>历史冲突强度、后援会规则、团队诉求更清晰</td>
+<td>CP语义、卡位词、视觉误读更直观</td>
+<td>管控叙事结构，不列“对家名单”</td>
+</tr>
+<tr>
+<td>妆造</td>
+<td>角色资产与微博审美评价</td>
+<td>重复审计、收藏逻辑、现场感偏好</td>
+<td>去角色皮肤，保留动作与比例</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="main-analysis-主体分析"></span><h2 class="section-title">Main Analysis｜主体分析</h2>
+<span class="heading-anchor" id="4-五个核心人设标签-谁在塑造-品牌如何使用"></span><h2 class="section-title">4. 五个核心人设标签：谁在塑造、品牌如何使用</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>核心人设</th>
+<th>谁主动塑造</th>
+<th>两平台证据</th>
+<th>最强魅力点</th>
+<th>品牌可用表达 / 边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. 身体会说话的专业行动者</strong></td>
+<td>本人以舞台、舞蹈、训练和作品持续证明；粉丝/媒体命名为控场、延伸、爆发、稳定</td>
+<td>她把舞台视为坚定热爱；微博媒体强调控场力，小红书“可妮摇”和“不退功”讨论形成高互动。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-124" title="Pranpriya（2026）。婧路人粉来看曾可妮，真的很可以" aria-label="来源 124">[124]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+<td>不是抽象“努力”，而是脚步、呼吸、肌肉、判断和复盘都可被看见</td>
+<td>用“练出来的自由”“身体记得”；不用“被埋没的实力派”</td>
+</tr>
+<tr>
+<td><strong>2. 酷飒外壳 × 松弛柔软内核</strong></td>
+<td>主要由粉丝/媒体赋予；本人用自嘲、Vlog和不删除生活意外反复验证</td>
+<td>“走路带风—下班喊鞋痛”、乘风幕后反差、母亲路过舞蹈、冷脸被误判没笑、猫不配合。<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-113" title="合力有戏（2025）。曾可妮因“脸太酷”被判定没笑" aria-label="来源 113">[113]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+<td>强大没有因疼痛、笨拙或笑场而失效，反而更可信</td>
+<td>用“生活会打断她，她会笑着接住”；不用“脸臭”“耍大牌”</td>
+</tr>
+<tr>
+<td><strong>3. 敢怕、敢输、敢慢的长期主义者</strong></td>
+<td>本人主动表达</td>
+<td>她谈把滑板恐惧练成爱好、把“赢”定义为完成相信的表达、不再急着要结果；返校与生日把十年写成“继续”。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a></td>
+<td>让大众看到勇敢是一套方法，不是天赋人设</td>
+<td>用“害怕也可以开始”“此刻正好”；不用“逆袭、翻红、涅槃”</td>
+</tr>
+<tr>
+<td><strong>4. 175大靓仔/大靓女，气质不做单选题</strong></td>
+<td>本人主动使用“靓仔的朋友圈”“175大靓女”“明星不止AB面”；粉丝强化中性帅感和高挑比例</td>
+<td>主页、早期穿搭、短发内容都同时容纳帅、美、性感和可爱。<a class="citation" href="#ref-85" title="曾可妮（2026）。曾可妮的小红书主页" aria-label="来源 85">[85]</a><a class="citation" href="#ref-87" title="曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look" aria-label="来源 87">[87]</a><a class="citation" href="#ref-88" title="PINKer私服穿搭（2021）。曾可妮私服｜夏日超酷的夏威夷帅哥穿搭" aria-label="来源 88">[88]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a></td>
+<td>性别气质流动、能自嘲、不被“女王/甜妹”二选一限制</td>
+<td>用“轮廓硬、情绪软”；慎用“老公姐”等排他粉圈称谓</td>
+</tr>
+<tr>
+<td><strong>5. 主动看见别人、也认真回家的陪伴者</strong></td>
+<td>本人主动表达与行动；粉丝把细节沉淀为共同记忆</td>
+<td>“爱人先爱己”、主动为同伴拍照、生日会关心吃好玩好、粉丝ID入衣、工作结束先回到两只猫。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-47" title="媒体：乘风主动记录其他姐姐" aria-label="来源 47">[47]</a><a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a><a class="citation" href="#ref-121" title="赚够米就跑路（2026）。喜欢一个成熟的艺人究竟有多幸福" aria-label="来源 121">[121]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a><a class="citation" href="#ref-127" title="赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮" aria-label="来源 127">[127]</a></td>
+<td>温柔不是口号，而是提前想到、说清安排、记住人、照顾动物边界</td>
+<td>用“主动靠近、具体照顾”；不用“为粉丝牺牲一切”</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="4-1-一句话人物定义"></span><h3 class="subsection-title">4.1 一句话人物定义</h3>
+<p><strong>她真正的“飒”，不是永远冷着脸，而是身体有能力、做事有分寸；害怕时仍能练，等待时仍在做，生活突然闯进来时还能笑出来。</strong></p>
+<span class="heading-anchor" id="4-2-标签优先级"></span><h3 class="subsection-title">4.2 标签优先级</h3>
+<p>对大众传播，排序应为：专业行动者 ＞ 反差真实 ＞ 长期主义 ＞ 多面气质 ＞ 具体陪伴。对粉丝限定内容，则可以提高“十年”“下一场见”“猫咪连续剧”的比重。角色型标签如“疯批美人、美强惨、斩女型女二、冷酷杀手”只能描述角色传播，不得反推本人性格、私人关系或性取向。<a class="citation" href="#ref-27" title="微博搜索：曾可妮 人设" aria-label="来源 27">[27]</a><a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-30" title="媒体：任迪斩女型女二" aria-label="来源 30">[30]</a></p>
+<span class="heading-anchor" id="5-关键经历与发展时间线"></span><h2 class="section-title">5. 关键经历与发展时间线</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>时间</th>
+<th>公开节点</th>
+<th>对人物叙事的意义</th>
+<th>证据与使用边界</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2011—毕业后</strong></td>
+<td>粉丝资料称其考入上海戏剧学院、毕业后曾在上海歌舞团工作，并有放弃稳定工作北漂的叙事</td>
+<td>可形成“专业身体从哪里来”“主动选择不确定”的前史</td>
+<td>目前主要为粉丝资料，正式脚本必须向团队确认入学/毕业、单位、离职与北漂细节。<a class="citation" href="#ref-32" title="粉丝长文：歌舞团与热血漫画感" aria-label="来源 32">[32]</a><a class="citation" href="#ref-39" title="粉丝安利长文：早期履历" aria-label="来源 39">[39]</a><a class="citation" href="#ref-41" title="粉丝回忆：放弃稳定工作、北漂追舞台" aria-label="来源 41">[41]</a></td>
+</tr>
+<tr>
+<td><strong>2020</strong></td>
+<td>《青春有你2》成为大众认知和老粉共同记忆的重要入口；其后采访以输赢、被选择、不卑不亢回看比赛经历</td>
+<td>适合谈价值观与身体记忆</td>
+<td>不复盘名次、打投、CP和粉籍争执。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a></td>
+</tr>
+<tr>
+<td><strong>2020—2021</strong></td>
+<td>本人在小红书使用“气场两米七”、高个子穿搭与中性帅感，形成早期视觉自我定位</td>
+<td>证明“靓仔/高挑酷感”不是后贴标签</td>
+<td>可展示早期审美变化，不做身材比较。<a class="citation" href="#ref-87" title="曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look" aria-label="来源 87">[87]</a><a class="citation" href="#ref-88" title="PINKer私服穿搭（2021）。曾可妮私服｜夏日超酷的夏威夷帅哥穿搭" aria-label="来源 88">[88]</a></td>
+</tr>
+<tr>
+<td><strong>2022</strong></td>
+<td>《点燃我，温暖你》任迪官宣；微博本人帖约2.12万转、1.13万评、1.42万赞</td>
+<td>现代角色将洒脱酷感与高妹穿搭转成角色资产，也是新粉入口</td>
+<td>可谈角色如何借用她的身体气质，不谈番位。<a class="citation" href="#ref-30" title="媒体：任迪斩女型女二" aria-label="来源 30">[30]</a><a class="citation" href="#ref-31" title="媒体：任迪圈粉与高妹穿搭" aria-label="来源 31">[31]</a><a class="citation" href="#ref-76" title="曾可妮：《点燃我，温暖你》任迪官宣" aria-label="来源 76">[76]</a></td>
+</tr>
+<tr>
+<td><strong>2022—2023</strong></td>
+<td>旺崽、小Q相关内容开始形成稳定连续剧；旺崽相遇、直播后等候、小Q接到北京均有本人原帖</td>
+<td>生活线不是临时萌宠营业</td>
+<td>名字基本可用，品种/年龄/健康仍需确认。<a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></td>
+</tr>
+<tr>
+<td><strong>2023-03</strong></td>
+<td>《云之羽》郑南衣官宣；小红书角色帖成为样本内本人账号最高赞内容</td>
+<td>古装刺客、红衣与战损建立强角色记忆</td>
+<td>视觉资产有效但已充分拍摄，勿整套复刻。<a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a></td>
+</tr>
+<tr>
+<td><strong>2023-04—07</strong></td>
+<td>加盟《乘风2023》，把节目视作30岁礼物；舞台、主动社交和幕后反差被放大</td>
+<td>连接舞者身份、30岁与“主动创造更多”</td>
+<td>只谈舞台体验、服装参与、记录同伴；不谈排名、公允和同组纠纷。<a class="citation" href="#ref-47" title="媒体：乘风主动记录其他姐姐" aria-label="来源 47">[47]</a><a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a><a class="citation" href="#ref-77" title="新浪演出：曾可妮官宣加盟《乘风2023》" aria-label="来源 77">[77]</a></td>
+</tr>
+<tr>
+<td><strong>2023-10</strong></td>
+<td>《哎呀好身材5》赛事领队</td>
+<td>运动、自律与体态被公共化</td>
+<td>可谈身体安全与训练方法，不谈体重数字。<a class="citation" href="#ref-2" title="曾可妮Jenny-Z 微博主页" aria-label="来源 2">[2]</a><a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a></td>
+</tr>
+<tr>
+<td><strong>2024-10</strong></td>
+<td>《七夜雪》妙水开播，红衣、金发、魅狠反派获得强传播</td>
+<td>显示角色爆发力</td>
+<td>“红衣+金发+血迹+宫殿”已成典型旧皮肤。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a></td>
+</tr>
+<tr>
+<td><strong>2025-03</strong></td>
+<td>《嘘，国王在冬眠》姜南风开播；雪景片场、滑雪与摔倒后的可爱过程获得传播</td>
+<td>“能力+不完美”优于纯竞技</td>
+<td>雪服、白毛外套和雪景长腿已高频；改拍平衡与练习过程。<a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a><a class="citation" href="#ref-80" title="曾可妮：《嘘，国王在冬眠》姜南风开播" aria-label="来源 80">[80]</a><a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a></td>
+</tr>
+<tr>
+<td><strong>2025</strong></td>
+<td>武汉Vlog、母亲路过舞蹈、生日会、返校十年集中出现</td>
+<td>家乡、家庭生活意外、粉丝照顾与十年线成为完整温暖叙事</td>
+<td>家人只用本人已公开片段，不追问隐私；武汉做在地生活而非旅游广告。<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></td>
+</tr>
+<tr>
+<td><strong>2026-05</strong></td>
+<td>“因Ni而来”音乐见面会、新歌与国风舞台，互动达到1万+量级</td>
+<td>舞台身份持续，不应被演员身份替代</td>
+<td>可谈“身份互相反哺”，不设“二选一”。<a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-122" title="曾可妮（2026）。任迪说我有个朋友，准备玩个摇汞" aria-label="来源 122">[122]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+</tr>
+<tr>
+<td><strong>2026-06—08</strong></td>
+<td>《海棠春》王令仪开机/杀青，《凤不栖》容潇杀青；横店日志仍有健身与健康提醒</td>
+<td>当下状态是演员进组、舞者仍在身体里、生活者记得休息</td>
+<td>只使用官宣信息，不夸大番位、戏份或未播效果。<a class="citation" href="#ref-82" title="曾可妮：《海棠春》王令仪开机" aria-label="来源 82">[82]</a><a class="citation" href="#ref-83" title="曾可妮：《海棠春》王令仪杀青" aria-label="来源 83">[83]</a><a class="citation" href="#ref-84" title="曾可妮：《凤不栖》容潇杀青" aria-label="来源 84">[84]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a><a class="citation" href="#ref-133" title="尼斯娱乐（2026）。曾可妮×王令仪｜海棠春定妆侧拍" aria-label="来源 133">[133]</a></td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="6-最值得挖掘的故事点-温暖力量与访谈问题"></span><h2 class="section-title">6. 最值得挖掘的故事点：温暖力量与访谈问题</h2>
+<ol>
+<li><strong>把恐惧练成爱好。</strong> 为角色练滑板前，她抗拒摔倒和失控；从平地练习、肌肉酸痛开始，最后把害怕变成爱好。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a> 大众意义：勇敢不是不怕，而是允许自己从最小动作开始。可问：“你现在怎样和一个暂时做不到的自己相处？”</li>
+<li><strong>重新定义“赢”。</strong> 她把赢定义为完成自己真正喜欢的舞种、舞台和表达，即使有反对意见仍完成判断。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a> 大众意义：结果之外还存在个人尺度。可问：“什么时候你发现，赢不一定需要别人宣布？”</li>
+<li><strong>从急于结果到允许机会慢慢来。</strong> 她说自己不再急着要结果，而是默默变好、等待机会。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a> 返校十年、持续拍戏和音乐见面会使这一表达不只是鸡汤。<a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a> 可问：“慢下来以后，你反而听见了什么？”</li>
+<li><strong>演员和舞者不是互相取消。</strong> 她2026年生日写“正是好好拍戏又唱又跳的年纪”，粉丝也明确希望演戏与舞台并行。<a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a> 可问：“舞蹈怎样帮助你表演，角色又怎样改变你跳舞？”</li>
+<li><strong>长期主义先照顾身体。</strong> 横店熬夜后，她公开提醒不要剧烈运动、健康最重要。<a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a> 可问：“什么时候你开始明白，休息也属于专业？”</li>
+<li><strong>“爱人先爱己”的粉丝关系。</strong> 她希望追星的人先快乐，理想关系是彼此靠近而非单向牺牲。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a> 可问：“为什么你会把‘先爱自己’送给很用力爱你的人？”</li>
+<li><strong>主动可以创造更多。</strong> 她在节目中主动为其他姐姐记录照片，被媒体概括为“主动创造更多”。<a class="citation" href="#ref-47" title="媒体：乘风主动记录其他姐姐" aria-label="来源 47">[47]</a> 可问：“你是从什么时候开始，愿意先走向别人、先看见别人？”</li>
+<li><strong>生活意外不削弱专业。</strong> 跳舞时母亲突然走入画面，她保留这个片段并自称“很有生活”，约1.10万赞。<a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a> 可问：“你最喜欢哪一种没按计划发生的瞬间？”</li>
+<li><strong>家乡让身体恢复熟悉的语言。</strong> 武汉Vlog以“本地伢”口吻吃早餐、说方言，该样本约4275赞、458藏、287评、610分享。<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a> 可问：“回到武汉，最先恢复的是口音、胃口，还是一种不用解释的自己？”</li>
+<li><strong>角色结束，但约定继续。</strong> 她用“下个角色见”告别一个角色，而不是把告别写成悲情终章。<a class="citation" href="#ref-96" title="曾可妮（2024）。下个热血江湖我们再相见" aria-label="来源 96">[96]</a> 可问：“一个角色离开时，你会带走什么，又把什么还给她？”</li>
+<li><strong>强者下班也可以说痛。</strong> 上班走路带风、下班直呼高跟鞋痛，是粉丝和媒体反复保存的反差。<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a> 可问：“卸下工作装备的第一个动作是什么？”</li>
+<li><strong>猫毛被重新命名为礼物。</strong> 她说猫会送礼物，粉丝把一根猫毛和满身粘毛理解成“白玉猫毛”“毛衣毛裤”。<a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a> 大众意义：爱常以麻烦的形状出现。可问：“你收到过最不起眼、但一直记得的礼物是什么？”</li>
+</ol>
+<span class="heading-anchor" id="7-粉丝内容偏好-什么最买账-为什么"></span><h2 class="section-title">7. 粉丝内容偏好：什么最买账、为什么</h2>
+<span class="heading-anchor" id="7-1-五类高传播触发器"></span><h3 class="subsection-title">7.1 五类高传播触发器</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>触发器</th>
+<th>代表证据</th>
+<th>粉丝得到什么</th>
+<th>品牌含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>角色有命运、有情绪</strong></td>
+<td>郑南衣笔记约3.94万赞；任迪、妙水也形成新粉入口。<a class="citation" href="#ref-76" title="曾可妮：《点燃我，温暖你》任迪官宣" aria-label="来源 76">[76]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a></td>
+<td>不是看一套衣服，而是看一个人物的选择</td>
+<td>可原创人物行动，勿复刻原角色皮肤</td>
+</tr>
+<tr>
+<td><strong>动作完整、专业可见</strong></td>
+<td>“可妮摇”约3.20万赞、2223藏；粉丝具体讨论延伸、爆发、控制与不退功。<a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+<td>反复观看和确认“她真的能做”</td>
+<td>视频必须给完整动作弧线，不只做动态海报</td>
+</tr>
+<tr>
+<td><strong>第一视角邀请</strong></td>
+<td>雪景“是啊，下次一起来”约2.92万赞。<a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a></td>
+<td>从旁观者变为同行者</td>
+<td>镜头可以邀请，但不要虚构私人亲密</td>
+</tr>
+<tr>
+<td><strong>专业被生活自然打断</strong></td>
+<td>母亲入镜约1.10万赞；黑衣抱猫约8682赞。<a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+<td>距离缩短，反差不靠演</td>
+<td>允许笑场、猫离场、动作失败，保留真声</td>
+</tr>
+<tr>
+<td><strong>时间与地点有真实坐标</strong></td>
+<td>返校十年、武汉Vlog、生日会与“下一场见”。<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a></td>
+<td>陪伴有可保存的时间刻度</td>
+<td>使用旧通告单、照片墙、票根、早餐碗等具体物</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="7-2-具体审美偏好"></span><h3 class="subsection-title">7.2 具体审美偏好</h3>
+<ul>
+<li><strong>粉丝首先想看她动起来。</strong> 舞蹈、走位、热身、尝试、失败后再来，比纯站姿更能展示其不可替代性。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></li>
+<li><strong>真实皮肤、现场光和生图有明确好感。</strong> “本人比镜头更好看”“生图抗打”“站姐会拍”等讨论说明，骨相、发量、肌肉纹理和现场气息不应被磨平。<a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-106" title="Star Map Collection（2025）。曾可妮生图" aria-label="来源 106">[106]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a><a class="citation" href="#ref-114" title="每日生图（2025）。曾可妮生图" aria-label="来源 114">[114]</a><a class="citation" href="#ref-126" title="喵艾MeowI（2026）。第一次拍曾可妮，真有点羡慕妮丝了" aria-label="来源 126">[126]</a></li>
+<li><strong>短发、露额、侧分、半扎马尾和成熟卷发都可用。</strong> 短发与露额有正向证据；半扎马尾连接老粉的便利店/彩排记忆；大波浪适合现代角色与成熟感。<a class="citation" href="#ref-49" title="微博搜索：曾可妮 想看造型" aria-label="来源 49">[49]</a><a class="citation" href="#ref-50" title="微博搜索：曾可妮 造型好喜欢" aria-label="来源 50">[50]</a><a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a></li>
+<li><strong>高挑比例要被服装服务。</strong> 高腰、短外套、纵向开衩、肩腰结构和动作线条更能发挥175比例；普通长裤、无裙摆且遮腿的舞台服曾获明确负面反馈。<a class="citation" href="#ref-31" title="媒体：任迪圈粉与高妹穿搭" aria-label="来源 31">[31]</a><a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a></li>
+<li><strong>帅、美、性感、可爱可以同时存在。</strong> 她本人短发帖直接说“性感跟可爱”，粉丝也喜欢皮质/金属与云朵发卡等软硬混搭。<a class="citation" href="#ref-53" title="媒体：皮质胸衣、星系披风与云朵发卡" aria-label="来源 53">[53]</a><a class="citation" href="#ref-88" title="PINKer私服穿搭（2021）。曾可妮私服｜夏日超酷的夏威夷帅哥穿搭" aria-label="来源 88">[88]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a></li>
+<li><strong>文案最好像她自己发朋友圈。</strong> 短句、方言、反问、自嘲与轻微不完美，比统一的品牌腔更符合“靓仔朋友圈”。<a class="citation" href="#ref-85" title="曾可妮（2026）。曾可妮的小红书主页" aria-label="来源 85">[85]</a><a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-113" title="合力有戏（2025）。曾可妮因“脸太酷”被判定没笑" aria-label="来源 113">[113]</a></li>
+</ul>
+<span class="heading-anchor" id="7-3-粉丝想看但现有公开样本相对不足的内容"></span><h3 class="subsection-title">7.3 粉丝想看但现有公开样本相对不足的内容</h3>
+<p>以下为从高互动机制和重复审计推导出的“相对空位”，不是声称她绝对从未拍过：完整舞蹈叙事摄影；演员工种/片场劳动；武汉雨天与城市声音；明亮色和柔材质中的权力感；短发/露额的精确高级肖像；真实熟龄而非幼态甜妹；一人分饰导演、场记、灯光、演员；回家与卸下装备；猫可以不配合的生活观察；声音、呼吸、衣料摩擦主导的近距离肖像；无兵器、无角色服的东方身体节奏；把旧照片、通告单和当下工作并置的“十年档案”。这些方向分别回应舞蹈、行动、家乡、真实、反差与长期陪伴的强信号。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a><a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></p>
+<span class="heading-anchor" id="8-已经拍得较多或需谨慎的妆造"></span><h2 class="section-title">8. 已经拍得较多或需谨慎的妆造</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>内容/妆造</th>
+<th>既有表现</th>
+<th>结论</th>
+<th>如何去重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>红衣反派、金发、血迹、魅狠</strong></td>
+<td>妙水与郑南衣相关内容高互动。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a></td>
+<td>喜欢不等于应再复刻；角色绑定过强</td>
+<td>只留一处红色或锐利眼神，不同时出现红衣、金发、血迹、烛台/宫殿</td>
+</tr>
+<tr>
+<td><strong>古装刺客、女侠、女扮男装、战损</strong></td>
+<td>搜索和角色官宣已大量出现。<a class="citation" href="#ref-26" title="媒体：云之羽女刺客美飒" aria-label="来源 26">[26]</a><a class="citation" href="#ref-49" title="微博搜索：曾可妮 想看造型" aria-label="来源 49">[49]</a><a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a></td>
+<td>动作需求已满足，字面造型不新</td>
+<td>以现代剪裁、节拍、丝线和身体动作替代武器与角色服</td>
+</tr>
+<tr>
+<td><strong>全黑西装/礼服、冷脸女王</strong></td>
+<td>黑长直深V西装、黑皮、黑开衩裙、黑背心已密集。<a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-55" title="媒体：黑长直深V镂空西装" aria-label="来源 55">[55]</a><a class="citation" href="#ref-87" title="曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look" aria-label="来源 87">[87]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-116" title="艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆" aria-label="来源 116">[116]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+<td>是安全牌，也是最大同质化风险</td>
+<td>使用象牙白、灰蓝、铜绿、酒渍玫瑰；权力交给姿态与空间</td>
+</tr>
+<tr>
+<td><strong>清冷长发、灰墙/暗棚</strong></td>
+<td>清冷贵气、新中式、红酒酷飒妆已有妆发案例。<a class="citation" href="#ref-116" title="艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆" aria-label="来源 116">[116]</a><a class="citation" href="#ref-117" title="网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发" aria-label="来源 117">[117]</a><a class="citation" href="#ref-131" title="六月巡航丨曾可妮（2026）。易脸红的Puppy清冷感妆容分享" aria-label="来源 131">[131]</a></td>
+<td>会把多面本人压成模板“大女主”</td>
+<td>加真实环境、动作任务、暖色反射和自然纹理</td>
+</tr>
+<tr>
+<td><strong>雪场、白毛外套、滑雪服、长腿</strong></td>
+<td>姜南风与雪景片场已有代表作。<a class="citation" href="#ref-80" title="曾可妮：《嘘，国王在冬眠》姜南风开播" aria-label="来源 80">[80]</a><a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a></td>
+<td>场景记忆强，直接复拍像剧宣</td>
+<td>拍平衡、呼吸、护具和摔倒后调整，不用雪场</td>
+</tr>
+<tr>
+<td><strong>健身房、运动内衣、镜面露腰</strong></td>
+<td>运动/健身内容已成为稳定日常。<a class="citation" href="#ref-4" title="曾可妮：台风、健身与保温杯日常" aria-label="来源 4">[4]</a><a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></td>
+<td>力量成立，但形式已熟且易落入身材审视</td>
+<td>拍肩背发力、拉伸、恢复和身体安全，不给体重/围度</td>
+</tr>
+<tr>
+<td><strong>白衬衣都市丽人/公务感</strong></td>
+<td>受众接受但属于常见安全牌</td>
+<td>难成为概念主视觉</td>
+<td>让她搭景、贴地标、收工，给服装一个工种动作</td>
+</tr>
+<tr>
+<td><strong>厚齐刘海</strong></td>
+<td>有粉丝为“终于撩开齐刘海”兴奋，但短发与长发皆有支持。<a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a></td>
+<td>不是绝对雷区，而是分歧项</td>
+<td>备轻薄、湿发、侧分版本，避免厚重齐切锁死额头</td>
+</tr>
+<tr>
+<td><strong>双人森林精灵/双A合拍</strong></td>
+<td>已有森林、溪涧与双A内容，并天然触发CP联想。<a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a></td>
+<td>视觉和粉籍双重高风险</td>
+<td>坚持单人叙事，不靠他人制造化学反应</td>
+</tr>
+<tr>
+<td><strong>腿、脚、腰、高跟鞋局部物化</strong></td>
+<td>搜索会混入收藏号和身体局部偏好</td>
+<td>不能当作核心粉丝共识</td>
+<td>完整呈现身体能力与人物行动，不用局部做猎奇封面</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="8-1-明确不喜欢与-容易浪费她-的点"></span><h3 class="subsection-title">8.1 明确不喜欢与“容易浪费她”的点</h3>
+<p>两平台可验证的负面审美样本少于正面样本，不能把零散意见包装成集体态度。相对明确的只有：服装遮住比例、普通长裤无结构、粗糙滤镜/低清物料、无主题的全黑重复、厚重齐刘海存在分歧、过度修图损失真人感，以及造型只靠她本人条件“撑住”。<a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a><a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a> “不适合古装”仅见少数弱样本，和郑南衣、妙水的高互动相冲突，不能写成结论。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a></p>
+<span class="heading-anchor" id="9-猫咪与宠物专项-事实-故事-性格与讨论知识点"></span><h2 class="section-title">9. 猫咪与宠物专项：事实、故事、性格与讨论知识点</h2>
+<span class="heading-anchor" id="9-1-品牌先记住的核验结论"></span><h3 class="subsection-title">9.1 品牌先记住的核验结论</h3>
+<ul>
+<li><strong>可确认的自家宠物线：至少两只猫，常见称呼为旺崽、小Q/Q宝。</strong> 旺崽和小Q均有本人原帖与跨平台连续内容支持。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></li>
+<li><strong>可确认旺崽是“妹妹”和短腿“小矮脚”。</strong> 这是本人公开表述；小Q的性别、两只猫的品种、年龄、健康状况仍须团队确认。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></li>
+<li><strong>“Q宝”存在歧义。</strong> 小红书同名还出现在见面会IP/玩偶语境；对外脚本应先向团队确认标准写法，并确认画面里具体是哪只猫。</li>
+<li><strong>没有可靠证据证明她本人养狗。</strong> 微博只支持旺崽与朋友的狗同框，小红书狗类搜索多为角色、片场动物或粉丝拟态；因此原需求中的“小猫小狗”应改为“猫咪及她公开互动过的动物”，不可创作“她家的狗”。<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a></li>
+<li><strong>动物福利优先。</strong> 猫拒绝、挣脱或离场本身就是粉丝喜欢的真实，不应为构图强抱、穿复杂服装、使用闪光或长时间运输。<a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a><a class="citation" href="#ref-109" title="做自己的许愿池王八（2025）。曾可妮的猫臂力惊人" aria-label="来源 109">[109]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></li>
+</ul>
+<span class="heading-anchor" id="9-2-15个相处故事与日常分享-已满足-不少于10个"></span><h3 class="subsection-title">9.2 15个相处故事与日常分享（已满足“不少于10个”）</h3>
+<ol>
+<li><strong>旺崽撞玻璃的相遇。</strong> 她与朋友散步进入宠物店，最初注意到另一只猫，最后被旺崽想“撞破玻璃”的主动劲儿打动，形成收养缘分。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></li>
+<li><strong>郑重介绍“旺崽妹妹”。</strong> 她公开写旺崽是“小矮脚，巨可爱”；不是粉丝反推，而是本人身份说明。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></li>
+<li><strong>旺崽经常“婉拒曾可妮”。</strong> 她想亲近，旺崽迅速躲开或不配合，相关粉丝整理成为猫强人弱的固定笑点。<a class="citation" href="#ref-15" title="609号航线：旺崽一些婉拒曾可妮" aria-label="来源 15">[15]</a><a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a></li>
+<li><strong>直播结束后在旁边等。</strong> 她写直播一结束旺崽就蹲在旁边，又捂住猫嘴调侃“小猫可能在说难听的话”。<a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a></li>
+<li><strong>“窝里横的小喵”。</strong> 她同日吐槽旺崽“一天天就知道窝里横”，形成斗嘴式亲密，而非完美萌宠人设。<a class="citation" href="#ref-11" title="曾可妮：窝里横的小喵" aria-label="来源 11">[11]</a></li>
+<li><strong>穿黑衣抱猫，抱完像穿毛衣。</strong> 本人写“穿黑色不准抱猫”；高赞评论把满身猫毛解释成旺崽和Q宝怕她冷、送她“毛衣毛裤”。<a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></li>
+<li><strong>出门当女明星前先拍猫毛。</strong> 粉丝记录她先清理衣服上的旺崽毛，再进入工作状态；猫毛成为“家—工作”的过渡物。<a class="citation" href="#ref-17" title="拍掉旺崽的毛，出门当女明星" aria-label="来源 17">[17]</a></li>
+<li><strong>难得休息日用来陪猫。</strong> 本人以“难得的休息day”配合“我和我的猫”话题，说明猫线并非仅在活动节点出现。<a class="citation" href="#ref-97" title="曾可妮（2025）。难得的休息day" aria-label="来源 97">[97]</a></li>
+<li><strong>在线“咬猫猫”。</strong> 早期粉丝把她突然像小动物一样和猫玩，视为冷脸高个子的经典反差。<a class="citation" href="#ref-91" title="月亮归你（2022）。曾可妮给大家在线表演一个咬猫猫" aria-label="来源 91">[91]</a></li>
+<li><strong>人猫互相“哈”。</strong> 她和旺崽对哈的声音一度被系统识别成AI，粉丝把它玩成家庭小剧场；品牌可保留声音荒诞感，不使用“耍大牌”负面标题。<a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a></li>
+<li><strong>上班也会远程叫猫。</strong> 粉丝把她工作间隙查看/呼唤旺崽比作家长看幼儿园监控，高赞回复表示养猫人强共鸣。<a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></li>
+<li><strong>出差前“箱子里长猫”。</strong> 打包行李时猫钻进箱子，天然连接演员频繁出差与养猫人的离家不舍。<a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a></li>
+<li><strong>小Q接到北京。</strong> 她写“小Q宝也接来北京啦”，对比以前毛绒绒、当时瘦得像一根细长猫条。<a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></li>
+<li><strong>从细长猫条到胖成球、冬天像小狮子。</strong> 数月后她又记录小Q胖成球，冬天吃得好、炸毛像小狮子，形成可追更的季节/体型连续剧。<a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a></li>
+<li><strong>横店返京先晒“两只大馋丫头”。</strong> 2026年结束一段横店工作回到北京，第一时间发布两只猫，微博帖约1.02万转、5288评、1.11万赞；“回家”因猫变成粉丝共同等待的事件。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-83" title="曾可妮：《海棠春》王令仪杀青" aria-label="来源 83">[83]</a></li>
+</ol>
+<p>补充可用日常还有：旺崽车内“VIP专座”兜风；旺崽与朋友的狗交朋友；两只猫“臂力惊人”、挣脱动作强；生日会入口出现双猫形象；粉丝提出“小猫式合照”时，她主动调整身体避免挡住粉丝脸。<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a><a class="citation" href="#ref-20" title="旺崽VIP专座兜风" aria-label="来源 20">[20]</a><a class="citation" href="#ref-101" title="小狗特种兵（2025）。曾可妮生日会迎宾竟然是两只小猫" aria-label="来源 101">[101]</a><a class="citation" href="#ref-102" title="啊怎么好呢（2025）。离开曾可妮谁还把我当小猫" aria-label="来源 102">[102]</a><a class="citation" href="#ref-109" title="做自己的许愿池王八（2025）。曾可妮的猫臂力惊人" aria-label="来源 109">[109]</a></p>
+<span class="heading-anchor" id="9-3-12个猫咪性格特点-出圈事件-狗项据实留空"></span><h3 class="subsection-title">9.3 12个猫咪性格特点/出圈事件（狗项据实留空）</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>特点或事件</th>
+<th>证据强度</th>
+<th>品牌写法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>旺崽初见时行动力强，试图冲向宠物店玻璃</td>
+<td>A</td>
+<td>“是主动选择了彼此的相遇”<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>旺崽是妹妹、短腿“小矮脚”</td>
+<td>A</td>
+<td>可使用本人原称，但不要擅自补品种<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>旺崽不愿被强抱，拒绝动作干脆</td>
+<td>B/C</td>
+<td>“有自己的边界”，不要写“不亲人”<a class="citation" href="#ref-15" title="609号航线：旺崽一些婉拒曾可妮" aria-label="来源 15">[15]</a><a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>旺崽会在直播结束后守在身旁</td>
+<td>A</td>
+<td>“工作结束后的等候”<a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>旺崽在熟悉环境里被主人形容“窝里横”</td>
+<td>A</td>
+<td>只适合轻松口吻，不延伸为攻击性<a class="citation" href="#ref-11" title="曾可妮：窝里横的小喵" aria-label="来源 11">[11]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>旺崽会与她互相发出“哈”声</td>
+<td>B/C</td>
+<td>可做声音梗；禁用“耍大牌”<a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>两只猫性格明显不同，一只更会“哈”、一只更不配合</td>
+<td>B/C</td>
+<td>可做一动一静观察，需本人确认谁是谁<a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>猫前肢/挣脱力量让粉丝意外</td>
+<td>C</td>
+<td>拍摄接受离场，不设计强抱<a class="citation" href="#ref-109" title="做自己的许愿池王八（2025）。曾可妮的猫臂力惊人" aria-label="来源 109">[109]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>黑衣抱猫后大量粘毛成为高互动笑点</td>
+<td>A+B</td>
+<td>猫毛是“柔软的麻烦”，不是卫生羞辱<a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>猫会占领行李箱，阻断出差打包</td>
+<td>B/C</td>
+<td>适合“角色经过—回家”叙事<a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>小Q体型从细长猫条到胖球、冬季炸毛像小狮子</td>
+<td>A</td>
+<td>可谈主人长期观察，健康含义勿自行推断<a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>两只猫被合称“大馋丫头”</td>
+<td>A</td>
+<td>可作为家庭口吻；饮食与健康细节仍需团队确认<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>粉丝还使用“短腿响尾蛇”、银色/银渐层、金吉拉等称呼或品种判断，但证据主要为C级，正式内容不应采用。<a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a><a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a> 与狗相关唯一可靠的生活事件是旺崽与朋友的狗同框“交新朋友”，不能扩写为她养狗或两只宠物长期相处。<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a></p>
+<span class="heading-anchor" id="9-4-粉丝讨论最多的10个猫话题-知识细节"></span><h3 class="subsection-title">9.4 粉丝讨论最多的10个猫话题/知识细节</h3>
+<ol>
+<li><strong>到底有几只、分别叫什么：</strong>两只的事实稳定，旺崽与小Q/Q宝是常见组合；标准写法需确认。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a><a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a></li>
+<li><strong>旺崽为何被收养：</strong>不是因为最先看到，而是冲玻璃的主动劲儿打动了她。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></li>
+<li><strong>旺崽的公开身份：</strong>妹妹、短腿“小矮脚”；不能据此外推准确品种。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a></li>
+<li><strong>旺崽又怎样拒绝她：</strong>亲近、抱抱是否再次被婉拒，是粉丝持续追更的喜剧线。<a class="citation" href="#ref-15" title="609号航线：旺崽一些婉拒曾可妮" aria-label="来源 15">[15]</a><a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a></li>
+<li><strong>哪只更会“哈”、两只性格怎样不同：</strong>相关声音被AI识别的梗与双猫差异反复出现。<a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a><a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a></li>
+<li><strong>掉毛量和猫毛礼物：</strong>黑衣为什么不能抱猫；一根猫毛如何被重新命名为礼物。<a class="citation" href="#ref-17" title="拍掉旺崽的毛，出门当女明星" aria-label="来源 17">[17]</a><a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></li>
+<li><strong>小Q的体型季节连续剧：</strong>毛绒大坨、细长猫条、胖成球、冬天炸毛像小狮子。<a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></li>
+<li><strong>她工作时如何想猫：</strong>直播后的等候、手机/监控、远程呼唤、横店返家先晒猫。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></li>
+<li><strong>离家与出行：</strong>行李箱被占、旺崽VIP座兜风，以及猫是否适应出行。<a class="citation" href="#ref-20" title="旺崽VIP专座兜风" aria-label="来源 20">[20]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a></li>
+<li><strong>猫能否参加活动/拍摄：</strong>生日会双猫迎宾增加期待，但当日是否为真猫、是否本人宠物、运输与福利都必须先确认。<a class="citation" href="#ref-101" title="小狗特种兵（2025）。曾可妮生日会迎宾竟然是两只小猫" aria-label="来源 101">[101]</a></li>
+</ol>
+<span class="heading-anchor" id="9-5-猫咪内容如何拍-才会真正打动粉丝"></span><h3 class="subsection-title">9.5 猫咪内容如何拍，才会真正打动粉丝</h3>
+<p>不要从“猫耳妆、猫系美人、抱猫看镜头”出发；应从只有长期相处才有的痕迹出发：粘毛滚、黑衣猫毛、被占的行李箱、直播灯熄灭后的等候、手机监控、猫碗的位置、沙发凹痕、冬季炸毛和主人分辨两只猫脾气的方式。猫可完全不出镜；若出镜，以熟悉空间、无闪光、短时拍摄、自由离场为硬条件。猫不配合就是正确素材，不重拍“完美合照”。<a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-17" title="拍掉旺崽的毛，出门当女明星" aria-label="来源 17">[17]</a><a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></p>
+<span class="heading-anchor" id="10-粉丝与曾可妮共享的10个珍贵物件-瞬间"></span><h2 class="section-title">10. 粉丝与曾可妮共享的10个珍贵物件/瞬间</h2>
+<ol>
+<li><strong>半扎马尾与便利店光。</strong> 老粉把这一发型连接2020年的便利店图与一公彩排；调用时做“时间继续向前”，不要复刻旧节目名次。<a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a></li>
+<li><strong>《Falling for u》的全场接唱。</strong> 她露出惊讶表情，粉丝以“她以为我们会忘记吗”表达歌曲一直被共同保存。<a class="citation" href="#ref-44" title="粉丝：见面会《Falling for u》大合唱" aria-label="来源 44">[44]</a></li>
+<li><strong>睡衣生日视频。</strong> 她担心穿睡衣录制会让粉丝觉得丢脸；没有防备的真实恰好成为被珍惜的反差。<a class="citation" href="#ref-43" title="官方粉丝站：生日视频与睡衣反应" aria-label="来源 43">[43]</a></li>
+<li><strong>“五年后的圆满”。</strong> 2025生日会被粉丝写作属于玫瑰的盛夏，珍贵的是长期等待终于落地，而非一次活动的豪华程度。<a class="citation" href="#ref-48" title="粉丝：五年后生日会圆满" aria-label="来源 48">[48]</a></li>
+<li><strong>粉丝ID写在衣服上。</strong> 大家逐一寻找自己的名字，“被看见”变成可认领的实体。<a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a><a class="citation" href="#ref-127" title="赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮" aria-label="来源 127">[127]</a></li>
+<li><strong>旧照片墙与现在的通告单。</strong> 返校十年时，粉丝希望看到更多旧照片；学生、舞者与演员被一张纸连接。<a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></li>
+<li><strong>武汉早餐、方言与轮渡的风。</strong> “本地伢”的胃口和口音让故乡成为不用解释的自己，而非宏大地标。<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a></li>
+<li><strong>拍立得和后台三张照片。</strong> 长期摄影粉四年拍过十几组，每次仍感到她“充满能量”；短暂后台照像共同更新的档案。<a class="citation" href="#ref-129" title="Amorill百威（2026）。拍了拍曾可妮后台的样子" aria-label="来源 129">[129]</a></li>
+<li><strong>一根猫毛、旺崽撞玻璃与行李箱。</strong> 最小的礼物、最初的相遇和离家前的阻拦，共同构成只有养猫粉最懂的家庭记忆。<a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a></li>
+<li><strong>“下一场见/下个角色见”。</strong> 见面会、角色告别与返校叙事不断把终点改成下一次约定；粉丝珍惜的是未来仍有确定的相见。<a class="citation" href="#ref-96" title="曾可妮（2024）。下个热血江湖我们再相见" aria-label="来源 96">[96]</a><a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-121" title="赚够米就跑路（2026）。喜欢一个成熟的艺人究竟有多幸福" aria-label="来源 121">[121]</a></li>
+</ol>
+<p>品牌若需要一个统一可收藏物件，首选<strong>“双面档案卡”</strong>：正面是她从旧照片/通告单中选出的一个动作，背面是写给“正在害怕或等待的人”的一句话；限量实体可带无个人信息的匿名ID点阵，线上版本确保远程粉丝同样可领取，避免把稀缺合影变成粉丝等级。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a><a class="citation" href="#ref-127" title="赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮" aria-label="来源 127">[127]</a></p>
+<span class="heading-anchor" id="11-舆情禁区-敏感词与发布审核"></span><h2 class="section-title">11. 舆情禁区、敏感词与发布审核</h2>
+<span class="heading-anchor" id="11-1-一级红线-不进入提问-标题-镜头关系与互动话术"></span><h3 class="subsection-title">11.1 一级红线：不进入提问、标题、镜头关系与互动话术</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>风险簇</th>
+<th>具体敏感词/触发结构</th>
+<th>风险机制</th>
+<th>品牌替代方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>真人CP与粉籍关系化</strong></td>
+<td>CP、磕、好嗑、XX×曾可妮、双A、姐狗、豹豹猫猫、老公/老婆配对、灵魂伴侣、双担、提纯、工具人、圈地自萌、关注/取关；与任何同期/合作艺人的暧昧同框、对视、搂腰、贴脸、“多年后重逢”</td>
+<td>微博后援会曾明确个人超话用于个人安利和唯粉交流；历史上双担、关注关系和资金/引流问题引发高强度争执，小红书又跨多个阶段出现CP语义。<a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-64" title="粉丝：唯粉群CP与对外互动争议" aria-label="来源 64">[64]</a><a class="citation" href="#ref-68" title="粉丝高互动帖：双担与提纯争议" aria-label="来源 68">[68]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a><a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a></td>
+<td>坚持单人叙事；如必须出现他人，只谈明确作品与职业合作，不使用关系暗号</td>
+</tr>
+<tr>
+<td><strong>《乘风2023》名次与节目公允</strong></td>
+<td>浪4、卡位、未成团、意难平、成团位、投票、名次、芒选、皇/隐皇、节目组黑幕、镜头量、刷脸、抱团、挡枪、做票、票数、谁抢位置</td>
+<td>争议会迅速引入其他艺人粉籍与平台立场，把访谈从人物成长变成旧案复盘。<a class="citation" href="#ref-72" title="乘风卡位争议攻击帖" aria-label="来源 72">[72]</a><a class="citation" href="#ref-73" title="微博搜索：曾可妮 争议" aria-label="来源 73">[73]</a><a class="citation" href="#ref-74" title="乘风抱团与刷脸质疑帖" aria-label="来源 74">[74]</a><a class="citation" href="#ref-104" title="小红书用户（2025）。乘风历届卡位姐姐讨论" aria-label="来源 104">[104]</a><a class="citation" href="#ref-130" title="蜡笔小昕MELARS（2026）。笑死 和芒果势不两立" aria-label="来源 130">[130]</a></td>
+<td>只谈30岁礼物、舞台方法、服装参与、主动记录同伴与重新定义“赢”</td>
+</tr>
+<tr>
+<td><strong>八卦、绯闻与私人关系</strong></td>
+<td>恋情、理想型、谁追谁、真假朋友、营业关系、避嫌、性取向暗示、暧昧对象、懂的都懂</td>
+<td>任一回答都容易被剪成站队或关系证据，且不服务品牌正向目标</td>
+<td>完全避开，转向家乡、职业、身体、宠物、个人边界</td>
+</tr>
+<tr>
+<td><strong>替粉丝控诉或苦情翻身</strong></td>
+<td>为什么没火、糊、被埋没、资源差、镜头少、公司不给力、终于被看见、终于翻红、逆袭、涅槃、破茧、意难平</td>
+<td>会把品牌变成申诉场，并默认她此前“失败/不被看见”；粉丝对资源现实落差敏感。<a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a><a class="citation" href="#ref-75" title="粉丝：古装资源话题与实际角色量落差" aria-label="来源 75">[75]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+<td>“她一直在做”“能力没有停”“此刻正好”“下一场见”</td>
+</tr>
+<tr>
+<td><strong>夸大资源、番位、戏份与团队背书</strong></td>
+<td>资源咖、霸屏、资源飞升、古装一部接一部、番位、抬轿、镶边、客串、有效播出；公司一直懂她、团队审美稳定、粉丝终于被照顾好</td>
+<td>夸大容易被实际角色量和物料交付反驳；粉丝长期关注视觉质量、通知、剧宣和活动兑现。<a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a><a class="citation" href="#ref-75" title="粉丝：古装资源话题与实际角色量落差" aria-label="来源 75">[75]</a></td>
+<td>只写已官宣作品和本品牌已确认交付，不评价公司历史功过</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="11-2-二级敏感-内部理解-对外换词或先确认"></span><h3 class="subsection-title">11.2 二级敏感：内部理解，对外换词或先确认</h3>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>项目</th>
+<th>不建议用词/做法</th>
+<th>安全口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>反差玩笑</td>
+<td>脸臭、耍大牌、邪恶猫、强制爱</td>
+<td>冷脸、表情被误读、猫不配合、有边界<a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a><a class="citation" href="#ref-113" title="合力有戏（2025）。曾可妮因“脸太酷”被判定没笑" aria-label="来源 113">[113]</a></td>
+</tr>
+<tr>
+<td>身材与运动</td>
+<td>减肥、节食、暴瘦、腰围/腿围、空腹训练、熬夜硬练、与他人身材比较</td>
+<td>力量、恢复、安全、身体控制、可持续努力<a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a><a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></td>
+</tr>
+<tr>
+<td>生图/精修</td>
+<td>不上镜、P图前后、谁骗了你、拿丑照让本人自证</td>
+<td>保留现场光、真实纹理；主视觉与手机直出双轨发布<a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-106" title="Star Map Collection（2025）。曾可妮生图" aria-label="来源 106">[106]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a></td>
+</tr>
+<tr>
+<td>身份选择</td>
+<td>爱豆还是演员、转型成功/失败、以后还跳不跳</td>
+<td>不二选一；问舞蹈和角色如何互相帮助<a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a></td>
+</tr>
+<tr>
+<td>宠物</td>
+<td>擅自写品种、年龄、健康、性别；把Q宝IP当猫；称她养狗</td>
+<td>由本人现场说名字；字幕上线前让团队逐字确认<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></td>
+</tr>
+<tr>
+<td>家人</td>
+<td>追问父母职业、家庭关系、住址、母亲是否经常入镜</td>
+<td>只轻触本人已公开的“生活打断”与家乡记忆<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a></td>
+</tr>
+<tr>
+<td>纹身</td>
+<td>强行特写、追问含义、用作叛逆噱头</td>
+<td>是否露出服从艺人团队、品牌品类和传播地区审核<a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+</tr>
+<tr>
+<td>粉圈称谓</td>
+<td>老公姐、主人、妈妈、老婆、斩女</td>
+<td>可少量保留为UGC原貌，不作为品牌主叙事<a class="citation" href="#ref-30" title="媒体：任迪斩女型女二" aria-label="来源 30">[30]</a><a class="citation" href="#ref-85" title="曾可妮（2026）。曾可妮的小红书主页" aria-label="来源 85">[85]</a></td>
+</tr>
+<tr>
+<td>早期履历</td>
+<td>确认式讲“放弃编制/稳定工作”“北漂多年”“户籍”等</td>
+<td>录制前核实单位、时间、离职原因；未经确认只问“第一次职业选择”<a class="citation" href="#ref-32" title="粉丝长文：歌舞团与热血漫画感" aria-label="来源 32">[32]</a><a class="citation" href="#ref-39" title="粉丝安利长文：早期履历" aria-label="来源 39">[39]</a><a class="citation" href="#ref-41" title="粉丝回忆：放弃稳定工作、北漂追舞台" aria-label="来源 41">[41]</a></td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="11-3-视觉与剪辑雷区"></span><h3 class="subsection-title">11.3 视觉与剪辑雷区</h3>
+<ol>
+<li>不设计任何女艺人的并肩、对视、搂腰、贴脸“双A”封面或暧昧二剪入口。</li>
+<li>不将红衣、金发/特定发饰、武器、血迹和既有台词组合成角色复刻。</li>
+<li>不用王冠、权杖、奖杯、登顶、排名牌、成团位隐喻“本应属于她的位置”。</li>
+<li>不用“破茧、逆风翻盘、终于红了”连接任何节目或职业节点。</li>
+<li>不拍极端饮食、只喝水、空腹健身、熬夜硬扛；不公开体重或围度。</li>
+<li>不强抱猫、不限制猫离场、不让猫穿复杂服装；不把动物应激当笑点。</li>
+<li>不做精修/生图对照羞辱，不让她为旧妆造或摄影团队“审判打分”。</li>
+<li>不用腿、脚、腰、高跟鞋局部作性化封面；比例应服务人物行动。</li>
+<li>不把线下合照、签名或私人回应做成粉丝等级；线下稀缺物料应提供线上平等版本。</li>
+<li>不许愿未官宣的作品、活动、宠物出镜或后续互动；所有时间表由品牌自己负责并准确交付。</li>
+</ol>
+<span class="heading-anchor" id="11-4-发布前敏感词组合规则"></span><h3 class="subsection-title">11.4 发布前敏感词组合规则</h3>
+<p>单个普通词未必危险，<strong>“他人姓名 + 关系词”“节目名 + 结果词”“职业状态 + 资源评价”</strong>才是高风险组合。建议把以下组合设为人工复审，而非机械全删：</p>
+<ul>
+<li>任一他人姓名 + CP/好嗑/双A/姐狗/老公/老婆/灵魂伴侣/避嫌；</li>
+<li>青春有你2/乘风/浪4 + 名次/卡位/成团/皇/做票/镜头/抱团/意难平；</li>
+<li>曾可妮 + 糊/没火/终于红/被埋没/资源/番位/公司不给力；</li>
+<li>猫咪名称 + 品种/年龄/病/体重/去世/新宠物（需团队事实确认）；</li>
+<li>生图/精修 + 丑/骗/照骗/不上镜；</li>
+<li>舞者/演员 + 放弃/转型失败/只能选一个。</li>
+</ul>
+<span class="heading-anchor" id="12-粉丝内部的分歧地图-避免踩雷-而不是给粉丝贴标签"></span><h2 class="section-title">12. 粉丝内部的分歧地图：避免踩雷，而不是给粉丝贴标签</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>分歧轴</th>
+<th>一侧更在意</th>
+<th>另一侧更在意</th>
+<th>共同公约数</th>
+<th>品牌处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>唯粉 vs CP粉</strong></td>
+<td>单人事业、作品、本人边界</td>
+<td>双人化学反应、关系细节、同框回忆</td>
+<td>都关注她被看见，但传播目的不同</td>
+<td>只做单人叙事；不要试图用模糊暗号“两边讨好”<a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-68" title="粉丝高互动帖：双担与提纯争议" aria-label="来源 68">[68]</a><a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a></td>
+</tr>
+<tr>
+<td><strong>唯粉 vs 团粉/旧节目合作粉</strong></td>
+<td>个人事业与资源聚焦</td>
+<td>旧舞台、临时组合、群体回忆</td>
+<td>对当前舞台能力仍有兴趣</td>
+<td>不复活旧团名/关系叙事；可用无他人姓名的舞台档案<a class="citation" href="#ref-65" title="微博搜索：曾可妮 刘令姿 唯粉" aria-label="来源 65">[65]</a><a class="citation" href="#ref-66" title="粉丝：双人舞台与唯粉边界" aria-label="来源 66">[66]</a></td>
+</tr>
+<tr>
+<td><strong>老粉 vs 新粉</strong></td>
+<td>早期舞台、半扎马尾、旧歌、十年与长期等待</td>
+<td>任迪、郑南衣、妙水、姜南风等角色和片场内容</td>
+<td>“她一直能做、仍有下一场”</td>
+<td>用“身体记得—角色经过—下一场见”搭桥，不给阶段排高低<a class="citation" href="#ref-30" title="媒体：任迪斩女型女二" aria-label="来源 30">[30]</a><a class="citation" href="#ref-44" title="粉丝：见面会《Falling for u》大合唱" aria-label="来源 44">[44]</a><a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></td>
+</tr>
+<tr>
+<td><strong>舞台粉 vs 演员粉</strong></td>
+<td>完整唱跳、直拍、不退功、不放弃舞台</td>
+<td>进组、角色跨度、表演被看见</td>
+<td>都认可专业和行动</td>
+<td>不问二选一，问两个身份如何互相反哺<a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a></td>
+</tr>
+<tr>
+<td><strong>中性酷感 vs 古典女性感</strong></td>
+<td>短发、露额、宽松廓形、皮革、帅感</td>
+<td>长发、红衣、国风、清冷贵气</td>
+<td>都要求比例、气场和完成度</td>
+<td>同组做轮廓/材质反转；不宣布“她真正只适合一种”<a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a><a class="citation" href="#ref-117" title="网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发" aria-label="来源 117">[117]</a></td>
+</tr>
+<tr>
+<td><strong>生图真实派 vs 精修时尚派</strong></td>
+<td>现场光、皮肤纹理、真人冲击</td>
+<td>概念、妆发、构图完成度</td>
+<td>都反感低质物料</td>
+<td>主视觉高完成度，第二波发手机直出和真实过程<a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-106" title="Star Map Collection（2025）。曾可妮生图" aria-label="来源 106">[106]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a><a class="citation" href="#ref-126" title="喵艾MeowI（2026）。第一次拍曾可妮，真有点羡慕妮丝了" aria-label="来源 126">[126]</a></td>
+</tr>
+<tr>
+<td><strong>宠物生活粉 vs 事业内容粉</strong></td>
+<td>猫、家、Vlog、互动日常</td>
+<td>舞台、角色、工作成果</td>
+<td>喜欢反差与真实本人</td>
+<td>猫是生活章节和结尾，不抢人物主线</td>
+</tr>
+<tr>
+<td><strong>线下参与粉 vs 远程陪伴粉</strong></td>
+<td>合照、签名、伴手礼、被叫到ID</td>
+<td>直播、长视频、可保存图片和平等可见</td>
+<td>都希望被认真回应</td>
+<td>稀缺线下物件数字化，匿名ID，避免粉丝等级<a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a><a class="citation" href="#ref-127" title="赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮" aria-label="来源 127">[127]</a></td>
+</tr>
+<tr>
+<td><strong>对团队运营不满者 vs 只想支持艺人者</strong></td>
+<td>物料节奏、视觉质量、工作人员、剧宣、通知与兑现</td>
+<td>不愿负面讨论盖过艺人作品</td>
+<td>都要求品牌交付可靠</td>
+<td>品牌不替公司辩护，以清晰时间表和高质量物料解决自己可控的部分<a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a></td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="12-1-不同入坑阶段的情感按钮与雷点"></span><h3 class="subsection-title">12.1 不同入坑阶段的情感按钮与雷点</h3>
+<ul>
+<li><strong>2020节目期老粉：</strong>会被半扎马尾、旧歌、学生/舞者档案、长期等待和“爱人先爱己”打动；雷点是旧CP、名次、打投和粉籍冲突。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a><a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a></li>
+<li><strong>任迪/现代角色粉：</strong>喜欢洒脱、现代大波浪、高妹穿搭和中性都市感；雷点是品牌只用古装或把“斩女”延伸到私人关系。<a class="citation" href="#ref-30" title="媒体：任迪斩女型女二" aria-label="来源 30">[30]</a><a class="citation" href="#ref-31" title="媒体：任迪圈粉与高妹穿搭" aria-label="来源 31">[31]</a></li>
+<li><strong>《云之羽》与舞台期粉丝：</strong>喜欢刺客战损、舞台实力和极致反差；雷点是卡位、节目公平、同组关系与角色复刻过度。<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-72" title="乘风卡位争议攻击帖" aria-label="来源 72">[72]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a></li>
+<li><strong>妙水粉：</strong>偏好红衣魅狠和角色命运；雷点是品牌把角色的“疯批/美强惨”当成本人人格。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a></li>
+<li><strong>姜南风及近年新粉：</strong>更容易被运动过程、雪景、又酷又萌、片场第一视角吸引；雷点是粉圈黑话门槛与旧节目恩怨。<a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a><a class="citation" href="#ref-80" title="曾可妮：《嘘，国王在冬眠》姜南风开播" aria-label="来源 80">[80]</a><a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a></li>
+<li><strong>当下舞台/见面会粉：</strong>在意唱跳仍然在线、ID被看见和“下一场”；雷点是暗示她已经放弃舞台或用演员身份否定过去。<a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a></li>
+</ul>
+<span class="heading-anchor" id="12-2-是否存在-粉丝集体反感某个人"></span><h3 class="subsection-title">12.2 是否存在“粉丝集体反感某个人”</h3>
+<p><strong>没有足够证据支持这一结论。</strong> 微博能确认的是2020—2021年的CP、唯粉、双担、关注关系曾发生高强度争执；小红书能确认多个阶段的CP内容会引入不同粉籍；但这不等于当前全体粉丝一致反感某位艺人。<a class="citation" href="#ref-61" title="粉丝观察：妆造争议外溢为跨粉圈冲突" aria-label="来源 61">[61]</a><a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-64" title="粉丝：唯粉群CP与对外互动争议" aria-label="来源 64">[64]</a><a class="citation" href="#ref-68" title="粉丝高互动帖：双担与提纯争议" aria-label="来源 68">[68]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a><a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a> 实务上应管理“关系框架和词语组合”，不要建立或传播具体人物黑名单，也不要把单条攻击评论升级为群体态度。</p>
+<span class="heading-anchor" id="recommendations-拍摄-访谈与宣发提案"></span><h2 class="section-title">Recommendations｜拍摄、访谈与宣发提案</h2>
+<span class="heading-anchor" id="13-总创意-身体记得-生活会回答"></span><h2 class="section-title">13. 总创意：《身体记得，生活会回答》</h2>
+<p><strong>一句话概念：</strong>一个总被看见“很强”的人，如何让身体记住练习，让角色经过自己，让家乡、粉丝和两只猫在工作结束后回答她。</p>
+<p>它比《强大不是没有害怕》更适合作为完整品牌企划，因为“身体记得”抓住舞者/演员的不可替代资产，“生活会回答”容纳母亲入镜、武汉、粉丝ID、猫不配合和“下一场见”；既有力量，也不制造苦难或比赛结果。</p>
+<span class="heading-anchor" id="13-1-访谈四幕结构"></span><h3 class="subsection-title">13.1 访谈四幕结构</h3>
+<p><strong>第一幕｜身体记得：能力从哪里来。</strong> 在空舞蹈室完成热身、标记动作与一次失败重来。问题围绕身体记忆、第一次职业选择、舞蹈如何帮助表演。不要从“你很努力”起问，而要问她怎样识别一个动作不对、如何复盘和休息。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></p>
+<p><strong>第二幕｜害怕也可以开始：控制与不可控。</strong> 用平衡板、护具、粉笔线代替危险滑板动作；谈滑板恐惧、重新定义赢、不急着要结果。保留她承认害怕的原貌，不剪成“天生无畏”。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a></p>
+<p><strong>第三幕｜角色经过：带走什么、留下什么。</strong> 行李箱中只放每个角色留下的一种材质、声音或动作，不穿回角色服。问题是“角色离开后，身体还留下什么”；以“下个角色见”代替作品输赢。<a class="citation" href="#ref-76" title="曾可妮：《点燃我，温暖你》任迪官宣" aria-label="来源 76">[76]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a><a class="citation" href="#ref-80" title="曾可妮：《嘘，国王在冬眠》姜南风开播" aria-label="来源 80">[80]</a><a class="citation" href="#ref-96" title="曾可妮（2024）。下个热血江湖我们再相见" aria-label="来源 96">[96]</a></p>
+<p><strong>第四幕｜生活会回答：回家与被看见。</strong> 行李箱被猫占据，手机里有武汉声音、粉丝匿名ID和旧通告单。问题围绕“爱人先爱己”、意外、回家后第一个动作、猫留下的礼物；猫可不出镜，环境声与痕迹足够。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a></p>
+<p><strong>结尾动作：</strong>让她在双面档案卡上写给“正在害怕、很急、觉得自己不值得的人”一句话，并亲自决定是否读出。不要要求宏大金句；停顿、修改和没写满都可保留。</p>
+<span class="heading-anchor" id="13-2-推荐访谈问题池-按安全程度排序"></span><h3 class="subsection-title">13.2 推荐访谈问题池（按安全程度排序）</h3>
+<ol>
+<li>十年里，你的身体替你记住了什么，而脑子已经忘了？</li>
+<li>你怎样判断一个动作“终于属于自己”，而不只是做对了？</li>
+<li>第一次承认“我其实很害怕”之后，你做的最小一步是什么？</li>
+<li>什么时候你发现，赢不一定需要别人宣布？</li>
+<li>从急着得到结果到允许机会慢慢来，中间发生了什么变化？</li>
+<li>一个角色结束后，你通常带走什么，又把什么还给她？</li>
+<li>舞蹈怎样改变你演戏时理解情绪的方式？角色又怎样改变你上台？</li>
+<li>你什么时候开始把休息、恢复和身体安全也看成专业的一部分？</li>
+<li>如果生活突然闯进工作画面，你更想重来，还是保留它？</li>
+<li>回到武汉时，最先恢复的是口音、胃口，还是一种不用解释的自己？</li>
+<li>你为什么会把“爱人先爱己”送给喜欢你的人？</li>
+<li>当你主动为别人拍照或把粉丝ID穿在身上时，你想让对方确认什么？</li>
+<li>收工后卸下工作状态的第一个动作是什么？</li>
+<li>旺崽和小Q分别用什么方式告诉你“今天到此为止”？（录前先核名）</li>
+<li>猫毛、旧通告单、票根、拍立得里，哪一样最像时间留下的证据？</li>
+<li>现在的你想给十年前排练厅里的自己留什么，不想替她改变什么？</li>
+<li>对正在害怕、等待或觉得自己不值得的人，你愿意写哪一句还没完全想好的话？</li>
+</ol>
+<span class="heading-anchor" id="14-时尚主编策划-15套拍摄妆造-主题与理由"></span><h2 class="section-title">14. 时尚主编策划：15套拍摄妆造、主题与理由</h2>
+<p>以下方案均以“人物行动”为起点，主动避开红衣金发战损、古装刺客、全黑女王、雪场长腿和健身房露腰的整套复刻。所谓“相对新”基于本轮公开样本，开拍前仍须与艺人团队核对未公开/待发物料。</p>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>主题 / 风格</th>
+<th>妆发与服装</th>
+<th>场景、道具与关键动作</th>
+<th>推荐理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td><strong>《身体记得》｜动作书法</strong></td>
+<td>露额湿发、薄底妆、铜棕眼；象牙白短夹克+墨色高腰裙裤</td>
+<td>黑白地胶、粉笔轨迹、超长宣纸、风机；动作长曝光</td>
+<td>把延伸、爆发和控制变成可见线条；东方感来自身体，不复刻古装。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td><strong>《十年返场》｜空剧场学姐</strong></td>
+<td>短发侧分、真实皮肤；旧白T+深蓝工装裤，末组换极简礼服</td>
+<td>空剧场、把杆、旧节目单、当下通告单；从热身到独自谢幕</td>
+<td>连接返校十年、舞者和演员，让老粉记忆对新受众也可读。<a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td><strong>《把害怕练成爱好》｜训练实验室</strong></td>
+<td>半扎马尾、汗感妆；奶白运动束身上衣+银灰阔腿</td>
+<td>低平衡板、护具、粉笔线、失败动作连拍；无危险特技</td>
+<td>直接承接她的滑板故事；勇敢呈现为练习方法而非口号。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td><strong>《武汉下雨了》｜在地电影感</strong></td>
+<td>雨后湿发、淡红唇；透明雨衣叠湖蓝针织</td>
+<td>早餐桌、旧伞、磁带录音机、轮渡/江风；收录方言与环境声</td>
+<td>武汉Vlog分享强；家乡通过声音、胃口和日常出现，不做地标宣传片。<a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td><strong>《一个人的片场》｜工种感行动派</strong></td>
+<td>低马尾、清晰眉形；卡其连体工装+亮橙内搭</td>
+<td>场记板、卷尺、胶带、灯架、对讲机；她搭景、贴标、打板、入镜</td>
+<td>粉丝真正喜欢她“会做事”；又能自然连接演员身份和幕后花絮。<a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td><strong>《卸下风以后》｜上班强者 × 下班真实</strong></td>
+<td>灰白结构西装转柔软背心；利落发型逐步松开，妆面允许轻微脱落</td>
+<td>棚门、化妆镜、脱下的高跟鞋、冰袋；从大步走到赤脚坐下</td>
+<td>精确回应“走路带风—高跟鞋喊痛”，比再拍冷脸女王更有人物。<a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td><strong>《白色权力》｜成熟但不冷</strong></td>
+<td>象牙白长西装、银灰丝绸内搭、高腰露出纵向比例；黑长直或侧分短发</td>
+<td>极简建筑、长台阶、半透明亚克力；低机位行走与停顿</td>
+<td>保留粉丝喜欢的比例、白西装与高级感，换掉高频全黑模板。<a class="citation" href="#ref-50" title="微博搜索：曾可妮 造型好喜欢" aria-label="来源 50">[50]</a><a class="citation" href="#ref-55" title="媒体：黑长直深V镂空西装" aria-label="来源 55">[55]</a><a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td><strong>《风从肩背经过》｜柔软力量肖像</strong></td>
+<td>极淡眼妆、不对称软甲感上衣+阔腿裙裤；不磨掉肌肉纹理</td>
+<td>半透明巨幅织物、侧逆光、风机；肩背发力与缓慢恢复</td>
+<td>让力量由肌肉控制和织物反应呈现，不回到运动内衣/镜面健身房。<a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td><strong>《冷脸喜剧》｜表情说明书</strong></td>
+<td>同一妆面拍八种微表情；灰紫西装+彩色袜或柔软针织</td>
+<td>证件照机、表情卡、错误提示灯；系统误判与本人反应</td>
+<td>把“脸太酷被判没笑”转成幽默，避免使用“脸臭/耍大牌”。<a class="citation" href="#ref-113" title="合力有戏（2025）。曾可妮因“脸太酷”被判定没笑" aria-label="来源 113">[113]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td><strong>《爱人先爱己》｜清晨给自己的信</strong></td>
+<td>奶油白衬衫、燕麦针织长裙/宽裤；自然卷、干净皮肤</td>
+<td>清晨房间、镜子、折叠便笺、未寄出的信；写、删、再写</td>
+<td>将粉丝关系落在成熟自爱上，适合品牌价值主视觉。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td><strong>《主动靠近》｜为别人拍照的人</strong></td>
+<td>焦糖风衣、浅蓝衬衫、棕靴；成熟大波浪</td>
+<td>城市街角、一次性相机、联系人小卡；她反拍摄影师与工作人员</td>
+<td>呼应主动记录同伴，让她从“被观看”变成“看见别人”。<a class="citation" href="#ref-47" title="媒体：乘风主动记录其他姐姐" aria-label="来源 47">[47]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td><strong>《猫毛实验室》｜柔软的麻烦</strong></td>
+<td>雾蓝防尘罩衫、奶油妆面、松散发；不用猫耳妆</td>
+<td>粘毛滚、透明收纳盒、行李箱、直播灯、猫隧道；猫自由进出</td>
+<td>从黑衣粘毛、箱子长猫和远程看猫开发剧情；不配合也成立。<a class="citation" href="#ref-107" title="尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她" aria-label="来源 107">[107]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td><strong>《夜班电台》｜声音近景</strong></td>
+<td>自然发微湿纹理；墨蓝针织与少量银色饰品</td>
+<td>旧麦克风、耳返、录音灯、波形投影；保留呼吸、笑场、衣料摩擦</td>
+<td>对应全场接唱与“声音留下来”，扩展她不只靠视觉的亲近感。<a class="citation" href="#ref-44" title="粉丝：见面会《Falling for u》大合唱" aria-label="来源 44">[44]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td><strong>《东方节拍器》｜非角色化新东方</strong></td>
+<td>矿物蓝、墨灰现代剪裁，局部盘扣结构/银线；清透妆</td>
+<td>丝线、鼓槌、纸面节拍线、水纹投影；动作为舞蹈节奏而非武打</td>
+<td>延续国风和身体优势，同时去掉宝剑、红衣、宫殿与角色台词。<a class="citation" href="#ref-51" title="曾可妮：傣妹妆造" aria-label="来源 51">[51]</a><a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a></td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td><strong>《下一场见》｜职业档案室</strong></td>
+<td>每阶段只保留一种材质线索，最终组合为现代拼接礼服；妆发从学生到当下递进</td>
+<td>联系表、负片、排练鞋、场记板、剧本页、猫毛和匿名ID；每阶段写一个动词</td>
+<td>汇合十年、角色、粉丝和回家，适合访谈片头/收尾与整季宣发。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-96" title="曾可妮（2024）。下个热血江湖我们再相见" aria-label="来源 96">[96]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a></td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="14-1-15套中建议优先制作的5套"></span><h3 class="subsection-title">14.1 15套中建议优先制作的5套</h3>
+<p>若预算只允许5套，优先顺序为：①《身体记得》（最强差异化与视频能力）；②《一个人的片场》（行动者与演员工种）；③《卸下风以后》（最高共识反差）；④《武汉下雨了》（公共温度和地域声音）；⑤《猫毛实验室》（粉丝私密识别与轻传播）。这五套共同覆盖专业、工作、反差、家乡与回家，不依赖任何争议节目或角色复刻。</p>
+<span class="heading-anchor" id="15-拍摄内容-妆造-服饰-场景与道具建议-15条"></span><h2 class="section-title">15. 拍摄内容、妆造、服饰、场景与道具建议（15条）</h2>
+<ol>
+<li><strong>每组必须有动作任务。</strong> 行走、热身、贴地标、搭灯、写卡、打包或清理猫毛，避免只靠冷脸站姿。<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a><a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a></li>
+<li><strong>用双状态构图。</strong> 同一场景拍“控制”和“解除控制”，例如大步进入—赤脚坐下、完整动作—笑场重来。<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a></li>
+<li><strong>比例服务专业，不服务物化。</strong> 高腰、短外套、纵向开衩、裙裤和清晰肩腰结构优于普通遮腿长裤；全身动作优于腿脚局部。<a class="citation" href="#ref-31" title="媒体：任迪圈粉与高妹穿搭" aria-label="来源 31">[31]</a><a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a></li>
+<li><strong>发型作为主要新鲜轴。</strong> 露额短发/侧分、半扎马尾、成熟大波浪、湿发和松散自然卷分别承载专业、老粉记忆、熟龄、训练与生活；厚齐刘海准备备选。<a class="citation" href="#ref-49" title="微博搜索：曾可妮 想看造型" aria-label="来源 49">[49]</a><a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a></li>
+<li><strong>少修图但不放弃时尚完成度。</strong> 主视觉保留骨相、皮肤和肌肉纹理；第二波发布手机直出、现场光和动作失败，不做精修对照羞辱。<a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-106" title="Star Map Collection（2025）。曾可妮生图" aria-label="来源 106">[106]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a><a class="citation" href="#ref-126" title="喵艾MeowI（2026）。第一次拍曾可妮，真有点羡慕妮丝了" aria-label="来源 126">[126]</a></li>
+<li><strong>禁用整套“红衣+金发+血迹+烛台/宫殿”。</strong> 任一元素可孤立转译，但组合即角色复刻。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a></li>
+<li><strong>东方内容先找身体和个人记忆，再找服装。</strong> 可从大学课堂、国风舞台、方言、节拍与老师切入；文化元素必要时配顾问。<a class="citation" href="#ref-51" title="曾可妮：傣妹妆造" aria-label="来源 51">[51]</a><a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></li>
+<li><strong>运动拍“失败—调整—恢复”。</strong> 不追求危险动作和一次成功；把护具、拉伸、补水、休息纳入画面。<a class="citation" href="#ref-38" title="百度娱乐人物：姜南风采访与滑雪安全提醒" aria-label="来源 38">[38]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></li>
+<li><strong>猫可以缺席，但痕迹必须准确。</strong> 粘毛滚、黑衣猫毛、行李箱、直播灯、手机监控比猫耳和“喵系美人”更有粉丝识别度。<a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-17" title="拍掉旺崽的毛，出门当女明星" aria-label="来源 17">[17]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></li>
+<li><strong>猫若出镜执行动物福利方案。</strong> 熟悉空间、短时、无闪光、可自由离场；停止任何强抱、复杂服装和惊吓声音。</li>
+<li><strong>道具必须能被她使用。</strong> 相机、耳返、排练鞋、粉笔、场记板、通告单、粘毛滚、票根和录音机优于王冠、宝剑、酒杯和装饰性书本。<a class="citation" href="#ref-47" title="媒体：乘风主动记录其他姐姐" aria-label="来源 47">[47]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a></li>
+<li><strong>让声音成为素材。</strong> 保留鞋跟落地、呼吸、衣料、场记板、武汉环境声、猫的哈声与笑场；不以煽情配乐覆盖真实声。<a class="citation" href="#ref-44" title="粉丝：见面会《Falling for u》大合唱" aria-label="来源 44">[44]</a><a class="citation" href="#ref-99" title="曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog" aria-label="来源 99">[99]</a><a class="citation" href="#ref-111" title="尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI" aria-label="来源 111">[111]</a></li>
+<li><strong>本人参与选择。</strong> 记录她对服装、动作、灯光或道具的判断，形成一支“她怎样把方案变成自己的”幕后短片。<a class="citation" href="#ref-54" title="媒体：乘风幕后Vlog与服装参与" aria-label="来源 54">[54]</a></li>
+<li><strong>每套做角色相似度反向审稿。</strong> 一旦三名非核心观者都联想到郑南衣、妙水、姜南风或某旧全黑大片，继续去角色化。</li>
+<li><strong>品牌交付即舆情管理。</strong> 预先锁定发布时间、尺寸、字幕、无水印图、移动端裁切与补发机制；低清、拖延和模糊“敬请期待”会迅速进入既有运营不满框架。<a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a></li>
+</ol>
+<span class="heading-anchor" id="16-宣发内容矩阵与节奏"></span><h2 class="section-title">16. 宣发内容矩阵与节奏</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>波次</th>
+<th>内容</th>
+<th>传播目标</th>
+<th>必审风险</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>T-7</strong></td>
+<td>12—15秒脚步/呼吸/粉笔/场记板无正脸预告</td>
+<td>先立专业，不透支造型</td>
+<td>禁“王者归来、回归舞台、终于”</td>
+</tr>
+<tr>
+<td><strong>T-5</strong></td>
+<td>《身体记得》主视觉与动作短片</td>
+<td>建立差异化高质感</td>
+<td>禁全黑王冠、排名/登顶隐喻</td>
+</tr>
+<tr>
+<td><strong>T-3</strong></td>
+<td>武汉声音明信片+旧照片/通告单局部</td>
+<td>建立温度和时间</td>
+<td>家人隐私、住址、学校内部未授权信息</td>
+</tr>
+<tr>
+<td><strong>T-1</strong></td>
+<td>“行李箱被占/粘毛滚找不到”生活错误预告</td>
+<td>拉近距离、激活养猫讨论</td>
+<td>宠物核名、是否真猫、福利审核</td>
+</tr>
+<tr>
+<td><strong>T日</strong></td>
+<td>完整访谈+5组人物图+1分钟动作剪辑</td>
+<td>完成人物主叙事</td>
+<td>CP、节目结果、资源、体重、身份二选一终审</td>
+</tr>
+<tr>
+<td><strong>T+1</strong></td>
+<td>手机直出、未完成动作与本人选择过程</td>
+<td>满足生图和幕后偏好</td>
+<td>不做精修/生图羞辱，不甩锅团队</td>
+</tr>
+<tr>
+<td><strong>T+3</strong></td>
+<td>道具档案：通告单、匿名ID、拍立得、猫毛、行李箱</td>
+<td>让陪伴可保存、可二创</td>
+<td>ID匿名/授权，线上线下平等</td>
+</tr>
+<tr>
+<td><strong>T+5</strong></td>
+<td>15秒“她问摄影师一个问题/反拍工作人员”</td>
+<td>放大主动看见别人</td>
+<td>不带其他艺人关系暗示</td>
+</tr>
+<tr>
+<td><strong>T+7</strong></td>
+<td>本人口吻Vlog《下一场见》</td>
+<td>延长陪伴，收束系列</td>
+<td>不许愿未官宣项目或活动</td>
+</tr>
+</tbody>
+</table></div>
+<p>文案语气应短、具体、留有停顿。例如：“身体记得。生活会回答。”“先练一小步。”“猫不配合，今天也成立。”“下一场见。”避免堆叠“大女主、飒爽、破茧、闪耀、王者、顶峰”等通用明星文案。</p>
+<span class="heading-anchor" id="synthesis-跨平台综合判断"></span><h2 class="section-title">Synthesis｜跨平台综合判断</h2>
+<span class="heading-anchor" id="17-一个更准确的人物母题"></span><h3 class="subsection-title">17. 一个更准确的人物母题</h3>
+<p>微博让我们看到她怎样解释自己：害怕可以练、输赢可重写、结果可以慢一点、喜欢一个人之前先爱自己。小红书让我们看到这些话怎样落在身体和生活里：舞蹈多年不退功，返校把十年写成继续，横店熬夜后提醒健康，母亲和猫闯进镜头时不把意外剪掉。<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a> 两个平台共同指向的不是“外冷内热”这类静态反差，而是一个动态能力：<strong>她能在需要时建立控制，也能在安全的关系里放下控制。</strong></p>
+<p>这个母题能解释为什么舞台、运动、角色、武汉、粉丝和猫看似分散却属于同一人。舞台与运动是她练习控制的地方；角色让身体进入另一套规则；家乡、粉丝和猫让她确认不必一直完美。品牌的独特价值不是发现她“也很可爱”，而是让观众看见：柔软并不会取消强大，承认害怕也不会取消行动。</p>
+<span class="heading-anchor" id="18-平台不是两个版本的人设-而是两个叙事镜头"></span><h3 class="subsection-title">18. 平台不是两个版本的人设，而是两个叙事镜头</h3>
+<p>微博更像公共档案室：官宣、完整采访、节目节点、粉丝组织规则和历史争议在这里留下可追溯记录。小红书更像视觉与生活实验场：高赞/高藏内容显示人们愿意反复看什么，妆发账号与现场图显示镜头如何处理她，宠物和Vlog让生活细节形成连续剧。因此最终策略不应做“微博向内容”和“小红书向内容”两套人格，而应由同一母题切出不同画幅：微博发布完整观点和项目结构，小红书发布动作、过程、现场光、道具细节与生活错误。</p>
+<span class="heading-anchor" id="19-高互动旧资产-与-新项目方向-必须分开"></span><h3 class="subsection-title">19. “高互动旧资产”与“新项目方向”必须分开</h3>
+<p>郑南衣、妙水、全黑酷飒、战损、雪景和高挑比例均被验证有效；回避复刻并不是否认粉丝喜欢，而是区分“资产有效”与“品牌需要新鲜”。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-98" title="曾可妮（2025）。是啊 下次一起来" aria-label="来源 98">[98]</a> 正确方法是去皮留核：红衣反派的核是眼神与行动力，刺客战损的核是身体控制与故事感，雪场的核是平衡和面对失控，全黑女王的核是空间中的权力。把这些核移植到白色、雨天、工装、声音、猫毛与档案物件，就能保留识别度，又不成为角色二创。</p>
+<span class="heading-anchor" id="20-最值得粉丝珍藏的是-连续性-不是一次性宠粉"></span><h3 class="subsection-title">20. 最值得粉丝珍藏的是“连续性”，不是一次性宠粉</h3>
+<p>旺崽从相遇、婉拒、等直播到衣服猫毛；小Q从接到北京、细长猫条到胖球、小狮子；粉丝从旧舞台、五年等待、生日会、ID入衣到“下一场见”。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-15" title="609号航线：旺崽一些婉拒曾可妮" aria-label="来源 15">[15]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-24" title="曾可妮：小Q冬天像小狮子" aria-label="来源 24">[24]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a><a class="citation" href="#ref-48" title="粉丝：五年后生日会圆满" aria-label="来源 48">[48]</a><a class="citation" href="#ref-123" title="小猹live（2026）。端水的可妮太可爱了，快来认领ID" aria-label="来源 123">[123]</a> 这些内容的共同机制是时间连续性：粉丝知道前情，能识别一个小物的历史，也期待下一次更新。因此品牌不应只做一次“宠粉大礼包”，而应在T-7至T+7持续让同一物件发生变化，让受众看到一个小故事完成。</p>
+<span class="heading-anchor" id="counterevidence-register-反证与不确定性登记"></span><h2 class="section-title">Counterevidence Register｜反证与不确定性登记</h2>
+<ol>
+<li><strong>红衣、战损和古装互动很高，为什么仍建议降频？</strong> 反证确实成立：郑南衣、妙水及相关造型获得高转评赞。<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a><a class="citation" href="#ref-79" title="曾可妮：《七夜雪》妙水开播" aria-label="来源 79">[79]</a><a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a> 处理不是否定受欢迎，而是“去皮留核”；此反证提高了这些元素作为历史资产的价值，却不提高复刻的新鲜度。</li>
+<li><strong>粉丝曾想看女侠/女扮男装，为什么不列首选？</strong> 这类愿望在微博多次出现，但后续古装角色、战损和女侠式内容已大量满足。<a class="citation" href="#ref-49" title="微博搜索：曾可妮 想看造型" aria-label="来源 49">[49]</a><a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-78" title="曾可妮：《云之羽》郑南衣官宣" aria-label="来源 78">[78]</a> 仍应满足其背后的行动力、比例和身体线条，而不是字面再穿一次角色服。</li>
+<li><strong>短发/露额受欢迎，是否说明长发或齐刘海不受欢迎？</strong> 不成立。两平台同时有长发、黑长直、大波浪的正向样本；厚齐刘海只存在局部争议。<a class="citation" href="#ref-50" title="微博搜索：曾可妮 造型好喜欢" aria-label="来源 50">[50]</a><a class="citation" href="#ref-55" title="媒体：黑长直深V镂空西装" aria-label="来源 55">[55]</a><a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a> 正确结论是发型应增加变化并保留备选，不是宣布一种“唯一正确”。</li>
+<li><strong>宠物“双猫”是否所有细节都已确认？</strong> 两只猫和旺崽/小Q称呼获得较强支持，但品种、年龄、性别和Q宝同名歧义未解决。<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a><a class="citation" href="#ref-110" title="吃掉可可（2025）。俩小猫性格贼不一样" aria-label="来源 110">[110]</a> 结论仅支持叙事框架，字幕事实仍需团队确认。</li>
+<li><strong>是否可能她确实养狗、只是公开样本没发现？</strong> 可能，但当前两平台证据只支持与朋友的狗或片场动物互动。<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a> 因此品牌必须按“未证实”处理，不得把可能性写成事实。</li>
+<li><strong>CP/唯粉冲突是否仍是当前常态？</strong> 强证据集中在2020—2021年，当前并无全量证据证明持续互撕。<a class="citation" href="#ref-62" title="微博搜索：曾可妮 唯粉 CP粉" aria-label="来源 62">[62]</a><a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-67" title="微博搜索：曾可妮 喻言 唯粉" aria-label="来源 67">[67]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a> 但旧素材一旦被品牌重新调用仍可能激活历史冲突，故保留为高风险触发器而非描述当前日常。</li>
+<li><strong>团队运营不满是否已经改善？</strong> 近年确有生日会、音乐见面会和持续作品节点。<a class="citation" href="#ref-48" title="粉丝：五年后生日会圆满" aria-label="来源 48">[48]</a><a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a><a class="citation" href="#ref-103" title="曾可妮（2025）。我的生日会伴手礼开箱" aria-label="来源 103">[103]</a> 因此不能说团队“从未提供”；能确认的只是粉丝对稳定发布、视觉质量和信息透明仍敏感。<a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a></li>
+<li><strong>互动量是否直接代表全部粉丝偏好？</strong> 不代表。高赞可能来自路人扩散，高评论可能来自生日祝福或争议，旧笔记评论接口还存在缺失。报告把互动与内容语义、来源等级和跨平台重复结合判断，没有做伪精确民调。</li>
+</ol>
+<span class="heading-anchor" id="limitations-局限与上线前待核清单"></span><h2 class="section-title">Limitations｜局限与上线前待核清单</h2>
+<ol>
+<li>微博和小红书搜索均为算法排序；定向样本不能代表全平台完整普查，删除、不可见、限流内容也无法进入样本。</li>
+<li>微博为84个来源、94条证据的人工定向样本；小红书虽有693条候选，但只有29条详情和57条实际返回热评，不能将“0条返回”解释为“0条评论”。</li>
+<li>互动量跨年份、跨平台不可直接相加；报告只用来识别主题强度与代表案例。</li>
+<li>按用户要求，负面舆情仅以最小必要方式记录风险词和触发结构，没有扩散八卦、攻击详情或建立人物黑名单。</li>
+<li>早期上戏、歌舞团、离职和北漂细节目前多为粉丝资料；必须由艺人团队确认后才能写入正式旁白。<a class="citation" href="#ref-32" title="粉丝长文：歌舞团与热血漫画感" aria-label="来源 32">[32]</a><a class="citation" href="#ref-39" title="粉丝安利长文：早期履历" aria-label="来源 39">[39]</a><a class="citation" href="#ref-41" title="粉丝回忆：放弃稳定工作、北漂追舞台" aria-label="来源 41">[41]</a></li>
+<li>宠物品种、年龄、健康、性别与小Q/Q宝标准写法必须由团队确认；当前没有她本人养狗的证据。<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></li>
+<li>“粉丝不喜欢”样本少于正向样本；除了遮比例、低质物料等相对明确信号，不应把单条审美意见升级为共识。<a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a><a class="citation" href="#ref-70" title="微博搜索：曾可妮 觉醒东方 粉丝" aria-label="来源 70">[70]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a></li>
+<li>“未拍过”只能表述为“本轮公开样本中的相对空位”；上线前应让艺人团队核对未公开、待发和近期竞品物料。</li>
+<li>访谈涉及本人原话时，应让团队提供完整采访授权或重新在本次录制中亲口表达；不要直接拼接旧采访声画。</li>
+<li>报告截止2026-08-10；正式发布前需对新官宣、当前粉圈语境和宠物近况做一次轻量更新扫描。</li>
+<li>本项目按已确认的三步方案独立采集微博与小红书，没有另行全量抓取抖音、综艺正片和全部长视频平台；其中跨平台转载或本人Vlog只在微博/小红书可见样本内使用，不能将本报告表述为“全网穷尽调查”。</li>
+</ol>
+<span class="heading-anchor" id="上线前必须向艺人团队确认的10项"></span><h3 class="subsection-title">上线前必须向艺人团队确认的10项</h3>
+<ol>
+<li>早期入学、毕业、歌舞团与第一次职业选择的准确时间线；</li>
+<li>“放弃稳定工作/北漂”是否愿意公开、准确措辞是什么；</li>
+<li>旺崽、小Q/Q宝的标准名字、性别、品种、年龄及可公开范围；</li>
+<li>是否确实没有其他现有宠物，尤其是否有狗；</li>
+<li>猫是否允许出镜、熟悉场地、拍摄时长和动物福利要求；</li>
+<li>旧照片、学生证、通告单、粉丝ID、家庭片段的授权范围；</li>
+<li>纹身、身体肌理和无修图画面的展示边界；</li>
+<li>未公开/待发物料中是否已有本报告15套的相近方案；</li>
+<li>采访中可否再次谈滑板恐惧、“爱人先爱己”和不急着要结果；</li>
+<li>已官宣作品、角色名、活动名、发布时间与可宣传口径。</li>
+</ol>
+<span class="heading-anchor" id="claims-evidence-table-核心结论-证据映射"></span><h2 class="section-title">Claims-Evidence Table｜核心结论—证据映射</h2>
+<div class="table-scroll"><table class="data-table">
+<thead>
+<tr>
+<th>核心结论</th>
+<th>微博证据</th>
+<th>小红书证据</th>
+<th>置信度</th>
+<th>决策含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>舞台/身体控制是最稳定专业资产</td>
+<td>控场、完整采访与舞台节点<a class="citation" href="#ref-35" title="媒体：眉飞色舞舞台控场力" aria-label="来源 35">[35]</a><a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a><a class="citation" href="#ref-81" title="曾可妮：“因Ni而来”音乐见面会" aria-label="来源 81">[81]</a></td>
+<td>“可妮摇”、现场与不退功<a class="citation" href="#ref-100" title="曾可妮（2025）。可妮摇" aria-label="来源 100">[100]</a><a class="citation" href="#ref-124" title="Pranpriya（2026）。婧路人粉来看曾可妮，真的很可以" aria-label="来源 124">[124]</a><a class="citation" href="#ref-125" title="十万个点解噶（2026）。您完全不退功是吗" aria-label="来源 125">[125]</a></td>
+<td>高</td>
+<td>影像必须让她做事、动起来</td>
+</tr>
+<tr>
+<td>专业与生活松弛同框是最强人格反差</td>
+<td>上下班、高跟鞋痛、幕后反差<a class="citation" href="#ref-33" title="官方粉丝站：乘风飞行日记极致反差" aria-label="来源 33">[33]</a><a class="citation" href="#ref-37" title="视频博主：上班走路带风、下班高跟鞋喊痛" aria-label="来源 37">[37]</a></td>
+<td>母亲入镜、冷脸自嘲、猫不配合<a class="citation" href="#ref-108" title="曾可妮（2025）。cha个舞我妈突然路过真的很有生活" aria-label="来源 108">[108]</a><a class="citation" href="#ref-113" title="合力有戏（2025）。曾可妮因“脸太酷”被判定没笑" aria-label="来源 113">[113]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+<td>高</td>
+<td>保留笑场、意外、卸下装备</td>
+</tr>
+<tr>
+<td>“敢怕、敢慢”优于“逆袭翻红”</td>
+<td>滑板、输赢、不急结果、爱人先爱己<a class="citation" href="#ref-42" title="ELLEMEN新青年采访存档：敢怕、敢输、敢放" aria-label="来源 42">[42]</a></td>
+<td>十年、生日与健康提醒<a class="citation" href="#ref-115" title="曾可妮（2025）。我的上戏返校vlog" aria-label="来源 115">[115]</a><a class="citation" href="#ref-128" title="曾可妮（2026）。祝我生日快乐嗷" aria-label="来源 128">[128]</a><a class="citation" href="#ref-132" title="曾可妮（2026）。横店拍摄日志：依旧" aria-label="来源 132">[132]</a></td>
+<td>高</td>
+<td>访谈谈方法，不谈排名与资源</td>
+</tr>
+<tr>
+<td>双猫是长期真实生活线</td>
+<td>旺崽相遇、等候、小Q接京/变化、返家<a class="citation" href="#ref-10" title="曾可妮：两个大馋丫头" aria-label="来源 10">[10]</a><a class="citation" href="#ref-13" title="曾可妮：直播结束旺崽蹲在旁边" aria-label="来源 13">[13]</a><a class="citation" href="#ref-21" title="曾可妮：郑重介绍旺崽妹妹" aria-label="来源 21">[21]</a><a class="citation" href="#ref-22" title="曾可妮：小Q胖成球" aria-label="来源 22">[22]</a><a class="citation" href="#ref-25" title="曾可妮：小Q接来北京" aria-label="来源 25">[25]</a></td>
+<td>拒绝、掉毛、行李箱、远程看猫<a class="citation" href="#ref-90" title="月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆" aria-label="来源 90">[90]</a><a class="citation" href="#ref-118" title="尼斯娱乐（2026）。当曾可妮开始打包行李" aria-label="来源 118">[118]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a><a class="citation" href="#ref-120" title="吃掉可可（2026）。养猫人上班都这样吗" aria-label="来源 120">[120]</a></td>
+<td>高（名字细节待核）</td>
+<td>宠物用连续生活痕迹，不做摆拍</td>
+</tr>
+<tr>
+<td>无证据证明她本人养狗</td>
+<td>仅旺崽与朋友的狗同框<a class="citation" href="#ref-19" title="旺崽交到狗朋友" aria-label="来源 19">[19]</a></td>
+<td>狗搜索多为角色/片场/拟态</td>
+<td>中高</td>
+<td>不写“她的小狗”</td>
+</tr>
+<tr>
+<td>红衣反派、战损、全黑酷飒已充分拍摄</td>
+<td>角色与媒体造型<a class="citation" href="#ref-29" title="媒体：妙水美强惨疯批红衣美人" aria-label="来源 29">[29]</a><a class="citation" href="#ref-52" title="微博搜索：曾可妮 妆造" aria-label="来源 52">[52]</a><a class="citation" href="#ref-55" title="媒体：黑长直深V镂空西装" aria-label="来源 55">[55]</a><a class="citation" href="#ref-56" title="媒体：郑南衣战损妆造" aria-label="来源 56">[56]</a><a class="citation" href="#ref-59" title="媒体：妙水红衣金发亦正亦邪" aria-label="来源 59">[59]</a></td>
+<td>角色、红酒妆、新中式、黑衣<a class="citation" href="#ref-94" title="曾可妮（2023）。郑南衣不哭做我的男一" aria-label="来源 94">[94]</a><a class="citation" href="#ref-116" title="艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆" aria-label="来源 116">[116]</a><a class="citation" href="#ref-117" title="网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发" aria-label="来源 117">[117]</a><a class="citation" href="#ref-119" title="曾可妮（2026）。穿黑色不准抱猫" aria-label="来源 119">[119]</a></td>
+<td>高</td>
+<td>去角色皮肤，保留行动力</td>
+</tr>
+<tr>
+<td>真实生图、发型变化与比例被重视</td>
+<td>半扎马尾、白西装、遮腿负评<a class="citation" href="#ref-50" title="微博搜索：曾可妮 造型好喜欢" aria-label="来源 50">[50]</a><a class="citation" href="#ref-57" title="粉丝：舞台服装遮挡身材优势反馈" aria-label="来源 57">[57]</a><a class="citation" href="#ref-58" title="粉丝：经典半扎马尾造型" aria-label="来源 58">[58]</a></td>
+<td>短发露额、生图与现场摄影<a class="citation" href="#ref-89" title="Iris小野（2021）。曾可妮终于把齐刘海撩开了" aria-label="来源 89">[89]</a><a class="citation" href="#ref-95" title="曾可妮（2023）。短发女人也可以" aria-label="来源 95">[95]</a><a class="citation" href="#ref-105" title="七九（2025）。想不到曾可妮也是不上镜的那种" aria-label="来源 105">[105]</a><a class="citation" href="#ref-106" title="Star Map Collection（2025）。曾可妮生图" aria-label="来源 106">[106]</a><a class="citation" href="#ref-112" title="艺人化妆师丹帝（2025）。曾可妮站姐太会拍了" aria-label="来源 112">[112]</a></td>
+<td>中高</td>
+<td>双轨发布，服装服务身体结构</td>
+</tr>
+<tr>
+<td>CP、节目名次、资源/团队诉苦为主要风险簇</td>
+<td>后援会规则、历史冲突与运营诉求<a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-68" title="粉丝高互动帖：双担与提纯争议" aria-label="来源 68">[68]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a><a class="citation" href="#ref-71" title="粉丝高互动帖：工作室运营与见面会诉求" aria-label="来源 71">[71]</a><a class="citation" href="#ref-72" title="乘风卡位争议攻击帖" aria-label="来源 72">[72]</a><a class="citation" href="#ref-73" title="微博搜索：曾可妮 争议" aria-label="来源 73">[73]</a><a class="citation" href="#ref-74" title="乘风抱团与刷脸质疑帖" aria-label="来源 74">[74]</a></td>
+<td>CP内容、卡位与芒选争论<a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a><a class="citation" href="#ref-104" title="小红书用户（2025）。乘风历届卡位姐姐讨论" aria-label="来源 104">[104]</a><a class="citation" href="#ref-130" title="蜡笔小昕MELARS（2026）。笑死 和芒果势不两立" aria-label="来源 130">[130]</a></td>
+<td>高（历史风险）</td>
+<td>敏感词组合人工复审</td>
+</tr>
+<tr>
+<td>不存在可证实的“全体粉丝反感某一人”</td>
+<td>只能确认历史机制，不能确认当前集体名单<a class="citation" href="#ref-61" title="粉丝观察：妆造争议外溢为跨粉圈冲突" aria-label="来源 61">[61]</a><a class="citation" href="#ref-63" title="官方后援会：个人超话禁CP规则" aria-label="来源 63">[63]</a><a class="citation" href="#ref-69" title="粉丝：关注关系话题引发互骂" aria-label="来源 69">[69]</a></td>
+<td>多人CP语义但无全体共识<a class="citation" href="#ref-86" title="大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿" aria-label="来源 86">[86]</a><a class="citation" href="#ref-92" title="每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊" aria-label="来源 92">[92]</a><a class="citation" href="#ref-93" title="哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗" aria-label="来源 93">[93]</a></td>
+<td>中高</td>
+<td>不建立对家名单，管结构</td>
+</tr>
+</tbody>
+</table></div>
+<span class="heading-anchor" id="methodology-方法与质量控制"></span><h2 class="section-title">Methodology｜方法与质量控制</h2>
+<ol>
+<li><strong>问题拆解。</strong> 将原始需求拆为人设、时间线、正向故事、视觉偏好/重复、宠物、共同记忆、敏感点、粉丝分层与创意方案九个主题。</li>
+<li><strong>微博采集。</strong> 在用户授权登录状态下低频人工浏览，使用分层关键词定位后回到本人原帖、完整采访或认证来源；AI搜索摘要只作线索，不作事实证据。登记84个来源和94条证据。</li>
+<li><strong>小红书采集。</strong> 只使用TikHub Xiaohongshu App V2 API，未读取本地Cookies；先广搜和多排序建立候选池，再对高价值笔记请求详情与热评，控制付费。共归档109个响应，保守费用上限约1.09美元。<a class="citation" href="#ref-134" title="TikHub（2026）。小红书App V2搜索笔记接口" aria-label="来源 134">[134]</a><a class="citation" href="#ref-135" title="TikHub（2026）。小红书App V2图文详情接口" aria-label="来源 135">[135]</a><a class="citation" href="#ref-136" title="TikHub（2026）。小红书App V2视频详情接口" aria-label="来源 136">[136]</a><a class="citation" href="#ref-137" title="TikHub（2026）。小红书App V2评论接口" aria-label="来源 137">[137]</a></li>
+<li><strong>证据权重。</strong> A级本人原帖/完整采访 ＞ B级认证媒体、节目/剧集官微、合作方/现场创作者 ＞ C级多帖重复粉丝讨论 ＞ 单条弱意见。事实优先一手，偏好可采用聚合，争议以最小披露处理。</li>
+<li><strong>跨平台校正。</strong> 职业节点和本人价值观以微博一手材料为主；审美、生活方式、收藏与高赞触发器以小红书为主；宠物、风险与核心人设要求两平台互证或明确降级。</li>
+<li><strong>视觉审计。</strong> 小红书API返回的20张代表封面被整理成联系表，核对黑色、短发、红衣、雪景、白衬衣、新中式、清冷妆和宠物等既有模式；15套方案据此去重复。</li>
+<li><strong>互动解释。</strong> 赞、藏、评、分享均为抓取快照；高赞用于扩散，高藏用于留存倾向，高评需区分祝福与争议，不做跨平台加总或因果推断。</li>
+<li><strong>反证原则。</strong> 将“高互动但建议降频”“短发受欢迎但长发未被否定”“历史CP风险不等于当前互撕”“无养狗证据不等于绝对没有”等矛盾单独登记。</li>
+<li><strong>证据持久化。</strong> 两阶段<code>sources.jsonl</code>、<code>evidence.jsonl</code>与<code>claims.jsonl</code>在第三步合并，源URL、原子证据与结论可回查；报告引用编号1—84为微博、85—137为小红书。</li>
+<li><strong>隐私与安全。</strong> API密钥未写入报告或证据文件；宠物、家人、粉丝ID和未公开项目均设置上线前确认项。</li>
+</ol>
+        <section class="bibliography" id="bibliography">
+        <h2 class="section-title">Bibliography｜参考来源</h2>
+        <div class="bib-tools">
+          <label for="bib-search">筛选来源</label>
+          <input class="bib-search" id="bib-search" type="search" placeholder="输入编号、平台、作者或标题" autocomplete="off">
+          <span class="bib-count" id="bib-count">显示 137 条</span>
+        </div>
+        <div class="empty-state" id="empty-state">没有匹配的来源。</div>
+        <ol class="bib-list" id="bib-list"><li class="bib-entry" id="ref-1" data-search="1 微博 微博用户搜索：曾可妮"><span class="bib-number">[1]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/user?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE&amp;Refer=weibo_user" target="_blank" rel="noopener noreferrer">微博用户搜索：曾可妮</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-2" data-search="2 微博 曾可妮Jenny-Z 微博主页"><span class="bib-number">[2]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/u/1649818571" target="_blank" rel="noopener noreferrer">曾可妮Jenny-Z 微博主页</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-3" data-search="3 微博 曾可妮：亲爱的猫猫神已降临"><span class="bib-number">[3]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/RaDAw6uGy" target="_blank" rel="noopener noreferrer">曾可妮：亲爱的猫猫神已降临</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-4" data-search="4 微博 曾可妮：台风、健身与保温杯日常"><span class="bib-number">[4]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/R8dU90wID" target="_blank" rel="noopener noreferrer">曾可妮：台风、健身与保温杯日常</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-5" data-search="5 微博 609号航线：一日猫猫长"><span class="bib-number">[5]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7565709021/Qxocv1PTP" target="_blank" rel="noopener noreferrer">609号航线：一日猫猫长</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-6" data-search="6 微博 粉丝视频：帅女下班，见到小猫就变脸"><span class="bib-number">[6]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6356486224/PAXSOiBQz" target="_blank" rel="noopener noreferrer">粉丝视频：帅女下班，见到小猫就变脸</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-7" data-search="7 微博 粉丝转存：抱猫、卸妆、睡觉"><span class="bib-number">[7]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/2814898722/P7RB3DmJ4" target="_blank" rel="noopener noreferrer">粉丝转存：抱猫、卸妆、睡觉</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-8" data-search="8 微博 六月巡航：小寿星逗猫记"><span class="bib-number">[8]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6428403414/PvK7KvGhV" target="_blank" rel="noopener noreferrer">六月巡航：小寿星逗猫记</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-9" data-search="9 微博 微博搜索：曾可妮 猫"><span class="bib-number">[9]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E7%8C%AB" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 猫</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-10" data-search="10 微博 曾可妮：两个大馋丫头"><span class="bib-number">[10]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/RbnGHlfhu" target="_blank" rel="noopener noreferrer">曾可妮：两个大馋丫头</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-11" data-search="11 微博 曾可妮：窝里横的小喵"><span class="bib-number">[11]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/OBZmCykyh" target="_blank" rel="noopener noreferrer">曾可妮：窝里横的小喵</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-12" data-search="12 微博 粉丝：上辈子发大财，这辈子当旺崽"><span class="bib-number">[12]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6428403414/NAsGGfRa9" target="_blank" rel="noopener noreferrer">粉丝：上辈子发大财，这辈子当旺崽</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-13" data-search="13 微博 曾可妮：直播结束旺崽蹲在旁边"><span class="bib-number">[13]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/OBZlF3bov" target="_blank" rel="noopener noreferrer">曾可妮：直播结束旺崽蹲在旁边</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-14" data-search="14 微博 微博搜索：曾可妮 旺崽"><span class="bib-number">[14]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E6%97%BA%E5%B4%BD" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 旺崽</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-15" data-search="15 微博 609号航线：旺崽一些婉拒曾可妮"><span class="bib-number">[15]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7565709021/MjfhojCJr" target="_blank" rel="noopener noreferrer">609号航线：旺崽一些婉拒曾可妮</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-16" data-search="16 微博 官方后援会：嫉妒旺崽的一天"><span class="bib-number">[16]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5958560043/MjIiN1faX" target="_blank" rel="noopener noreferrer">官方后援会：嫉妒旺崽的一天</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-17" data-search="17 微博 拍掉旺崽的毛，出门当女明星"><span class="bib-number">[17]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7620092427/MdNjhiOjM" target="_blank" rel="noopener noreferrer">拍掉旺崽的毛，出门当女明星</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-18" data-search="18 微博 609号航线：小曾和旺崽二三事"><span class="bib-number">[18]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7565709021/Mmj1BlKsl" target="_blank" rel="noopener noreferrer">609号航线：小曾和旺崽二三事</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-19" data-search="19 微博 旺崽交到狗朋友"><span class="bib-number">[19]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1719014980/NDkmmclJu" target="_blank" rel="noopener noreferrer">旺崽交到狗朋友</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-20" data-search="20 微博 旺崽VIP专座兜风"><span class="bib-number">[20]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1833065025/NCpeObXWW" target="_blank" rel="noopener noreferrer">旺崽VIP专座兜风</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-21" data-search="21 微博 曾可妮：郑重介绍旺崽妹妹"><span class="bib-number">[21]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/M5KPnb8UR" target="_blank" rel="noopener noreferrer">曾可妮：郑重介绍旺崽妹妹</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-22" data-search="22 微博 曾可妮：小Q胖成球"><span class="bib-number">[22]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/OFMIK1qn1" target="_blank" rel="noopener noreferrer">曾可妮：小Q胖成球</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-23" data-search="23 微博 微博搜索：曾可妮 小Q"><span class="bib-number">[23]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%B0%8FQ" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 小Q</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-24" data-search="24 微博 曾可妮：小Q冬天像小狮子"><span class="bib-number">[24]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/P121adjCg" target="_blank" rel="noopener noreferrer">曾可妮：小Q冬天像小狮子</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-25" data-search="25 微博 曾可妮：小Q接来北京"><span class="bib-number">[25]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/OoArIkPoK" target="_blank" rel="noopener noreferrer">曾可妮：小Q接来北京</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-26" data-search="26 微博 媒体：云之羽女刺客美飒"><span class="bib-number">[26]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6314600572/MplWsbLhF" target="_blank" rel="noopener noreferrer">媒体：云之羽女刺客美飒</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-27" data-search="27 微博 微博搜索：曾可妮 人设"><span class="bib-number">[27]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E4%BA%BA%E8%AE%BE" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 人设</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-28" data-search="28 微博 媒体：爱情界锦鲤与桃花手势"><span class="bib-number">[28]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5888328091/Mn36Uw39c" target="_blank" rel="noopener noreferrer">媒体：爱情界锦鲤与桃花手势</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-29" data-search="29 微博 媒体：妙水美强惨疯批红衣美人"><span class="bib-number">[29]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6208485122/OALhfeFnX" target="_blank" rel="noopener noreferrer">媒体：妙水美强惨疯批红衣美人</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-30" data-search="30 微博 媒体：任迪斩女型女二"><span class="bib-number">[30]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7458252518/MeExaltbk" target="_blank" rel="noopener noreferrer">媒体：任迪斩女型女二</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-31" data-search="31 微博 媒体：任迪圈粉与高妹穿搭"><span class="bib-number">[31]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3946228785/Mh5CwrSry" target="_blank" rel="noopener noreferrer">媒体：任迪圈粉与高妹穿搭</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-32" data-search="32 微博 粉丝长文：歌舞团与热血漫画感"><span class="bib-number">[32]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/2400557671/J22PZkqjM" target="_blank" rel="noopener noreferrer">粉丝长文：歌舞团与热血漫画感</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-33" data-search="33 微博 官方粉丝站：乘风飞行日记极致反差"><span class="bib-number">[33]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7565709021/MFz6JctIh" target="_blank" rel="noopener noreferrer">官方粉丝站：乘风飞行日记极致反差</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-34" data-search="34 微博 粉丝：舞台强势与表演后可爱反差"><span class="bib-number">[34]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1822648573/MF8n2mPAA" target="_blank" rel="noopener noreferrer">粉丝：舞台强势与表演后可爱反差</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-35" data-search="35 微博 媒体：眉飞色舞舞台控场力"><span class="bib-number">[35]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6901886031/R47V6pHZI" target="_blank" rel="noopener noreferrer">媒体：眉飞色舞舞台控场力</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-36" data-search="36 微博 微博搜索：曾可妮 反差"><span class="bib-number">[36]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%8F%8D%E5%B7%AE" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 反差</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-37" data-search="37 微博 视频博主：上班走路带风、下班高跟鞋喊痛"><span class="bib-number">[37]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5249067681/PnpvrnTeu" target="_blank" rel="noopener noreferrer">视频博主：上班走路带风、下班高跟鞋喊痛</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-38" data-search="38 微博 百度娱乐人物：姜南风采访与滑雪安全提醒"><span class="bib-number">[38]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5909962605/Piw2A0sm4" target="_blank" rel="noopener noreferrer">百度娱乐人物：姜南风采访与滑雪安全提醒</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-39" data-search="39 微博 粉丝安利长文：早期履历"><span class="bib-number">[39]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3584385534/N9SlUlwjp" target="_blank" rel="noopener noreferrer">粉丝安利长文：早期履历</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-40" data-search="40 微博 微博搜索：曾可妮 坚持 努力 采访"><span class="bib-number">[40]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%9D%9A%E6%8C%81%20%E5%8A%AA%E5%8A%9B%20%E9%87%87%E8%AE%BF" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 坚持 努力 采访</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-41" data-search="41 微博 粉丝回忆：放弃稳定工作、北漂追舞台"><span class="bib-number">[41]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/2631445240/Jim8mcYAE" target="_blank" rel="noopener noreferrer">粉丝回忆：放弃稳定工作、北漂追舞台</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-42" data-search="42 微博 ELLEMEN新青年采访存档：敢怕、敢输、敢放"><span class="bib-number">[42]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5484955811/M3xW160Yx" target="_blank" rel="noopener noreferrer">ELLEMEN新青年采访存档：敢怕、敢输、敢放</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-43" data-search="43 微博 官方粉丝站：生日视频与睡衣反应"><span class="bib-number">[43]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7565709021/OiWTrnqDJ" target="_blank" rel="noopener noreferrer">官方粉丝站：生日视频与睡衣反应</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-44" data-search="44 微博 粉丝：见面会《Falling for u》大合唱"><span class="bib-number">[44]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/2643098082/Q95oQF2d9" target="_blank" rel="noopener noreferrer">粉丝：见面会《Falling for u》大合唱</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-45" data-search="45 微博 粉丝：努力与值得的双向回应"><span class="bib-number">[45]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5166890908/NaCvsv6Zw" target="_blank" rel="noopener noreferrer">粉丝：努力与值得的双向回应</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-46" data-search="46 微博 微博搜索：曾可妮 双向奔赴 粉丝"><span class="bib-number">[46]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%8F%8C%E5%90%91%E5%A5%94%E8%B5%B4%20%E7%B2%89%E4%B8%9D" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 双向奔赴 粉丝</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-47" data-search="47 微博 媒体：乘风主动记录其他姐姐"><span class="bib-number">[47]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5949268111/NcecTgEzs" target="_blank" rel="noopener noreferrer">媒体：乘风主动记录其他姐姐</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-48" data-search="48 微博 粉丝：五年后生日会圆满"><span class="bib-number">[48]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5627339167/PvBDU5Xbg" target="_blank" rel="noopener noreferrer">粉丝：五年后生日会圆满</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-49" data-search="49 微博 微博搜索：曾可妮 想看造型"><span class="bib-number">[49]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E6%83%B3%E7%9C%8B%20%E9%80%A0%E5%9E%8B" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 想看造型</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-50" data-search="50 微博 微博搜索：曾可妮 造型好喜欢"><span class="bib-number">[50]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E9%80%A0%E5%9E%8B%20%E5%A5%BD%E5%96%9C%E6%AC%A2" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 造型好喜欢</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-51" data-search="51 微博 曾可妮：傣妹妆造"><span class="bib-number">[51]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/QB5taqMB6" target="_blank" rel="noopener noreferrer">曾可妮：傣妹妆造</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-52" data-search="52 微博 微博搜索：曾可妮 妆造"><span class="bib-number">[52]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%A6%86%E9%80%A0" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 妆造</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-53" data-search="53 微博 媒体：皮质胸衣、星系披风与云朵发卡"><span class="bib-number">[53]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5710809096/MArbNu899" target="_blank" rel="noopener noreferrer">媒体：皮质胸衣、星系披风与云朵发卡</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-54" data-search="54 微博 媒体：乘风幕后Vlog与服装参与"><span class="bib-number">[54]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5710242575/N4VCMoG7H" target="_blank" rel="noopener noreferrer">媒体：乘风幕后Vlog与服装参与</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-55" data-search="55 微博 媒体：黑长直深V镂空西装"><span class="bib-number">[55]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5555806640/MDMZEuyFH" target="_blank" rel="noopener noreferrer">媒体：黑长直深V镂空西装</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-56" data-search="56 微博 媒体：郑南衣战损妆造"><span class="bib-number">[56]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5717136249/Myseuk7GO" target="_blank" rel="noopener noreferrer">媒体：郑南衣战损妆造</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-57" data-search="57 微博 粉丝：舞台服装遮挡身材优势反馈"><span class="bib-number">[57]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3272506944/N8L96kzCf" target="_blank" rel="noopener noreferrer">粉丝：舞台服装遮挡身材优势反馈</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-58" data-search="58 微博 粉丝：经典半扎马尾造型"><span class="bib-number">[58]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6206138628/JdNp1fWLR" target="_blank" rel="noopener noreferrer">粉丝：经典半扎马尾造型</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-59" data-search="59 微博 媒体：妙水红衣金发亦正亦邪"><span class="bib-number">[59]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3766773034/OALWykQ4D" target="_blank" rel="noopener noreferrer">媒体：妙水红衣金发亦正亦邪</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-60" data-search="60 微博 媒体：网球辣妹活力造型"><span class="bib-number">[60]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7841646839/PgT9d6SxI" target="_blank" rel="noopener noreferrer">媒体：网球辣妹活力造型</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-61" data-search="61 微博 粉丝观察：妆造争议外溢为跨粉圈冲突"><span class="bib-number">[61]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6525772145/N8LnoxwVG" target="_blank" rel="noopener noreferrer">粉丝观察：妆造争议外溢为跨粉圈冲突</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-62" data-search="62 微博 微博搜索：曾可妮 唯粉 CP粉"><span class="bib-number">[62]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%94%AF%E7%B2%89%20CP%E7%B2%89" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 唯粉 CP粉</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-63" data-search="63 微博 官方后援会：个人超话禁CP规则"><span class="bib-number">[63]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/5958560043/J5XHq4U0t" target="_blank" rel="noopener noreferrer">官方后援会：个人超话禁CP规则</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-64" data-search="64 微博 粉丝：唯粉群CP与对外互动争议"><span class="bib-number">[64]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6643860221/J5XTJn5rZ" target="_blank" rel="noopener noreferrer">粉丝：唯粉群CP与对外互动争议</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-65" data-search="65 微博 微博搜索：曾可妮 刘令姿 唯粉"><span class="bib-number">[65]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%88%98%E4%BB%A4%E5%A7%BF%20%E5%94%AF%E7%B2%89" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 刘令姿 唯粉</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-66" data-search="66 微博 粉丝：双人舞台与唯粉边界"><span class="bib-number">[66]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3560709063/Ji37tDOcv" target="_blank" rel="noopener noreferrer">粉丝：双人舞台与唯粉边界</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-67" data-search="67 微博 微博搜索：曾可妮 喻言 唯粉"><span class="bib-number">[67]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E5%96%BB%E8%A8%80%20%E5%94%AF%E7%B2%89" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 喻言 唯粉</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-68" data-search="68 微博 粉丝高互动帖：双担与提纯争议"><span class="bib-number">[68]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/2400557671/JiAnUhcVq" target="_blank" rel="noopener noreferrer">粉丝高互动帖：双担与提纯争议</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-69" data-search="69 微博 粉丝：关注关系话题引发互骂"><span class="bib-number">[69]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6983448768/JBwUcsyGL" target="_blank" rel="noopener noreferrer">粉丝：关注关系话题引发互骂</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-70" data-search="70 微博 微博搜索：曾可妮 觉醒东方 粉丝"><span class="bib-number">[70]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E8%A7%89%E9%86%92%E4%B8%9C%E6%96%B9%20%E7%B2%89%E4%B8%9D" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 觉醒东方 粉丝</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-71" data-search="71 微博 粉丝高互动帖：工作室运营与见面会诉求"><span class="bib-number">[71]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/3206390427/Plwb82Fqb" target="_blank" rel="noopener noreferrer">粉丝高互动帖：工作室运营与见面会诉求</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-72" data-search="72 微博 乘风卡位争议攻击帖"><span class="bib-number">[72]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6884692457/NaoGQy4Vh" target="_blank" rel="noopener noreferrer">乘风卡位争议攻击帖</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-73" data-search="73 微博 微博搜索：曾可妮 争议"><span class="bib-number">[73]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://s.weibo.com/weibo?q=%E6%9B%BE%E5%8F%AF%E5%A6%AE%20%E4%BA%89%E8%AE%AE" target="_blank" rel="noopener noreferrer">微博搜索：曾可妮 争议</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-74" data-search="74 微博 乘风抱团与刷脸质疑帖"><span class="bib-number">[74]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/7023198057/Nap41rgjJ" target="_blank" rel="noopener noreferrer">乘风抱团与刷脸质疑帖</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-75" data-search="75 微博 粉丝：古装资源话题与实际角色量落差"><span class="bib-number">[75]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6344115202/ODlFFreJH" target="_blank" rel="noopener noreferrer">粉丝：古装资源话题与实际角色量落差</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-76" data-search="76 微博 曾可妮：《点燃我，温暖你》任迪官宣"><span class="bib-number">[76]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/Md2FVvUcl" target="_blank" rel="noopener noreferrer">曾可妮：《点燃我，温暖你》任迪官宣</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-77" data-search="77 微博 新浪演出：曾可妮官宣加盟《乘风2023》"><span class="bib-number">[77]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/6579479312/ME4IQksgb" target="_blank" rel="noopener noreferrer">新浪演出：曾可妮官宣加盟《乘风2023》</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-78" data-search="78 微博 曾可妮：《云之羽》郑南衣官宣"><span class="bib-number">[78]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/MyqgClNJF" target="_blank" rel="noopener noreferrer">曾可妮：《云之羽》郑南衣官宣</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-79" data-search="79 微博 曾可妮：《七夜雪》妙水开播"><span class="bib-number">[79]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/OAIc76yMo" target="_blank" rel="noopener noreferrer">曾可妮：《七夜雪》妙水开播</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-80" data-search="80 微博 曾可妮：《嘘，国王在冬眠》姜南风开播"><span class="bib-number">[80]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/Pi1kUj2cD" target="_blank" rel="noopener noreferrer">曾可妮：《嘘，国王在冬眠》姜南风开播</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-81" data-search="81 微博 曾可妮：“因Ni而来”音乐见面会"><span class="bib-number">[81]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/QFDXgjjWn" target="_blank" rel="noopener noreferrer">曾可妮：“因Ni而来”音乐见面会</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-82" data-search="82 微博 曾可妮：《海棠春》王令仪开机"><span class="bib-number">[82]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/R5geSyXwu" target="_blank" rel="noopener noreferrer">曾可妮：《海棠春》王令仪开机</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-83" data-search="83 微博 曾可妮：《海棠春》王令仪杀青"><span class="bib-number">[83]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/RbErA7lmm" target="_blank" rel="noopener noreferrer">曾可妮：《海棠春》王令仪杀青</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-84" data-search="84 微博 曾可妮：《凤不栖》容潇杀青"><span class="bib-number">[84]</span><span class="platform-badge">微博</span><span class="bib-text"><a href="https://weibo.com/1649818571/RbNUl29Gs" target="_blank" rel="noopener noreferrer">曾可妮：《凤不栖》容潇杀青</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-85" data-search="85 小红书 曾可妮（2026）。曾可妮的小红书主页"><span class="bib-number">[85]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/user/profile/5bb0812324264b0001511d9b" target="_blank" rel="noopener noreferrer">曾可妮（2026）。曾可妮的小红书主页</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-86" data-search="86 小红书 大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿"><span class="bib-number">[86]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/5e7b5ca80000000001008ac8" target="_blank" rel="noopener noreferrer">大吉大梨（2020）。康康我们甜甜的觉醒双A~曾可妮X刘令姿</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-87" data-search="87 小红书 曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look"><span class="bib-number">[87]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/5f5c83b80000000001000c33" target="_blank" rel="noopener noreferrer">曾可妮（2020）。JennyZ曾可妮的时尚穿搭Look</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-88" data-search="88 小红书 PINKer私服穿搭（2021）。曾可妮私服｜夏日超酷的夏威夷帅哥穿搭"><span class="bib-number">[88]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/60953c12000000000102a683" target="_blank" rel="noopener noreferrer">PINKer私服穿搭（2021）。曾可妮私服｜夏日超酷的夏威夷帅哥穿搭</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-89" data-search="89 小红书 Iris小野（2021）。曾可妮终于把齐刘海撩开了"><span class="bib-number">[89]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/61322340000000002103e4d2" target="_blank" rel="noopener noreferrer">Iris小野（2021）。曾可妮终于把齐刘海撩开了</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-90" data-search="90 小红书 月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆"><span class="bib-number">[90]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6396ebc4000000001f012442" target="_blank" rel="noopener noreferrer">月亮归你（2022）。曾可妮被猫婉拒的人生，旺崽拒绝得好干脆</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-91" data-search="91 小红书 月亮归你（2022）。曾可妮给大家在线表演一个咬猫猫"><span class="bib-number">[91]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/63a70f1d0000000019021792" target="_blank" rel="noopener noreferrer">月亮归你（2022）。曾可妮给大家在线表演一个咬猫猫</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-92" data-search="92 小红书 每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊"><span class="bib-number">[92]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/64886c7a00000000140241a0" target="_blank" rel="noopener noreferrer">每天都要十点睡（2023）。朱珠和曾可妮真的好姐狗啊</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-93" data-search="93 小红书 哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗"><span class="bib-number">[93]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/64a81a58000000003500aa8a" target="_blank" rel="noopener noreferrer">哆唻咪fa唆不拉稀（2023）。Amber可妮这么好磕的吗</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-94" data-search="94 小红书 曾可妮（2023）。郑南衣不哭做我的男一"><span class="bib-number">[94]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/64f818e1000000001f006e9c" target="_blank" rel="noopener noreferrer">曾可妮（2023）。郑南衣不哭做我的男一</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-95" data-search="95 小红书 曾可妮（2023）。短发女人也可以"><span class="bib-number">[95]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6560495e000000000f02a5a8" target="_blank" rel="noopener noreferrer">曾可妮（2023）。短发女人也可以</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-96" data-search="96 小红书 曾可妮（2024）。下个热血江湖我们再相见"><span class="bib-number">[96]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/671dd76900000000160205b0" target="_blank" rel="noopener noreferrer">曾可妮（2024）。下个热血江湖我们再相见</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-97" data-search="97 小红书 曾可妮（2025）。难得的休息day"><span class="bib-number">[97]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/678229c800000000010013eb" target="_blank" rel="noopener noreferrer">曾可妮（2025）。难得的休息day</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-98" data-search="98 小红书 曾可妮（2025）。是啊 下次一起来"><span class="bib-number">[98]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/67e788d9000000001c03f00d" target="_blank" rel="noopener noreferrer">曾可妮（2025）。是啊 下次一起来</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-99" data-search="99 小红书 曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog"><span class="bib-number">[99]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/67f757e5000000001d01b689" target="_blank" rel="noopener noreferrer">曾可妮（2025）。第一集：本地伢武汉吃吃吃吃吃vlog</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-100" data-search="100 小红书 曾可妮（2025）。可妮摇"><span class="bib-number">[100]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/68036bfe000000001d016999" target="_blank" rel="noopener noreferrer">曾可妮（2025）。可妮摇</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-101" data-search="101 小红书 小狗特种兵（2025）。曾可妮生日会迎宾竟然是两只小猫"><span class="bib-number">[101]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/682c3b340000000023011dac" target="_blank" rel="noopener noreferrer">小狗特种兵（2025）。曾可妮生日会迎宾竟然是两只小猫</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-102" data-search="102 小红书 啊怎么好呢（2025）。离开曾可妮谁还把我当小猫"><span class="bib-number">[102]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6844fce40000000023010638" target="_blank" rel="noopener noreferrer">啊怎么好呢（2025）。离开曾可妮谁还把我当小猫</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-103" data-search="103 小红书 曾可妮（2025）。我的生日会伴手礼开箱"><span class="bib-number">[103]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/684528b1000000002102e827" target="_blank" rel="noopener noreferrer">曾可妮（2025）。我的生日会伴手礼开箱</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-104" data-search="104 小红书 小红书用户（2025）。乘风历届卡位姐姐讨论"><span class="bib-number">[104]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/684547d00000000012003101" target="_blank" rel="noopener noreferrer">小红书用户（2025）。乘风历届卡位姐姐讨论</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-105" data-search="105 小红书 七九（2025）。想不到曾可妮也是不上镜的那种"><span class="bib-number">[105]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6858b6c7000000000d01bee9" target="_blank" rel="noopener noreferrer">七九（2025）。想不到曾可妮也是不上镜的那种</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-106" data-search="106 小红书 Star Map Collection（2025）。曾可妮生图"><span class="bib-number">[106]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/685e41000000000022031b69" target="_blank" rel="noopener noreferrer">Star Map Collection（2025）。曾可妮生图</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-107" data-search="107 小红书 尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她"><span class="bib-number">[107]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/686277520000000012017686" target="_blank" rel="noopener noreferrer">尼斯娱乐（2025）。曾可妮说她的猫会送礼物给她</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-108" data-search="108 小红书 曾可妮（2025）。cha个舞我妈突然路过真的很有生活"><span class="bib-number">[108]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/68664bb0000000001c035825" target="_blank" rel="noopener noreferrer">曾可妮（2025）。cha个舞我妈突然路过真的很有生活</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-109" data-search="109 小红书 做自己的许愿池王八（2025）。曾可妮的猫臂力惊人"><span class="bib-number">[109]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6906ab01000000000300fc6f" target="_blank" rel="noopener noreferrer">做自己的许愿池王八（2025）。曾可妮的猫臂力惊人</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-110" data-search="110 小红书 吃掉可可（2025）。俩小猫性格贼不一样"><span class="bib-number">[110]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69187dd8000000001b021e10" target="_blank" rel="noopener noreferrer">吃掉可可（2025）。俩小猫性格贼不一样</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-111" data-search="111 小红书 尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI"><span class="bib-number">[111]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69189501000000000703307b" target="_blank" rel="noopener noreferrer">尼斯娱乐（2025）。曾可妮人猫对哈，被系统识别成AI</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-112" data-search="112 小红书 艺人化妆师丹帝（2025）。曾可妮站姐太会拍了"><span class="bib-number">[112]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/692e8229000000001b0226bf" target="_blank" rel="noopener noreferrer">艺人化妆师丹帝（2025）。曾可妮站姐太会拍了</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-113" data-search="113 小红书 合力有戏（2025）。曾可妮因“脸太酷”被判定没笑"><span class="bib-number">[113]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/693cece3000000001e036480" target="_blank" rel="noopener noreferrer">合力有戏（2025）。曾可妮因“脸太酷”被判定没笑</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-114" data-search="114 小红书 每日生图（2025）。曾可妮生图"><span class="bib-number">[114]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69452575000000000d03e474" target="_blank" rel="noopener noreferrer">每日生图（2025）。曾可妮生图</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-115" data-search="115 小红书 曾可妮（2025）。我的上戏返校vlog"><span class="bib-number">[115]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6950ef0d000000001f00dd68" target="_blank" rel="noopener noreferrer">曾可妮（2025）。我的上戏返校vlog</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-116" data-search="116 小红书 艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆"><span class="bib-number">[116]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69908daa0000000015030b8a" target="_blank" rel="noopener noreferrer">艺人化妆师丹帝（2026）。我给曾可妮化的超A红酒酷飒妆</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-117" data-search="117 小红书 网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发"><span class="bib-number">[117]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69b112f6000000000b0374c9" target="_blank" rel="noopener noreferrer">网恋被骗5000（2026）。给曾可妮做的清冷贵气妆发</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-118" data-search="118 小红书 尼斯娱乐（2026）。当曾可妮开始打包行李"><span class="bib-number">[118]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69bced190000000023025f41" target="_blank" rel="noopener noreferrer">尼斯娱乐（2026）。当曾可妮开始打包行李</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-119" data-search="119 小红书 曾可妮（2026）。穿黑色不准抱猫"><span class="bib-number">[119]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69be6092000000001a03478e" target="_blank" rel="noopener noreferrer">曾可妮（2026）。穿黑色不准抱猫</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-120" data-search="120 小红书 吃掉可可（2026）。养猫人上班都这样吗"><span class="bib-number">[120]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69c545240000000021011521" target="_blank" rel="noopener noreferrer">吃掉可可（2026）。养猫人上班都这样吗</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-121" data-search="121 小红书 赚够米就跑路（2026）。喜欢一个成熟的艺人究竟有多幸福"><span class="bib-number">[121]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/69de1f9c000000001a02a89d" target="_blank" rel="noopener noreferrer">赚够米就跑路（2026）。喜欢一个成熟的艺人究竟有多幸福</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-122" data-search="122 小红书 曾可妮（2026）。任迪说我有个朋友，准备玩个摇汞"><span class="bib-number">[122]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a0d743800000000060219e2" target="_blank" rel="noopener noreferrer">曾可妮（2026）。任迪说我有个朋友，准备玩个摇汞</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-123" data-search="123 小红书 小猹live（2026）。端水的可妮太可爱了，快来认领ID"><span class="bib-number">[123]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a24048f00000000150258f4" target="_blank" rel="noopener noreferrer">小猹live（2026）。端水的可妮太可爱了，快来认领ID</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-124" data-search="124 小红书 Pranpriya（2026）。婧路人粉来看曾可妮，真的很可以"><span class="bib-number">[124]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a242d8b000000002103f60f" target="_blank" rel="noopener noreferrer">Pranpriya（2026）。婧路人粉来看曾可妮，真的很可以</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-125" data-search="125 小红书 十万个点解噶（2026）。您完全不退功是吗"><span class="bib-number">[125]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a2526380000000008000974" target="_blank" rel="noopener noreferrer">十万个点解噶（2026）。您完全不退功是吗</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-126" data-search="126 小红书 喵艾MeowI（2026）。第一次拍曾可妮，真有点羡慕妮丝了"><span class="bib-number">[126]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a2602eb000000001c026a93" target="_blank" rel="noopener noreferrer">喵艾MeowI（2026）。第一次拍曾可妮，真有点羡慕妮丝了</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-127" data-search="127 小红书 赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮"><span class="bib-number">[127]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a26b1e70000000017008dcf" target="_blank" rel="noopener noreferrer">赚够米就跑路（2026）。把粉丝ID穿在身上的曾可妮</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-128" data-search="128 小红书 曾可妮（2026）。祝我生日快乐嗷"><span class="bib-number">[128]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a27de900000000021009ac1" target="_blank" rel="noopener noreferrer">曾可妮（2026）。祝我生日快乐嗷</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-129" data-search="129 小红书 Amorill百威（2026）。拍了拍曾可妮后台的样子"><span class="bib-number">[129]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a27f19e000000001702b2aa" target="_blank" rel="noopener noreferrer">Amorill百威（2026）。拍了拍曾可妮后台的样子</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-130" data-search="130 小红书 蜡笔小昕MELARS（2026）。笑死 和芒果势不两立"><span class="bib-number">[130]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a43b4e200000000210171f2" target="_blank" rel="noopener noreferrer">蜡笔小昕MELARS（2026）。笑死 和芒果势不两立</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-131" data-search="131 小红书 六月巡航丨曾可妮（2026）。易脸红的Puppy清冷感妆容分享"><span class="bib-number">[131]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a4c7831000000001702e4cf" target="_blank" rel="noopener noreferrer">六月巡航丨曾可妮（2026）。易脸红的Puppy清冷感妆容分享</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-132" data-search="132 小红书 曾可妮（2026）。横店拍摄日志：依旧"><span class="bib-number">[132]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a65e49d000000000f008a2b" target="_blank" rel="noopener noreferrer">曾可妮（2026）。横店拍摄日志：依旧</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-133" data-search="133 小红书 尼斯娱乐（2026）。曾可妮×王令仪｜海棠春定妆侧拍"><span class="bib-number">[133]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://www.xiaohongshu.com/explore/6a70b15f000000002402d77f" target="_blank" rel="noopener noreferrer">尼斯娱乐（2026）。曾可妮×王令仪｜海棠春定妆侧拍</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-134" data-search="134 小红书 TikHub（2026）。小红书App V2搜索笔记接口"><span class="bib-number">[134]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://docs.tikhub.io/420136398e0" target="_blank" rel="noopener noreferrer">TikHub（2026）。小红书App V2搜索笔记接口</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-135" data-search="135 小红书 TikHub（2026）。小红书App V2图文详情接口"><span class="bib-number">[135]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://docs.tikhub.io/420136391e0" target="_blank" rel="noopener noreferrer">TikHub（2026）。小红书App V2图文详情接口</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-136" data-search="136 小红书 TikHub（2026）。小红书App V2视频详情接口"><span class="bib-number">[136]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://docs.tikhub.io/420136392e0" target="_blank" rel="noopener noreferrer">TikHub（2026）。小红书App V2视频详情接口</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li>
+<li class="bib-entry" id="ref-137" data-search="137 小红书 TikHub（2026）。小红书App V2评论接口"><span class="bib-number">[137]</span><span class="platform-badge">小红书</span><span class="bib-text"><a href="https://docs.tikhub.io/420136394e0" target="_blank" rel="noopener noreferrer">TikHub（2026）。小红书App V2评论接口</a></span><a class="back-to-report" href="#top" aria-label="返回报告顶部">返回顶部</a></li></ol>
+        </section>
+        <footer class="footer">本HTML为离线阅读版；事实边界、引用编号和来源链接以同目录Markdown报告及证据账本为准。</footer>
+      </article>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const input = document.getElementById('bib-search');
+      const entries = Array.from(document.querySelectorAll('.bib-entry'));
+      const count = document.getElementById('bib-count');
+      const empty = document.getElementById('empty-state');
+      input.addEventListener('input', () => {
+        const query = input.value.trim().toLowerCase();
+        let visible = 0;
+        entries.forEach((entry) => {
+          const match = !query || entry.dataset.search.toLowerCase().includes(query);
+          entry.hidden = !match;
+          if (match) visible += 1;
+        });
+        count.textContent = `显示 ${visible} 条`;
+        empty.style.display = visible ? 'none' : 'block';
+      });
+
+      const links = Array.from(document.querySelectorAll('.toc-link'));
+      const anchors = links.map((link) => document.getElementById(link.getAttribute('href').slice(1))).filter(Boolean);
+      const observer = new IntersectionObserver((events) => {
+        const current = events.filter((event) => event.isIntersecting).sort((a,b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (!current) return;
+        links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${current.target.id}`));
+      }, { rootMargin: '-10% 0px -82% 0px', threshold: 0 });
+      anchors.forEach((anchor) => observer.observe(anchor));
+    })();
+  </script>
+</body>
+</html>
