@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向银行总部与40–50家分行的优秀业务实践传播与复制方案，包含银行业及其他多网点行业案例、设计原则与四周试点方案。">
+  <meta name="color-scheme" content="light">
+  <title>让好实践真正在分行间流动</title>
+  <style>
+    :root {
+      --ink: #162522;
+      --ink-soft: #51635e;
+      --paper: #f7f4ec;
+      --surface: #fffdf8;
+      --surface-2: #eef4ef;
+      --forest: #123f35;
+      --forest-2: #245f50;
+      --mint: #d9eadf;
+      --lime: #d8f067;
+      --amber: #f4c95d;
+      --coral: #e5785b;
+      --line: #d8dfd9;
+      --shadow: 0 16px 40px rgba(18, 63, 53, .09);
+      --radius: 24px;
+      --content: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 76px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 95% 1%, rgba(216, 240, 103, .23), transparent 25rem),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .skip-link {
+      position: fixed;
+      left: 16px;
+      top: -60px;
+      z-index: 100;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--forest);
+      color: white;
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+
+    .skip-link:focus { top: 12px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(18, 63, 53, .12);
+      background: rgba(247, 244, 236, .9);
+      backdrop-filter: blur(16px);
+    }
+
+    .topbar-inner {
+      max-width: var(--content);
+      min-height: 64px;
+      margin: 0 auto;
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 14px;
+      transform: rotate(-5deg);
+    }
+
+    .nav {
+      display: flex;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav a,
+    .print-button {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 12px;
+      color: var(--ink-soft);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible,
+    .print-button:hover,
+    .print-button:focus-visible {
+      color: var(--forest);
+      background: var(--mint);
+      outline: none;
+    }
+
+    main { overflow: hidden; }
+
+    .hero {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 76px 24px 50px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+      align-items: center;
+      gap: 56px;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--forest-2);
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 24px;
+      max-width: 760px;
+      font-size: clamp(42px, 6.4vw, 78px);
+      line-height: 1.03;
+      letter-spacing: -.055em;
+    }
+
+    h1 em {
+      position: relative;
+      z-index: 0;
+      color: var(--forest);
+      font-style: normal;
+      white-space: nowrap;
+    }
+
+    h1 em::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: -.04em;
+      right: -.04em;
+      bottom: .05em;
+      height: .28em;
+      border-radius: 999px;
+      background: var(--lime);
+      transform: rotate(-1.2deg);
+    }
+
+    .lede {
+      max-width: 720px;
+      margin-bottom: 28px;
+      color: var(--ink-soft);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.65;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 253, 248, .7);
+      color: var(--ink-soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero-note::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 5px rgba(216, 240, 103, .3);
+    }
+
+    .journey-card {
+      position: relative;
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 30px;
+      color: white;
+      background: var(--forest);
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+    }
+
+    .journey-card::before {
+      content: "一页看懂";
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .journey-card h2 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      letter-spacing: -.02em;
+    }
+
+    .journey-card > p {
+      margin-bottom: 20px;
+      color: rgba(255, 255, 255, .7);
+      font-size: 14px;
+    }
+
+    .journey {
+      display: grid;
+      gap: 0;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .journey li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      align-items: center;
+      gap: 12px;
+      min-height: 52px;
+      counter-increment: steps;
+    }
+
+    .journey li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 39px;
+      bottom: -1px;
+      left: 17px;
+      width: 2px;
+      background: rgba(216, 240, 103, .3);
+    }
+
+    .journey li::before {
+      content: counter(steps);
+      position: relative;
+      z-index: 1;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(216, 240, 103, .45);
+      border-radius: 50%;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .journey strong { font-size: 15px; }
+
+    .section {
+      max-width: var(--content);
+      margin: 0 auto;
+      padding: 72px 24px;
+    }
+
+    .section + .section { border-top: 1px solid rgba(18, 63, 53, .1); }
+
+    .section-head {
+      max-width: 780px;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 10px;
+      color: var(--forest-2);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 20px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--lime);
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4.1vw, 48px);
+      line-height: 1.17;
+      letter-spacing: -.04em;
+    }
+
+    .section-intro {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 18px;
+    }
+
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .diagnosis-card {
+      position: relative;
+      min-height: 220px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    .diagnosis-card .num {
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      color: rgba(18, 63, 53, .08);
+      font-size: 76px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+
+    .diagnosis-card h3 {
+      position: relative;
+      margin: 64px 0 8px;
+      font-size: 21px;
+      line-height: 1.35;
+      letter-spacing: -.02em;
+    }
+
+    .diagnosis-card p {
+      position: relative;
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .principle {
+      margin-top: 22px;
+      padding: 24px 28px;
+      border-left: 6px solid var(--lime);
+      border-radius: 0 18px 18px 0;
+      color: white;
+      background: var(--forest);
+      font-size: clamp(18px, 2.3vw, 24px);
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .case-card {
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 1px 0 rgba(18, 63, 53, .03);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--forest-2);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .pill.bank { background: var(--mint); }
+    .pill.other { background: #efe8d6; color: #765c27; }
+    .pill.evidence { margin-left: auto; background: transparent; border: 1px solid var(--line); color: var(--ink-soft); font-weight: 700; }
+
+    .case-card h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.35;
+      letter-spacing: -.025em;
+    }
+
+    .case-card p {
+      margin-bottom: 12px;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .case-card .result {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: var(--surface-2);
+      color: var(--forest);
+      font-weight: 750;
+    }
+
+    .case-card .lesson {
+      margin-top: auto;
+      padding-top: 8px;
+      color: var(--ink);
+    }
+
+    .source-link {
+      width: fit-content;
+      margin-top: 4px;
+      color: var(--forest-2);
+      font-size: 13px;
+      font-weight: 800;
+      text-underline-offset: 3px;
+    }
+
+    .source-link:hover { color: var(--forest); }
+
+    .evidence-note {
+      margin-top: 20px;
+      padding: 18px 20px;
+      border: 1px dashed #c9b778;
+      border-radius: 16px;
+      background: #fff9e8;
+      color: #655625;
+      font-size: 14px;
+    }
+
+    .rules {
+      display: grid;
+      gap: 14px;
+    }
+
+    .rule {
+      display: grid;
+      grid-template-columns: 70px minmax(180px, .75fr) minmax(0, 1.5fr);
+      gap: 22px;
+      align-items: start;
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+
+    .rule-index {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    .rule h3 {
+      margin: 6px 0 0;
+      font-size: 20px;
+      line-height: 1.4;
+      letter-spacing: -.02em;
+    }
+
+    .rule p {
+      margin: 4px 0 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .pilot-shell {
+      position: relative;
+      padding: 36px;
+      border-radius: 30px;
+      color: white;
+      background: var(--forest);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .pilot-shell::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -100px;
+      width: 300px;
+      height: 300px;
+      border: 65px solid rgba(216, 240, 103, .12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .pilot-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .pilot-top h3 {
+      margin-bottom: 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+
+    .pilot-top p {
+      max-width: 680px;
+      margin-bottom: 0;
+      color: rgba(255, 255, 255, .7);
+    }
+
+    .pilot-badge {
+      width: 112px;
+      height: 112px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--forest);
+      background: var(--lime);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 900;
+      line-height: 1.3;
+      transform: rotate(5deg);
+    }
+
+    .timeline {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .week {
+      min-height: 250px;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .week-label {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .week h4 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .week p {
+      margin: 0;
+      color: rgba(255, 255, 255, .7);
+      font-size: 14px;
+    }
+
+    .practice-pack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .pack-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: var(--surface);
+    }
+
+    .pack-card h3 {
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      position: relative;
+      padding-left: 30px;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: .15em;
+      width: 21px;
+      height: 21px;
+      display: grid;
+      place-items: center;
+      border-radius: 7px;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .format-table-wrap {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 18px 22px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--forest);
+      background: var(--surface-2);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    td:first-child { width: 31%; font-weight: 800; }
+    tr:last-child td { border-bottom: 0; }
+
+    .metric-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .metric {
+      position: relative;
+      min-height: 130px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface);
+    }
+
+    .metric:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      z-index: 2;
+      right: -14px;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--forest);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--forest);
+      font-size: 17px;
+    }
+
+    .metric span {
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .north-star {
+      margin-top: 18px;
+      padding: 18px 22px;
+      border-radius: 18px;
+      background: var(--lime);
+      color: var(--forest);
+      font-size: 17px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .pitfall-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .pitfall {
+      padding: 24px;
+      border: 1px solid rgba(229, 120, 91, .3);
+      border-radius: 20px;
+      background: #fff7f3;
+    }
+
+    .pitfall-icon {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 12px;
+      color: white;
+      background: var(--coral);
+      font-weight: 900;
+    }
+
+    .pitfall h3 {
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .pitfall p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      font-size: 14px;
+    }
+
+    .final-call {
+      margin-top: 24px;
+      padding: 32px;
+      border-radius: 24px;
+      color: white;
+      background: var(--forest);
+    }
+
+    .final-call .label {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .final-call p {
+      margin-bottom: 0;
+      font-size: clamp(20px, 2.8vw, 30px);
+      line-height: 1.5;
+      font-weight: 800;
+      letter-spacing: -.025em;
+    }
+
+    .sources {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      counter-reset: sources;
+    }
+
+    .sources li {
+      position: relative;
+      padding: 12px 12px 12px 44px;
+      border-bottom: 1px solid var(--line);
+      counter-increment: sources;
+    }
+
+    .sources li::before {
+      content: counter(sources, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 13px;
+      color: var(--forest-2);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .sources a {
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration-color: #abc4b5;
+      text-underline-offset: 3px;
+    }
+
+    .sources span {
+      display: block;
+      margin-top: 2px;
+      color: var(--ink-soft);
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 32px 24px 46px;
+      color: var(--ink-soft);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .back-top {
+      position: fixed;
+      z-index: 20;
+      right: 22px;
+      bottom: 22px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 50%;
+      color: white;
+      background: var(--forest);
+      box-shadow: var(--shadow);
+      font-size: 18px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .back-top:hover { background: var(--forest-2); }
+
+    :focus-visible {
+      outline: 3px solid var(--amber);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .topbar-inner { padding-inline: 18px; }
+      .nav a { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 46px; padding-top: 52px; }
+      .journey-card { max-width: 600px; transform: none; }
+      .diagnosis-grid, .pitfall-grid { grid-template-columns: 1fr; }
+      .diagnosis-card { min-height: 190px; }
+      .case-grid { grid-template-columns: 1fr; }
+      .rule { grid-template-columns: 54px 1fr; gap: 10px 16px; }
+      .rule p { grid-column: 2; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .metric-flow { grid-template-columns: 1fr; }
+      .metric { min-height: 0; }
+      .metric:not(:last-child)::after { content: "↓"; right: auto; left: 50%; top: auto; bottom: -14px; transform: translateX(-50%); }
+    }
+
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .brand { font-size: 14px; }
+      .print-button { padding-inline: 8px; }
+      .hero, .section { padding-left: 18px; padding-right: 18px; }
+      h1 { font-size: clamp(40px, 13vw, 58px); }
+      h1 em { white-space: normal; }
+      .journey-card { padding: 24px 20px; }
+      .section { padding-top: 58px; padding-bottom: 58px; }
+      .rule { padding: 20px; }
+      .pilot-shell { padding: 26px 18px; margin-inline: -4px; }
+      .pilot-top { display: block; }
+      .pilot-badge { width: auto; height: auto; display: inline-block; margin-top: 18px; padding: 8px 14px; border-radius: 999px; transform: none; }
+      .timeline, .practice-pack, .sources { grid-template-columns: 1fr; }
+      .week { min-height: 0; }
+      .week-label { margin-bottom: 16px; }
+      .format-table-wrap { border: 0; background: transparent; overflow: visible; }
+      table, tbody, tr, td { display: block; }
+      thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      tr { margin-bottom: 12px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); }
+      td { width: 100% !important; padding: 0; border: 0; }
+      td + td { margin-top: 6px; color: var(--ink-soft); font-size: 14px; }
+      .case-meta { align-items: flex-start; }
+      .pill.evidence { margin-left: 0; }
+      .back-top { right: 14px; bottom: 14px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 15mm; }
+      body { background: white; color: #111; font-size: 10.5pt; }
+      .topbar, .back-top, .skip-link { display: none !important; }
+      .hero, .section { max-width: none; padding: 12mm 0; }
+      .hero { grid-template-columns: 1fr; gap: 8mm; }
+      h1 { font-size: 34pt; }
+      h2 { font-size: 23pt; }
+      .journey-card, .pilot-shell, .final-call { color: #111; background: #f2f5f2; box-shadow: none; }
+      .journey-card > p, .pilot-top p, .week p { color: #444; }
+      .journey li::before, .week-label, .pilot-badge { border: 1px solid #777; color: #111; background: #eee; }
+      .journey li:not(:last-child)::after { background: #aaa; }
+      .case-grid, .diagnosis-grid, .pitfall-grid { grid-template-columns: 1fr 1fr; }
+      .case-card, .diagnosis-card, .pitfall, .pack-card, .rule, .metric { break-inside: avoid; box-shadow: none; }
+      .timeline { grid-template-columns: 1fr 1fr; }
+      .week { min-height: 0; border-color: #aaa; background: white; }
+      .metric-flow { grid-template-columns: repeat(5, 1fr); }
+      .metric:not(:last-child)::after { display: none; }
+      .north-star { color: #111; background: #eee; }
+      .source-link, .sources a { color: #111; }
+      .source-link::after, .sources a::after { content: " (" attr(href) ")"; font-size: 8pt; font-weight: 400; word-break: break-all; }
+      footer { padding: 8mm 0 0; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳到正文</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="页面主题">
+        <span class="brand-mark" aria-hidden="true">流</span>
+        <span>分行实践扩散指南</span>
+      </div>
+      <nav class="nav" aria-label="页内导航">
+        <a href="#diagnosis">问题判断</a>
+        <a href="#cases">标杆案例</a>
+        <a href="#principles">设计原则</a>
+        <a href="#pilot">试点方案</a>
+        <a href="#metrics">衡量方法</a>
+        <button class="print-button" type="button" onclick="window.print()" aria-label="打印或导出PDF">打印 / PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Best practice → Common practice</p>
+        <h1 id="hero-title">让好实践，真正在<em>分行间流动</em></h1>
+        <p class="lede">面向总部与40–50家分行的优秀实践扩散方案。核心不是把文字做得更好看，而是把学习改造成一次有选择、有反馈、有同业互动、有真实结果的实战体验。
+        </p>
+        <span class="hero-note">资料整理于 2026 年 8 月 · 附来源与证据说明</span>
+      </div>
+
+      <aside class="journey-card" aria-label="优秀实践扩散旅程">
+        <h2>真正的扩散旅程</h2>
+        <p>现有的文字材料，往往只做到了第一步。</p>
+        <ol class="journey">
+          <li><strong>看见真实案例</strong></li>
+          <li><strong>在情境中作选择</strong></li>
+          <li><strong>小范围试用</strong></li>
+          <li><strong>展示业务结果</strong></li>
+          <li><strong>获得同业认可</strong></li>
+          <li><strong>再教给其他分行</strong></li>
+        </ol>
+      </aside>
+    </section>
+
+    <section class="section" id="diagnosis" aria-labelledby="diagnosis-title">
+      <div class="section-head">
+        <span class="kicker">01 · 场景判断</span>
+        <h2 id="diagnosis-title">员工缺的可能不是学习意愿，而是“采用理由”</h2>
+        <p class="section-intro">以下是需要通过访谈验证的三个高概率原因。</p>
+      </div>
+
+      <div class="diagnosis-grid">
+        <article class="diagnosis-card">
+          <span class="num" aria-hidden="true">01</span>
+          <h3>材料讲了“是什么”，没讲“为什么值得我学”</h3>
+          <p>缺少可验证的前后对比、适用条件和实际难点，容易被视为总部宣传。</p>
+        </article>
+        <article class="diagnosis-card">
+          <span class="num" aria-hidden="true">02</span>
+          <h3>学习是额外任务，与当下工作脱节</h3>
+          <p>只要没有小范围试用任务、分行负责人支持和保护性时间，再短的内容也容易被推迟。</p>
+        </article>
+        <article class="diagnosis-card">
+          <span class="num" aria-hidden="true">03</span>
+          <h3>优秀实践不可观察，也不容易低风险试用</h3>
+          <p>员工看不到别人如何做，也无法在本地条件中试一次，就不会轻易采用。</p>
+        </article>
+      </div>
+
+      <div class="principle">趣味性不是娱乐化；它来自角色代入、悬念、选择、及时反馈、同业互动和真实业务结果。</div>
+    </section>
+
+    <section class="section" id="cases" aria-labelledby="cases-title">
+      <div class="section-head">
+        <span class="kicker">02 · 标杆扫描</span>
+        <h2 id="cases-title">银行业与多网点行业怎么做</h2>
+        <p class="section-intro">这些案例的共性不是“更炫的内容”，而是将学习与同业身份、情境决策或真实结果绑定。</p>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill bank">国内银行</span>
+            <span class="pill">情境游戏</span>
+            <span class="pill evidence">官方报告</span>
+          </div>
+          <h3>招商银行：让员工进入真实网点场景</h3>
+          <p>将客户体验做成 VR 游戏化课程，呈现网点真实场景。</p>
+          <p class="result">上线 2 个月，超过 15,000 名员工参与。</p>
+          <p class="lesson"><strong>可借鉴：</strong>VR 不是关键，“先让员工作选择，再揭晓优秀做法”才是。</p>
+          <a class="source-link" href="https://www.hkexnews.hk/listedco/listconews/sehk/2019/0322/ltn201903221082_c.pdf" target="_blank" rel="noopener noreferrer">查看招商银行2018社会责任报告 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill bank">国际银行</span>
+            <span class="pill">分行联赛</span>
+            <span class="pill evidence">供应商案例</span>
+          </div>
+          <h3>Scotiabank：把产品知识变成全国分行联赛</h3>
+          <p>按五大片区和区域组织月度知识竞赛，每季度表彰各区表现者，使用小额礼品激励。</p>
+          <p class="result">案例报告参与率 89%，平均正确率 79%。</p>
+          <p class="lesson"><strong>可借鉴：</strong>40–50家分行很适合分赛区；按规模或客群相近程度分组，比一张全行总榜更公平。</p>
+          <a class="source-link" href="https://kahoot360.com/resources/customer-stories/scotiabank-product-training/" target="_blank" rel="noopener noreferrer">查看 Scotiabank 案例 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill bank">国内银行</span>
+            <span class="pill">赛训结合</span>
+            <span class="pill evidence">官方自报</span>
+          </div>
+          <h3>兴业银行：竞赛不比“学完”，而比实战能力</h3>
+          <p>把专业能力、业务目标和学习课程组合为竞赛，辅以移动微课和主题游戏。</p>
+          <p class="result">该行报道部分受训学员日均存款业绩增长 30% 以上。</p>
+          <p class="lesson"><strong>可借鉴：</strong>比“谁看完了课程”更好的竞赛，是“谁在合规前提下把方法用了起来”。</p>
+          <a class="source-link" href="https://www.cib.com.cn/cn/aboutCIB/about/news/2016/20160725.html" target="_blank" rel="noopener noreferrer">查看兴业银行官方案例 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill bank">国内银行</span>
+            <span class="pill">员工创作</span>
+            <span class="pill evidence">官方报告</span>
+          </div>
+          <h3>光大银行：案例大赛解决“好实践从哪来”</h3>
+          <p>通过总分行征集、专业评审、现场决赛、视频直播和网络人气投票完成案例挖掘。</p>
+          <p class="result">收到 2,081 份案例，最终筛选出 212 份优秀案例。</p>
+          <p class="lesson"><strong>可借鉴：</strong>案例大赛能扩大优秀实践的供给，但赛后必须增加“被其他分行复制”的任务。</p>
+          <a class="source-link" href="https://www.cebbank.com/site/resource/cms/article/256479545/256479582/2023082919154185514.pdf" target="_blank" rel="noopener noreferrer">查看光大银行社会责任报告 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill bank">国际银行</span>
+            <span class="pill">虚拟密室</span>
+            <span class="pill evidence">供应商案例</span>
+          </div>
+          <h3>Lloyds Bank：用密室逃脱做“学习入口”</h3>
+          <p>把批判性思维训练做成虚拟密室，使用倒计时、线索、随机题目和个性化反馈，同时根据表现推荐后续课程。</p>
+          <p class="result">案例报告自愿参与更广泛的学习项目有所增加，但未披露量化数据。</p>
+          <p class="lesson"><strong>可借鉴：</strong>趣味化可以只负责吸引和诊断，不必把整套实践做成昂贵游戏。</p>
+          <a class="source-link" href="https://www.capita.com/dam/documents/news-and-insights/case-studies/2024/Lloyds-bank-gamification-case-study.pdf" target="_blank" rel="noopener noreferrer">查看 Lloyds Bank 案例 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill other">科技行业</span>
+            <span class="pill">员工教员工</span>
+            <span class="pill evidence">企业官方</span>
+          </div>
+          <h3>Google：让一线专家成为有身份感的“实践主理人”</h3>
+          <p>Google 的 g2g 网络中，员工自愿担任讲师、导师或内容设计者，用一手业务知识教同事。</p>
+          <p class="result">Google 披露，其有记录的培训中约 80% 由该员工网络承担，参与员工超过 6,000 人。</p>
+          <p class="lesson"><strong>可借鉴：</strong>分行员工通常更信任处境相似的同岗位同事，而不是总部讲师。</p>
+          <a class="source-link" href="https://rework.withgoogle.com/en/guides/learning-development-employee-to-employee" target="_blank" rel="noopener noreferrer">查看 Google g2g 指南 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill other">零售行业</span>
+            <span class="pill">体验式训练</span>
+            <span class="pill evidence">企业官方</span>
+          </div>
+          <h3>Walmart：把复杂服务情境变成可重复演练的体验</h3>
+          <p>将 VR 训练用于新技术、客户服务、同理心和合规场景，覆盖超过百万名一线员工。</p>
+          <p class="result">Walmart 报告测试成绩提高 10%–15%。</p>
+          <p class="lesson"><strong>可借鉴：</strong>客户沟通和风险判断应让员工亲自决策；H5分支视频或角色扮演也能实现。</p>
+          <a class="source-link" href="https://corporate.walmart.com/news/2018/09/20/how-vr-is-transforming-the-way-we-train-associates" target="_blank" rel="noopener noreferrer">查看 Walmart 官方介绍 ↗</a>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span class="pill other">连锁零售</span>
+            <span class="pill">经营游戏</span>
+            <span class="pill evidence">供应商案例</span>
+          </div>
+          <h3>Albert Heijn：最强的游戏化，是让行动直接改变经营结果</h3>
+          <p>先与 3 家门店共创 12 周，再将围绕真实经营数据的团队游戏扩展到数百家门店。</p>
+          <p class="result">供应商报告参与门店的周销售增长高于未参与门店，属于自报数据。</p>
+          <p class="lesson"><strong>可借鉴：</strong>不要只让员工获得积分和徽章，要让他看到行动如何改变分行结果。</p>
+          <a class="source-link" href="https://ranj.com/ranj-albert-heijn-case-study" target="_blank" rel="noopener noreferrer">查看 Albert Heijn 案例 ↗</a>
+        </article>
+      </div>
+
+      <aside class="evidence-note">
+        <strong>证据说明：</strong>公开案例中的不少效果数据来自企业或解决方案供应商自报，可用来发现值得试验的机制，不宜直接视为投入产出或因果证明。
+      </aside>
+    </section>
+
+    <section class="section" id="principles" aria-labelledby="principles-title">
+      <div class="section-head">
+        <span class="kicker">03 · 共性机制</span>
+        <h2 id="principles-title">五条最值得复制的设计原则</h2>
+        <p class="section-intro">把总部的角色从“内容发布者”改成“实践转化运营者”。</p>
+      </div>
+
+      <div class="rules">
+        <article class="rule">
+          <span class="rule-index">01</span>
+          <h3>真人同业 〉 总部口径</h3>
+          <p>让原分行客户经理、柜员或网点负责人自己讲问题、失败、改变和边界。保持真实感，不必过度精致。</p>
+        </article>
+        <article class="rule">
+          <span class="rule-index">02</span>
+          <h3>先作判断 〉 先听答案</h3>
+          <p>从一个真实客户或运营情境开场，让员工在 A/B/C 中选择，立即看到可能结果，再由优秀分行拆解做法。</p>
+        </article>
+        <article class="rule">
+          <span class="rule-index">03</span>
+          <h3>用过才算完成 〉 看过就算完成</h3>
+          <p>不把课程完成率当最终成果。要看有多少分行选择试用、真正实施，以及 30 天后是否仍在使用。</p>
+        </article>
+        <article class="rule">
+          <span class="rule-index">04</span>
+          <h3>奖励复制双方 〉 只奖励原创分行</h3>
+          <p>设置“最值得复制”“最佳本地化”和“金牌实践教练”，让输出方有动力教，采用方也有成就感。</p>
+        </article>
+        <article class="rule">
+          <span class="rule-index">05</span>
+          <h3>比改善和协作 〉 比个人绝对业绩</h3>
+          <p>不同城市、客群和分行规模无法简单横比。应按类似条件组队，比较改善幅度、采用质量和帮助其他分行成功的数量。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="pilot" aria-labelledby="pilot-title">
+      <div class="section-head">
+        <span class="kicker">04 · 推荐试点</span>
+        <h2 id="pilot-title">不必先买平台：用四周验证“分行实战复制赛”</h2>
+        <p class="section-intro">从 1 个成熟实践、1 家输出分行和 8–10 家采用分行开始，使用现有企业微信、直播、问卷、H5 或共享表格就能完成。</p>
+      </div>
+
+      <div class="pilot-shell">
+        <div class="pilot-top">
+          <div>
+            <h3>从“看材料”到“完成一次复制”</h3>
+            <p>实践输出分行不只是被拍成视频，而是在整个试点期间担任真人教练。</p>
+          </div>
+          <span class="pilot-badge">1 个实践<br>8–10 家分行</span>
+        </div>
+
+        <div class="timeline">
+          <article class="week">
+            <span class="week-label">第 0 周</span>
+            <h4>打包实践</h4>
+            <p>补齐前后对比、三个核心动作、可调整部分、适用条件与合规红线。</p>
+          </article>
+          <article class="week">
+            <span class="week-label">第 1 周</span>
+            <h4>15 分钟案例首映</h4>
+            <p>90 秒真人情境、3 个分支选择、原分行揭晓做法，当场发布 14 天任务。</p>
+          </article>
+          <article class="week">
+            <span class="week-label">第 2–3 周</span>
+            <h4>14 天复制挑战</h4>
+            <p>每家分行组建 3–5 人小队，小范围试用；原分行每周开 30 分钟线上“门诊”。</p>
+          </article>
+          <article class="week">
+            <span class="week-label">第 4 周</span>
+            <h4>分行 Demo Day</h4>
+            <p>只展示复制了什么、本地改了什么、结果如何，以及最值得别人避开的坑。</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="practice-pack">
+        <article class="pack-card">
+          <h3>每个“实践包”只保留 6 项</h3>
+          <ul class="checklist">
+            <li>一个真实业务问题</li>
+            <li>原分行的前后对比证据</li>
+            <li>三个不可省略的核心动作</li>
+            <li>可以在本地调整的外围做法</li>
+            <li>适用和不适用条件</li>
+            <li>合规、消保和数据使用红线</li>
+          </ul>
+        </article>
+        <article class="pack-card">
+          <h3>Demo Day 只回答 4 个问题</h3>
+          <ul class="checklist">
+            <li>我们复制了什么？</li>
+            <li>为适应本地情况，改动了什么？</li>
+            <li>结果怎样，有什么证据？</li>
+            <li>下一家分行做时，我们最想提醒什么？</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="formats-title">
+      <div class="section-head">
+        <span class="kicker">05 · 形式选择</span>
+        <h2 id="formats-title">不同实践，不要用同一种“趣味化”</h2>
+        <p class="section-intro">媒介要服务于行为目标，而不是为了新奇而新奇。</p>
+      </div>
+
+      <div class="format-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">实践类型</th>
+              <th scope="col">更合适的形式</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>产品知识、制度规则</td>
+              <td>限时答题、分行联赛、错题挑战</td>
+            </tr>
+            <tr>
+              <td>客户沟通、复杂判断</td>
+              <td>分支剧情、角色扮演、案例密室</td>
+            </tr>
+            <tr>
+              <td>网点流程、团队协同</td>
+              <td>14 天复制任务、改善前后对比</td>
+            </tr>
+            <tr>
+              <td>高度依赖经验的隐性技巧</td>
+              <td>真人门诊、同岗位结对、短期跟岗</td>
+            </tr>
+            <tr>
+              <td>多个实践同时供选择</td>
+              <td>“实践市集”：原创分行做 5 分钟路演，其他分行现场认领</td>
+            </tr>
+            <tr>
+              <td>已成熟、需要持续扩散</td>
+              <td>实践教练认证、徽章、师徒网络与内部社群</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="metrics" aria-labelledby="metrics-title">
+      <div class="section-head">
+        <span class="kicker">06 · 衡量成果</span>
+        <h2 id="metrics-title">不要优化“学习完成率”，要优化“实践采用率”</h2>
+        <p class="section-intro">从曝光到持续使用，建立一条可观察的扩散漏斗。</p>
+      </div>
+
+      <div class="metric-flow" aria-label="实践扩散指标漏斗">
+        <div class="metric"><strong>1. 触达</strong><span>有多少目标员工进入案例首映或情境？</span></div>
+        <div class="metric"><strong>2. 理解</strong><span>情境判断正确率如何？关键误区在哪？</span></div>
+        <div class="metric"><strong>3. 试用</strong><span>有多少分行认领并完成至少 3 次真实应用？</span></div>
+        <div class="metric"><strong>4. 结果</strong><span>相比基线，客户体验、效率、风险或经营指标如何？</span></div>
+        <div class="metric"><strong>5. 持续与再传播</strong><span>30 天后是否仍在使用？采用分行又教会了几家？</span></div>
+      </div>
+      <div class="north-star">北极星指标：在不牺牲合规与客户权益的前提下，有多少分行真正采用并持续使用了该实践。</div>
+    </section>
+
+    <section class="section" aria-labelledby="pitfalls-title">
+      <div class="section-head">
+        <span class="kicker">07 · 避免走偏</span>
+        <h2 id="pitfalls-title">五个容易让“趣味学习”失效的坑</h2>
+      </div>
+
+      <div class="pitfall-grid">
+        <article class="pitfall">
+          <span class="pitfall-icon" aria-hidden="true">!</span>
+          <h3>只把文字改成短视频</h3>
+          <p>可能提高点击率，但员工仍然只是观众，不代表理解或采用。</p>
+        </article>
+        <article class="pitfall">
+          <span class="pitfall-icon" aria-hidden="true">!</span>
+          <h3>只发积分、徽章和排行榜</h3>
+          <p>容易导致刷课、刷题，并使长期落后的分行或员工退出参与。</p>
+        </article>
+        <article class="pitfall">
+          <span class="pitfall-icon" aria-hidden="true">!</span>
+          <h3>使用个人销售绝对排名</h3>
+          <p>既忽略分行条件差异，也可能诱发不当销售或数据失真。</p>
+        </article>
+        <article class="pitfall">
+          <span class="pitfall-icon" aria-hidden="true">!</span>
+          <h3>不给分行保护性时间</h3>
+          <p>如果分行负责人没有明确安排每周 20–30 分钟，再轻量的任务也会被日常工作挤掉。</p>
+        </article>
+        <article class="pitfall">
+          <span class="pitfall-icon" aria-hidden="true">!</span>
+          <h3>一开始就开发大型平台或 VR</h3>
+          <p>应先用现有工具验证“情境＋试用＋同业教练”是否提高采用率，再决定技术投入。</p>
+        </article>
+      </div>
+
+      <div class="final-call">
+        <span class="label">如果只做一件事</span>
+        <p>把下一份优秀实践材料，改造成一场“15 分钟互动案例＋14 天分行复制赛”，并让原创分行员工担任真人教练。</p>
+      </div>
+    </section>
+
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="section-head">
+        <span class="kicker">08 · 参考来源</span>
+        <h2 id="sources-title">主要案例与方法来源</h2>
+        <p class="section-intro">链接直指官方报告、机构方法页或案例原页，便于进一步核查。</p>
+      </div>
+
+      <ol class="sources">
+        <li><a href="https://www.hkexnews.hk/listedco/listconews/sehk/2019/0322/ltn201903221082_c.pdf" target="_blank" rel="noopener noreferrer">招商银行2018社会责任报告</a><span>官方报告 · 真实网点场景 VR 课程</span></li>
+        <li><a href="https://kahoot360.com/resources/customer-stories/scotiabank-product-training/" target="_blank" rel="noopener noreferrer">Scotiabank 产品知识竞赛案例</a><span>供应商案例 · 全国分行联赛</span></li>
+        <li><a href="https://www.cib.com.cn/cn/aboutCIB/about/news/2016/20160725.html" target="_blank" rel="noopener noreferrer">兴业银行“赛训结合”官方案例</a><span>企业官方自报</span></li>
+        <li><a href="https://www.cebbank.com/site/resource/cms/article/256479545/256479582/2023082919154185514.pdf" target="_blank" rel="noopener noreferrer">光大银行社会责任报告</a><span>官方报告 · 全行员工案例大赛</span></li>
+        <li><a href="https://www.capita.com/dam/documents/news-and-insights/case-studies/2024/Lloyds-bank-gamification-case-study.pdf" target="_blank" rel="noopener noreferrer">Lloyds Bank 虚拟密室案例</a><span>供应商案例 · 游戏化诊断</span></li>
+        <li><a href="https://rework.withgoogle.com/en/guides/learning-development-employee-to-employee" target="_blank" rel="noopener noreferrer">Google g2g 员工互教指南</a><span>企业官方方法指南</span></li>
+        <li><a href="https://corporate.walmart.com/news/2018/09/20/how-vr-is-transforming-the-way-we-train-associates" target="_blank" rel="noopener noreferrer">Walmart VR 一线员工训练</a><span>企业官方案例</span></li>
+        <li><a href="https://ranj.com/ranj-albert-heijn-case-study" target="_blank" rel="noopener noreferrer">Albert Heijn 门店经营游戏</a><span>供应商案例</span></li>
+        <li><a href="https://www.ihi.org/library/white-papers/framework-spread-local-improvements-system-wide-change" target="_blank" rel="noopener noreferrer">IHI: A Framework for Spread</a><span>机构方法论 · 多机构扩散框架</span></li>
+        <li><a href="https://www.ncbi.nlm.nih.gov/books/NBK566217/table/ch3.tab5/" target="_blank" rel="noopener noreferrer">VA QUERI：影响创新扩散的关键属性</a><span>政府学术资源 · 可试用性与可观察性</span></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>本页用于内部研讨与方案启发。案例数据应结合来源性质解读，实施时需完成相应的合规、消保和数据安全审查。</p>
+  </footer>
+
+  <a class="back-top" href="#top" aria-label="返回顶部">↑</a>
+</body>
+</html>
