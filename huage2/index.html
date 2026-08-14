@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="面向银行总部与分行的轻量优秀实践扩散方案：不用新平台、不新增会议，用一屏实践卡和现有工作节奏促进经验流动。">
+  <meta name="color-scheme" content="light">
+  <title>分行一招｜轻量优秀实践扩散方案</title>
+  <style>
+    :root {
+      --ink: #16211f;
+      --muted: #5b6865;
+      --paper: #f3f1e9;
+      --surface: #fffefa;
+      --deep: #163b35;
+      --deep-2: #255d53;
+      --mint: #d9e9df;
+      --lime: #d9ef72;
+      --yellow: #f4cc63;
+      --coral: #e97c62;
+      --blue: #dbe8f3;
+      --line: #d8ded9;
+      --shadow: 0 18px 46px rgba(22, 59, 53, .10);
+      --radius: 24px;
+      --max: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 0, rgba(217, 239, 114, .24), transparent 26rem),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    p, h1, h2, h3, h4 { margin-top: 0; }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+    .skip {
+      position: fixed;
+      z-index: 100;
+      top: -60px;
+      left: 14px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: white;
+      background: var(--deep);
+      text-decoration: none;
+      transition: top .2s ease;
+    }
+    .skip:focus { top: 12px; }
+
+    .topbar {
+      position: sticky;
+      z-index: 30;
+      top: 0;
+      border-bottom: 1px solid rgba(22, 59, 53, .12);
+      background: rgba(243, 241, 233, .90);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner {
+      max-width: var(--max);
+      min-height: 64px;
+      margin: 0 auto;
+      padding: 9px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: -.02em;
+      white-space: nowrap;
+    }
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: var(--deep);
+      background: var(--lime);
+      transform: rotate(-4deg);
+    }
+    .nav { display: flex; align-items: center; gap: 3px; overflow-x: auto; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a, .print {
+      border: 0;
+      border-radius: 999px;
+      padding: 7px 11px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .nav a:hover, .print:hover { color: var(--deep); background: var(--mint); }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 76px 22px 56px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(330px, .88fr);
+      align-items: center;
+      gap: 54px;
+    }
+    .eyebrow {
+      margin-bottom: 16px;
+      color: var(--deep-2);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(43px, 6.7vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -.058em;
+    }
+    h1 em {
+      position: relative;
+      z-index: 0;
+      color: var(--deep);
+      font-style: normal;
+      white-space: nowrap;
+    }
+    h1 em::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -.04em;
+      bottom: .04em;
+      left: -.04em;
+      height: .27em;
+      border-radius: 999px;
+      background: var(--lime);
+      transform: rotate(-1deg);
+    }
+    .lede {
+      max-width: 720px;
+      margin-bottom: 24px;
+      color: var(--muted);
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.68;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 254, 250, .72);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 750;
+    }
+    .hero-tag::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 5px rgba(217, 239, 114, .30);
+    }
+
+    .formula {
+      position: relative;
+      padding: 28px;
+      border-radius: 30px;
+      color: white;
+      background: var(--deep);
+      box-shadow: var(--shadow);
+      transform: rotate(1deg);
+      overflow: hidden;
+    }
+    .formula::after {
+      content: "";
+      position: absolute;
+      right: -78px;
+      bottom: -108px;
+      width: 230px;
+      height: 230px;
+      border: 46px solid rgba(217, 239, 114, .11);
+      border-radius: 50%;
+    }
+    .formula-label {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--deep);
+      background: var(--lime);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .formula h2 { margin-bottom: 8px; font-size: 20px; letter-spacing: -.02em; }
+    .formula > p { margin-bottom: 22px; color: rgba(255, 255, 255, .70); font-size: 14px; }
+    .formula ol { position: relative; z-index: 1; padding: 0; margin: 0; list-style: none; counter-reset: flow; }
+    .formula li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      align-items: center;
+      gap: 12px;
+      min-height: 54px;
+      counter-increment: flow;
+    }
+    .formula li::before {
+      content: counter(flow);
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--deep);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .formula li:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 42px;
+      bottom: -2px;
+      left: 17px;
+      width: 2px;
+      background: rgba(217, 239, 114, .28);
+    }
+    .formula strong { font-size: 15px; }
+
+    .feedback {
+      margin-top: 38px;
+      padding: 24px 28px;
+      border: 1px solid #dbcda8;
+      border-radius: 20px;
+      background: #fff8e7;
+      color: #66582d;
+      font-size: 16px;
+    }
+    .feedback strong { color: #4f431e; }
+
+    .section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 72px 22px;
+      border-top: 1px solid rgba(22, 59, 53, .10);
+    }
+    .section-head { max-width: 780px; margin-bottom: 34px; }
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      color: var(--deep-2);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+    .kicker::before { content: ""; width: 20px; height: 3px; border-radius: 999px; background: var(--lime); }
+    .section h2 {
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.17;
+      letter-spacing: -.042em;
+    }
+    .section-intro { margin-bottom: 0; color: var(--muted); font-size: 18px; }
+
+    .reframe {
+      display: grid;
+      grid-template-columns: 1fr 54px 1fr;
+      align-items: stretch;
+      gap: 18px;
+    }
+    .frame-card {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+    .frame-card.old { color: var(--muted); background: #f7f5ef; }
+    .frame-card.new { border-color: #b8ccb9; background: var(--mint); }
+    .frame-card span {
+      display: inline-block;
+      margin-bottom: 30px;
+      color: var(--deep-2);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+    .frame-card h3 { margin-bottom: 10px; font-size: 23px; line-height: 1.4; letter-spacing: -.025em; }
+    .frame-card p { margin-bottom: 0; font-size: 15px; }
+    .frame-arrow { display: grid; place-items: center; color: var(--deep); font-size: 26px; font-weight: 900; }
+
+    .research-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .research-card {
+      display: flex;
+      flex-direction: column;
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .research-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 15px; }
+    .pill { padding: 3px 9px; border-radius: 999px; background: var(--mint); color: var(--deep-2); font-size: 11px; font-weight: 900; }
+    .pill.blue { background: var(--blue); color: #355970; }
+    .pill.sand { background: #f1e6cb; color: #755d25; }
+    .research-card h3 { margin-bottom: 8px; font-size: 21px; line-height: 1.35; letter-spacing: -.025em; }
+    .research-card p { margin-bottom: 12px; color: var(--muted); font-size: 15px; }
+    .research-card .takeaway {
+      margin-top: auto;
+      padding: 13px 15px;
+      border-radius: 14px;
+      color: var(--deep);
+      background: #eff5f0;
+      font-weight: 750;
+    }
+    .source {
+      width: fit-content;
+      margin-top: 12px;
+      color: var(--deep-2);
+      font-size: 13px;
+      font-weight: 850;
+      text-underline-offset: 3px;
+    }
+    .evidence-note {
+      margin-top: 18px;
+      padding: 17px 20px;
+      border: 1px dashed #c8b575;
+      border-radius: 16px;
+      color: #635424;
+      background: #fff9e9;
+      font-size: 14px;
+    }
+
+    .system-shell {
+      padding: 34px;
+      border-radius: 30px;
+      color: white;
+      background: var(--deep);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .system-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 28px;
+    }
+    .system-top h3 { margin-bottom: 8px; font-size: clamp(28px, 4vw, 41px); line-height: 1.15; letter-spacing: -.04em; }
+    .system-top p { max-width: 670px; margin-bottom: 0; color: rgba(255,255,255,.70); }
+    .cost-badge {
+      flex: 0 0 auto;
+      padding: 12px 16px;
+      border-radius: 18px;
+      color: var(--deep);
+      background: var(--lime);
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.4;
+      transform: rotate(3deg);
+    }
+    .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+    .step {
+      position: relative;
+      min-height: 230px;
+      padding: 19px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 18px;
+      background: rgba(255,255,255,.06);
+    }
+    .step:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -16px;
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--deep);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+      transform: translateY(-50%);
+    }
+    .step-num {
+      display: inline-block;
+      margin-bottom: 36px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .step h4 { margin-bottom: 9px; font-size: 17px; line-height: 1.35; }
+    .step p { margin-bottom: 0; color: rgba(255,255,255,.68); font-size: 13px; line-height: 1.6; }
+
+    .card-demo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(360px, 1.2fr);
+      align-items: center;
+      gap: 50px;
+    }
+    .demo-copy h3 { margin-bottom: 14px; font-size: 28px; line-height: 1.25; letter-spacing: -.035em; }
+    .demo-copy p { color: var(--muted); }
+    .demo-copy ul { padding: 0; margin: 20px 0 0; list-style: none; }
+    .demo-copy li { position: relative; margin-bottom: 10px; padding-left: 28px; color: var(--muted); font-size: 15px; }
+    .demo-copy li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: .18em;
+      width: 19px;
+      height: 19px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      color: var(--deep);
+      background: var(--lime);
+      font-size: 11px;
+      font-weight: 900;
+    }
+    .phone {
+      position: relative;
+      max-width: 510px;
+      margin: 0 auto;
+      padding: 13px;
+      border-radius: 34px;
+      background: #19332f;
+      box-shadow: 0 25px 65px rgba(22, 59, 53, .22);
+      transform: rotate(1deg);
+    }
+    .phone::before {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      top: 20px;
+      left: 50%;
+      width: 68px;
+      height: 6px;
+      border-radius: 999px;
+      background: #10231f;
+      transform: translateX(-50%);
+    }
+    .screen { padding: 36px 25px 25px; border-radius: 24px; background: var(--surface); }
+    .screen-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+    .screen-label { color: var(--deep-2); font-size: 12px; font-weight: 900; letter-spacing: .05em; }
+    .screen-time { color: var(--muted); font-size: 11px; }
+    .screen h3 { margin-bottom: 13px; font-size: 23px; line-height: 1.35; letter-spacing: -.03em; }
+    .question { padding: 14px 16px; border-radius: 14px; background: #eef4ef; color: var(--deep); font-size: 14px; font-weight: 800; }
+    .screen h4 { margin: 19px 0 9px; color: var(--deep); font-size: 14px; }
+    .screen ol { padding-left: 22px; margin: 0; color: var(--muted); font-size: 14px; }
+    .result { margin-top: 17px; padding: 12px 14px; border-left: 4px solid var(--lime); background: #faf8ed; color: #5e542d; font-size: 13px; }
+    .boundary { margin: 12px 0 16px; color: var(--coral); font-size: 12px; font-weight: 750; }
+    .actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; }
+    .actions span { padding: 8px 6px; border: 1px solid var(--line); border-radius: 10px; color: var(--deep-2); background: white; text-align: center; font-size: 11px; font-weight: 800; }
+
+    .dual-track { display: grid; grid-template-columns: 1.3fr .7fr; gap: 18px; }
+    .track {
+      position: relative;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      overflow: hidden;
+    }
+    .track.primary { border-color: #b7cbb9; background: var(--mint); }
+    .track-share {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 72px;
+      height: 72px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--deep);
+      background: var(--lime);
+      font-size: 20px;
+      font-weight: 900;
+    }
+    .track .small { margin-bottom: 26px; color: var(--deep-2); font-size: 12px; font-weight: 900; letter-spacing: .08em; }
+    .track h3 { max-width: 78%; margin-bottom: 10px; font-size: 25px; letter-spacing: -.03em; }
+    .track p { color: var(--muted); font-size: 15px; }
+    .track ul { padding-left: 20px; margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .track strong { color: var(--ink); }
+
+    .matrix-wrap { margin-top: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 17px 20px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { color: var(--deep); background: #edf3ee; font-size: 12px; font-weight: 900; letter-spacing: .05em; }
+    td:first-child { width: 43%; font-weight: 800; }
+    td:last-child { color: var(--muted); }
+    tr:last-child td { border-bottom: 0; }
+
+    .pilot {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+    .pilot-plan { padding: 30px; border-radius: var(--radius); color: white; background: var(--deep); }
+    .pilot-plan .duration { display: inline-block; margin-bottom: 30px; padding: 5px 10px; border-radius: 999px; color: var(--deep); background: var(--lime); font-size: 11px; font-weight: 900; }
+    .pilot-plan h3 { margin-bottom: 10px; font-size: 28px; line-height: 1.25; letter-spacing: -.03em; }
+    .pilot-plan p { margin-bottom: 0; color: rgba(255,255,255,.70); }
+    .pilot-details { display: grid; gap: 12px; }
+    .pilot-item { display: grid; grid-template-columns: 42px 1fr; gap: 14px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 17px; background: var(--surface); }
+    .pilot-item span { width: 38px; height: 38px; display: grid; place-items: center; border-radius: 12px; color: var(--deep); background: var(--lime); font-size: 12px; font-weight: 900; }
+    .pilot-item h4 { margin: 1px 0 3px; font-size: 16px; }
+    .pilot-item p { margin-bottom: 0; color: var(--muted); font-size: 13px; }
+
+    .limits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 24px; }
+    .limit { padding: 19px; border: 1px solid rgba(233,124,98,.28); border-radius: 18px; background: #fff6f1; }
+    .limit strong { display: block; margin-bottom: 4px; color: #8d3f2c; font-size: 15px; }
+    .limit span { color: var(--muted); font-size: 13px; }
+
+    .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .metric { min-height: 155px; padding: 22px; border: 1px solid var(--line); border-radius: 20px; background: var(--surface); }
+    .metric-num { display: block; margin-bottom: 22px; color: var(--deep-2); font-size: 12px; font-weight: 900; }
+    .metric h3 { margin-bottom: 6px; font-size: 18px; }
+    .metric p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .north-star { margin-top: 16px; padding: 20px 24px; border-radius: 18px; color: var(--deep); background: var(--lime); text-align: center; font-size: 17px; font-weight: 900; }
+
+    .conclusion { padding: 36px; border-radius: 28px; color: white; background: var(--deep); box-shadow: var(--shadow); }
+    .conclusion span { display: inline-block; margin-bottom: 13px; color: var(--lime); font-size: 12px; font-weight: 900; letter-spacing: .10em; }
+    .conclusion p { max-width: 900px; margin-bottom: 0; font-size: clamp(21px, 3vw, 31px); line-height: 1.5; font-weight: 850; letter-spacing: -.03em; }
+
+    .sources { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 22px; padding: 0; margin: 0; list-style: none; counter-reset: refs; }
+    .sources li { position: relative; padding: 11px 10px 11px 42px; border-bottom: 1px solid var(--line); counter-increment: refs; }
+    .sources li::before { content: counter(refs, decimal-leading-zero); position: absolute; top: 12px; left: 0; color: var(--deep-2); font-size: 11px; font-weight: 900; }
+    .sources a { color: var(--ink); font-size: 14px; font-weight: 800; text-decoration-color: #abc2b3; text-underline-offset: 3px; }
+    .sources small { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; }
+
+    footer { padding: 34px 22px 48px; color: var(--muted); text-align: center; font-size: 12px; }
+    .back-top {
+      position: fixed;
+      z-index: 20;
+      right: 20px;
+      bottom: 20px;
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--deep);
+      box-shadow: var(--shadow);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    @media (max-width: 920px) {
+      .nav a { display: none; }
+      .hero-grid { grid-template-columns: 1fr; gap: 42px; }
+      .formula { max-width: 620px; transform: none; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step { min-height: 0; }
+      .step:not(:last-child)::after { display: none; }
+      .card-demo-grid { grid-template-columns: 1fr; }
+      .demo-copy { max-width: 700px; }
+      .dual-track { grid-template-columns: 1fr; }
+      .pilot { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      body { font-size: 16px; }
+      .topbar-inner { padding-inline: 16px; }
+      .brand { font-size: 14px; }
+      .hero, .section { padding-left: 17px; padding-right: 17px; }
+      .hero { padding-top: 52px; }
+      h1 { font-size: clamp(41px, 13vw, 58px); }
+      h1 em { white-space: normal; }
+      .formula { padding: 24px 20px; }
+      .feedback { padding: 20px; }
+      .section { padding-top: 58px; padding-bottom: 58px; }
+      .reframe { grid-template-columns: 1fr; }
+      .frame-arrow { transform: rotate(90deg); }
+      .research-grid, .steps, .limits, .metrics, .sources { grid-template-columns: 1fr; }
+      .system-shell { padding: 26px 18px; }
+      .system-top { display: block; }
+      .cost-badge { display: inline-block; margin-top: 16px; transform: none; }
+      .phone { transform: none; }
+      .screen { padding: 34px 17px 20px; }
+      .actions { grid-template-columns: 1fr; }
+      .track { padding: 24px 20px; }
+      .track-share { position: static; width: fit-content; height: auto; margin-bottom: 18px; padding: 6px 11px; border-radius: 999px; font-size: 13px; }
+      .track h3 { max-width: none; }
+      .matrix-wrap { border: 0; background: transparent; overflow: visible; }
+      table, tbody, tr, td { display: block; }
+      thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      tr { margin-bottom: 11px; padding: 15px 17px; border: 1px solid var(--line); border-radius: 15px; background: var(--surface); }
+      td { width: 100% !important; padding: 0; border: 0; }
+      td + td { margin-top: 5px; font-size: 14px; }
+      .pilot-plan { padding: 25px 20px; }
+      .back-top { right: 13px; bottom: 13px; }
+    }
+
+    @media print {
+      @page { size: A4; margin: 15mm; }
+      body { color: #111; background: white; font-size: 10.5pt; }
+      .topbar, .skip, .back-top { display: none !important; }
+      .hero, .section { max-width: none; padding: 10mm 0; }
+      .hero-grid { grid-template-columns: 1fr; gap: 6mm; }
+      h1 { font-size: 33pt; }
+      .formula, .system-shell, .pilot-plan, .conclusion { color: #111; background: #eff2ef; box-shadow: none; transform: none; }
+      .formula > p, .system-top p, .step p, .pilot-plan p { color: #444; }
+      .formula li::before, .formula-label, .cost-badge, .step-num, .track-share { color: #111; background: #eee; border: 1px solid #999; }
+      .research-grid { grid-template-columns: 1fr 1fr; }
+      .research-card, .frame-card, .step, .track, .pilot-item, .limit, .metric, .phone { break-inside: avoid; box-shadow: none; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step { min-height: 0; border-color: #aaa; background: white; }
+      .step:not(:last-child)::after { display: none; }
+      .dual-track, .pilot { grid-template-columns: 1fr 1fr; }
+      .source::after, .sources a::after { content: " (" attr(href) ")"; font-size: 8pt; font-weight: 400; word-break: break-all; }
+      footer { padding: 6mm 0 0; }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip" href="#main">跳到正文</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">一招</span><span>银行分行轻量实践扩散方案</span></div>
+      <nav class="nav" aria-label="页内导航">
+        <a href="#reframe">重新定义</a>
+        <a href="#research">研究发现</a>
+        <a href="#solution">轻量方案</a>
+        <a href="#tracks">双轨制</a>
+        <a href="#pilot">两周测试</a>
+        <button class="print" type="button" onclick="window.print()">打印 / PDF</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">From training project to knowledge flow</p>
+          <h1>别再做一场培训，做一个<em>低打扰的知识流</em></h1>
+          <p class="lede">日常优秀实践扩散，不应该承担完整能力建设。更轻的做法，是让真正需要的人在需要时，用一分钟看到一条可信、可立即尝试的同业经验。</p>
+          <span class="hero-tag">重新研究版 · 适用于总部对接40–50家分行的场景</span>
+        </div>
+
+        <aside class="formula" aria-label="轻量实践扩散公式">
+          <span class="formula-label">推荐主方案</span>
+          <h2>“分行一招”的最小闭环</h2>
+          <p>不建设新平台，不新开培训，不要求全员参加。</p>
+          <ol>
+            <li><strong>2分钟语音采集</strong></li>
+            <li><strong>总部整理成一屏实践卡</strong></li>
+            <li><strong>精准推给相关岗位</strong></li>
+            <li><strong>借用现有晨会3分钟</strong></li>
+            <li><strong>有兴趣的人再主动深入</strong></li>
+          </ol>
+        </aside>
+      </div>
+
+      <div class="feedback"><strong>对朋友反馈的判断：</strong>上一版“互动案例＋14天复制赛＋Demo Day”确实偏重，更适合少数战略级或复杂实践。日常机制应从“培训项目”降为“内部业务内容服务”。</div>
+    </section>
+
+    <section class="section" id="reframe" aria-labelledby="reframe-title">
+      <div class="section-head">
+        <span class="kicker">01 · 重新定义</span>
+        <h2 id="reframe-title">问题不是“如何让所有人学习”，而是“如何让需要的人马上用”</h2>
+        <p class="section-intro">从覆盖率思维，切换到工作场景中的即时可用性。</p>
+      </div>
+
+      <div class="reframe">
+        <article class="frame-card old">
+          <span>原问题</span>
+          <h3>怎么让更多分行员工认真学习优秀实践？</h3>
+          <p>容易导向课程、活动、竞赛、统一参与和完成率考核，资源自然越来越重。</p>
+        </article>
+        <div class="frame-arrow" aria-hidden="true">→</div>
+        <article class="frame-card new">
+          <span>新问题</span>
+          <h3>怎么让合适的人，在合适的时点，看到一条能马上尝试的同业经验？</h3>
+          <p>重点变成精准、简短、可信、可调用，而不是把每条实践都做成一次培训。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="research" aria-labelledby="research-title">
+      <div class="section-head">
+        <span class="kicker">02 · 重新研究</span>
+        <h2 id="research-title">轻量扩散的关键：嵌入已有工作，而不是压缩培训时长</h2>
+        <p class="section-intro">以下案例不需要整体照搬，真正有价值的是其中的轻量机制。</p>
+      </div>
+
+      <div class="research-grid">
+        <article class="research-card">
+          <div class="meta"><span class="pill">银行业</span><span class="pill blue">工作流学习</span></div>
+          <h3>Standard Bank：不必完成整门课程</h3>
+          <p>将内容拆成可以在工作间隙读取的小块，员工可以只选择与自己相关的主题，而不是被迫完成整个课程。</p>
+          <p class="takeaway">可借鉴：一次只传递一个动作；需要时立即获取。</p>
+          <a class="source" href="https://learning.linkedin.com/elearning-case-studies/standardbank" target="_blank" rel="noopener noreferrer">查看案例来源 ↗</a>
+        </article>
+
+        <article class="research-card">
+          <div class="meta"><span class="pill">银行业</span><span class="pill blue">微内容</span></div>
+          <h3>Commonwealth Bank：少量短内容也能覆盖全行</h3>
+          <p>面向约43,000名员工的AI系列只包含9个短视频，累计获得超过22,000次观看。</p>
+          <p class="takeaway">可借鉴：先做少量高相关内容，不建设庞大课程库。</p>
+          <a class="source" href="https://www.commbank.com.au/articles/newsroom/2024/08/cba-ai-microlearning-series.html" target="_blank" rel="noopener noreferrer">查看官方案例 ↗</a>
+        </article>
+
+        <article class="research-card">
+          <div class="meta"><span class="pill">银行业</span><span class="pill sand">现有晨会</span></div>
+          <h3>Santander：在已有晨会中谈具体行为</h3>
+          <p>分行经理使用日常晨会围绕客户反馈进行辅导，重点不是通报分数，而是讨论产生体验结果的具体行为。</p>
+          <p class="takeaway">可借鉴：已有晨会就借3分钟；没有晨会就不要新开。</p>
+          <a class="source" href="https://exp-now.medallia.com/video/frontline-action-using-customer-feedback/" target="_blank" rel="noopener noreferrer">查看案例来源 ↗</a>
+        </article>
+
+        <article class="research-card">
+          <div class="meta"><span class="pill sand">酒店业</span><span class="pill blue">真人故事</span></div>
+          <h3>丽思卡尔顿：用固定的一条故事维持文化</h3>
+          <p>各物业在班前例会中强化一个主题，并定期分享员工真实的“WOW故事”，让同事实践持续可见。</p>
+          <p class="takeaway">可借鉴：一次只讲一条真人故事，不必不断制作课程。</p>
+          <a class="source" href="https://www.nist.gov/blogs/blogrige/customer-really-always-right-hotel-company-invests-its-employees-first" target="_blank" rel="noopener noreferrer">查看NIST案例 ↗</a>
+        </article>
+
+        <article class="research-card">
+          <div class="meta"><span class="pill sand">精益管理</span><span class="pill blue">单点课</span></div>
+          <h3>One-Point Lesson：一个主题、一页、一个动作</h3>
+          <p>一个跨国零售网络将当地实践压缩成简短说明和单点操作步骤，再放进已有SharePoint供其他站点调用。</p>
+          <p class="takeaway">可借鉴：不写完整案例报告，只保留场景、动作、结果和边界。</p>
+          <a class="source" href="https://kaizen.com/insights/standardizing-excellence-retail-network/" target="_blank" rel="noopener noreferrer">查看Kaizen案例 ↗</a>
+        </article>
+
+        <article class="research-card">
+          <div class="meta"><span class="pill sand">医疗行业</span><span class="pill blue">短碰头会</span></div>
+          <h3>NHS：短而固定的讨论也能识别学习需求</h3>
+          <p>一项十分钟日常安全碰头会案例中，87%的受访者认为会上识别出的学习需求得到了解决。</p>
+          <p class="takeaway">可借鉴：固定结构比丰富形式更重要；银行只需借用其中2–3分钟。</p>
+          <a class="source" href="https://www.england.nhs.uk/atlas_case_study/improving-patient-safety-by-introducing-a-daily-emergency-call-safety-huddle/" target="_blank" rel="noopener noreferrer">查看NHS案例 ↗</a>
+        </article>
+      </div>
+
+      <aside class="evidence-note"><strong>证据边界：</strong>银行业平台案例和部分效果数据来自企业或解决方案供应商自报，只能说明机制具有可行性，不能直接视为因果证明。建议通过小范围对照测试验证实际采用率。</aside>
+    </section>
+
+    <section class="section" id="solution" aria-labelledby="solution-title">
+      <div class="section-head">
+        <span class="kicker">03 · 主方案</span>
+        <h2 id="solution-title">“分行一招”：把经验变成低打扰的内部内容栏目</h2>
+        <p class="section-intro">总部不再组织所有人学习，而是把真实经验压缩、匹配并送到可能用得上的人面前。</p>
+      </div>
+
+      <div class="system-shell">
+        <div class="system-top">
+          <div>
+            <h3>每周最多一条，形成最小闭环</h3>
+            <p>不拍宣传片、不制作PPT、不要求签到、不组织考试。只有对该实践有兴趣的人才继续查看详细材料或联系原创员工。</p>
+          </div>
+          <div class="cost-badge">无新平台<br>无新增会议</div>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <span class="step-num">STEP 01</span>
+            <h4>语音采集</h4>
+            <p>贡献者用2分钟回答：遇到什么、做了什么、结果如何、何时不适用。</p>
+          </article>
+          <article class="step">
+            <span class="step-num">STEP 02</span>
+            <h4>压成一屏</h4>
+            <p>总部只保留场景、悬念、1–3个动作、结果证据、使用边界和作者。</p>
+          </article>
+          <article class="step">
+            <span class="step-num">STEP 03</span>
+            <h4>精准推送</h4>
+            <p>按岗位、业务和分行场景推送；不相关的人不接收。</p>
+          </article>
+          <article class="step">
+            <span class="step-num">STEP 04</span>
+            <h4>晨会3分钟</h4>
+            <p>30秒读场景、请一人回答、揭晓同行做法、补充适用边界。</p>
+          </article>
+          <article class="step">
+            <span class="step-num">STEP 05</span>
+            <h4>兴趣下钻</h4>
+            <p>只为“想试一下”的人提供附件、模板或作者联系方式。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="demo-title">
+      <div class="card-demo-grid">
+        <div class="demo-copy">
+          <span class="kicker">04 · 内容样例</span>
+          <h3 id="demo-title">趣味性只需“先猜一下”，不需要动画、积分和排行榜</h3>
+          <p>一张卡片围绕一个真实业务瞬间展开。员工先判断，再看同业怎么做；详细规则和模板按需打开。</p>
+          <ul>
+            <li>手机一屏左右，约60–90秒读完</li>
+            <li>来自具体分行和真实岗位</li>
+            <li>写清适用边界和合规红线</li>
+            <li>只有三个反馈按钮，不做复杂互动</li>
+          </ul>
+        </div>
+
+        <div class="phone" aria-label="分行一招实践卡示例">
+          <div class="screen">
+            <div class="screen-top"><span class="screen-label">本周一招 · 客户沟通</span><span class="screen-time">约1分钟</span></div>
+            <h3>客户说“回去再考虑”，下一步怎么做？</h3>
+            <div class="question">先猜一下：A.继续介绍产品　B.追问顾虑　C.立即结束沟通</div>
+            <h4>××分行的三个动作</h4>
+            <ol>
+              <li>确认客户犹豫的是收益、期限还是风险；</li>
+              <li>只针对一个核心顾虑补充说明；</li>
+              <li>约定一个明确的后续联系时间。</li>
+            </ol>
+            <div class="result"><strong>结果：</strong>后续联系成功率有所改善；正式发布时应补充可核验数据及统计口径。</div>
+            <div class="boundary">使用边界：客户已明确拒绝时，不应继续营销。</div>
+            <div class="actions"><span>我也遇到过</span><span>想试一下</span><span>我们不适用</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="tracks" aria-labelledby="tracks-title">
+      <div class="section-head">
+        <span class="kicker">05 · 双轨制</span>
+        <h2 id="tracks-title">日常轻量传播是默认，专项培训只留给少数复杂实践</h2>
+        <p class="section-intro">上一版方案不必废弃，而是从默认方案降为专项工具。</p>
+      </div>
+
+      <div class="dual-track">
+        <article class="track primary">
+          <div class="track-share">80–90%</div>
+          <p class="small">默认轨道</p>
+          <h3>普通经验：轻量传播</h3>
+          <p>适用于一个话术、一个动作、一个误区、一个模板或一个可快速尝试的小技巧。</p>
+          <ul>
+            <li><strong>形式：</strong>一屏实践卡、3分钟晨会、按需附件</li>
+            <li><strong>投入：</strong>一次短访谈＋一次编辑与合规审阅</li>
+            <li><strong>目标：</strong>让需要的人快速看到并自行判断是否采用</li>
+          </ul>
+        </article>
+        <article class="track">
+          <div class="track-share">10–20%</div>
+          <p class="small">专项轨道</p>
+          <h3>复杂实践：专项培训或试点</h3>
+          <p>适用于涉及多岗位协同、系统配置、较高风险、正式考核或战略级全行推广的实践。</p>
+          <ul>
+            <li><strong>形式：</strong>小范围试点、正式培训、复制项目</li>
+            <li><strong>投入：</strong>按复杂度单独立项</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="matrix-wrap">
+        <table>
+          <thead><tr><th scope="col">实践类型</th><th scope="col">建议实现形式</th></tr></thead>
+          <tbody>
+            <tr><td>一个话术、动作或小技巧</td><td>一屏实践卡</td></tr>
+            <tr><td>一个常见误区或真实案例</td><td>实践卡＋现有晨会3分钟讨论</td></tr>
+            <tr><td>需要时才能理解的工具或模板</td><td>实践卡＋附件链接</td></tr>
+            <tr><td>涉及多个岗位协同或流程调整</td><td>小范围试点</td></tr>
+            <tr><td>风险较高、操作复杂、需要考核</td><td>正式专项培训</td></tr>
+            <tr><td>战略级实践，需要全行推广</td><td>互动案例＋复制项目</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section" id="pilot" aria-labelledby="pilot-title">
+      <div class="section-head">
+        <span class="kicker">06 · 最低成本验证</span>
+        <h2 id="pilot-title">用两周测试，不开启动会，不开发系统</h2>
+        <p class="section-intro">先比较“一屏实践卡”与现有长文的实际采用效果，再决定是否扩大。</p>
+      </div>
+
+      <div class="pilot">
+        <article class="pilot-plan">
+          <span class="duration">2周即可完成</span>
+          <h3>2条实践 × 6–8家分行</h3>
+          <p>一条沿用原来的长文格式，一条使用“一屏实践卡＋晨会3分钟”，观察哪一种更容易被看见、认为有用并实际使用。</p>
+        </article>
+        <div class="pilot-details">
+          <article class="pilot-item"><span>01</span><div><h4>选实践</h4><p>选择两条已验证、风险较低、能够立即尝试的普通业务实践。</p></div></article>
+          <article class="pilot-item"><span>02</span><div><h4>做对照</h4><p>保持受众和推送渠道尽量一致，只改变内容呈现与晨会使用方式。</p></div></article>
+          <article class="pilot-item"><span>03</span><div><h4>只问三件事</h4><p>是否看过、是否认为有用、是否在真实工作中用过。</p></div></article>
+          <article class="pilot-item"><span>04</span><div><h4>决定是否扩展</h4><p>若实际使用率明显高于长文，再增加频率或覆盖范围。</p></div></article>
+        </div>
+      </div>
+
+      <div class="limits" aria-label="试点资源上限">
+        <div class="limit"><strong>不拍视频</strong><span>优先使用语音、文字和必要的流程截图。</span></div>
+        <div class="limit"><strong>不开发H5或新平台</strong><span>使用现有内网、工作群、邮件或知识库。</span></div>
+        <div class="limit"><strong>不组织全员竞赛</strong><span>不制造额外活动和排名压力。</span></div>
+        <div class="limit"><strong>不新增会议</strong><span>只借用已有晨会2–3分钟。</span></div>
+        <div class="limit"><strong>每周最多一条</strong><span>避免栏目本身变成新的信息负担。</span></div>
+        <div class="limit"><strong>必须做合规审阅</strong><span>去客户信息化，写清适用边界，避免不当营销。</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="metrics-title">
+      <div class="section-head">
+        <span class="kicker">07 · 衡量结果</span>
+        <h2 id="metrics-title">不要统计“完成培训”，只看有没有产生业务调用</h2>
+      </div>
+
+      <div class="metrics">
+        <article class="metric"><span class="metric-num">01 · 看见</span><h3>相关岗位触达率</h3><p>目标受众中有多少人实际打开或在晨会中接触到该实践？</p></article>
+        <article class="metric"><span class="metric-num">02 · 价值</span><h3>“有用”反馈率</h3><p>有多少人认为这条经验与自己的实际工作相关？</p></article>
+        <article class="metric"><span class="metric-num">03 · 行动</span><h3>实际使用率</h3><p>有多少人表示已经试过，而不只是“想试一下”？</p></article>
+      </div>
+      <div class="north-star">核心指标：一条实践被多少个真正相关的岗位或分行实际调用，而不是多少人“学完”。</div>
+    </section>
+
+    <section class="section" aria-labelledby="conclusion-title">
+      <div class="conclusion">
+        <span id="conclusion-title">修正后的核心建议</span>
+        <p>2分钟语音采集 → 一屏实践卡 → 精准推送 → 借用晨会3分钟 → 有兴趣的人主动深入。这不是把培训做轻，而是把它从“培训”改造成一种低打扰的内部业务内容服务。</p>
+      </div>
+    </section>
+
+    <section class="section" id="sources" aria-labelledby="sources-title">
+      <div class="section-head">
+        <span class="kicker">08 · 参考来源</span>
+        <h2 id="sources-title">主要案例与方法来源</h2>
+        <p class="section-intro">链接直达案例原页或机构资料，便于进一步核查。</p>
+      </div>
+      <ol class="sources">
+        <li><a href="https://learning.linkedin.com/elearning-case-studies/standardbank" target="_blank" rel="noopener noreferrer">Standard Bank：工作流中的小块学习</a><small>供应商案例</small></li>
+        <li><a href="https://www.commbank.com.au/articles/newsroom/2024/08/cba-ai-microlearning-series.html" target="_blank" rel="noopener noreferrer">Commonwealth Bank：AI微学习系列</a><small>银行官方资料</small></li>
+        <li><a href="https://exp-now.medallia.com/video/frontline-action-using-customer-feedback/" target="_blank" rel="noopener noreferrer">Santander：利用日常晨会辅导具体行为</a><small>供应商案例</small></li>
+        <li><a href="https://web-assets.bcg.com/img-src/How_to_Boost_Bank_Branches_in_a_Multichannel_World_Mar_2014_tcm9-91150.pdf" target="_blank" rel="noopener noreferrer">BCG：银行网点晨会与同伴辅导</a><small>咨询机构研究</small></li>
+        <li><a href="https://www.nist.gov/blogs/blogrige/customer-really-always-right-hotel-company-invests-its-employees-first" target="_blank" rel="noopener noreferrer">NIST：丽思卡尔顿班前例会与WOW故事</a><small>美国国家标准与技术研究院</small></li>
+        <li><a href="https://kaizen.com/insights/standardizing-excellence-retail-network/" target="_blank" rel="noopener noreferrer">Kaizen：跨站点One-Point Lesson</a><small>机构案例</small></li>
+        <li><a href="https://www.england.nhs.uk/atlas_case_study/improving-patient-safety-by-introducing-a-daily-emergency-call-safety-huddle/" target="_blank" rel="noopener noreferrer">NHS：十分钟日常安全碰头会</a><small>英国国家医疗服务体系</small></li>
+        <li><a href="https://www.armyupress.army.mil/Journals/Journal-of-Military-Learning/Journal-of-Military-Learning-Archives/April-2022/Cates-Action-Review/" target="_blank" rel="noopener noreferrer">美国陆军：After Action Review</a><small>复盘与经验采集方法</small></li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>资料整理于2026年8月。用于内部研讨和方案启发；实施时应完成相应的合规、消保与数据安全审查。</footer>
+  <a class="back-top" href="#top" aria-label="返回顶部">↑</a>
+</body>
+</html>
