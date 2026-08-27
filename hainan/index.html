@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b3340">
+  <title>陵水 5天4晚家庭自驾游规划</title>
+  <style>
+    :root {
+      --ink: #15333a;
+      --muted: #6e7e7f;
+      --deep: #0b3340;
+      --ocean: #16849b;
+      --foam: #e8f3f0;
+      --sand: #f7f1e8;
+      --sun: #efb45d;
+      --leaf: #6c8d62;
+      --line: #d9e5e1;
+      --white: #fffdf9;
+      --shadow: 0 18px 50px rgba(12, 50, 59, .12);
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--sand);
+      font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--ocean);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 0 0 28px;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { letter-spacing: -.035em; line-height: 1.2; }
+    h2 { margin-bottom: 10px; font-size: clamp(28px, 4vw, 42px); }
+    h3 { margin-bottom: 10px; font-size: 21px; }
+    .section-lede { max-width: 620px; margin-bottom: 0; color: var(--muted); }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+    .accent { color: var(--ocean); }
+
+    .hero {
+      min-height: 640px;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(6, 36, 43, .88) 0%, rgba(6, 36, 43, .6) 42%, rgba(6, 36, 43, .1) 100%),
+        linear-gradient(180deg, rgba(6, 36, 43, .08), rgba(6, 36, 43, .5)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2200&q=88") center/cover;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 28%;
+      z-index: -1;
+      background: linear-gradient(transparent, rgba(3, 21, 27, .4));
+    }
+    .hero-inner { min-height: 640px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 0 48px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 14px; font-weight: 800; letter-spacing: .08em; }
+    .topbar nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 13px; }
+    .topbar nav a { color: rgba(255,255,255,.84); text-decoration: none; }
+    .topbar nav a:hover { color: #fff; }
+    .hero-copy { max-width: 680px; animation: rise .8s ease both; }
+    .hero .eyebrow { color: #b7e8e3; }
+    .hero h1 { max-width: 690px; margin-bottom: 18px; font-size: clamp(42px, 7vw, 82px); }
+    .hero-sub { max-width: 570px; margin-bottom: 28px; color: rgba(255,255,255,.82); font-size: 17px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; }
+    .hero-meta span { padding: 7px 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 99px; color: rgba(255,255,255,.88); background: rgba(255,255,255,.09); backdrop-filter: blur(8px); font-size: 13px; }
+    .hero-bottom { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 24px; }
+    .hero-note { max-width: 470px; margin: 0; color: rgba(255,255,255,.72); font-size: 13px; }
+    .jump { display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 99px; color: var(--deep); background: #fffdf9; font-size: 13px; font-weight: 800; text-decoration: none; box-shadow: 0 8px 24px rgba(0,0,0,.14); }
+    .jump:hover { transform: translateY(-2px); }
+
+    .summary { position: relative; z-index: 2; margin-top: -48px; }
+    .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); overflow: hidden; border: 1px solid rgba(18, 64, 70, .1); border-radius: var(--radius); background: rgba(255,253,249,.96); box-shadow: var(--shadow); }
+    .summary-item { min-height: 132px; padding: 24px 22px; border-right: 1px solid var(--line); }
+    .summary-item:last-child { border-right: 0; }
+    .summary-kicker { margin-bottom: 6px; color: var(--muted); font-size: 12px; }
+    .summary-value { display: block; margin-bottom: 5px; color: var(--deep); font-size: 23px; font-weight: 900; letter-spacing: -.03em; }
+    .summary-note { color: var(--muted); font-size: 13px; }
+
+    main { padding: 100px 0 80px; }
+    section { scroll-margin-top: 90px; }
+    .intro-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 60px; align-items: start; }
+    .intro-copy p { max-width: 610px; color: var(--muted); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .tag { padding: 7px 11px; border-radius: 99px; background: var(--foam); color: var(--deep); font-size: 13px; }
+    .flight-strip { border-top: 1px solid var(--line); }
+    .flight-row { display: grid; grid-template-columns: 94px 1fr auto; gap: 20px; align-items: center; padding: 22px 0; border-bottom: 1px solid var(--line); }
+    .flight-label { color: var(--ocean); font-size: 12px; font-weight: 800; letter-spacing: .08em; }
+    .flight-route { font-weight: 800; }
+    .flight-route span { color: var(--muted); font-weight: 500; }
+    .flight-time { text-align: right; font-weight: 800; }
+    .flight-time small { display: block; color: var(--muted); font-size: 12px; font-weight: 500; }
+
+    .band { margin-top: 42px; padding: 44px 0; background: var(--deep); color: #fff; }
+    .band .eyebrow { color: #9edfd7; }
+    .band h2 { max-width: 520px; }
+    .sea-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; margin-top: 28px; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+    .sea-day { min-height: 178px; padding: 20px 16px 20px 0; border-right: 1px solid rgba(255,255,255,.17); }
+    .sea-day:not(:first-child) { padding-left: 16px; }
+    .sea-day:last-child { border-right: 0; }
+    .sea-num { color: #9edfd7; font-size: 12px; font-weight: 800; letter-spacing: .12em; }
+    .sea-day h3 { margin: 13px 0 8px; color: #fff; font-size: 18px; }
+    .sea-day p { margin: 0; color: rgba(255,255,255,.68); font-size: 13px; line-height: 1.65; }
+
+    .section { padding-top: 96px; }
+    .section-head-row { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+    .section-mark { color: var(--sun); font-size: 15px; font-weight: 900; }
+
+    .stay-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .stay { min-height: 220px; padding: 28px; border-radius: var(--radius); background: var(--white); box-shadow: 0 8px 28px rgba(17, 57, 60, .06); }
+    .stay:first-child { background: #e8f3f0; }
+    .stay:last-child { background: #f4e9d9; }
+    .stay-period { margin-bottom: 12px; color: var(--ocean); font-size: 12px; font-weight: 900; letter-spacing: .12em; }
+    .stay:last-child .stay-period { color: #b87929; }
+    .stay h3 { font-size: 24px; }
+    .stay p { max-width: 470px; margin-bottom: 0; color: var(--muted); }
+    .price { margin-top: 20px; color: var(--deep); font-size: 18px; font-weight: 900; }
+
+    .timeline { position: relative; margin-top: 34px; }
+    .timeline::before { content: ""; position: absolute; top: 22px; bottom: 22px; left: 19px; width: 1px; background: var(--line); }
+    details.day { position: relative; margin-bottom: 14px; padding-left: 58px; }
+    details.day::before { content: ""; position: absolute; top: 24px; left: 12px; width: 15px; height: 15px; border: 4px solid var(--sand); border-radius: 50%; background: var(--ocean); box-shadow: 0 0 0 1px var(--ocean); }
+    details.day[open]::before { background: var(--sun); box-shadow: 0 0 0 1px var(--sun); }
+    details.day > summary { list-style: none; cursor: pointer; }
+    details.day > summary::-webkit-details-marker { display: none; }
+    .day-summary { display: grid; grid-template-columns: 86px 1fr auto; gap: 22px; align-items: center; padding: 22px 24px; border-bottom: 1px solid var(--line); background: rgba(255,253,249,.56); transition: background .2s, transform .2s; }
+    .day-summary:hover { background: var(--white); transform: translateX(3px); }
+    .day-number { color: var(--ocean); font-size: 13px; font-weight: 900; letter-spacing: .08em; }
+    .day-title { margin: 0; font-size: 21px; }
+    .day-title small { display: block; margin-top: 5px; color: var(--muted); font-size: 13px; font-weight: 500; letter-spacing: 0; }
+    .day-arrow { color: var(--ocean); font-size: 21px; transition: transform .2s; }
+    details[open] .day-arrow { transform: rotate(45deg); }
+    .day-body { padding: 28px 24px 30px; background: rgba(255,253,249,.84); }
+    .day-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 36px; }
+    .schedule { display: grid; grid-template-columns: 105px 1fr; gap: 0 18px; margin: 0; }
+    .schedule dt, .schedule dd { padding: 10px 0; border-bottom: 1px solid var(--line); }
+    .schedule dt { color: var(--ocean); font-size: 13px; font-weight: 900; }
+    .schedule dd { margin: 0; font-size: 14px; }
+    .schedule dd strong { color: var(--deep); }
+    .route { align-self: start; padding: 22px; border-left: 3px solid var(--sun); background: #fff8ec; }
+    .route h4 { margin: 0 0 10px; color: #a66b1f; font-size: 14px; }
+    .route p { margin-bottom: 7px; font-size: 14px; }
+    .route p:last-child { margin-bottom: 0; }
+    .route strong { color: var(--deep); }
+    .experience { margin-top: 22px; padding: 20px 22px; border-radius: 16px; background: var(--foam); }
+    .experience strong { color: var(--ocean); }
+    .experience p { margin: 5px 0 0; color: var(--muted); font-size: 14px; }
+    .source-links { margin-top: 11px !important; font-size: 12px !important; }
+    .source-links a { color: var(--ocean); font-weight: 700; text-underline-offset: 3px; }
+    .evidence-strip { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 22px; }
+    .evidence-pill { padding: 6px 10px; border: 1px solid #bddbd6; border-radius: 99px; color: var(--deep); background: #f2faf8; font-size: 12px; font-weight: 800; }
+    .evidence-pill.high { border-color: #9bcfc4; background: #e3f4ef; }
+    .evidence-pill.mid { border-color: #efd4a6; background: #fff6e6; }
+    .evidence-pill.low { border-color: #d8dedd; color: var(--muted); background: #f5f7f6; }
+    .conflict-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 12px; }
+    .conflict-card { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.72); }
+    .conflict-card strong { display: block; margin-bottom: 6px; color: var(--deep); font-size: 13px; }
+    .conflict-card p { margin: 0; font-size: 13px; line-height: 1.65; }
+    .onsite-check { display: inline-block; margin-top: 8px; color: #a66b1f; font-size: 12px; font-weight: 900; }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .budget-table { width: 100%; border-collapse: collapse; background: var(--white); }
+    .budget-table th, .budget-table td { padding: 15px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 14px; }
+    .budget-table th { color: var(--muted); font-size: 12px; font-weight: 700; }
+    .budget-table td:last-child { color: var(--deep); text-align: right; font-weight: 900; white-space: nowrap; }
+    .budget-table tr:last-child td { border-bottom: 0; background: var(--deep); color: #fff; font-size: 16px; }
+    .budget-table tr:last-child td:last-child { color: #fff; }
+    .decision { padding: 28px; border-top: 3px solid var(--ocean); background: var(--white); }
+    .decision-item { padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .decision-item:first-child { padding-top: 0; }
+    .decision-item:last-child { padding-bottom: 0; border-bottom: 0; }
+    .decision-item h3 { display: flex; gap: 10px; align-items: baseline; margin-bottom: 8px; font-size: 17px; }
+    .decision-item h3 span { color: var(--sun); font-size: 13px; letter-spacing: .08em; }
+    .decision-item p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+
+    .options { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; overflow: hidden; background: var(--line); border: 1px solid var(--line); }
+    .option { padding: 24px; background: var(--white); }
+    .option h3 { margin-bottom: 7px; font-size: 18px; }
+    .option-label { margin-bottom: 10px; color: var(--ocean); font-size: 12px; font-weight: 900; }
+    .option p { margin-bottom: 14px; color: var(--muted); font-size: 14px; }
+    .option-route { color: var(--deep); font-size: 13px; font-weight: 800; }
+
+    .footer { padding: 42px 0 54px; color: rgba(255,255,255,.76); background: var(--deep); }
+    .footer-inner { display: flex; align-items: end; justify-content: space-between; gap: 24px; }
+    .footer h2 { margin-bottom: 10px; color: #fff; font-size: 30px; }
+    .footer p { max-width: 550px; margin-bottom: 0; font-size: 13px; }
+    .backtop { color: #b7e8e3; font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
+    @media (max-width: 900px) {
+      .hero, .hero-inner { min-height: 590px; }
+      .summary-grid { grid-template-columns: repeat(2, 1fr); }
+      .summary-item:nth-child(2) { border-right: 0; }
+      .summary-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+      .intro-grid, .two-col, .day-grid { grid-template-columns: 1fr; gap: 34px; }
+      .conflict-grid { grid-template-columns: 1fr; }
+      .sea-grid { grid-template-columns: repeat(3, 1fr); }
+      .sea-day:nth-child(3) { border-right: 0; }
+      .sea-day:nth-child(-n+3) { border-bottom: 1px solid rgba(255,255,255,.17); }
+      .sea-day:nth-child(4) { padding-left: 0; }
+      .sea-day:nth-child(5) { border-right: 0; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, 560px); }
+      .hero, .hero-inner { min-height: 700px; }
+      .hero { background-position: 60% center; }
+      .topbar { align-items: start; }
+      .topbar nav { justify-content: flex-end; gap: 8px 13px; }
+      .topbar nav a:nth-child(n+4) { display: none; }
+      .hero h1 { font-size: 48px; }
+      .hero-sub { font-size: 15px; }
+      .summary { margin-top: -24px; }
+      .summary-grid { grid-template-columns: 1fr 1fr; border-radius: 18px; }
+      .summary-item { min-height: 116px; padding: 18px 14px; }
+      .summary-value { font-size: 19px; }
+      main { padding-top: 64px; }
+      .section { padding-top: 70px; }
+      .section-title, .section-head-row, .footer-inner { display: block; }
+      .section-title > .small, .section-head-row > .section-mark { display: block; margin-top: 12px; }
+      .flight-row { grid-template-columns: 74px 1fr; gap: 8px 14px; }
+      .flight-time { grid-column: 2; text-align: left; }
+      .sea-grid { grid-template-columns: 1fr 1fr; }
+      .sea-day { min-height: 160px; }
+      .sea-day:nth-child(2), .sea-day:nth-child(4) { border-right: 0; }
+      .sea-day:nth-child(3) { padding-left: 0; border-right: 1px solid rgba(255,255,255,.17); }
+      .sea-day:nth-child(3), .sea-day:nth-child(4) { border-bottom: 1px solid rgba(255,255,255,.17); }
+      .sea-day:nth-child(5) { grid-column: span 2; min-height: auto; }
+      .stay-grid, .options { grid-template-columns: 1fr; }
+      .day-summary { grid-template-columns: 62px 1fr auto; gap: 12px; padding: 18px 14px; }
+      .day-title { font-size: 17px; }
+      .day-title small { font-size: 12px; }
+      details.day { padding-left: 42px; }
+      .timeline::before { left: 13px; }
+      details.day::before { left: 6px; }
+      .day-body { padding: 20px 14px; }
+      .schedule { grid-template-columns: 82px 1fr; gap: 0 12px; }
+      .schedule dd { font-size: 13px; }
+      .route { padding: 18px; }
+      .budget-table th, .budget-table td { padding: 12px 10px; font-size: 12px; }
+      .budget-table td:last-child { white-space: normal; }
+      .decision { padding: 22px 18px; }
+    }
+    @media (max-width: 430px) {
+      details.day { padding-left: 28px; }
+      .timeline::before { left: 8px; }
+      details.day::before { left: 1px; }
+      .day-summary { grid-template-columns: 1fr auto; }
+      .day-number { grid-column: 1 / -1; }
+      .schedule { grid-template-columns: 1fr; gap: 0; }
+      .schedule dt { padding-bottom: 0; border-bottom: 0; }
+      .schedule dd { padding-top: 4px; }
+      .evidence-strip { gap: 6px; }
+      .evidence-pill { font-size: 11px; }
+    }
+  </style>
+</head>
+<body id="top">
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="topbar">
+        <div class="brand">陵水 · FAMILY ESCAPE</div>
+        <nav aria-label="页面导航">
+          <a href="#overview">总览</a>
+          <a href="#itinerary">每日行程</a>
+          <a href="#budget">预算</a>
+          <a href="#options">备选景点</a>
+          <a href="#decision">交通决策</a>
+        </nav>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">8/26 — 8/30 · 避暑松弛定稿版</p>
+        <h1>陵水 5天4晚<br>家庭自驾游</h1>
+        <p class="hero-sub">小车迷圆梦、拒绝重复玩海、高性价比住好酒店，给四大一小留出刚刚好的松弛感。</p>
+        <div class="hero-meta">
+          <span>4大1小</span><span>北京 ⇄ 博鳌</span><span>GL8 7座 MPV</span><span>原案预算约 ¥25,140</span>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <p class="hero-note">使用时可先看“每日行程”，再按需查看住宿、预算与备选景点。航班、酒店、租车及景区开放情况请以预订时官方信息为准。</p>
+        <a class="jump" href="#itinerary">查看 5 天安排 <span>↓</span></a>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary wrap" aria-label="旅行摘要">
+    <div class="summary-grid">
+      <div class="summary-item"><div class="summary-kicker">旅行日期</div><strong class="summary-value">8/26 — 8/30</strong><span class="summary-note">周三至周日</span></div>
+      <div class="summary-item"><div class="summary-kicker">家庭成员</div><strong class="summary-value">4大 1小</strong><span class="summary-note">5岁半小车迷</span></div>
+      <div class="summary-item"><div class="summary-kicker">住宿组合</div><strong class="summary-value">2 + 2 晚</strong><span class="summary-note">亲子酒店 → 威斯汀</span></div>
+      <div class="summary-item"><div class="summary-kicker">原案预算</div><strong class="summary-value">约 ¥25,140</strong><span class="summary-note">首晚房价差额待复核</span></div>
+    </div>
+  </div>
+
+  <main>
+    <section class="wrap" id="overview">
+      <div class="intro-grid">
+        <div class="intro-copy">
+          <p class="eyebrow">Trip at a glance</p>
+          <h2>每天换一种方式<br>认识海岛。</h2>
+          <p>这是一条为老人和孩子留足体力的家庭路线：第一晚抵达后不折腾，第二天体验玻璃海，第三天暂时告别海洋去坐小火车、做巧克力，第四天住在酒店慢慢赶海，第五天用贝壳和珊瑚留下纪念。</p>
+          <div class="tags"><span class="tag">小车迷圆梦</span><span class="tag">拒绝重复玩海</span><span class="tag">松弛不累</span><span class="tag">全家舒心</span></div>
+        </div>
+        <div>
+          <p class="eyebrow">Flights</p>
+          <div class="flight-strip">
+            <div class="flight-row">
+              <div class="flight-label">去程<br>8/26</div>
+              <div class="flight-route">北京首都 PEK T2 <span>→ 琼海博鳌 BAR</span><small class="muted">海南航空 HU7777 · 大机型</small></div>
+              <div class="flight-time">13:55 — 18:00<small>不用早起</small></div>
+            </div>
+            <div class="flight-row">
+              <div class="flight-label">回程<br>8/30</div>
+              <div class="flight-route">琼海博鳌 BAR <span>→ 北京首都 PEK T2</span><small class="muted">海南航空 HU7778</small></div>
+              <div class="flight-time">19:00 — 22:55<small>白天留给清水湾</small></div>
+            </div>
+          </div>
+          <p class="small muted" style="margin: 14px 0 0;">往返机票总价：<strong class="accent">¥10,740</strong>（5人含机建燃油，人均 ¥2,148）</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" aria-label="五天行程主题大纲">
+      <div class="wrap">
+        <p class="eyebrow">Five distinct days</p>
+        <h2>5天，每天一个主题。</h2>
+        <div class="sea-grid">
+          <div class="sea-day"><div class="sea-num">DAY 01</div><h3>松弛之夜</h3><p>住进三正月，吃一顿稳妥晚饭，直接休息。</p></div>
+          <div class="sea-day"><div class="sea-num">DAY 02</div><h3>互动之海</h3><p>分界洲岛玻璃海，亲手喂魔鬼鱼。</p></div>
+          <div class="sea-day"><div class="sea-num">DAY 03</div><h3>绿野之海</h3><p>万宁兴隆坐复古小火车，亲手做巧克力。</p></div>
+          <div class="sea-day"><div class="sea-num">DAY 04</div><h3>探索之海</h3><p>蓝湾礁石区提灯赶海，找寄居蟹和海胆。</p></div>
+          <div class="sea-day"><div class="sea-num">DAY 05</div><h3>艺术之海</h3><p>收集贝壳与白珊瑚，拼贴全家福和小火车。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="stay">
+      <div class="section-title">
+        <div><p class="eyebrow">Stay plan</p><h2>住得舒服，行程才松弛。</h2></div>
+        <p class="small muted">2间房 · 不含公寓 · 不做饭</p>
+      </div>
+      <div class="stay-grid">
+        <article class="stay">
+          <div class="stay-period">首晚已确认 · 8/26</div>
+          <h3>海南三正月酒店</h3>
+          <p>第一晚实际入住三正月酒店。对面是海棠南洋小镇，可解决晚饭；8/27住宿仍保留原行程信息，待按实际订单复核。</p>
+          <div class="price">首晚房价以实际订单为准</div>
+        </article>
+        <article class="stay">
+          <div class="stay-period">后 2 晚 · 8/28 — 8/29</div>
+          <h3>蓝湾绿城威斯汀度假酒店</h3>
+          <p>1500元级豪华配置，超大无边泳池，直通“会唱歌的沙滩”，把第四天完整留给酒店度假。</p>
+          <div class="price">约 ¥1,300—1,500 / 间 / 晚</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section" id="itinerary">
+      <div class="section-head-row">
+        <div><p class="eyebrow">Day by day</p><h2>5天4晚详细行程</h2><p class="section-lede">点击每天的标题展开详情。时间、路段和体力节奏都按“老人孩子不累”为主线安排。</p></div>
+        <div class="section-mark">自驾总原则：少搬行李，少走回头路</div>
+      </div>
+      <div class="timeline">
+        <details class="day" open>
+          <summary class="day-summary"><div class="day-number">DAY 01</div><h3 class="day-title">抵达三正月，先吃好再休息<small>8月26日 · 周三 · 宿海南三正月酒店</small></h3><div class="day-arrow">＋</div></summary>
+          <div class="day-body">
+            <div class="day-grid">
+              <dl class="schedule">
+                <dt>18:00</dt><dd>航班顺利降落博鳌机场。</dd>
+                <dt>18:30</dt><dd>机场租车网点取车，建议租 GL8 等大空间 7 座 MPV。</dd>
+                <dt>18:45—20:40</dt><dd>按原计划近2小时车程，驱车前往海南三正月酒店；抵达时间以当天导航为准。</dd>
+                <dt>20:45</dt><dd>办理入住，请前台帮忙确认对面海棠南洋小镇哪些餐厅仍在接单。</dd>
+                <dt>21:00—22:00</dt><dd><strong>首选虎婆香草鸭</strong>：点不辣香草鸭、斑斓豆腐和清淡蔬菜；想吃海鲜则备选<strong>火焰鲸寻海鲜广场</strong>，优先点清蒸石斑等老人孩子友好的菜。</dd>
+              </dl>
+              <aside class="route"><h4>晚到用餐策略</h4><p><strong>不建议临时买酒店自助</strong>：小红书住客反馈热门档口高峰期排队，限量菜需要早去，20:45以后到店体验和性价比都不理想。</p><p>若两家正餐店已停单，对面南洋小镇的东北饺子馆或 KFC 可作快速兜底。</p><p class="muted small">营业时间在所查笔记中没有可靠定值，出机场前可先请酒店前台确认末单。</p></aside>
+            </div>
+            <div class="experience"><strong>🍽️ 小红书调研结论</strong><p>虎婆香草鸭在一篇住客用餐复盘和多条独立评论中被重复推荐，可选不辣，适配4位成人和5岁半孩子；火焰鲸寻海鲜广场则被多篇笔记提到位于三正月酒店对面的海棠南洋小镇，设儿童椅、适合家庭用餐。首晚已很晚，吃完直接回房休息，不再安排海滩活动。</p><p class="source-links">来源：<a href="https://www.rednote.com/discovery/item/6a09db7200000000060346b8" target="_blank" rel="noopener">住客用餐复盘</a> · <a href="https://www.rednote.com/discovery/item/6a6d839e000000002c003e9d" target="_blank" rel="noopener">125条评论讨论</a> · <a href="https://www.rednote.com/discovery/item/6a4a19a50000000011005b3c" target="_blank" rel="noopener">酒店自助实测</a> · <a href="https://www.rednote.com/discovery/item/6a659969000000000301ff15" target="_blank" rel="noopener">海鲜店带娃体验</a></p></div>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary class="day-summary"><div class="day-number">DAY 02</div><h3 class="day-title">分界洲岛 · 小红书实操复盘版<small>8月27日 · 周四 · 目标不是“逛全岛”，而是早班喂鳐鱼 + 玻璃海</small></h3><div class="day-arrow">＋</div></summary>
+          <div class="day-body">
+            <div class="evidence-strip" aria-label="小红书结论可信度">
+              <span class="evidence-pill high">高共识：早到、上岛先喂</span>
+              <span class="evidence-pill high">高共识：孩子会全身湿</span>
+              <span class="evidence-pill mid">中等共识：观光车可跳过</span>
+              <span class="evidence-pill low">仅作备选：免费观鱼点</span>
+            </div>
+            <div class="day-grid">
+              <dl class="schedule">
+                <dt>前一晚</dt>
+                <dd><strong>孩子把泳衣 / 水母衣穿在普通衣服里面</strong>，另装一整套干衣、内裤、鞋袜和毛巾。多位带娃作者都写到喂鳐鱼必湿；最近一篇 8 月 17 日实游记录里，孩子受惊后直接坐进水里。陪同家长穿速干短裤，不穿长裙。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">最近发布的8月17日实游</a> · <a href="https://www.rednote.com/discovery/item/6a465818000000000f014903" target="_blank" rel="noopener">带娃装备与评论复盘</a></p>
+                </dd>
+                <dt>08:00前</dt>
+                <dd><strong>目标是到达游客中心，不是这时才从酒店出发。</strong>请按当天导航从三正月酒店反推出发时间。小红书多篇笔记把 8:30 写作首班船；最近实游者 9:00 到互动区时，一侧区域已经站满，因此把“赶早”落实成到码头时间，而不是笼统写“上午去”。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/698b5585000000000a02d1c1" target="_blank" rel="noopener">8:30首船实操</a> · <a href="https://www.rednote.com/discovery/item/6a6397c2000000000f031ca1" target="_blank" rel="noopener">7月带娃忠告</a> · <a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">9点现场拥挤度</a></p>
+                </dd>
+                <dt>08:00—08:30</dt>
+                <dd>自驾优先看<strong>P1或游客中心附近停车位</strong>；需要带行李时，可先问游客中心寄存。最近笔记记录“两只登机箱 + 两只双肩包”放进一个大储存箱，但柜型和收费仍以现场为准。老人带身份证，优惠资格不要照搬旧帖，走人工窗口确认。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/69c503be000000002003aaaa" target="_blank" rel="noopener">三刷带娃停车建议</a> · <a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">游客中心行李寄存实测</a> · <a href="https://www.rednote.com/discovery/item/69755fa2000000000b012fe9" target="_blank" rel="noopener">老人同行购票经验</a></p>
+                </dd>
+                <dt>08:30左右</dt>
+                <dd>争取第一批船登岛。船舱冷气可能偏凉，孩子和老人随身带薄外套。若现场首船时间有调整，服从当天公告，不把小红书时间当官方时刻表。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/698b5585000000000a02d1c1" target="_blank" rel="noopener">第一班船体验</a> · <a href="https://www.rednote.com/discovery/item/6a465818000000000f014903" target="_blank" rel="noopener">船舱薄外套提醒</a></p>
+                </dd>
+                <dt>一上岛</dt>
+                <dd><strong>不要照旧攻略先向左或向右走，先问工作人员。</strong>直接问：“今天开放哪个喂鳐鱼点？现在排多久？鱼还活跃吗？”笔记里同时出现过“码头右侧”“往左走”“两个点位”，但 7 月较新的评论又说当时只开沙滩点，说明点位会调整。
+                  <p class="source-links">冲突依据：<a href="https://www.rednote.com/discovery/item/6a6397c2000000000f031ca1" target="_blank" rel="noopener">右侧 / 近期仅一处</a> · <a href="https://www.rednote.com/discovery/item/6992a36a000000001503ac68" target="_blank" rel="noopener">左侧说法</a> · <a href="https://www.rednote.com/discovery/item/699744de00000000160081d1" target="_blank" rel="noopener">两个点位与7月纠正</a></p>
+                </dd>
+                <dt>约09:00</dt>
+                <dd><strong>把喂鳐鱼放在第一项。</strong>只安排“1位家长 + 5岁半孩子”下水，其他家人不默认能进围栏拍照。付款前逐项问清：孩子和陪同成人是否都收费、每人几条鱼、当前排队多久、进场后能否退。景区俗称“魔鬼鱼”，实际为鳐鱼类。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/68b90b60000000001b032d94" target="_blank" rel="noopener">陪同成人也需购票的评论</a> · <a href="https://www.rednote.com/discovery/item/68d54e44000000001302a642" target="_blank" rel="noopener">低性价比实测</a> · <a href="https://www.rednote.com/discovery/item/6992a36a000000001503ac68" target="_blank" rel="noopener">下午排队与不退款经历</a></p>
+                </dd>
+                <dt>约09:40</dt>
+                <dd>孩子上岸立刻擦干、换整套干衣和干鞋袜，再与老人会合。部分笔记写淋浴约20元，也有人只换衣离开；为一个短互动专门排淋浴通常不划算，除非孩子身上沙多或继续不舒服。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/6a1e913600000000070101e2" target="_blank" rel="noopener">淋浴与更衣实测</a> · <a href="https://www.rednote.com/discovery/item/6a6397c2000000000f031ca1" target="_blank" rel="noopener">换衣次数提醒</a></p>
+                </dd>
+                <dt>10:00—11:30</dt>
+                <dd><strong>接下来只做一件事：看玻璃海。</strong>带娃笔记称观光车第一站附近可看玻璃海，也可步行约500米；大洞天沙滩常被提及，但“玻璃感”高度依赖阳光、风浪和降雨。孩子主导时可以直接走沙滩线，不必为了打卡坐完整环岛车。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/6a74694c0000000025004502" target="_blank" rel="noopener">8月刚回：儿童线可不坐车</a> · <a href="https://www.rednote.com/discovery/item/699744de00000000160081d1" target="_blank" rel="noopener">大洞天玻璃海与天气条件</a></p>
+                </dd>
+                <dt>体力分支</dt>
+                <dd><strong>老人累、孩子还愿意看景：</strong>再考虑观光车；它是单向环线，想看哪站就上行逐站下，不要直接坐到最高点后才想补站。<strong>孩子累或车队长：</strong>全家跳过观光车，回码头区域。多篇旺季笔记写到观光车排队可能很长。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/699744de00000000160081d1" target="_blank" rel="noopener">单向乘车纠错</a> · <a href="https://www.rednote.com/discovery/item/698594b0000000000e00d36c" target="_blank" rel="noopener">旺季排队记录</a> · <a href="https://www.rednote.com/discovery/item/6a4d21fc0000000015025399" target="_blank" rel="noopener">观光车一圈经验</a></p>
+                </dd>
+                <dt>11:30—12:15</dt>
+                <dd>午饭采用<strong>“孩子口粮自带，成人现场简餐”</strong>。一组笔记认为岛上贵、味道一般，建议多带；另一篇实测列出粉面、炒饭和连锁饮品，认为没必要背很多。折中方案是只带孩子确定会吃的主食 / 零食和水，成人现场吃粉面，不背全家的野餐包。
+                  <p class="source-links">分歧依据：<a href="https://www.rednote.com/discovery/item/69fd5266000000001f003187" target="_blank" rel="noopener">三刷住客：建议带食物</a> · <a href="https://www.rednote.com/discovery/item/699744de00000000160081d1" target="_blank" rel="noopener">小吃街实测：可现场解决</a> · <a href="https://www.rednote.com/discovery/item/6a1e913600000000070101e2" target="_blank" rel="noopener">现场餐食价格样本</a></p>
+                </dd>
+                <dt>12:15—13:15</dt>
+                <dd>核心体验完成后开始往码头收。最近一篇记录上午暴晒、13点准备返程时突降大雨；另有14点排队半小时却几乎喂不到鱼的差评。这里不是断言下午必下雨，而是用真实踩坑把<strong>下午留成撤退缓冲</strong>。
+                  <p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">8月17日天气突变记录</a> · <a href="https://www.rednote.com/discovery/item/6992a36a000000001503ac68" target="_blank" rel="noopener">14点投喂失败记录</a></p>
+                </dd>
+                <dt>离岛后</dt>
+                <dd>回酒店午休、洗澡、晾湿衣即可，下午不再硬塞第二个景点。<strong>这条属于你家“4大1小 + 两位老人”的行程约束，不是小红书结论。</strong>若8月27日换酒店，优先用游客中心或三正月酒店寄存大件，减少把全部行李拖上岛。</dd>
+              </dl>
+              <aside class="route">
+                <h4>小红书交叉后的最稳路线</h4>
+                <p><strong>08:00前到游客中心</strong></p>
+                <p>↓ 首班船 / 早班船</p>
+                <p><strong>上岛先问当天点位</strong></p>
+                <p>↓ 先看队伍与鱼况再付款</p>
+                <p><strong>1位家长 + 孩子喂鳐鱼</strong></p>
+                <p>↓ 换整套干衣</p>
+                <p><strong>玻璃海步行线</strong></p>
+                <p>↓ 观光车只在体力需要时加</p>
+                <p><strong>简餐后中午开始撤</strong></p>
+                <p class="muted small">这条路线同时避开了“下午鱼吃饱”“观光车回头补不了站”“孩子湿衣穿半天”三个反复出现的坑。</p>
+              </aside>
+            </div>
+
+            <div class="experience">
+              <strong>⚠️ 三组不能写死的冲突信息</strong>
+              <div class="conflict-grid">
+                <div class="conflict-card"><strong>价格：¥80 还是 ¥88？</strong><p>多篇正文写80元/人，2026年7月评论出现88元；陪同成人也可能同价。</p><span class="onsite-check">现场动作：付款前问总价</span></div>
+                <div class="conflict-card"><strong>鱼量：2、3，还是4条？</strong><p>不同时间笔记分别出现2条、3条；最近8月实游者拿到4条，说明套餐会变。</p><span class="onsite-check">现场动作：先问每人份量</span></div>
+                <div class="conflict-card"><strong>点位：左、右，还是两处？</strong><p>旧帖方向互相冲突，较新评论又称当时仅沙滩点开放。</p><span class="onsite-check">现场动作：上岛先问员工</span></div>
+              </div>
+              <p class="source-links">对应笔记：<a href="https://www.rednote.com/discovery/item/68b90b60000000001b032d94" target="_blank" rel="noopener">80元 / 2条鱼</a> · <a href="https://www.rednote.com/discovery/item/6a1e913600000000070101e2" target="_blank" rel="noopener">80元 / 3条鱼</a> · <a href="https://www.rednote.com/discovery/item/6a465818000000000f014903" target="_blank" rel="noopener">评论出现88元</a> · <a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">最近实游 / 4条鱼</a></p>
+            </div>
+
+            <div class="experience"><strong>🛑 现场止损规则</strong><p><strong>可以付费：</strong>上午、队伍仍短、工作人员确认鱼活跃，且孩子愿意下水。<br><strong>直接放弃：</strong>工作人员说鱼已吃饱、预计久等、孩子明显害怕，或必须为多位陪同成人重复付费但只有孩子想玩。海钓会所前台后方的免费观鱼点只在一篇笔记中得到明确验证，可以顺路问，不能当保证项目。</p><p class="source-links">依据：<a href="https://www.rednote.com/discovery/item/68d54e44000000001302a642" target="_blank" rel="noopener">付费后鱼少的差评</a> · <a href="https://www.rednote.com/discovery/item/698e83d9000000002800aa52" target="_blank" rel="noopener">免费观鱼替代经验</a></p></div>
+
+            <div class="experience"><strong>💰 只做预算占位，不当固定价格</strong><p>按小红书已出现的区间，1位家长 + 1名孩子参加可暂留<strong>¥160—176</strong>；观光车常见笔记价约40元/人，但优惠、儿童规则和套票会变。门船票、老人优惠和当天运营信息必须以官方售票页或现场为准。</p></div>
+
+            <div class="experience"><strong>🔎 本版证据范围</strong><p>本段交叉阅读了10余篇小红书笔记及可见评论，优先采用2026年7—8月的近期实游；早期资料只用来识别反复出现的坑。小红书属于个人经验，不等同于景区官方承诺。</p><p class="source-links">核心来源：<a href="https://www.rednote.com/discovery/item/6a85b65f0000000028000d78" target="_blank" rel="noopener">8月17日实游</a> · <a href="https://www.rednote.com/discovery/item/6a74694c0000000025004502" target="_blank" rel="noopener">8月带娃避坑</a> · <a href="https://www.rednote.com/discovery/item/6a6397c2000000000f031ca1" target="_blank" rel="noopener">7月带娃忠告</a> · <a href="https://www.rednote.com/discovery/item/698b5585000000000a02d1c1" target="_blank" rel="noopener">早班摸鱼路线</a> · <a href="https://www.rednote.com/discovery/item/699744de00000000160081d1" target="_blank" rel="noopener">高互动纠错帖</a> · <a href="https://www.rednote.com/discovery/item/68d54e44000000001302a642" target="_blank" rel="noopener">低性价比样本</a></p></div>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary class="day-summary"><div class="day-number">DAY 03</div><h3 class="day-title">坐复古林间小火车，做巧克力<small>8月28日 · 周五 · 宿蓝湾威斯汀</small></h3><div class="day-arrow">＋</div></summary>
+          <div class="day-body">
+            <div class="day-grid">
+              <dl class="schedule">
+                <dt>09:00—09:40</dt><dd>退房，行李装上 GL8，前往万宁兴隆热带植物园。</dd>
+                <dt>09:45—12:30</dt><dd><strong>植物园大探险</strong>：乘绿皮复古无轨小火车；去可可工坊烘焙、研磨，做出一块巧克力。</dd>
+                <dt>12:30—13:10</dt><dd>前往蓝湾绿城威斯汀度假酒店办理入住。</dd>
+                <dt>下午</dt><dd>海景房休息；体验无边泳池和亲子水乐园。</dd>
+                <dt>18:30</dt><dd>在周边吃一顿地道的疍家海鲜大餐。</dd>
+              </dl>
+              <aside class="route"><h4>两段自驾</h4><p>清水湾 → 环岛高速 → 兴隆热带植物园</p><p><strong>45 公里</strong>　<strong>40 分钟</strong></p><p>万宁兴隆 → 环岛高速（往三亚方向）→ 蓝湾威斯汀</p><p><strong>48 公里</strong>　<strong>42 分钟</strong></p></aside>
+            </div>
+            <div class="experience"><strong>🚂 这一日的主角是小车迷</strong><p>植物园遮阴率高，长辈可在大树荫下茶歇，品尝香草兰茶、苦丁茶和兴隆咖啡；孩子则完成“小火车 + 自制巧克力”的双重圆梦。</p></div>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary class="day-summary"><div class="day-number">DAY 04</div><h3 class="day-title">蓝湾礁石区提灯大赶海<small>8月29日 · 周六 · 宿蓝湾威斯汀</small></h3><div class="day-arrow">＋</div></summary>
+          <div class="day-body">
+            <div class="day-grid">
+              <dl class="schedule">
+                <dt>上午</dt><dd>睡到自然醒，享用威斯汀早餐，直接当午早茶吃。</dd>
+                <dt>下午</dt><dd>热带园林散步、下午茶，宝宝在亲子乐园玩耍。</dd>
+                <dt>16:00—18:30</dt><dd>全家提小桶和手电筒，前往威斯汀直通的沙滩与礁石混杂区。</dd>
+                <dt>19:00</dt><dd>酒店海景草坪餐厅享用高档海风 BBQ 晚餐。</dd>
+              </dl>
+              <aside class="route"><h4>今日交通</h4><p><strong>0 公里</strong></p><p>全天不开车，彻底放松，享受豪华度假酒店设施。</p></aside>
+            </div>
+            <div class="experience"><strong>🔦 独家玩海体验</strong><p>退潮时在礁石缝里找寄居蟹、小海葵和小海胆。寻宝式体验能让5岁半的孩子探索欲爆棚。</p></div>
+          </div>
+        </details>
+
+        <details class="day">
+          <summary class="day-summary"><div class="day-number">DAY 05</div><h3 class="day-title">珊瑚贝壳拼贴画，返程北京<small>8月30日 · 周日 · 19:00航班</small></h3><div class="day-arrow">＋</div></summary>
+          <div class="day-body">
+            <div class="day-grid">
+              <dl class="schedule">
+                <dt>09:00—11:00</dt><dd>早餐后退房前在海滩做最后的温和玩海。</dd>
+                <dt>12:00</dt><dd>办理退房，行李放上车。</dd>
+                <dt>12:30—14:00</dt><dd>清水湾午餐：海南粉、椰子冻或本地家常菜。</dd>
+                <dt>14:30—15:50</dt><dd>驱车返回博鳌机场。</dd>
+                <dt>16:30</dt><dd>机场还车，办理登机手续。</dd>
+                <dt>19:00—22:55</dt><dd>搭乘海航 HU7778 回北京首都机场 T2。</dd>
+              </dl>
+              <aside class="route"><h4>返程自驾</h4><p>清水湾 → 环岛高速（往海口方向）→ 琼海博鳌机场</p><p><strong>133 公里</strong>　<strong>1小时50分钟</strong></p><p class="muted small">16:30前还车，预留登机时间</p></aside>
+            </div>
+            <div class="experience"><strong>🎨 独家玩海体验</strong><p>在沙滩上收集漂亮的死珊瑚和贝壳，拼出“珊瑚小火车”和全家人的名字，拍照定格这次旅行。</p></div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="wrap section" id="budget">
+      <div class="section-title"><div><p class="eyebrow">Money map</p><h2>预算，一眼算清。</h2></div><p class="small muted">全家 4大1小 · 5天总花费</p></div>
+      <div class="two-col">
+        <div>
+          <table class="budget-table">
+            <thead><tr><th>消费项目</th><th>预估单价与数量</th><th>预算</th></tr></thead>
+            <tbody>
+              <tr><td><strong>往返机票</strong></td><td>4大1小，海航 HU7777 / HU7778</td><td>¥10,740<br><span class="small">定值</span></td></tr>
+              <tr><td><strong>酒店住宿</strong></td><td>8/26已改为三正月酒店；后续酒店沿用原计划，需按实际订单重算</td><td>原案约 ¥8,400</td></tr>
+              <tr><td><strong>自驾租车</strong></td><td>别克 GL8，5天租金 + 保险 + 油费</td><td>约 ¥1,800</td></tr>
+              <tr><td><strong>门票体验</strong></td><td>分界洲岛 + 兴隆植物园（含火车及巧克力 DIY）</td><td>约 ¥1,200</td></tr>
+              <tr><td><strong>餐饮费用</strong></td><td>酒店含双早；中晚餐外食</td><td>约 ¥3,000</td></tr>
+              <tr><td><strong>总计预估</strong></td><td>原案总额；需加减三正月首晚与原酒店的房价差额</td><td>原案约 ¥25,140</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="decision" id="decision">
+          <p class="eyebrow">Why self-drive</p>
+          <h3>为什么这家人适合自驾？</h3>
+          <div class="decision-item"><h3><span>01</span> 安全与法规</h3><p>4大1小共5位乘客，普通5座网约车不适合全家出行；GL8可以装下全家，宝宝的安全座椅也能全程固定。</p></div>
+          <div class="decision-item"><h3><span>02</span> 经济与舒适</h3><p>博鳌机场到清水湾约136公里，机场往返商务车接送约1,000元，再加景点和吃饭用车，成本接近租车。</p></div>
+          <div class="decision-item"><h3><span>03</span> 借还策略</h3><p>建议博鳌机场借还，避免陵水异地还车约200—400元手续费，也避免最后一天带老人孩子拖行李等长途商务车。</p></div>
+          <div class="decision-item"><h3><span>04</span> 时间可控</h3><p>博鳌机场小而精致，还车点距离出发厅约1—2分钟步行，绕车检查约2—3分钟，整体节奏更稳妥。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="options">
+      <div class="section-title"><div><p class="eyebrow">Flexible library</p><h2>备选景点自由库</h2></div><p class="small muted">Day 2 或 Day 3 想微调时，可从这里替换</p></div>
+      <div class="options">
+        <article class="option"><div class="option-label">推荐 01 · 男宝尖叫项</div><h3>三亚国家水稻公园</h3><p>稻田里的巨型恐龙帝国，1:1等比例复原200多只仿真恐龙；坐观光车游览，长辈不废一步路。</p><div class="option-route">清水湾酒店出发 · 32公里 · 35分钟</div></article>
+        <article class="option"><div class="option-label">推荐 02 · 文化体验项</div><h3>椰田古寨</h3><p>体验黎族苗族文化、敲银器、织锦、吹苗笛和鼻箫，寨内大树遮阴。</p><div class="option-route">清水湾酒店出发 · 15公里 · 20分钟</div></article>
+        <article class="option"><div class="option-label">推荐 03 · 视觉震撼项</div><h3>石梅湾沿海公路 → 神州半岛灯塔</h3><p>紧贴蔚蓝大海的观海公路，终点是红白相间的动漫风大灯塔。</p><div class="option-route">清水湾酒店出发 · 54公里 · 50分钟</div></article>
+        <article class="option"><div class="option-label">推荐 04 · 大自然避暑项</div><h3>吊罗山国家森林公园</h3><p>溪流、木栈道和铁索吊桥，适合在溪边捞小蝌蚪、抓蝴蝶；盘山路较多需慢行。</p><div class="option-route">清水湾酒店出发 · 40公里 · 55分钟</div></article>
+        <article class="option"><div class="option-label">已有备选 · 帆船体验</div><h3>清水湾游艇会</h3><p>双体平稳帆船出海，宝宝体验手握方向盘“当小船长”。</p><div class="option-route">自驾约 5 分钟</div></article>
+        <article class="option"><div class="option-label">已有备选 · 原始赶海</div><h3>椰子洲岛</h3><p>包疍家木船探秘原始椰林水道，荒岛抓招潮蟹和爬树弹涂鱼。</p><div class="option-route">自驾约 25 分钟</div></article>
+        <article class="option"><div class="option-label">已有备选 · 跨海列车</div><h3>富力海洋欢乐世界</h3><p>乘坐蓝白色全封闭的高空南海跨海单轨列车，安全感更足。</p><div class="option-route">自驾约 30 分钟</div></article>
+        <article class="option"><div class="option-label">已有备选 · 人文美食</div><h3>新村疍家渔排</h3><p>乘水上巴士穿梭海上村落，看网箱里的巨型石斑鱼，吃鱼排海鲜。</p><div class="option-route">自驾约 20 分钟</div></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div><h2>把节奏留给家人。</h2><p>这份攻略由《陵水家庭游规划.md》整理为易读网页。出发前请再次核对航班、酒店房态、租车保险、潮汐和景区开放信息。</p></div>
+      <a class="backtop" href="#top">回到顶部 ↑</a>
+    </div>
+  </footer>
+</body>
+</html>
