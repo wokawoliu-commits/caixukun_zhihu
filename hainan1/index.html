@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>清水湾三段海岸遛娃攻略｜阿罗哈 · 瀚海银滩 · 小海洋之心</title>
+  <meta name="description" content="基于小红书公开笔记与可见评论整理的清水湾三段海岸线图文攻略。" />
+  <style>
+    :root {
+      --ink: #18333b;
+      --muted: #6d7e7d;
+      --line: rgba(24, 51, 59, .15);
+      --sand: #f5f0e8;
+      --cream: #fbfaf7;
+      --sea: #0d6d78;
+      --sea-deep: #07505e;
+      --leaf: #5b7350;
+      --sun: #d6874d;
+      --white: #fffdf9;
+      --shadow: 0 18px 60px rgba(20, 54, 60, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 82% 2%, rgba(206, 226, 211, .5), transparent 25rem),
+        linear-gradient(180deg, #f8f5ef 0%, var(--cream) 52%, #f1f5f1 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; }
+    .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(251, 250, 247, .86);
+      border-bottom: 1px solid rgba(24, 51, 59, .1);
+      backdrop-filter: blur(16px);
+    }
+    .topbar-inner { display: flex; align-items: center; justify-content: space-between; min-height: 62px; gap: 20px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .05em; font-size: 13px; white-space: nowrap; }
+    .brand-mark { width: 24px; height: 24px; border-radius: 50% 50% 50% 8px; background: var(--sea); transform: rotate(-45deg); position: relative; }
+    .brand-mark::after { content: ""; position: absolute; width: 8px; height: 8px; border-radius: 50%; background: #d9eee5; top: 8px; left: 8px; }
+    .nav { display: flex; gap: 5px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { text-decoration: none; color: var(--muted); padding: 8px 12px; font-size: 13px; white-space: nowrap; border-bottom: 2px solid transparent; transition: color .25s ease, border-color .25s ease; }
+    .nav a:hover, .nav a.active { color: var(--sea); border-color: var(--sea); }
+    .hero { padding: 78px 0 60px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 70px; align-items: end; }
+    .eyebrow, .label { color: var(--sea); font-size: 12px; letter-spacing: .16em; font-weight: 800; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 720px; margin: 16px 0 20px; font-family: Georgia, "Songti SC", "STSong", serif; font-weight: 500; letter-spacing: -.055em; font-size: clamp(44px, 7vw, 84px); line-height: 1.02; }
+    .hero-copy { color: #4f6768; max-width: 640px; font-size: 17px; }
+    .hero-note { padding: 22px 24px; border-left: 2px solid var(--sun); background: rgba(255, 253, 249, .72); box-shadow: var(--shadow); }
+    .hero-note strong { display: block; font-family: Georgia, "Songti SC", serif; font-size: 22px; line-height: 1.3; margin-bottom: 8px; }
+    .hero-note p { margin: 0; color: var(--muted); font-size: 14px; }
+    .route-strip { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-bottom: 72px; }
+    .route-stop { min-height: 118px; padding: 22px 20px; position: relative; border-right: 1px solid var(--line); }
+    .route-stop:last-child { border-right: 0; }
+    .route-stop .no { color: var(--sun); font-family: Georgia, serif; font-size: 24px; }
+    .route-stop h3 { margin: 8px 0 2px; font-size: 17px; }
+    .route-stop p { margin: 0; color: var(--muted); font-size: 13px; }
+    .route-stop::after { content: "→"; position: absolute; right: -13px; top: 42px; z-index: 1; width: 25px; height: 25px; border-radius: 50%; text-align: center; line-height: 23px; background: var(--cream); color: var(--sea); border: 1px solid var(--line); }
+    .route-stop:last-child::after { display: none; }
+    .section-intro { display: flex; justify-content: space-between; gap: 30px; align-items: end; margin-bottom: 28px; }
+    .section-intro h2 { margin: 8px 0 0; font-family: Georgia, "Songti SC", serif; font-size: clamp(31px, 4vw, 50px); line-height: 1.08; letter-spacing: -.04em; font-weight: 500; }
+    .section-intro p { margin: 0; max-width: 430px; color: var(--muted); font-size: 14px; }
+    .zone { position: relative; padding: 64px 0 82px; border-top: 1px solid var(--line); scroll-margin-top: 74px; }
+    .zone::before { content: attr(data-index); position: absolute; left: -2px; top: 63px; transform: translateX(-100%); padding-right: 22px; color: rgba(24, 51, 59, .24); font-size: 11px; letter-spacing: .16em; writing-mode: vertical-rl; }
+    .zone-lead { display: grid; grid-template-columns: 1.1fr .9fr; gap: 36px; align-items: start; margin-bottom: 34px; }
+    .route-line { padding: 18px 20px; background: rgba(213, 231, 224, .43); border: 1px solid rgba(13, 109, 120, .15); color: var(--sea-deep); font-size: 14px; }
+    .route-line strong { display: block; margin-bottom: 5px; color: var(--ink); }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .fact { padding: 14px 12px; border-right: 1px solid var(--line); }
+    .fact:last-child { border-right: 0; }
+    .fact b { display: block; font-size: 14px; }
+    .fact span { display: block; color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 3px; }
+    .play-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0 0 38px; border-top: 1px solid var(--line); }
+    .play-item { padding: 22px 22px 18px 0; border-bottom: 1px solid var(--line); }
+    .play-item + .play-item { padding-left: 22px; border-left: 1px solid var(--line); }
+    .play-item h3 { font-size: 17px; margin: 0 0 7px; }
+    .play-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .gallery { display: grid; grid-template-columns: 1.05fr .95fr .95fr; gap: 14px; margin: 26px 0 32px; }
+    .gallery figure { margin: 0; min-width: 0; }
+    .gallery figure:first-child { grid-row: span 2; }
+    .gallery img { display: block; width: 100%; height: 100%; min-height: 250px; object-fit: cover; cursor: zoom-in; filter: saturate(.94); transition: transform .5s cubic-bezier(.2,.7,.2,1), filter .5s ease; }
+    .gallery figure:first-child img { min-height: 530px; }
+    .gallery figure:hover img { transform: scale(1.018); filter: saturate(1.08); }
+    figcaption { display: flex; justify-content: space-between; gap: 10px; padding: 10px 0 0; color: var(--muted); font-size: 12px; }
+    figcaption b { color: var(--ink); font-weight: 700; }
+    .annotation { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+    .annotation > div { padding: 20px 22px; border: 1px solid var(--line); background: rgba(255, 253, 249, .58); }
+    .annotation .warn { border-color: rgba(214, 135, 77, .45); background: rgba(253, 244, 233, .55); }
+    .annotation h3 { font-size: 14px; margin: 0 0 7px; }
+    .annotation p { color: var(--muted); font-size: 13px; margin: 0; }
+    .source-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 24px; color: var(--muted); font-size: 12px; }
+    .source-row a { color: var(--sea); text-decoration: none; border-bottom: 1px solid rgba(13, 109, 120, .35); }
+    .source-row a:hover { border-color: var(--sea); }
+    .source-row .source-label { color: var(--sun); font-weight: 800; letter-spacing: .08em; }
+    .walk { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 24px 0 34px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .walk-step { padding: 17px 16px 16px 0; min-height: 118px; }
+    .walk-step + .walk-step { border-left: 1px solid var(--line); padding-left: 16px; }
+    .walk-step .num { color: var(--sun); font-family: Georgia, serif; font-size: 22px; }
+    .walk-step b { display: block; font-size: 14px; margin: 6px 0 4px; }
+    .walk-step span { color: var(--muted); font-size: 12px; line-height: 1.5; display: block; }
+    .chooser { margin: 16px 0 70px; padding: 32px; background: var(--sea-deep); color: #eef7f2; box-shadow: var(--shadow); }
+    .chooser h2 { font-family: Georgia, "Songti SC", serif; font-weight: 500; font-size: 34px; margin: 0 0 8px; letter-spacing: -.03em; }
+    .chooser > p { color: rgba(238, 247, 242, .72); margin-bottom: 24px; font-size: 14px; }
+    .chooser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: rgba(255,255,255,.19); }
+    .chooser-item { padding: 18px; background: var(--sea-deep); }
+    .chooser-item b { display: block; color: #fff; margin-bottom: 6px; }
+    .chooser-item span { color: rgba(238, 247, 242, .7); font-size: 13px; line-height: 1.6; }
+    .footnote { padding: 28px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .footnote strong { color: var(--ink); }
+    .footnote p { max-width: 860px; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    .lightbox { position: fixed; inset: 0; z-index: 30; display: grid; place-items: center; padding: 28px; background: rgba(9, 31, 36, .88); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+    .lightbox img { max-width: min(92vw, 1000px); max-height: 86vh; object-fit: contain; box-shadow: 0 20px 80px rgba(0,0,0,.34); }
+    .lightbox button { position: fixed; right: 24px; top: 18px; border: 0; background: transparent; color: #fff; font-size: 32px; cursor: pointer; }
+    .lightbox p { position: fixed; bottom: 16px; left: 0; right: 0; text-align: center; color: rgba(255,255,255,.75); font-size: 13px; }
+    @media (max-width: 900px) {
+      .hero, .zone-lead { grid-template-columns: 1fr; gap: 28px; }
+      .hero { padding-top: 58px; }
+      .zone::before { display: none; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .gallery figure:first-child { grid-row: auto; grid-column: span 2; }
+      .gallery figure:first-child img { min-height: 360px; }
+      .gallery figure img { min-height: 220px; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 28px, 1180px); }
+      .topbar-inner { min-height: 56px; }
+      .brand { font-size: 11px; }
+      .brand-mark { width: 20px; height: 20px; }
+      .brand-mark::after { width: 7px; height: 7px; top: 6px; left: 6px; }
+      .nav a { padding: 8px 8px; font-size: 12px; }
+      h1 { font-size: 52px; }
+      .hero-copy { font-size: 15px; }
+      .route-strip { grid-template-columns: 1fr; margin-bottom: 44px; }
+      .route-stop { border-right: 0; border-bottom: 1px solid var(--line); min-height: 96px; padding: 16px 12px; }
+      .route-stop:last-child { border-bottom: 0; }
+      .route-stop::after { right: 18px; top: 34px; transform: rotate(90deg); }
+      .route-stop:last-child::after { display: none; }
+      .zone { padding: 45px 0 58px; }
+      .section-intro { display: block; }
+      .section-intro p { margin-top: 14px; }
+      .facts, .play-list, .annotation, .chooser-grid, .walk { grid-template-columns: 1fr; }
+      .fact, .play-item + .play-item, .walk-step + .walk-step { border-left: 0; padding-left: 0; }
+      .fact { border-right: 0; border-bottom: 1px solid var(--line); }
+      .fact:last-child { border-bottom: 0; }
+      .play-item, .play-item + .play-item { padding: 17px 0; }
+      .walk-step { min-height: auto; border-bottom: 1px solid var(--line); padding: 15px 0; }
+      .walk-step:last-child { border-bottom: 0; }
+      .gallery { grid-template-columns: 1fr; gap: 18px; }
+      .gallery figure:first-child { grid-column: auto; }
+      .gallery figure:first-child img, .gallery figure img { min-height: 310px; }
+      .chooser { padding: 24px 18px; margin-bottom: 44px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span><span>清水湾 · COASTAL NOTES</span></a>
+      <nav class="nav" aria-label="海岸分段导航">
+        <a href="#aloha">阿罗哈 / 搁浅船</a>
+        <a href="#raffles">瀚海银滩 / 莱佛士</a>
+        <a href="#ocean-heart">小海洋之心 1号门</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="shell">
+    <section class="hero reveal">
+      <div>
+        <div class="eyebrow">清水湾 · 三段海岸线 · 家庭版</div>
+        <h1>一条海岸线，<br /><em>三种</em>遛娃节奏</h1>
+        <p class="hero-copy">把小红书里反复被走通的入口、拍照位和带娃体验，收拢成一页能带着走的海边笔记。重点不是“刷完三个点”，而是先选对这一段海岸的节奏。</p>
+      </div>
+      <aside class="hero-note">
+        <strong>先看结论</strong>
+        <p>搁浅船是最有记忆点的短线；莱佛士草坪最适合拍照和等夕阳；小海洋之心 1 号门一带最像可以待上半天的树荫海滩。</p>
+      </aside>
+    </section>
+
+    <section class="route-strip reveal" aria-label="三段海岸线概览">
+      <a class="route-stop" href="#aloha">
+        <span class="no">01</span><h3>阿罗哈 → 搁浅船</h3><p>椰林通道 · 白沙 · 船景</p>
+      </a>
+      <a class="route-stop" href="#raffles">
+        <span class="no">02</span><h3>瀚海银滩 → 莱佛士</h3><p>细沙 · 大草坪 · 夕阳</p>
+      </a>
+      <a class="route-stop" href="#ocean-heart">
+        <span class="no">03</span><h3>小海洋之心 1号门</h3><p>树荫 · 挖沙 · 半日躺平</p>
+      </a>
+    </section>
+
+    <section id="aloha" class="zone reveal" data-index="01">
+      <div class="section-intro">
+        <div><div class="label">最轻的一段 · 先把海边感觉找回来</div><h2>阿罗哈酒店<br />— 搁浅船</h2></div>
+        <p>适合抵达后不想折腾、又想马上看到“清水湾照片感”的家庭。核心不是逛酒店，而是从椰林通道下到海边，再把搁浅船作为明确的折返点。</p>
+      </div>
+      <div class="zone-lead">
+        <div class="route-line"><strong>导航 / 到达顺序</strong>阿罗哈酒店大堂吧 → 经过大堂向右走 → 椰林通道下海 → 到沙滩后向左走到搁浅船。也可直接导航“云海帆歌一号门”。</div>
+        <div class="facts">
+          <div class="fact"><b>主打</b><span>椰林、白沙、搁浅船合照</span></div>
+          <div class="fact"><b>适合</b><span>第一次下海、短时遛娃</span></div>
+          <div class="fact"><b>节奏</b><span>到海边后不必走很远</span></div>
+        </div>
+      </div>
+      <div class="play-list">
+        <div class="play-item"><h3>椰林通道</h3><p>原帖把大堂吧作为陆侧入口，向右走一段会遇到椰子树走廊；这一段本身就是从酒店切换到海滩的“前奏”。</p></div>
+        <div class="play-item"><h3>白沙滩缓冲</h3><p>原帖描述沙细、颜色偏白，适合先让孩子在近岸踩水、挖沙，不必一上来就安排长距离海岸线徒步。</p></div>
+        <div class="play-item"><h3>搁浅船折返点</h3><p>船就在阿罗哈海滩一侧；从海边左转一直走，或者导航云海帆歌一号门，都是原帖实走口径。</p></div>
+      </div>
+      <div class="gallery reveal" aria-label="阿罗哈与搁浅船代表性照片">
+        <figure><img src="assets/xhs-route/route-06.webp" alt="椰林通道通向海滩" data-caption="椰林通道：从酒店侧切到海边" /><figcaption><b>椰林下海</b><span>原帖图 · 路线氛围</span></figcaption></figure>
+        <figure><img src="assets/xhs-route/route-03.webp" alt="清水湾白沙与海浪" data-caption="白沙滩：先在近岸玩一会儿" /><figcaption><b>白沙与近岸</b><span>原帖图 · 亲水缓冲</span></figcaption></figure>
+        <figure><img src="assets/xhs-route/route-07.webp" alt="清水湾沙滩上的搁浅船" data-caption="搁浅船：这一段最明确的拍照目标" /><figcaption><b>搁浅船</b><span>原帖图 · 折返点</span></figcaption></figure>
+      </div>
+      <div class="annotation">
+        <div><h3>关于“不住阿罗哈能不能进”</h3><p>原帖评论里有人直接问“不住阿罗哈酒店能照这样玩吗”，作者回复“可以进去的”。这是小红书作者的现场经验，实际仍以当日入口管理为准。</p></div>
+        <div class="warn"><h3>带娃安排建议</h3><p>把“搁浅船”设成目标即可，不必为了串联三段海岸而硬走全程；原路线作者回复自己是打车到各点，家庭出行可把体力留给海边。</p></div>
+      </div>
+      <div class="source-row"><span class="source-label">小红书依据</span><a href="https://www.rednote.com/discovery/item/69c8eff8000000001d01e9a0" target="_blank" rel="noreferrer">夏无意｜海南陵水🌴清水湾一日路线攻略｜人少景美</a></div>
+    </section>
+
+    <section id="raffles" class="zone reveal" data-index="02">
+      <div class="section-intro">
+        <div><div class="label">最出片的一段 · 把时间留给夕阳</div><h2>瀚海银滩<br />— 莱佛士大草坪</h2></div>
+        <p>这里的核心不是“找到一个酒店门”，而是从瀚海银滩西北门进入公共海滩，再沿海向右走到莱佛士草坪。草坪、尖顶亭、椰子树和细沙共同构成小红书里最常见的画面。</p>
+      </div>
+      <div class="walk" aria-label="莱佛士非住客路线">
+        <div class="walk-step"><span class="num">01</span><b>导航西北门</b><span>定位“雅居乐清水湾瀚海银滩 西北门”。</span></div>
+        <div class="walk-step"><span class="num">02</span><b>到公共海滩</b><span>从小区门口往海边走，会经过台阶和小吃街。</span></div>
+        <div class="walk-step"><span class="num">03</span><b>面朝大海右转</b><span>沿海走十多分钟；原帖说旁边水泥路更好走。</span></div>
+        <div class="walk-step"><span class="num">04</span><b>草坪与细沙</b><span>白色尖顶亭、椰林、草坪是主景，适合等夕阳。</span></div>
+      </div>
+      <div class="zone-lead">
+        <div class="route-line"><strong>迷路备选</strong>原帖还建议在地图里搜“壹号餐吧”作为海边参照。到海滩后面朝大海右转，沿相邻水泥路走，会比一直踩沙更省力。</div>
+        <div class="facts">
+          <div class="fact"><b>主打</b><span>大草坪、椰林、白色尖顶亭</span></div>
+          <div class="fact"><b>适合</b><span>拍照、散步、等夕阳</span></div>
+          <div class="fact"><b>推车</b><span>原帖称多数路段可推，台阶处留意</span></div>
+        </div>
+      </div>
+      <div class="play-list">
+        <div class="play-item"><h3>先看细沙</h3><p>专门写莱佛士路线的笔记反复提到这里的沙子细软，孩子在草坪和沙滩之间切换，体验会比只拍一张酒店外景更完整。</p></div>
+        <div class="play-item"><h3>草坪是主景</h3><p>椰子树、开阔草地和白色尖顶亭是原帖最明确的拍照组合；晴天适合下午后半段到，给逆光和海风留时间。</p></div>
+        <div class="play-item"><h3>看当日活动</h3><p>有笔记提到傍晚可能遇到无人机表演或活动布置，但这属于当日观察，不应当作固定项目安排行程。</p></div>
+      </div>
+      <div class="gallery reveal" aria-label="瀚海银滩与莱佛士代表性照片">
+        <figure><img src="assets/xhs-route/route-08.webp" alt="椰林、草坪与海岸线的远景" data-caption="从海滩看绿地与海岸线" /><figcaption><b>海岸线全景</b><span>原帖图 · 到达后的空间感</span></figcaption></figure>
+        <figure><img src="assets/xhs-route/route-10.webp" alt="莱佛士海边草坪与椰子树" data-caption="莱佛士草坪：椰林、草地与海" /><figcaption><b>大草坪</b><span>原帖图 · 核心拍照位</span></figcaption></figure>
+        <figure><img src="assets/xhs-route/route-05.webp" alt="海边椰林与绿地" data-caption="椰林绿地：适合孩子放风" /><figcaption><b>椰林边界</b><span>原帖图 · 草坪缓冲区</span></figcaption></figure>
+      </div>
+      <div class="annotation">
+        <div><h3>非住客怎么走</h3><p>两篇专门写莱佛士进入方式的笔记都把“雅居乐清水湾瀚海银滩西北门”作为起点，并记录了非住客步行到海滩、再到草坪的走法。</p></div>
+        <div class="warn"><h3>别把酒店权益当公共配套</h3><p>小红书实测笔记提醒：莱佛士一侧的躺椅属于住店客人使用；公共海滩可以玩，但酒店内部服务、躺椅和专属区域不要默认可用。</p></div>
+      </div>
+      <div class="source-row"><span class="source-label">小红书依据</span><a href="https://www.rednote.com/discovery/item/69c5560f0000000023016701" target="_blank" rel="noreferrer">乐一不乐意｜超全攻略｜不住莱佛士怎么进入酒店草坪&沙滩</a><a href="https://www.rednote.com/discovery/item/69f8c9a0000000002202abfe" target="_blank" rel="noreferrer">是婧婧呀｜不住莱佛士，怎么去莱佛士草坪🏝</a><a href="https://www.rednote.com/discovery/item/69c8eff8000000001d01e9a0" target="_blank" rel="noreferrer">夏无意｜清水湾一日路线</a></div>
+    </section>
+
+    <section id="ocean-heart" class="zone reveal" data-index="03">
+      <div class="section-intro">
+        <div><div class="label">最适合待半天的一段 · 阴凉比打卡更重要</div><h2>小海洋之心<br />1号门一带</h2></div>
+        <p>小红书带娃实测里，这一段的关键词不是“景点密度”，而是树多、风口、车能靠近海边、可以挖沙玩水。适合带上玩沙工具，把节奏放慢。</p>
+      </div>
+      <div class="zone-lead">
+        <div class="route-line"><strong>导航 / 司机沟通</strong>导航“小海洋之心1号门”，到达后继续往前开，原帖作者称车辆可以直接开到沙滩。若地图叫法不稳定，可备用搜索“小海洋之心北门2号门”或“西门”；另一篇遛娃笔记称西门走到海边更快。</div>
+        <div class="facts">
+          <div class="fact"><b>主打</b><span>树荫、细沙、玩水、捡贝壳</span></div>
+          <div class="fact"><b>适合</b><span>低龄孩子、半日慢玩</span></div>
+          <div class="fact"><b>优势</b><span>遮阴多，商业干扰少</span></div>
+        </div>
+      </div>
+      <div class="play-list">
+        <div class="play-item"><h3>树下先安营</h3><p>作者在清水湾住了一个月、来这片沙滩十多次，反复强调入口附近树木多、风口凉爽；原帖称树下可以露营、吊床看书。</p></div>
+        <div class="play-item"><h3>挖沙 / 玩水 / 捡贝壳</h3><p>细沙是主玩法，孩子可在沙滩玩一会儿，再到近岸踩水、找贝壳；评论区作者确认海水可以下去游泳，但仍需看当天海况和孩子能力。</p></div>
+        <div class="play-item"><h3>等低潮找彩蛋</h3><p>原帖提到退潮时偶尔能在水里抓到小螃蟹；早上有时会形成浅滩，但不是每天都有，所以把它当“遇到就加分”。</p></div>
+      </div>
+      <div class="gallery reveal" aria-label="小海洋之心一带代表性照片">
+        <figure><img src="assets/xhs-small-ocean/small-01.webp" alt="树荫和椰林旁的海滩入口" data-caption="入口侧树荫：适合先找阴凉处落脚" /><figcaption><b>先找树荫</b><span>小红书原帖图 · 入口氛围</span></figcaption></figure>
+        <figure><img src="assets/xhs-small-ocean/small-05.webp" alt="孩子在椰林树下吊床休息" data-caption="树下吊床：原帖作者记录的慢玩场景" /><figcaption><b>树下慢玩</b><span>小红书原帖图 · 亲子节奏</span></figcaption></figure>
+        <figure><img src="assets/xhs-small-ocean/small-08.webp" alt="孩子在海边浅水处玩水" data-caption="近岸玩水：配合潮汐和看护" /><figcaption><b>近岸玩水</b><span>小红书原帖图 · 海边实拍</span></figcaption></figure>
+      </div>
+      <div class="annotation">
+        <div><h3>小红书口碑里的“好用”</h3><p>高频优点是：离得近、景色好、卫生总体可以、树下不晒、可露营、垃圾桶和灌溉水源在附近，适合家庭悠闲待半天；商业少，也意味着要自带装备。</p></div>
+        <div class="warn"><h3>三个一定要记住的限制</h3><p>原帖问答确认：没有厕所；入口可能有垃圾；入口水池当时没有开放，最好自带饮用水和冲脚水。酒店躺椅属于住店客人，不要把酒店区域当公共沙滩配套。</p></div>
+      </div>
+      <div class="source-row"><span class="source-label">小红书依据</span><a href="https://www.rednote.com/discovery/item/6a3b66d6000000000702d08b" target="_blank" rel="noreferrer">小布丁的爸爸｜清水湾带娃绝佳沙滩🏖️，开车🚗可直达能露营</a><a href="https://www.rednote.com/discovery/item/6975deea000000001a034efb" target="_blank" rel="noreferrer">仙仙仙仙仙女｜海南陵水清水湾遛娃:雅居乐 小海洋之心</a></div>
+    </section>
+
+    <section class="chooser reveal" aria-label="按需求选择海岸段">
+      <h2>按家庭需求选，不用硬刷三段</h2>
+      <p>这是把小红书经验转成行程决策后的最短答案。</p>
+      <div class="chooser-grid">
+        <div class="chooser-item"><b>只想轻松下海拍照</b><span>选阿罗哈—搁浅船。入口和目标都明确，走一段就能获得椰林、白沙和船景。</span></div>
+        <div class="chooser-item"><b>想要最完整的夕阳场景</b><span>选瀚海银滩—莱佛士草坪。下午到、沿水泥路走，给草坪和海边留出等待时间。</span></div>
+        <div class="chooser-item"><b>孩子要玩半天、大人想少晒</b><span>选小海洋之心1号门。先占树荫，再挖沙玩水；厕所和饮水要自己解决。</span></div>
+      </div>
+    </section>
+
+    <footer class="footnote">
+      <p><strong>资料说明：</strong>本页仅整理 2026-08-29 通过小红书公开网页读取到的笔记正文、可见评论和原帖照片。入口是否开放、海况、潮汐、活动、酒店管理和公共设施状态都可能变化，请现场复核。</p>
+      <p><strong>照片说明：</strong>页面中的 9 张照片均来自所列小红书原帖，用于个人旅行查阅并保留来源；如需对外发布，请先获得原作者授权。</p>
+    </footer>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="照片预览">
+    <button type="button" aria-label="关闭照片预览" id="closeLightbox">×</button>
+    <img id="lightboxImage" src="" alt="" />
+    <p id="lightboxCaption"></p>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: .12 });
+    revealItems.forEach((item) => observer.observe(item));
+
+    const navLinks = [...document.querySelectorAll('.nav a')];
+    const zones = [...document.querySelectorAll('.zone')];
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-25% 0px -65% 0px' });
+    zones.forEach((zone) => navObserver.observe(zone));
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeLightbox = () => { lightbox.classList.remove('open'); lightboxImage.src = ''; };
+    document.querySelectorAll('.gallery img').forEach((image) => image.addEventListener('click', () => {
+      lightboxImage.src = image.src;
+      lightboxImage.alt = image.alt;
+      lightboxCaption.textContent = image.dataset.caption || image.alt;
+      lightbox.classList.add('open');
+    }));
+    document.getElementById('closeLightbox').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>
