@@ -1,0 +1,20 @@
+{
+  "version": "3.0.0",
+  "query": "学习SNACKPAPER叙事逻辑，并基于张月跨平台艺人调研制定五套LOOK的完整合作拍摄与营销方案",
+  "mode": "standard",
+  "started_at": "2026-09-01T12:36:43.423493+00:00",
+  "finished_at": null,
+  "assumptions": [],
+  "provider_config": {
+    "primary": "search-cli",
+    "scholarly": null
+  },
+  "report_dir": "/Users/huangdong/Downloads/github/caixukun_zhihu/zhangyue3",
+  "artifact_paths": {
+    "sources": "sources.jsonl",
+    "evidence": "evidence.jsonl",
+    "claims": "claims.jsonl",
+    "report": "report.md"
+  },
+  "continuation": null
+}
