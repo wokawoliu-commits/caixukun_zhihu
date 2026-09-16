@@ -1,0 +1,573 @@
+{
+  "schema_version": "comment-evidence-review-v0.2",
+  "queue_sha256": "953b45ec4165f884ed74e5485697c30371442ee8be4b462ac4c2f1f55c10a033",
+  "reviews": [
+    {
+      "comment_key": "comment-96e2e743759439c0810d",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "对动作稳定性作正面评价。",
+      "reason": "属于观众判断，不据此核定实际水平。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-4d956006681550ea3d89",
+      "category": "question",
+      "demand_topic_key": "outdoor_skin_care",
+      "insight": "打球内容也吸引肤色与户外护理询问。",
+      "reason": "用户明确问保持白的方式；不将一条问题泛化为防晒共识。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-2ab157a6f7882020706e",
+      "category": "question",
+      "demand_topic_key": "clothing_identification",
+      "insight": "询问裤子的具体款式。",
+      "reason": "服装型号问询，没有付款证据。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-de1b102f942b5468a44d",
+      "category": "question",
+      "demand_topic_key": "racket_identification",
+      "insight": "询问球拍的具体型号。",
+      "reason": "明确器材辨识问题，没有购买行为证据。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-56ebaadc407c3d82b030",
+      "category": "objection",
+      "demand_topic_key": "level_match_validation",
+      "insight": "认为应通过比赛检验训练水平。",
+      "reason": "直接质疑仅凭练习表现评定水平；表述绝对性属于个人观点。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-cea171734709cd336844",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "观众欣赏视频中选手的动作。",
+      "reason": "称赞动作，不据此评定选手水平或身份。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-9f1f1ac090c48ddc072a",
+      "category": "positive_outcome",
+      "demand_topic_key": "tutorial_problem_fit",
+      "insight": "教学描述与评论者遇到的问题吻合。",
+      "reason": "个人感到被理解，未报告训练后改善。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-8a9cbb6bd1ae42922220",
+      "category": "pain",
+      "demand_topic_key": "learning_transfer",
+      "insight": "能看懂示范但实际掌握程度不明。",
+      "reason": "眼睛看会了常带调侃，只作弱于明确执行困难的补充。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-6694238afb323e6c3edf",
+      "category": "question",
+      "demand_topic_key": "lesson_location",
+      "insight": "询问线下教学地点。",
+      "reason": "明确课程地点问题，未表达价格或实际报名。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-7c06800a8ccf99834d00",
+      "category": "purchase_intent",
+      "demand_topic_key": "lesson_location",
+      "insight": "表达想来学习并询问学校位置。",
+      "reason": "有询课意向但无报名或支付证据。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-c839e9eac9ad80610814",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "服务提供者承诺课时和水平达标。",
+      "reason": "教练自荐属于供给信息，不是普通用户痛点，承诺未核验。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-aa0681d765f53be69c0c",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "服务提供者表示可以包场。",
+      "reason": "包场自荐回应原帖需求，但不证明实际服务质量。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-3b287655de9fc5c64c59",
+      "category": "comparison",
+      "demand_topic_key": "lesson_price_comparison",
+      "insight": "用既往教练课费用比较当前预算。",
+      "reason": "价格为口语张数，保留原样，不擅自换算。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-c560fcce3f0d046a9251",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "服务提供者展示含室内场地的非黄金时段350元/小时报价。",
+      "reason": "这是具体服务报价与自述水平，不是成交或资质证明。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-d9d13c82ac716c4f62ba",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "服务提供者以网球专项学生身份自荐。",
+      "reason": "只记录自述，不核定学校学籍或执教资格。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-fd77959481b37b4aef19",
+      "category": "question",
+      "demand_topic_key": "self_learning",
+      "insight": "能否通过自学减少对教练的依赖。",
+      "reason": "自述不信任部分教练并直接询问能否自学。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-0f1868d6de3a35f5da38",
+      "category": "pain",
+      "demand_topic_key": "coach_learning_progress",
+      "insight": "上过多节课仍需另找人调整击球点与引拍。",
+      "reason": "明确自述35节课后的困惑，不等于行业平均效果。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-75f20b6e7bcf87ec7e90",
+      "category": "objection",
+      "demand_topic_key": "coach_qualification_proxy",
+      "insight": "用教练是否还在上课判断其资格。",
+      "reason": "作者不满其教练也在受训，但这个标准存在后续反驳。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-2f864bcc4207f22b7983",
+      "category": "objection",
+      "demand_topic_key": "coach_qualification_proxy",
+      "insight": "教练继续受训不必然代表不合格。",
+      "reason": "直接反驳把仍在受训等同不合格的判断；例子仅记评论观点。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-5cc82e58dc7a14503064",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "认可作者的内容表达。",
+      "reason": "笼统称赞，未提供具体新需求。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-5fb25718c650caa849d1",
+      "category": "question",
+      "demand_topic_key": "spectator_attendance",
+      "insight": "询问现场观众为何看起来少。",
+      "reason": "单条对画面观众数量的提问，赛事事实未核验。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-9e104ebec77f3f2576e2",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "观众表达对球员打法的欣赏。",
+      "reason": "情绪支持而非训练或消费需求。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-e9f449a6944e0bc77db5",
+      "category": "comparison",
+      "demand_topic_key": "match_performance",
+      "insight": "比较两位球员的一发与其他表现。",
+      "reason": "仅记录用户观赛议题，不核验其统计口径或正确性。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-8cee701769780ae9b5eb",
+      "category": "objection",
+      "demand_topic_key": "spectator_attendance",
+      "insight": "另一评论认为上方看台坐满。",
+      "reason": "与观众少的观察存在分歧，不能据两条评论确定上座率。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-48503ac8a8d17dd05839",
+      "category": "objection",
+      "demand_topic_key": "match_tactics",
+      "insight": "认为球员心态和战术趋于保守。",
+      "reason": "属于观赛评论，不核定球员心理状态。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-b2b98e9a815e22936f91",
+      "category": "question",
+      "demand_topic_key": "novice_group_access",
+      "insight": "担心2.0能否加入活动群。",
+      "reason": "直接问等级门槛。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-a92e49fc23be1eda006c",
+      "category": "question",
+      "demand_topic_key": "novice_group_access",
+      "insight": "刚开始打球也想加入群。",
+      "reason": "直接问新手资格。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-6c20dd7f232e272f3fab",
+      "category": "pain",
+      "demand_topic_key": "novice_group_access",
+      "insight": "纯新手认为应先练习再进群。",
+      "reason": "表达自设进入门槛，不等于组织者实际拒绝。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-64d3a8072f7627585b21",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "组织者回复不限水平并允许高手带队。",
+      "reason": "作者回复属于已有供给，不能算额外独立用户需求。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-f33682bbc9f785e9a5db",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "组织者表示会办新手入门活动。",
+      "reason": "作者提供承接方案，不证明活动已经发生。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-cdbd932e205dcd3c6473",
+      "category": "comparison",
+      "demand_topic_key": "paid_vs_free_instruction",
+      "insight": "认为免费教学比自己付费课讲得清晰。",
+      "reason": "个人比较免费教程与付费教学，未证明免费长期训练效果。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-afdc6d285a62d054b4d0",
+      "category": "pain",
+      "demand_topic_key": "coach_learning_progress",
+      "insight": "有教练仍越学越没信心。",
+      "reason": "明确四节课、持续纠错与信心下降的自述，与另一帖子学员困惑形成跨帖呼应。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-b9af576d36c3f18c6b5a",
+      "category": "pain",
+      "demand_topic_key": "learning_transfer",
+      "insight": "细节能理解，但来球后忘记动作要点。",
+      "reason": "直接说明从理解到场上执行的落差。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-46bb1910ea5d1ca2fca3",
+      "category": "need",
+      "demand_topic_key": "tutorial_sequence",
+      "insight": "零基础用户希望看到下一课。",
+      "reason": "明确期待系列后续，不等于已实际掌握。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-269a3da0ad57eacc6efc",
+      "category": "question",
+      "demand_topic_key": "technical_instruction_precision",
+      "insight": "对教程中的角度表述有疑问。",
+      "reason": "仅有180度的短问句，不补全未见上下文。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-c51614f53621a91bd952",
+      "category": "objection",
+      "demand_topic_key": "ball_machine_feedback",
+      "insight": "担心发球机练习造成动作问题且难以改正。",
+      "reason": "仅一条建议；没有对照证据，不能认定发球机不适合新手。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-968dd9488a4e702004ad",
+      "category": "pain",
+      "demand_topic_key": "effort_and_fatigue",
+      "insight": "自述乱用力导致手累。",
+      "reason": "个人疲劳体验，不诊断伤病或推导康复市场。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-ed064fb49a572c6cab98",
+      "category": "question",
+      "demand_topic_key": "coach_entry_threshold",
+      "insight": "询问达到什么等级可以当教练。",
+      "reason": "单条资格门槛问题，不依据自评级别回答执教资质。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-79ddd9d501abcfaafb70",
+      "category": "question",
+      "demand_topic_key": "beginner_total_cost",
+      "insight": "询问入门初期投入。",
+      "reason": "单条总体成本问题，与具体采购询问区分。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-37becf6f957dc129b9b4",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "保存训练图片供以后使用。",
+      "reason": "收藏行为不等于效果或付费意愿。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-88bb93cc85803513b23c",
+      "category": "objection",
+      "demand_topic_key": "practice_priority",
+      "insight": "认为步伐应优先于其他训练。",
+      "reason": "对训练顺序作绝对化表达，仅是个人意见。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-d3101851b586c2395295",
+      "category": "question",
+      "demand_topic_key": "novice_group_access",
+      "insight": "新手询问是否能进群。",
+      "reason": "旧帖中的07-03评论，时间窗内互动，不能把帖子视为近期新发。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-b918d612bc1c36cf994f",
+      "category": "need",
+      "demand_topic_key": "novice_group_access",
+      "insight": "想找到学习进度相近的球友群。",
+      "reason": "06-17评论早于窗口，只作历史背景，不能计为近期新增需求。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-2c964126468a73a25c94",
+      "category": "question",
+      "demand_topic_key": "novice_group_access",
+      "insight": "更初级的新手也想加入。",
+      "reason": "07-28评论，支持旧帖持续出现新手加入顾虑。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-034a81b59bcf5d30e6c2",
+      "category": "question",
+      "demand_topic_key": "local_court_time",
+      "insight": "询问指定片区是否真有早场和具体场地。",
+      "reason": "06-18评论，说明时间与场地信息需对应。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-183fadc560dc356a5100",
+      "category": "pain",
+      "demand_topic_key": "partner_distance",
+      "insight": "合适球搭子仍受到距离限制。",
+      "reason": "06-23评论，明确自己所在区域与匹配对象距离障碍。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-ab0c7ddd474ed3d2c966",
+      "category": "irrelevant",
+      "demand_topic_key": "",
+      "insight": "",
+      "reason": "只有@其他账号，没有可解释的需求或观点。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "weak"
+    },
+    {
+      "comment_key": "comment-5dfa60a283814639b480",
+      "category": "irrelevant",
+      "demand_topic_key": "",
+      "insight": "",
+      "reason": "只有@其他账号，没有可解释的需求或观点。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "weak"
+    },
+    {
+      "comment_key": "comment-8b9105e8c0fc60c1fd6a",
+      "category": "objection",
+      "demand_topic_key": "gear_level_mismatch",
+      "insight": "装备多不等于比赛打得好。",
+      "reason": "以装备等级与比赛结果的落差反驳段子里的对应关系，实际等级自述未核验。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-2b9d78c4219ad47d4757",
+      "category": "objection",
+      "demand_topic_key": "gear_minimalism",
+      "insight": "认为高手使用装备反而更简单。",
+      "reason": "个人反例，不能概括所有高手。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-2633ac51321c1cfde398",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "用塑料袋装物品作幽默回应。",
+      "reason": "语境为球包段子，不补写其能力或消费动机。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-e13e6da0fc91b1162a57",
+      "category": "other",
+      "demand_topic_key": "",
+      "insight": "用户对包内含拍摄设备的描述产生共鸣。",
+      "reason": "只表示携带设备的共鸣，不能推断用于技术复盘还是拍照。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-c6be29d53f8930d58a2d",
+      "category": "comparison",
+      "demand_topic_key": "gear_level_mismatch",
+      "insight": "自述新手已购买多支球拍。",
+      "reason": "说明消费与学习阶段不一定同步；不据品牌推断收入。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-778b78c5c142345041a7",
+      "category": "question",
+      "demand_topic_key": "shoe_fit_selection",
+      "insight": "想按体重在两款球鞋间选择。",
+      "reason": "明确身体条件与型号适配问题，不提供选鞋结论。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-8def1236675f9c5eda1c",
+      "category": "question",
+      "demand_topic_key": "racket_price",
+      "insight": "询问球拍价格。",
+      "reason": "价格问询并不自动代表购买承诺。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-eb58afa715f6c4ec981b",
+      "category": "objection",
+      "demand_topic_key": "gear_minimalism",
+      "insight": "质疑打球需要这么多零碎配件。",
+      "reason": "自述长期打球者提出反例，其球龄未核验。",
+      "evidence_role": "counter",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-9df76a66f04241fa65c0",
+      "category": "question",
+      "demand_topic_key": "shoe_substitution",
+      "insight": "询问普通运动鞋或跑鞋能否替代。",
+      "reason": "明确替代品问题，未据此提供运动健康建议。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-c9fcaa1e7461cf90d45b",
+      "category": "pain",
+      "demand_topic_key": "review_visual_clarity",
+      "insight": "滤镜影响观看装备的清晰度。",
+      "reason": "单条对内容呈现的实际反馈，不泛化为全行业问题。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-84c311ed3a7791769492",
+      "category": "question",
+      "demand_topic_key": "racket_identification",
+      "insight": "新手需要把昵称对应到球拍品牌型号。",
+      "reason": "明确问哪牌哪款，属于选购前的信息辨识。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-f080339f66126c575c78",
+      "category": "positive_outcome",
+      "demand_topic_key": "gear_aesthetic_value",
+      "insight": "用户把外观好看视为装备价值。",
+      "reason": "公开表达漂亮就行，与唯性能标准不同。",
+      "evidence_role": "neutral",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-6b945bce94dec2a1106c",
+      "category": "positive_outcome",
+      "demand_topic_key": "beginner_review_usefulness",
+      "insight": "入门用户认为个人装备经验对自己有用。",
+      "reason": "认可内容，但未报告购买或长期使用结果。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-1d3e7ebcfb98eb8a2119",
+      "category": "question",
+      "demand_topic_key": "grip_purchase_link",
+      "insight": "询问手胶购买链接。",
+      "reason": "比泛泛点赞更具体的找商品线索，仍无成交证据。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    },
+    {
+      "comment_key": "comment-f6c08681369480fe33a5",
+      "category": "question",
+      "demand_topic_key": "shoe_fit_selection",
+      "insight": "询问不同鞋款的舒适程度。",
+      "reason": "明确使用感受问题，与另一帖适配问题形成跨帖主题。",
+      "evidence_role": "support",
+      "semantic_relevance": "direct"
+    }
+  ]
+}
