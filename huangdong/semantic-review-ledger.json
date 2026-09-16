@@ -1,0 +1,15 @@
+{
+  "schema_version": "semantic-review-ledger-v0.1",
+  "entries": [
+    {
+      "scope_id": "collection_snapshot",
+      "extraction": "/Users/huangdong/Downloads/小红书虚拟资料/research/tennis-xhs-20260916/normalized-signals.json",
+      "review": "/Users/huangdong/Downloads/小红书虚拟资料/research/tennis-xhs-20260916/semantic-review.json",
+      "reviewed_extraction": "/Users/huangdong/Downloads/小红书虚拟资料/research/tennis-xhs-20260916/reviewed-signals.json",
+      "extraction_sha256": "6f1a3dcf636e4ad2ac480aa49c289d2e7da65b848b5861a6cc15685d60fb1def",
+      "review_sha256": "05622db04c0b85c17e4f68fc8c36d1e8f11a4ecc40a28fe471be944409125baa",
+      "reviewed_count": 42,
+      "unreviewed_count": 0
+    }
+  ]
+}

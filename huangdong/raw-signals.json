@@ -1,0 +1,2380 @@
+{
+  "platform": "xiaohongshu",
+  "source_mode": "controlled_capture",
+  "signals": [
+    {
+      "signal_id": "xhs-6a6b14590000000005029a1e",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a6b14590000000005029a1e",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a6b14590000000005029a1e",
+      "title": "🎾5.0|5min无剪辑底线对打基本功这一块🫴",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 1025,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5e60a1c300000000010095ef",
+        "name": "嘉乐"
+      },
+      "platform_facts": {
+        "published_time_label": "07-30"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a70198e0000000021021a66",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a70198e0000000021021a66",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a70198e0000000021021a66",
+      "title": "还要练多久才能成为你心目中的🎾3.0女高",
+      "summary": "以达到3.0水平为标题的24秒打球视频，标签同时包含训练、网球女孩和穿搭。评论从动作稳定性转向防晒、衣服和球拍型号，也有人认为应通过比赛检验水平。未用视频给作者实际评级。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:58:18.842Z",
+      "metrics": {
+        "likes": 3686,
+        "saves": 781,
+        "comments": 195
+      },
+      "author": {
+        "id": "616c29fc0000000002018a3b",
+        "name": "锅锅GUO"
+      },
+      "platform_facts": {
+        "published_time_label": "08-03",
+        "published_time_label_detail": "08-03",
+        "representative_comments": [
+          {
+            "author_name": "INFJ的理想星空✨",
+            "author_id": "67fb53d5000000000d0080eb",
+            "text": "站的好扎实，重心真稳",
+            "likes": 47,
+            "reply_count": 1
+          },
+          {
+            "author_name": "剁手气球",
+            "author_id": "56f6458084edcd25ba72b97a",
+            "text": "姐妹！除了想夸你打的好意外，真的发自内心打想问下，怎么能保持这么白的？",
+            "likes": 11,
+            "reply_count": 4
+          },
+          {
+            "author_name": "宝derder",
+            "text": "裤子是speedup吗",
+            "likes": 3,
+            "reply_count": 5
+          },
+          {
+            "author_name": "隐身喵",
+            "text": "拍子是那个型号啊",
+            "likes": 1,
+            "reply_count": 8
+          },
+          {
+            "author_name": "Jason",
+            "text": "去打比赛，练再多也是花架子😁。",
+            "likes": 1
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "24秒视频，读取标题标签与评论",
+        "commercial_observation": "作者在评论回答衣服、球拍型号；仅凭回答不能认定品牌合作或带货。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 3686,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-15T23:58:18.842Z",
+      "capture_id": "d04"
+    },
+    {
+      "signal_id": "xhs-6aa951f3000000002900c0eb",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa951f3000000002900c0eb",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa951f3000000002900c0eb",
+      "title": "还是打网球吧",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 21,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "565a9892589de366c36fe604",
+        "name": "小叶同学🎾"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天22:15"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a4f8701000000000e031402",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a4f8701000000000e031402",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a4f8701000000000e031402",
+      "title": "手腕的柔软和像雨刮器一样的摆动🎾🔥",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 2841,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "670d2bcf000000001d033919",
+        "name": "Takuya Komura 小村拓也"
+      },
+      "platform_facts": {
+        "published_time_label": "07-09"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6aa9546e000000002502cad0",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa9546e000000002502cad0",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa9546e000000002502cad0",
+      "title": "在北京最美网球场练发球🎾",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 4,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "64e4c4640000000001011f02",
+        "name": "抓布布🎾"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天22:21"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6aa9518d0000000011031d83",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6aa9518d0000000011031d83",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa9518d0000000011031d83",
+      "title": "想要实战型正手？这些球你得会打！",
+      "summary": "标题聚焦实战正手，标签涉及网球教学、训练和青少年网球。评论有实用性认同、学会与做到的落差，以及询问线下课程地点。媒体无法播放，未核验具体动作教学。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:56:09.458Z",
+      "metrics": {
+        "likes": 789,
+        "saves": 761,
+        "comments": 13
+      },
+      "author": {
+        "id": "5c3b619e000000000703fccc",
+        "name": "盖奥"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天22:09",
+        "published_time_label_detail": "昨天22:09 云南",
+        "representative_comments": [
+          {
+            "author_name": "77要变瘦",
+            "author_id": "5d3b2dcb0000000016001b4e",
+            "text": "小朋友打的真好 动作也帅",
+            "likes": 15
+          },
+          {
+            "author_name": "nana",
+            "author_id": "5657f0b90bf90c5777fa4eae",
+            "text": "说的每一个问题都是我的问题，就好像看过我打球似的",
+            "likes": 2
+          },
+          {
+            "author_name": "z",
+            "text": "眼睛看会了",
+            "likes": 3
+          },
+          {
+            "author_name": "味道、",
+            "text": "你的教学课在哪里上啊",
+            "likes": null
+          },
+          {
+            "author_name": "Lookinglooking",
+            "text": "请问您的学校在哪里？想来学",
+            "likes": null
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "视频，媒体无法播放；标题标签和评论已核验",
+        "commercial_observation": "评论有询课意向；本篇未展示课程价格或成交。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 782,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-15T23:56:09.458Z",
+      "capture_id": "d03"
+    },
+    {
+      "signal_id": "xhs-6a9900cd000000002902da97",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a9900cd000000002902da97",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a9900cd000000002902da97",
+      "title": "北京求网球教练🎾",
+      "summary": "作者说此前学过但水平不高，需要教练帮助订场，地点偏好朝阳大悦城附近，预算原文为一小时五张以内，通常下午1点前有空。需求同时包含教学、预约场地、距离、价格及时间匹配。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:55:29.501Z",
+      "metrics": {
+        "likes": 15,
+        "comments": 10,
+        "saves": null
+      },
+      "author": {
+        "id": "678770c9000000000801cfa8",
+        "name": "Kiki的普拉提日记_"
+      },
+      "platform_facts": {
+        "published_time_label": "09-03",
+        "published_time_label_detail": "编辑于09-03 北京",
+        "representative_comments": [
+          {
+            "author_name": "奥利奥滴爸爸",
+            "author_id": "625eb528000000001000e5ea",
+            "text": "1对1，10课时，包教包会，包1.5-2.0，超了免费，",
+            "likes": null
+          },
+          {
+            "author_name": "网球陈教练",
+            "author_id": "662fb5780000000003030626",
+            "text": "可包场。滴滴",
+            "likes": null
+          },
+          {
+            "author_name": "布小心",
+            "text": "五张吗？那还可以的呀，我之前找的教练一小时4张",
+            "likes": null
+          },
+          {
+            "author_name": "佳寶贝🐿",
+            "text": "大红门这边球场固定教练考虑吗 水平4.5 现在1对1有优惠活动 包室内场地费 非黄金时段 350/小时",
+            "likes": null
+          },
+          {
+            "author_name": "💤",
+            "author_id": "679b7793000000000d009c52",
+            "text": "你好 北体大二网球专项生",
+            "likes": null
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "图文",
+        "commercial_observation": "评论区有私教、包场、课时保证等自荐；教练身份和承诺未独立核验。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "recent_edit_original_publication_unknown"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 15,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-15T23:55:29.501Z",
+      "capture_id": "d02"
+    },
+    {
+      "signal_id": "xhs-6a8279e900000000320313bb",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a8279e900000000320313bb",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a8279e900000000320313bb",
+      "title": "北京海淀蹲靠谱网球🎾教练，求推荐求自荐！",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 18,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5c748e8d0000000012033b04",
+        "name": "lolbei"
+      },
+      "platform_facts": {
+        "published_time_label": "08-17"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6aa58441000000002803441b",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa58441000000002803441b",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa58441000000002803441b",
+      "title": "找北京🎾搭子",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 19,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "6974a768000000001c037054",
+        "name": "没想好名字"
+      },
+      "platform_facts": {
+        "published_time_label": "3天前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6aa9614e00000000280379b2",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa9614e00000000280379b2",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa9614e00000000280379b2",
+      "title": "下班了🎾该打网球了",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 40,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "60c9b672000000000100ba26",
+        "name": "小李飞刀biu"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天23:16"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a990a610000000026021e3d",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a990a610000000026021e3d",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a990a610000000026021e3d",
+      "title": "避雷这些网球教练",
+      "summary": "作者列举教练训练效率低、纠错过多、只练舒服喂球、不教实战与自练等问题，主张按个人目标训练、阶段性录像及让学员独立打球。属于作者观点，非对行业的事实核查。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.690Z",
+      "metrics": {
+        "likes": 428,
+        "saves": 298,
+        "comments": 71
+      },
+      "author": {
+        "id": "65e9b8e7000000000500b9bb",
+        "name": "底线博士"
+      },
+      "platform_facts": {
+        "published_time_label": "09-03",
+        "published_time_label_detail": "编辑于09-03 天津",
+        "representative_comments": [
+          {
+            "author_name": "tamitamitamk",
+            "author_id": "5e3f0477000000000100b406",
+            "text": "能自学吗？真的 我不是很相信这些所谓的教练……感觉宝藏教练自己可能遇不到。",
+            "likes": 1,
+            "reply_count": 2
+          },
+          {
+            "author_name": "无花果酱",
+            "author_id": "5f53668c000000000100b731",
+            "text": "谁能理解35节课后我还在外面自己找人调击球点和引拍么",
+            "likes": 10,
+            "reply_count": 19
+          },
+          {
+            "author_name": "鹿小树🦌",
+            "text": "网球教练门槛太低了，我找的第一个教练后来才知道人家教我们的同时，自己还找教练教他呢",
+            "likes": 2,
+            "reply_count": 1
+          },
+          {
+            "author_name": "芥末墩儿",
+            "text": "这不正常嘛，费德勒都有教练",
+            "likes": null,
+            "reply_count": null
+          },
+          {
+            "author_name": "阿森左手打网球🎾",
+            "author_id": "66ed91fd000000001d033bb9",
+            "text": "说的不错，专业，严谨",
+            "likes": 2,
+            "reply_count": 2
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "图文9张，正文已读，图片未逐张检查",
+        "commercial_observation": "本篇未直接见售课或商品；评论区有其他教练自荐。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "recent_edit_original_publication_unknown"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 428,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-15T23:54:34.690Z",
+      "capture_id": "d01"
+    },
+    {
+      "signal_id": "xhs-6aa1b02f0000000028000342",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6aa1b02f0000000028000342",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa1b02f0000000028000342",
+      "title": "全场解说回放 郑钦文vs莱巴金娜",
+      "summary": "页面把视频标为美网2026女单1/4决赛解说回放，时长2:35:31。评论围绕球员表现、一发和双误、观众席与情绪支持；这里只记录平台话题，未独立核验赛事事实或视频版权。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-16T00:00:46.458Z",
+      "metrics": {
+        "likes": 774,
+        "saves": 585,
+        "comments": 45
+      },
+      "author": {
+        "id": "617add3a000000000201b082",
+        "name": "Tennis欧阳文升"
+      },
+      "platform_facts": {
+        "published_time_label": "6天前",
+        "published_time_label_detail": "6天前 浙江",
+        "representative_comments": [
+          {
+            "author_name": "懒鬼来做懒人餐",
+            "author_id": "64ec5348000000000100ec0c",
+            "text": "为什么现场人那么少",
+            "likes": null,
+            "reply_count": 8
+          },
+          {
+            "author_name": "大萝卜",
+            "author_id": "5f3fc7e1000000000101cfba",
+            "text": "娜娜打球真是赏心悦目",
+            "likes": 18,
+            "reply_count": 1
+          },
+          {
+            "author_name": "fred_gy",
+            "author_id": "5e63a99800000000010035ef",
+            "text": "除了一发成功率(只有对手成功率的一半多一点)，其它细节已经不输给莱巴金娜了，未来可期，小郑，继续加油吧！",
+            "likes": 5,
+            "reply_count": 1
+          },
+          {
+            "author_name": "敏敏",
+            "text": "上面坐满了",
+            "likes": 1
+          },
+          {
+            "author_name": "汤团",
+            "text": "文可惜了，明显心态保守了，不入之前的激进！",
+            "likes": 1
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "长视频，页面时长2:35:31；未观看全片",
+        "commercial_observation": "本篇未直接展示收费、商品或合作标记。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 774,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:00:46.458Z",
+      "capture_id": "d06"
+    },
+    {
+      "signal_id": "xhs-6a941bc1000000000a008e97",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a941bc1000000000a008e97",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a941bc1000000000a008e97",
+      "title": "网球不是打出去的",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 4817,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "603f5f0d000000000101ed8f",
+        "name": "努力的钱德勒Chandler"
+      },
+      "platform_facts": {
+        "published_time_label": "08-30"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a9cd827000000001103495f",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a9cd827000000001103495f",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a9cd827000000001103495f",
+      "title": "郑钦文史诗级大逆转！美网决胜盘0-5落后，",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 9830,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "67a21b25000000000e01d68c",
+        "name": "天涯体坛"
+      },
+      "platform_facts": {
+        "published_time_label": "09-06"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6aa63f1c000000000b00322d",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa63f1c000000000b00322d",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa63f1c000000000b00322d",
+      "title": "北京找网球教练",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics": {
+        "likes": 23,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5981773d50c4b46947466a38",
+        "name": "😷"
+      },
+      "platform_facts": {
+        "published_time_label": "2天前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a5c43b4000000001002622b",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a5c43b4000000001002622b",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a5c43b4000000001002622b",
+      "title": "🎾慕名北京网球活动群",
+      "summary": "账号把本群介绍为慕名找教练官方微信群，供入驻的局主、陪练、教练和场馆发布运动局、体验课、畅打活动，鼓励群友标注水平约球。评论中入门者询问是否有资格加入；作者回复不限水平并称会办新手入门活动。近期标签是编辑时间，不能等同首次发布。",
+      "published_at": "",
+      "captured_at": "2026-09-15T23:54:34.851106+00:00",
+      "metrics_captured_at": "2026-09-16T00:00:04.113Z",
+      "metrics": {
+        "likes": 5,
+        "saves": 1,
+        "comments": 6
+      },
+      "author": {
+        "id": "681f1747000000000d00b5a0",
+        "name": "慕名找教练"
+      },
+      "platform_facts": {
+        "published_time_label": "3天前",
+        "published_time_label_detail": "编辑于4天前 四川；评论存在08-22",
+        "representative_comments": [
+          {
+            "author_name": "Bently",
+            "author_id": "5f96e4640000000001007c18",
+            "text": "2.0可以吗",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "杰森蜀黍",
+            "author_id": "676d6b350000000018015451",
+            "text": "刚打不久，可以进群吗",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "我",
+            "author_id": "6a9fbc4a0000000013021c00",
+            "text": "纯新人，练练再入群",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "慕名找教练",
+            "author_id": "681f1747000000000d00b5a0",
+            "text": "可以的，不限水平，高手可以申请当局主，带队打球",
+            "likes": null
+          },
+          {
+            "author_name": "慕名找教练",
+            "author_id": "681f1747000000000d00b5a0",
+            "text": "会不定期举办新手入门活动的～",
+            "likes": null
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "content_format": "图文",
+        "commercial_observation": "直接可见组织约球、连接教练/陪练/场馆及体验课；未见收费、佣金或成交数据。",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "time_window_status": "recent_edit_original_publication_unknown"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球",
+      "query_layer": "platform_baseline",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 5,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:00:04.113Z",
+      "capture_id": "d05"
+    },
+    {
+      "signal_id": "xhs-69f17e92000000001e00edea",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "69f17e92000000001e00edea",
+      "canonical_url": "https://www.rednote.com/discovery/item/69f17e92000000001e00edea",
+      "title": "0基础学网球 正手零基础教学",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 7651,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5c6b83f7000000001203ca4c",
+        "name": "网球王锌锌xin🎾"
+      },
+      "platform_facts": {
+        "published_time_label": "05-07"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a3e2c270000000015026d1f",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a3e2c270000000015026d1f",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a3e2c270000000015026d1f",
+      "title": "网球新手别瞎练了！网球6大技术一招分清！",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 101,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "6979ab6f0000000021011da7",
+        "name": "赏赏早点睡🌙"
+      },
+      "platform_facts": {
+        "published_time_label": "06-26"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a9035c900000000240068cf",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a9035c900000000240068cf",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a9035c900000000240068cf",
+      "title": "自学网球EP01｜零基础正手全套",
+      "summary": "文案提供握拍、转体、击球的零基础正手教学。评论既认可免费教学的清晰度，也有人有教练仍缺信心、听懂细节却来球就忘，另有90度或180度的疑问。视频时长3:57，未对动作正确性作判断。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:03:39.121Z",
+      "metrics": {
+        "likes": 2813,
+        "saves": 3267,
+        "comments": 74
+      },
+      "author": {
+        "id": "5ce8f8d4000000001202a4bf",
+        "name": "xfl."
+      },
+      "platform_facts": {
+        "published_time_label": "08-27",
+        "published_time_label_detail": "08-27 重庆",
+        "representative_comments": [
+          {
+            "author_name": "阳牧师",
+            "author_id": "5bd57dbc3db12e0001cc9c52",
+            "text": "感觉这个免费的视频比我花钱上的课讲的还好",
+            "likes": 20,
+            "reply_count": 2
+          },
+          {
+            "author_name": "悦见普拉提美学",
+            "author_id": "69d48d280000000033038edd",
+            "text": "我有教练都学不好 四节课，一节比一节没信心，不是这里错就是那里错，崩溃",
+            "likes": 1,
+            "reply_count": 7
+          },
+          {
+            "author_name": "ET",
+            "text": "和我教练讲的很像，分解的非常细节。问题是球来了就忘光了",
+            "likes": 5,
+            "reply_count": 3
+          },
+          {
+            "author_name": "果果Lina",
+            "text": "感觉全网讲得最好的。我这零基础的听懂了。期待第2课",
+            "likes": 4,
+            "reply_count": 1
+          },
+          {
+            "author_name": "77",
+            "text": "180度？",
+            "likes": null,
+            "reply_count": 1
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "3:57视频；文案与评论已核验",
+        "commercial_observation": "本篇未见收费入口或合作标记；评论将免费教程与已付费教练体验比较。",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question",
+      "metrics_at_search": {
+        "likes": 2812,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:03:39.121Z",
+      "capture_id": "d07"
+    },
+    {
+      "signal_id": "xhs-68fdf3e40000000003039d9c",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "68fdf3e40000000003039d9c",
+      "canonical_url": "https://www.rednote.com/discovery/item/68fdf3e40000000003039d9c",
+      "title": "全网最详细丨零基础网球正手教学",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 8818,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "68a1d8dc000000001a00877a",
+        "name": "六六"
+      },
+      "platform_facts": {
+        "published_time_label": "05-16"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-686790760000000012015817",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "686790760000000012015817",
+      "canonical_url": "https://www.rednote.com/discovery/item/686790760000000012015817",
+      "title": "蹲网球搭子🎾 不介意新手进",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 46,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "644392620000000029010190",
+        "name": "kathy🍉"
+      },
+      "platform_facts": {
+        "published_time_label": "07-13"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a8279e900000000320313bb",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a8279e900000000320313bb",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a8279e900000000320313bb",
+      "title": "北京海淀蹲靠谱网球🎾教练，求推荐求自荐！",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 18,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5c748e8d0000000012033b04",
+        "name": "lolbei"
+      },
+      "platform_facts": {
+        "published_time_label": "08-17"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6aa94d510000000025034637",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6aa94d510000000025034637",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa94d510000000025034637",
+      "title": "网球新手发球机动作求指导",
+      "summary": "普通用户上传1:17发球机练习视频，正文求大佬指导。仅一条可见评论劝尽量不用发球机，认为动作变形难改；这是评论者观点，不能据此认定发球机有害。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:04:20.141Z",
+      "metrics": {
+        "likes": 1,
+        "saves": null,
+        "comments": 1
+      },
+      "author": {
+        "id": "5c5e44e300000000120269de",
+        "name": "害群之马的马🐴"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天21:51",
+        "published_time_label_detail": "昨天21:51 北京",
+        "representative_comments": [
+          {
+            "author_name": "京D:北京网球教练7999",
+            "author_id": "69951ecd000000002100b8dd",
+            "text": "尽量别打发球机，动作变形，不好改",
+            "likes": null
+          }
+        ],
+        "representative_comment_count": 1,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "1:17练球视频，标题文案及评论已核验",
+        "commercial_observation": "未见卖课、商品或明确交易；评论者昵称带教练字样但未核验身份。",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question",
+      "metrics_at_search": {
+        "likes": 1,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:04:20.141Z",
+      "capture_id": "d08"
+    },
+    {
+      "signal_id": "xhs-6aa9bbb90000000026023374",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa9bbb90000000026023374",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa9bbb90000000026023374",
+      "title": "网球新手速记✅改掉瞎抡拍坏习惯",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 2,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5ae52a8de8ac2b7920b394ad",
+        "name": "沙拉不是酱🥗"
+      },
+      "platform_facts": {
+        "published_time_label": "2小时前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-69b15fbb000000002203ad33",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "69b15fbb000000002203ad33",
+      "canonical_url": "https://www.rednote.com/discovery/item/69b15fbb000000002203ad33",
+      "title": "新手必看❗️发球机参数设置保姆级教程📝",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 2260,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "6764752e0000000018015f6c",
+        "name": "小成软糖🎾"
+      },
+      "platform_facts": {
+        "published_time_label": "03-15"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6aa58441000000002803441b",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa58441000000002803441b",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa58441000000002803441b",
+      "title": "找北京🎾搭子",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 19,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "6974a768000000001c037054",
+        "name": "没想好名字"
+      },
+      "platform_facts": {
+        "published_time_label": "3天前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a7049ef0000000028006905",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a7049ef0000000028006905",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a7049ef0000000028006905",
+      "title": "别再瞎练了，网球各阶段训练指南来了！",
+      "summary": "四张图配长文，主张转体发力、放松握拍和重心移动，标题用分阶段训练和减少弯路吸引初学者。评论追问教练等级、前期投入、训练顺序，也有人只说存图。技术与身体酸痛的因果表述是作者主张，未独立核验。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:05:22.670Z",
+      "metrics": {
+        "likes": 845,
+        "saves": 1078,
+        "comments": 15
+      },
+      "author": {
+        "id": "69ad84a5000000003301bf8a",
+        "name": "小熊的网球日记"
+      },
+      "platform_facts": {
+        "published_time_label": "09-01",
+        "published_time_label_detail": "编辑于09-01 广东；最早可见评论08-03",
+        "representative_comments": [
+          {
+            "author_name": "momo",
+            "author_id": "619a67c6000000001000f4e1",
+            "text": "当初乱用力真累手...",
+            "likes": 1,
+            "reply_count": 1
+          },
+          {
+            "author_name": "挺好",
+            "text": "哪个等级可以当教练",
+            "likes": null,
+            "reply_count": 3
+          },
+          {
+            "author_name": "Bubble",
+            "text": "学网球前期投入大吗",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "盘星纪",
+            "text": "图已存",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "Love!",
+            "text": "学网球不先练步伐，其他都是白扯。",
+            "likes": 2
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "4张图文，正文已读取；未逐图核验",
+        "commercial_observation": "本篇未见销售入口；评论中其他账号宣传教学。",
+        "time_window_status": "recent_edit_original_publication_unknown"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question",
+      "metrics_at_search": {
+        "likes": 845,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:05:22.670Z",
+      "capture_id": "d09"
+    },
+    {
+      "signal_id": "xhs-6a678872000000001f01f377",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a678872000000001f01f377",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a678872000000001f01f377",
+      "title": "🎾5项基础手抛球练习（含超详细喂球教学）",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 112,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5b08bce2e8ac2b6ff5db29cd",
+        "name": "Zicky奥比"
+      },
+      "platform_facts": {
+        "published_time_label": "07-28"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6aa7a280000000000d024de8",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa7a280000000000d024de8",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa7a280000000000d024de8",
+      "title": "网球教练求推荐！！🎾",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 19,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5cf697ae0000000010031afa",
+        "name": "an."
+      },
+      "platform_facts": {
+        "published_time_label": "1天前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6aa9358c0000000026020ae7",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa9358c0000000026020ae7",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa9358c0000000026020ae7",
+      "title": "🎾双手反手零基础教学！新手直接抄作业",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 32,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "668def710000000003031a87",
+        "name": "闪电网球 尹教练"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天20:30"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6aa8b2f60000000029011c99",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6aa8b2f60000000029011c99",
+      "canonical_url": "https://www.rednote.com/discovery/item/6aa8b2f60000000029011c99",
+      "title": "新手网球群，纳新啦！",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 1,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5bcfe44e3487de0001a2289b",
+        "name": "樱桃小碎嘴子"
+      },
+      "platform_facts": {
+        "published_time_label": "昨天10:52"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a759256000000002403e85b",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a759256000000002403e85b",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a759256000000002403e85b",
+      "title": "🎾网球初学者十大好习惯",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics": {
+        "likes": 7,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "567b7b6182718c13a9be0eb6",
+        "name": "小石榴🐱"
+      },
+      "platform_facts": {
+        "published_time_label": "08-07"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question"
+    },
+    {
+      "signal_id": "xhs-6a30d72a0000000022017530",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a30d72a0000000022017530",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a30d72a0000000022017530",
+      "title": "破防了…1.5的新手就不配找球搭子吗？",
+      "summary": "作者自述1.5、一周一次教练课，课后容易忘，寻找同阶段球友；列出早晚时段、AA早场30元及携带相机供回看动作。评论反复询问新手能否进群、距离与早场是否可用。这是近期编辑的较早帖子，不计为近90天新发内容。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:06:28.708918+00:00",
+      "metrics_captured_at": "2026-09-16T00:06:28.627Z",
+      "metrics": {
+        "likes": 22,
+        "saves": 7,
+        "comments": 96
+      },
+      "author": {
+        "id": "58b192185e87e7063357fb2f",
+        "name": "芭汀"
+      },
+      "platform_facts": {
+        "published_time_label": "编辑于08-07，原始不晚于06-17",
+        "published_time_label_detail": "编辑于08-07；可见评论早至06-17，首次发布时间不晚于06-17",
+        "representative_comments": [
+          {
+            "author_name": "睡个好觉",
+            "author_id": "65b5b565000000000d01d59c",
+            "text": "同新手，可以进群吗",
+            "likes": 1,
+            "reply_count": 1,
+            "observed_time_label": "07-03"
+          },
+          {
+            "author_name": "福根",
+            "text": "有没有一起练习的群啊，刚开始学想多攒一些学习进度差不多的球友",
+            "likes": 3,
+            "reply_count": 15,
+            "observed_time_label": "06-17"
+          },
+          {
+            "author_name": "Saturn",
+            "text": "更新的新手可以吗",
+            "likes": null,
+            "reply_count": 1,
+            "observed_time_label": "07-28"
+          },
+          {
+            "author_name": "白化的月悦吖",
+            "text": "那片6-7早场好像没有吧，都是居民区，有的话方便告知哪家吗",
+            "likes": null,
+            "reply_count": 1,
+            "observed_time_label": "06-18"
+          },
+          {
+            "author_name": "暴躁李女士和可爱孙大宝",
+            "text": "是我要找的搭子了 但是我在瀛海",
+            "likes": null,
+            "reply_count": 1,
+            "observed_time_label": "06-23"
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "动态图片/图文",
+        "commercial_observation": "直接可见AA费用与加群邀请；出现设备品牌名称，但未核验广告标记或合作，不能认定付费推广。",
+        "time_window_status": "older_post_recent_edit"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。",
+        "可见06-17评论，帖子早于近90天窗口；仅作为历史延续背景。"
+      ],
+      "query_term": "网球 新手",
+      "query_layer": "category",
+      "query_intent": "question",
+      "metrics_at_search": {
+        "likes": 22,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:06:28.627Z",
+      "capture_id": "d10"
+    },
+    {
+      "signal_id": "xhs-6a7c5f190000000025004d44",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a7c5f190000000025004d44",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a7c5f190000000025004d44",
+      "title": "网球入门最全清单 | 装备+动作+规则+黑话",
+      "summary": "四张清单图加文案，将装备、动作步法、规则术语和补水等打包为一站式入门内容。文案可见品牌举例及绝对化表述，正确性未独立核验。两条评论均主要为@朋友，不能证明实际练习成效或付费需求。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:09:23.586Z",
+      "metrics": {
+        "likes": 493,
+        "saves": 511,
+        "comments": 2
+      },
+      "author": {
+        "id": "69bd10530000000033006230",
+        "name": "万物清单"
+      },
+      "platform_facts": {
+        "published_time_label": "08-19",
+        "published_time_label_detail": "编辑于08-19 北京",
+        "representative_comments": [
+          {
+            "author_name": "大瑶有被好好的爱着💗",
+            "author_id": "5fb3989f0000000001005b00",
+            "text": "@想和伙伴们去北京吃鸡煲的汪星贝",
+            "likes": null
+          },
+          {
+            "author_name": "正正在路上",
+            "author_id": "6016b51c00000000010067b6",
+            "text": "@星空",
+            "likes": 1
+          }
+        ],
+        "representative_comment_count": 2,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "4张清单图文，文案部分可见；未对完整图片内容逐项核验",
+        "commercial_observation": "本篇可读内容未见付费资料入口；高收藏不证明购买意向。",
+        "time_window_status": "recent_edit_original_publication_unknown"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 493,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:09:23.586Z",
+      "capture_id": "d12"
+    },
+    {
+      "signal_id": "xhs-6a72ff7b0000000033018ecd",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a72ff7b0000000033018ecd",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a72ff7b0000000033018ecd",
+      "title": "你的网球包，暴露了你是几点几🎾",
+      "summary": "用1.0至4.0的球包差异作趣味分层，作者明确称观察不严谨；文末介绍上海APT城市网球社群，邀请留下区域与水平以组同水平和混合Rally局。评论以装备与球技不匹配的自嘲、极简装备的反例及晒包为主。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:10:55.285Z",
+      "metrics": {
+        "likes": 343,
+        "saves": 168,
+        "comments": 53
+      },
+      "author": {
+        "id": "66ceffc4000000001d021930",
+        "name": "APT CLUB"
+      },
+      "platform_facts": {
+        "published_time_label": "08-05",
+        "published_time_label_detail": "08-05",
+        "representative_comments": [
+          {
+            "author_name": "🎾垫步狂魔",
+            "author_id": "5be0d1647f5c6f0001a9685e",
+            "text": "已经4.0的装备期了 还是赢不了2.5的比赛",
+            "likes": 3,
+            "reply_count": 1
+          },
+          {
+            "author_name": "热爱大自然",
+            "author_id": "6406eade000000001f0315dc",
+            "text": "越是高手，兵器越简单才对呀。",
+            "likes": 1,
+            "reply_count": 1
+          },
+          {
+            "author_name": "Lux",
+            "text": "我是塑膠袋",
+            "likes": 3,
+            "reply_count": 2
+          },
+          {
+            "author_name": "正在瘦下来的CC",
+            "text": "在我身上装监控了吧？连我包里有pocket都知道",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "你们的宝藏男孩",
+            "text": "坏了，我1.0就买Wilson bladev10和yonex percept d100了",
+            "likes": null,
+            "reply_count": 3
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "5张图文，正文与评论已核验",
+        "commercial_observation": "直接可见社群获客与组局邀请；收费模式和收入未知。文中等级为趣味话题，不能用于实际能力判定。",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 343,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:10:55.285Z",
+      "capture_id": "d13"
+    },
+    {
+      "signal_id": "xhs-6a58f57b000000000100d601",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a58f57b000000000100d601",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a58f57b000000000100d601",
+      "title": "网球新手装备不踩坑选购指南",
+      "summary": "作者按必须买和可以先不买组织装备视频，给出鞋袜、拍、包服的购买优先顺序。评论询问球鞋适配、价格和跑步鞋能否替代；也有老球友质疑是否需要这么多零碎。这里记录选购讨论，不把作者顺序当成独立验证的选购建议。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.230Z",
+      "metrics": {
+        "likes": 525,
+        "saves": 491,
+        "comments": 42
+      },
+      "author": {
+        "id": "5e0c8ee40000000001000f04",
+        "name": "麦子微辣"
+      },
+      "platform_facts": {
+        "published_time_label": "07-17",
+        "published_time_label_detail": "07-17",
+        "representative_comments": [
+          {
+            "author_name": "🐶dairy",
+            "author_id": "62bff789000000001902b21c",
+            "text": "体重轻推荐亚瑟士ff3还是r10呀",
+            "likes": null,
+            "reply_count": 3
+          },
+          {
+            "author_name": "苏小北",
+            "author_id": "649517d3000000001f00420a",
+            "text": "拍子多少钱",
+            "likes": null,
+            "reply_count": 3
+          },
+          {
+            "author_name": "小红薯6AA72AE4",
+            "text": "94年开始打球，刷到你才知道打个球要这么多零碎",
+            "likes": 2,
+            "reply_count": 1
+          },
+          {
+            "author_name": "盒盒盒盒盒胡萝卜🥕",
+            "text": "普通运动鞋或是跑步鞋可以吗",
+            "likes": null,
+            "reply_count": 3
+          },
+          {
+            "author_name": "xiao⛱",
+            "text": "姐妹滤镜颜色太黄了，有点看不清",
+            "likes": null,
+            "reply_count": 2
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "12:16视频；文案与评论已核验",
+        "commercial_observation": "品牌、型号与价格讨论可见；尚未核验赞助或商品交易入口，商业关系未知。",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 525,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:08:39.230Z",
+      "capture_id": "d11"
+    },
+    {
+      "signal_id": "xhs-6a5dea9f000000000503ac52",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "direct_post",
+      "content_id": "6a5dea9f000000000503ac52",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a5dea9f000000000503ac52",
+      "title": "差生文具多🎾网球装备分享帖",
+      "summary": "作者自述从因颜值购拍到试用多款球拍，按拍、服、帽、鞋、包、手胶分享个人体验；既讲外观、搭配和舒适性，也描述衣服洗后变松、磨脚和口袋不能放球等不满意。评论询问型号、渠道与脚感。作者强调仅为个人体验。",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:13:31.382Z",
+      "metrics": {
+        "likes": 788,
+        "saves": 450,
+        "comments": 55
+      },
+      "author": {
+        "id": "65184e570000000023024137",
+        "name": "Cali佳霓"
+      },
+      "platform_facts": {
+        "published_time_label": "07-20",
+        "published_time_label_detail": "07-20",
+        "representative_comments": [
+          {
+            "author_name": "是你的月亮呀🌙",
+            "author_id": "59bce8dc44363b4fd72a0d8e",
+            "text": "想问下温网pd是哪个牌子哪个款呀？新手求推荐",
+            "likes": null,
+            "reply_count": 1
+          },
+          {
+            "author_name": "吃不胖想得开小姐",
+            "text": "没事，我和你一样，差生文具多 漂亮就行",
+            "likes": 1,
+            "reply_count": 1
+          },
+          {
+            "author_name": "吃什么捏",
+            "text": "蛙趣太适合我这种入门级新手了感谢姐妹！！",
+            "likes": null,
+            "reply_count": 10
+          },
+          {
+            "author_name": "Renee",
+            "text": "姐妹能给一个shift拍子那个手胶的链接吗",
+            "likes": null,
+            "reply_count": 2
+          },
+          {
+            "author_name": "🍒",
+            "text": "姐妹，哪款鞋子穿得最舒服",
+            "likes": null,
+            "reply_count": 1
+          }
+        ],
+        "representative_comment_count": 5,
+        "comment_sample_limit": 5,
+        "comment_capture_status": "complete",
+        "comment_capture_scope": "bounded visible sample, not all comments or replies",
+        "content_format": "10张动态图片配长文，正文与评论已读；图片未逐张核验",
+        "commercial_observation": "品牌体验及购物渠道回答可见；未见已确认的付费合作标记或本人的销售入口，不能认定商业合作。",
+        "time_window_status": "displayed_date_in_window"
+      },
+      "detail_captured": true,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "以可见标题、文案及抽样评论为依据；未完整核验视频或全部轮播图。",
+        "商业信息仅记录直接可见事实；未见标记不能证明不存在商业合作。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply",
+      "metrics_at_search": {
+        "likes": 788,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "detail_captured_at": "2026-09-16T00:13:31.382Z",
+      "capture_id": "d14"
+    },
+    {
+      "signal_id": "xhs-6a7802e90000000035016ffc",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a7802e90000000035016ffc",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a7802e90000000035016ffc",
+      "title": "Wilson,上新了，太美了。",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 326,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "62f35f51000000001f006364",
+        "name": "左域爱网球"
+      },
+      "platform_facts": {
+        "published_time_label": "08-26"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a7440b7000000003202052e",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a7440b7000000003202052e",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a7440b7000000003202052e",
+      "title": "看看大家的网球包🎾",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 23,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5720644b84edcd44756fd109",
+        "name": "lynne"
+      },
+      "platform_facts": {
+        "published_time_label": "08-06"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a81b1610000000032021e8f",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a81b1610000000032021e8f",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a81b1610000000032021e8f",
+      "title": "这个夏天网球包里必备哪些？",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 71,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5481c550d6e4a97d78e042c8",
+        "name": "长臂霸王龙"
+      },
+      "platform_facts": {
+        "published_time_label": "08-16"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a49efbd000000001603cbca",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a49efbd000000001603cbca",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a49efbd000000001603cbca",
+      "title": "🎾新手网球｜入门基础装备分享",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 973,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "57440d805e87e70cedc88698",
+        "name": "胡莹莹"
+      },
+      "platform_facts": {
+        "published_time_label": "07-05"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a9a7b46000000002601fb06",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a9a7b46000000002601fb06",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a9a7b46000000002601fb06",
+      "title": "Unboxing🎾网球购物分享",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 101,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "5ca61e7e000000001002feca",
+        "name": "梦露MENG"
+      },
+      "platform_facts": {
+        "published_time_label": "5天前"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a525bb10000000008001e91",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a525bb10000000008001e91",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a525bb10000000008001e91",
+      "title": "网球人精选好用之物分享",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 709,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "54dda6672e1d9372eecbbb2a",
+        "name": "Justina_wink"
+      },
+      "platform_facts": {
+        "published_time_label": "08-20"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a88269d0000000017002dd1",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a88269d0000000017002dd1",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a88269d0000000017002dd1",
+      "title": "🎾去感受阳光☀️ 汗水的鲜活",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 352,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "58ba381750c4b436b81a71ad",
+        "name": "小黑喵🖤"
+      },
+      "platform_facts": {
+        "published_time_label": "08-31"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    },
+    {
+      "signal_id": "xhs-6a4f8701000000000e031402",
+      "platform": "xiaohongshu",
+      "source_mode": "controlled_capture",
+      "source_type": "search_card",
+      "content_id": "6a4f8701000000000e031402",
+      "canonical_url": "https://www.rednote.com/discovery/item/6a4f8701000000000e031402",
+      "title": "手腕的柔软和像雨刮器一样的摆动🎾🔥",
+      "summary": "",
+      "published_at": "",
+      "captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics_captured_at": "2026-09-16T00:08:39.323375+00:00",
+      "metrics": {
+        "likes": 2841,
+        "comments": null,
+        "saves": null,
+        "shares": null
+      },
+      "author": {
+        "id": "670d2bcf000000001d033919",
+        "name": "Takuya Komura 小村拓也"
+      },
+      "platform_facts": {
+        "published_time_label": "07-09"
+      },
+      "detail_captured": false,
+      "semantic_relevance": "unreviewed",
+      "evidence_role": "neutral",
+      "permission_scope": "user_authorized",
+      "limitations": [
+        "搜索卡片信息，尚未核验正文及视频。"
+      ],
+      "query_term": "网球 装备",
+      "query_layer": "subject_bridge",
+      "query_intent": "content_supply"
+    }
+  ],
+  "collection": {
+    "mode": "bounded_native_capture",
+    "query_runs": [
+      {
+        "query_id": "q1",
+        "query_term": "网球",
+        "query_layer": "platform_baseline",
+        "query_intent": "content_supply",
+        "observed_result_count": 35,
+        "retained_signal_count": 16,
+        "relevant_signal_count": 0,
+        "retention_rate": 0.457,
+        "relevant_yield_rate": 0.0,
+        "low_yield": false,
+        "detail_open_count": 6,
+        "discarded_result_count": 19,
+        "stop_reason": "bounded_sample_complete",
+        "outcome": "completed_with_results",
+        "raw_artifacts": [
+          "captures/q1.json"
+        ],
+        "capture_executions": [],
+        "recorded_at": "2026-09-15T23:55:29.743621Z",
+        "observation_amendment": "9 additional cards loaded incidentally on opening lower-ranked retained detail; identities preserved in captures/q1-incidental-extra.json"
+      },
+      {
+        "query_id": "q2",
+        "query_term": "网球 新手",
+        "query_layer": "category",
+        "query_intent": "question",
+        "observed_result_count": 32,
+        "retained_signal_count": 17,
+        "relevant_signal_count": 0,
+        "retention_rate": 0.531,
+        "relevant_yield_rate": 0.0,
+        "low_yield": false,
+        "detail_open_count": 4,
+        "discarded_result_count": 15,
+        "stop_reason": "bounded_sample_complete",
+        "outcome": "completed_with_results",
+        "raw_artifacts": [
+          "captures/q2.json"
+        ],
+        "capture_executions": [],
+        "recorded_at": "2026-09-16T00:06:28.754329Z"
+      },
+      {
+        "query_id": "q3",
+        "query_term": "网球 装备",
+        "query_layer": "subject_bridge",
+        "query_intent": "content_supply",
+        "observed_result_count": 22,
+        "retained_signal_count": 12,
+        "relevant_signal_count": 0,
+        "retention_rate": 0.545,
+        "relevant_yield_rate": 0.0,
+        "low_yield": false,
+        "detail_open_count": 4,
+        "discarded_result_count": 10,
+        "stop_reason": "bounded_sample_complete",
+        "outcome": "completed_with_results",
+        "raw_artifacts": [
+          "captures/q3.json"
+        ],
+        "capture_executions": [],
+        "recorded_at": "2026-09-16T00:10:55.387034Z"
+      }
+    ],
+    "counts": {
+      "query_count": 3,
+      "observed_result_count": 89,
+      "retained_sample_count": 45,
+      "unique_sample_count": 42,
+      "duplicate_count": 3,
+      "discarded_result_count": 44,
+      "detail_open_count": 14,
+      "counter_signal_count": 0,
+      "profile_open_count": 5,
+      "captured_comment_count": 63
+    },
+    "limitations": [
+      "RedNote 网页搜索个性化排序，非总体随机样本；近90天优先，超期单列。",
+      "未取得统一采集编排器的本次原生通道证明；本数据为显式结构化导入的信号快照。",
+      "搜索为当前账号默认排序，未使用全平台热门榜或完整最新流。",
+      "近期、高互动、低互动内容均纳入；并非分层随机抽样，不能估计话题总体占比。",
+      "观察89次搜索结果卡片，保留45次记录，按内容ID去重为42帖；不保留项仅留数量和部分ID清单。",
+      "42个不同发布账号不等于42份独立原创；未逐一核验跨账号视频素材来源。",
+      "本地服务结果偏北京，补有上海俱乐部，不能代表全国城市分布。"
+    ],
+    "stop_reason": "bounded_sample_complete",
+    "requested_mode": "standard"
+  },
+  "capture_method": "official_cua_native_chrome",
+  "time_window": {
+    "start": "2026-06-18",
+    "end": "2026-09-16"
+  },
+  "observed_at": "2026-09-15T23:49:59.273737+00:00",
+  "raw_sample_count": 89,
+  "retained_sample_count": 45,
+  "unique_sample_count": 42,
+  "analysis_import": {
+    "status": "explicit_native_capture_import",
+    "executor": "official_cua_native_chrome",
+    "official_run_manifest_state": "preflight_required",
+    "full_pipeline_validated": false
+  }
+}
