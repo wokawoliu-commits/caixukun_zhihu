@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:," rel="icon"/>
+<title>《我的花园世界》公开数值证据台账</title>
+<style>
+:root { --bg:#f6f5f0; --paper:#fffefa; --text:#28352f; --muted:#6b766e; --line:#e0e5dc; --accent:#296346; --wash:#edf2e9; --code:#f1f3ed; --size:17px; }
+:root[data-theme="dark"] { --bg:#17221c; --paper:#1d2a22; --text:#e2e8df; --muted:#a8b7ab; --line:#3c4b40; --accent:#9cd0ae; --wash:#2c3d31; --code:#26372b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; transition:background .18s,color .18s; }
+a { color:var(--accent); text-underline-offset:4px; overflow-wrap:anywhere; }
+a:hover { text-decoration-thickness:2px; }
+button { color:inherit; font:inherit; cursor:pointer; }
+button:focus-visible,a:focus-visible,.table-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip { position:fixed; top:-70px; left:20px; padding:12px; z-index:10; background:var(--paper); }
+.skip:focus { top:10px; }
+.progress { position:fixed; top:0; height:3px; background:var(--accent); width:0; z-index:6; }
+.topbar { position:sticky; top:0; z-index:5; height:66px; padding:0 36px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--line); background:var(--paper); }
+.brand { font-size:14px; font-weight:650; letter-spacing:1px; text-decoration:none; white-space:nowrap; }
+.tools { display:flex; gap:6px; align-items:center; }
+.tools button,.menu { border:1px solid transparent; border-radius:5px; background:transparent; padding:8px 10px; min-height:40px; font-size:13px; transition:background .15s; }
+.tools button:hover,.menu:hover { background:var(--wash); }
+.tools .font { font-size:16px; min-width:40px; padding:6px; }
+.tools .divider { height:18px; border-left:1px solid var(--line); margin:0 3px; }
+.layout { display:grid; grid-template-columns:245px minmax(0,900px); gap:46px; max-width:1275px; margin:auto; padding:0 32px; }
+.sidebar { align-self:start; position:sticky; top:66px; height:calc(100dvh - 66px); overflow:auto; padding:34px 8px 28px 0; }
+.nav-label { margin:0 0 16px 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+.toc ul { margin:0; padding:0; list-style:none; }
+.toc li { margin:4px 0; }
+.toc a { display:block; font-size:13px; line-height:1.65; padding:8px 12px; border-left:2px solid transparent; text-decoration:none; color:var(--muted); transition:color .15s,background .15s; }
+.toc a:hover,.toc a.active { color:var(--accent); background:var(--wash); border-left-color:var(--accent); }
+.nav-bottom { border-top:1px solid var(--line); margin:24px 12px 0; padding-top:18px; font-size:12px; color:var(--muted); line-height:1.8; }
+.nav-bottom a { display:inline-block; margin-top:8px; }
+main { min-width:0; background:var(--paper); padding:50px 54px 60px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.eyebrow { font-size:11px; color:var(--accent); letter-spacing:2.5px; margin:0 0 18px; font-weight:650; }
+h1 { font-size:clamp(28px,3vw,38px); letter-spacing:-1px; line-height:1.45; margin:0 0 20px; font-weight:700; }
+.meta { color:var(--muted); font-size:12px; padding-bottom:28px; border-bottom:1px solid var(--line); margin:0 0 26px; display:flex; gap:18px; flex-wrap:wrap; }
+article { font-size:var(--size); line-height:1.95; overflow-wrap:break-word; }
+article p { margin:0 0 1.15em; }
+article > p:first-child { font-size:.88em; line-height:1.9; color:var(--muted); }
+h2 { font-size:1.35em; line-height:1.55; margin:2.6em 0 1em; padding-top:1.35em; border-top:1px solid var(--line); letter-spacing:-.3px; }
+h2:first-of-type { margin-top:1.9em; }
+h3 { font-size:1.1em; margin-top:2em; }
+strong { font-weight:650; }
+ul,ol { padding-left:1.5em; margin:1em 0 1.4em; }
+li { padding-left:.15em; margin:.5em 0; }
+li::marker { color:var(--accent); }
+code { background:var(--code); padding:2px 5px; border-radius:3px; font-size:.85em; font-family:"SFMono-Regular",Consolas,monospace; }
+pre { background:var(--code); border-left:3px solid var(--accent); padding:20px 22px; overflow-x:auto; font-size:.88em; line-height:1.85; margin:24px 0; }
+pre code { padding:0; background:none; font-size:1em; border-radius:0; }
+.table-scroll { overflow-x:auto; margin:24px 0; }
+table { width:100%; border-collapse:collapse; font-size:.82em; line-height:1.8; min-width:530px; }
+th { background:var(--wash); font-weight:650; color:var(--accent); text-align:left; }
+td,th { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:var(--bg); }
+blockquote { margin:24px 0; border-left:3px solid var(--accent); padding-left:22px; color:var(--muted); }
+.footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; gap:20px; justify-content:space-between; color:var(--muted); font-size:12px; }
+.menu { display:none; }
+@media(min-width:1500px) { .layout { gap:62px; max-width:1350px; grid-template-columns:260px minmax(0,930px); } main { padding-left:68px; padding-right:68px; } }
+@media(max-width:1000px) { .layout { grid-template-columns:205px minmax(0,1fr); gap:22px; padding:0 20px; } main { padding:36px 32px 50px; } .toc a { font-size:12px; } }
+@media(max-width:760px) {
+ .topbar { height:60px; padding:0 12px; gap:6px; } .brand { font-size:12px; letter-spacing:0; } .menu { display:inline-block; font-size:13px; } .tools { gap:0; } .tools button { padding:6px 8px; } .tools .divider,.print-button { display:none; }
+ .layout { display:block; padding:0; } main { padding:30px 22px 44px; border:0; } h1 { font-size:28px; } article { line-height:1.95; }
+ .sidebar { position:fixed; top:60px; left:0; width:min(320px,88vw); height:calc(100dvh - 60px); background:var(--paper); z-index:4; padding:24px 18px; border-right:1px solid var(--line); box-shadow:15px 0 30px #0002; display:none; }
+ .sidebar.open { display:block; } .toc a { font-size:14px; padding:10px 12px; } .meta { gap:10px 18px; } pre { padding:16px; font-size:.8em; } .footer { flex-direction:column; gap:10px; } h2 { font-size:1.24em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
+@media print {
+ :root,:root[data-theme="dark"] { --bg:white; --paper:white; --text:#111; --muted:#555; --line:#ddd; --accent:#222; --wash:#eee; --code:#f4f4f4; --size:10.5pt; }
+ .topbar,.sidebar,.progress,.skip,.footer { display:none; } .layout { display:block; max-width:none; padding:0; } main { padding:0; border:0; } h1 { font-size:24pt; } h2 { break-after:avoid; } tr,pre { break-inside:avoid; } .table-scroll { overflow:visible; } table { min-width:0; font-size:9pt; } pre { white-space:pre-wrap; } a { color:inherit; } @page { margin:18mm; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转到正文</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:8px"><button aria-controls="nav" aria-expanded="false" aria-label="展开目录" class="menu">目录</button><a class="brand" href="../index.html">← 返回研究报告</a></div>
+<div aria-label="阅读设置" class="tools"><button aria-label="缩小字号" class="font" id="smaller">A−</button><button aria-label="放大字号" class="font" id="larger">A+</button><span class="divider"></span><button aria-label="切换深色模式" id="theme">深色</button><button class="print-button" id="print">打印</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="nav"><nav aria-label="报告目录"><p class="nav-label">报告目录</p><div class="toc">
+<ul>
+<li><a href="#1">1. 来源与证据保存</a></li>
+<li><a href="#2">2. 已核实的官方规则</a><ul>
+<li><a href="#o1o3">珍珠循环（O1、O3）</a></li>
+<li><a href="#o1o2">花灵循环（O1、O2）</a></li>
+<li><a href="#o4">居民订单（O4）</a></li>
+<li><a href="#o1">限定抽取与保底（O1）</a></li>
+<li><a href="#o1_1">公会竞赛与后期进阶（O1）</a></li>
+<li><a href="#o1_2">真花与宠物（O1）</a></li>
+</ul>
+</li>
+<li><a href="#3">3. 种植、水滴、升级与花艺：只能标玩家观测的部分</a></li>
+<li><a href="#4">4. 可成立的设计解释（推论，与事实分开）</a></li>
+<li><a href="#5">5. 排除或暂缓采用</a></li>
+</ul>
+</div>
+
+</nav><div class="nav-bottom"><a href="../index.html">← 返回研究报告</a><br/><a href="public-source-ledger.html">查看 Markdown 原文 ↗</a></div></aside>
+<main id="content"><p class="eyebrow">GARDEN WORLD / SOURCE NOTES</p><h1>《我的花园世界》公开数值证据台账</h1><div class="meta">证据与复核文档 · 2026 年 10 月 12 日</div><article><p>采集日：2026-10-12（Asia/Shanghai）。对象：国内官网和 TapTap 国内社区；用户设备是华为渠道独立 App <code>cn.wdhysj.huawei</code>。本台账没有操作安卓设备，也没有读 APK。官网规则未声明覆盖每个渠道版本，因此仍需和设备当前界面核对。</p>
+<h2 id="1" tabindex="-1">1. 来源与证据保存</h2>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>ID</th>
+<th>来源／日期</th>
+<th>级别与本地证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O1</td>
+<td><a href="https://wdhysj.babigame.cn/list/news/6901e7aadce6870db700f86d">官网概率说明</a>，发布 2025-11-23 06:58，内容更新时间 2026-08-07 14:23</td>
+<td>国内官方。<code>6901e7aadce6870db700f86d.html</code>；<code>official-images/manifest.json</code> 为原表 URL 对照；原表已逐张目视读取</td>
+</tr>
+<tr>
+<td>O2</td>
+<td><a href="https://wdhysj.babigame.cn/list/news/69211423096b9708b3077e6a">官网花灵玩法</a>，发布 2025-11-22，更新 2026-03-11</td>
+<td>国内官方。<code>69211423096b9708b3077e6a.html</code>；<a href="https://www.taptap.cn/moment/741223674840879092">TapTap 菜菜同文</a>交叉核对</td>
+</tr>
+<tr>
+<td>O3</td>
+<td><a href="https://wdhysj.babigame.cn/list/news/68f21297c037e940070d5f29">官网珍珠攻略</a>，发布 2025-10-17，更新 2026-03-11</td>
+<td>国内官方。<code>68f21297c037e940070d5f29.html</code></td>
+</tr>
+<tr>
+<td>O4</td>
+<td><a href="https://wdhysj.babigame.cn/list/news/68dbd6e9e65eb29f3503da2e">官网居民订单攻略</a>，发布 2025-09-27，更新 2026-03-11</td>
+<td>国内官方。<code>68dbd6e9e65eb29f3503da2e.html</code></td>
+</tr>
+<tr>
+<td>O5</td>
+<td><a href="https://www.taptap.cn/moment/753211041986382029">菜菜：欢雪颂冬玩法</a>，活动期 2025-12-24—2026-01-01，页面更新 2026-03-11</td>
+<td>官方历史活动，只作商业化结构案例</td>
+</tr>
+<tr>
+<td>P1</td>
+<td><a href="https://www.taptap.cn/moment/705200715299029037">沙茶面：7日花园报告</a>，修改于 2025-08-20</td>
+<td>玩家自述，有多张游戏截图；历史观察，不是当前官方规则</td>
+</tr>
+<tr>
+<td>P2</td>
+<td><a href="https://www.taptap.cn/moment/800385714138123920">赛丽蒙尼佛系摸鱼：萌新（微氪）攻略</a>，页面 2026-05-04</td>
+<td>玩家自述，含游戏截图；有算术不一致，需筛选使用</td>
+</tr>
+<tr>
+<td>P3</td>
+<td><a href="https://www.taptap.cn/moment/825743074851292749">十壹：新手零氪金起号</a>，页面 2026-07-13</td>
+<td>玩家攻略，带云手机推广；仅作待验证线索</td>
+</tr>
+<tr>
+<td>X1</td>
+<td><a href="https://play.google.com/store/apps/details?gl=hk&amp;hl=zh&amp;id=com.floralgames.hjxp">Google Play 国际服</a>，开发商回复 2025-12-29</td>
+<td><strong>国际服</strong>，包名 <code>com.floralgames.hjxp</code>，不能直接当国内华为渠道数值</td>
+</tr>
+</tbody>
+</table></div>
+<p>官网为客户端渲染。网页搜索阅读器报错，但普通 HTTP 成功返回页面（状态 200，正确文章标题）；从首页公开载入的 <code>/_next/static/chunks/f8090939c7f0aaea.js</code> 中解析文章数据，<strong>没有执行该文件</strong>。公开原始文章数组保存在 <code>official-site-data.json</code>。详细页路径由官网公开导航代码确认。</p>
+<h2 id="2" tabindex="-1">2. 已核实的官方规则</h2>
+<h3 id="o1o3">珍珠循环（O1、O3）</h3>
+<ul>
+<li>采集点刷新周期：<strong>2 小时 30 分钟</strong>；每日可领 <strong>2 张免费雇佣书</strong>。</li>
+<li>官网现行雇佣成功率：<strong>90%</strong>。2025-08 的旧版转载出现 80%；不能沿用成当前值。</li>
+<li>成功采集得到的珍珠分布：</li>
+</ul>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>珍珠数</th>
+<th style="text-align: right;">120</th>
+<th style="text-align: right;">160</th>
+<th style="text-align: right;">200</th>
+<th style="text-align: right;">240</th>
+<th style="text-align: right;">280</th>
+<th style="text-align: right;">320</th>
+<th style="text-align: right;">360</th>
+<th style="text-align: right;">400</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>概率</td>
+<td style="text-align: right;">9%</td>
+<td style="text-align: right;">9%</td>
+<td style="text-align: right;">47%</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">1.67%</td>
+<td style="text-align: right;">1.67%</td>
+<td style="text-align: right;">1.66%</td>
+</tr>
+</tbody>
+</table></div>
+<p>原图 <code>official-images/05.jpg</code>（官网文件名含 20260807）。分布合计 100%，<strong>计算得到每次成功采集期望 215.196 颗</strong>。若失败确实零产出且同样消耗一次机会，则每次尝试期望 193.6764 颗；后一条件未获官方确认，不应当作实测。</p>
+<p>珍珠兑奖表（<code>06.png</code>）包含元宝、金币、水滴、加速卡、花坊币、雇佣书、护身符、培养材料和经验，说明它是跨资源转换入口。188 元宝与 88 元宝各 0.60%；10 元宝 2.43%。单次兑奖元宝期望据此为 <strong>1.899</strong>，但当前华为服单抽珍珠成本需设备确认，不能直接换算每小时元宝。O3 建议攒 1000 颗批量开启只是官方操作建议，<strong>不能推导批量概率更高</strong>。</p>
+<h3 id="o1o2">花灵循环（O1、O2）</h3>
+<ul>
+<li>种精灵花和对应组合花，成熟时有机会出现花灵；精灵主花数量的概率加成在 <strong>8 朵</strong>封顶。</li>
+<li>公示基础事件概率 <strong>0.52%（种满 8 朵主花）</strong>，见 <code>08.png</code>。原表没有写清每朵、每地块还是每批成熟是一个试验，不能直接套总地块数算日产量。</li>
+<li>好友助力、当期精灵花效果、花灵藏品获取／升级还能加概率。</li>
+<li>每日收获上限 <strong>18</strong>，好友处摘取上限 <strong>4</strong>；密令可提高收获上限。官方未明确这两类额度是否相互包含，不宜擅自加总为 22。</li>
+<li>派遣产出月令币；品质越高收益越高；月令币换限定鲜花和装扮。数值含义：购买稀有主花、提升召唤效率和提高每日上限连接到同一条长期兑换循环。</li>
+</ul>
+<h3 id="o4">居民订单（O4）</h3>
+<ul>
+<li>官网以每日 <strong>60 单</strong>宝箱奖励为初级目标；<strong>15 级</strong>后说明绸缎订单每日上限 <strong>120</strong>。</li>
+<li><strong>26 级</strong>解锁团单；居民订单累计到 <strong>50／100</strong>触发；团单只保留 <strong>30 分钟</strong>。</li>
+<li>注意：O4 的 15 级前段落也写“60 个绸缎订单”，与其后分级说明存在语义含混。最稳妥表述为“官网以 60 单为奖励节点、15 级后绸缎订单上限 120”，当前订单类型以设备为准。</li>
+</ul>
+<h3 id="o1">限定抽取与保底（O1）</h3>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>明确公示</th>
+<th>解读限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>池光夏梦月花</td>
+<td>表列主奖 0.10%；未中时提高概率；文案为“满 300 次之后必出”</td>
+<td>不擅自消除第 300／301 抽的措辞差异；软保底曲线未公开</td>
+</tr>
+<tr>
+<td>花灵盲盒</td>
+<td>普品合计 49.3%，珍品 40%，华品 10%，隐藏 0.7%；隐藏款满 144 次后必出</td>
+<td>不能用 <code>1/0.007</code> 直接算含保底的期望次数</td>
+</tr>
+<tr>
+<td>星河映蕊</td>
+<td>目标第一／二／三轮表列 0.10%／0.20%／0.40%；第 300／600 次后橙色以上大奖，第 900 次后目标必出</td>
+<td>三轮定义、早中后的重置及各轮抽数口径需客户端确认</td>
+</tr>
+<tr>
+<td>琼宵月影等服饰池</td>
+<td>10 次必出时装部件</td>
+<td>没说必为未获得部件，不能推导十连必补图鉴</td>
+</tr>
+<tr>
+<td>缘定鹊桥、星夜奇遇等历史池</td>
+<td>200 次后主奖必出</td>
+<td>历史活动，不代表现在正在售卖的池</td>
+</tr>
+</tbody>
+</table></div>
+<p>原表：<code>00.png</code> 月花、<code>01.png</code> 盲盒、<code>02.jpg</code> 星河、<code>03.png</code> 服饰。概率文案把保底与“最终期望值仍为表列概率”放在一起，<strong>基础概率／综合概率口径不清</strong>；需要保底曲线与重置规则才能建立准确期望模型。本调查未发现普通花种“培育成功率／失败保底”的官方明确数字，不要把抽取花种的保底误写成培育保底。</p>
+<h3 id="o1_1">公会竞赛与后期进阶（O1）</h3>
+<p>任务分数与刷新概率（<code>09.jpg</code>）：凡花 9 分／4.90%；普花 14 分／14.38%；珍花 21 分／3.72%、23 分／3.85%；华花 25 分／1.30%；仙花 28 分／2.11%、30 分／0.42%。其余类别中，居民订单和花架售卖花艺各占 11.45%，雇佣珍珠 7.38%，VIP 购买 6.82%。完整 19 类合计 100%。<strong>高品质花不仅提高经营价值，还提高同类竞赛任务分值</strong>；能否折算“每元钱竞赛得分”还缺每任务成本、刷新次数及奖励倍率。</p>
+<p>竞赛宝箱原表 <code>10.jpg</code>：12／20／40 个随机培育材料分别 10%／5%／2.5%，6 个培养材料 82.5%。按四行物品均为材料数量理解，<strong>期望 8.15 个材料／箱</strong>。</p>
+<p>鲜花进阶图 <code>29.png</code>、<code>30.png</code>、<code>31.jpg</code> 给的是“词条类型 × 品质”的<strong>抽中概率，不是加成幅度</strong>。三星阶中，竞赛任务得分 +1 的彩色词条 1.10%，+2 的彩色词条 0.10%；这是把经营养成连接到公会竞争的稀有收益。单次至少中一种竞赛词条的概率若这两项互斥就是 1.20%；不考虑锁词条与保底，独立抽样的理论期望约 83.33 次，<strong>仅是模型情景，不是实测洗练次数</strong>。本台账核加：一星原表约 99.79%，二星约 99.70%，三星 100%；保留公示原值，不静默归一化或猜测漏项。</p>
+<h3 id="o1_2">真花与宠物（O1）</h3>
+<ul>
+<li>真花活动现行原表 <code>07.jpg</code>：<strong>每收获 100 次鲜花，0.22%</strong>。原表并未说明具体随机算法。若仅作独立同分布近似，对应每次概率 <code>1-(1-0.0022)^(1/100) ≈ 0.0022024%</code>，绝非每次 0.22%，也不等于收够固定次数保证中。</li>
+<li>宠物外出状态概率 <code>15.png</code>：瞌睡 0%、平静 15%、开心 42%、兴奋 100%；前三种状态走丢栏为 1%，兴奋为 0%。</li>
+<li>心情区间 <code>16.png</code>：0–19／20–39／40–69／70–100 的好事件率为 20／60／85／97%，坏事件率为 79／39／14／2%，各列走丢 1%。<code>17.png</code> 表明元宝获得率仅在 70–100 心情区间为 3%，低于 70 为 0%。<strong>状态表和心情表的条件层级没有完整定义，不能随意相乘。</strong></li>
+<li>大量水桶出现事件为 <strong>10%</strong>（<code>11.png</code>）；公示未给“每桶水量”和抽样频率。</li>
+</ul>
+<h2 id="3" tabindex="-1">3. 种植、水滴、升级与花艺：只能标玩家观测的部分</h2>
+<p>P1（2025-08）记录水每 2 分钟恢复 1 滴、每天领 60 桶及两次 30 滴；P2（2026-05）记录非 VIP 自然恢复上限 65，VIP 为 130。X1 的国际服开发者也答复每 2 分钟恢复、日领 60，但不能据此替代国内服验证。若设备确认 65／130 和 2 分钟，<strong>离线蓄满时间分别 130 分钟／260 分钟</strong>；VIP 加的是缓冲容量，不能据此说基础回水速度翻倍。理论自然恢复上限 720 滴／24 小时也要求持续避免满溢。</p>
+<p>进一步目视核验了 P1 附带的游戏内升级总览（<code>player-images/p1-flower-upgrade-effects.jpg</code>；花种名未入图，2025-08 的历史截图）。它直接解决了文字攻略的歧义：<strong>第 4 轮在 11 级已解锁，13 级提高的是偷取保底</strong>，不能把玩家“13 级及以上有 4 轮”改写成“13 级首次解锁 4 轮”。截图本身是原始界面证据，但其花种和当前版本仍需确认。</p>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>截图中的提升节点</th>
+<th style="text-align: right;">20 级结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>收获次数</td>
+<td>2、6、11、17 级各 +1</td>
+<td style="text-align: right;">5 轮</td>
+</tr>
+<tr>
+<td>每轮朵数</td>
+<td>10、16、20 级各 +1</td>
+<td style="text-align: right;">5 朵</td>
+</tr>
+<tr>
+<td>精华掉率</td>
+<td>4、8、15、18 级各 +5 个百分点</td>
+<td style="text-align: right;">40%</td>
+</tr>
+<tr>
+<td>精华掉落数量</td>
+<td>7、14 级各 +1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>偷取保底数量</td>
+<td>13、20 级各 +1</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>收获间隔</td>
+<td>3、5、9、12、19 级各减 3分20秒</td>
+<td style="text-align: right;">23分20秒</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>最后一行的秒数只适用于该截图花种，绝不能当所有花统一减时。</strong>若精华掉率为每次收获试验概率，满级每次期望精华为 0.4×3=1.2；是否逐地块／逐朵试验仍需客户端验证。</p>
+<p>P1 的另一原始截图（<code>player-images/p1-flower-upgrade-cost.jpg</code>）对比 12→13 级：三种花都仅把偷取保底从 1 提到 2，收获次数 4、每轮 3、精华 30%×2 均不变；棉花小熊升级费用 405000 金币，浅粉落新妇 486000，白百合 21600，精华门槛均 500。<strong>这说明“每升一级就同步提高三项产能”是错误表述，某些级别主要购买防损能力。</strong>截图还直接显示三者订单单价为 109／63／18、订单经验 145／90／25，不代表花贸或花艺售卖单价。</p>
+<p>P1 的花艺界面原图（<code>player-images/p1-floral-prices.jpg</code>）显示三个历史配方售价 752／499／403，每份分别需要三种花各 1 朵；可验证花艺是组合加工增值，不能宣称这些配方仍为当前最优。<strong>数值分析应围绕每滴水产量、每地块小时产量、精华回收和升级回本期，不能把等级直接当售价倍率。</strong></p>
+<p>P1 的历史观察：公会花 15 分钟成熟一轮、上限累积 6 轮，即 90 分钟容量；P2 说公会土地每升一级减少 30 秒间隔。P3 写公会种植不耗水且产精华。未找到现行官方完整土地等级表，需设备验证后再进入主模型。</p>
+<p>P2 自述“72 只花艺、48 分钟、收入约 20 万金币”，对应条件下约 25 万金币／小时；但其同时声称仅此日营收约 700 万，超过 24 小时连续同速的 600 万，因此<strong>不能将 700 万作已验证产出</strong>。P1 则展示花艺多方案和经验，均依赖当时花卉／VIP／花瓶，不应对当前版本宣称固定“最优花艺”。</p>
+<p>P1 的历史开地成本表：21 级 4 块×2 万，24 级 4×10 万，27 级 4×15 万，30 级 4×20 万，33 级 4×25 万。它提示等级推进伴随高额金币沉没成本，但未确认当前仍同表。</p>
+<h2 id="4" tabindex="-1">4. 可成立的设计解释（推论，与事实分开）</h2>
+<ol>
+<li><strong>资源效率和回访频率分开出售。</strong>多轮收获改善水效率，水上限改善离线容错，缩时改善单位地块产量，更多土地扩容量；它们不是同一个“倍率”。</li>
+<li><strong>珍珠是重复回访的资源转换器。</strong>官方 150 分钟刷新连到材料、元宝和道具；材料又支撑新花和经营扩展。其价值不能只看珍珠本身。</li>
+<li><strong>花卉收藏具有生产资产属性。</strong>种植产出用于花艺／订单；精灵花还连到花灵和月令币；花品影响竞赛基础分。稀有花因此叠加外观、产能、活动参与权和竞争价值。</li>
+<li><strong>付费可以同时作用于获得概率和吞吐上限。</strong>稀有花抽取／保底、花灵密令加每日上限、三星进阶稀有竞赛词条是三条不同的付费效率路径。</li>
+<li><strong>订单与图鉴广度可能形成成本反弹。</strong>P1、P2 均描述扩展等级／花种／花瓶后需求池变宽导致缺货；这是待设备验证的重要负反馈，而非“解锁越多必定越强”。</li>
+<li><strong>历史活动用“抽取＋商店兑换＋到期”组合回收资源。</strong>O5 明确元宝抽取、限定花瓶只在兑换店、8 天抽取＋1 天展示；可确认为当时设计，不能外推当前活动价格。</li>
+</ol>
+<h2 id="5" tabindex="-1">5. 排除或暂缓采用</h2>
+<ul>
+<li>搜索中的“向日葵 10 分钟产 30 阳光”“花境减 40%”“智能镰刀”“夜光草”“天气罗盘调时间”等文本，未获官方或本次客户端证据支持；多见推广或不明作者 SEO 页面，<strong>不进入模型</strong>。</li>
+<li>18183 的珍珠“80%、每 2 小时”、花灵“一般 240–260 抽”等混合说法不作为现行依据。</li>
+<li>Google Play 国际服只保留为旁证；国内华为／鸿蒙／抖音／微信的渠道、账号互通与活动批次需分别确认。</li>
+<li>本次没有取得：所有花卉等级曲线、精华掉落完整表、所有花艺价格／货架参数、当前充值档位、培育等待完整表、全部土地价格及服务器概率执行逻辑。报告须明确未知，不能用网页猜值填空。</li>
+</ul></article><footer class="footer"><span>来源：analysis/public-source-ledger.md · 证据文档</span><a href="#top">返回顶部 ↑</a></footer></main>
+</div>
+<script>
+(() => {
+ const root = document.documentElement;
+ const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+ const themeButton = document.querySelector('#theme');
+ let theme = read('garden-report-theme') || 'light';
+ const setTheme = value => { theme=value;root.dataset.theme=value;themeButton.textContent=value==='dark'?'浅色':'深色';themeButton.setAttribute('aria-label',value==='dark'?'切换浅色模式':'切换深色模式'); };
+ setTheme(theme);
+ themeButton.addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');save('garden-report-theme',theme);});
+ let size = Math.max(15,Math.min(22,Number(read('garden-report-size'))||17));
+ const setSize = () => { root.style.setProperty('--size',size+'px');document.querySelector('#smaller').disabled=size<=15;document.querySelector('#larger').disabled=size>=22; };
+ setSize();
+ ['smaller','larger'].forEach(id=>document.querySelector('#'+id).addEventListener('click',()=>{size=Math.max(15,Math.min(22,size+(id==='larger'?1:-1)));setSize();save('garden-report-size',size);}));
+ document.querySelector('#print').addEventListener('click',()=>window.print());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+ const close=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','展开目录');};
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'收起目录':'展开目录');});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+ document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menu.contains(event.target))close();});
+ const headings=[...document.querySelectorAll('article h2')],links=[...document.querySelectorAll('.toc a')];
+ links.forEach(link=>link.addEventListener('click',()=>{close();const heading=document.getElementById(decodeURIComponent(link.hash.slice(1)));if(heading)heading.focus({preventScroll:true});}));
+ const progress=document.querySelector('.progress');let queued=false;
+ const update=()=>{const max=root.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';let current=null;for(const heading of headings){if(heading.getBoundingClientRect().top<=140)current=heading;}links.forEach(link=>{const active=current&&decodeURIComponent(link.hash.slice(1))===current.id;link.classList.toggle('active',!!active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});queued=false;};
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>

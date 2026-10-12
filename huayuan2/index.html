@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:," rel="icon"/>
+<title>《我的花园世界》数值设计解析</title>
+<style>
+:root { --bg:#f6f5f0; --paper:#fffefa; --text:#28352f; --muted:#6b766e; --line:#e0e5dc; --accent:#296346; --wash:#edf2e9; --code:#f1f3ed; --size:17px; }
+:root[data-theme="dark"] { --bg:#17221c; --paper:#1d2a22; --text:#e2e8df; --muted:#a8b7ab; --line:#3c4b40; --accent:#9cd0ae; --wash:#2c3d31; --code:#26372b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; transition:background .18s,color .18s; }
+a { color:var(--accent); text-underline-offset:4px; overflow-wrap:anywhere; }
+a:hover { text-decoration-thickness:2px; }
+button { color:inherit; font:inherit; cursor:pointer; }
+button:focus-visible,a:focus-visible,.table-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip { position:fixed; top:-70px; left:20px; padding:12px; z-index:10; background:var(--paper); }
+.skip:focus { top:10px; }
+.progress { position:fixed; top:0; height:3px; background:var(--accent); width:0; z-index:6; }
+.topbar { position:sticky; top:0; z-index:5; height:66px; padding:0 36px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--line); background:var(--paper); }
+.brand { font-size:14px; font-weight:650; letter-spacing:1px; text-decoration:none; white-space:nowrap; }
+.tools { display:flex; gap:6px; align-items:center; }
+.tools button,.menu { border:1px solid transparent; border-radius:5px; background:transparent; padding:8px 10px; min-height:40px; font-size:13px; transition:background .15s; }
+.tools button:hover,.menu:hover { background:var(--wash); }
+.tools .font { font-size:16px; min-width:40px; padding:6px; }
+.tools .divider { height:18px; border-left:1px solid var(--line); margin:0 3px; }
+.layout { display:grid; grid-template-columns:245px minmax(0,900px); gap:46px; max-width:1275px; margin:auto; padding:0 32px; }
+.sidebar { align-self:start; position:sticky; top:66px; height:calc(100dvh - 66px); overflow:auto; padding:34px 8px 28px 0; }
+.nav-label { margin:0 0 16px 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+.toc ul { margin:0; padding:0; list-style:none; }
+.toc li { margin:4px 0; }
+.toc a { display:block; font-size:13px; line-height:1.65; padding:8px 12px; border-left:2px solid transparent; text-decoration:none; color:var(--muted); transition:color .15s,background .15s; }
+.toc a:hover,.toc a.active { color:var(--accent); background:var(--wash); border-left-color:var(--accent); }
+.nav-bottom { border-top:1px solid var(--line); margin:24px 12px 0; padding-top:18px; font-size:12px; color:var(--muted); line-height:1.8; }
+.nav-bottom a { display:inline-block; margin-top:8px; }
+main { min-width:0; background:var(--paper); padding:50px 54px 60px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.eyebrow { font-size:11px; color:var(--accent); letter-spacing:2.5px; margin:0 0 18px; font-weight:650; }
+h1 { font-size:clamp(28px,3vw,38px); letter-spacing:-1px; line-height:1.45; margin:0 0 20px; font-weight:700; }
+.meta { color:var(--muted); font-size:12px; padding-bottom:28px; border-bottom:1px solid var(--line); margin:0 0 26px; display:flex; gap:18px; flex-wrap:wrap; }
+article { font-size:var(--size); line-height:1.95; overflow-wrap:break-word; }
+article p { margin:0 0 1.15em; }
+article > p:first-child { font-size:.88em; line-height:1.9; color:var(--muted); }
+h2 { font-size:1.35em; line-height:1.55; margin:2.6em 0 1em; padding-top:1.35em; border-top:1px solid var(--line); letter-spacing:-.3px; }
+h2:first-of-type { margin-top:1.9em; }
+h3 { font-size:1.1em; margin-top:2em; }
+strong { font-weight:650; }
+ul,ol { padding-left:1.5em; margin:1em 0 1.4em; }
+li { padding-left:.15em; margin:.5em 0; }
+li::marker { color:var(--accent); }
+code { background:var(--code); padding:2px 5px; border-radius:3px; font-size:.85em; font-family:"SFMono-Regular",Consolas,monospace; }
+pre { background:var(--code); border-left:3px solid var(--accent); padding:20px 22px; overflow-x:auto; font-size:.88em; line-height:1.85; margin:24px 0; }
+pre code { padding:0; background:none; font-size:1em; border-radius:0; }
+.table-scroll { overflow-x:auto; margin:24px 0; }
+table { width:100%; border-collapse:collapse; font-size:.82em; line-height:1.8; min-width:530px; }
+th { background:var(--wash); font-weight:650; color:var(--accent); text-align:left; }
+td,th { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:var(--bg); }
+blockquote { margin:24px 0; border-left:3px solid var(--accent); padding-left:22px; color:var(--muted); }
+.footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; gap:20px; justify-content:space-between; color:var(--muted); font-size:12px; }
+.menu { display:none; }
+@media(min-width:1500px) { .layout { gap:62px; max-width:1350px; grid-template-columns:260px minmax(0,930px); } main { padding-left:68px; padding-right:68px; } }
+@media(max-width:1000px) { .layout { grid-template-columns:205px minmax(0,1fr); gap:22px; padding:0 20px; } main { padding:36px 32px 50px; } .toc a { font-size:12px; } }
+@media(max-width:760px) {
+ .topbar { height:60px; padding:0 12px; gap:6px; } .brand { font-size:12px; letter-spacing:0; } .menu { display:inline-block; font-size:13px; } .tools { gap:0; } .tools button { padding:6px 8px; } .tools .divider,.print-button { display:none; }
+ .layout { display:block; padding:0; } main { padding:30px 22px 44px; border:0; } h1 { font-size:28px; } article { line-height:1.95; }
+ .sidebar { position:fixed; top:60px; left:0; width:min(320px,88vw); height:calc(100dvh - 60px); background:var(--paper); z-index:4; padding:24px 18px; border-right:1px solid var(--line); box-shadow:15px 0 30px #0002; display:none; }
+ .sidebar.open { display:block; } .toc a { font-size:14px; padding:10px 12px; } .meta { gap:10px 18px; } pre { padding:16px; font-size:.8em; } .footer { flex-direction:column; gap:10px; } h2 { font-size:1.24em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
+@media print {
+ :root,:root[data-theme="dark"] { --bg:white; --paper:white; --text:#111; --muted:#555; --line:#ddd; --accent:#222; --wash:#eee; --code:#f4f4f4; --size:10.5pt; }
+ .topbar,.sidebar,.progress,.skip,.footer { display:none; } .layout { display:block; max-width:none; padding:0; } main { padding:0; border:0; } h1 { font-size:24pt; } h2 { break-after:avoid; } tr,pre { break-inside:avoid; } .table-scroll { overflow:visible; } table { min-width:0; font-size:9pt; } pre { white-space:pre-wrap; } a { color:inherit; } @page { margin:18mm; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转到正文</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:8px"><button aria-controls="nav" aria-expanded="false" aria-label="展开目录" class="menu">目录</button><a class="brand" href="#top">我的花园世界 · 数值研究</a></div>
+<div aria-label="阅读设置" class="tools"><button aria-label="缩小字号" class="font" id="smaller">A−</button><button aria-label="放大字号" class="font" id="larger">A+</button><span class="divider"></span><button aria-label="切换深色模式" id="theme">深色</button><button class="print-button" id="print">打印</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="nav"><nav aria-label="报告目录"><p class="nav-label">报告目录</p><div class="toc">
+<ul>
+<li><a href="#_1">证据范围</a></li>
+<li><a href="#_2">当前版本核验：三个最有用的发现</a></li>
+<li><a href="#1">1. 生产链：先比较水、地和时间，再比较花价</a></li>
+<li><a href="#2">2. 升级：共用模板控制节奏，单花基值拉开成本</a></li>
+<li><a href="#3">3. 花材分流：花艺提高兑换率，花架用时间换金币</a></li>
+<li><a href="#4">4. 增益叠加：部分奖励近似相加，不能直接连乘</a></li>
+<li><a href="#5">5. 日常节奏：多个不同的回访时钟</a></li>
+<li><a href="#6">6. 概率系统：可以算局部期望，暂不能算付费预算</a></li>
+<li><a href="#7">7. 商业化如何嵌入经济</a></li>
+<li><a href="#8">8. 当前能下的结论与尚缺的数据</a></li>
+<li><a href="#_3">复核与文件</a></li>
+</ul>
+</div>
+</nav><div class="nav-bottom">调查日期 · 2026-10-12<br/>全文保留原始内容与证据链接<br/><a href="report.md">查看 Markdown 原文 ↗</a></div></aside>
+<main id="content"><p class="eyebrow">GARDEN WORLD / RESEARCH NOTES</p><h1>《我的花园世界》数值设计解析</h1><div class="meta"><span>2026 年 10 月 12 日</span><span>约 18 分钟阅读</span><span>机制与经济设计</span></div><article><p>调查日期：2026-10-12。对象：华为 P40 上的国内独立 App。<strong>已完成 REA 安装，并进入 460.0.18 客户端核对代表性花卉、配方报价、订单规则和付费权益。</strong>报告结合安装包追踪、当前界面与官方资料；没有取得全部生效配置或测试付费结算。</p>
+<p>这套经济的核心，是让同一份花卉产出同时面对水滴、土地时间、加工容量、订单期限和活动额度等约束。升级、解锁与付费分别改变其中一部分约束，因此不存在脱离在线节奏和资源缺口的统一“收益最高花”。下面将可直接观察的事实、安装包公式和分析推论分开说明。</p>
+<h2 id="_1" tabindex="-1">证据范围</h2>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>证据</th>
+<th>本次取得</th>
+<th>能回答什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>手机当前界面</td>
+<td>华为包 <code>cn.wdhysj.huawei</code>，安装版本 1.2.1；入口显示 <code>V460.0.18-prod</code>；账号 3 级</td>
+<td>花卉升级预览、配方与普通订单报价、权益、充值和礼包；未提交结算</td>
+</tr>
+<tr>
+<td>手机安装包与官网下载包</td>
+<td>官网包 1.3.3；两包相关 66 项 JS／资源索引完全一致，内置内容均为 430.0.44</td>
+<td>内置公式和配置结构；<strong>不证明与 460.0.18 相同</strong></td>
+</tr>
+<tr>
+<td>国内官方公开规则</td>
+<td>概率公示、珍珠、花灵、居民订单</td>
+<td>官方宣称的规则；渠道适用性仍需手机核对</td>
+</tr>
+<tr>
+<td>玩家历史截图</td>
+<td>2025-08 花卉升级页等</td>
+<td>说明实际出现过的成长节点，不能填充当前配置表</td>
+</tr>
+</tbody>
+</table></div>
+<p>源码证据见 <a href="analysis/static-economy.html">静态分析</a> 和 <a href="tools/static-economy/source-excerpts.html">21 段源码摘录</a>；公开原文、日期和截图见 <a href="analysis/public-source-ledger.html">来源台账</a>。REA 的 JS 语义分析因内存限制只有部分覆盖，本文公式来自定点人工追踪，未宣称完整还原所有代码或服务器结算。</p>
+<h2 id="_2" tabindex="-1">当前版本核验：三个最有用的发现</h2>
+<ol>
+<li><strong>成长倍率要按资源维度拆开。</strong>白百合 1 级为 1 轮×2 朵，满级预览为 5 轮×5 朵；一株总产量为初始的 12.5 倍。间隔从 <code>00:55</code> 降至 <code>00:32</code>，无空档、无损失的土地时间产量约为初始的 <strong>4.30 倍</strong>。不能将 12.5 倍直接当作每小时倍率。</li>
+<li><strong>配方不能全部套 2.3 倍。</strong>白百合、康乃馨、铃兰订单基值各 18，三者各一朵的百合瓷韵制作预览却为 <strong>131 金币</strong>，旧代码默认算式是 124。配方覆盖价与热更新改动是两个候选原因，目前不能区分。另一方面，普通订单中白百合＋康乃馨各 2 朵的报价 72 金币、100 经验，与基值加总吻合。</li>
+<li><strong>VIP 和免广告是不同的效率商品。</strong>VIP 当前为 30 元／30 天，经验 +25%、水容量至 130，附每日元宝与水；免广告当前首次 6 元／30 天，含双倍金币。前者偏经验、容量与便利，后者同时减少广告操作并提高金币回报。</li>
+</ol>
+<p>每项原始截图、报价条件和推导见 <a href="analysis/live-observations.html">当前客户端采样台账</a>。时间按 <strong>430.0.44 内置</strong> <code>mm:ss</code> 函数解释，尚未以实际成熟计时交叉验证；产量倍率只是界面参数模型。</p>
+<h2 id="1" tabindex="-1">1. 生产链：先比较水、地和时间，再比较花价</h2>
+<p>内置客户端把花卉能力分为六个主要参数：收获轮数 <code>F</code>、每轮间隔 <code>t</code>、每轮产量 <code>Y</code>、被取后的保留量、精华／种子掉落数量和概率。土地另保存已收轮数与下次成熟时间。升级页逐项显示这些属性，说明它们是独立成长维度。<a href="tools/static-economy/source-excerpts.html">源码 E04、E06、E18</a></p>
+<p>用于比较的简化模型如下。<code>W</code> 为一株完整周期的总耗水，<code>h</code> 为重种与操作合计占用的分钟数，<code>t</code> 以分钟计；假设每轮都等长、及时收取且没有被偷损失。</p>
+<pre><code class="language-text">完整周期产量 = F × Y
+每滴水产量 = F × Y / W
+每地块小时产量 = 60 × F × Y / (F × t + h)
+当 h = 0 时，每地块小时产量 = 60 × Y / t
+</code></pre>
+<p>这是分析模型，<strong>并非已取到的服务器产出公式</strong>。客户端浇水入口只证明“至少有 1 滴水才能请求”，实际一次扣多少、多轮间是否重新耗水尚待实测。</p>
+<p>模型带来的设计解释：</p>
+<ul>
+<li><strong>加轮数</strong>增加一株总产量，并摊薄固定重种成本。只有总耗水不随轮数同比增加时，才提高水效率；连续无缝生产时，它不自动提高每小时产量。</li>
+<li><strong>加每轮产量</strong>同时提高周期产出和土地效率；<strong>缩短间隔</strong>主要提高土地吞吐，也要求玩家更频繁处理成熟状态。</li>
+<li><strong>提高防偷保留量</strong>减少特定社交情境下的损失；没有被偷时，不能当作新增产能。</li>
+<li><strong>增大水滴容量</strong>降低离线溢出的损失；不能由此推导恢复速度更快。</li>
+</ul>
+<p>因此玩家选择可以按瓶颈分流：缺水看每滴水净收益，地少但水多看每地块小时收益，上线少看离线缓冲和操作次数，缺精华看其掉落机制与期望。将所有花按单朵金币排序，会混淆这些目标。</p>
+<h2 id="2" tabindex="-1">2. 升级：共用模板控制节奏，单花基值拉开成本</h2>
+<p>内置 430.0.44 优先找“花种＋等级”的专用配置；没有专用行时，使用共用等级模板：</p>
+<pre><code class="language-text">金币升级费(L→L+1) = round(单花基础费 × 模板费(L) / 模板费(1))
+收获间隔(L) = round(单花基础间隔 × 模板间隔(L) / 模板间隔(1))
+</code></pre>
+<p>轮数、产量等其他字段取自模板，特定花种可以覆盖。实际模板行未取得，不能据公式形态宣称成本按指数上涨或每级固定增长。<a href="tools/static-economy/source-excerpts.html">源码 E02、E04、E18–E19</a></p>
+<p>历史实图展示了一种阶梯式成长：2／6／11／17 级加轮数，10／16／20 级加每轮产量，13／20 级加防偷保留量。<strong>第 4 轮在 11 级已出现，13 级并非轮数解锁点。</strong>该截图未显示花名，不能推广为所有花的现行成长表。<a href="analysis/public-source-ledger.html">2025-08 玩家截图与核验</a></p>
+<p>上述轮数、产量、防偷节点，已在当前白百合升级总览中核对吻合。当前白百合 1→2 级需 80 金币＋1 精华，康乃馨需 120 金币＋1 精华；两花订单基值同为 18 金币／25 经验，但康乃馨间隔为白百合的两倍。相同订单价值并不表示相同土地效率。<a href="analysis/live-observations.html">当前花卉采样</a></p>
+<p>同一历史来源的 12→13 级界面对比尤其有用：棉花小熊、浅粉落新妇、白百合分别需 405,000／486,000／21,600 金币，精华均需 500；三个例子都只把防偷保留量从 1 提至 2，轮数、轮产量和精华属性没有变化。这体现了<strong>属性收益相似、经济门槛因花种而异</strong>的结构，也解释了为什么“有钱就升一级”不一定改善眼前收入。</p>
+<p>评估升级应比较：<code>金币回本期 = 升级金币费 / 升级后每日新增净金币</code>，另列精华成本，不把精华强行按金币估价。若增量只有防损，则分母是预计减少的日损失；无偷取场景下分母可能为零。解锁价值、任务价值和收藏价值需另记，不能伪装成现金回本。</p>
+<h2 id="3" tabindex="-1">3. 花材分流：花艺提高兑换率，花架用时间换金币</h2>
+<p>令 <code>G</code> 为某配方中花材的订单金币基值之和，<code>X</code> 为对应经验基值之和。无技能、无全局增益、配方无显式覆盖价格时，内置规则为：</p>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>去向</th>
+<th style="text-align: right;">金币</th>
+<th>经验及其他</th>
+<th>约束</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>普通鲜花订单</td>
+<td style="text-align: right;">花材基值按数量求和</td>
+<td>经验基值按数量求和</td>
+<td>订单需求与奖励节点</td>
+</tr>
+<tr>
+<td>花艺顾客订单</td>
+<td style="text-align: right;"><code>round(2G)</code></td>
+<td><code>round(1.68X)</code>，另有配置奖励</td>
+<td>配方花材、顾客需求</td>
+</tr>
+<tr>
+<td>花艺花架</td>
+<td style="text-align: right;"><code>round(2.3G)</code></td>
+<td>已追踪此路径为金币售卖</td>
+<td>货架容量与售卖时间</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>c_flowerArt.sPrice/cPrice</code> 可覆盖基础定价；因此 2、1.68、2.3 是<strong>回退系数</strong>，不是全部配方的无条件价格。<a href="tools/static-economy/source-excerpts.html">源码 E01–E02、E07–E08、E14–E16</a></p>
+<p>当前制作预览 131 金币与回退值 124 不同，已经说明不能把默认规则直接当现行全配方定价。进一步追踪未发现独立花瓶／图鉴倍率，保留“配方覆盖或热更新变化”两种解释。<a href="analysis/floral-price-discrepancy.html">差异追踪</a></p>
+<p>示例仅作归一化演示：假设同一配方 <code>G=1000、X=100</code>，顾客单为 2000 金币和 168 经验，另有奖励；花架为 2300 金币。两条花艺路径相比，花架金币高 15%，但要占用货架与等待时间，订单的经验和其他奖励也有价值。</p>
+<p>花架代码中，售完时刻为“开始时间＋件数×每件售卖秒数”；每件秒数与货架容量来自配置，尚未拿到绝对值。设按配方及最稀缺花材折算的可制作花艺量为 <code>q</code> 件／小时，货架总处理能力为 <code>r</code> 件／小时，则稳定销售量最多为 <code>min(q,r)</code>；只有供给也够时，扩大货架才会提高实际流水。这是加工链的瓶颈推论，不是实际账号收入预测。</p>
+<h2 id="4" tabindex="-1">4. 增益叠加：部分奖励近似相加，不能直接连乘</h2>
+<p>内置普通鲜花订单对某花金币技能 <code>s</code> 的处理为：</p>
+<pre><code class="language-text">技能非零时 Δg = max(round(g × s / (1 + A)), 1)，否则 Δg = 0
+显示金币 = round((1 + A) × Σ round((g + Δg) × 数量))
+</code></pre>
+<p><code>A</code> 是生效的全局金币增益；具体比例来自未取得的配置。进阶同类技能先求和。忽略舍入和最低 1 时，整单近似为 <code>Σ[g_i × 数量_i × (1 + A + s_i)]</code>；只有单花或各花技能比例相同时，才能简化为“总基值 × (1 + 全局增益 + 技能增益)”。花艺路径有相应的 2／1.68／2.3 技能系数；存在显式定价时，不能直接对整件覆盖价格套相同比例。<a href="tools/static-economy/source-excerpts.html">源码 E01–E03、E09、E14–E16</a></p>
+<p>例如人为设定 <code>g=100、数量=5、A=100%、s=20%</code>，此路径结果为 <strong>1100</strong> 金币；直接连乘会得到 1200，虚高约 9.1%。这为付费／养成的边际价值评估提供了重要约束，但仍需在 460.0.18 的实际结算中复核。</p>
+<h2 id="5" tabindex="-1">5. 日常节奏：多个不同的回访时钟</h2>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>系统</th>
+<th>公开数值</th>
+<th>设计含义与限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>珍珠</td>
+<td>150 分钟刷新；每日 2 张免费雇佣书；官方成功率 90%</td>
+<td>把定期回访连接到跨资源兑换，不等于每次刷新都有免费次数</td>
+</tr>
+<tr>
+<td>居民订单</td>
+<td>60 单奖励节点；15 级后绸缎订单每日上限 120</td>
+<td>前段里程碑推动活跃，日上限限制持续吞吐</td>
+</tr>
+<tr>
+<td>团单</td>
+<td>26 级开放；累计 50／100 单触发；保留 30 分钟</td>
+<td>在日目标中插入短期库存与在线压力</td>
+</tr>
+<tr>
+<td>花灵</td>
+<td>8 朵精灵主花的概率加成封顶；公示此时 0.52%</td>
+<td>推动稀有花组合与长期养成；试验单位不明，不能换算日产量</td>
+</tr>
+<tr>
+<td>花灵额度</td>
+<td>每日收获上限 18，好友摘取上限 4；密令可提高上限</td>
+<td>形成供给与额度两道约束；两额度是否包含不明，不能直接加成 22</td>
+</tr>
+</tbody>
+</table></div>
+<p>来源：<a href="https://wdhysj.babigame.cn/list/news/68f21297c037e940070d5f29">官方珍珠攻略</a>、<a href="https://wdhysj.babigame.cn/list/news/68dbd6e9e65eb29f3503da2e">居民订单攻略</a>、<a href="https://wdhysj.babigame.cn/list/news/69211423096b9708b3077e6a">花灵玩法</a>、<a href="https://wdhysj.babigame.cn/list/news/6901e7aadce6870db700f86d">概率公示</a>。概率页内容最后更新于 2026-08-07；珍珠、订单和花灵攻略更新于 2026-03-11，均非当前华为服实测。国内官网规则未证明覆盖全部渠道。</p>
+<p>当前手机主界面已确认水容量 65，VIP 页明确 130；历史国内玩家资料给出的每 2 分钟恢复 1 滴仍未计时验证。<strong>若恢复间隔仍为 2 分钟</strong>，则蓄满分别需 130／260 分钟，理论自然恢复 720 滴／天要求全天不溢出。不能据容量翻倍断言自然供给翻倍。<a href="analysis/live-observations.html">当前权益</a>、<a href="analysis/public-source-ledger.html">历史恢复资料</a></p>
+<p>当前居民订单页面还核对了 15／30／45／60 单奖励节点，帮助页确认 15 级绸缎单、26 级组团单、30 级建材单。团单开始后不能中途退出，完成后可以 <strong>60 元宝</strong>增加一次机会。它将等级成长、日活跃目标和额外付费次数连接在一起。<a href="analysis/live-observations.html">订单界面与帮助</a></p>
+<h2 id="6" tabindex="-1">6. 概率系统：可以算局部期望，暂不能算付费预算</h2>
+<p>官方珍珠成功采集分布为 120／160／200／240／280／320／360／400 颗，对应 9／9／47／15／15／1.67／1.67／1.66%。加权得到 <strong>215.196 颗／成功采集</strong>。只有“失败零产出且同样消耗机会”成立时，才能乘 90% 得到 193.6764 颗／尝试；后一个条件未验证。</p>
+<p>珍珠兑奖中元宝的局部期望为 <code>188×0.006 + 88×0.006 + 10×0.0243 = 1.899</code> 元宝／次兑奖。缺单次珍珠成本与机会限制，不能进一步给出元宝／小时。官方公会材料宝箱四档为 6／12／20／40，对应 82.5／10／5／2.5%，期望为 <strong>8.15 个材料／箱</strong>。<a href="analysis/public-source-ledger.html">官方概率表及已保存原图</a></p>
+<p>抽取设计同时存在低概率、软保底、阶段奖励和兑换：池光夏梦奖池主奖表列 0.10%，未中时提高概率，文案为“满 300 次之后必出”；花灵盲盒隐藏款表列 0.7%，满 144 次后必出；星河映蕊还分三轮概率与 300／600／900 节点。公示对基础／综合概率、重置与软保底曲线的口径不够完整，<strong>不能用 <code>1/p</code> 宣称真实平均花费，也不能把“之后”擅自改成精确第几抽</strong>。<a href="https://wdhysj.babigame.cn/list/news/6901e7aadce6870db700f86d">官方概率公示</a></p>
+<p>另一处容易误读的是实物真花活动：原表为“每收获 <strong>100 次</strong>鲜花，0.22%”，并非每次收获 0.22%。这类抽样单位的错误，会令产出估计相差两个数量级。完整限制见来源台账。</p>
+<h2 id="7" tabindex="-1">7. 商业化如何嵌入经济</h2>
+<p>以下是对已取证机制的设计解释，不能替代付费价格表或收入数据：</p>
+<ol>
+<li><strong>经营便利与离线缓冲。</strong>当前 VIP 页确认一键操作、水容量 130、珍珠采集位置 +1 和 VIP 商店 8 折。它们分别减少操作负担、缓解溢出并扩展采集容量，不能当作一个统一倍率。</li>
+<li><strong>单位资源兑换效率。</strong>当前 VIP 页确认经验 +25%，免广告页确认对应路径双倍金币；与进阶技能的叠加仍需按内置加法路径和实际结算区分，不能无条件连乘。</li>
+<li><strong>生产资产与参与资格。</strong>花卉既供花艺与订单，也参与花灵组合和公会竞赛。稀有花将收藏、经营和活动价值绑定，因此不能只按单朵价格评估。</li>
+<li><strong>概率和上限分别出售。</strong>稀有花／藏品可影响花灵获取效率，密令又提高每日额度。提高概率后可能更早撞上额度上限，后者的价值随玩家供给能力增加。</li>
+<li><strong>后期竞争扩展成长需求。</strong>官方公会任务中花卉类别分值不同；进阶有竞赛加分词条。三星进阶中，竞赛任务得分 +1／+2 的彩色词条，公示抽中概率分别为 1.10%／0.10%，不是分数加成百分比。它把长期养成接入群体排名。</li>
+</ol>
+<p>最值得从策划角度关注的风险，是新增花种和配方可能扩大需求池、提高库存碎片化；多份玩家资料有此反馈，但本次还不能证明当前订单生成算法。若做同类设计，应将“解锁后日均缺货率、订单放弃率、库存长尾占用”纳入验证，而不能默认解锁越多体验必然越好。</p>
+<p>当前商城也体现出价格分层：每周一次的水礼包是 30 元／1000 水滴，普通水礼包为 6 元／150 水滴，前者单滴价格低 25%。同样 72 万金币，每日限购礼包报价 18 元，而普通金币充值的对应合计档为 68 元。限次补给与即时补缺采用不同价格，<strong>不宜用唯一人民币汇率给全部游戏资源估值</strong>。VIP 的 30 天满勤领取模型为 840 元宝＋300 水滴，但不是购买即全到账。<a href="analysis/live-observations.html">完整当前价目及条件</a></p>
+<h2 id="8" tabindex="-1">8. 当前能下的结论与尚缺的数据</h2>
+<p>已经解释：生产属性的分工、等级模板结构、内置花艺计价、技能与全局增益叠加、官方日常额度和部分概率期望；并核验了当前花卉代表样本、普通订单报价、配方价格差异、VIP／免广告权益及充值价目。以上支持“多重容量和活动资格组织成长”的设计判断。</p>
+<p>尚不能交付：<strong>当前全部花种等级表、覆盖所有约束的最优种植排名、完整实际付费回报率或抽卡预算</strong>。主要缺口是 460.0.18 完整生效配置、服务器结算与高等级系统样本。安装包索引指向独立配置；已搜索的资源中未定位出实际逐花表。标准 <code>run-as</code> 返回包不可调试，未继续读取私有目录。</p>
+<p>具体未决项为：完整周期耗水与恢复计时、花架每件销售秒数、当前珍珠单次兑奖成本、软保底曲线，以及配方 131 金币与旧回退公式的差异原因。账号目前处于 3 级、只拥有两种花，本次没有为开放更多系统推进养成。当前采样均为只读页面核验，未将预览价写成实际成交收入。</p>
+<h2 id="_3" tabindex="-1">复核与文件</h2>
+<ul>
+<li><a href="installation.html">REA 安装及连接记录</a></li>
+<li><a href="analysis/static-economy.html">完整静态公式与证据边界</a></li>
+<li><a href="analysis/live-observations.html">当前客户端采样与价目</a></li>
+<li><a href="analysis/public-source-ledger.html">官方与历史资料台账</a></li>
+<li><a href="analysis/calculations.json">公开数字重算结果</a></li>
+<li><a href="analysis/current-parameters.csv">当前参数表与未知项</a></li>
+</ul>
+<p>本次按用户授权完成登录，随后只读浏览。没有购买、抽取、制作、交单、升级或消耗账号资源；结束时返回花园主界面，关闭本任务 Appium 会话并保留登录态。</p></article><footer class="footer"><span>来源：report.md · 本地阅读版</span><a href="#top">返回顶部 ↑</a></footer></main>
+</div>
+<script>
+(() => {
+ const root = document.documentElement;
+ const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+ const themeButton = document.querySelector('#theme');
+ let theme = read('garden-report-theme') || 'light';
+ const setTheme = value => { theme=value;root.dataset.theme=value;themeButton.textContent=value==='dark'?'浅色':'深色';themeButton.setAttribute('aria-label',value==='dark'?'切换浅色模式':'切换深色模式'); };
+ setTheme(theme);
+ themeButton.addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');save('garden-report-theme',theme);});
+ let size = Math.max(15,Math.min(22,Number(read('garden-report-size'))||17));
+ const setSize = () => { root.style.setProperty('--size',size+'px');document.querySelector('#smaller').disabled=size<=15;document.querySelector('#larger').disabled=size>=22; };
+ setSize();
+ ['smaller','larger'].forEach(id=>document.querySelector('#'+id).addEventListener('click',()=>{size=Math.max(15,Math.min(22,size+(id==='larger'?1:-1)));setSize();save('garden-report-size',size);}));
+ document.querySelector('#print').addEventListener('click',()=>window.print());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+ const close=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','展开目录');};
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'收起目录':'展开目录');});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+ document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menu.contains(event.target))close();});
+ const headings=[...document.querySelectorAll('article h2')],links=[...document.querySelectorAll('.toc a')];
+ links.forEach(link=>link.addEventListener('click',()=>{close();const heading=document.getElementById(decodeURIComponent(link.hash.slice(1)));if(heading)heading.focus({preventScroll:true});}));
+ const progress=document.querySelector('.progress');let queued=false;
+ const update=()=>{const max=root.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';let current=null;for(const heading of headings){if(heading.getBoundingClientRect().top<=140)current=heading;}links.forEach(link=>{const active=current&&decodeURIComponent(link.hash.slice(1))===current.id;link.classList.toggle('active',!!active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});queued=false;};
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>
