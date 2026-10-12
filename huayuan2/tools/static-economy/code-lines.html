@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:," rel="icon"/>
+<title>时间格式与升级面板：源码行号复核</title>
+<style>
+:root { --bg:#f6f5f0; --paper:#fffefa; --text:#28352f; --muted:#6b766e; --line:#e0e5dc; --accent:#296346; --wash:#edf2e9; --code:#f1f3ed; --size:17px; }
+:root[data-theme="dark"] { --bg:#17221c; --paper:#1d2a22; --text:#e2e8df; --muted:#a8b7ab; --line:#3c4b40; --accent:#9cd0ae; --wash:#2c3d31; --code:#26372b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; transition:background .18s,color .18s; }
+a { color:var(--accent); text-underline-offset:4px; overflow-wrap:anywhere; }
+a:hover { text-decoration-thickness:2px; }
+button { color:inherit; font:inherit; cursor:pointer; }
+button:focus-visible,a:focus-visible,.table-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip { position:fixed; top:-70px; left:20px; padding:12px; z-index:10; background:var(--paper); }
+.skip:focus { top:10px; }
+.progress { position:fixed; top:0; height:3px; background:var(--accent); width:0; z-index:6; }
+.topbar { position:sticky; top:0; z-index:5; height:66px; padding:0 36px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--line); background:var(--paper); }
+.brand { font-size:14px; font-weight:650; letter-spacing:1px; text-decoration:none; white-space:nowrap; }
+.tools { display:flex; gap:6px; align-items:center; }
+.tools button,.menu { border:1px solid transparent; border-radius:5px; background:transparent; padding:8px 10px; min-height:40px; font-size:13px; transition:background .15s; }
+.tools button:hover,.menu:hover { background:var(--wash); }
+.tools .font { font-size:16px; min-width:40px; padding:6px; }
+.tools .divider { height:18px; border-left:1px solid var(--line); margin:0 3px; }
+.layout { display:grid; grid-template-columns:245px minmax(0,900px); gap:46px; max-width:1275px; margin:auto; padding:0 32px; }
+.sidebar { align-self:start; position:sticky; top:66px; height:calc(100dvh - 66px); overflow:auto; padding:34px 8px 28px 0; }
+.nav-label { margin:0 0 16px 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+.toc ul { margin:0; padding:0; list-style:none; }
+.toc li { margin:4px 0; }
+.toc a { display:block; font-size:13px; line-height:1.65; padding:8px 12px; border-left:2px solid transparent; text-decoration:none; color:var(--muted); transition:color .15s,background .15s; }
+.toc a:hover,.toc a.active { color:var(--accent); background:var(--wash); border-left-color:var(--accent); }
+.nav-bottom { border-top:1px solid var(--line); margin:24px 12px 0; padding-top:18px; font-size:12px; color:var(--muted); line-height:1.8; }
+.nav-bottom a { display:inline-block; margin-top:8px; }
+main { min-width:0; background:var(--paper); padding:50px 54px 60px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.eyebrow { font-size:11px; color:var(--accent); letter-spacing:2.5px; margin:0 0 18px; font-weight:650; }
+h1 { font-size:clamp(28px,3vw,38px); letter-spacing:-1px; line-height:1.45; margin:0 0 20px; font-weight:700; }
+.meta { color:var(--muted); font-size:12px; padding-bottom:28px; border-bottom:1px solid var(--line); margin:0 0 26px; display:flex; gap:18px; flex-wrap:wrap; }
+article { font-size:var(--size); line-height:1.95; overflow-wrap:break-word; }
+article p { margin:0 0 1.15em; }
+article > p:first-child { font-size:.88em; line-height:1.9; color:var(--muted); }
+h2 { font-size:1.35em; line-height:1.55; margin:2.6em 0 1em; padding-top:1.35em; border-top:1px solid var(--line); letter-spacing:-.3px; }
+h2:first-of-type { margin-top:1.9em; }
+h3 { font-size:1.1em; margin-top:2em; }
+strong { font-weight:650; }
+ul,ol { padding-left:1.5em; margin:1em 0 1.4em; }
+li { padding-left:.15em; margin:.5em 0; }
+li::marker { color:var(--accent); }
+code { background:var(--code); padding:2px 5px; border-radius:3px; font-size:.85em; font-family:"SFMono-Regular",Consolas,monospace; }
+pre { background:var(--code); border-left:3px solid var(--accent); padding:20px 22px; overflow-x:auto; font-size:.88em; line-height:1.85; margin:24px 0; }
+pre code { padding:0; background:none; font-size:1em; border-radius:0; }
+.table-scroll { overflow-x:auto; margin:24px 0; }
+table { width:100%; border-collapse:collapse; font-size:.82em; line-height:1.8; min-width:530px; }
+th { background:var(--wash); font-weight:650; color:var(--accent); text-align:left; }
+td,th { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:var(--bg); }
+blockquote { margin:24px 0; border-left:3px solid var(--accent); padding-left:22px; color:var(--muted); }
+.footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; gap:20px; justify-content:space-between; color:var(--muted); font-size:12px; }
+.menu { display:none; }
+@media(min-width:1500px) { .layout { gap:62px; max-width:1350px; grid-template-columns:260px minmax(0,930px); } main { padding-left:68px; padding-right:68px; } }
+@media(max-width:1000px) { .layout { grid-template-columns:205px minmax(0,1fr); gap:22px; padding:0 20px; } main { padding:36px 32px 50px; } .toc a { font-size:12px; } }
+@media(max-width:760px) {
+ .topbar { height:60px; padding:0 12px; gap:6px; } .brand { font-size:12px; letter-spacing:0; } .menu { display:inline-block; font-size:13px; } .tools { gap:0; } .tools button { padding:6px 8px; } .tools .divider,.print-button { display:none; }
+ .layout { display:block; padding:0; } main { padding:30px 22px 44px; border:0; } h1 { font-size:28px; } article { line-height:1.95; }
+ .sidebar { position:fixed; top:60px; left:0; width:min(320px,88vw); height:calc(100dvh - 60px); background:var(--paper); z-index:4; padding:24px 18px; border-right:1px solid var(--line); box-shadow:15px 0 30px #0002; display:none; }
+ .sidebar.open { display:block; } .toc a { font-size:14px; padding:10px 12px; } .meta { gap:10px 18px; } pre { padding:16px; font-size:.8em; } .footer { flex-direction:column; gap:10px; } h2 { font-size:1.24em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
+@media print {
+ :root,:root[data-theme="dark"] { --bg:white; --paper:white; --text:#111; --muted:#555; --line:#ddd; --accent:#222; --wash:#eee; --code:#f4f4f4; --size:10.5pt; }
+ .topbar,.sidebar,.progress,.skip,.footer { display:none; } .layout { display:block; max-width:none; padding:0; } main { padding:0; border:0; } h1 { font-size:24pt; } h2 { break-after:avoid; } tr,pre { break-inside:avoid; } .table-scroll { overflow:visible; } table { min-width:0; font-size:9pt; } pre { white-space:pre-wrap; } a { color:inherit; } @page { margin:18mm; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转到正文</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:8px"><button aria-controls="nav" aria-expanded="false" aria-label="展开目录" class="menu">目录</button><a class="brand" href="../../index.html">← 返回研究报告</a></div>
+<div aria-label="阅读设置" class="tools"><button aria-label="缩小字号" class="font" id="smaller">A−</button><button aria-label="放大字号" class="font" id="larger">A+</button><span class="divider"></span><button aria-label="切换深色模式" id="theme">深色</button><button class="print-button" id="print">打印</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="nav"><nav aria-label="报告目录"><p class="nav-label">报告目录</p><div class="toc">
+<ul>
+<li><a href="#_1">时间格式函数</a></li>
+<li><a href="#_2">升级面板取值</a></li>
+</ul>
+</div>
+
+</nav><div class="nav-bottom"><a href="../../index.html">← 返回研究报告</a><br/><a href="code-lines.html">查看 Markdown 原文 ↗</a></div></aside>
+<main id="content"><p class="eyebrow">GARDEN WORLD / SOURCE NOTES</p><h1>时间格式与升级面板：源码行号复核</h1><div class="meta">证据与复核文档 · 2026 年 10 月 12 日</div><article><p>以下为 430.0.44 内置代码的原始行号摘录，仅用于复核。</p>
+<h2 id="_1" tabindex="-1"><span id="line-39005"></span>时间格式函数</h2>
+<pre><code class="language-text">39000:                     (Math.floor(e / 60) % 60) +
+39001:                     mo.getLangText("public_minute")),
+39002:             o
+39003:           );
+39004:         }),
+39005:         (t.getTimeDescBySec = function (e) {
+39006:           let t = mo.STR;
+39007:           return t.fill(Math.floor(e / 60), "00") + ":" + t.fill(e % 60, "00");
+39008:         }),
+39009:         (t.fmtMaxTimeByHMS = function (e, t, o, n = !0, i = !1) {
+39010:           let r = "",
+39011:             s = Math.floor(e / 24);
+39012:           if (s &gt; 0) r = s + 1 + mo.getLangText("public_day");
+39013:           else {
+39014:             let s = e % 24;
+39015:             if (s &gt; 0) r = s + 1 + mo.getLangText("public_hour");
+39016:             else if (n) {
+39017:               let e = t % 60;
+39018:               r =
+39019:                 e &gt; 0
+39020:                   ? e + 1 + mo.getLangText("public_minute")
+39021:                   : i
+39022:                     ? (o % 60) + mo.getLangText("public_second")
+39023:                     : 1 + mo.getLangText("public_minute");
+39024:             } else r = 1 + mo.getLangText("public_hour");
+39025:           }
+39026:           return r;
+39027:         }),
+39028:         (t.fmtMaxTimeByDate = function (t, o, n = !0, i = !1) {
+39029:           let r = mo.DATE.minus(t, o, "ms", "floor") / 1e3,
+39030:             s = r / 60,
+39031:             a = s / 60;
+39032:           return e.TimeUT.fmtMaxTimeByHMS(
+39033:             Math.floor(a),
+39034:             Math.floor(s) % 60,
+39035:             Math.floor(r) % 60,
+39036:             n,
+39037:             i,
+39038:           );
+39039:         }),
+39040:         (t.getTimeDescByDate = function (e) {
+39041:           let t = mo.DATE.minus(mo.DATE.date(), e),
+39042:             o = (t / 864e5) &lt;&lt; 0,
+39043:             n = ((t % 864e5) / 36e5) &lt;&lt; 0,
+39044:             i = ((t % 36e5) / 6e4) &lt;&lt; 0,
+39045:             r = ((t % 6e4) / 1e3) &lt;&lt; 0;
+39046:           return o &gt; 0
+39047:             ? mo.STR.fmt(mo.getLangText("public_beforeDay"), o)
+39048:             : n &gt; 0
+39049:               ? mo.STR.fmt(mo.getLangText("public_befoteHour"), n)
+39050:               : i &gt; 0
+39051:                 ? mo.STR.fmt(mo.getLangText("public_beforeMinute"), i)
+39052:                 : mo.STR.fmt("%s秒前", Math.max(1, r));
+39053:         }),
+39054:         (t.fmtTime06 = function (t, o = !0) {
+39055:           let n = mo.DATE.date(t),
+39056:             i = e.UT_TIME.getYear(n),
+39057:             r = o ? "00" : "",
+39058:             s = mo.STR.fill(e.UT_TIME.getMonth(n) + 1, r),
+39059:             a = mo.STR.fill(e.UT_TIME.getDate(n), r);
+39060:           return (
+39061:             i +
+39062:             mo.getLangText("public_year") +
+39063:             s +
+39064:             mo.getLangText("public_month") +
+39065:             a +
+39066:             mo.getLangText("public_oneday")
+39067:           );
+39068:         }),
+39069:         (t.fmtTime07 = function (e, t = !0) {
+39070:           let o = t ? "00" : "",
+</code></pre>
+<h2 id="_2" tabindex="-1"><span id="line-140925"></span>升级面板取值</h2>
+<pre><code class="language-text">140917:       }
+140918:       _onItemChange() {
+140919:         this.initData();
+140920:       }
+140921:       initData() {
+140922:         let t = this.d.iid,
+140923:           l = mo.D.get("c_flower", t);
+140924:         if (!l) return;
+140925:         let o = e.cultivateMgr.mbMap[t],
+140926:           i = (null === o || void 0 === o ? void 0 : o.d.lvl) || 1,
+140927:           s = e.UT.getFlowerLvlCfg(t, i),
+140928:           r = e.UT.getFlowerLvlCfg(t, i + 1) || {},
+140929:           a = i == mo.D.getMCfg("c_flowerLvl").$lvlMax,
+140930:           n = s.lvlUpCost,
+140931:           d = {
+140932:             $$lvl: i,
+140933:             $$price: s.gldCost,
+140934:             $$frequencys: s.frequencys,
+140935:             $$cd: e.TimeUT.getTimeDescBySec(s.cd),
+140936:             $$cropGets: s.cropGets,
+140937:             $$left: s.left,
+140938:             $$seedGets: s.seedGets,
+140939:             $$seedWgt: `${s.seedWgt / 100}%`,
+140940:             $$nextFrequencys: r.frequencys
+140941:               ? mo.STR.placeholder(mo.getLangText("num_times"), {
+140942:                   num: r.frequencys,
+140943:                 })
+140944:               : "——",
+140945:             $$nextCd: r.cd ? e.TimeUT.getTimeDescBySec(r.cd) : "——",
+140946:             $$nextCropGets: r.cropGets
+140947:               ? mo.STR.placeholder(mo.getLangText("num_of_flower"), {
+140948:                   $$left: r.cropGets,
+140949:                 })
+140950:               : "——",
+140951:             $$nextLeft: r.left
+140952:               ? mo.STR.placeholder(mo.getLangText("num_of_flower"), {
+140953:                   $$left: r.left,
+140954:                 })
+140955:               : "——",
+140956:             $$nextSeedGets: r.seedGets
+140957:               ? mo.STR.placeholder(mo.getLangText("seed_gets_cnt"), {
+140958:                   $$seedGets: r.seedGets,
+140959:                 })
+140960:               : "——",
+140961:             $$nextSeedWgt: r.seedWgt ? `${r.seedWgt / 100}%` : "——",
+140962:             $$frequencysAdd: !!r.frequencys &amp;&amp; s.frequencys != r.frequencys,
+140963:             $$cdAdd: !!r.cd &amp;&amp; s.cd != r.cd,
+140964:             $$cropGetsAdd: !!r.cropGets &amp;&amp; s.cropGets != r.cropGets,
+140965:             $$leftAdd: !!r.left &amp;&amp; s.left != r.left,
+</code></pre></article><footer class="footer"><span>来源：tools/static-economy/code-lines.md · 证据文档</span><a href="#top">返回顶部 ↑</a></footer></main>
+</div>
+<script>
+(() => {
+ const root = document.documentElement;
+ const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+ const themeButton = document.querySelector('#theme');
+ let theme = read('garden-report-theme') || 'light';
+ const setTheme = value => { theme=value;root.dataset.theme=value;themeButton.textContent=value==='dark'?'浅色':'深色';themeButton.setAttribute('aria-label',value==='dark'?'切换浅色模式':'切换深色模式'); };
+ setTheme(theme);
+ themeButton.addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');save('garden-report-theme',theme);});
+ let size = Math.max(15,Math.min(22,Number(read('garden-report-size'))||17));
+ const setSize = () => { root.style.setProperty('--size',size+'px');document.querySelector('#smaller').disabled=size<=15;document.querySelector('#larger').disabled=size>=22; };
+ setSize();
+ ['smaller','larger'].forEach(id=>document.querySelector('#'+id).addEventListener('click',()=>{size=Math.max(15,Math.min(22,size+(id==='larger'?1:-1)));setSize();save('garden-report-size',size);}));
+ document.querySelector('#print').addEventListener('click',()=>window.print());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+ const close=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','展开目录');};
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'收起目录':'展开目录');});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+ document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menu.contains(event.target))close();});
+ const headings=[...document.querySelectorAll('article h2')],links=[...document.querySelectorAll('.toc a')];
+ links.forEach(link=>link.addEventListener('click',()=>{close();const heading=document.getElementById(decodeURIComponent(link.hash.slice(1)));if(heading)heading.focus({preventScroll:true});}));
+ const progress=document.querySelector('.progress');let queued=false;
+ const update=()=>{const max=root.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';let current=null;for(const heading of headings){if(heading.getBoundingClientRect().top<=140)current=heading;}links.forEach(link=>{const active=current&&decodeURIComponent(link.hash.slice(1))===current.id;link.classList.toggle('active',!!active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});queued=false;};
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:," rel="icon"/>
+<title>REA 安装与安卓连接记录</title>
+<style>
+:root { --bg:#f6f5f0; --paper:#fffefa; --text:#28352f; --muted:#6b766e; --line:#e0e5dc; --accent:#296346; --wash:#edf2e9; --code:#f1f3ed; --size:17px; }
+:root[data-theme="dark"] { --bg:#17221c; --paper:#1d2a22; --text:#e2e8df; --muted:#a8b7ab; --line:#3c4b40; --accent:#9cd0ae; --wash:#2c3d31; --code:#26372b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; transition:background .18s,color .18s; }
+a { color:var(--accent); text-underline-offset:4px; overflow-wrap:anywhere; }
+a:hover { text-decoration-thickness:2px; }
+button { color:inherit; font:inherit; cursor:pointer; }
+button:focus-visible,a:focus-visible,.table-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip { position:fixed; top:-70px; left:20px; padding:12px; z-index:10; background:var(--paper); }
+.skip:focus { top:10px; }
+.progress { position:fixed; top:0; height:3px; background:var(--accent); width:0; z-index:6; }
+.topbar { position:sticky; top:0; z-index:5; height:66px; padding:0 36px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--line); background:var(--paper); }
+.brand { font-size:14px; font-weight:650; letter-spacing:1px; text-decoration:none; white-space:nowrap; }
+.tools { display:flex; gap:6px; align-items:center; }
+.tools button,.menu { border:1px solid transparent; border-radius:5px; background:transparent; padding:8px 10px; min-height:40px; font-size:13px; transition:background .15s; }
+.tools button:hover,.menu:hover { background:var(--wash); }
+.tools .font { font-size:16px; min-width:40px; padding:6px; }
+.tools .divider { height:18px; border-left:1px solid var(--line); margin:0 3px; }
+.layout { display:grid; grid-template-columns:245px minmax(0,900px); gap:46px; max-width:1275px; margin:auto; padding:0 32px; }
+.sidebar { align-self:start; position:sticky; top:66px; height:calc(100dvh - 66px); overflow:auto; padding:34px 8px 28px 0; }
+.nav-label { margin:0 0 16px 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+.toc ul { margin:0; padding:0; list-style:none; }
+.toc li { margin:4px 0; }
+.toc a { display:block; font-size:13px; line-height:1.65; padding:8px 12px; border-left:2px solid transparent; text-decoration:none; color:var(--muted); transition:color .15s,background .15s; }
+.toc a:hover,.toc a.active { color:var(--accent); background:var(--wash); border-left-color:var(--accent); }
+.nav-bottom { border-top:1px solid var(--line); margin:24px 12px 0; padding-top:18px; font-size:12px; color:var(--muted); line-height:1.8; }
+.nav-bottom a { display:inline-block; margin-top:8px; }
+main { min-width:0; background:var(--paper); padding:50px 54px 60px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.eyebrow { font-size:11px; color:var(--accent); letter-spacing:2.5px; margin:0 0 18px; font-weight:650; }
+h1 { font-size:clamp(28px,3vw,38px); letter-spacing:-1px; line-height:1.45; margin:0 0 20px; font-weight:700; }
+.meta { color:var(--muted); font-size:12px; padding-bottom:28px; border-bottom:1px solid var(--line); margin:0 0 26px; display:flex; gap:18px; flex-wrap:wrap; }
+article { font-size:var(--size); line-height:1.95; overflow-wrap:break-word; }
+article p { margin:0 0 1.15em; }
+article > p:first-child { font-size:.88em; line-height:1.9; color:var(--muted); }
+h2 { font-size:1.35em; line-height:1.55; margin:2.6em 0 1em; padding-top:1.35em; border-top:1px solid var(--line); letter-spacing:-.3px; }
+h2:first-of-type { margin-top:1.9em; }
+h3 { font-size:1.1em; margin-top:2em; }
+strong { font-weight:650; }
+ul,ol { padding-left:1.5em; margin:1em 0 1.4em; }
+li { padding-left:.15em; margin:.5em 0; }
+li::marker { color:var(--accent); }
+code { background:var(--code); padding:2px 5px; border-radius:3px; font-size:.85em; font-family:"SFMono-Regular",Consolas,monospace; }
+pre { background:var(--code); border-left:3px solid var(--accent); padding:20px 22px; overflow-x:auto; font-size:.88em; line-height:1.85; margin:24px 0; }
+pre code { padding:0; background:none; font-size:1em; border-radius:0; }
+.table-scroll { overflow-x:auto; margin:24px 0; }
+table { width:100%; border-collapse:collapse; font-size:.82em; line-height:1.8; min-width:530px; }
+th { background:var(--wash); font-weight:650; color:var(--accent); text-align:left; }
+td,th { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:var(--bg); }
+blockquote { margin:24px 0; border-left:3px solid var(--accent); padding-left:22px; color:var(--muted); }
+.footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; gap:20px; justify-content:space-between; color:var(--muted); font-size:12px; }
+.menu { display:none; }
+@media(min-width:1500px) { .layout { gap:62px; max-width:1350px; grid-template-columns:260px minmax(0,930px); } main { padding-left:68px; padding-right:68px; } }
+@media(max-width:1000px) { .layout { grid-template-columns:205px minmax(0,1fr); gap:22px; padding:0 20px; } main { padding:36px 32px 50px; } .toc a { font-size:12px; } }
+@media(max-width:760px) {
+ .topbar { height:60px; padding:0 12px; gap:6px; } .brand { font-size:12px; letter-spacing:0; } .menu { display:inline-block; font-size:13px; } .tools { gap:0; } .tools button { padding:6px 8px; } .tools .divider,.print-button { display:none; }
+ .layout { display:block; padding:0; } main { padding:30px 22px 44px; border:0; } h1 { font-size:28px; } article { line-height:1.95; }
+ .sidebar { position:fixed; top:60px; left:0; width:min(320px,88vw); height:calc(100dvh - 60px); background:var(--paper); z-index:4; padding:24px 18px; border-right:1px solid var(--line); box-shadow:15px 0 30px #0002; display:none; }
+ .sidebar.open { display:block; } .toc a { font-size:14px; padding:10px 12px; } .meta { gap:10px 18px; } pre { padding:16px; font-size:.8em; } .footer { flex-direction:column; gap:10px; } h2 { font-size:1.24em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
+@media print {
+ :root,:root[data-theme="dark"] { --bg:white; --paper:white; --text:#111; --muted:#555; --line:#ddd; --accent:#222; --wash:#eee; --code:#f4f4f4; --size:10.5pt; }
+ .topbar,.sidebar,.progress,.skip,.footer { display:none; } .layout { display:block; max-width:none; padding:0; } main { padding:0; border:0; } h1 { font-size:24pt; } h2 { break-after:avoid; } tr,pre { break-inside:avoid; } .table-scroll { overflow:visible; } table { min-width:0; font-size:9pt; } pre { white-space:pre-wrap; } a { color:inherit; } @page { margin:18mm; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转到正文</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:8px"><button aria-controls="nav" aria-expanded="false" aria-label="展开目录" class="menu">目录</button><a class="brand" href="index.html">← 返回研究报告</a></div>
+<div aria-label="阅读设置" class="tools"><button aria-label="缩小字号" class="font" id="smaller">A−</button><button aria-label="放大字号" class="font" id="larger">A+</button><span class="divider"></span><button aria-label="切换深色模式" id="theme">深色</button><button class="print-button" id="print">打印</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="nav"><nav aria-label="报告目录"><p class="nav-label">报告目录</p><div class="toc">
+<ul>
+<li><a href="#rea">REA</a></li>
+<li><a href="#_1">安卓连接</a></li>
+</ul>
+</div>
+
+</nav><div class="nav-bottom"><a href="index.html">← 返回研究报告</a><br/><a href="installation.html">查看 Markdown 原文 ↗</a></div></aside>
+<main id="content"><p class="eyebrow">GARDEN WORLD / SOURCE NOTES</p><h1>REA 安装与安卓连接记录</h1><div class="meta">证据与复核文档 · 2026 年 10 月 12 日</div><article><p>日期：2026-10-12。</p>
+<h2 id="rea" tabindex="-1">REA</h2>
+<ul>
+<li>上游：<a href="https://github.com/morluto/rea">morluto/rea</a>。安装包 <code>rea-agents@6.4.0</code>。</li>
+<li>隔离运行目录：<code>/Users/huangdong/.local/share/rea-runtime</code>，配套 <code>node@24.19.0</code>；原系统 Node 未替换。</li>
+<li>命令入口：<code>/Users/huangdong/.homebrew/bin/rea</code>；已验证 <code>rea --version</code> 为 6.4.0。</li>
+<li>Codex 配置：<code>/Users/huangdong/.codex/config.toml</code>，原备份 <code>config.toml.rea.backup</code>。</li>
+<li>技能：<code>/Users/huangdong/.agents/skills/reverse-engineer-anything/SKILL.md</code>。</li>
+<li><code>rea doctor --client codex --skill --json</code> 的指定范围检查健康：Node、Codex 注册、技能身份均通过。结果在 <code>tools/rea-doctor-final.json</code>。</li>
+<li>真正启动 MCP 子进程后，初始化和工具清单读取成功，返回 170 个工具；证据 <code>tools/rea-mcp-smoke.json</code>。</li>
+</ul>
+<p>当前对话不会因安装而自动新增 MCP 工具，所以本次通过 REA CLI 完成安装包清单与 JavaScript 分析。新建对话或重启 Codex 后可加载注册。没有安装 Hopper／Ghidra／IDA；因此不表示全部原生反汇编能力就绪。分析本次 JS／ZIP 资源不依赖这些引擎。</p>
+<h2 id="_1" tabindex="-1">安卓连接</h2>
+<p>设备型号 HUAWEI P40（系统型号 ANA-AN00），用户说明 HarmonyOS 4.2.0，ADB 报底层 Android 12。早先 Mac USB 树和 ADB 均未发现手机；更换接口和切 USB 模式后仍未恢复。手机重启、解锁重连并由用户确认 USB 调试授权后，ADB 返回 <code>device</code>，只读 shell 检查成功。只能确认恢复步骤，不能据此断定唯一根因。</p>
+<p>游戏包为 <code>cn.wdhysj.huawei</code>，安装版本 1.2.1，入口游戏版本 <code>V460.0.18-prod</code>。Appium 使用 <code>noReset=true</code>、<code>fullReset=false</code>，复用既有辅助包，创建本任务自己的会话；未清除应用数据或登录态。本记录不含设备序列号和账号凭据。</p>
+<p>访问参考用户指定的 安卓访问技能。用户随后明确授权“登录页你操作就行”，按此授权点击开始游戏并成功进入花园，完成当前页面采样；结束时返回主界面并关闭本任务 Appium 会话。未出现需处理的密码或验证码。</p></article><footer class="footer"><span>来源：installation.md · 证据文档</span><a href="#top">返回顶部 ↑</a></footer></main>
+</div>
+<script>
+(() => {
+ const root = document.documentElement;
+ const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+ const themeButton = document.querySelector('#theme');
+ let theme = read('garden-report-theme') || 'light';
+ const setTheme = value => { theme=value;root.dataset.theme=value;themeButton.textContent=value==='dark'?'浅色':'深色';themeButton.setAttribute('aria-label',value==='dark'?'切换浅色模式':'切换深色模式'); };
+ setTheme(theme);
+ themeButton.addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');save('garden-report-theme',theme);});
+ let size = Math.max(15,Math.min(22,Number(read('garden-report-size'))||17));
+ const setSize = () => { root.style.setProperty('--size',size+'px');document.querySelector('#smaller').disabled=size<=15;document.querySelector('#larger').disabled=size>=22; };
+ setSize();
+ ['smaller','larger'].forEach(id=>document.querySelector('#'+id).addEventListener('click',()=>{size=Math.max(15,Math.min(22,size+(id==='larger'?1:-1)));setSize();save('garden-report-size',size);}));
+ document.querySelector('#print').addEventListener('click',()=>window.print());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+ const close=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','展开目录');};
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'收起目录':'展开目录');});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+ document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menu.contains(event.target))close();});
+ const headings=[...document.querySelectorAll('article h2')],links=[...document.querySelectorAll('.toc a')];
+ links.forEach(link=>link.addEventListener('click',()=>{close();const heading=document.getElementById(decodeURIComponent(link.hash.slice(1)));if(heading)heading.focus({preventScroll:true});}));
+ const progress=document.querySelector('.progress');let queued=false;
+ const update=()=>{const max=root.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';let current=null;for(const heading of headings){if(heading.getBoundingClientRect().top<=140)current=heading;}links.forEach(link=>{const active=current&&decodeURIComponent(link.hash.slice(1))===current.id;link.classList.toggle('active',!!active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});queued=false;};
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>

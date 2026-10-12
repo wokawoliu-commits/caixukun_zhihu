@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="light dark" name="color-scheme"/>
+<link href="data:," rel="icon"/>
+<title>当前华为客户端数值采样</title>
+<style>
+:root { --bg:#f6f5f0; --paper:#fffefa; --text:#28352f; --muted:#6b766e; --line:#e0e5dc; --accent:#296346; --wash:#edf2e9; --code:#f1f3ed; --size:17px; }
+:root[data-theme="dark"] { --bg:#17221c; --paper:#1d2a22; --text:#e2e8df; --muted:#a8b7ab; --line:#3c4b40; --accent:#9cd0ae; --wash:#2c3d31; --code:#26372b; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
+body { margin:0; background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; transition:background .18s,color .18s; }
+a { color:var(--accent); text-underline-offset:4px; overflow-wrap:anywhere; }
+a:hover { text-decoration-thickness:2px; }
+button { color:inherit; font:inherit; cursor:pointer; }
+button:focus-visible,a:focus-visible,.table-scroll:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+.skip { position:fixed; top:-70px; left:20px; padding:12px; z-index:10; background:var(--paper); }
+.skip:focus { top:10px; }
+.progress { position:fixed; top:0; height:3px; background:var(--accent); width:0; z-index:6; }
+.topbar { position:sticky; top:0; z-index:5; height:66px; padding:0 36px; display:flex; align-items:center; justify-content:space-between; gap:12px; border-bottom:1px solid var(--line); background:var(--paper); }
+.brand { font-size:14px; font-weight:650; letter-spacing:1px; text-decoration:none; white-space:nowrap; }
+.tools { display:flex; gap:6px; align-items:center; }
+.tools button,.menu { border:1px solid transparent; border-radius:5px; background:transparent; padding:8px 10px; min-height:40px; font-size:13px; transition:background .15s; }
+.tools button:hover,.menu:hover { background:var(--wash); }
+.tools .font { font-size:16px; min-width:40px; padding:6px; }
+.tools .divider { height:18px; border-left:1px solid var(--line); margin:0 3px; }
+.layout { display:grid; grid-template-columns:245px minmax(0,900px); gap:46px; max-width:1275px; margin:auto; padding:0 32px; }
+.sidebar { align-self:start; position:sticky; top:66px; height:calc(100dvh - 66px); overflow:auto; padding:34px 8px 28px 0; }
+.nav-label { margin:0 0 16px 12px; font-size:12px; color:var(--muted); letter-spacing:2px; }
+.toc ul { margin:0; padding:0; list-style:none; }
+.toc li { margin:4px 0; }
+.toc a { display:block; font-size:13px; line-height:1.65; padding:8px 12px; border-left:2px solid transparent; text-decoration:none; color:var(--muted); transition:color .15s,background .15s; }
+.toc a:hover,.toc a.active { color:var(--accent); background:var(--wash); border-left-color:var(--accent); }
+.nav-bottom { border-top:1px solid var(--line); margin:24px 12px 0; padding-top:18px; font-size:12px; color:var(--muted); line-height:1.8; }
+.nav-bottom a { display:inline-block; margin-top:8px; }
+main { min-width:0; background:var(--paper); padding:50px 54px 60px; border-left:1px solid var(--line); border-right:1px solid var(--line); }
+.eyebrow { font-size:11px; color:var(--accent); letter-spacing:2.5px; margin:0 0 18px; font-weight:650; }
+h1 { font-size:clamp(28px,3vw,38px); letter-spacing:-1px; line-height:1.45; margin:0 0 20px; font-weight:700; }
+.meta { color:var(--muted); font-size:12px; padding-bottom:28px; border-bottom:1px solid var(--line); margin:0 0 26px; display:flex; gap:18px; flex-wrap:wrap; }
+article { font-size:var(--size); line-height:1.95; overflow-wrap:break-word; }
+article p { margin:0 0 1.15em; }
+article > p:first-child { font-size:.88em; line-height:1.9; color:var(--muted); }
+h2 { font-size:1.35em; line-height:1.55; margin:2.6em 0 1em; padding-top:1.35em; border-top:1px solid var(--line); letter-spacing:-.3px; }
+h2:first-of-type { margin-top:1.9em; }
+h3 { font-size:1.1em; margin-top:2em; }
+strong { font-weight:650; }
+ul,ol { padding-left:1.5em; margin:1em 0 1.4em; }
+li { padding-left:.15em; margin:.5em 0; }
+li::marker { color:var(--accent); }
+code { background:var(--code); padding:2px 5px; border-radius:3px; font-size:.85em; font-family:"SFMono-Regular",Consolas,monospace; }
+pre { background:var(--code); border-left:3px solid var(--accent); padding:20px 22px; overflow-x:auto; font-size:.88em; line-height:1.85; margin:24px 0; }
+pre code { padding:0; background:none; font-size:1em; border-radius:0; }
+.table-scroll { overflow-x:auto; margin:24px 0; }
+table { width:100%; border-collapse:collapse; font-size:.82em; line-height:1.8; min-width:530px; }
+th { background:var(--wash); font-weight:650; color:var(--accent); text-align:left; }
+td,th { padding:13px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+tbody tr:nth-child(even) { background:var(--bg); }
+blockquote { margin:24px 0; border-left:3px solid var(--accent); padding-left:22px; color:var(--muted); }
+.footer { margin-top:48px; padding-top:22px; border-top:1px solid var(--line); display:flex; gap:20px; justify-content:space-between; color:var(--muted); font-size:12px; }
+.menu { display:none; }
+@media(min-width:1500px) { .layout { gap:62px; max-width:1350px; grid-template-columns:260px minmax(0,930px); } main { padding-left:68px; padding-right:68px; } }
+@media(max-width:1000px) { .layout { grid-template-columns:205px minmax(0,1fr); gap:22px; padding:0 20px; } main { padding:36px 32px 50px; } .toc a { font-size:12px; } }
+@media(max-width:760px) {
+ .topbar { height:60px; padding:0 12px; gap:6px; } .brand { font-size:12px; letter-spacing:0; } .menu { display:inline-block; font-size:13px; } .tools { gap:0; } .tools button { padding:6px 8px; } .tools .divider,.print-button { display:none; }
+ .layout { display:block; padding:0; } main { padding:30px 22px 44px; border:0; } h1 { font-size:28px; } article { line-height:1.95; }
+ .sidebar { position:fixed; top:60px; left:0; width:min(320px,88vw); height:calc(100dvh - 60px); background:var(--paper); z-index:4; padding:24px 18px; border-right:1px solid var(--line); box-shadow:15px 0 30px #0002; display:none; }
+ .sidebar.open { display:block; } .toc a { font-size:14px; padding:10px 12px; } .meta { gap:10px 18px; } pre { padding:16px; font-size:.8em; } .footer { flex-direction:column; gap:10px; } h2 { font-size:1.24em; }
+}
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } * { transition:none!important; } }
+@media print {
+ :root,:root[data-theme="dark"] { --bg:white; --paper:white; --text:#111; --muted:#555; --line:#ddd; --accent:#222; --wash:#eee; --code:#f4f4f4; --size:10.5pt; }
+ .topbar,.sidebar,.progress,.skip,.footer { display:none; } .layout { display:block; max-width:none; padding:0; } main { padding:0; border:0; } h1 { font-size:24pt; } h2 { break-after:avoid; } tr,pre { break-inside:avoid; } .table-scroll { overflow:visible; } table { min-width:0; font-size:9pt; } pre { white-space:pre-wrap; } a { color:inherit; } @page { margin:18mm; }
+}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#content">跳转到正文</a>
+<div aria-hidden="true" class="progress"></div>
+<header class="topbar">
+<div style="display:flex;align-items:center;gap:8px"><button aria-controls="nav" aria-expanded="false" aria-label="展开目录" class="menu">目录</button><a class="brand" href="../index.html">← 返回研究报告</a></div>
+<div aria-label="阅读设置" class="tools"><button aria-label="缩小字号" class="font" id="smaller">A−</button><button aria-label="放大字号" class="font" id="larger">A+</button><span class="divider"></span><button aria-label="切换深色模式" id="theme">深色</button><button class="print-button" id="print">打印</button></div>
+</header>
+<div class="layout">
+<aside class="sidebar" id="nav"><nav aria-label="报告目录"><p class="nav-label">报告目录</p><div class="toc">
+<ul>
+<li><a href="#1">1. 基线与权益</a></li>
+<li><a href="#2">2. 花卉：同订单价值，不同生产时间和升级费</a></li>
+<li><a href="#3">3. 配方与订单：一个吻合样本，一个偏差样本</a></li>
+<li><a href="#4">4. 当前客户端的订单进阶规则</a></li>
+<li><a href="#5">5. 当前付费价目及资源锚点</a></li>
+<li><a href="#6">6. 仍未取得的内容</a></li>
+</ul>
+</div>
+
+</nav><div class="nav-bottom"><a href="../index.html">← 返回研究报告</a><br/><a href="live-observations.html">查看 Markdown 原文 ↗</a></div></aside>
+<main id="content"><p class="eyebrow">GARDEN WORLD / SOURCE NOTES</p><h1>当前华为客户端数值采样</h1><div class="meta">证据与复核文档 · 2026 年 10 月 12 日</div><article><p>观察日期：2026-10-12（Asia/Shanghai）。用户授权代为操作登录后，通过保留登录态的 Appium 会话进入花园。入口版本 <code>V460.0.18-prod</code>，包名 <code>cn.wdhysj.huawei</code>，账号等级 3。本文记录的是<strong>页面可见值与报价</strong>，没有通过购买、制作、提交订单或升级来测试结算。</p>
+<p>证据目录为 <a href="../evidence/screens/index.html">screens</a>。编号 013 起配套 JSON 保存 <code>observed_at</code>、包名和页面 ID；截图原文件保留，未改图。下文只引用已目视核对的页面。</p>
+<h2 id="1" tabindex="-1">1. 基线与权益</h2>
+<p>进入与结束时，页面均显示水滴 65/65、金币 1444、元宝 20、等级 3。白百合库存 5，康乃馨与铃兰在制作预览中为 0。余额一致只是一项交叉检查；实际操作记录也没有购买、领取、制作、提交、种植或升级。<a href="../evidence/screens/009-login-result.png">开始</a>、<a href="../evidence/screens/050-final-main.png">结束</a></p>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>权益</th>
+<th>当前页面内容</th>
+<th>证据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VIP</td>
+<td>30 元、30 天；立即得 300 元宝与身份标志；每日 18 元宝、10 水滴</td>
+<td><a href="../evidence/screens/013-vip-panel.png">013</a></td>
+</tr>
+<tr>
+<td>VIP 经营权益</td>
+<td>经验 +25%；储水上限翻倍至 130；珍珠采集位置 +1；VIP 商店全场 8 折；一键浇水／收获／加速／铲除／种植／偷花</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>免广告</td>
+<td>30 天；首次 6 元，页面原价 12 元；双倍金币；图示覆盖花架、居民订单、顾客订单、宫廷特供；不计入首充活动</td>
+<td><a href="../evidence/screens/014-ad-card.png">014</a></td>
+</tr>
+<tr>
+<td>免广告规则</td>
+<td>开通期可跳过广告直接领奖；首次 5 折；自动获得相同期限的视频双倍金币特权</td>
+<td><a href="../evidence/screens/015-ad-rules.png">015</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>若 VIP 的 30 个日领取机会均领取，页面承诺合计为 <code>300+18×30=840</code> 元宝、<code>10×30=300</code> 水滴。这是满勤情景，不能直接当作购买时全部到账或无条件兑现。储水容量 65／130 已有当前证据；<strong>自然恢复 2 分钟／滴尚未计时核验</strong>，也没有证据称 VIP 加快恢复。</p>
+<h2 id="2" tabindex="-1">2. 花卉：同订单价值，不同生产时间和升级费</h2>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>花</th>
+<th style="text-align: right;">当前／预览等级</th>
+<th style="text-align: right;">订单金币基值</th>
+<th style="text-align: right;">订单经验基值</th>
+<th style="text-align: right;">收获轮数</th>
+<th>间隔原文</th>
+<th style="text-align: right;">每轮朵数</th>
+<th>精华概率×数量</th>
+<th style="text-align: right;">防偷保留</th>
+<th>1→2 级费用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白百合</td>
+<td style="text-align: right;">当前 1 级</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1</td>
+<td>00:55</td>
+<td style="text-align: right;">2</td>
+<td>20%×1</td>
+<td style="text-align: right;">1</td>
+<td>80 金币＋1 对应精华</td>
+</tr>
+<tr>
+<td>白百合</td>
+<td style="text-align: right;">下级 2 级预览</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">2</td>
+<td>00:55</td>
+<td style="text-align: right;">2</td>
+<td>20%×1</td>
+<td style="text-align: right;">1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>白百合</td>
+<td style="text-align: right;">满级效果预览（20 级）</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">5</td>
+<td>00:32</td>
+<td style="text-align: right;">5</td>
+<td>40%×3</td>
+<td style="text-align: right;">3</td>
+<td>未取得全等级费表</td>
+</tr>
+<tr>
+<td>康乃馨</td>
+<td style="text-align: right;">当前 1 级</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">1</td>
+<td>01:50</td>
+<td style="text-align: right;">2</td>
+<td>20%×1</td>
+<td style="text-align: right;">1</td>
+<td>120 金币＋1 对应精华</td>
+</tr>
+<tr>
+<td>康乃馨</td>
+<td style="text-align: right;">下级 2 级预览</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">2</td>
+<td>01:50</td>
+<td style="text-align: right;">2</td>
+<td>20%×1</td>
+<td style="text-align: right;">1</td>
+<td>—</td>
+</tr>
+<tr>
+<td>铃兰</td>
+<td style="text-align: right;">未培养</td>
+<td style="text-align: right;">18</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">未显示</td>
+<td>未显示</td>
+<td style="text-align: right;">未显示</td>
+<td>未显示</td>
+<td style="text-align: right;">未显示</td>
+<td>未显示</td>
+</tr>
+</tbody>
+</table></div>
+<p>来源：<a href="../evidence/screens/021-white-lily.png">白百合当前页</a>、<a href="../evidence/screens/029-lily-max-values.png">白百合满级预览</a>、<a href="../evidence/screens/030-carnation.png">康乃馨</a>、<a href="../evidence/screens/031-lily-of-valley.png">铃兰</a>。破折号表示该位置没有重新公示该项，不能自动当作 0 或不变。</p>
+<p>时间格式的 <strong>430.0.44 内置函数</strong> <code>getTimeDescBySec</code> 按 <code>mm:ss</code> 输出，所以上述显示按该实现解读为 55 秒、32 秒、110 秒；本次未执行成熟倒计时验证。费用读取当前等级 <code>gldCost(L)</code>，其语义是 <strong>L→L+1</strong>，而非升至 L。<a href="../tools/static-economy/code-lines.html#line-39005">格式函数</a>、<a href="../tools/static-economy/code-lines.html#line-140925">面板取值</a></p>
+<p>白百合当前升级总览直接可见：</p>
+<ul>
+<li>加轮数：2、6、11、17 级各 +1。</li>
+<li>加每轮产量：10、16、20 级各 +1。</li>
+<li>加精华概率：4、8、15、18 级各 +5 个百分点。</li>
+<li>加精华数量：7、14 级各 +1。</li>
+<li>加防偷保留：13、20 级各 +1。</li>
+<li>3／9／19 级各缩时 <code>00:05</code>，12 级缩时 <code>00:04</code>；5 级字段被裁切，<strong>不将其值补猜为 5 秒</strong>。满级总间隔以独立可见的 <code>00:32</code> 为准。</li>
+</ul>
+<p>截图：<a href="../evidence/screens/022-lily-level-effects.png">022</a>、<a href="../evidence/screens/023-lily-level-effects-mid.png">023</a>、<a href="../evidence/screens/024-lily-level-effects-9.png">024</a>、<a href="../evidence/screens/025-lily-level-effects-11.png">025</a>、<a href="../evidence/screens/026-lily-level-effects-13.png">026</a>、<a href="../evidence/screens/027-lily-level-effects-16.png">027</a>、<a href="../evidence/screens/028-lily-level-effects-max.png">028</a>。</p>
+<p>按界面参数推导，忽略操作空档、偷取与库存约束，白百合完整周期理论产量从 <code>1×2=2</code> 到 <code>5×5=25</code>，为 <strong>12.5 倍</strong>；单位地块时间产量倍率却是 <code>(5/32)/(2/55)=4.296875</code>，约 <strong>4.30 倍</strong>。轮数不能再乘进后一个倍率。这是满级预览模型，不是该账号已经拥有的产能。</p>
+<p>白百合与康乃馨 1 级订单基值相同，但后者等待时间为前者的两倍，升级费为 1.5 倍。若只受土地时间约束，白百合理论产出更快；实际订单明确同时需要两种花，因此不能把较慢花直接从种植计划中删除。</p>
+<h2 id="3" tabindex="-1">3. 配方与订单：一个吻合样本，一个偏差样本</h2>
+<p><strong>普通居民单吻合基值加总。</strong>当前单要求白百合 2 朵＋康乃馨 2 朵，预览奖励 72 金币、100 经验，即 <code>18×4</code>、<code>25×4</code>。未提交，故只是报价核验。<a href="../evidence/screens/041-orders.png">041</a></p>
+<p><strong>百合瓷韵制作价不等于旧公式回退值。</strong>所选配方为白百合、康乃馨、铃兰各 1 朵，数量 1，制作预览显示售价 <strong>131</strong>。三花订单基值合计 54；430.0.44 回退价 <code>round(2.3×54)=124</code>，差 7 金币。<a href="../evidence/screens/036-floral-creation-entry.png">036</a></p>
+<p>进一步追踪内置代码，制作弹窗走 <code>getSellMoney → calSPrice</code>；<code>sPrice</code> 为非空数组时优先将其价格作为基础价，无覆盖才用 2.3 倍，之后仍可增加进阶技能收益。该路径没有独立的花瓶／图鉴倍率。所以主要候选解释为配方显式覆盖，或 460 热更新改变算法；<strong>不能把 131/124 宣称成隐藏加成倍率</strong>。当前数据不足以区分，且 131 是制作预览，不是成交结算。<a href="floral-price-discrepancy.html">差异追踪说明</a></p>
+<p>配方解锁也限制生产：百合瓷韵主花栏中黄百合标 4 级获取、粉百合标 10 级获取；制作页还展示素蓝青釉花瓶 6 级、复古琥瓶 11 级、锦簇花篮 16 级获取。只据这些可见项说明等级扩大配方选择，不外推完整解锁表。<a href="../evidence/screens/035-vase-recipes.png">035</a>、<a href="../evidence/screens/036-floral-creation-entry.png">036</a></p>
+<h2 id="4" tabindex="-1">4. 当前客户端的订单进阶规则</h2>
+<ul>
+<li>日完成数奖励节点：15、30、45、60。当前完成数 0。</li>
+<li>15 级解锁绸缎订单，给绸缎与经验，并计入日完成数量。</li>
+<li>26 级解锁组团订单，每日完成 50、100 单均触发；接单后完成越多，最终奖励倍率越高；开始后不能中途退出。</li>
+<li>完成组团订单后，可消耗 <strong>60 元宝</strong>购买 1 次额外接单机会。</li>
+<li>30 级解锁建材订单，给建材与经验，也计入日完成数量。</li>
+</ul>
+<p>来源：<a href="../evidence/screens/041-orders.png">041</a>、<a href="../evidence/screens/042-resident-rules.png">042</a>、<a href="../evidence/screens/043-resident-rules-lower.png">043</a>。当前帮助页未在已读文本中给出 120 单上限与 30 分钟保留期，这两项仍单独标为官网规则。</p>
+<h2 id="5" tabindex="-1">5. 当前付费价目及资源锚点</h2>
+<p>以下仅描述此账号此时页面报价，不承诺其他账号、渠道、时期同价，也未购买。</p>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>项目</th>
+<th>当前标价／数量</th>
+<th>页面次数限制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每周水滴礼包</td>
+<td>30 元／1000 水滴</td>
+<td>每周 1 次</td>
+</tr>
+<tr>
+<td>水礼包</td>
+<td>6 元／150 水滴</td>
+<td>此卡未显示次数限制</td>
+</tr>
+<tr>
+<td>每日金币礼包</td>
+<td>18 元／72 万金币</td>
+<td>每日 1 次</td>
+</tr>
+<tr>
+<td>免费元宝礼包</td>
+<td>广告按钮，5 元宝</td>
+<td>每日 4 次</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="../evidence/screens/011-water-detail.png">礼包商店 011</a>。每周水礼包单滴为 0.03 元，普通水礼包为 0.04 元，前者单位价格低 25%，但有周次数限制；广告单次时长未读，不能计算元宝／分钟。标牌打折比例不是可验证的历史成交价，未将划线价格用作价值基准。</p>
+<p>元宝直接充值的基础报价为 10 元宝／元；6／30／68／98 元四档的首充三倍是<strong>四选一</strong>，不能各计一次三倍；128／198 元档显示首充双倍。代钞按所示档位 1:1 标价，页面说明充值代钞时不计充值进度、消耗时才计入。<a href="../evidence/screens/016-topup-prices.png">016</a>、<a href="../evidence/screens/017-ingot-prices.png">017</a></p>
+<p>金币充值（含页面“赠”数量）：</p>
+<div aria-label="数据表格，可横向滚动" class="table-scroll" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th style="text-align: right;">人民币</th>
+<th style="text-align: right;">基础金币</th>
+<th style="text-align: right;">赠送金币</th>
+<th style="text-align: right;">合计</th>
+<th style="text-align: right;">金币／元</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">36,000</td>
+<td style="text-align: right;">3,000</td>
+<td style="text-align: right;">39,000</td>
+<td style="text-align: right;">6,500</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td style="text-align: right;">180,000</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">240,000</td>
+<td style="text-align: right;">8,000</td>
+</tr>
+<tr>
+<td style="text-align: right;">68</td>
+<td style="text-align: right;">420,000</td>
+<td style="text-align: right;">300,000</td>
+<td style="text-align: right;">720,000</td>
+<td style="text-align: right;">10,588.24</td>
+</tr>
+<tr>
+<td style="text-align: right;">98</td>
+<td style="text-align: right;">600,000</td>
+<td style="text-align: right;">600,000</td>
+<td style="text-align: right;">1,200,000</td>
+<td style="text-align: right;">12,244.90</td>
+</tr>
+<tr>
+<td style="text-align: right;">128</td>
+<td style="text-align: right;">770,000</td>
+<td style="text-align: right;">930,000</td>
+<td style="text-align: right;">1,700,000</td>
+<td style="text-align: right;">13,281.25</td>
+</tr>
+<tr>
+<td style="text-align: right;">198</td>
+<td style="text-align: right;">1,190,000</td>
+<td style="text-align: right;">1,660,000</td>
+<td style="text-align: right;">2,850,000</td>
+<td style="text-align: right;">14,393.94</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="../evidence/screens/018-coin-exchange.png">018</a>。同为 72 万金币，每日限购礼包报价 18 元，而普通充值面板的对应合计档为 68 元；这说明限次礼包与即时补缺有明显价格区隔，不能选一个汇率给全游戏金币统一估值。礼包与赠送规则的长期稳定性未验证。</p>
+<h2 id="6" tabindex="-1">6. 仍未取得的内容</h2>
+<p>水滴实际恢复间隔与完整周期耗水、当前花架每件销售时间、珍珠单次兑奖成本、完整花卉价格与升级费用曲线、当前软保底曲线及服务器结算。账号处于第 4 项主线“成功培育铃兰”，已拥有花种仅 2 种；本次选择停在只读采样，没有为了开放系统推进养成。</p>
+<p>会话结束前返回主界面并关闭本任务 Appium 会话；应用数据与登录态保留。</p></article><footer class="footer"><span>来源：analysis/live-observations.md · 证据文档</span><a href="#top">返回顶部 ↑</a></footer></main>
+</div>
+<script>
+(() => {
+ const root = document.documentElement;
+ const read = key => { try { return localStorage.getItem(key); } catch { return null; } };
+ const save = (key,value) => { try { localStorage.setItem(key,value); } catch {} };
+ const themeButton = document.querySelector('#theme');
+ let theme = read('garden-report-theme') || 'light';
+ const setTheme = value => { theme=value;root.dataset.theme=value;themeButton.textContent=value==='dark'?'浅色':'深色';themeButton.setAttribute('aria-label',value==='dark'?'切换浅色模式':'切换深色模式'); };
+ setTheme(theme);
+ themeButton.addEventListener('click',()=>{setTheme(theme==='dark'?'light':'dark');save('garden-report-theme',theme);});
+ let size = Math.max(15,Math.min(22,Number(read('garden-report-size'))||17));
+ const setSize = () => { root.style.setProperty('--size',size+'px');document.querySelector('#smaller').disabled=size<=15;document.querySelector('#larger').disabled=size>=22; };
+ setSize();
+ ['smaller','larger'].forEach(id=>document.querySelector('#'+id).addEventListener('click',()=>{size=Math.max(15,Math.min(22,size+(id==='larger'?1:-1)));setSize();save('garden-report-size',size);}));
+ document.querySelector('#print').addEventListener('click',()=>window.print());
+ const menu=document.querySelector('.menu'),nav=document.querySelector('#nav');
+ const close=()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','展开目录');};
+ menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'收起目录':'展开目录');});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')close();});
+ document.addEventListener('click',event=>{if(!nav.contains(event.target)&&!menu.contains(event.target))close();});
+ const headings=[...document.querySelectorAll('article h2')],links=[...document.querySelectorAll('.toc a')];
+ links.forEach(link=>link.addEventListener('click',()=>{close();const heading=document.getElementById(decodeURIComponent(link.hash.slice(1)));if(heading)heading.focus({preventScroll:true});}));
+ const progress=document.querySelector('.progress');let queued=false;
+ const update=()=>{const max=root.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';let current=null;for(const heading of headings){if(heading.getBoundingClientRect().top<=140)current=heading;}links.forEach(link=>{const active=current&&decodeURIComponent(link.hash.slice(1))===current.id;link.classList.toggle('active',!!active);if(active)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});queued=false;};
+ addEventListener('scroll',()=>{if(!queued){queued=true;requestAnimationFrame(update);}},{passive:true});addEventListener('resize',update);update();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+  "as_of": "2026-10-12",
+  "scope": "Official public tables and hypothetical examples; not live account measurements",
+  "official_source": "https://wdhysj.babigame.cn/list/news/6901e7aadce6870db700f86d",
+  "pearl_per_success": "215.196",
+  "pearl_per_attempt_if_failure_yields_zero_and_consumes_same_opportunity": "193.67640",
+  "ingot_per_pearl_redemption": "1.8990",
+  "materials_per_guild_box": "8.15",
+  "shelf_over_customer_gold_fallback_same_material_no_boost_or_override": "0.15",
+  "historical_water_scenario_only": {
+    "minutes_per_drop": 2,
+    "caps": [
+      65,
+      130
+    ],
+    "minutes_to_fill_from_zero": [
+      130,
+      260
+    ],
+    "max_regeneration_24h_no_overflow": 720
+  },
+  "hypothetical_production": {
+    "baseline_4_rounds_3_yield_20_minutes_1_water_cycle": {
+      "flowers_per_cycle": "12",
+      "flowers_per_water": "12",
+      "flowers_per_plot_hour": "9"
+    },
+    "5_rounds_same_cycle_water": {
+      "flowers_per_cycle": "15",
+      "flowers_per_water": "15",
+      "flowers_per_plot_hour": "9"
+    },
+    "4_rounds_4_yield": {
+      "flowers_per_cycle": "16",
+      "flowers_per_water": "16",
+      "flowers_per_plot_hour": "12"
+    },
+    "4_rounds_3_yield_15_minutes": {
+      "flowers_per_cycle": "12",
+      "flowers_per_water": "12",
+      "flowers_per_plot_hour": "12"
+    },
+    "4_rounds_3_yield_one_water_each_round": {
+      "flowers_per_cycle": "12",
+      "flowers_per_water": "3",
+      "flowers_per_plot_hour": "9"
+    }
+  }
+}

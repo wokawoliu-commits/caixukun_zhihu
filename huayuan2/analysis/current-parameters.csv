@@ -1,0 +1,49 @@
+system,entity,parameter,unit,current_value,status,evidence
+version,game,content_version,text,460.0.18,observed,007-login-before
+account,current,level,level,3,observed,009-login-result
+water,account,recovery_cap,drops,65,observed,050-final-main
+water,VIP,recovery_cap,drops,130,UI_entitlement,013-vip-panel
+water,account,recovery_interval,seconds,,unknown,not timed
+water,cycle,total_consumption,drops_per_complete_cycle,,unknown,not consumed
+flower,白百合,level,level,1,UI_visible,021-white-lily
+flower,白百合,order_gold,gold_per_flower,18,UI_visible,021-white-lily
+flower,白百合,order_exp,exp_per_flower,25,UI_visible,021-white-lily
+flower,白百合,harvest_rounds,rounds_per_cycle,1,UI_visible,021-white-lily
+flower,白百合,harvest_interval_display,mm:ss_per_packaged_formatter,00:55,UI_visible,021-white-lily
+flower,白百合,yield,flowers_per_round,2,UI_visible,021-white-lily
+flower,白百合,protected_yield,flowers_per_round,1,UI_visible,021-white-lily
+flower,白百合,essence_probability,percent,20,UI_visible,021-white-lily
+flower,白百合,essence_quantity,items_per_success,1,UI_visible,021-white-lily
+flower,白百合,upgrade_gold_1_to_2,gold,80,UI_visible,021-white-lily
+flower,白百合,upgrade_essence_1_to_2,items,1,UI_visible,021-white-lily
+flower,康乃馨,level,level,1,UI_visible,030-carnation
+flower,康乃馨,order_gold,gold_per_flower,18,UI_visible,030-carnation
+flower,康乃馨,order_exp,exp_per_flower,25,UI_visible,030-carnation
+flower,康乃馨,harvest_rounds,rounds_per_cycle,1,UI_visible,030-carnation
+flower,康乃馨,harvest_interval_display,mm:ss_per_packaged_formatter,01:50,UI_visible,030-carnation
+flower,康乃馨,yield,flowers_per_round,2,UI_visible,030-carnation
+flower,康乃馨,protected_yield,flowers_per_round,1,UI_visible,030-carnation
+flower,康乃馨,essence_probability,percent,20,UI_visible,030-carnation
+flower,康乃馨,essence_quantity,items_per_success,1,UI_visible,030-carnation
+flower,康乃馨,upgrade_gold_1_to_2,gold,120,UI_visible,030-carnation
+flower,康乃馨,upgrade_essence_1_to_2,items,1,UI_visible,030-carnation
+flower,白百合,level,level,20,max_level_preview,029-lily-max-values
+flower,白百合,harvest_rounds,rounds_per_cycle,5,max_level_preview,029-lily-max-values
+flower,白百合,harvest_interval_display,mm:ss_per_packaged_formatter,00:32,max_level_preview,029-lily-max-values
+flower,白百合,yield,flowers_per_round,5,max_level_preview,029-lily-max-values
+flower,白百合,protected_yield,flowers_per_round,3,max_level_preview,029-lily-max-values
+flower,白百合,essence_probability,percent,40,max_level_preview,029-lily-max-values
+flower,白百合,essence_quantity,items_per_success,3,max_level_preview,029-lily-max-values
+flower,铃兰,order_gold,gold_per_flower,18,UI_visible,031-lily-of-valley
+flower,铃兰,order_exp,exp_per_flower,25,UI_visible,031-lily-of-valley
+floral,百合瓷韵:白百合+康乃馨+铃兰,creation_sale_price,gold_per_item,131,quote_not_settlement,036-floral-creation-entry
+floral,rack,sale_time,seconds_per_item,,unknown,not shown
+floral,rack,capacity,items,,unknown,not shown
+order,白百合2+康乃馨2,gold,gold_per_order,72,quote_not_settlement,041-orders
+order,白百合2+康乃馨2,exp,exp_per_order,100,quote_not_settlement,041-orders
+VIP,30day,price,CNY,30,UI_offer,013-vip-panel
+VIP,30day,exp_bonus,percent,25,UI_entitlement,013-vip-panel
+ad_card,first30day,price,CNY,6,UI_offer,014-ad-card
+ad_card,30day,shown_regular_price,CNY,12,UI_offer,014-ad-card
+ad_card,specified_paths,gold_multiplier,factor,2,UI_entitlement_not_measured,014-ad-card
+pearl,redemption,cost,pearls_per_draw,,unknown,not sampled
