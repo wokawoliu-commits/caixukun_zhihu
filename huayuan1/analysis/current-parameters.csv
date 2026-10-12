@@ -1,0 +1,19 @@
+system,entity,parameter,unit,current_value,status,evidence_needed
+version,game,content_version,text,460.0.18,observed,entry screenshot 006-current.png
+flower,to_sample,level,level,,unknown,upgrade panel
+flower,to_sample,harvest_rounds,rounds_per_cycle,,unknown,upgrade panel
+flower,to_sample,harvest_interval,seconds,,unknown,upgrade panel
+flower,to_sample,yield,flowers_per_round,,unknown,upgrade panel
+flower,to_sample,protected_yield,flowers_per_round,,unknown,upgrade panel
+flower,to_sample,essence_probability,basis_points,,unknown,upgrade panel and trial unit
+flower,to_sample,essence_quantity,items_per_success,,unknown,upgrade panel
+flower,to_sample,upgrade_gold,gold,,unknown,upgrade panel
+flower,to_sample,upgrade_essence,items,,unknown,upgrade panel
+water,account,recovery_interval,seconds,,unknown,water detail
+water,account,recovery_cap,drops,,unknown,water detail
+water,cycle,total_consumption,drops_per_complete_cycle,,unknown,controlled observation
+floral,to_sample,customer_price,gold_per_item,,unknown,customer quote
+floral,to_sample,shelf_price,gold_per_item,,unknown,shelf quote
+floral,rack,sale_time,seconds_per_item,,unknown,shelf panel
+floral,rack,capacity,items,,unknown,shelf panel
+pearl,redemption,cost,pearls_per_draw,,unknown,redemption panel
